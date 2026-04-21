@@ -30,6 +30,7 @@ Crea estos secretos (usa solo los que necesites para canales):
 4. (Opcional) colocar `horas_atras` para forzar ventana personalizada.
 
 ### 3) Horarios automáticos
+Venezuela (VET, UTC-4) no usa horario de verano.
 - 12:00 VET (UTC-4) → `16:00 UTC`
 - 18:00 VET (UTC-4) → `22:00 UTC`
 

@@ -80,26 +80,8 @@ def enviar_gmail(asunto: str, texto: str, html_body: str, pdf_path: str | None =
 
 
 def _generar_pdf_simple(correlativo: str, texto: str) -> dict[str, Any]:
-    salida = Path("/tmp") / f"{correlativo}.pdf"
-    try:
-        # PDF mínimo válido (texto simplificado en contenido binario)
-        contenido = texto.replace("\n", " ")[:800].encode("latin-1", errors="ignore")
-        pdf = (
-            b"%PDF-1.1\n"
-            b"1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n"
-            b"2 0 obj<</Type/Pages/Count 1/Kids[3 0 R]>>endobj\n"
-            b"3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]/Contents 4 0 R/Resources<</Font<</F1 5 0 R>>>>>>endobj\n"
-        )
-        stream = b"BT /F1 12 Tf 40 750 Td (" + contenido.replace(b"(", b"").replace(b")", b"") + b") Tj ET"
-        pdf += f"4 0 obj<</Length {len(stream)}>>stream\n".encode("ascii") + stream + b"\nendstream endobj\n"
-        pdf += b"5 0 obj<</Type/Font/Subtype/Type1/BaseFont/Helvetica>>endobj\n"
-        pdf += b"xref\n0 6\n0000000000 65535 f \n"
-        pdf += b"0000000010 00000 n \n0000000060 00000 n \n0000000117 00000 n \n0000000264 00000 n \n0000000000 00000 n \n"
-        pdf += b"trailer<</Root 1 0 R/Size 6>>\nstartxref\n0\n%%EOF"
-        salida.write_bytes(pdf)
-        return {"success": True, "path": str(salida), "detalle": "Generado"}
-    except Exception as exc:  # pragma: no cover
-        return {"success": False, "path": None, "detalle": str(exc)}
+    _ = (correlativo, texto)
+    return {"success": False, "path": None, "detalle": "PDF no configurado en Fase 1"}
 
 
 def _build_index_html(informes_rel: list[str]) -> str:
@@ -184,7 +166,5 @@ def entregar_informe(informe: dict[str, Any], correlativo: str) -> dict[str, Any
     # Pages es no-crítico; éxito operativo si al menos un canal crítico entrega.
     canales_criticos = ["telegram", "gmail", "discord", "slack"]
     success = any((resultados.get(c) or {}).get("success") for c in canales_criticos)
-    if not any(os.getenv(k, "").strip() for k in ["TELEGRAM_BOT_TOKEN", "GMAIL_REMITENTE", "DISCORD_WEBHOOK_URL", "SLACK_WEBHOOK_URL"]):
-        success = True
 
     return {"success": success, "resultados": resultados}
