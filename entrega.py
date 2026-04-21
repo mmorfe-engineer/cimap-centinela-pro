@@ -96,54 +96,81 @@ def _build_index_html(informes_rel: list[str]) -> str:
 
 def publicar_en_github_pages(correlativo: str, informe_html: str) -> dict[str, Any]:
     repo_root = Path(__file__).resolve().parent
-
     worktree: Path | None = None
+    tmp_dir: TemporaryDirectory | None = None  # type: ignore[type-arg]
+
     try:
         correlativo_seguro = "".join(ch for ch in correlativo if ch.isalnum() or ch in ("-", "_")) or "informe"
-        with TemporaryDirectory(prefix="gh-pages-") as tmp:
-            worktree = Path(tmp) / "site"
+
+        tmp_dir = TemporaryDirectory(prefix="gh-pages-")
+        worktree = Path(tmp_dir.name) / "site"
+
+        # Determine whether gh-pages already exists on the remote.
+        remote_check = subprocess.run(
+            ["git", "ls-remote", "--heads", "origin", "gh-pages"],
+            cwd=repo_root,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        branch_exists = bool(remote_check.stdout.strip())
+
+        if branch_exists:
             subprocess.run(
-                ["git", "worktree", "add", "-B", "gh-pages", str(worktree)],
+                ["git", "fetch", "origin", "gh-pages:refs/heads/gh-pages"],
+                cwd=repo_root,
+                check=False,
+                capture_output=True,
+            )
+            subprocess.run(
+                ["git", "worktree", "add", str(worktree), "gh-pages"],
+                cwd=repo_root,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+        else:
+            subprocess.run(
+                ["git", "worktree", "add", "--orphan", "-b", "gh-pages", str(worktree)],
                 cwd=repo_root,
                 check=True,
                 capture_output=True,
                 text=True,
             )
 
-            subprocess.run(["git", "rm", "-rf", "--ignore-unmatch", "."], cwd=worktree, check=True)
-            subprocess.run(["git", "clean", "-fd"], cwd=worktree, check=True)
-            subprocess.run(["git", "config", "user.name", "github-actions[bot]"], cwd=worktree, check=True)
-            subprocess.run(
-                ["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"],
-                cwd=worktree,
-                check=True,
-            )
+        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], cwd=worktree, check=True)
+        subprocess.run(
+            ["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"],
+            cwd=worktree,
+            check=True,
+        )
 
-            informes_dir = worktree / "informes"
-            informes_dir.mkdir(parents=True, exist_ok=True)
-            informe_rel = f"informes/{correlativo_seguro}.html"
-            (worktree / informe_rel).write_text(informe_html, encoding="utf-8")
+        informes_dir = worktree / "informes"
+        informes_dir.mkdir(parents=True, exist_ok=True)
+        (worktree / f"informes/{correlativo_seguro}.html").write_text(informe_html, encoding="utf-8")
 
-            informes_rel = sorted([f"informes/{p.name}" for p in informes_dir.glob("*.html")], reverse=True)
-            (worktree / "index.html").write_text(_build_index_html(informes_rel), encoding="utf-8")
+        informes_rel = sorted([f"informes/{p.name}" for p in informes_dir.glob("*.html")], reverse=True)
+        (worktree / "index.html").write_text(_build_index_html(informes_rel), encoding="utf-8")
 
-            subprocess.run(["git", "add", "index.html", "informes"], cwd=worktree, check=True)
-            commit = subprocess.run(
-                ["git", "commit", "-m", f"chore: publicar informe {correlativo}"],
-                cwd=worktree,
-                check=False,
-                capture_output=True,
-                text=True,
-            )
-            if commit.returncode == 0:
-                subprocess.run(["git", "push", "origin", "gh-pages"], cwd=worktree, check=True)
-            return _resultado(True, "Publicado en gh-pages")
+        subprocess.run(["git", "add", "index.html", "informes"], cwd=worktree, check=True)
+        commit = subprocess.run(
+            ["git", "commit", "-m", f"chore: publicar informe {correlativo}"],
+            cwd=worktree,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if commit.returncode == 0:
+            subprocess.run(["git", "push", "origin", "gh-pages"], cwd=worktree, check=True)
+        return _resultado(True, "Publicado en gh-pages")
     except Exception as exc:  # pragma: no cover
         return _resultado(False, f"Pages no crítico: {exc}")
     finally:
         if worktree:
             subprocess.run(["git", "worktree", "remove", str(worktree), "--force"], cwd=repo_root, check=False)
             subprocess.run(["git", "worktree", "prune"], cwd=repo_root, check=False)
+        if tmp_dir:
+            tmp_dir.cleanup()
 
 
 def entregar_informe(informe: dict[str, Any], correlativo: str) -> dict[str, Any]:
