@@ -1,0 +1,44 @@
+name: CENTINELA PRO Fase 1
+
+on:
+  schedule:
+    - cron: "0 16 * * *"
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      horas_atras:
+        description: "Horas hacia atrás para la búsqueda (opcional)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+  CLAUDE_MODEL: claude-sonnet-4-6
+  CLAUDE_TOKENS: "4000"
+  PERPLEXITY_MODEL: sonar
+  PERPLEXITY_TIMEOUT: "30"
+
+jobs:
+  ejecutar-centinela:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar monitor
+        env:
+          HORAS_ATRAS: ${{ github.event.inputs.horas_atras || '' }}
+        run: python monitor.py

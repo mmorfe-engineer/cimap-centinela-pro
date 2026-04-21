@@ -191,6 +191,9 @@ cython_debug/
 # Ruff stuff:
 .ruff_cache/
 
+# CENTINELA PRO outputs
+salidas/
+
 # PyPI configuration file
 .pypirc
 
