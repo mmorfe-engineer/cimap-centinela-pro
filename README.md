@@ -4,7 +4,7 @@ Paquete “llave en mano” para ejecutar monitoreo político **solo con GitHub 
 
 ## ¿Qué hace?
 1. **Busca** información reciente en 3 capas con Perplexity Sonar.
-2. **Redacta** un informe con Claude.
+2. **Redacta** un informe con Mistral (`mistral-large-latest`).
 3. **Entrega** por canales (Telegram, Gmail, Discord, Slack) y publica HTML en **GitHub Pages** (`gh-pages`).
 
 ## Configuración para no-coder
@@ -15,7 +15,7 @@ En el repositorio: **Settings → Secrets and variables → Actions → New repo
 Crea estos secretos (usa solo los que necesites para canales):
 
 - `PERPLEXITY_API_KEY` (obligatorio para búsqueda real)
-- `ANTHROPIC_API_KEY` (obligatorio para redacción con Claude)
+- `MISTRAL_API_KEY` (obligatorio para redacción con Mistral)
 - `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID` (opcional)
 - `DISCORD_WEBHOOK_URL` (opcional)
 - `SLACK_WEBHOOK_URL` (opcional)

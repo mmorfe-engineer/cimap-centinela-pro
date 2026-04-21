@@ -16,8 +16,8 @@ permissions:
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
-  CLAUDE_MODEL: claude-sonnet-4-6
-  CLAUDE_TOKENS: "4000"
+  MISTRAL_MODEL: mistral-large-latest
+  MISTRAL_TOKENS: "4000"
   PERPLEXITY_MODEL: sonar
   PERPLEXITY_TIMEOUT: "30"
 
@@ -47,7 +47,7 @@ jobs:
         env:
           HORAS_ATRAS: ${{ github.event.inputs.horas_atras || '' }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

@@ -7,7 +7,12 @@ from typing import Any
 
 import requests
 
-ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
+MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
+
+PROMPT_SISTEMA = (
+    "Redacta un informe político conciso, verificable y sin inventar datos. "
+    "Incluye solo hechos con fecha y referencia cuando aplique."
+)
 
 
 def _parse_datetime(valor: str) -> datetime | None:
@@ -20,15 +25,11 @@ def _parse_datetime(valor: str) -> datetime | None:
 
 
 def _extraer_texto_respuesta(data: dict[str, Any]) -> str:
-    bloques = data.get("content", [])
-    if isinstance(bloques, list):
-        textos = [b.get("text", "") for b in bloques if isinstance(b, dict) and b.get("text")]
-        if textos:
-            return "\n".join(textos).strip()
-    if isinstance(data.get("completion"), str):
-        return data["completion"].strip()
-    if isinstance(data.get("text"), str):
-        return data["text"].strip()
+    choices = data.get("choices", [])
+    if choices and isinstance(choices, list):
+        content = (choices[0].get("message") or {}).get("content", "")
+        if content:
+            return content.strip()
     return ""
 
 
@@ -40,8 +41,8 @@ def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
 
 
 def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
-    modelo = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-6")
-    max_tokens = int(os.getenv("CLAUDE_TOKENS", "4000"))
+    modelo = os.getenv("MISTRAL_MODEL", "mistral-large-latest")
+    max_tokens = int(os.getenv("MISTRAL_TOKENS", "4000"))
 
     rango_inicio = _parse_datetime(resultado_busqueda.get("rango_inicio", ""))
     rango_fin = _parse_datetime(resultado_busqueda.get("rango_fin", ""))
@@ -60,12 +61,12 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
         }
 
-    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+    api_key = os.getenv("MISTRAL_API_KEY", "").strip()
     if not api_key:
         texto = (
             "# Informe CENTINELA PRO\n\n"
             f"Rango analizado: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-            "No se configuró ANTHROPIC_API_KEY. Se entrega resumen base con resultados de búsqueda.\n\n"
+            "No se configuró MISTRAL_API_KEY. Se entrega resumen base con resultados de búsqueda.\n\n"
             f"{contexto}"
         )
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
@@ -76,32 +77,28 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
         }
 
+    prompt_usuario = (
+        "Genera un informe estructurado con titulares, hallazgos y cierre ejecutivo.\n"
+        f"Rango: {rango_inicio_iso} a {rango_fin_iso}\n\n"
+        f"Material base:\n{contexto}"
+    )
+
     payload = {
         "model": modelo,
         "max_tokens": max_tokens,
-        "system": (
-            "Redacta un informe político conciso, verificable y sin inventar datos. "
-            "Incluye solo hechos con fecha y referencia cuando aplique."
-        ),
+        "temperature": 0.1,
         "messages": [
-            {
-                "role": "user",
-                "content": (
-                    "Genera un informe estructurado con titulares, hallazgos y cierre ejecutivo.\n"
-                    f"Rango: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-                    f"Material base:\n{contexto}"
-                ),
-            }
+            {"role": "system", "content": PROMPT_SISTEMA},
+            {"role": "user", "content": prompt_usuario},
         ],
     }
 
     try:
         response = requests.post(
-            ANTHROPIC_API_URL,
+            MISTRAL_API_URL,
             headers={
-                "x-api-key": api_key,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json",
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
             },
             json=payload,
             timeout=60,
@@ -109,6 +106,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         response.raise_for_status()
         data = response.json()
         texto = _extraer_texto_respuesta(data)
+        tokens_usados = (data.get("usage") or {}).get("total_tokens", 0)
         if not texto:
             texto = "No fue posible extraer texto de la respuesta del modelo."
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
@@ -117,12 +115,18 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "informe_texto": texto,
             "informe_html": html,
             "raw": data,
-            "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "metadata": {
+                "modelo": modelo,
+                "tokens": max_tokens,
+                "tokens_usados": tokens_usados,
+                "rango_inicio": rango_inicio_iso,
+                "rango_fin": rango_fin_iso,
+            },
         }
     except Exception as exc:  # pragma: no cover - manejo defensivo
         fallback = (
             "# Informe CENTINELA PRO\n\n"
-            "No se pudo obtener respuesta de Claude. Se entrega compilación de hallazgos.\n\n"
+            "No se pudo obtener respuesta del modelo. Se entrega compilación de hallazgos.\n\n"
             f"{contexto}"
         )
         return {
