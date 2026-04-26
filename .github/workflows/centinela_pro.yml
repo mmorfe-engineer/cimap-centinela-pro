@@ -1,0 +1,58 @@
+name: CENTINELA PRO Fase 1
+
+on:
+  schedule:
+    - cron: "0 16 * * *"
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      horas_atras:
+        description: "Horas hacia atrás para la búsqueda (opcional)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+  MISTRAL_MODEL: mistral-large-latest
+  MISTRAL_TOKENS: "4000"
+  PERPLEXITY_MODEL: sonar
+  PERPLEXITY_TIMEOUT: "30"
+
+jobs:
+  ejecutar-centinela:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Configurar identidad git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Ejecutar monitor
+        env:
+          HORAS_ATRAS: ${{ github.event.inputs.horas_atras || '' }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GMAIL_REMITENTE: ${{ secrets.GMAIL_REMITENTE }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_DESTINATARIO: ${{ secrets.GMAIL_DESTINATARIO }}
+        run: python monitor.py
