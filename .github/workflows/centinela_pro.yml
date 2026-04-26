@@ -34,9 +34,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
 
       - name: Instalar dependencias
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Configurar identidad git
         run: |
@@ -45,7 +48,6 @@ jobs:
 
       - name: Ejecutar monitor
         env:
-          HORAS_ATRAS: ${{ github.event.inputs.horas_atras || '' }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -55,4 +57,9 @@ jobs:
           GMAIL_REMITENTE: ${{ secrets.GMAIL_REMITENTE }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GMAIL_DESTINATARIO: ${{ secrets.GMAIL_DESTINATARIO }}
-        run: python monitor.py
+        run: |
+          if [ -n "${{ github.event.inputs.horas_atras }}" ]; then
+            python monitor.py "${{ github.event.inputs.horas_atras }}"
+          else
+            python monitor.py
+          fi
