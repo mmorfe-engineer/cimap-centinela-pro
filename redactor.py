@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import os
 from datetime import datetime
-from typing import Any, Dict, List
+from typing import Any
 
 import requests
 
@@ -12,7 +12,7 @@ MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 PROMPT_SISTEMA = (
     "Redacta un informe periodístico verificable, claro y estructurado. "
     "No inventes datos. Si no hay evidencia suficiente, dilo explícitamente. "
-    "Sigue un formato fijo por secciones y usa estilo conciso."
+    "Usa un tono profesional y evita conclusiones sin respaldo."
 )
 
 SECCIONES = [
@@ -53,6 +53,16 @@ def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any
             if isinstance(item, dict):
                 hallazgos.append(item)
     return hallazgos
+
+
+def _extraer_inventarios(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any]]:
+    inventarios: list[dict[str, Any]] = []
+    for capa_data in (resultado_busqueda.get("resultados") or {}).values():
+        parsed = (capa_data or {}).get("parsed") or {}
+        inv = parsed.get("inventario_auditoria")
+        if isinstance(inv, dict):
+            inventarios.append(inv)
+    return inventarios
 
 
 def _normalizar_categoria(cat: str | None) -> str:
@@ -100,6 +110,7 @@ def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
                 f"- Fecha UTC: {item.get('fecha_hora_utc','')} | {item.get('titulo','')}\n"
                 f"  Resumen: {item.get('resumen_1_frase','')}\n"
                 f"  Actor: {item.get('actor_principal','')} | Ubicación: {item.get('ubicacion','')}\n"
+                f"  Relevancia: {item.get('relevancia','')} | Motivo: {item.get('relevancia_motivo','')}\n"
                 f"  Fuente: {item.get('fuente_nombre','')} | {item.get('fuente_url','')}"
             )
     return "\n".join(partes).strip()
@@ -139,6 +150,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
 
     contexto = _construir_contexto(resultado_busqueda)
     fuentes = _fuentes_desde_resultados(resultado_busqueda)
+    inventarios = _extraer_inventarios(resultado_busqueda)
 
     if not contexto:
         texto = (
@@ -174,14 +186,22 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "fuentes": fuentes,
         }
 
+    inventario_texto = ""
+    if inventarios:
+        inventario_texto = "\nInventarios detectados:\n" + json.dumps(inventarios, ensure_ascii=False, indent=2)
+
     prompt_usuario = (
         "Genera un informe con este formato EXACTO.\n"
         "1) TITULAR PRINCIPAL (1 línea)\n"
-        "2) RESUMEN EJECUTIVO (100 palabras exactas, empieza con: 'En esta entrega encontrarás...')\n"
-        "3) HALLAZGOS POR SECCIÓN (solo secciones con contenido, en este orden fijo):\n"
+        "2) RESUMEN EJECUTIVO (120-140 palabras, empieza con: 'En esta entrega encontrarás...')\n"
+        "3) TEMAS DOMINANTES (3-6 temas, cada uno con 2-3 líneas de contexto)\n"
+        "4) ACTORES DESTACADOS (3-6, cada uno con 2-3 frases y objetivo/rol)\n"
+        "5) HALLAZGOS POR SECCIÓN (solo secciones con contenido, en este orden fijo):\n"
         "   Nacional, Internacional, Política, Economía, DDHH, Energía, Seguridad, Otros\n"
-        "4) CIERRE (2-3 bullets máximos)\n"
-        "5) FUENTES (3 listas): Consultadas, Usadas, Descartadas\n\n"
+        "   - Cada hallazgo debe tener 2-3 frases y cerrar con 'Link de verificación: URL'.\n"
+        "6) INVENTARIO DE AUDITORÍA (si hay datos; si no, indica 'No disponible')\n"
+        "7) CIERRE (2-3 bullets máximos)\n"
+        "8) FUENTES (3 listas): Consultadas, Usadas, Descartadas\n\n"
         "Reglas estrictas:\n"
         "- Incluye SOLO hechos dentro del rango UTC exacto.\n"
         "- No uses Wikipedia ni fuentes no verificables.\n"
@@ -192,6 +212,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         f"Material base:\n{contexto}\n\n"
         "Fuentes consultadas base (no necesariamente usadas):\n"
         + ", ".join(fuentes.get("consultadas", []))
+        + inventario_texto
     )
 
     payload = {
