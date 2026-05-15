@@ -28,6 +28,20 @@ def _calcular_rango(ahora_utc: datetime, horas_atras: int | None) -> tuple[datet
     return inicio, ahora_utc, turno
 
 
+def _ajustar_filtros_fecha(inicio: datetime, fin: datetime) -> tuple[str, str]:
+    """
+    Evita after:YYYY-MM-DD before:YYYY-MM-DD con la misma fecha.
+    - Si inicio y fin caen el mismo día UTC, expande a 48h (día anterior + día siguiente).
+    - before siempre es exclusivo, por eso sumamos 1 día.
+    """
+    after_date = inicio.date()
+    before_date = fin.date()
+    if after_date == before_date:
+        after_date = after_date - timedelta(days=1)
+    before_date = before_date + timedelta(days=1)
+    return after_date.strftime("%Y-%m-%d"), before_date.strftime("%Y-%m-%d")
+
+
 def _correlativo(fecha_utc: datetime, turno: str) -> str:
     return f"{fecha_utc.strftime('%Y%m%d')}-{turno}-{fecha_utc.strftime('%H%M%S')}"
 
@@ -70,46 +84,87 @@ def _consulta_perplexity(prompt: str, timeout: int) -> dict[str, Any]:
         return {"success": False, "error": str(exc), "texto": ""}
 
 
+def _intentar_parsear_json(texto: str) -> dict[str, Any] | None:
+    if not texto:
+        return None
+    try:
+        return json.loads(texto)
+    except Exception:
+        return None
+
+
 def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
     ahora = _utc_now()
     inicio, fin, turno = _calcular_rango(ahora, horas_atras)
     correlativo = _correlativo(fin, turno)
 
-    after = inicio.strftime("%Y-%m-%d")
-    before = fin.strftime("%Y-%m-%d")
+    after, before = _ajustar_filtros_fecha(inicio, fin)
     timeout = int(os.getenv("PERPLEXITY_TIMEOUT", "30"))
 
     capas = {
-        "capa_1": "X/Twitter y fuentes espejo (incluyendo fallback de visibilidad).",
-        "capa_2": "Redes sociales indirectas y portales indexables.",
-        "capa_3": "Prensa regional y nacional de Venezuela.",
+        "capa_1": {
+            "descripcion": "X/Twitter y fuentes espejo (incluyendo fallback de visibilidad).",
+            "fuentes_consultadas": ["X/Twitter", "Fuentes espejo"],
+        },
+        "capa_2": {
+            "descripcion": "Redes sociales indirectas y portales indexables.",
+            "fuentes_consultadas": ["Redes sociales indirectas", "Portales indexables"],
+        },
+        "capa_3": {
+            "descripcion": "Prensa regional y nacional de Venezuela.",
+            "fuentes_consultadas": ["Prensa regional", "Prensa nacional"],
+        },
     }
 
     resultados: dict[str, Any] = {}
     errores: list[str] = []
 
-    for capa, descripcion in capas.items():
+    rango_inicio_iso = inicio.isoformat()
+    rango_fin_iso = fin.isoformat()
+
+    for capa, detalle in capas.items():
         prompt = (
-            "Monitorea eventos políticos relevantes de Venezuela. "
-            f"Capa: {descripcion} "
-            f"Usa filtro temporal seguro after:{after} before:{before}. "
-            "Devuelve hallazgos puntuales con fecha, actor, evento y fuente URL."
+            "Monitorea eventos políticos relevantes de Venezuela.\n"
+            f"Capa: {detalle['descripcion']}\n"
+            f"Rango UTC exacto: {rango_inicio_iso} a {rango_fin_iso}.\n"
+            f"Filtro seguro: after:{after} before:{before}.\n"
+            "Incluye SOLO eventos dentro del rango UTC exacto.\n"
+            "Devuelve JSON válido con esta forma exacta:\n"
+            "{\n"
+            "  \"hallazgos\": [\n"
+            "    {\"fecha_hora_utc\": \"ISO\", \"titulo\": \"...\", \"resumen_1_frase\": \"...\", "
+            "\"actor_principal\": \"...\", \"ubicacion\": \"...\", "
+            "\"categoria\": \"nacional|internacional|politica|economia|ddhh|energia|seguridad|otros\", "
+            "\"fuente_nombre\": \"...\", \"fuente_url\": \"https://...\"}\n"
+            "  ],\n"
+            "  \"fuentes_consultadas\": [\"...\"],\n"
+            "  \"notas\": \"...\"\n"
+            "}\n"
+            "Si no hay hallazgos, devuelve hallazgos:[] y explica en notas."
         )
         salida = _consulta_perplexity(prompt, timeout=timeout)
+        parsed = _intentar_parsear_json(salida.get("texto", ""))
+        salida["parsed"] = parsed
+        salida["fuentes_consultadas_base"] = detalle.get("fuentes_consultadas", [])
         resultados[capa] = salida
         if not salida.get("success"):
             errores.append(f"{capa}: {salida.get('error', 'Error desconocido')}")
+
+    fuentes_consultadas_base = sorted(
+        {fuente for detalle in capas.values() for fuente in detalle.get("fuentes_consultadas", [])}
+    )
 
     return {
         "success": len(errores) < len(capas),
         "turno": turno,
         "correlativo": correlativo,
-        "rango_inicio": inicio.isoformat(),
-        "rango_fin": fin.isoformat(),
+        "rango_inicio": rango_inicio_iso,
+        "rango_fin": rango_fin_iso,
         "after": after,
         "before": before,
         "resultados": resultados,
         "errores": errores,
+        "fuentes_consultadas_base": fuentes_consultadas_base,
     }
 
 
