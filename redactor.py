@@ -17,11 +17,11 @@ PROMPT_SISTEMA = (
 
 SECCIONES = [
     "Nacional",
-    "Internacional",
+    "Internacional / Geopolítica",
     "Política",
     "Economía",
+    "Energética / Hidrocarburos",
     "DDHH",
-    "Energía",
     "Seguridad",
     "Otros",
 ]
@@ -71,14 +71,17 @@ def _normalizar_categoria(cat: str | None) -> str:
     cat_norm = cat.strip().lower()
     mapping = {
         "nacional": "Nacional",
-        "internacional": "Internacional",
+        "internacional": "Internacional / Geopolítica",
+        "geopolitica": "Internacional / Geopolítica",
+        "geopolítica": "Internacional / Geopolítica",
         "politica": "Política",
         "política": "Política",
         "economia": "Economía",
         "economía": "Economía",
+        "energetica": "Energética / Hidrocarburos",
+        "energética": "Energética / Hidrocarburos",
+        "hidrocarburos": "Energética / Hidrocarburos",
         "ddhh": "DDHH",
-        "energia": "Energía",
-        "energía": "Energía",
         "seguridad": "Seguridad",
         "otros": "Otros",
     }
@@ -197,7 +200,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "3) TEMAS DOMINANTES (3-6 temas, cada uno con 2-3 líneas de contexto)\n"
         "4) ACTORES DESTACADOS (3-6, cada uno con 2-3 frases y objetivo/rol)\n"
         "5) HALLAZGOS POR SECCIÓN (solo secciones con contenido, en este orden fijo):\n"
-        "   Nacional, Internacional, Política, Economía, DDHH, Energía, Seguridad, Otros\n"
+        "   Nacional, Internacional / Geopolítica, Política, Economía, Energética / Hidrocarburos, DDHH, Seguridad, Otros\n"
         "   - Cada hallazgo debe tener 2-3 frases y cerrar con 'Link de verificación: URL'.\n"
         "6) INVENTARIO DE AUDITORÍA (si hay datos; si no, indica 'No disponible')\n"
         "7) CIERRE (2-3 bullets máximos)\n"
