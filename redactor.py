@@ -3,16 +3,28 @@ from __future__ import annotations
 import json
 import os
 from datetime import datetime
-from typing import Any
+from typing import Any, Dict, List
 
 import requests
 
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
 
 PROMPT_SISTEMA = (
-    "Redacta un informe político conciso, verificable y sin inventar datos. "
-    "Incluye solo hechos con fecha y referencia cuando aplique."
+    "Redacta un informe periodístico verificable, claro y estructurado. "
+    "No inventes datos. Si no hay evidencia suficiente, dilo explícitamente. "
+    "Sigue un formato fijo por secciones y usa estilo conciso."
 )
+
+SECCIONES = [
+    "Nacional",
+    "Internacional",
+    "Política",
+    "Economía",
+    "DDHH",
+    "Energía",
+    "Seguridad",
+    "Otros",
+]
 
 
 def _parse_datetime(valor: str) -> datetime | None:
@@ -33,11 +45,86 @@ def _extraer_texto_respuesta(data: dict[str, Any]) -> str:
     return ""
 
 
+def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any]]:
+    hallazgos: list[dict[str, Any]] = []
+    for capa_data in (resultado_busqueda.get("resultados") or {}).values():
+        parsed = (capa_data or {}).get("parsed") or {}
+        for item in parsed.get("hallazgos", []) or []:
+            if isinstance(item, dict):
+                hallazgos.append(item)
+    return hallazgos
+
+
+def _normalizar_categoria(cat: str | None) -> str:
+    if not cat:
+        return "Otros"
+    cat_norm = cat.strip().lower()
+    mapping = {
+        "nacional": "Nacional",
+        "internacional": "Internacional",
+        "politica": "Política",
+        "política": "Política",
+        "economia": "Economía",
+        "economía": "Economía",
+        "ddhh": "DDHH",
+        "energia": "Energía",
+        "energía": "Energía",
+        "seguridad": "Seguridad",
+        "otros": "Otros",
+    }
+    return mapping.get(cat_norm, "Otros")
+
+
+def _agrupar_por_seccion(hallazgos: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    agrupado = {s: [] for s in SECCIONES}
+    for item in hallazgos:
+        categoria = _normalizar_categoria(item.get("categoria"))
+        agrupado.setdefault(categoria, []).append(item)
+    return agrupado
+
+
 def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
+    hallazgos = _extraer_hallazgos(resultado_busqueda)
+    if not hallazgos:
+        return ""
+
+    por_seccion = _agrupar_por_seccion(hallazgos)
     partes: list[str] = []
-    for capa, contenido in (resultado_busqueda.get("resultados") or {}).items():
-        partes.append(f"## {capa}\n{(contenido or {}).get('texto', '').strip()}")
-    return "\n\n".join(partes).strip()
+    for seccion in SECCIONES:
+        items = por_seccion.get(seccion) or []
+        if not items:
+            continue
+        partes.append(f"## {seccion}")
+        for item in items:
+            partes.append(
+                f"- Fecha UTC: {item.get('fecha_hora_utc','')} | {item.get('titulo','')}\n"
+                f"  Resumen: {item.get('resumen_1_frase','')}\n"
+                f"  Actor: {item.get('actor_principal','')} | Ubicación: {item.get('ubicacion','')}\n"
+                f"  Fuente: {item.get('fuente_nombre','')} | {item.get('fuente_url','')}"
+            )
+    return "\n".join(partes).strip()
+
+
+def _fuentes_desde_resultados(resultado_busqueda: dict[str, Any]) -> dict[str, list[str]]:
+    fuentes_usadas: list[str] = []
+    fuentes_consultadas = list(resultado_busqueda.get("fuentes_consultadas_base") or [])
+
+    for capa_data in (resultado_busqueda.get("resultados") or {}).values():
+        parsed = (capa_data or {}).get("parsed") or {}
+        for item in parsed.get("hallazgos", []) or []:
+            url = (item or {}).get("fuente_url")
+            if url:
+                fuentes_usadas.append(url)
+
+    usadas_unicas = sorted({u for u in fuentes_usadas if u})
+    consultadas_unicas = sorted({c for c in fuentes_consultadas if c})
+
+    descartadas = sorted(set(consultadas_unicas) - set(usadas_unicas))
+    return {
+        "consultadas": consultadas_unicas,
+        "usadas": usadas_unicas,
+        "descartadas": descartadas,
+    }
 
 
 def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
@@ -51,23 +138,14 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
     rango_fin_iso = rango_fin.isoformat() if rango_fin else resultado_busqueda.get("rango_fin", "")
 
     contexto = _construir_contexto(resultado_busqueda)
-    if not contexto:
-        texto = "No se encontraron hallazgos con contenido textual en la búsqueda."
-        html = f"<h1>Informe CENTINELA PRO</h1><p>{texto}</p>"
-        return {
-            "success": True,
-            "informe_texto": texto,
-            "informe_html": html,
-            "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
-        }
+    fuentes = _fuentes_desde_resultados(resultado_busqueda)
 
-    api_key = os.getenv("MISTRAL_API_KEY", "").strip()
-    if not api_key:
+    if not contexto:
         texto = (
-            "# Informe CENTINELA PRO\n\n"
-            f"Rango analizado: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-            "No se configuró MISTRAL_API_KEY. Se entrega resumen base con resultados de búsqueda.\n\n"
-            f"{contexto}"
+            "# INFORME POLÍTICO: VENEZUELA\n"
+            f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
+            "No se encontraron hallazgos verificables dentro del rango.\n\n"
+            "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         )
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
         return {
@@ -75,12 +153,45 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "informe_texto": texto,
             "informe_html": html,
             "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "fuentes": fuentes,
+        }
+
+    api_key = os.getenv("MISTRAL_API_KEY", "").strip()
+    if not api_key:
+        texto = (
+            "# INFORME POLÍTICO: VENEZUELA\n"
+            f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
+            "No se configuró MISTRAL_API_KEY. Se entrega resumen base con resultados de búsqueda.\n\n"
+            f"{contexto}\n\n"
+            "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
+        )
+        html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
+        return {
+            "success": True,
+            "informe_texto": texto,
+            "informe_html": html,
+            "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "fuentes": fuentes,
         }
 
     prompt_usuario = (
-        "Genera un informe estructurado con titulares, hallazgos y cierre ejecutivo.\n"
-        f"Rango: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-        f"Material base:\n{contexto}"
+        "Genera un informe con este formato EXACTO.\n"
+        "1) TITULAR PRINCIPAL (1 línea)\n"
+        "2) RESUMEN EJECUTIVO (100 palabras exactas, empieza con: 'En esta entrega encontrarás...')\n"
+        "3) HALLAZGOS POR SECCIÓN (solo secciones con contenido, en este orden fijo):\n"
+        "   Nacional, Internacional, Política, Economía, DDHH, Energía, Seguridad, Otros\n"
+        "4) CIERRE (2-3 bullets máximos)\n"
+        "5) FUENTES (3 listas): Consultadas, Usadas, Descartadas\n\n"
+        "Reglas estrictas:\n"
+        "- Incluye SOLO hechos dentro del rango UTC exacto.\n"
+        "- No uses Wikipedia ni fuentes no verificables.\n"
+        "- Si una sección no tiene datos, omítela.\n"
+        "- No inventes datos.\n"
+        "- Estilo conciso y periodístico.\n\n"
+        f"Rango UTC: {rango_inicio_iso} a {rango_fin_iso}\n\n"
+        f"Material base:\n{contexto}\n\n"
+        "Fuentes consultadas base (no necesariamente usadas):\n"
+        + ", ".join(fuentes.get("consultadas", []))
     )
 
     payload = {
@@ -122,10 +233,11 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                 "rango_inicio": rango_inicio_iso,
                 "rango_fin": rango_fin_iso,
             },
+            "fuentes": fuentes,
         }
     except Exception as exc:  # pragma: no cover - manejo defensivo
         fallback = (
-            "# Informe CENTINELA PRO\n\n"
+            "# INFORME POLÍTICO: VENEZUELA\n"
             "No se pudo obtener respuesta del modelo. Se entrega compilación de hallazgos.\n\n"
             f"{contexto}"
         )
@@ -135,6 +247,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "informe_html": f"<h1>Informe CENTINELA PRO</h1><pre>{fallback}</pre>",
             "error": str(exc),
             "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "fuentes": fuentes,
         }
 
 
