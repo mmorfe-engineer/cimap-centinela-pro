@@ -23,6 +23,32 @@ def _resultado(success: bool, detalle: str = "") -> dict[str, Any]:
     return {"success": success, "detalle": detalle}
 
 
+def _github_pages_base_url() -> str:
+    base = os.getenv("GITHUB_PAGES_BASE_URL", "").strip()
+    return base.rstrip("/")
+
+
+def _extraer_resumen_ejecutivo(texto: str) -> str:
+    if not texto:
+        return ""
+    for linea in texto.splitlines():
+        if linea.strip().lower().startswith("en esta entrega encontrarás"):
+            return linea.strip()
+    return ""
+
+
+def _build_teaser(texto: str, correlativo: str) -> str:
+    resumen = _extraer_resumen_ejecutivo(texto)
+    base_url = _github_pages_base_url()
+    link = f"{base_url}/informes/{correlativo}.html" if base_url else ""
+    partes = [f"CENTINELA PRO | {correlativo}"]
+    if resumen:
+        partes.append(resumen)
+    if link:
+        partes.append(f"Ver informe completo: {link}")
+    return "\n\n".join(partes)
+
+
 def enviar_telegram(texto: str) -> dict[str, Any]:
     token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
@@ -178,14 +204,19 @@ def entregar_informe(informe: dict[str, Any], correlativo: str) -> dict[str, Any
     html_body = informe.get("informe_html", f"<pre>{html.escape(texto)}</pre>")
     asunto = f"CENTINELA PRO | {correlativo}"
 
+    teaser = _build_teaser(texto, correlativo)
+    telegram_texto = teaser or texto
+    discord_texto = teaser or texto
+    slack_texto = teaser or texto
+
     pdf_result = _generar_pdf_simple(correlativo, texto)
     pdf_path = pdf_result.get("path") if pdf_result.get("success") else None
 
     resultados = {
-        "telegram": enviar_telegram(texto),
+        "telegram": enviar_telegram(telegram_texto),
         "gmail": enviar_gmail(asunto, texto, html_body, pdf_path=pdf_path),
-        "discord": enviar_discord(texto),
-        "slack": enviar_slack(texto),
+        "discord": enviar_discord(discord_texto),
+        "slack": enviar_slack(slack_texto),
         "github_pages": publicar_en_github_pages(correlativo, html_body),
         "pdf": _resultado(bool(pdf_result.get("success")), pdf_result.get("detalle", "")),
     }
