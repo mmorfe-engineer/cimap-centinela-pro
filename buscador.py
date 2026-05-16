@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timedelta, timezone
 from typing import Any
+from urllib.parse import quote, urljoin
 
 import requests
 
@@ -98,6 +100,83 @@ def _cuentas_monitoreadas() -> list[str]:
     if not raw:
         return []
     return [item.strip() for item in raw.split(",") if item.strip()]
+
+
+def _archivado_habilitado() -> bool:
+    return os.getenv("ARCHIVE_URLS", "1").strip().lower() in {"1", "true", "yes", "si"}
+
+
+def _archive_limit() -> int:
+    raw = os.getenv("ARCHIVE_LIMIT", "12").strip()
+    return max(1, int(raw)) if raw.isdigit() else 12
+
+
+def _archivar_url(url: str, timeout: int) -> dict[str, str]:
+    resultados: dict[str, str] = {}
+    if not url:
+        return resultados
+
+    try:
+        response = requests.get(
+            f"https://web.archive.org/save/{quote(url, safe='')}",
+            timeout=timeout,
+            allow_redirects=True,
+        )
+        if response.status_code == 200:
+            resultados["wayback"] = response.url
+        else:
+            resultados["wayback_error"] = f"HTTP {response.status_code}"
+    except Exception as exc:  # pragma: no cover - defensivo
+        resultados["wayback_error"] = str(exc)
+
+    try:
+        response = requests.post(
+            "https://archive.today/submit/",
+            data={"url": url, "anyway": "1"},
+            timeout=timeout,
+            allow_redirects=False,
+            headers={"User-Agent": "Mozilla/5.0 (centinela archive bot)"},
+        )
+        if response.status_code in (301, 302, 303, 307, 308):
+            location = response.headers.get("Location")
+            if location:
+                resultados["archive_today"] = urljoin(response.url, location)
+        elif response.status_code == 200:
+            refresh = response.headers.get("Refresh", "")
+            match = re.search(r"\burl\s*=\s*(.+)", refresh, re.IGNORECASE)
+            if match:
+                resultados["archive_today"] = urljoin(response.url, match.group(1).strip().strip("\"'"))
+        if "archive_today" not in resultados and "archive_today_error" not in resultados:
+            resultados["archive_today_error"] = f"HTTP {response.status_code}"
+    except Exception as exc:  # pragma: no cover - defensivo
+        resultados["archive_today_error"] = str(exc)
+
+    return resultados
+
+
+def _archivar_hallazgos(parsed: dict[str, Any] | None) -> None:
+    if not parsed or not _archivado_habilitado():
+        return
+    hallazgos = parsed.get("hallazgos")
+    if not isinstance(hallazgos, list):
+        return
+
+    limite = _archive_limit()
+    timeout = int(os.getenv("ARCHIVE_TIMEOUT", "35"))
+    archivados = 0
+
+    for item in hallazgos:
+        if archivados >= limite:
+            break
+        if not isinstance(item, dict):
+            continue
+        url = item.get("fuente_url")
+        if not url or item.get("archivos"):
+            continue
+        archivos = _archivar_url(url, timeout=timeout)
+        item["archivos"] = archivos
+        item["archivo_timestamp_utc"] = _utc_now().isoformat()
+        archivados += 1
 
 
 def _anotar_capa(parsed: dict[str, Any] | None, capa: str, descripcion: str) -> None:
@@ -201,6 +280,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
         salida = _consulta_perplexity(prompt, timeout=timeout)
         parsed = _intentar_parsear_json(salida.get("texto", ""))
         _anotar_capa(parsed, capa, detalle.get("descripcion", ""))
+        _archivar_hallazgos(parsed)
         salida["parsed"] = parsed
         salida["fuentes_consultadas_base"] = detalle.get("fuentes_consultadas", [])
         resultados[capa] = salida
