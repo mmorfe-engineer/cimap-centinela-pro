@@ -62,6 +62,12 @@ def _dedupe_key(item: dict[str, Any]) -> tuple[str, str]:
     return (str(item.get("fuente_url", "")).strip(), str(item.get("titulo", "")).strip())
 
 
+def _fecha_sort_key(item: dict[str, Any]) -> datetime:
+    fecha = item.get("fecha_hora_utc")
+    parsed = _parse_datetime(fecha) if isinstance(fecha, str) else None
+    return parsed or datetime.min
+
+
 def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any]]:
     hallazgos: list[dict[str, Any]] = []
     minimo = _relevancia_minima()
@@ -74,11 +80,17 @@ def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any
                 continue
             if _relevancia_valor(item.get("relevancia")) < minimo:
                 continue
+            if not item.get("fuente_url"):
+                continue
+            if not item.get("titulo"):
+                continue
             key = _dedupe_key(item)
             if key in vistos:
                 continue
             vistos.add(key)
             hallazgos.append(item)
+
+    hallazgos.sort(key=lambda x: (_relevancia_valor(x.get("relevancia")), _fecha_sort_key(x)), reverse=True)
     return hallazgos
 
 
@@ -141,7 +153,8 @@ def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
                 f"  Resumen: {item.get('resumen_1_frase','')}\n"
                 f"  Actor: {item.get('actor_principal','')} | Ubicación: {item.get('ubicacion','')}\n"
                 f"  Relevancia: {item.get('relevancia','')} | Motivo: {item.get('relevancia_motivo','')}\n"
-                f"  Fuente: {item.get('fuente_nombre','')} | {item.get('fuente_url','')}"
+                f"  Fuente: {item.get('fuente_nombre','')} | {item.get('fuente_url','')}\n"
+                f"  Link de verificación: {item.get('fuente_url','')}"
             )
     return "\n".join(partes).strip()
 
@@ -239,7 +252,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "- No inventes datos.\n"
         "- Estilo conciso y periodístico.\n\n"
         f"Rango UTC: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-        f"Material base (ya filtrado por relevancia mínima):\n{contexto}\n\n"
+        f"Material base (ya filtrado por relevancia mínima y con link de verificación):\n{contexto}\n\n"
         "Fuentes consultadas base (no necesariamente usadas):\n"
         + ", ".join(fuentes.get("consultadas", []))
         + inventario_texto
