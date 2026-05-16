@@ -93,6 +93,13 @@ def _intentar_parsear_json(texto: str) -> dict[str, Any] | None:
         return None
 
 
+def _cuentas_monitoreadas() -> list[str]:
+    raw = os.getenv("MONITORED_ACCOUNTS", "").strip()
+    if not raw:
+        return []
+    return [item.strip() for item in raw.split(",") if item.strip()]
+
+
 def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
     ahora = _utc_now()
     inicio, fin, turno = _calcular_rango(ahora, horas_atras)
@@ -101,18 +108,51 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
     after, before = _ajustar_filtros_fecha(inicio, fin)
     timeout = int(os.getenv("PERPLEXITY_TIMEOUT", "30"))
 
+    cuentas_monitoreadas = _cuentas_monitoreadas()
+    inventario_instruccion = ""
+    if cuentas_monitoreadas:
+        inventario_instruccion = (
+            "Incluye además un bloque inventario_auditoria con este formato exacto:\n"
+            "{\n"
+            "  \"total_cuentas\": N,\n"
+            "  \"publico_directamente\": [\"@cuenta\", ...],\n"
+            "  \"mencionada_sin_publicar\": [\"@cuenta\", ...],\n"
+            "  \"sin_actividad\": [\"@cuenta\", ...],\n"
+            "  \"corte_vet\": \"YYYY-MM-DD HH:MM VET\"\n"
+            "}\n"
+            f"Lista base de cuentas: {', '.join(cuentas_monitoreadas)}\n"
+        )
+
     capas = {
         "capa_1": {
             "descripcion": "X/Twitter y fuentes espejo (incluyendo fallback de visibilidad).",
             "fuentes_consultadas": ["X/Twitter", "Fuentes espejo"],
+            "inventario": bool(cuentas_monitoreadas),
         },
         "capa_2": {
             "descripcion": "Redes sociales indirectas y portales indexables.",
             "fuentes_consultadas": ["Redes sociales indirectas", "Portales indexables"],
+            "inventario": False,
         },
         "capa_3": {
             "descripcion": "Prensa regional y nacional de Venezuela.",
             "fuentes_consultadas": ["Prensa regional", "Prensa nacional"],
+            "inventario": False,
+        },
+        "capa_4": {
+            "descripcion": "Cobertura internacional y geopolítica (medios regionales y globales).",
+            "fuentes_consultadas": ["Medios internacionales", "Geopolítica regional"],
+            "inventario": False,
+        },
+        "capa_5": {
+            "descripcion": "Energía e hidrocarburos (fuentes sectoriales y comunicados oficiales).",
+            "fuentes_consultadas": ["Sector energético", "Comunicados oficiales"],
+            "inventario": False,
+        },
+        "capa_6": {
+            "descripcion": "ONG, organismos multilaterales y boletines especializados.",
+            "fuentes_consultadas": ["ONG", "Organismos multilaterales", "Boletines especializados"],
+            "inventario": False,
         },
     }
 
@@ -134,14 +174,18 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
             "  \"hallazgos\": [\n"
             "    {\"fecha_hora_utc\": \"ISO\", \"titulo\": \"...\", \"resumen_1_frase\": \"...\", "
             "\"actor_principal\": \"...\", \"ubicacion\": \"...\", "
-            "\"categoria\": \"nacional|internacional|politica|economia|ddhh|energia|seguridad|otros\", "
+            "\"categoria\": \"nacional|internacional|geopolitica|politica|economia|ddhh|energia|hidrocarburos|seguridad|otros\", "
+            "\"relevancia\": \"alta|media|baja\", \"relevancia_motivo\": \"...\", "
             "\"fuente_nombre\": \"...\", \"fuente_url\": \"https://...\"}\n"
             "  ],\n"
             "  \"fuentes_consultadas\": [\"...\"],\n"
             "  \"notas\": \"...\"\n"
             "}\n"
-            "Si no hay hallazgos, devuelve hallazgos:[] y explica en notas."
+            "Si no hay hallazgos, devuelve hallazgos:[] y explica en notas.\n"
         )
+        if detalle.get("inventario"):
+            prompt += inventario_instruccion
+
         salida = _consulta_perplexity(prompt, timeout=timeout)
         parsed = _intentar_parsear_json(salida.get("texto", ""))
         salida["parsed"] = parsed
