@@ -37,6 +37,31 @@ CAPA_PESO = {
     "capa_6": 2,  # ONG/multilaterales
 }
 
+CATEGORIA_PESO = {
+    "Nacional": 3,
+    "Política": 3,
+    "Economía": 2,
+    "Internacional / Geopolítica": 2,
+    "Energética / Hidrocarburos": 2,
+    "DDHH": 2,
+    "Seguridad": 2,
+    "Otros": 1,
+}
+
+ACTOR_PESO = {
+    "gobierno": 3,
+    "presidencia": 3,
+    "maduro": 3,
+    "oposicion": 2,
+    "oposición": 2,
+    "asamblea": 2,
+    "tsj": 2,
+    "cne": 2,
+    "pdh": 2,
+    "petróleo": 2,
+    "petroleo": 2,
+}
+
 
 def _parse_datetime(valor: str) -> datetime | None:
     if not valor:
@@ -67,10 +92,31 @@ def _relevancia_minima() -> int:
     return RELEVANCIA_ORDEN.get(minimo, 2)
 
 
+def _min_por_seccion() -> int:
+    raw = os.getenv("MIN_HALLAZGOS_SECCION", "1").strip()
+    return max(1, int(raw)) if raw.isdigit() else 1
+
+
 def _capa_peso(capa: str | None) -> int:
     if not capa:
         return 0
     return CAPA_PESO.get(str(capa).strip().lower(), 1)
+
+
+def _actor_peso(actor: str | None) -> int:
+    if not actor:
+        return 0
+    actor_norm = actor.strip().lower()
+    for clave, peso in ACTOR_PESO.items():
+        if clave in actor_norm:
+            return peso
+    return 0
+
+
+def _categoria_peso(categoria: str | None) -> int:
+    if not categoria:
+        return 0
+    return CATEGORIA_PESO.get(_normalizar_categoria(categoria), 1)
 
 
 def _dedupe_key(item: dict[str, Any]) -> tuple[str, str]:
@@ -109,6 +155,8 @@ def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any
         key=lambda x: (
             _relevancia_valor(x.get("relevancia")),
             _capa_peso(x.get("capa")),
+            _categoria_peso(x.get("categoria")),
+            _actor_peso(x.get("actor_principal")),
             _fecha_sort_key(x),
         ),
         reverse=True,
@@ -162,11 +210,12 @@ def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
     if not hallazgos:
         return ""
 
+    min_por_seccion = _min_por_seccion()
     por_seccion = _agrupar_por_seccion(hallazgos)
     partes: list[str] = []
     for seccion in SECCIONES:
         items = por_seccion.get(seccion) or []
-        if not items:
+        if len(items) < min_por_seccion:
             continue
         partes.append(f"## {seccion}")
         for item in items:
@@ -222,7 +271,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         texto = (
             "# INFORME POLÍTICO: VENEZUELA\n"
             f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
-            "No se encontraron hallazgos verificables dentro del rango y la relevancia mínima configurada.\n\n"
+            "No se encontraron hallazgos verificables dentro del rango y los umbrales configurados.\n\n"
             "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         )
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
@@ -275,7 +324,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "- No inventes datos.\n"
         "- Estilo conciso y periodístico.\n\n"
         f"Rango UTC: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-        f"Material base (ya filtrado por relevancia mínima, capa y link de verificación):\n{contexto}\n\n"
+        f"Material base (ordenado por relevancia, capa, categoría y actor):\n{contexto}\n\n"
         "Fuentes consultadas base (no necesariamente usadas):\n"
         + ", ".join(fuentes.get("consultadas", []))
         + inventario_texto
