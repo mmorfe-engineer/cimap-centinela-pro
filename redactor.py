@@ -28,6 +28,15 @@ SECCIONES = [
 
 RELEVANCIA_ORDEN = {"baja": 1, "media": 2, "alta": 3}
 
+CAPA_PESO = {
+    "capa_1": 3,  # redes directas
+    "capa_2": 2,  # redes indirectas
+    "capa_3": 2,  # prensa nacional/regional
+    "capa_4": 2,  # internacional/geopolítica
+    "capa_5": 2,  # energía/hidrocarburos
+    "capa_6": 2,  # ONG/multilaterales
+}
+
 
 def _parse_datetime(valor: str) -> datetime | None:
     if not valor:
@@ -56,6 +65,12 @@ def _relevancia_valor(valor: str | None) -> int:
 def _relevancia_minima() -> int:
     minimo = os.getenv("RELEVANCIA_MINIMA", "media").strip().lower()
     return RELEVANCIA_ORDEN.get(minimo, 2)
+
+
+def _capa_peso(capa: str | None) -> int:
+    if not capa:
+        return 0
+    return CAPA_PESO.get(str(capa).strip().lower(), 1)
 
 
 def _dedupe_key(item: dict[str, Any]) -> tuple[str, str]:
@@ -90,7 +105,14 @@ def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any
             vistos.add(key)
             hallazgos.append(item)
 
-    hallazgos.sort(key=lambda x: (_relevancia_valor(x.get("relevancia")), _fecha_sort_key(x)), reverse=True)
+    hallazgos.sort(
+        key=lambda x: (
+            _relevancia_valor(x.get("relevancia")),
+            _capa_peso(x.get("capa")),
+            _fecha_sort_key(x),
+        ),
+        reverse=True,
+    )
     return hallazgos
 
 
@@ -154,6 +176,7 @@ def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
                 f"  Actor: {item.get('actor_principal','')} | Ubicación: {item.get('ubicacion','')}\n"
                 f"  Relevancia: {item.get('relevancia','')} | Motivo: {item.get('relevancia_motivo','')}\n"
                 f"  Fuente: {item.get('fuente_nombre','')} | {item.get('fuente_url','')}\n"
+                f"  Capa: {item.get('capa','')} | {item.get('capa_descripcion','')}\n"
                 f"  Link de verificación: {item.get('fuente_url','')}"
             )
     return "\n".join(partes).strip()
@@ -252,7 +275,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "- No inventes datos.\n"
         "- Estilo conciso y periodístico.\n\n"
         f"Rango UTC: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-        f"Material base (ya filtrado por relevancia mínima y con link de verificación):\n{contexto}\n\n"
+        f"Material base (ya filtrado por relevancia mínima, capa y link de verificación):\n{contexto}\n\n"
         "Fuentes consultadas base (no necesariamente usadas):\n"
         + ", ".join(fuentes.get("consultadas", []))
         + inventario_texto
