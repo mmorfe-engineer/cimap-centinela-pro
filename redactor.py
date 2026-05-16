@@ -28,7 +28,27 @@ SECCIONES = [
 
 RELEVANCIA_ORDEN = {"baja": 1, "media": 2, "alta": 3}
 
-CAPA_PESO = {
+
+def _merge_pesos(base: dict[str, int], env_name: str, lower_keys: bool = False) -> dict[str, int]:
+    raw = os.getenv(env_name, "").strip()
+    if not raw:
+        return base
+    try:
+        data = json.loads(raw)
+    except Exception:
+        return base
+    if not isinstance(data, dict):
+        return base
+    merged = dict(base)
+    for key, value in data.items():
+        if not isinstance(value, (int, float)):
+            continue
+        norm_key = str(key).lower() if lower_keys else str(key)
+        merged[norm_key] = int(value)
+    return merged
+
+
+_CAPA_PESO_BASE = {
     "capa_1": 3,  # redes directas
     "capa_2": 2,  # redes indirectas
     "capa_3": 2,  # prensa nacional/regional
@@ -37,7 +57,7 @@ CAPA_PESO = {
     "capa_6": 2,  # ONG/multilaterales
 }
 
-CATEGORIA_PESO = {
+_CATEGORIA_PESO_BASE = {
     "Nacional": 3,
     "Política": 3,
     "Economía": 2,
@@ -48,7 +68,7 @@ CATEGORIA_PESO = {
     "Otros": 1,
 }
 
-ACTOR_PESO = {
+_ACTOR_PESO_BASE = {
     "gobierno": 3,
     "presidencia": 3,
     "maduro": 3,
@@ -61,6 +81,10 @@ ACTOR_PESO = {
     "petróleo": 2,
     "petroleo": 2,
 }
+
+CAPA_PESO = _merge_pesos(_CAPA_PESO_BASE, "CAPA_PESO_JSON", lower_keys=True)
+CATEGORIA_PESO = _merge_pesos(_CATEGORIA_PESO_BASE, "CATEGORIA_PESO_JSON")
+ACTOR_PESO = _merge_pesos(_ACTOR_PESO_BASE, "ACTOR_PESO_JSON", lower_keys=True)
 
 
 def _parse_datetime(valor: str) -> datetime | None:
@@ -205,6 +229,16 @@ def _agrupar_por_seccion(hallazgos: list[dict[str, Any]]) -> dict[str, list[dict
     return agrupado
 
 
+def _secciones_omitidas(hallazgos: list[dict[str, Any]], min_por_seccion: int) -> list[dict[str, Any]]:
+    por_seccion = _agrupar_por_seccion(hallazgos)
+    omitidas: list[dict[str, Any]] = []
+    for seccion in SECCIONES:
+        items = por_seccion.get(seccion) or []
+        if 0 < len(items) < min_por_seccion:
+            omitidas.append({"seccion": seccion, "hallazgos": len(items)})
+    return omitidas
+
+
 def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
     hallazgos = _extraer_hallazgos(resultado_busqueda)
     if not hallazgos:
@@ -263,6 +297,9 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
     rango_inicio_iso = rango_inicio.isoformat() if rango_inicio else resultado_busqueda.get("rango_inicio", "")
     rango_fin_iso = rango_fin.isoformat() if rango_fin else resultado_busqueda.get("rango_fin", "")
 
+    hallazgos = _extraer_hallazgos(resultado_busqueda)
+    min_por_seccion = _min_por_seccion()
+    omitidas = _secciones_omitidas(hallazgos, min_por_seccion)
     contexto = _construir_contexto(resultado_busqueda)
     fuentes = _fuentes_desde_resultados(resultado_busqueda)
     inventarios = _extraer_inventarios(resultado_busqueda)
@@ -272,14 +309,31 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "# INFORME POLÍTICO: VENEZUELA\n"
             f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
             "No se encontraron hallazgos verificables dentro del rango y los umbrales configurados.\n\n"
-            "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         )
+        if omitidas:
+            texto += "Secciones omitidas por bajo volumen: " + ", ".join(
+                f"{o['seccion']} ({o['hallazgos']})" for o in omitidas
+            )
+            texto += "\n\n"
+        texto += "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
         return {
             "success": True,
             "informe_texto": texto,
             "informe_html": html,
-            "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "metadata": {
+                "modelo": modelo,
+                "tokens": max_tokens,
+                "rango_inicio": rango_inicio_iso,
+                "rango_fin": rango_fin_iso,
+                "min_hallazgos_seccion": min_por_seccion,
+                "secciones_omitidas": omitidas,
+                "pesos": {
+                    "capa": CAPA_PESO,
+                    "categoria": CATEGORIA_PESO,
+                    "actor": ACTOR_PESO,
+                },
+            },
             "fuentes": fuentes,
         }
 
@@ -290,20 +344,43 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
             "No se configuró MISTRAL_API_KEY. Se entrega resumen base con resultados de búsqueda.\n\n"
             f"{contexto}\n\n"
-            "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         )
+        if omitidas:
+            texto += "Secciones omitidas por bajo volumen: " + ", ".join(
+                f"{o['seccion']} ({o['hallazgos']})" for o in omitidas
+            )
+            texto += "\n\n"
+        texto += "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
         return {
             "success": True,
             "informe_texto": texto,
             "informe_html": html,
-            "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "metadata": {
+                "modelo": modelo,
+                "tokens": max_tokens,
+                "rango_inicio": rango_inicio_iso,
+                "rango_fin": rango_fin_iso,
+                "min_hallazgos_seccion": min_por_seccion,
+                "secciones_omitidas": omitidas,
+                "pesos": {
+                    "capa": CAPA_PESO,
+                    "categoria": CATEGORIA_PESO,
+                    "actor": ACTOR_PESO,
+                },
+            },
             "fuentes": fuentes,
         }
 
     inventario_texto = ""
     if inventarios:
         inventario_texto = "\nInventarios detectados:\n" + json.dumps(inventarios, ensure_ascii=False, indent=2)
+
+    omitidas_texto = ""
+    if omitidas:
+        omitidas_texto = "\nSecciones omitidas por bajo volumen:\n" + "\n".join(
+            f"- {o['seccion']}: {o['hallazgos']} hallazgos" for o in omitidas
+        )
 
     prompt_usuario = (
         "Genera un informe con este formato EXACTO.\n"
@@ -325,7 +402,8 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "- Estilo conciso y periodístico.\n\n"
         f"Rango UTC: {rango_inicio_iso} a {rango_fin_iso}\n\n"
         f"Material base (ordenado por relevancia, capa, categoría y actor):\n{contexto}\n\n"
-        "Fuentes consultadas base (no necesariamente usadas):\n"
+        + omitidas_texto
+        + "\n\nFuentes consultadas base (no necesariamente usadas):\n"
         + ", ".join(fuentes.get("consultadas", []))
         + inventario_texto
     )
@@ -368,6 +446,13 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                 "tokens_usados": tokens_usados,
                 "rango_inicio": rango_inicio_iso,
                 "rango_fin": rango_fin_iso,
+                "min_hallazgos_seccion": min_por_seccion,
+                "secciones_omitidas": omitidas,
+                "pesos": {
+                    "capa": CAPA_PESO,
+                    "categoria": CATEGORIA_PESO,
+                    "actor": ACTOR_PESO,
+                },
             },
             "fuentes": fuentes,
         }
@@ -382,7 +467,19 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             "informe_texto": fallback,
             "informe_html": f"<h1>Informe CENTINELA PRO</h1><pre>{fallback}</pre>",
             "error": str(exc),
-            "metadata": {"modelo": modelo, "tokens": max_tokens, "rango_inicio": rango_inicio_iso, "rango_fin": rango_fin_iso},
+            "metadata": {
+                "modelo": modelo,
+                "tokens": max_tokens,
+                "rango_inicio": rango_inicio_iso,
+                "rango_fin": rango_fin_iso,
+                "min_hallazgos_seccion": min_por_seccion,
+                "secciones_omitidas": omitidas,
+                "pesos": {
+                    "capa": CAPA_PESO,
+                    "categoria": CATEGORIA_PESO,
+                    "actor": ACTOR_PESO,
+                },
+            },
             "fuentes": fuentes,
         }
 
