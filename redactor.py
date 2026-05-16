@@ -26,6 +26,8 @@ SECCIONES = [
     "Otros",
 ]
 
+RELEVANCIA_ORDEN = {"baja": 1, "media": 2, "alta": 3}
+
 
 def _parse_datetime(valor: str) -> datetime | None:
     if not valor:
@@ -45,13 +47,38 @@ def _extraer_texto_respuesta(data: dict[str, Any]) -> str:
     return ""
 
 
+def _relevancia_valor(valor: str | None) -> int:
+    if not valor:
+        return 0
+    return RELEVANCIA_ORDEN.get(valor.strip().lower(), 0)
+
+
+def _relevancia_minima() -> int:
+    minimo = os.getenv("RELEVANCIA_MINIMA", "media").strip().lower()
+    return RELEVANCIA_ORDEN.get(minimo, 2)
+
+
+def _dedupe_key(item: dict[str, Any]) -> tuple[str, str]:
+    return (str(item.get("fuente_url", "")).strip(), str(item.get("titulo", "")).strip())
+
+
 def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any]]:
     hallazgos: list[dict[str, Any]] = []
+    minimo = _relevancia_minima()
+    vistos: set[tuple[str, str]] = set()
+
     for capa_data in (resultado_busqueda.get("resultados") or {}).values():
         parsed = (capa_data or {}).get("parsed") or {}
         for item in parsed.get("hallazgos", []) or []:
-            if isinstance(item, dict):
-                hallazgos.append(item)
+            if not isinstance(item, dict):
+                continue
+            if _relevancia_valor(item.get("relevancia")) < minimo:
+                continue
+            key = _dedupe_key(item)
+            if key in vistos:
+                continue
+            vistos.add(key)
+            hallazgos.append(item)
     return hallazgos
 
 
@@ -159,7 +186,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         texto = (
             "# INFORME POLÍTICO: VENEZUELA\n"
             f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
-            "No se encontraron hallazgos verificables dentro del rango.\n\n"
+            "No se encontraron hallazgos verificables dentro del rango y la relevancia mínima configurada.\n\n"
             "Fuentes consultadas: " + ", ".join(fuentes.get("consultadas", []))
         )
         html = f"<h1>Informe CENTINELA PRO</h1><pre>{texto}</pre>"
@@ -212,7 +239,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "- No inventes datos.\n"
         "- Estilo conciso y periodístico.\n\n"
         f"Rango UTC: {rango_inicio_iso} a {rango_fin_iso}\n\n"
-        f"Material base:\n{contexto}\n\n"
+        f"Material base (ya filtrado por relevancia mínima):\n{contexto}\n\n"
         "Fuentes consultadas base (no necesariamente usadas):\n"
         + ", ".join(fuentes.get("consultadas", []))
         + inventario_texto
