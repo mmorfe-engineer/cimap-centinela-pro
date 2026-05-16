@@ -100,6 +100,18 @@ def _cuentas_monitoreadas() -> list[str]:
     return [item.strip() for item in raw.split(",") if item.strip()]
 
 
+def _anotar_capa(parsed: dict[str, Any] | None, capa: str, descripcion: str) -> None:
+    if not parsed:
+        return
+    hallazgos = parsed.get("hallazgos")
+    if not isinstance(hallazgos, list):
+        return
+    for item in hallazgos:
+        if isinstance(item, dict):
+            item.setdefault("capa", capa)
+            item.setdefault("capa_descripcion", descripcion)
+
+
 def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
     ahora = _utc_now()
     inicio, fin, turno = _calcular_rango(ahora, horas_atras)
@@ -188,6 +200,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
 
         salida = _consulta_perplexity(prompt, timeout=timeout)
         parsed = _intentar_parsear_json(salida.get("texto", ""))
+        _anotar_capa(parsed, capa, detalle.get("descripcion", ""))
         salida["parsed"] = parsed
         salida["fuentes_consultadas_base"] = detalle.get("fuentes_consultadas", [])
         resultados[capa] = salida
