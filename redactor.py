@@ -239,6 +239,35 @@ def _secciones_omitidas(hallazgos: list[dict[str, Any]], min_por_seccion: int) -
     return omitidas
 
 
+def _resumen_verificacion(hallazgos: list[dict[str, Any]]) -> dict[str, Any]:
+    total = len(hallazgos)
+    con_url = sum(1 for h in hallazgos if h.get("fuente_url"))
+    con_archivo = sum(1 for h in hallazgos if h.get("archivos"))
+    sin_archivo = max(0, con_url - con_archivo)
+    return {
+        "total_hallazgos": total,
+        "con_fuente_url": con_url,
+        "con_archivo": con_archivo,
+        "sin_archivo": sin_archivo,
+        "metodo": "SIFT",
+    }
+
+
+def _texto_sift(resumen: dict[str, Any]) -> str:
+    return (
+        "VERIFICACIÓN (SIFT)\n"
+        "- Stop: se filtraron hallazgos con fuente y rango UTC.\n"
+        "- Investigate: se registró fuente_nombre y actor principal.\n"
+        "- Find better coverage: se contrastó por capas y fuentes consultadas.\n"
+        "- Trace claims: se exige URL verificable y (si disponible) archivo.\n\n"
+        "TRAZABILIDAD\n"
+        f"- Hallazgos totales: {resumen.get('total_hallazgos', 0)}\n"
+        f"- Con fuente_url: {resumen.get('con_fuente_url', 0)}\n"
+        f"- Con archivo (Wayback/Archive.today): {resumen.get('con_archivo', 0)}\n"
+        f"- Sin archivo disponible: {resumen.get('sin_archivo', 0)}\n"
+    )
+
+
 def _construir_contexto(resultado_busqueda: dict[str, Any]) -> str:
     hallazgos = _extraer_hallazgos(resultado_busqueda)
     if not hallazgos:
@@ -298,17 +327,20 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
     rango_fin_iso = rango_fin.isoformat() if rango_fin else resultado_busqueda.get("rango_fin", "")
 
     hallazgos = _extraer_hallazgos(resultado_busqueda)
+    resumen_verificacion = _resumen_verificacion(hallazgos)
     min_por_seccion = _min_por_seccion()
     omitidas = _secciones_omitidas(hallazgos, min_por_seccion)
     contexto = _construir_contexto(resultado_busqueda)
     fuentes = _fuentes_desde_resultados(resultado_busqueda)
     inventarios = _extraer_inventarios(resultado_busqueda)
+    sift_texto = _texto_sift(resumen_verificacion)
 
     if not contexto:
         texto = (
             "# INFORME POLÍTICO: VENEZUELA\n"
             f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
             "No se encontraron hallazgos verificables dentro del rango y los umbrales configurados.\n\n"
+            + sift_texto
         )
         if omitidas:
             texto += "Secciones omitidas por bajo volumen: " + ", ".join(
@@ -333,6 +365,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "categoria": CATEGORIA_PESO,
                     "actor": ACTOR_PESO,
                 },
+                "verificacion": resumen_verificacion,
             },
             "fuentes": fuentes,
         }
@@ -344,6 +377,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
             f"Rango analizado (UTC): {rango_inicio_iso} a {rango_fin_iso}\n\n"
             "No se configuró MISTRAL_API_KEY. Se entrega resumen base con resultados de búsqueda.\n\n"
             f"{contexto}\n\n"
+            + sift_texto
         )
         if omitidas:
             texto += "Secciones omitidas por bajo volumen: " + ", ".join(
@@ -368,6 +402,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "categoria": CATEGORIA_PESO,
                     "actor": ACTOR_PESO,
                 },
+                "verificacion": resumen_verificacion,
             },
             "fuentes": fuentes,
         }
@@ -392,8 +427,11 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         "   Nacional, Internacional / Geopolítica, Política, Economía, Energética / Hidrocarburos, DDHH, Seguridad, Otros\n"
         "   - Cada hallazgo debe tener 2-3 frases y cerrar con 'Link de verificación: URL'.\n"
         "6) INVENTARIO DE AUDITORÍA (si hay datos; si no, indica 'No disponible')\n"
-        "7) CIERRE (2-3 bullets máximos)\n"
-        "8) FUENTES (3 listas): Consultadas, Usadas, Descartadas\n\n"
+        "7) VERIFICACIÓN (SIFT) + TRAZABILIDAD (obligatorio)\n"
+        "   - Incluir 4 bullets SIFT (Stop/Investigate/Find/Trace).\n"
+        "   - Reportar conteo de hallazgos con URL y con archivo.\n"
+        "8) CIERRE (2-3 bullets máximos)\n"
+        "9) FUENTES (3 listas): Consultadas, Usadas, Descartadas\n\n"
         "Reglas estrictas:\n"
         "- Incluye SOLO hechos dentro del rango UTC exacto.\n"
         "- No uses Wikipedia ni fuentes no verificables.\n"
@@ -453,6 +491,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "categoria": CATEGORIA_PESO,
                     "actor": ACTOR_PESO,
                 },
+                "verificacion": resumen_verificacion,
             },
             "fuentes": fuentes,
         }
@@ -460,7 +499,8 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
         fallback = (
             "# INFORME POLÍTICO: VENEZUELA\n"
             "No se pudo obtener respuesta del modelo. Se entrega compilación de hallazgos.\n\n"
-            f"{contexto}"
+            f"{contexto}\n\n"
+            + sift_texto
         )
         return {
             "success": False,
@@ -479,6 +519,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "categoria": CATEGORIA_PESO,
                     "actor": ACTOR_PESO,
                 },
+                "verificacion": resumen_verificacion,
             },
             "fuentes": fuentes,
         }
