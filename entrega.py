@@ -24,7 +24,7 @@ def _resultado(success: bool, detalle: str = "") -> dict[str, Any]:
 
 
 def _github_pages_base_url() -> str:
-    base = os.getenv("GITHUB_PAGES_BASE_URL", "").strip()
+    base = os.getenv("PAGES_BASE_URL", "").strip()
     return base.rstrip("/")
 
 
