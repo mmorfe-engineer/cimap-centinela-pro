@@ -1,0 +1,1233 @@
+{
+  "config_name": "monitor_noticias_multicapa_ve_v1",
+  "version": "1.1.0",
+  "language": "es",
+  "country_focus": "Venezuela",
+  "timezone": "America/Caracas",
+  "scan_policy": {
+    "default_time_window_hours": 24,
+    "fallback_time_window_hours": 72,
+    "scan_frequency_recommended": {
+      "breaking_scan_minutes": 30,
+      "standard_scan_hours": 3,
+      "deep_scan_hours": 12
+    },
+    "deduplication": {
+      "keys": [
+        "canonical_url",
+        "title_normalized",
+        "source"
+      ],
+      "cross_layer_merge": true
+    },
+    "ranking_weights": {
+      "official_source": 5,
+      "venezuela_mention": 3,
+      "front_page": 4,
+      "breaking_label": 4,
+      "recency": 4,
+      "data_reference": 3,
+      "regional_relevance": 3,
+      "analysis_depth": 2,
+      "cross_source_confirmation": 4,
+      "decision_impact": 5,
+      "political_sensitivity": 4,
+      "urgency": 5,
+      "international_positioning_value": 4
+    },
+    "freshness_policy": {
+      "require_visible_publication_date": true,
+      "allow_undated_source_only_if_official_homepage": true,
+      "mark_updated_articles": true,
+      "separate_published_at_from_modified_at": true,
+      "exclude_if_older_than_window_unless_structural_analysis": true,
+      "structural_analysis_max_age_days": 30,
+      "fallback_label_for_old_but_relevant_content": "contexto_estructural_no_noticia"
+    },
+    "ranking_model": {
+      "phase_1_eligibility_score": {
+        "direct_venezuela_impact": 5,
+        "official_or_primary_source": 4,
+        "time_relevance": 4,
+        "strategic_domain": 3,
+        "credible_source": 3,
+        "cross_source_presence": 3
+      },
+      "phase_2_priority_score": {
+        "decision_impact": 5,
+        "urgency": 5,
+        "political_sensitivity": 4,
+        "economic_or_energy_impact": 4,
+        "security_risk": 4,
+        "international_positioning_value": 4,
+        "cross_source_confirmation": 3,
+        "novelty": 3
+      },
+      "ranking_note": "La prioridad final debe surgir del impacto decisional y estratégico, no solo de menciones a Venezuela o recencia."
+    }
+  },
+  "global_entities": {
+    "venezuela_core": [
+      "Venezuela",
+      "Delcy Rodríguez",
+      "Nicolás Maduro",
+      "Asamblea Nacional",
+      "Jorge Rodríguez",
+      "Diosdado Cabello",
+      "PDVSA",
+      "Banco Central de Venezuela",
+      "BCV",
+      "TSJ",
+      "CNE",
+      "Vicepresidencia de Venezuela",
+      "Ministerio de Petróleo",
+      "oposición venezolana",
+      "María Corina Machado",
+      "Edmundo González"
+    ],
+    "energy_core": [
+      "PDVSA",
+      "OPEP",
+      "OPEC",
+      "IEA",
+      "EIA",
+      "Chevron",
+      "Repsol",
+      "ENI",
+      "Brent",
+      "WTI",
+      "gas natural",
+      "producción petrolera",
+      "exportaciones",
+      "sanciones"
+    ],
+    "macro_core": [
+      "inflación",
+      "PIB",
+      "tipo de cambio",
+      "reservas",
+      "riesgo país",
+      "deuda",
+      "mercados",
+      "bonos",
+      "commodities",
+      "crecimiento",
+      "previsiones"
+    ],
+    "security_core": [
+      "conflicto",
+      "defensa",
+      "inteligencia",
+      "contrainteligencia",
+      "crimen organizado",
+      "terrorismo",
+      "migración",
+      "frontera",
+      "sanciones",
+      "seguridad regional"
+    ]
+  },
+  "global_editorial_rules": {
+    "always_prioritize": [
+      "noticias sobre Venezuela",
+      "anuncios oficiales",
+      "oposición venezolana",
+      "Asamblea Nacional",
+      "PDVSA y energía",
+      "sanciones",
+      "mercados, petróleo y macroeconomía",
+      "portadas del día",
+      "boletines y reportes institucionales"
+    ],
+    "hard_filters": {
+      "exclude_ads": true,
+      "exclude_sponsored": true,
+      "exclude_duplicate_liveblogs": true,
+      "exclude_weapon_sales": true,
+      "exclude_product_catalogs": true,
+      "exclude_irrelevant_opinion": true,
+      "exclude_unverified_social_claims_as_primary": true
+    },
+    "social_content_policy": {
+      "social_as_early_signal_only": true,
+      "must_validate_with_secondary_source": true,
+      "classification": [
+        "SA0_descartado",
+        "SA1_senal_no_verificada",
+        "SA2_alerta_en_observacion",
+        "SA3_alerta_verosimil",
+        "SA4_confirmado"
+      ],
+      "do_not_discard_by_default": true,
+      "warning_label_required": true,
+      "allow_in_alert_section_with_warning": true
+    },
+    "selection_limits": {
+      "top_priority_per_layer": 5,
+      "secondary_per_layer": 5,
+      "max_total_per_layer": 12
+    },
+    "always_capture_not_automatically_prioritize": [
+      "declaraciones de Delcy Rodríguez y Ejecutivo Nacional",
+      "comunicados oficiales del Ejecutivo Nacional",
+      "decisiones de Asamblea Nacional, TSJ, CNE, BCV y PDVSA"
+    ],
+    "official_statement_policy": {
+      "rule": "Toda declaración del Ejecutivo Nacional debe ser capturada obligatoriamente, clasificada según impacto político, económico, diplomático o comunicacional, y comparada con otras fuentes relevantes antes de definir su jerarquía final.",
+      "never_promote_only_because_official": true,
+      "priority_depends_on": [
+        "impacto_decisional",
+        "urgencia",
+        "sensibilidad_politica",
+        "impacto_economico_energetico",
+        "reaccion_internacional",
+        "confirmacion_o_contraste"
+      ]
+    },
+    "source_classification_required": true,
+    "source_classification_schema": {
+      "source_type": "official|state_media|independent_media|opposition_actor|multilateral|ngo|think_tank|academic|market_data|social_signal|telegram_signal|osint|opinion|aggregator",
+      "source_bias_risk": "low|medium|high",
+      "verification_status": "unverified|single_source|cross_checked|officially_confirmed|contradicted",
+      "primary_or_secondary": "primary|secondary",
+      "source_role": "hecho|contexto|analisis|senal_temprana|opinion|dato"
+    },
+    "social_alert_policy": {
+      "do_not_discard_by_default": true,
+      "purpose": "preservar señales tempranas sin presentarlas como hechos confirmados",
+      "levels": {
+        "SA0_descartado": {
+          "definition": "contenido irrelevante, spam, propaganda sin dato verificable, duplicado o fuera de ventana temporal",
+          "brief_visibility": "no incluir",
+          "warning_label": "No incluido: señal irrelevante o no utilizable."
+        },
+        "SA1_senal_no_verificada": {
+          "definition": "mención aislada o claim sin respaldo independiente suficiente",
+          "brief_visibility": "solo bitácora interna o anexo de alertas",
+          "warning_label": "Advertencia: señal no verificada; no tratar como hecho."
+        },
+        "SA2_alerta_en_observacion": {
+          "definition": "señal repetida en varias cuentas/canales o con evidencia parcial, pero sin confirmación primaria",
+          "brief_visibility": "sección de alertas tempranas con advertencia",
+          "warning_label": "Advertencia: alerta en observación; requiere validación adicional."
+        },
+        "SA3_alerta_verosimil": {
+          "definition": "señal coherente con evidencia OSINT, fuente recurrente o cobertura secundaria confiable",
+          "brief_visibility": "sección de alertas tempranas y, si tiene alto impacto, mención breve en senales_clave",
+          "warning_label": "Advertencia: señal verosímil, aún no confirmada oficialmente."
+        },
+        "SA4_confirmado": {
+          "definition": "confirmado por fuente oficial, fuente primaria verificable o múltiples fuentes confiables independientes",
+          "brief_visibility": "puede entrar al cuerpo principal del reporte",
+          "warning_label": "Confirmado: validado por fuente primaria o contraste suficiente."
+        }
+      },
+      "minimum_fields": [
+        "claim",
+        "source_or_channel",
+        "timestamp",
+        "evidence_link_or_description",
+        "alert_level",
+        "warning_label",
+        "validation_needed",
+        "potential_impact"
+      ],
+      "publish_rule": "Las señales SA1-SA3 nunca deben redactarse como hechos confirmados. Deben llevar leyenda corta de advertencia."
+    },
+    "contradiction_policy": {
+      "detect_conflicting_claims": true,
+      "required_output_when_conflict": [
+        "claim_a",
+        "source_a",
+        "claim_b",
+        "source_b",
+        "what_is_confirmed",
+        "what_remains_unclear",
+        "confidence_assessment"
+      ],
+      "never_resolve_by_assumption": true,
+      "brief_label": "Información contradictoria: requiere seguimiento."
+    },
+    "compliance_policy": {
+      "do_not_reproduce_full_articles": true,
+      "quote_limit_words": 25,
+      "respect_paywalls": true,
+      "store_excerpt_only": true,
+      "always_store_url_and_source": true,
+      "label_state_affiliated_media": true,
+      "label_opinion_content": true,
+      "avoid_defamatory_or_unverified_attribution": true
+    },
+    "international_coverage_policy": {
+      "objective": "mantener una lectura global compacta con distintos focos geográficos y políticos, sin saturar el reporte por volumen",
+      "include_even_without_direct_venezuela_mention_if": [
+        "international_affairs_or_geopolitics",
+        "domestic_politics_of_key_actor",
+        "energy_or_oil_market_impact",
+        "sanctions_trade_or_financial_system",
+        "migration_security_or_border_dynamics",
+        "conflict_or_diplomatic_realignment",
+        "policy_shift_from_US_EU_China_Russia_or_regional_power",
+        "narrative_relevance_for_Venezuela_positioning"
+      ],
+      "geographic_lenses_required": [
+        "Suramérica",
+        "Estados Unidos",
+        "Europa",
+        "China",
+        "Rusia",
+        "India",
+        "Medio Oriente / mundo árabe",
+        "mercados financieros y energía"
+      ],
+      "volume_control": {
+        "max_global_context_items_total": 8,
+        "max_items_per_geographic_lens": 2,
+        "max_front_page_items_without_venezuela_mention": 1,
+        "prefer_one_high_signal_item_per_lens": true,
+        "overflow_goes_to_context_digest": true
+      },
+      "relevance_tiers": {
+        "tier_1_direct": "menciona Venezuela o impacta directamente sanciones, petróleo, diplomacia, migración, seguridad o financiamiento",
+        "tier_2_strategic_context": "no menciona Venezuela, pero afecta entorno geopolítico, energético, financiero o de política exterior relevante",
+        "tier_3_background": "noticia internacional importante para visión general; incluir solo si hay cupo y alto valor contextual"
+      },
+      "required_angle_fields": [
+        "geographic_lens",
+        "strategic_focus",
+        "why_this_region_sees_it_this_way",
+        "connection_to_venezuela_or_global_context",
+        "volume_slot_used"
+      ]
+    }
+  },
+  "output_contract": {
+    "brief_sections": [
+      "resumen_ejecutivo_5_puntos",
+      "hechos_criticos_ultimas_24h",
+      "anuncios_y_senales_del_ejecutivo",
+      "reacciones_politicas_internas_y_oposicion",
+      "lectura_internacional_por_focos_geograficos",
+      "energia_petroleo_sanciones_y_mercados",
+      "datos_economicos_y_sociales",
+      "seguridad_frontera_y_riesgos_regionales",
+      "alertas_tempranas_con_advertencia",
+      "implicaciones_estrategicas_y_temas_a_monitorear",
+      "fuentes_consultadas"
+    ],
+    "item_schema": {
+      "rank": "number",
+      "title": "string",
+      "source": "string",
+      "url": "string",
+      "published_at": "string",
+      "modified_at": "string|null",
+      "category": "string",
+      "layer_id": "number",
+      "submodule": "string",
+      "country_or_region": "string",
+      "geographic_lens": "string|null",
+      "source_type": "official|state_media|independent_media|opposition_actor|multilateral|ngo|think_tank|academic|market_data|social_signal|telegram_signal|osint|opinion|aggregator",
+      "source_bias_risk": "low|medium|high",
+      "primary_or_secondary": "primary|secondary",
+      "verification_status": "unverified|single_source|cross_checked|officially_confirmed|contradicted",
+      "fact_summary": "string",
+      "analysis": "string",
+      "why_it_matters": "string",
+      "decision_relevance": "string",
+      "impact_area": [
+        "political",
+        "economic",
+        "energy",
+        "diplomatic",
+        "security",
+        "social",
+        "communication",
+        "international_affairs_geopolitics"
+      ],
+      "urgency": "immediate|24h|weekly|structural",
+      "risk_level": "high|medium|low",
+      "opportunity_level": "high|medium|low",
+      "recommended_attention": "monitor|brief_authority|prepare_response|ignore",
+      "public_communication_risk": "high|medium|low",
+      "data_points": [
+        "string"
+      ],
+      "entities_detected": [
+        "string"
+      ],
+      "venezuela_relevance": "high|medium|low|contextual",
+      "alert_level": "SA0_descartado|SA1_senal_no_verificada|SA2_alerta_en_observacion|SA3_alerta_verosimil|SA4_confirmado|null",
+      "warning_label": "string|null",
+      "confidence": "high|medium|low"
+    },
+    "data_point_schema": {
+      "value": "string",
+      "unit": "string",
+      "period": "string",
+      "original_source": "string",
+      "publication_date": "string",
+      "methodology_note": "string",
+      "previous_value": "string|null",
+      "change_direction": "up|down|stable|unknown",
+      "confidence": "high|medium|low"
+    },
+    "contradiction_schema": [
+      "claim_a",
+      "source_a",
+      "claim_b",
+      "source_b",
+      "what_is_confirmed",
+      "what_remains_unclear",
+      "confidence_assessment"
+    ]
+  },
+  "layers": [
+    {
+      "layer_id": 1,
+      "name": "autoridades_thinktanks_universidades",
+      "mission": "capturar posiciones, análisis y publicaciones institucionales de alta autoridad",
+      "priority_questions": [
+        "Qué posiciones relevantes sobre Venezuela se publicaron hoy o recientemente",
+        "Qué análisis estratégicos sobre energía, sanciones, democracia, seguridad o geopolítica están en portada",
+        "Qué centros universitarios publicaron briefs, noticias o eventos con valor analítico"
+      ],
+      "submodules": [
+        {
+          "name": "think_tanks",
+          "what_to_search": [
+            "posiciones del día sobre Venezuela",
+            "briefs y análisis recientes sobre América Latina",
+            "publicaciones sobre sanciones, energía, democracia y política exterior"
+          ],
+          "query_templates": [
+            "Venezuela analysis",
+            "Latin America policy brief",
+            "energy security Venezuela",
+            "democracy Venezuela",
+            "US Venezuela policy"
+          ],
+          "extract_fields": [
+            "titulo",
+            "autor",
+            "institucion",
+            "fecha",
+            "tipo_de_pieza",
+            "resumen",
+            "postura",
+            "implicaciones",
+            "menciones_a_Venezuela"
+          ],
+          "selection_rules": [
+            "priorizar homepage, latest, analysis, commentary y expert briefs",
+            "priorizar autores senior fellows, directors, chairs",
+            "seleccionar 5 prioritarias y hasta 5 secundarias"
+          ]
+        },
+        {
+          "name": "universidades",
+          "what_to_search": [
+            "noticias institucionales",
+            "policy briefs",
+            "papers",
+            "eventos académicos",
+            "publicaciones de centros de estudios internacionales, economía, energía y seguridad"
+          ],
+          "query_templates": [
+            "news Venezuela site:edu",
+            "policy brief Venezuela university",
+            "Latin America center Venezuela",
+            "energy transition Latin America university"
+          ],
+          "selection_rules": [
+            "priorizar páginas principales de noticias y centros especializados",
+            "incluir publicaciones del día o última actualización visible"
+          ]
+        }
+      ]
+    },
+    {
+      "layer_id": 2,
+      "name": "redes_sociales_indirectas_portales_indexables",
+      "mission": "detectar tendencias, difusión y señales tempranas",
+      "priority_questions": [
+        "Qué narrativas sobre Venezuela y sus autoridades están circulando",
+        "Cuáles son las tendencias globales del momento con impacto geopolítico o económico",
+        "Qué enlaces salientes apuntan a fuentes confiables"
+      ],
+      "what_to_search": [
+        "noticias sobre Venezuela y autoridades",
+        "tendencias globales del día",
+        "temas virales con impacto económico, energético o geopolítico"
+      ],
+      "query_templates": [
+        "Venezuela trending",
+        "Delcy Rodríguez trending",
+        "PDVSA trending",
+        "world news trending",
+        "oil sanctions trending"
+      ],
+      "extract_fields": [
+        "tema",
+        "volumen_aprox",
+        "fuente_original_enlazada",
+        "sentido_de_la_tendencia",
+        "riesgo_desinformacion",
+        "cuentas_relevantes",
+        "alert_level",
+        "warning_label",
+        "evidencia",
+        "validacion_requerida",
+        "impacto_potencial"
+      ],
+      "selection_rules": [
+        "no usar como fuente primaria única",
+        "no descartar señales por defecto: clasificar SA0-SA4",
+        "toda señal incluida debe llevar alert_level y warning_label",
+        "validar hallazgos con medio, fuente oficial u OSINT verificable cuando sea posible",
+        "priorizar señales repetidas en dos o más plataformas",
+        "SA1-SA3 solo pueden aparecer en alertas_tempranas_con_advertencia, no como hechos confirmados"
+      ]
+    },
+    {
+      "layer_id": 3,
+      "name": "prensa_regional_nacional",
+      "mission": "cubrir agenda venezolana prioritaria y señales políticas internas",
+      "priority_questions": [
+        "Qué anuncios oficiales se publicaron hoy",
+        "Qué declaró Delcy Rodríguez o el Ejecutivo Nacional",
+        "Cuáles son las principales noticias nacionales",
+        "Qué dijo la oposición venezolana",
+        "Qué publicó la Asamblea Nacional"
+      ],
+      "submodules": [
+        {
+          "name": "oficialismo_y_estado",
+          "what_to_search": [
+            "anuncios oficiales",
+            "declaraciones de Delcy Rodríguez",
+            "declaraciones del Ejecutivo Nacional",
+            "decisiones de PDVSA, BCV, Vicepresidencia y ministerios"
+          ],
+          "query_templates": [
+            "Delcy Rodríguez",
+            "Vicepresidencia Venezuela",
+            "Ejecutivo Nacional Venezuela",
+            "PDVSA Venezuela",
+            "BCV Venezuela"
+          ]
+        },
+        {
+          "name": "oposicion",
+          "what_to_search": [
+            "anuncios de la oposición venezolana",
+            "pronunciamientos",
+            "agenda política",
+            "reacciones a medidas oficiales"
+          ],
+          "query_templates": [
+            "oposición venezolana",
+            "María Corina Machado",
+            "Edmundo González",
+            "Plataforma Unitaria",
+            "declaración oposición Venezuela"
+          ]
+        },
+        {
+          "name": "asamblea_nacional",
+          "what_to_search": [
+            "sesiones",
+            "leyes",
+            "anuncios",
+            "acuerdos",
+            "declaraciones"
+          ],
+          "query_templates": [
+            "Asamblea Nacional Venezuela noticias",
+            "Asamblea Nacional Venezuela hoy"
+          ]
+        },
+        {
+          "name": "agenda_nacional",
+          "what_to_search": [
+            "top noticias nacionales",
+            "economía",
+            "servicios públicos",
+            "seguridad",
+            "sociedad",
+            "judicial"
+          ],
+          "query_templates": [
+            "Venezuela últimas noticias",
+            "economía Venezuela hoy",
+            "servicios públicos Venezuela",
+            "seguridad Venezuela hoy"
+          ]
+        }
+      ],
+      "selection_rules": [
+        "si Delcy o Ejecutivo anuncian algo, debe ir primero",
+        "crear bloque separado para oposición",
+        "crear bloque separado para Asamblea Nacional",
+        "seleccionar hasta 10 noticias nacionales prioritarias"
+      ]
+    },
+    {
+      "layer_id": 4,
+      "name": "medios_internacionales_geopolitica",
+      "mission": "capturar cobertura global sobre Venezuela y una lectura internacional compacta desde distintos focos geográficos, políticos y geopolíticos",
+      "submodules": [
+        {
+          "name": "suramerica",
+          "what_to_search": [
+            "noticias sobre Venezuela",
+            "portadas regionales",
+            "migración, comercio, diplomacia y frontera",
+            "política regional e integración latinoamericana"
+          ],
+          "query_templates": [
+            "Venezuela site:infobae.com",
+            "Venezuela site:lanacion.com.ar",
+            "Venezuela site:oglobo.globo.com",
+            "Venezuela site:elpais.com/america",
+            "portada hoy Sudamérica",
+            "South America geopolitics today",
+            "Latin America politics top stories"
+          ]
+        },
+        {
+          "name": "eeuu",
+          "what_to_search": [
+            "noticias sobre Venezuela",
+            "principales noticias locales de Estados Unidos",
+            "economía, mercados, política, migración, sanciones y política exterior"
+          ],
+          "query_templates": [
+            "Venezuela site:nytimes.com",
+            "Venezuela site:washingtonpost.com",
+            "US economy top stories",
+            "US politics top stories",
+            "front page today US",
+            "US foreign policy top stories",
+            "US sanctions policy latest",
+            "US international affairs today"
+          ]
+        },
+        {
+          "name": "europa",
+          "what_to_search": [
+            "noticias sobre Venezuela",
+            "portadas europeas",
+            "UE, OTAN, guerra, energía, economía, sanciones y diplomacia",
+            "BBC incluida como referencia fija"
+          ],
+          "query_templates": [
+            "Venezuela site:bbc.com/news",
+            "Venezuela site:theguardian.com",
+            "Venezuela site:lemonde.fr",
+            "Europe top stories today",
+            "BBC front page",
+            "EU foreign policy top stories",
+            "Europe geopolitics today"
+          ]
+        },
+        {
+          "name": "financieros_economicos",
+          "what_to_search": [
+            "principales noticias financieras",
+            "tendencias",
+            "estadísticas",
+            "previsiones",
+            "commodities",
+            "petróleo, sanciones, divisas y mercados emergentes"
+          ],
+          "query_templates": [
+            "market outlook today",
+            "oil forecast today",
+            "Venezuela oil sanctions market",
+            "inflation forecast",
+            "global markets top stories",
+            "emerging markets sanctions risk today",
+            "global financial geopolitics today"
+          ]
+        },
+        {
+          "name": "china",
+          "what_to_search": [
+            "principales noticias del día",
+            "enfoque editorial sobre Venezuela, energía, Estados Unidos, Rusia, comercio y multipolaridad"
+          ],
+          "query_templates": [
+            "Venezuela site:cgtn.com",
+            "Venezuela site:globaltimes.cn",
+            "Venezuela site:xinhuanet.com",
+            "China top stories today",
+            "China foreign policy today",
+            "China US relations top stories"
+          ]
+        },
+        {
+          "name": "rusia",
+          "what_to_search": [
+            "principales noticias del día",
+            "narrativa sobre Venezuela, sanciones, energía, multipolaridad, guerra y relaciones con Occidente"
+          ],
+          "query_templates": [
+            "Venezuela site:rt.com",
+            "Venezuela site:tass.com",
+            "Russia top stories today",
+            "Russia foreign policy today",
+            "Russia geopolitics top stories"
+          ]
+        },
+        {
+          "name": "analistas_rusos",
+          "what_to_search": [
+            "posiciones y análisis recientes de expertos rusos",
+            "lectura estratégica sobre sanciones, energía y equilibrio global"
+          ],
+          "query_templates": [
+            "Fyodor Lukyanov latest",
+            "Andrei Kortunov latest",
+            "Alexander Gabuev latest"
+          ]
+        },
+        {
+          "name": "india",
+          "what_to_search": [
+            "principales noticias del día",
+            "menciones a Venezuela",
+            "energía, seguridad, geopolítica, comercio y Sur Global"
+          ],
+          "query_templates": [
+            "Venezuela site:thehindu.com",
+            "Venezuela site:timesofindia.indiatimes.com",
+            "India top stories today",
+            "India foreign policy today",
+            "Global South geopolitics India"
+          ]
+        },
+        {
+          "name": "israel",
+          "what_to_search": [
+            "principales noticias del día",
+            "menciones a Venezuela",
+            "seguridad, Medio Oriente, energía, diplomacia y conflicto regional"
+          ],
+          "query_templates": [
+            "Venezuela site:jpost.com",
+            "Venezuela site:haaretz.com",
+            "Israel top stories today",
+            "Middle East geopolitics Israel today",
+            "Israel foreign policy top stories"
+          ]
+        },
+        {
+          "name": "arabe",
+          "what_to_search": [
+            "principales noticias del día",
+            "menciones a Venezuela",
+            "energía, diplomacia, conflictos regionales, OPEP y mundo árabe"
+          ],
+          "query_templates": [
+            "Venezuela site:aljazeera.com",
+            "Venezuela site:arabnews.com",
+            "Middle East top stories today",
+            "Arab world geopolitics today",
+            "Middle East energy diplomacy today"
+          ]
+        }
+      ],
+      "selection_rules": [
+        "por submódulo extraer de 1 a 2 noticias de alto valor; máximo 8 ítems de contexto global total",
+        "incluir noticias sobre Venezuela si existen y son relevantes",
+        "también incluir noticias internacionales sin mención directa a Venezuela cuando sean de international affairs, geopolítica, política interna de actores clave, energía, sanciones, seguridad, migración, finanzas o realineamientos diplomáticos",
+        "identificar enfoque editorial o ángulo narrativo por región",
+        "detectar coincidencias y divergencias entre regiones",
+        "evitar saturación: preferir una noticia de alta señal por foco geográfico antes que varias de la misma región",
+        "marcar medios estatales extranjeros y contenido de opinión/análisis como tal",
+        "el excedente debe ir a digest de contexto, no al cuerpo principal"
+      ],
+      "international_coverage_policy": {
+        "objective": "mantener una lectura global compacta con distintos focos geográficos y políticos, sin saturar el reporte por volumen",
+        "include_even_without_direct_venezuela_mention_if": [
+          "international_affairs_or_geopolitics",
+          "domestic_politics_of_key_actor",
+          "energy_or_oil_market_impact",
+          "sanctions_trade_or_financial_system",
+          "migration_security_or_border_dynamics",
+          "conflict_or_diplomatic_realignment",
+          "policy_shift_from_US_EU_China_Russia_or_regional_power",
+          "narrative_relevance_for_Venezuela_positioning"
+        ],
+        "geographic_lenses_required": [
+          "Suramérica",
+          "Estados Unidos",
+          "Europa",
+          "China",
+          "Rusia",
+          "India",
+          "Medio Oriente / mundo árabe",
+          "mercados financieros y energía"
+        ],
+        "volume_control": {
+          "max_global_context_items_total": 8,
+          "max_items_per_geographic_lens": 2,
+          "max_front_page_items_without_venezuela_mention": 1,
+          "prefer_one_high_signal_item_per_lens": true,
+          "overflow_goes_to_context_digest": true
+        },
+        "relevance_tiers": {
+          "tier_1_direct": "menciona Venezuela o impacta directamente sanciones, petróleo, diplomacia, migración, seguridad o financiamiento",
+          "tier_2_strategic_context": "no menciona Venezuela, pero afecta entorno geopolítico, energético, financiero o de política exterior relevante",
+          "tier_3_background": "noticia internacional importante para visión general; incluir solo si hay cupo y alto valor contextual"
+        },
+        "required_angle_fields": [
+          "geographic_lens",
+          "strategic_focus",
+          "why_this_region_sees_it_this_way",
+          "connection_to_venezuela_or_global_context",
+          "volume_slot_used"
+        ]
+      },
+      "extract_fields": [
+        "titulo",
+        "fuente",
+        "fecha",
+        "autor",
+        "geographic_lens",
+        "strategic_focus",
+        "hecho_principal",
+        "actores_mencionados",
+        "dato_clave",
+        "enfoque_editorial_o_narrativo",
+        "impacto_para_venezuela_o_contexto_global",
+        "relevance_tier",
+        "volume_slot_used",
+        "nivel_confianza"
+      ]
+    },
+    {
+      "layer_id": 5,
+      "name": "sector_energetico_comunicados_oficiales",
+      "mission": "seguir el pulso petrolero, gasífero y regulatorio con prioridad en Venezuela",
+      "submodules": [
+        {
+          "name": "portales_energia",
+          "what_to_search": [
+            "estadísticas",
+            "principales noticias",
+            "previsiones",
+            "tendencias del sector",
+            "producción, exportaciones, refinación y precios"
+          ],
+          "query_templates": [
+            "Venezuela oil production",
+            "oil market forecast today",
+            "gas market outlook today",
+            "OPEC output today",
+            "refining trends today"
+          ]
+        },
+        {
+          "name": "comunicados_oficiales",
+          "what_to_search": [
+            "últimos comunicados",
+            "noticias publicadas el día de búsqueda",
+            "reportes oficiales de producción, inventarios y decisiones"
+          ],
+          "query_templates": [
+            "OPEC press release",
+            "IEA news",
+            "EIA release today",
+            "PDVSA comunicado",
+            "Ministerio de Petróleo Venezuela"
+          ]
+        }
+      ],
+      "selection_rules": [
+        "separar dato duro de análisis",
+        "si hay cifra, guardar unidad, fecha y fuente",
+        "priorizar OPEP, IEA, EIA y PDVSA cuando haya publicaciones nuevas"
+      ]
+    },
+    {
+      "layer_id": 6,
+      "name": "ong_multilaterales_boletines",
+      "mission": "capturar publicaciones institucionales del día con foco en estadísticas, derechos, economía y gobernanza",
+      "what_to_search": [
+        "publicaciones del día",
+        "estadísticas",
+        "artículos",
+        "eventos",
+        "anuncios",
+        "boletines internacionales importantes"
+      ],
+      "query_templates": [
+        "site:cepal.org Venezuela",
+        "site:worldbank.org Venezuela",
+        "site:imf.org Venezuela",
+        "site:news.un.org Venezuela",
+        "site:undp.org Venezuela",
+        "site:oas.org Venezuela",
+        "site:amnesty.org Venezuela"
+      ],
+      "extract_fields": [
+        "tipo_documento",
+        "titulo",
+        "fecha",
+        "estadisticas_clave",
+        "hallazgo_principal",
+        "evento_o_lanzamiento",
+        "implicacion_politica_o_economica"
+      ],
+      "selection_rules": [
+        "priorizar documentos del día o de la semana",
+        "si es boletín, extraer 3 a 5 piezas principales",
+        "resaltar cualquier cifra o indicador nuevo"
+      ]
+    },
+    {
+      "layer_id": 7,
+      "name": "datos_estadisticas_indices",
+      "mission": "traducir publicaciones cuantitativas del día en contexto legible",
+      "priority_questions": [
+        "Qué indicadores nuevos o actualizados salieron hoy",
+        "Qué dato cambia la lectura económica, energética o social del día",
+        "Cómo se conecta ese dato con Venezuela"
+      ],
+      "what_to_search": [
+        "principales publicaciones del día",
+        "estadísticas nuevas",
+        "actualizaciones de dashboards",
+        "índices relevantes y explicación"
+      ],
+      "query_templates": [
+        "world bank data update",
+        "fred releases today",
+        "trading economics Venezuela",
+        "our world in data latest",
+        "CEPALSTAT update"
+      ],
+      "extract_fields": [
+        "indicador",
+        "valor",
+        "variacion",
+        "periodo",
+        "fuente",
+        "interpretacion_simple",
+        "vinculo_con_venezuela"
+      ],
+      "selection_rules": [
+        "no listar tablas sin explicación",
+        "cada dato debe incluir contexto e implicación",
+        "priorizar inflación, actividad, petróleo, tipo de cambio, riesgo, pobreza y comercio"
+      ]
+    },
+    {
+      "layer_id": 8,
+      "name": "academica_preprints_revistas",
+      "mission": "identificar análisis profundos y publicaciones académicas relevantes",
+      "what_to_search": [
+        "publicaciones importantes sobre Venezuela, sanciones, energía, democracia, migración y seguridad",
+        "working papers, preprints y artículos de revistas"
+      ],
+      "query_templates": [
+        "Venezuela SSRN",
+        "Venezuela SocArXiv",
+        "Latin America sanctions paper",
+        "energy security paper",
+        "migration Venezuela paper"
+      ],
+      "extract_fields": [
+        "titulo",
+        "autor",
+        "institucion",
+        "abstract_corto",
+        "metodo",
+        "hallazgo",
+        "relevancia_operativa"
+      ],
+      "selection_rules": [
+        "priorizar papers recientes o con alto valor explicativo",
+        "incluir máximo 5 análisis prioritarios",
+        "descartar piezas excesivamente técnicas sin valor de decisión"
+      ]
+    },
+    {
+      "layer_id": 9,
+      "name": "seguridad_defensa_osint_institucional",
+      "mission": "seguir incidentes, análisis y previsiones de seguridad sin ruido comercial",
+      "what_to_search": [
+        "principales noticias del día",
+        "análisis",
+        "previsiones",
+        "artículos de interés",
+        "conflictos, crimen organizado, sanciones, estabilidad, frontera, inteligencia"
+      ],
+      "query_templates": [
+        "ACLED latest",
+        "Crisis Group latest",
+        "Bellingcat latest",
+        "Venezuela security analysis",
+        "Latin America organized crime latest"
+      ],
+      "extract_fields": [
+        "incidente",
+        "analisis",
+        "pais_o_region",
+        "actores",
+        "riesgo",
+        "escenario",
+        "implicacion_para_Venezuela"
+      ],
+      "selection_rules": [
+        "excluir ventas de armas, catálogos y publicidad",
+        "priorizar conflicto, crimen, sanciones, inteligencia, defensa y estabilidad",
+        "si hay OSINT visual, registrar solo si está verificado"
+      ]
+    },
+    {
+      "layer_id": 10,
+      "name": "telegram_signal_social_osint",
+      "mission": "detectar señales de alta velocidad y compararlas con fuentes verificadas",
+      "what_to_search": [
+        "alertas de conflicto",
+        "narrativas emergentes",
+        "menciones a Venezuela, petróleo, sanciones, movimientos militares y diplomacia",
+        "contenido visual o textual con valor de alerta"
+      ],
+      "query_templates": [
+        "Venezuela Telegram OSINT",
+        "oil sanctions Telegram",
+        "military movement Telegram",
+        "breaking geopolitics Telegram"
+      ],
+      "extract_fields": [
+        "canal",
+        "hora",
+        "claim",
+        "evidencia",
+        "alert_level",
+        "warning_label",
+        "nivel_confianza",
+        "fuente_secundaria_de_validacion",
+        "validacion_requerida",
+        "impacto_potencial",
+        "riesgo_desinformacion"
+      ],
+      "selection_rules": [
+        "no descartar señales por defecto: clasificar SA0-SA4",
+        "nunca publicar como confirmado sin validación secundaria o fuente primaria",
+        "toda señal incluida debe llevar leyenda de advertencia corta",
+        "SA1: solo bitácora interna o anexo; SA2-SA3: sección de alertas tempranas; SA4: puede entrar al cuerpo principal",
+        "usar únicamente para early warning cuando no esté confirmado",
+        "separar claim, evidencia y análisis; no redactar alertas como hechos"
+      ],
+      "alert_levels_reference": {
+        "SA0_descartado": {
+          "definition": "contenido irrelevante, spam, propaganda sin dato verificable, duplicado o fuera de ventana temporal",
+          "brief_visibility": "no incluir",
+          "warning_label": "No incluido: señal irrelevante o no utilizable."
+        },
+        "SA1_senal_no_verificada": {
+          "definition": "mención aislada o claim sin respaldo independiente suficiente",
+          "brief_visibility": "solo bitácora interna o anexo de alertas",
+          "warning_label": "Advertencia: señal no verificada; no tratar como hecho."
+        },
+        "SA2_alerta_en_observacion": {
+          "definition": "señal repetida en varias cuentas/canales o con evidencia parcial, pero sin confirmación primaria",
+          "brief_visibility": "sección de alertas tempranas con advertencia",
+          "warning_label": "Advertencia: alerta en observación; requiere validación adicional."
+        },
+        "SA3_alerta_verosimil": {
+          "definition": "señal coherente con evidencia OSINT, fuente recurrente o cobertura secundaria confiable",
+          "brief_visibility": "sección de alertas tempranas y, si tiene alto impacto, mención breve en senales_clave",
+          "warning_label": "Advertencia: señal verosímil, aún no confirmada oficialmente."
+        },
+        "SA4_confirmado": {
+          "definition": "confirmado por fuente oficial, fuente primaria verificable o múltiples fuentes confiables independientes",
+          "brief_visibility": "puede entrar al cuerpo principal del reporte",
+          "warning_label": "Confirmado: validado por fuente primaria o contraste suficiente."
+        }
+      }
+    }
+  ],
+  "cross_layer_synthesis": {
+    "rules": [
+      "agrupar noticias repetidas bajo un mismo evento",
+      "priorizar fuente primaria y usar secundarias para contraste",
+      "separar hechos confirmados, análisis, señales tempranas y opinión",
+      "si hay contradicción entre fuentes, reportar claims en conflicto sin resolver por suposición",
+      "incluir visión internacional por focos geográficos con control de volumen",
+      "mantener alertas sociales/Telegram con leyenda de advertencia y nivel SA0-SA4"
+    ],
+    "final_brief_structure": [
+      "resumen_ejecutivo_5_puntos",
+      "hechos_criticos_ultimas_24h",
+      "anuncios_y_senales_del_ejecutivo",
+      "reacciones_politicas_internas_y_oposicion",
+      "lectura_internacional_por_focos_geograficos",
+      "energia_petroleo_sanciones_y_mercados",
+      "datos_economicos_y_sociales",
+      "seguridad_frontera_y_riesgos_regionales",
+      "alertas_tempranas_con_advertencia",
+      "implicaciones_estrategicas_y_temas_a_monitorear",
+      "fuentes_consultadas"
+    ]
+  },
+  "implementation_hints": {
+    "preferred_ingestion_order": [
+      "rss",
+      "sitemaps",
+      "homepage parsing",
+      "section pages",
+      "search endpoint",
+      "social validation"
+    ],
+    "recommended_fields_for_storage": [
+      "source",
+      "source_type",
+      "layer_id",
+      "submodule",
+      "title",
+      "url",
+      "canonical_url",
+      "summary_raw",
+      "summary_es",
+      "published_at",
+      "scraped_at",
+      "author",
+      "country",
+      "language",
+      "tags",
+      "entities",
+      "is_front_page",
+      "is_official",
+      "is_analysis",
+      "is_data_driven",
+      "confidence",
+      "duplicate_group_id",
+      "source_bias_risk",
+      "verification_status",
+      "primary_or_secondary",
+      "fact_summary",
+      "analysis",
+      "decision_relevance",
+      "urgency",
+      "risk_level",
+      "opportunity_level",
+      "recommended_attention",
+      "alert_level",
+      "warning_label",
+      "geographic_lens",
+      "strategic_focus",
+      "relevance_tier",
+      "contradiction_group_id"
+    ],
+    "recommended_jobs": {
+      "job_1_breaking_headlines": [
+        2,
+        3,
+        4,
+        10
+      ],
+      "job_2_officials_and_energy": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "job_3_analysis_and_risk": [
+        1,
+        4,
+        8,
+        9
+      ],
+      "job_4_full_synthesis": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  "change_log": [
+    {
+      "version": "1.1.0",
+      "date": "2026-05-16",
+      "summary": "Mejoras aplicadas: alertas graduadas para redes/Telegram sin descartar señales; capa internacional con visión geográfica amplia, control de volumen y foco en asuntos internacionales, geopolítica y política; fortalecimiento de clasificación de fuentes, verificación, contradicciones, trazabilidad y ranking por impacto decisional."
+    }
+  ],
+  "source_registry": [
+    {
+      "name": "Banco Central de Venezuela",
+      "domain": "bcv.org.ve",
+      "source_type": "official",
+      "authority_score": 5,
+      "bias_risk": "medium",
+      "use_case": "datos macroeconómicos oficiales",
+      "requires_cross_check": true
+    },
+    {
+      "name": "PDVSA",
+      "domain": "pdvsa.com",
+      "source_type": "official",
+      "authority_score": 5,
+      "bias_risk": "medium",
+      "use_case": "comunicados energéticos oficiales",
+      "requires_cross_check": true
+    },
+    {
+      "name": "OPEC",
+      "domain": "opec.org",
+      "source_type": "multilateral",
+      "authority_score": 5,
+      "bias_risk": "low",
+      "use_case": "producción petrolera y reportes mensuales",
+      "requires_cross_check": false
+    },
+    {
+      "name": "OFAC / U.S. Treasury",
+      "domain": "treasury.gov",
+      "source_type": "official",
+      "authority_score": 5,
+      "bias_risk": "low",
+      "use_case": "sanciones, licencias y medidas financieras",
+      "requires_cross_check": false
+    },
+    {
+      "name": "RT",
+      "domain": "rt.com",
+      "source_type": "state_media",
+      "authority_score": 2,
+      "bias_risk": "high",
+      "use_case": "narrativa geopolítica rusa",
+      "requires_cross_check": true
+    },
+    {
+      "name": "CGTN",
+      "domain": "cgtn.com",
+      "source_type": "state_media",
+      "authority_score": 2,
+      "bias_risk": "high",
+      "use_case": "narrativa geopolítica china",
+      "requires_cross_check": true
+    },
+    {
+      "name": "Al Jazeera",
+      "domain": "aljazeera.com",
+      "source_type": "independent_media",
+      "authority_score": 3,
+      "bias_risk": "medium",
+      "use_case": "visión internacional y Medio Oriente",
+      "requires_cross_check": true
+    }
+  ]
+}
