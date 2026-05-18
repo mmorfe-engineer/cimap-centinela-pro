@@ -4,12 +4,14 @@ import json
 import os
 import re
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Any
 from urllib.parse import quote, urljoin
 
 import requests
 
 PERPLEXITY_API_URL = "https://api.perplexity.ai/chat/completions"
+CONFIG_PATH = os.getenv("CENTINELA_CONFIG_PATH", "config/monitor_noticias_multicapa_ve_v1_1.json")
 
 
 def _utc_now() -> datetime:
@@ -46,6 +48,55 @@ def _ajustar_filtros_fecha(inicio: datetime, fin: datetime) -> tuple[str, str]:
 
 def _correlativo(fecha_utc: datetime, turno: str) -> str:
     return f"{fecha_utc.strftime('%Y%m%d')}-{turno}-{fecha_utc.strftime('%H%M%S')}"
+
+
+def _cargar_config() -> dict[str, Any] | None:
+    path = Path(CONFIG_PATH)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _resumen_fuentes_config(config: dict[str, Any]) -> str:
+    registry = config.get("source_registry") or []
+    if not registry:
+        return ""
+    partes = []
+    for fuente in registry:
+        nombre = fuente.get("name") or fuente.get("domain")
+        if not nombre:
+            continue
+        tipo = fuente.get("source_type") or ""
+        partes.append(f"- {nombre} ({tipo})")
+    return "\n".join(partes)
+
+
+def _capas_desde_config(config: dict[str, Any], cuentas_monitoreadas: list[str]) -> dict[str, dict[str, Any]]:
+    capas: dict[str, dict[str, Any]] = {}
+    for layer in config.get("layers") or []:
+        layer_id = layer.get("layer_id")
+        if layer_id is None:
+            continue
+        name = layer.get("name") or f"layer_{layer_id}"
+        mission = layer.get("mission") or ""
+        submodules = layer.get("submodules") or []
+        queries = []
+        for sub in submodules:
+            queries.extend(sub.get("query_templates") or [])
+        queries.extend(layer.get("query_templates") or [])
+        selection_rules = layer.get("selection_rules") or []
+        descripcion = f"{name}. {mission}".strip()
+        capas[f"capa_{layer_id}"] = {
+            "descripcion": descripcion,
+            "fuentes_consultadas": [name],
+            "inventario": bool(cuentas_monitoreadas) and int(layer_id) == 2,
+            "query_templates": queries,
+            "selection_rules": selection_rules,
+        }
+    return capas
 
 
 def _consulta_perplexity(prompt: str, timeout: int) -> dict[str, Any]:
@@ -191,6 +242,20 @@ def _anotar_capa(parsed: dict[str, Any] | None, capa: str, descripcion: str) -> 
             item.setdefault("capa_descripcion", descripcion)
 
 
+def _prompt_directrices(capa: dict[str, Any], config: dict[str, Any]) -> str:
+    partes = []
+    queries = capa.get("query_templates") or []
+    if queries:
+        partes.append("\nConsultas sugeridas:\n" + "\n".join(f"- {q}" for q in queries))
+    rules = capa.get("selection_rules") or []
+    if rules:
+        partes.append("\nReglas de selección:\n" + "\n".join(f"- {r}" for r in rules))
+    fuentes = _resumen_fuentes_config(config)
+    if fuentes:
+        partes.append("\nFuentes prioritarias (registro):\n" + fuentes)
+    return "\n".join(partes)
+
+
 def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
     ahora = _utc_now()
     inicio, fin, turno = _calcular_rango(ahora, horas_atras)
@@ -214,38 +279,41 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
             f"Lista base de cuentas: {', '.join(cuentas_monitoreadas)}\n"
         )
 
-    capas = {
-        "capa_1": {
-            "descripcion": "X/Twitter y fuentes espejo (incluyendo fallback de visibilidad).",
-            "fuentes_consultadas": ["X/Twitter", "Fuentes espejo"],
-            "inventario": bool(cuentas_monitoreadas),
-        },
-        "capa_2": {
-            "descripcion": "Redes sociales indirectas y portales indexables.",
-            "fuentes_consultadas": ["Redes sociales indirectas", "Portales indexables"],
-            "inventario": False,
-        },
-        "capa_3": {
-            "descripcion": "Prensa regional y nacional de Venezuela.",
-            "fuentes_consultadas": ["Prensa regional", "Prensa nacional"],
-            "inventario": False,
-        },
-        "capa_4": {
-            "descripcion": "Cobertura internacional y geopolítica (medios regionales y globales).",
-            "fuentes_consultadas": ["Medios internacionales", "Geopolítica regional"],
-            "inventario": False,
-        },
-        "capa_5": {
-            "descripcion": "Energía e hidrocarburos (fuentes sectoriales y comunicados oficiales).",
-            "fuentes_consultadas": ["Sector energético", "Comunicados oficiales"],
-            "inventario": False,
-        },
-        "capa_6": {
-            "descripcion": "ONG, organismos multilaterales y boletines especializados.",
-            "fuentes_consultadas": ["ONG", "Organismos multilaterales", "Boletines especializados"],
-            "inventario": False,
-        },
-    }
+    config = _cargar_config() or {}
+    capas = _capas_desde_config(config, cuentas_monitoreadas)
+    if not capas:
+        capas = {
+            "capa_1": {
+                "descripcion": "X/Twitter y fuentes espejo (incluyendo fallback de visibilidad).",
+                "fuentes_consultadas": ["X/Twitter", "Fuentes espejo"],
+                "inventario": bool(cuentas_monitoreadas),
+            },
+            "capa_2": {
+                "descripcion": "Redes sociales indirectas y portales indexables.",
+                "fuentes_consultadas": ["Redes sociales indirectas", "Portales indexables"],
+                "inventario": False,
+            },
+            "capa_3": {
+                "descripcion": "Prensa regional y nacional de Venezuela.",
+                "fuentes_consultadas": ["Prensa regional", "Prensa nacional"],
+                "inventario": False,
+            },
+            "capa_4": {
+                "descripcion": "Cobertura internacional y geopolítica (medios regionales y globales).",
+                "fuentes_consultadas": ["Medios internacionales", "Geopolítica regional"],
+                "inventario": False,
+            },
+            "capa_5": {
+                "descripcion": "Energía e hidrocarburos (fuentes sectoriales y comunicados oficiales).",
+                "fuentes_consultadas": ["Sector energético", "Comunicados oficiales"],
+                "inventario": False,
+            },
+            "capa_6": {
+                "descripcion": "ONG, organismos multilaterales y boletines especializados.",
+                "fuentes_consultadas": ["ONG", "Organismos multilaterales", "Boletines especializados"],
+                "inventario": False,
+            },
+        }
 
     resultados: dict[str, Any] = {}
     errores: list[str] = []
@@ -254,6 +322,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
     rango_fin_iso = fin.isoformat()
 
     for capa, detalle in capas.items():
+        directrices = _prompt_directrices(detalle, config) if config else ""
         prompt = (
             "Monitorea eventos políticos relevantes de Venezuela.\n"
             f"Capa: {detalle['descripcion']}\n"
@@ -276,6 +345,8 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
         )
         if detalle.get("inventario"):
             prompt += inventario_instruccion
+        if directrices:
+            prompt += "\nDirectrices adicionales:\n" + directrices + "\n"
 
         salida = _consulta_perplexity(prompt, timeout=timeout)
         parsed = _intentar_parsear_json(salida.get("texto", ""))
