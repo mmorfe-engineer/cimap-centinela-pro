@@ -3,11 +3,14 @@ from __future__ import annotations
 import json
 import os
 from datetime import datetime
+from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import requests
 
 MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
+CONFIG_PATH = os.getenv("CENTINELA_CONFIG_PATH", "config/monitor_noticias_multicapa_ve_v1_1.json")
 
 PROMPT_SISTEMA = (
     "Redacta un informe periodístico verificable, claro y estructurado. "
@@ -153,6 +156,50 @@ def _fecha_sort_key(item: dict[str, Any]) -> datetime:
     return parsed or datetime.min
 
 
+def _cargar_config() -> dict[str, Any] | None:
+    path = Path(CONFIG_PATH)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _indexar_source_registry(config: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    registry = config.get("source_registry") or []
+    index: dict[str, dict[str, Any]] = {}
+    for fuente in registry:
+        domain = (fuente.get("domain") or "").lower().strip()
+        if domain:
+            index[domain] = fuente
+    return index
+
+
+def _dominio_fuente(url: str | None) -> str:
+    if not url:
+        return ""
+    try:
+        parsed = urlparse(url)
+        return parsed.netloc.lower().lstrip("www.")
+    except Exception:
+        return ""
+
+
+def _etiquetar_fuente(item: dict[str, Any], registry: dict[str, dict[str, Any]]) -> None:
+    domain = _dominio_fuente(item.get("fuente_url"))
+    if not domain:
+        return
+    fuente = registry.get(domain)
+    if not fuente:
+        return
+    item.setdefault("fuente_domain", domain)
+    item.setdefault("source_type", fuente.get("source_type"))
+    item.setdefault("source_bias_risk", fuente.get("bias_risk"))
+    item.setdefault("source_authority_score", fuente.get("authority_score"))
+    item.setdefault("requires_cross_check", fuente.get("requires_cross_check"))
+
+
 def _extraer_hallazgos(resultado_busqueda: dict[str, Any]) -> list[dict[str, Any]]:
     hallazgos: list[dict[str, Any]] = []
     minimo = _relevancia_minima()
@@ -255,7 +302,7 @@ def _resumen_verificacion(hallazgos: list[dict[str, Any]]) -> dict[str, Any]:
 
 def _texto_sift(resumen: dict[str, Any]) -> str:
     return (
-        "VERIFICACIÓN (SIFT)\n"
+        "VERIFICACI��N (SIFT)\n"
         "- Stop: se filtraron hallazgos con fuente y rango UTC.\n"
         "- Investigate: se registró fuente_nombre y actor principal.\n"
         "- Find better coverage: se contrastó por capas y fuentes consultadas.\n"
@@ -316,6 +363,14 @@ def _fuentes_desde_resultados(resultado_busqueda: dict[str, Any]) -> dict[str, l
     }
 
 
+def _aplicar_registry_a_hallazgos(hallazgos: list[dict[str, Any]], registry: dict[str, dict[str, Any]]) -> None:
+    if not registry:
+        return
+    for item in hallazgos:
+        if isinstance(item, dict):
+            _etiquetar_fuente(item, registry)
+
+
 def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
     modelo = os.getenv("MISTRAL_MODEL", "mistral-large-latest")
     max_tokens = int(os.getenv("MISTRAL_TOKENS", "4000"))
@@ -326,7 +381,11 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
     rango_inicio_iso = rango_inicio.isoformat() if rango_inicio else resultado_busqueda.get("rango_inicio", "")
     rango_fin_iso = rango_fin.isoformat() if rango_fin else resultado_busqueda.get("rango_fin", "")
 
+    config = _cargar_config() or {}
+    registry = _indexar_source_registry(config) if config else {}
+
     hallazgos = _extraer_hallazgos(resultado_busqueda)
+    _aplicar_registry_a_hallazgos(hallazgos, registry)
     resumen_verificacion = _resumen_verificacion(hallazgos)
     min_por_seccion = _min_por_seccion()
     omitidas = _secciones_omitidas(hallazgos, min_por_seccion)
@@ -366,6 +425,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "actor": ACTOR_PESO,
                 },
                 "verificacion": resumen_verificacion,
+                "source_registry": {"total": len(registry)},
             },
             "fuentes": fuentes,
         }
@@ -403,6 +463,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "actor": ACTOR_PESO,
                 },
                 "verificacion": resumen_verificacion,
+                "source_registry": {"total": len(registry)},
             },
             "fuentes": fuentes,
         }
@@ -492,6 +553,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "actor": ACTOR_PESO,
                 },
                 "verificacion": resumen_verificacion,
+                "source_registry": {"total": len(registry)},
             },
             "fuentes": fuentes,
         }
@@ -520,6 +582,7 @@ def redactar_informe(resultado_busqueda: dict[str, Any]) -> dict[str, Any]:
                     "actor": ACTOR_PESO,
                 },
                 "verificacion": resumen_verificacion,
+                "source_registry": {"total": len(registry)},
             },
             "fuentes": fuentes,
         }
