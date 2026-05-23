@@ -1,0 +1,321 @@
+{
+  "version": "1.0.2",
+  "country_focus": "Venezuela",
+  "actualizado": "2026-05-19",
+  "changelog": [
+    {
+      "version": "1.0.2",
+      "fecha": "2026-05-19",
+      "cambio": "Corregido P1 María Corina Machado: cargo='Opositora' (se retiran referencias a candidatura y Premio Nobel por decisión editorial de Morfe)."
+    },
+    {
+      "version": "1.0.1",
+      "fecha": "2026-05-19",
+      "cambio": "Confirmado Pedro Infante Aparicio (GOB4) como 1er VP de la AN. Refinado Jorge Rodríguez (GOB3). Agregado campo redes_sociales con handles verificados."
+    },
+    {
+      "version": "1.0.0",
+      "fecha": "2026-05-19",
+      "cambio": "Catálogo inicial — 18 actores: 5 GOB, 5 P, 5 INST, 4 INT."
+    }
+  ],
+  "politica_iconografia": "Por defecto los actores NO llevan iconografía/emoji. Excepción explícita: Delcy Rodríguez (GOB1) y Pedro Infante Aparicio (GOB4) portan la bandera de Venezuela.",
+  "convenciones": {
+    "GOB": "Bloque ejecutivo/gobierno",
+    "P": "Bloque oposición política",
+    "INST": "Instituciones del Estado",
+    "INT": "Actores internacionales"
+  },
+  "actores": [
+    {
+      "codigo": "GOB1",
+      "nombre": "Delcy Rodríguez",
+      "bloque": "ejecutivo",
+      "cargo": "Presidenta encargada / Vicepresidenta",
+      "rol_estructural": "Conductora del gobierno transicional venezolano",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "oficialismo_y_estado",
+      "queries_focalizadas": [
+        "Delcy Rodríguez declaraciones",
+        "Delcy Rodríguez VTV",
+        "Vicepresidencia Venezuela comunicado",
+        "presidenta encargada Venezuela"
+      ],
+      "iconografia": "🇻🇪",
+      "notas": "Portadora de bandera por política explícita de iconografía"
+    },
+    {
+      "codigo": "GOB2",
+      "nombre": "Diosdado Cabello",
+      "bloque": "ejecutivo",
+      "cargo": "Figura del chavismo histórico",
+      "rol_estructural": "Ala dura del chavismo en el gobierno transicional",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "oficialismo_y_estado",
+      "queries_focalizadas": [
+        "Diosdado Cabello declaraciones",
+        "Diosdado Cabello programa Con el Mazo Dando",
+        "Cabello Venezuela hoy"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "GOB3",
+      "nombre": "Jorge Rodríguez",
+      "bloque": "legislativo_oficialismo",
+      "cargo": "Presidente de la Asamblea Nacional",
+      "rol_estructural": "Hermano de Delcy Rodríguez; coordinador legislativo del oficialismo. Diputado por Distrito Capital (PSUV). Ratificado en la presidencia de la AN en 2024.",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "asamblea_nacional",
+      "queries_focalizadas": [
+        "Jorge Rodríguez Asamblea Nacional declaración",
+        "presidente AN Venezuela hoy",
+        "Jorge Rodríguez PSUV Distrito Capital",
+        "@jorgerpsuv_ Instagram"
+      ],
+      "redes_sociales": {
+        "instagram": "jorgerpsuv_"
+      },
+      "iconografia": null
+    },
+    {
+      "codigo": "GOB4",
+      "nombre": "Pedro Infante Aparicio",
+      "bloque": "legislativo_oficialismo",
+      "cargo": "Primer Vicepresidente de la Asamblea Nacional",
+      "rol_estructural": "Diputado por Miranda (PSUV). 1er VP de la AN desde enero de 2023. Pieza relevante de la coordinación legislativa del oficialismo junto a Jorge Rodríguez.",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "asamblea_nacional",
+      "queries_focalizadas": [
+        "Pedro Infante Aparicio Asamblea Nacional declaración",
+        "Pedro Infante 1er Vicepresidente AN Venezuela",
+        "Pedro Infante PSUV Miranda diputado",
+        "@pinfantea X Twitter publicó",
+        "@pinfantea Instagram"
+      ],
+      "redes_sociales": {
+        "x": "pinfantea",
+        "instagram": "pinfantea"
+      },
+      "iconografia": "🇻🇪",
+      "notas": "Portador de bandera por política explícita de iconografía. Bio social: 'Enamorado de la Patria y del Deporte, 1er VP de la Asamblea Nacional'. ~117K seguidores en Instagram con +11.000 publicaciones."
+    },
+    {
+      "codigo": "GOB5",
+      "nombre": "Nicolás Maduro",
+      "bloque": "ejecutivo",
+      "cargo": "Ex Presidente (período hasta enero 2026)",
+      "rol_estructural": "Figura relevante post-transición; declaraciones aún de interés analítico",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "oficialismo_y_estado",
+      "queries_focalizadas": [
+        "Nicolás Maduro declaración",
+        "Maduro Venezuela hoy"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "P1",
+      "nombre": "María Corina Machado",
+      "bloque": "oposicion",
+      "cargo": "Opositora",
+      "rol_estructural": "Líder opositora; gestiones internacionales y articulación de la dirigencia opositora venezolana",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "oposicion",
+      "queries_focalizadas": [
+        "María Corina Machado declaraciones",
+        "MCM Venezuela hoy",
+        "Machado oposición pronunciamiento"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "P2",
+      "nombre": "Edmundo González Urrutia",
+      "bloque": "oposicion",
+      "cargo": "Candidato presidencial 2024 reconocido por sectores opositores",
+      "rol_estructural": "Vocero opositor internacional principal",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "oposicion",
+      "queries_focalizadas": [
+        "Edmundo González Urrutia declaraciones",
+        "Edmundo González comunicado oposición"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "P3",
+      "nombre": "Henrique Capriles",
+      "bloque": "oposicion",
+      "cargo": "Dirigente Primero Justicia / Ex candidato presidencial",
+      "rol_estructural": "Voz opositora histórica con base territorial",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "oposicion",
+      "queries_focalizadas": [
+        "Henrique Capriles declaraciones",
+        "Capriles Primero Justicia"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "P4",
+      "nombre": "Julio Borges",
+      "bloque": "oposicion",
+      "cargo": "Dirigente Primero Justicia",
+      "rol_estructural": "Vocero opositor internacional con orden de captura del régimen previo",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "oposicion",
+      "queries_focalizadas": [
+        "Julio Borges declaraciones",
+        "Borges Primero Justicia"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "P5",
+      "nombre": "Andrés Velásquez",
+      "bloque": "oposicion",
+      "cargo": "Dirigente sindical / La Causa R",
+      "rol_estructural": "Voz opositora con perfil de izquierda y trayectoria sindical",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "oposicion",
+      "queries_focalizadas": [
+        "Andrés Velásquez La Causa R declaraciones"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INST1",
+      "nombre": "Asamblea Nacional",
+      "bloque": "institucional",
+      "cargo": "Poder Legislativo Nacional",
+      "rol_estructural": "Presidida por Jorge Rodríguez; aprobaciones recientes incluyen reforma petrolera y Ley de Amnistía 2026",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "asamblea_nacional",
+      "queries_focalizadas": [
+        "Asamblea Nacional Venezuela sesión",
+        "AN Venezuela aprobó ley",
+        "Asamblea Nacional Venezuela hoy"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INST2",
+      "nombre": "Tribunal Supremo de Justicia",
+      "bloque": "institucional",
+      "cargo": "Poder Judicial Nacional",
+      "rol_estructural": "Máxima instancia judicial; en proceso de renovación post-transición",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "oficialismo_y_estado",
+      "queries_focalizadas": [
+        "TSJ Venezuela sentencia",
+        "Tribunal Supremo Justicia Venezuela"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INST3",
+      "nombre": "Consejo Nacional Electoral",
+      "bloque": "institucional",
+      "cargo": "Poder Electoral",
+      "rol_estructural": "Rectoría electoral; pertinente para procesos de relegitimación y partidos",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "oficialismo_y_estado",
+      "queries_focalizadas": [
+        "CNE Venezuela decisión",
+        "Consejo Nacional Electoral Venezuela"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INST4",
+      "nombre": "Banco Central de Venezuela",
+      "bloque": "institucional",
+      "cargo": "Autoridad monetaria",
+      "rol_estructural": "Publica indicadores macro, tipo de cambio oficial y reservas",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "oficialismo_y_estado",
+      "queries_focalizadas": [
+        "BCV Venezuela datos",
+        "Banco Central Venezuela inflación",
+        "BCV tipo de cambio"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INST5",
+      "nombre": "PDVSA",
+      "bloque": "institucional",
+      "cargo": "Estatal petrolera",
+      "rol_estructural": "Núcleo económico-energético; eje de sanciones y producción nacional",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "comunicados_oficiales",
+      "queries_focalizadas": [
+        "PDVSA producción petrolera",
+        "PDVSA comunicado oficial",
+        "PDVSA exportaciones"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INT1",
+      "nombre": "Departamento de Estado EE.UU.",
+      "bloque": "internacional",
+      "cargo": "Política exterior estadounidense",
+      "rol_estructural": "Actor decisivo en sanciones, licencias y reconocimiento diplomático (Secretario Marco Rubio en período actual)",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "eeuu",
+      "queries_focalizadas": [
+        "State Department Venezuela",
+        "Marco Rubio Venezuela",
+        "US Venezuela policy",
+        "Departamento Estado Venezuela"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INT2",
+      "nombre": "OFAC / U.S. Treasury",
+      "bloque": "internacional",
+      "cargo": "Sanciones financieras estadounidenses",
+      "rol_estructural": "Emisor de licencias generales/específicas que afectan a PDVSA, BCV y operadores extranjeros",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "comunicados_oficiales",
+      "queries_focalizadas": [
+        "OFAC Venezuela license",
+        "Treasury Venezuela sanctions",
+        "OFAC PDVSA"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INT3",
+      "nombre": "Gustavo Petro",
+      "bloque": "internacional",
+      "cargo": "Presidente de Colombia",
+      "rol_estructural": "Vecino directo; gestiona frontera, migración y posición regional ante crisis venezolana",
+      "prioridad_monitoreo": "alta",
+      "submodulo_principal": "suramerica",
+      "queries_focalizadas": [
+        "Petro Venezuela declaración",
+        "Colombia Venezuela frontera",
+        "Gobierno Colombia Venezuela"
+      ],
+      "iconografia": null
+    },
+    {
+      "codigo": "INT4",
+      "nombre": "Unión Europea",
+      "bloque": "internacional",
+      "cargo": "Política exterior comunitaria europea",
+      "rol_estructural": "Régimen de sanciones europeo paralelo al estadounidense; declaraciones del Alto Representante",
+      "prioridad_monitoreo": "media",
+      "submodulo_principal": "europa",
+      "queries_focalizadas": [
+        "EU Venezuela statement",
+        "Unión Europea Venezuela sanciones"
+      ],
+      "iconografia": null
+    }
+  ]
+}
