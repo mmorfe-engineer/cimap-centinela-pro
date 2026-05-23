@@ -1,105 +1,165 @@
-# CENTINELA PRO (Fase 1)
+# CENTINELA PRO
 
-Paquete “llave en mano” para ejecutar monitoreo político **solo con GitHub Actions**.
+Sistema de monitoreo político de Venezuela, automatizado con **GitHub Actions**.
+Produce informes de inteligencia política estructurados, dos veces al día, con
+distribución multicanal y memoria entre cortes.
+
+---
 
 ## ¿Qué hace?
-1. **Busca** información reciente en múltiples capas con Perplexity Sonar.
-2. **Redacta** un informe con Mistral (`mistral-large-latest`).
-3. **Entrega** por canales (Telegram, Gmail, Discord, Slack) y publica HTML en **GitHub Pages** (`gh-pages`).
 
-## Metodología operativa (resumen)
-CENTINELA PRO aplica directrices de búsqueda y verificación desde el archivo de configuración:
-`config/monitor_noticias_multicapa_ve_v1_1.json`
+1. **Busca** (`buscador.py`) información reciente con Perplexity Sonar, en 15 llamadas
+   focalizadas por submódulo estratégico, inyectando toda la metodología del JSON v1.1
+   y el catálogo de actores.
+2. **Redacta** (`redactor.py`) un informe HTML responsivo con Mistral, estructurado en
+   las 11 secciones canónicas del `output_contract`, con semáforos visuales A0-A4.
+3. **Compara** (`estado_pipeline.py`) el corte actual contra el anterior para producir
+   la sección "Novedades vs. corte anterior".
+4. **Entrega** (`entrega.py`) por Telegram, Discord, Slack y Gmail, y publica el HTML
+   completo en **GitHub Pages**.
 
-### 1) Capas y submódulos
-La búsqueda se organiza por capas temáticas (capas 1–10) y submódulos con:
-- **Consultas sugeridas (query_templates)**
-- **Reglas de selección (selection_rules)**
-- **Foco geográfico o institucional**
+---
 
-Estas directrices se inyectan en el prompt de Perplexity y guían la extracción de hallazgos por capa.
+## Arquitectura del pipeline (Fases A–D)
 
-### 2) Registro de fuentes (source_registry)
-Se usa un registro de fuentes para:
-- Etiquetar cada hallazgo por **source_type**
-- Señalar **source_bias_risk**
-- Registrar **authority_score**
-- Indicar si requiere **cross_check**
+```
+monitor.py (orquestador)
+   │
+   ├─ 1) buscador.buscar_noticias()          → 15 calls Perplexity por submódulo
+   ├─ 2) estado_pipeline.cargar_snapshot()   → lee corte anterior (rama 'estado')
+   ├─ 3) estado_pipeline.detectar_novedades()→ diff actual vs anterior
+   ├─ 4) redactor.redactar_informe()         → HTML + texto + headlines (Mistral)
+   ├─ 5) entrega.entregar_informe()          → Telegram/Discord/Slack/Gmail/Pages
+   └─ 6) estado_pipeline.guardar_snapshot()  → guarda corte actual (rama 'estado')
+```
 
-El etiquetado es automático en `redactor.py` usando el dominio de la URL.
+El componente de estado (Fase D) es **no crítico**: si falla la lectura o escritura del
+snapshot, el pipeline continúa y produce el informe igual, solo que sin la sección de
+novedades. Un fallo de memoria nunca tumba la entrega.
 
-### 3) Señales sociales (SA0–SA4)
-Las señales de redes sociales se clasifican con niveles de alerta:
-- **SA0** descartado
-- **SA1** señal no verificada
-- **SA2** alerta en observación
-- **SA3** alerta verosímil
-- **SA4** confirmado
+---
 
-Las señales SA1–SA3 **nunca se redactan como hechos** y deben llevar advertencia.
+## Sistemas de clasificación
 
-### 4) Verificación y trazabilidad (SIFT)
-El informe incluye:
-- Sección explícita **SIFT** (Stop/Investigate/Find/Trace)
-- Conteo de hallazgos con URL
-- Conteo con archivo (Wayback / Archive.today)
+### Semáforo A0-A4 (urgencia + impacto decisional) — todos los hallazgos
+| Nivel | Color | Significado |
+|-------|-------|-------------|
+| A4 | 🔴 | Alerta prioritaria (respuesta 0-3h) |
+| A3 | 🟠 | Señal estratégica |
+| A2 | 🟡 | Narrativa relevante |
+| A1 | 🟢 | Reacción menor |
+| A0 | ⚪ | Actividad rutinaria |
 
-### 5) Política de frescura
-Se privilegian fuentes con fecha visible. Si una fuente no está fechada, solo se admite cuando es oficial y relevante.
+### SA0-SA4 (verificación) — solo señales sociales / Telegram
+| Nivel | Significado |
+|-------|-------------|
+| SA4 | Confirmado por fuente primaria |
+| SA3 | Verosímil (OSINT / cobertura secundaria) |
+| SA2 | En observación (sin confirmación primaria) |
+| SA1 | No verificada (no tratar como hecho) |
+| SA0 | Descartada |
 
-## Configuración para no-coder
+Las señales SA1-SA3 nunca se redactan como hechos; llevan leyenda de advertencia.
+
+### Estado general del día (calculado automáticamente)
+🔴 CRÍTICO (≥1 A4) · 🟠 ALTO (≥2 A3) · 🟡 MEDIO (≥1 A3 o ≥3 A2) · 🟢 NORMAL · ⚪ RUTINARIO
+
+---
+
+## Horarios (cron)
+
+Venezuela (VET, UTC-4) no usa horario de verano.
+
+| Turno | VET | UTC | Profile | Calls |
+|-------|-----|-----|---------|-------|
+| Matutino (briefing) | 11:00 | `0 15 * * *` | matutino | 10 |
+| Cierre (informe principal) | 18:00 | `0 22 * * *` | cierre | 15 |
+
+---
+
+## Archivos del repositorio
+
+```
+.
+├── .github/workflows/centinela_pro.yml   # Workflow de GitHub Actions
+├── config/
+│   ├── monitor_noticias_multicapa_ve_v1_1.json   # Metodología (10 capas)
+│   └── actores.json                              # Catálogo de actores (códigos)
+├── buscador.py        # Fase A — búsqueda multinivel
+├── redactor.py        # Fases B+D — redacción HTML + novedades
+├── entrega.py         # Fase C — distribución multicanal
+├── estado_pipeline.py # Fase D — memoria entre cortes
+├── monitor.py         # Orquestador
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Configuración (no-coder)
 
 ### 1) Cargar secretos
-En el repositorio: **Settings → Secrets and variables → Actions → New repository secret**.
+**Settings → Secrets and variables → Actions → New repository secret**
 
-Crea estos secretos (usa solo los que necesites para canales):
+Obligatorios:
+- `PERPLEXITY_API_KEY` — búsqueda
+- `MISTRAL_API_KEY` — redacción
 
-- `PERPLEXITY_API_KEY` (obligatorio para búsqueda real)
-- `MISTRAL_API_KEY` (obligatorio para redacción con Mistral)
-- `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID` (opcional)
-- `DISCORD_WEBHOOK_URL` (opcional)
-- `SLACK_WEBHOOK_URL` (opcional)
-- `GMAIL_REMITENTE`, `GMAIL_APP_PASSWORD`, `GMAIL_DESTINATARIO` (opcional)
+Recomendados:
+- `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID` — entrega Telegram (chat ID numérico)
+- `PAGES_BASE_URL` — URL base de GitHub Pages (ej: `https://usuario.github.io/repo`)
+  para que el teaser incluya el link al informe completo
 
-> El workflow usa automáticamente `GITHUB_TOKEN` interno de GitHub Actions.
+Opcionales:
+- `DISCORD_WEBHOOK_URL`
+- `SLACK_WEBHOOK_URL`
+- `GMAIL_REMITENTE`, `GMAIL_APP_PASSWORD`, `GMAIL_DESTINATARIO`
 
-### 2) Ejecutar manualmente
-1. Ir a **Actions**.
-2. Abrir workflow **CENTINELA PRO Fase 1**.
-3. Clic en **Run workflow**.
-4. (Opcional) colocar `horas_atras` para forzar ventana personalizada.
+> El workflow usa automáticamente `GITHUB_TOKEN` interno.
 
-### 3) Horarios automáticos
-Venezuela (VET, UTC-4) no usa horario de verano.
-- 12:00 VET (UTC-4) → `16:00 UTC`
-- 18:00 VET (UTC-4) → `22:00 UTC`
+### 2) Habilitar GitHub Pages
+**Settings → Pages → Build and deployment → Deploy from a branch → `gh-pages` / `(root)`**
 
-## Variables opcionales
-- `CENTINELA_CONFIG_PATH` → ruta del JSON de directrices (por defecto: `config/monitor_noticias_multicapa_ve_v1_1.json`)
-- `ARCHIVE_URLS` → activar archivado automático (1/0)
-- `ARCHIVE_LIMIT` → máximo de URLs a archivar
-- `ARCHIVE_TIMEOUT` → timeout del archivado
+La rama `gh-pages` se crea sola en la primera corrida.
 
-## GitHub Pages (operativa)
-El sistema publica automáticamente:
-- `index.html`
-- `informes/<correlativo>.html`
+### 3) Ramas automáticas
+El sistema crea y mantiene solo dos ramas:
+- `gh-pages` — informes HTML publicados
+- `estado` — snapshots de Fase D (memoria entre cortes, últimos 14)
 
-en la rama `gh-pages`.
+No tocar manualmente.
 
-Para habilitar visualización web:
-1. Ir a **Settings → Pages**.
-2. En **Build and deployment**, seleccionar **Deploy from a branch**.
-3. Branch: `gh-pages` y folder `/ (root)`.
-4. Guardar.
+### 4) Ejecutar
+- **Automático**: según cron (11:00 y 18:00 VET).
+- **Manual**: Actions → CENTINELA PRO → Run workflow. Opcionalmente fijar `profile` y `horas_atras`.
 
-Cuando corra el workflow, la rama `gh-pages` se creará/actualizará sola.
+---
 
-## Archivos principales
-- `.github/workflows/centinela_pro.yml`
-- `config/monitor_noticias_multicapa_ve_v1_1.json`
-- `buscador.py`
-- `redactor.py`
-- `monitor.py`
-- `entrega.py`
-- `requirements.txt`
+## Variables de entorno (en el workflow)
+
+| Variable | Default | Función |
+|----------|---------|---------|
+| `CENTINELA_CONFIG_PATH` | `config/monitor_noticias_multicapa_ve_v1_1.json` | Ruta del JSON metodológico |
+| `CENTINELA_ACTORES_PATH` | `config/actores.json` | Ruta del catálogo de actores |
+| `CENTINELA_ESTADO` | `1` | Activa Fase D (memoria). `0` la desactiva |
+| `CENTINELA_PROFILE` | (auto) | Forzar `matutino` / `cierre` |
+| `PERPLEXITY_TIMEOUT` | `45` | Timeout por llamada (s) |
+| `ARCHIVE_URLS` | `1` | Activar archivado Wayback/Archive.today |
+
+---
+
+## Costo estimado
+
+~23 calls/día (10 matutino + 15 cierre, descontando el solapamiento de profiles) a
+Perplexity Sonar ≈ **$8-10/mes** según el contexto de búsqueda. Mistral añade el costo
+de redacción (2 bloques narrativos por corte).
+
+---
+
+## Roadmap
+
+- **Fase D.1** (pendiente): tracking de narrativas estructurales N1-N10 (anticorrupción,
+  soberanía, ruptura interna, diálogo EE.UU., Esequibo, etc.) con intensidad ↑↓→.
+- **Fase E** (pendiente): módulo de monitoreo temático (deep dive sobre un caso, tipo
+  el reporte modelo de extradición), reutilizando la infraestructura existente.
+- **Phase 2 diferida**: salida PDF ejecutiva de 2 páginas, integración Google Docs.
