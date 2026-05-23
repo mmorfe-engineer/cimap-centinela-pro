@@ -1,29 +1,57 @@
-name: CENTINELA PRO Fase 1
+name: CENTINELA PRO
 
 on:
   schedule:
-    - cron: "0 16 * * *"
+    # 11:00 VET (UTC-4) = 15:00 UTC — Turno A: matutino (briefing, 10 calls)
+    - cron: "0 15 * * *"
+    # 18:00 VET (UTC-4) = 22:00 UTC — Turno B: cierre (informe principal, 15 calls)
     - cron: "0 22 * * *"
   workflow_dispatch:
     inputs:
       horas_atras:
-        description: "Horas hacia atrás para la búsqueda (opcional)"
+        description: "Horas hacia atrás (opcional, sobreescribe el default por turno)"
         required: false
         type: string
+      profile:
+        description: "Profile manual: matutino (10 calls) / cierre (15 calls). Vacío = autodetectar."
+        required: false
+        type: choice
+        options:
+          - ""
+          - "matutino"
+          - "cierre"
+        default: ""
 
+# Permisos: 'contents: write' habilita push a gh-pages (informes) y a la rama
+# 'estado' (snapshots de Fase D). Ambas ramas se crean/actualizan solas.
 permissions:
   contents: write
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
+  # Modelos
   MISTRAL_MODEL: mistral-large-latest
   MISTRAL_TOKENS: "4000"
   PERPLEXITY_MODEL: sonar
-  PERPLEXITY_TIMEOUT: "30"
+  PERPLEXITY_TIMEOUT: "45"
+  # Rutas de configuración
+  CENTINELA_CONFIG_PATH: config/monitor_noticias_multicapa_ve_v1_1.json
+  CENTINELA_ACTORES_PATH: config/actores.json
+  # Fase D — memoria entre cortes (1 = activado, 0 = desactivado)
+  CENTINELA_ESTADO: "1"
+  # Archivado de URLs (Wayback / Archive.today)
+  ARCHIVE_URLS: "1"
+  ARCHIVE_LIMIT: "12"
+  ARCHIVE_TIMEOUT: "35"
 
 jobs:
   ejecutar-centinela:
     runs-on: ubuntu-22.04
+    # Concurrency: evita que dos corridas (cron + manual) se pisen al hacer
+    # push a las ramas gh-pages / estado simultáneamente.
+    concurrency:
+      group: centinela-pro-run
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -57,9 +85,20 @@ jobs:
           GMAIL_REMITENTE: ${{ secrets.GMAIL_REMITENTE }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GMAIL_DESTINATARIO: ${{ secrets.GMAIL_DESTINATARIO }}
+          PAGES_BASE_URL: ${{ secrets.PAGES_BASE_URL }}
+          CENTINELA_PROFILE: ${{ github.event.inputs.profile }}
         run: |
           if [ -n "${{ github.event.inputs.horas_atras }}" ]; then
             python monitor.py "${{ github.event.inputs.horas_atras }}"
           else
             python monitor.py
           fi
+
+      - name: Subir salidas como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: salidas-${{ github.run_id }}
+          path: salidas/
+          retention-days: 7
+          if-no-files-found: ignore
