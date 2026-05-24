@@ -2,24 +2,22 @@ name: CENTINELA PRO
 
 on:
   schedule:
-    # 11:00 VET (UTC-4) = 15:00 UTC — Turno A: matutino (briefing, 10 calls)
-    - cron: "0 15 * * *"
-    # 18:00 VET (UTC-4) = 22:00 UTC — Turno B: cierre (informe principal, 15 calls)
-    - cron: "0 22 * * *"
+    # 14:00 VET (UTC-4) = 18:00 UTC — Ciclo único diario (15 calls, ventana 24h)
+    - cron: "0 18 * * *"
   workflow_dispatch:
     inputs:
       horas_atras:
-        description: "Horas hacia atrás (opcional, sobreescribe el default por turno)"
+        description: "Horas hacia atrás para búsqueda ad-hoc (default: 24, max: 72)"
         required: false
         type: string
       profile:
-        description: "Profile manual: matutino (10 calls) / cierre (15 calls). Vacío = autodetectar."
+        description: "Profile ad-hoc: vacío = cierre (15 calls, default) / matutino (10 calls)"
         required: false
         type: choice
         options:
           - ""
-          - "matutino"
           - "cierre"
+          - "matutino"
         default: ""
 
 # Permisos: 'contents: write' habilita push a gh-pages (informes) y a la rama
@@ -29,6 +27,7 @@ permissions:
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   # Modelos
   MISTRAL_MODEL: mistral-large-latest
   MISTRAL_TOKENS: "4000"

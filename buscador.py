@@ -5,8 +5,8 @@ Orquesta llamadas a Perplexity Sonar por submódulo estratégico, no por capa.
 Inyecta toda la inteligencia metodológica del JSON v1.1 + catálogo de actores.
 
 Arquitectura clave:
-- Profile "matutino" (11:00 VET): 10 calls focalizadas, cubre 17h hacia atrás
-- Profile "cierre" (18:00 VET): 15 calls (10 matutino + 5 extras), cubre 7h hacia atrás
+- Ciclo único diario (14:00 VET / 18:00 UTC): 15 calls, ventana fija de 24h
+- Profile manual "matutino" disponible vía CENTINELA_PROFILE para uso ad-hoc (10 calls)
 - Cada hallazgo se clasifica con alert_level (A0-A4) + opcional social_alert_level (SA0-SA4)
 - Actores prioritarios se inyectan desde actores.json con código (GOB1, P1, INT1...)
 - Compatibilidad preservada con monitor.py y redactor.py existentes
@@ -110,12 +110,10 @@ def _utc_now() -> datetime:
 
 def _detectar_turno(ahora_utc: datetime) -> str:
     """
-    Decide turno según hora VET (UTC-4, sin DST).
-    - 08:00–14:59 VET → matutino (turno A, 11:00 VET es el cron principal)
-    - resto          → cierre   (turno B, 18:00 VET es el cron principal)
+    Ciclo único diario a las 14:00 VET (18:00 UTC) → siempre "cierre" (15 calls).
+    La función permanece para que CENTINELA_PROFILE pueda forzar "matutino" ad-hoc.
     """
-    hora_vet = (ahora_utc - timedelta(hours=4)).hour
-    return "matutino" if 8 <= hora_vet < 15 else "cierre"
+    return "cierre"
 
 
 def _profile_para_turno(turno: str) -> str:
@@ -127,13 +125,9 @@ def _calcular_rango(
     horas_atras: int | None,
     turno: str,
 ) -> tuple[datetime, datetime]:
-    """
-    Ventana de búsqueda según turno:
-    - matutino (11h VET): mira 17h hacia atrás → cubre 18h día anterior + arranque del día
-    - cierre   (18h VET): mira  7h hacia atrás → cubre 11h–18h del mismo día
-    """
+    """Ventana fija de 24h (ciclo único diario). Max 72h para búsquedas ad-hoc."""
     if horas_atras is None:
-        horas_atras = 17 if turno == "matutino" else 7
+        horas_atras = 24
     horas_atras = max(1, min(int(horas_atras), 72))
     inicio = ahora_utc - timedelta(hours=horas_atras)
     return inicio, ahora_utc
@@ -141,20 +135,28 @@ def _calcular_rango(
 
 def _ajustar_filtros_fecha(inicio: datetime, fin: datetime) -> tuple[str, str]:
     """
-    Evita 'after:YYYY-MM-DD before:YYYY-MM-DD' con misma fecha (cero resultados).
-    'before' es exclusivo en buscadores web → siempre se le suma 1 día.
+    after = inicio - 1 día (margen para noticias fechadas por día sin hora exacta).
+    before = fin + 1 día ('before' es exclusivo en buscadores web).
     """
-    after_date = inicio.date()
-    before_date = fin.date()
-    if after_date == before_date:
-        after_date = after_date - timedelta(days=1)
-    before_date = before_date + timedelta(days=1)
+    after_date = inicio.date() - timedelta(days=1)
+    before_date = fin.date() + timedelta(days=1)
     return after_date.strftime("%Y-%m-%d"), before_date.strftime("%Y-%m-%d")
 
 
 def _correlativo(fecha_utc: datetime, turno: str) -> str:
-    sufijo = "11H" if turno == "matutino" else "18H"
+    sufijo = "11H" if turno == "matutino" else "14H"
     return f"{fecha_utc.strftime('%Y%m%d')}-{sufijo}-{fecha_utc.strftime('%H%M%S')}"
+
+
+_MESES_ES = [
+    "enero", "febrero", "marzo", "abril", "mayo", "junio",
+    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+]
+
+
+def _fecha_humana(dt: datetime) -> str:
+    """Ej: '24 de mayo de 2026'. Perplexity ancla mejor con fechas en lenguaje natural."""
+    return f"{dt.day} de {_MESES_ES[dt.month - 1]} de {dt.year}"
 
 
 # =============================================================================
@@ -168,7 +170,11 @@ def _cargar_json_archivo(path_str: str) -> dict[str, Any]:
         return {}
     try:
         return json.loads(path.read_text(encoding="utf-8"))
-    except Exception:
+    except json.JSONDecodeError as exc:
+        print(f"[buscador] JSON corrupto en {path_str}: {exc} (línea {exc.lineno}, col {exc.colno})")
+        return {}
+    except Exception as exc:
+        print(f"[buscador] Error leyendo {path_str}: {exc}")
         return {}
 
 
@@ -428,6 +434,8 @@ REGLAS DE LLENADO:
 - No reproduzcas texto literal extenso de artículos. Parafrasea siempre.
 """
 
+    fecha_humana = fechas.get("fecha_humana", "hoy")
+
     prompt = f"""Eres un asistente de monitoreo de inteligencia política venezolana de alta precisión. Devuelves hallazgos verificables, fechados y con URL. No inventas datos. Si no hay evidencia suficiente, lo dices en `notas`.
 
 # CONTEXTO DE LA BÚSQUEDA
@@ -435,11 +443,12 @@ REGLAS DE LLENADO:
 - Submódulos activos: {submodulos_str}
 - Misión de esta capa: {mission}
 - País foco: Venezuela
-- Rango UTC del evento: {fechas['rango_inicio']} a {fechas['rango_fin']}
+- Fecha de referencia: **{fecha_humana}** (hoy en Venezuela)
+- Rango de interés: {fechas['rango_inicio']} a {fechas['rango_fin']}
 - Filtro fecha recomendado: `after:{fechas['after']} before:{fechas['before']}`
 
 # REGLAS CRÍTICAS NO NEGOCIABLES
-1. Incluye SOLO eventos publicados dentro del rango UTC exacto.
+1. Prioriza eventos de HOY ({fecha_humana}) o las últimas 24h. Acepta noticias fechadas por día aunque no tengan hora UTC exacta. Descarta solo lo claramente más viejo de 48h o sin fecha alguna.
 2. Cita siempre URL verificable. Sin URL = no entra al resultado.
 3. Clasifica TODOS los hallazgos con `alert_level` (A0-A4).
 4. Si el actor coincide con el catálogo, usa el CÓDIGO en `actor_principal`.
@@ -671,6 +680,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
         "rango_fin": fin.isoformat(),
         "after": after,
         "before": before,
+        "fecha_humana": _fecha_humana(fin),
     }
 
     config = _cargar_config()
