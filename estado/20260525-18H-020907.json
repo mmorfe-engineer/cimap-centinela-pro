@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "correlativo": "20260525-18H-020907",
+  "turno": "cierre",
+  "timestamp_utc": "2026-05-25T02:11:59.321564+00:00",
+  "rango_inicio": "2026-05-24T19:09:07.180743+00:00",
+  "rango_fin": "2026-05-25T02:09:07.180743+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 0,
+    "A2": 3,
+    "A1": 0,
+    "A0": 0,
+    "total": 3
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Informe sobre vigilancia digital en Venezuela fue difundido por medios internacionales",
+      "ultima_fuente_url": "https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/"
+    },
+    "GOB2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura internacional destaca presunto sistema de control digital en Venezuela",
+      "ultima_fuente_url": "https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "f1d92e2e9354",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Informe sobre vigilancia digital en Venezuela fue difundido por medios internacionales",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/"
+    },
+    {
+      "hash": "d5f1ed85f179",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Informe sobre vigilancia digital en Venezuela circula en prensa regional",
+      "fuente_url": "https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203"
+    },
+    {
+      "hash": "362d465d7282",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura internacional destaca presunto sistema de control digital en Venezuela",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 1
+}
