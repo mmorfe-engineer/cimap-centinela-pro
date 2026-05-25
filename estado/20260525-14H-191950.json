@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "correlativo": "20260525-14H-191950",
+  "turno": "cierre",
+  "timestamp_utc": "2026-05-25T19:21:27.837428+00:00",
+  "rango_inicio": "2026-05-24T19:19:50.127104+00:00",
+  "rango_fin": "2026-05-25T19:19:50.127104+00:00",
+  "estado_general": "NORMAL",
+  "contadores": {
+    "A4": 0,
+    "A3": 0,
+    "A2": 0,
+    "A1": 0,
+    "A0": 1,
+    "total": 1
+  },
+  "actores_activos": {
+    "N/D": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A0",
+      "alert_levels": [
+        "A0"
+      ],
+      "ultimo_titulo": "Sin hallazgos verificables en la ventana consultada",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=2aD14b2t9UY"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "a8778403b94b",
+      "actor": "N/D",
+      "alert_level": "A0",
+      "titulo_corto": "Sin hallazgos verificables en la ventana consultada",
+      "fuente_url": "https://www.youtube.com/watch?v=2aD14b2t9UY"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
