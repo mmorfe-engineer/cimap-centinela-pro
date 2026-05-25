@@ -32,6 +32,7 @@ env:
   MISTRAL_MODEL: mistral-large-latest
   MISTRAL_TOKENS: "4000"
   PERPLEXITY_MODEL: sonar
+  PERPLEXITY_RECENCY: week
   PERPLEXITY_TIMEOUT: "45"
   # Rutas de configuración
   CENTINELA_CONFIG_PATH: config/monitor_noticias_multicapa_ve_v1_1.json

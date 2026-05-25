@@ -471,8 +471,10 @@ def _consulta_perplexity(prompt: str, timeout: int) -> dict[str, Any]:
     if not api_key:
         return {"success": False, "error": "PERPLEXITY_API_KEY no configurada", "texto": ""}
 
+    recency = os.getenv("PERPLEXITY_RECENCY", "week")
     payload = {
         "model": os.getenv("PERPLEXITY_MODEL", "sonar"),
+        "search_recency_filter": recency,
         "messages": [
             {
                 "role": "system",
