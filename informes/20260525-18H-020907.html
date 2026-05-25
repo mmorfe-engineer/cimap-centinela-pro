@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260525-18H-020907</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#fbc02d;">
+    🟡 ESTADO DEL DÍA: MEDIO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260525-18H-020907</code><br>
+    <strong>Ventana UTC:</strong> 2026-05-24T19:09:07.180743+00:00 → 2026-05-25T02:09:07.180743+00:00<br>
+    <strong>Generado:</strong> 2026-05-25 02:11 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 0 A3</span>
+    <span class="stat-pill">🟡 3 A2</span>
+    <span class="stat-pill">📊 3 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día calificado como *medio* sin hallazgos críticos (A4/A3) en el corte 20260525-18H-020907.
+2. Medios internacionales (Infobae) atribuyen al Estado venezolano una red de vigilancia estatal con videovigilancia, interceptación de comunicaciones y ciberpatrullaje, vinculada a Delcy Rodríguez, aunque excluida por fuera del rango temporal.
+3. Cobertura de Infobae (2026-03-31) sobre Diosdado Cabello describe herramientas de vigilancia digital (ciberataques, monitoreo de redes), pero no aplica como hallazgo vigente por fecha anterior.
+4. Nota de *La Estrella de Panamá* (2026-05-25) resume informe que señala infraestructura estatal de vigilancia digital, ciberpatrullaje y bloqueo de sitios web con fines políticos, asociada a Diosdado Cabello.
+5. Ausencia de evidencia verificable sobre impacto operativo actual de los hallazgos A2 reportados, limitados a percepción internacional y contexto narrativo.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260525-18H-015103</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#fbc02d; font-weight:600;">🟡 MEDIO</span>
+  &rarr;
+  <span style="color:#fbc02d; font-weight:600;">🟡 MEDIO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (3):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A2">🟡 A2</span> <strong>Delcy Rodríguez</strong>: Informe sobre vigilancia digital en Venezuela fue difundido por medios internacionales <a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Diosdado Cabello</strong>: Cobertura internacional destaca presunto sistema de control digital en Venezuela <a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Diosdado Cabello</strong>: Informe sobre vigilancia digital en Venezuela circula en prensa regional <a href="https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>Gobierno de Venezuela</code> (Gobierno de Venezuela), <code>P1</code> (María Corina Machado), <code>VE Sin Filtro / DFRLab</code> (VE Sin Filtro / DFRLab)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>8 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>8 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>8 cortes sin actividad</strong></li><li><code>INST4</code> — Banco Central de Venezuela (<em>Autoridad monetaria</em>): <strong>8 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>8 cortes sin actividad</strong></li><li><code>INT1</code> — Departamento de Estado EE.UU. (<em>Política exterior estadounidense</em>): <strong>8 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Informe sobre vigilancia digital en Venezuela fue difundido por medios internacionales</h3>
+  <p class="fact-summary">Medios internacionales reseñaron un informe que describe una red de vigilancia estatal en Venezuela basada en videovigilancia, interceptación de comunicaciones, ciberpatrullaje y otras herramientas digitales para control político.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 30/03/2026 20:00 VET</p>
+  <ul class="data-points"><li>{&#x27;tipo&#x27;: &#x27;monto&#x27;, &#x27;valor&#x27;: &#x27;más de mil millones de dólares&#x27;}</li><li>{&#x27;tipo&#x27;: &#x27;cifra&#x27;, &#x27;valor&#x27;: &#x27;unos 27 millones de personas&#x27;}</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El contenido apunta a infraestructura de vigilancia con impacto en derechos civiles y en la capacidad del Estado para monitorear disidencia. Sin embargo, al estar fuera del rango temporal exigido, no se usa como evento operativo actual.</div>
+  <div class="enlaces"><a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener">📰 Infobae</a> · <a href="https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>7. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>8. Datos económicos y sociales</h2>
+  <p class="seccion-vacia">Sin actualizaciones de indicadores en este corte.</p>
+</section>
+<section class="brief">
+  <h2>9. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Cobertura internacional destaca presunto sistema de control digital en Venezuela</h3>
+  <p class="fact-summary">Una cobertura del 2026-03-31 sintetiza un informe que describe videovigilancia, interceptación de telecomunicaciones, ciberataques y monitoreo de redes sociales en Venezuela.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 30/03/2026 20:00 VET</p>
+  <ul class="data-points"><li>27000000</li><li>1000000000</li></ul>
+  <div class="warning-social"><strong>⛔ Descartada:</strong> Descartado para esta ventana temporal: el material no fue publicado dentro del rango UTC solicitado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Aunque es informativamente útil como contexto, no puede tratarse como hallazgo vigente en la ventana de búsqueda porque la publicación es anterior al rango requerido.</div>
+  <div class="enlaces"><a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener">📰 Infobae</a> · <a href="https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Informe sobre vigilancia digital en Venezuela circula en prensa regional</h3>
+  <p class="fact-summary">Una nota publicada el 2026-05-25 resume un informe que atribuye al Estado venezolano una infraestructura de vigilancia digital, ciberpatrullaje y bloqueo de sitios web con fines de control político.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 24/05/2026 20:00 VET</p>
+  <ul class="data-points"><li>206</li><li>65</li><li>1000000000</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal OSINT/periodística: basada en cobertura secundaria de un informe; no equivale a confirmación oficial independiente.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La difusión de este marco narrativo refuerza la percepción internacional de vigilancia estatal y puede impactar reputación, derechos digitales y escrutinio externo sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203" target="_blank" rel="noopener">📰 La Estrella de Panamá</a> · <a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Informe sobre vigilancia digital en Venezuela circula en prensa regional</h3>
+  <p class="fact-summary">Una nota publicada el 2026-05-25 resume un informe que atribuye al Estado venezolano una infraestructura de vigilancia digital, ciberpatrullaje y bloqueo de sitios web con fines de control político.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 24/05/2026 20:00 VET</p>
+  <ul class="data-points"><li>206</li><li>65</li><li>1000000000</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal OSINT/periodística: basada en cobertura secundaria de un informe; no equivale a confirmación oficial independiente.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La difusión de este marco narrativo refuerza la percepción internacional de vigilancia estatal y puede impactar reputación, derechos digitales y escrutinio externo sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203" target="_blank" rel="noopener">📰 La Estrella de Panamá</a> · <a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 Reacción internacional a informes de vigilancia estatal — Posible aumento de presión diplomática o sanciones por violación de derechos digitales, especialmente desde organismos como la OEA o la UE.
+
+2. 🟠 Cobertura mediática de La Estrella de Panamá (25/05/2026) — Refuerza narrativa de vigilancia masiva; monitorear si otros medios replican o profundizan el tema en próximos días.
+
+3. 🟡 Silencio de Jorge Rodríguez (GOB3) — Ausencia de declaraciones sobre vigilancia digital puede indicar estrategia de contención o preparación de respuesta oficial.
+
+4. 🟡 Posibles bloqueos de sitios web o restricciones digitales — Verificar si hay reportes de usuarios o ONGs sobre interrupciones en acceso a plataformas críticas (ej. redes sociales, medios independientes).
+
+5. 🟠 Reacción de actores opositores (Machado/González) — Su silencio o pronunciamientos podrían escalar el tema en agenda pública o internacional.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT1</strong> — Departamento de Estado EE.UU. (Política exterior estadounidense)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Infobae</td><td><a href="https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/" target="_blank" rel="noopener">https://www.infobae.com/venezuela/2026/03/31/el-gran-ojo-del-regimen-un-informe-revela-como-opera-el-sistema-que-espia-a-millones-de-venezolanos/</a></td><td>2026-03-31</td></tr><tr><td>La Estrella de Panamá</td><td><a href="https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203" target="_blank" rel="noopener">https://www.laestrella.com.pa/mundo/de-maduro-a-delcy-rodriguez-informe-expone-red-de-espionaje-en-venezuela-con-ia-y-vigilancia-masiva-BE21250203</a></td><td>2026-05-25</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-05-25</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
