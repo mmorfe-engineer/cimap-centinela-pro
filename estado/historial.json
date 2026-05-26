@@ -1,5 +1,19 @@
 [
   {
+    "correlativo": "20260526-14H-200427",
+    "turno": "cierre",
+    "timestamp_utc": "2026-05-26T20:06:42.618020+00:00",
+    "estado_general": "NORMAL",
+    "contadores": {
+      "A4": 0,
+      "A3": 0,
+      "A2": 1,
+      "A1": 1,
+      "A0": 0,
+      "total": 2
+    }
+  },
+  {
     "correlativo": "20260525-14H-191950",
     "turno": "cierre",
     "timestamp_utc": "2026-05-25T19:21:27.837428+00:00",
