@@ -1,10 +1,10 @@
 {
   "version": "1.0",
-  "correlativo": "20260523-18H-223943",
+  "correlativo": "20260530-14H-190342",
   "turno": "cierre",
-  "timestamp_utc": "2026-05-23T22:39:46.985989+00:00",
-  "rango_inicio": "",
-  "rango_fin": "",
+  "timestamp_utc": "2026-05-30T19:04:26.507647+00:00",
+  "rango_inicio": "2026-05-29T19:03:42.714097+00:00",
+  "rango_fin": "2026-05-30T19:03:42.714097+00:00",
   "estado_general": "RUTINARIO",
   "contadores": {
     "A4": 0,
