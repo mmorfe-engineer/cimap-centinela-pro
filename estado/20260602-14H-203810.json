@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "correlativo": "20260602-14H-203810",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-02T20:39:35.990111+00:00",
+  "rango_inicio": "2026-06-01T20:38:10.012305+00:00",
+  "rango_fin": "2026-06-02T20:38:10.012305+00:00",
+  "estado_general": "NORMAL",
+  "contadores": {
+    "A4": 0,
+    "A3": 0,
+    "A2": 1,
+    "A1": 0,
+    "A0": 0,
+    "total": 1
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Venezuela activa control sanitario para viajeros desde zonas con brotes de ébola",
+      "ultima_fuente_url": "https://www.infobae.com/america/agencias/2026/06/02/venezuela-aplicara-medidas-de-control-a-viajeros-procedentes-de-zonas-con-brotes-de-ebola/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "ea83641affad",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela activa control sanitario para viajeros desde zonas con brotes de ébola",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/06/02/venezuela-aplicara-medidas-de-control-a-viajeros-procedentes-de-zonas-con-brotes-de-ebola/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
