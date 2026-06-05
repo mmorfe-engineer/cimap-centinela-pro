@@ -1,0 +1,173 @@
+{
+  "version": "1.0",
+  "correlativo": "20260605-14H-194517",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-05T19:52:14.247251+00:00",
+  "rango_inicio": "2026-06-04T19:45:17.581359+00:00",
+  "rango_fin": "2026-06-05T19:45:17.581359+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 3,
+    "A2": 9,
+    "A1": 0,
+    "A0": 0,
+    "total": 12
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "El Nacional publica diagnóstico sobre una recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "Laboratorio de Paz": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz alerta sobre recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "FMI": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Informe sobre el gobierno interino de Delcy Rodríguez y llegada de nuevo jefe de misión del FMI",
+      "ultima_fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    "Delcy Rodríguez": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Informe político advierte ausencia de avances verificables hacia transición democrática",
+      "ultima_fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    "Gobierno de Guyana": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Guyana denunció un soldado herido en tiroteo cerca de la frontera con Venezuela",
+      "ultima_fuente_url": "https://www.infobae.com/venezuela/2026/05/30/guyana-denuncio-que-un-soldado-resulto-herido-tras-un-tiroteo-en-la-frontera-con-venezuela/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "833d6e71d5af",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "El Nacional publica diagnóstico sobre una recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "176445345ae1",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "c0d0dad39ef7",
+      "actor": "FMI",
+      "alert_level": "A3",
+      "titulo_corto": "LACEIBA reporta designación del nuevo jefe de misión del FMI para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "69e22371d9d2",
+      "actor": "FMI",
+      "alert_level": "A3",
+      "titulo_corto": "FMI designa nuevo jefe de misión para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "cf027937c8b0",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz evalúa deterioro democrático en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "244499a5788f",
+      "actor": "Delcy Rodríguez",
+      "alert_level": "A2",
+      "titulo_corto": "Informe político advierte ausencia de avances verificables hacia transición democrática",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "d680885b6ef1",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "ef8ac99c6df8",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte estancamiento democrático en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "8f67a2c13d0f",
+      "actor": "FMI",
+      "alert_level": "A2",
+      "titulo_corto": "LACEIBA reporta designación de nuevo jefe de misión del FMI para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "748c0df5b475",
+      "actor": "FMI",
+      "alert_level": "A2",
+      "titulo_corto": "Informe sobre el gobierno interino de Delcy Rodríguez y llegada de nuevo jefe de misión del FMI",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "7d97c34b3715",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz alerta sobre recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "808212bf304d",
+      "actor": "Gobierno de Guyana",
+      "alert_level": "A3",
+      "titulo_corto": "Guyana denunció un soldado herido en tiroteo cerca de la frontera con Venezuela",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/05/30/guyana-denuncio-que-un-soldado-resulto-herido-tras-un-tiroteo-en-la-frontera-con-venezuela/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
