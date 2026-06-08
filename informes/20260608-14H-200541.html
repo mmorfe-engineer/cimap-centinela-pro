@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260608-14H-200541</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260608-14H-200541</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-07T20:05:41.661102+00:00 → 2026-06-08T20:05:41.661102+00:00<br>
+    <strong>Generado:</strong> 2026-06-08 20:12 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 4 A3</span>
+    <span class="stat-pill">🟡 6 A2</span>
+    <span class="stat-pill">📊 10 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día clasificado como ALTO, con 4 hallazgos de nivel A3 y ninguno de mayor gravedad (A4).
+2. Denuncia sobre traslado de detenidos desde El Helicoide el 7 de junio sin lista oficial, lo que dificulta la localización de personas y aumenta riesgos de vulneraciones al debido proceso.
+3. Publicación de LACEIBA que señala ausencia de avances verificables en los primeros cinco meses del gobierno interino de Delcy Rodríguez, según evaluación de su gestión.
+4. Designación de un nuevo jefe de misión del FMI para Venezuela, junto a un informe que no identifica progresos en la normalización macroeconómica del país.
+5. Mención en informe del FMI sobre reunión de Delcy Rodríguez con Modi, en el marco del incremento de exportaciones petroleras venezolanas a India.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260607-14H-191112</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (9):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>ddhh</strong>: Traslado de presos políticos desde El Helicoide sin lista oficial <a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: El Ejecutivo interino de Delcy Rodríguez no muestra avances verificables, según LACEIBA <a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>FMI</strong>: LACEIBA reporta nuevo jefe de misión del FMI para Venezuela <a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Laboratorio de Paz</strong>: Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>El Helicoide</strong>: Familias denuncian falta de lista oficial tras traslado de presos políticos desde El Helicoide <a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: Reportan ausencia de cronograma electoral y renovación del CNE <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: Informe de Laboratorio de Paz advierte recomposición autoritaria en Venezuela <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>ONG1</strong>: Laboratorio de Paz advierte recomposición autoritaria en Venezuela <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Laboratorio de Paz</strong>: Laboratorio de Paz afirma que Venezuela se acerca a una recomposición autoritaria <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+
+<div class="novedades-bloque novedades-persistentes">
+  <strong>🔁 TEMAS QUE PERSISTEN ENTRE CORTES (1):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">A3</span> <strong>FMI</strong>: FMI designa nuevo jefe de misión para Venezuela</li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>ONG1</code> (ONG1), <code>ddhh</code> (ddhh)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>El Nacional</code> (El Nacional), <code>Gobierno de Venezuela</code> (Gobierno de Venezuela), <code>INST2</code> (Tribunal Supremo de Justicia), <code>INST3</code> (Consejo Nacional Electoral), <code>INST4</code> (Banco Central de Venezuela), <code>LACEIBA</code> (LACEIBA), <code>Mi Diario</code> (Mi Diario), <code>N/A</code> (N/A)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT1</code> — Departamento de Estado EE.UU. (<em>Política exterior estadounidense</em>): <strong>14 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>FMI designa nuevo jefe de misión para Venezuela</h3>
+  <p class="fact-summary">LACEIBA informó que el FMI nombró un nuevo jefe de misión para Venezuela y citó un informe sobre los primeros cinco meses del gobierno interino de Delcy Rodríguez, señalando que no existen avances verificables hacia una normalización macroeconómica.</p>
+  <p class="info-actor">Actor: FMI</p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede anticipar mayor escrutinio externo sobre la situación económica venezolana y la postura del FMI frente a eventuales ajustes o negociaciones.</div>
+  <div class="enlaces"><a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener">📰 LACEIBA</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Laboratorio de Paz afirma que Venezuela se acerca a una recomposición autoritaria</h3>
+  <p class="fact-summary">El Nacional reportó que el informe de Laboratorio de Paz sostiene que no existe cronograma electoral presidencial ni renovación del Consejo Nacional Electoral, y que el país estaría más cerca de una recomposición autoritaria que de una transición democrática.</p>
+  <p class="info-actor">Actor: Laboratorio de Paz</p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aporta una lectura de riesgo político útil para monitoreo de gobernabilidad, calendario electoral y condiciones de competencia democrática.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>7. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>8. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>LACEIBA reporta nuevo jefe de misión del FMI para Venezuela</h3>
+  <p class="fact-summary">LACEIBA informó que el FMI designó un nuevo jefe de misión para Venezuela y añadió que su informe no identifica avances verificables, además de mencionar una reunión de Delcy Rodríguez con Modi en el contexto del aumento de exportaciones petroleras a India.</p>
+  <p class="info-actor">Actor: FMI</p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Un cambio en la jefatura de misión del FMI puede anticipar ajustes en la interlocución técnica y en la lectura internacional de la situación económica venezolana.</div>
+  <div class="enlaces"><a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener">📰 LACEIBA</a> · <a href="https://web.archive.org/web/20260608201133/https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>10. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Traslado de presos políticos desde El Helicoide sin lista oficial</h3>
+  <p class="fact-summary">Una nota del 7 de junio reporta que el traslado de detenidos desde El Helicoide dejó a familiares sin información verificable y sin una lista oficial de personas movidas.</p>
+  <p class="info-actor">Actor: ddhh</p>
+  <p class="info-actor"><em>Publicado:</em> 06/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-07</li><li>al menos 25 presos políticos</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal OSINT/periodística no confirmada por fuente oficial; requiere validación secundaria antes de tratarla como hecho cerrado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el traslado ocurrió sin lista oficial, complica la localización de detenidos y eleva el riesgo de vulneraciones de debido proceso y trato inhumano. También puede indicar una operación de reubicación penitenciaria con baja trazabilidad.</div>
+  <div class="enlaces"><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">📰 Mi Diario</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Informe de Laboratorio de Paz advierte recomposición autoritaria en Venezuela</h3>
+  <p class="fact-summary">Un análisis citado por El Nacional sostiene que Venezuela está más cerca de una recomposición autoritaria que de una transición democrática y señala ausencia de cronograma electoral presidencial y de renovación del CNE.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal de observación basada en cobertura secundaria; requiere confirmación independiente antes de tratarla como hecho consolidado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza una narrativa internacional sobre cierre político e institucional en Venezuela, útil para monitorear presión externa, discurso opositor y posibles reacciones diplomáticas.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Reportan ausencia de cronograma electoral y renovación del CNE</h3>
+  <p class="fact-summary">Un análisis citado por El Nacional sostiene que no existe cronograma electoral presidencial ni renovación del Consejo Nacional Electoral, y lo interpreta como un indicio de recomposición autoritaria.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal de análisis periodístico; no equivale a confirmación oficial de medidas o cambios institucionales.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La ausencia de cronograma y de renovación del árbitro electoral afecta expectativas sobre competencia política y trazabilidad institucional. Para monitoreo político, esto marca continuidad del bloqueo electoral.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Transparencia en traslados de detenidos (El Helicoide)** — Falta de lista oficial aumenta riesgo de violaciones a DDHH y dificulta seguimiento legal de casos. Monitorear declaraciones de autoridades o ONGs sobre protocolos de reubicación.
+
+2. 🟠 **Evaluación del FMI sobre gestión económica** — Nuevo jefe de misión y informe sin avances verificables pueden endurecer postura del organismo. Vigilar comunicados oficiales del FMI o reuniones técnicas en próximos días.
+
+3. 🟡 **Reunión Delcy Rodríguez-Modí (exportaciones petroleras a India)** — Sin detalles concretos, pero podría indicar ajustes en alianzas energéticas. Seguir declaraciones de Cancillería o Pdvsa sobre acuerdos comerciales.
+
+4. 🟠 **Silencio de actores clave (Diosdado Cabello, María Corina Machado)** — Ausencia de actividad pública en contexto de tensiones políticas y económicas. Su reaparición podría marcar cambios en narrativa o estrategias.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB1</strong> — Delcy Rodríguez (Presidenta encargada / Vicepresidenta)</li><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(3)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>LACEIBA</td><td><a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener">https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision</a></td><td>2026-06-08</td></tr><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/</a></td><td>2026-06-08</td></tr><tr><td>Mi Diario</td><td><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/</a></td><td>2026-06-07</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-08</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
