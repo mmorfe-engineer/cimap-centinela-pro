@@ -1,0 +1,173 @@
+{
+  "version": "1.0",
+  "correlativo": "20260608-14H-200541",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-08T20:12:09.128478+00:00",
+  "rango_inicio": "2026-06-07T20:05:41.661102+00:00",
+  "rango_fin": "2026-06-08T20:05:41.661102+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 4,
+    "A2": 6,
+    "A1": 0,
+    "A0": 0,
+    "total": 10
+  },
+  "actores_activos": {
+    "Delcy Rodríguez": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "El Ejecutivo interino de Delcy Rodríguez no muestra avances verificables, según LACEIBA",
+      "ultima_fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    "Laboratorio de Paz": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz afirma que Venezuela se acerca a una recomposición autoritaria",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "El Helicoide": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Familias denuncian falta de lista oficial tras traslado de presos políticos desde El Helicoide",
+      "ultima_fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    "ONG1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "FMI": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "LACEIBA reporta nuevo jefe de misión del FMI para Venezuela",
+      "ultima_fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Reportan ausencia de cronograma electoral y renovación del CNE",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "ddhh": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Traslado de presos políticos desde El Helicoide sin lista oficial",
+      "ultima_fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "2ecce3da5520",
+      "actor": "Delcy Rodríguez",
+      "alert_level": "A3",
+      "titulo_corto": "El Ejecutivo interino de Delcy Rodríguez no muestra avances verificables, según LACEIBA",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "176445345ae1",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "81b11fac9814",
+      "actor": "El Helicoide",
+      "alert_level": "A2",
+      "titulo_corto": "Familias denuncian falta de lista oficial tras traslado de presos políticos desde El Helicoide",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "b522bc5e9ee1",
+      "actor": "ONG1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "69e22371d9d2",
+      "actor": "FMI",
+      "alert_level": "A3",
+      "titulo_corto": "FMI designa nuevo jefe de misión para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "fb87fe9cea6a",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz afirma que Venezuela se acerca a una recomposición autoritaria",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "e5f8bb3e4842",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Informe de Laboratorio de Paz advierte recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "82743a6d0a62",
+      "actor": "ddhh",
+      "alert_level": "A3",
+      "titulo_corto": "Traslado de presos políticos desde El Helicoide sin lista oficial",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "4f480902747a",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Reportan ausencia de cronograma electoral y renovación del CNE",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "02332c19b0c6",
+      "actor": "FMI",
+      "alert_level": "A3",
+      "titulo_corto": "LACEIBA reporta nuevo jefe de misión del FMI para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
