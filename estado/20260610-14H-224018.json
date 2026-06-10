@@ -1,0 +1,321 @@
+{
+  "version": "1.0",
+  "correlativo": "20260610-14H-224018",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-10T22:45:50.949829+00:00",
+  "rango_inicio": "2026-06-09T22:40:18.575579+00:00",
+  "rango_fin": "2026-06-10T22:40:18.575579+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 3,
+    "A2": 18,
+    "A1": 4,
+    "A0": 0,
+    "total": 25
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A3",
+        "A2",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Publicación en Instagram difunde rechazo del gobierno venezolano a declaraciones sobre la Guayana Es",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    "INST3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte ausencia de cronograma electoral presidencial y renovación del CNE",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura en Facebook denuncia traslados de presos políticos desde El Helicoide hacia otras cárceles",
+      "ultima_fuente_url": "https://www.facebook.com/nmasunivision/posts/organizaciones-de-derechos-humanos-denuncian-traslados-de-presos-pol%C3%ADticos-en-ve/1480772767411175/"
+    },
+    "Venezuela": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "El Nacional publica un análisis sobre la deriva autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "INT1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A1",
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "Desinformación sobre supuesta presencia de tropas de EE. UU. en una mina de oro en Bolívar",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "OP1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Foro Penal reportó una nueva excarcelación de un militar procesado por causas políticas",
+      "ultima_fuente_url": "https://www.facebook.com/vision24television/posts/-foro-penal-confirm%C3%B3-nueva-excarcelaci%C3%B3nla-organizaci%C3%B3n-no-gubernamental-foro-pe/1477585277736893/"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Desinformación desmentida sobre supuestas tropas de EE.UU. en mina de oro venezolana",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "María Corina Machado reaparece en una pieza social con mensaje sobre el retorno de venezolanos",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZQ6gXEM77V/"
+    },
+    "EEUU": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Verificación desmiente video sobre tropas de EE.UU. en minas de oro venezolanas",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "Laboratorio de Paz": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte deterioro democrático y ausencia de cronograma electoral",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "OPS1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "2298620aa382",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno venezolano rechaza declaraciones del primer ministro de Guyana",
+      "fuente_url": "https://www.facebook.com/VTVtuCanal/posts/envideo-%EF%B8%8Fla-cuenta-oficial-miraflores-al-momento-en-la-plataforma-x-desmiente-el/1476651717826560/?locale=af_ZA"
+    },
+    {
+      "hash": "49e22158d6b2",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Desmentida sobre supuesta presencia de tropas de EE. UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "3ee30f108c78",
+      "actor": "INST3",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte ausencia de cronograma electoral presidencial y renovación del CNE",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "bac172f5fe01",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Traslados de presos políticos desde El Helicoide sin lista oficial",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "3daab0e392af",
+      "actor": "Venezuela",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela: señalan que no hay evidencia verificable de tropas de EE. UU. en minas de oro",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "db3767320bbf",
+      "actor": "Venezuela",
+      "alert_level": "A2",
+      "titulo_corto": "El Nacional publica un análisis sobre la deriva autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "0af1eef2e264",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "El Helicoide volvió al centro de denuncias por detenciones y traslados opacos",
+      "fuente_url": "https://www.facebook.com/NoticiasCaracol/posts/mundo-en-venezuela-desalojaron-la-c%C3%A1rcel-del-helicoide-un-centro-de-detenci%C3%B3n-de/1516873363813768/?locale=pt_PT"
+    },
+    {
+      "hash": "614a5c1e3450",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno venezolano rechazó declaraciones del primer ministro de Guyana sobre el Esequibo",
+      "fuente_url": "https://www.instagram.com/p/DZSeKXhiTMF/"
+    },
+    {
+      "hash": "8a5476d566da",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Siguen sin lista oficial los presos políticos trasladados desde El Helicoide",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "223c43b1be27",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "Se difundió desinformación sobre supuesta presencia militar de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "e2ba64e8647b",
+      "actor": "OP1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte recomposición autoritaria y ausencia de cronograma presidencial",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "b262747122d8",
+      "actor": "OP1",
+      "alert_level": "A2",
+      "titulo_corto": "Foro Penal reportó una nueva excarcelación de un militar procesado por causas políticas",
+      "fuente_url": "https://www.facebook.com/vision24television/posts/-foro-penal-confirm%C3%B3-nueva-excarcelaci%C3%B3nla-organizaci%C3%B3n-no-gubernamental-foro-pe/1477585277736893/"
+    },
+    {
+      "hash": "f76d408d3846",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuesta toma de minas de oro en Bolívar por tropas de EE. UU.",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "ba0778682b7e",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Traslado opaco de presos políticos desde El Helicoide sin lista oficial",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "54e4346cc01b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte recomposición autoritaria y ausencia de cronograma electoral",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "699d2223c01d",
+      "actor": "INT2",
+      "alert_level": "A1",
+      "titulo_corto": "Desinformación desmentida sobre supuestas tropas de EE.UU. en mina de oro venezolana",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "0a7d68986eb3",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Video sobre supuesta presencia de tropas de EE.UU. en minas de oro de Bolívar fue desmentido como de",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "f7d4c07d1429",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "El Nacional reporta que Laboratorio de Paz ve a Venezuela más cerca de una recomposición autoritaria",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "9c1ca252f6eb",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Publicación en Instagram difunde rechazo del gobierno venezolano a declaraciones sobre la Guayana Es",
+      "fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    {
+      "hash": "7aeab370419e",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "María Corina Machado reaparece en una pieza social con mensaje sobre el retorno de venezolanos",
+      "fuente_url": "https://www.instagram.com/reel/DZQ6gXEM77V/"
+    },
+    {
+      "hash": "0a9328f7558c",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura en Facebook denuncia traslados de presos políticos desde El Helicoide hacia otras cárceles",
+      "fuente_url": "https://www.facebook.com/nmasunivision/posts/organizaciones-de-derechos-humanos-denuncian-traslados-de-presos-pol%C3%ADticos-en-ve/1480772767411175/"
+    },
+    {
+      "hash": "9973ec61f776",
+      "actor": "EEUU",
+      "alert_level": "A2",
+      "titulo_corto": "Verificación desmiente video sobre tropas de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "ee599f1d7682",
+      "actor": "Laboratorio de Paz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte deterioro democrático y ausencia de cronograma electoral",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "7f2cad073eed",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "Desinformación sobre supuesta presencia de tropas de EE. UU. en una mina de oro en Bolívar",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "ada609eac0cc",
+      "actor": "OPS1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 4
+}
