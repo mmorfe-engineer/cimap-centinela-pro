@@ -1,0 +1,226 @@
+{
+  "version": "1.0",
+  "correlativo": "20260610-14H-202034",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-10T20:30:48.875896+00:00",
+  "rango_inicio": "2026-06-09T20:20:34.787656+00:00",
+  "rango_fin": "2026-06-10T20:20:34.787656+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 4,
+    "A2": 11,
+    "A1": 0,
+    "A0": 1,
+    "total": 16
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "María Corina Machado reiteró su llamado al retorno de los venezolanos",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZQ6gXEM77V/"
+    },
+    "NA": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A0",
+      "alert_levels": [
+        "A0"
+      ],
+      "ultimo_titulo": "No se verificaron hoy anuncios oficiales adicionales con URL confiable en la muestra disponible",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZTVSY9iaXW/"
+    },
+    "INT1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Desinformación sobre supuestas tropas de EE. UU. en minas de oro de Bolívar",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "FMI designa nuevo jefe de misión para Venezuela",
+      "ultima_fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Denuncias de recomposición autoritaria y falta de cronograma electoral en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "EEUU": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Desmentida una supuesta presencia de tropas de EE. UU. en minas de oro venezolanas",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "LabPaz": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "6ae8269d5b7b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela rechaza declaraciones del primer ministro de Guyana",
+      "fuente_url": "https://www.instagram.com/p/DZTVSY9iaXW/"
+    },
+    {
+      "hash": "9d60e58bacdf",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "María Corina Machado reiteró su llamado al retorno de los venezolanos",
+      "fuente_url": "https://www.instagram.com/reel/DZQ6gXEM77V/"
+    },
+    {
+      "hash": "3afa2707f5d1",
+      "actor": "NA",
+      "alert_level": "A0",
+      "titulo_corto": "No se verificaron hoy anuncios oficiales adicionales con URL confiable en la muestra disponible",
+      "fuente_url": "https://www.instagram.com/p/DZTVSY9iaXW/"
+    },
+    {
+      "hash": "d0f91f2d0a90",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Traslado de presos políticos en El Helicoide sin lista oficial",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "630b507b1349",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuestas tropas de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "2298620aa382",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno venezolano rechaza declaraciones del primer ministro de Guyana",
+      "fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    {
+      "hash": "af3c99101794",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis advierte ausencia de cronograma electoral y recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "552a28680933",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "FMI designa nuevo jefe de misión para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "bac172f5fe01",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Traslados de presos políticos desde El Helicoide sin lista oficial",
+      "fuente_url": "https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/"
+    },
+    {
+      "hash": "3d392e315e16",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuesta presencia de tropas de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "46d7355b5bc2",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Denuncias de recomposición autoritaria y falta de cronograma electoral en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "66dc57813224",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuestas tropas de EE. UU. en mina de oro en Bolívar",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "4a7620a39a36",
+      "actor": "EEUU",
+      "alert_level": "A2",
+      "titulo_corto": "Desmentida una supuesta presencia de tropas de EE. UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "92d383f3858e",
+      "actor": "LabPaz",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "8661ad797fc4",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuestas tropas de EE. UU. en minas de oro de Bolívar",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "4e9873a4d7f1",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
