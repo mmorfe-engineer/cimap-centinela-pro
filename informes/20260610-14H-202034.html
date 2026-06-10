@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260610-14H-202034</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260610-14H-202034</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-09T20:20:34.787656+00:00 → 2026-06-10T20:20:34.787656+00:00<br>
+    <strong>Generado:</strong> 2026-06-10 20:30 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 4 A3</span>
+    <span class="stat-pill">🟡 11 A2</span>
+    <span class="stat-pill">📊 16 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general de alerta alto por cuatro hallazgos críticos (A3), sin registros de máxima gravedad (A4) en el corte.
+2. Familiares de detenidos trasladados desde El Helicoide denuncian ausencia de lista oficial que confirme ubicación y estado de los reclusos, según reporte de Mi Diario.
+3. Organizaciones de derechos humanos reportan traslados desde El Helicoide sin publicación de destinos, lo que incrementa riesgos de incomunicación o desaparición forzada.
+4. Gobierno venezolano rechaza declaraciones del primer ministro de Guyana sobre posible fallo de la CIJ en el diferendo por el Esequibo, según publicación oficial en Instagram.
+5. FMI designa nuevo jefe de misión para Venezuela en medio de evaluaciones económicas e institucionales, según informe de LACEIBA.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260609-14H-195942</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (16):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Venezuela rechaza declaraciones del primer ministro de Guyana <a href="https://www.instagram.com/p/DZTVSY9iaXW/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Unión Europea</strong>: FMI designa nuevo jefe de misión para Venezuela <a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Traslado de presos políticos en El Helicoide sin lista oficial <a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Traslados de presos políticos desde El Helicoide sin lista oficial <a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>LabPaz</strong>: Laboratorio de Paz advierte sobre recomposición autoritaria en Venezuela <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>EEUU</strong>: Desmentida una supuesta presencia de tropas de EE. UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Delcy Rodríguez</strong>: Laboratorio de Paz advierte recomposición autoritaria en Venezuela <a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>María Corina Machado</strong>: María Corina Machado reiteró su llamado al retorno de los venezolanos <a href="https://www.instagram.com/reel/DZQ6gXEM77V/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Delcy Rodríguez</strong>: Gobierno venezolano rechaza declaraciones del primer ministro de Guyana <a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: Desinformación sobre supuesta presencia de tropas de EE.UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>EEUU</code> (EEUU), <code>INST1</code> (Asamblea Nacional), <code>INT1</code> (Departamento de Estado EE.UU.), <code>INT4</code> (Unión Europea), <code>LabPaz</code> (LabPaz), <code>NA</code> (NA)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>Delcy Rodríguez</code> (Delcy Rodríguez), <code>FMI</code> (FMI), <code>Gobierno de Venezuela</code> (Gobierno de Venezuela), <code>Laboratorio de Paz</code> (Laboratorio de Paz), <code>ONG/DDHH</code> (ONG/DDHH), <code>Venezuela</code> (Venezuela)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT1</code> — Departamento de Estado EE.UU. (<em>Política exterior estadounidense</em>): <strong>14 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela rechaza declaraciones del primer ministro de Guyana</h3>
+  <p class="fact-summary">El gobierno venezolano difundió un rechazo a las declaraciones del primer ministro de Guyana sobre la posible decisión de la Corte Internacional de Justicia en torno al diferendo territorial.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede intensificar la fricción diplomática con Guyana y marcar la línea discursiva oficial sobre el Esequibo y la CIJ.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZTVSY9iaXW/" target="_blank" rel="noopener">📰 Instagram - Gobierno de Venezuela</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>María Corina Machado reiteró su llamado al retorno de los venezolanos</h3>
+  <p class="fact-summary">María Corina Machado afirmó en una intervención pública que la meta política debe ser que los venezolanos regresen al país con dignidad y sin huir por rutas migratorias.</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sostiene el encuadre opositor sobre migración, retorno y legitimidad política, con potencial impacto narrativo en la agenda interna.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZQ6gXEM77V/" target="_blank" rel="noopener">📰 Instagram - video citado en resultado</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Traslado de presos políticos en El Helicoide sin lista oficial</h3>
+  <p class="fact-summary">Un reporte de Mi Diario indicó que familiares de detenidos trasladados desde El Helicoide siguen sin una lista oficial ni confirmación verificable de sus destinos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-02</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La falta de una lista oficial impide verificar el estado y la ubicación de los detenidos, elevando el riesgo de incomunicación o desaparición forzada. También puede disparar presión internacional sobre el sistema penitenciario venezolano.</div>
+  <div class="enlaces"><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">📰 Mi Diario</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>FMI designa nuevo jefe de misión para Venezuela</h3>
+  <p class="fact-summary">LACEIBA informó que el FMI nombró a un nuevo jefe de misión para Venezuela, en un contexto de evaluación del desempeño económico e institucional del país.</p>
+  <p class="info-actor"><strong>INT4</strong> — Unión Europea <em>(Política exterior comunitaria europea)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede anticipar nuevas evaluaciones técnicas, mensajes sobre políticas económicas o mayor atención a la situación fiscal y externa de Venezuela. También importa para el monitoreo de relaciones con organismos multilaterales.</div>
+  <div class="enlaces"><a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener">📰 LACEIBA</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Análisis advierte ausencia de cronograma electoral y recomposición autoritaria en Venezuela</h3>
+  <p class="fact-summary">El Nacional difundió un análisis de Laboratorio de Paz que sostiene que no existe cronograma electoral presidencial ni renovación del Consejo Nacional Electoral, y que el país estaría más cerca de una recomposición autoritaria que de una transición democrática.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 03/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Señala que la agenda electoral sigue cerrada y que la arquitectura institucional no muestra señales de apertura. Eso es relevante para seguimiento de gobernabilidad, oposición y lectura internacional sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Desinformación sobre supuestas tropas de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">VeneEconomist concluyó que un video viral sobre convoyes venezolano-estadounidenses en minas auríferas del sur de Bolívar era una composición digital generada con IA y sin base verificable.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-08</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Ayuda a descartar un rumor con potencial de impacto diplomático y de seguridad. La pieza sugiere que el vínculo verificable entre Washington y el oro venezolano es regulatorio y diplomático, no militar.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VeneEconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Desinformación sobre supuesta presencia de tropas de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Una pieza de verificación señaló que circuló en redes una imagen atribuida a convoyes estadounidenses en una mina del sur de Bolívar, pero el material fue identificado como composición digital generada con IA y sin base primaria verificable.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>fecha_circulacion=2026-06-08</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT verificada parcialmente: la circulación del contenido es real, pero la supuesta presencia militar fue desmentida por verificación técnica y no debe tratarse como hecho.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa puede amplificar tensiones sobre intervención extranjera, minería y sanciones, con posible efecto en percepción pública y mercados vinculados al oro. También sirve como señal temprana de guerra informativa.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 Veneconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno venezolano rechaza declaraciones del primer ministro de Guyana</h3>
+  <p class="fact-summary">Una publicación de referencia en Instagram reportó que el gobierno de Venezuela rechazó declaraciones del primer ministro de Guyana sobre una eventual decisión de la Corte Internacional de Justicia.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La disputa con Guyana sigue siendo un frente sensible de política exterior y seguridad regional. Sin un enlace a una nota primaria o comunicado oficial, el hecho queda como señal social y no como confirmación institucional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>7. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>8. Datos económicos y sociales</h2>
+  <p class="seccion-vacia">Sin actualizaciones de indicadores en este corte.</p>
+</section>
+<section class="brief">
+  <h2>9. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Desinformación sobre supuestas tropas de EE. UU. en mina de oro en Bolívar</h3>
+  <p class="fact-summary">Una verificación técnica concluyó que la imagen y los videos que circularon sobre vehículos blindados extranjeros entrando a una mina en El Callao son una composición digital y no hay fuente primaria que confirme presencia militar estadounidense en zonas mineras venezolanas.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-08</li></ul>
+  <div class="warning-social"><strong>⛔ Descartada:</strong> Advertencia: señal desmentida por verificación técnica; no tratar como hecho.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Es relevante para monitoreo de conflicto y recursos porque muestra una narrativa viral sobre militarización extranjera asociada al oro venezolano, pero el material no supera validación básica.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VeneEconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Desmentida una supuesta presencia de tropas de EE. UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Una verificación técnica concluyó que una imagen viral sobre vehículos blindados extranjeros entrando a una mina en El Callao, Bolívar, era una composición digital generada con inteligencia artificial y que no hay fuente primaria que confirme presencia militar estadounidense en zonas mineras venezolanas.</p>
+  <p class="info-actor">Actor: EEUU</p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-08</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Ayuda a descartar una narrativa que podría alterar percepciones sobre militarización extranjera en el sur de Venezuela y sobre el sector aurífero. Para monitoreo decisional, el valor está en la desmentida y no en el rumor.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 Veneconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Desinformación sobre supuestas tropas de EE. UU. en minas de oro de Bolívar</h3>
+  <p class="fact-summary">Un análisis de verificación concluyó que la imagen viral de vehículos blindados extranjeros entrando a una mina en El Callao era una composición digital y no un despliegue real de fuerzas estadounidenses.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>{&#x27;valor&#x27;: &#x27;8&#x27;, &#x27;unidad&#x27;: &#x27;junio 2026&#x27;, &#x27;contexto&#x27;: &#x27;fecha de circulación masiva de la imagen viral&#x27;}</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reduce el riesgo de atribuir erróneamente una operación militar extranjera en el Arco Minero; al mismo tiempo muestra cómo la disputa sobre oro y seguridad puede ser manipulada por contenido sintético.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VeneEconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Laboratorio de Paz advierte recomposición autoritaria en Venezuela</h3>
+  <p class="fact-summary">Un reporte citado por El Nacional sostuvo que Venezuela está más cerca de una recomposición autoritaria que de una transición democrática y que no existe cronograma electoral presidencial ni renovación del CNE.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Señala continuidad de bloqueo institucional y deterioro de condiciones para una transición electoral verificable, relevante para seguimiento político y de estabilidad.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Traslados de presos políticos desde El Helicoide sin lista oficial</h3>
+  <p class="fact-summary">Organizaciones de derechos humanos reportaron traslados de detenidos desde El Helicoide, pero no se ha publicado una lista oficial de personas movidas ni su destino.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>fecha_publicacion_primaria=2026-06-07</li><li>fecha_mencion_ong=2026-06-02</li><li>al_menos_25_presos_politicos_mencionados_por_ONG</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT con verificación incompleta: hay cobertura secundaria y denuncias de ONG, pero no lista oficial pública ni confirmación primaria del destino de los traslados.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede indicar una reconfiguración de la situación penitenciaria y generar nuevas denuncias sobre desaparición de facto, incomunicación o riesgo para detenidos. También es un indicador sensible para monitoreo político y de DDHH.</div>
+  <div class="enlaces"><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">📰 Mi Diario</a> · <a href="https://www.facebook.com/nmasunivision/posts/organizaciones-de-derechos-humanos-denuncian-traslados-de-presos-pol%C3%ADticos-en-ve/1480772767411175/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Desinformación sobre supuesta presencia de tropas de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Una pieza de verificación señaló que circuló en redes una imagen atribuida a convoyes estadounidenses en una mina del sur de Bolívar, pero el material fue identificado como composición digital generada con IA y sin base primaria verificable.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>fecha_circulacion=2026-06-08</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT verificada parcialmente: la circulación del contenido es real, pero la supuesta presencia militar fue desmentida por verificación técnica y no debe tratarse como hecho.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa puede amplificar tensiones sobre intervención extranjera, minería y sanciones, con posible efecto en percepción pública y mercados vinculados al oro. También sirve como señal temprana de guerra informativa.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 Veneconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Denuncias de recomposición autoritaria y falta de cronograma electoral en Venezuela</h3>
+  <p class="fact-summary">Un análisis de Laboratorio de Paz citado por El Nacional sostiene que no existe cronograma electoral presidencial ni renovación del Consejo Nacional Electoral, y que el país estaría más cerca de una recomposición autoritaria que de una transición democrática.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: es un marco analítico difundido por un medio, no un hecho institucional verificado por sí solo.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede influir en la narrativa internacional sobre legitimidad, calendario político y riesgo país. También es útil para monitorear el encuadre de oposición y sociedad civil sobre el proceso político.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Lista oficial de detenidos trasladados desde El Helicoide** — Falta de transparencia aumenta riesgo de desapariciones forzadas y presión internacional por violaciones de DDHH.
+
+2. 🔴 **Declaraciones oficiales sobre diferendo con Guyana y CIJ** — Posible escalada diplomática y definición de postura gubernamental ante fallo inminente.
+
+3. 🟠 **Nombramiento del nuevo jefe de misión del FMI para Venezuela** — Evaluaciones técnicas podrían influir en relaciones con multilaterales y políticas económicas.
+
+4. 🟡 **Silencio de Diosdado Cabello y Jorge Rodríguez** — Ausencia de declaraciones clave en contexto de crisis penitenciaria y tensiones internacionales.
+
+5. 🟡 **Reacciones de organizaciones de DDHH a traslados de detenidos** — Denuncias podrían amplificar presión mediática y diplomática sobre el gobierno.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Mi Diario</td><td><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/</a></td><td>2026-06-07</td></tr><tr><td>VeneEconomist</td><td><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026</a></td><td>2026-06-08</td></tr><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/</a></td><td>2026-06-04</td></tr><tr><td>LACEIBA</td><td><a href="https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision" target="_blank" rel="noopener">https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision</a></td><td>2026-06-10</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram - video citado en resultado</td><td><a href="https://www.instagram.com/reel/DZQ6gXEM77V/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZQ6gXEM77V/</a></td><td>2026-06-10</td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZTKTxLM6fA/</a></td><td>2026-06-10</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram - Gobierno de Venezuela</td><td><a href="https://www.instagram.com/p/DZTVSY9iaXW/" target="_blank" rel="noopener">https://www.instagram.com/p/DZTVSY9iaXW/</a></td><td>2026-06-10</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-10</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
