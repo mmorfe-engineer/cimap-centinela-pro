@@ -107,10 +107,84 @@ PLAN_NACIONAL: list[dict[str, Any]] = [
     {"capa": 7, "submodules": [], "label": "datos_estadisticas_nacional"},
 ]
 
+# Plan para modulo INTERNACIONAL: 8 llamadas por region
+PLAN_INTERNACIONAL: list[dict[str, Any]] = [
+    # === EE.UU. ===
+    {
+        "capa": 4,
+        "submodules": ["eeuu"],
+        "label": "eeuu",
+        "fuentes_objetivo": [
+            "reuters.com", "apnews.com", "nytimes.com", "washingtonpost.com",
+            "state.gov", "home.treasury.gov/news"
+        ]
+    },
+    # === Europa ===
+    {
+        "capa": 4,
+        "submodules": ["europa"],
+        "label": "europa",
+        "fuentes_objetivo": [
+            "bbc.com/news", "theguardian.com", "ft.com", "eeas.europa.eu"
+        ]
+    },
+    # === America Latina ===
+    {
+        "capa": 4,
+        "submodules": ["suramerica"],
+        "label": "suramerica",
+        "fuentes_objetivo": [
+            "infobae.com", "elpais.com/america", "folha.uol.com.br", "eltiempo.com"
+        ]
+    },
+    # === China/Rusia ===
+    {
+        "capa": 4,
+        "submodules": ["china", "rusia"],
+        "label": "china_rusia",
+        "fuentes_objetivo": [
+            "xinhuanet.com", "cgtn.com", "rt.com", "tass.com"
+        ]
+    },
+    # === Mercado/Energia/Sanciones ===
+    {
+        "capa": 4,
+        "submodules": ["financieros_economicos"],
+        "label": "mercados_energia_sanciones",
+        "fuentes_objetivo": [
+            "bloomberg.com/energy", "reuters.com/business/energy",
+            "opec.org/en/news", "eia.gov/petroleum",
+            "home.treasury.gov/policy-issues/financial-sanctions"
+        ]
+    },
+    # === multilaterales ===
+    {
+        "capa": 6,
+        "submodules": [],
+        "label": "multilaterales_internacional",
+        "fuentes_objetivo": []
+    },
+    # === ongs ===
+    {
+        "capa": 7,
+        "submodules": [],
+        "label": "datos_internacional",
+        "fuentes_objetivo": []
+    },
+    # === seguridad internacional ===
+    {
+        "capa": 9,
+        "submodules": [],
+        "label": "seguridad_internacional",
+        "fuentes_objetivo": []
+    },
+]
+
 PLAN_LLAMADAS: dict[str, list[dict[str, Any]]] = {
     "matutino": PLAN_BASE_MATUTINO,
     "cierre": PLAN_BASE_MATUTINO + PLAN_EXTRAS_CIERRE,
     "nacional": PLAN_NACIONAL,
+    "internacional": PLAN_INTERNACIONAL,
 }
 
 # Portales para Top 3 internacionales (P3)
@@ -390,6 +464,7 @@ def _build_prompt(
     fechas: dict[str, str],
     config: dict[str, Any],
     codigos_validos: list[str] | None = None,
+    fuentes_objetivo: list[str] | None = None,
 ) -> str:
     """Construye el prompt completo con toda la inteligencia metodológica del JSON v1.1."""
 
@@ -462,6 +537,22 @@ La lista CERRADA de códigos de actor permitidos es: {codigos_str}.
 - Si el actor del hallazgo NO está en el catálogo, deja `actor_principal=''` y pon el nombre completo en `actor_nombre`.
 - NUNCA inventes códigos de actor. Si no estás seguro, usa el nombre completo en `actor_nombre` y deja `actor_principal=''`.
 - NUNCA uses valores como 'EEUU', 'LabPaz', 'NA', 'FMI', 'Gobierno de Venezuela', 'ONG/DDHH' como códigos.
+"""
+
+    # --- Bloque de fuentes objetivo para módulo internacional (BUG 6) ---
+    fuentes_objetivo_block = ""
+    if fuentes_objetivo:
+        portales_str = "\n".join(f"- {p}" for p in fuentes_objetivo)
+        fuentes_objetivo_block = f"""
+## DOMINIOS OBJETIVO (BUSCAR ESPECÍFICAMENTE EN ESTOS DOMINIOS)
+
+{portales_str}
+
+**INSTRUCCIONES:**
+- Busca específicamente en estos dominios.
+- Para cada hallazgo devuelve la URL exacta del artículo (no la homepage).
+- Top 3 artículos más relevantes de las últimas 24h en esos dominios.
+- Si no encuentras nada relevante en estos dominios, devuelve hallazgos:[] y explica en notas qué encontraste.
 """
 
     fuentes_block = ""
@@ -559,7 +650,7 @@ REGLAS DE LLENADO:
 5. No reproduzcas texto literal de los artículos. Parafrasea.
 6. Si no hay hallazgos verificables, devuelve "hallazgos": [] y explica en notas.
 7. **FECHAS (P5):** Si NO puedes verificar la fecha de publicación de la fuente, deja `fecha_hora_utc=null`. NO uses fecha actual ni fecha del corte como sustituto.
-{questions_block}{what_block}{queries_block}{rules_block}{actores_block}{codigos_block}{fuentes_block}
+{questions_block}{what_block}{queries_block}{rules_block}{actores_block}{codigos_block}{fuentes_objetivo_block}{fuentes_block}
 {a_levels_block}{sa_block}
 {json_schema_block}
 """
@@ -819,6 +910,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
         actores_relevantes = _actores_relevantes_para_tarea(tarea, actores_data)
         codigos_validos = _obtener_codigos_validos(actores_data)
 
+        fuentes_objetivo = tarea.get("fuentes_objetivo")
         prompt = _build_prompt(
             capa=capa,
             tarea=tarea,
@@ -827,6 +919,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
             fechas=fechas,
             config=config,
             codigos_validos=codigos_validos,
+            fuentes_objetivo=fuentes_objetivo,
         )
 
         salida = _consulta_perplexity(prompt, timeout)
