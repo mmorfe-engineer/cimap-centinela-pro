@@ -1,0 +1,251 @@
+{
+  "version": "1.0",
+  "correlativo": "20260611-14H-190255",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-11T19:12:05.360475+00:00",
+  "rango_inicio": "2026-06-10T19:02:55.486402+00:00",
+  "rango_fin": "2026-06-11T19:02:55.486402+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 4,
+    "A2": 11,
+    "A1": 3,
+    "A0": 0,
+    "total": 18
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 6,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "VTV difunde desmentido sobre supuesto contingente militar extranjero",
+      "ultima_fuente_url": "https://www.facebook.com/VTVtuCanal/posts/envideo-%EF%B8%8Fla-cuenta-oficial-miraflores-al-momento-en-la-plataforma-x-desmiente-el/1476651717826560/?locale=af_ZA"
+    },
+    "OSINT": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Verificación desmiente imagen viral sobre supuestas tropas de EE.UU. en minas de oro venezolanas",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "OP1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte ausencia de cronograma electoral presidencial y de renovación del CNE",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "SOC1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Video reporta fallecimiento de una joven por descarga eléctrica en Táchira",
+      "ultima_fuente_url": "https://www.tiktok.com/@vpitv/video/7648158385463889170"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Publicación opositora de María Corina Machado desde Panamá circula en redes",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZQ6gXEM77V/"
+    },
+    "INT1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Desinformación sobre supuesta presencia militar de EE. UU. en minas de oro de Bolívar",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    "Venezuela": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Diagnóstico opositor sobre una recomposición autoritaria en Venezuela",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    "FMI": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "FMI designa nuevo jefe de misión para Venezuela",
+      "ultima_fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    "ORG1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Laboratorio de Paz advierte ausencia de cronograma electoral y de renovación del CNE",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "d3d9152ee663",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Cancillería rechaza declaraciones del primer ministro de Guyana sobre el Esequibo",
+      "fuente_url": "https://www.instagram.com/p/DZSpJNZkSCc/"
+    },
+    {
+      "hash": "6ae8269d5b7b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela rechaza declaraciones del primer ministro de Guyana y reafirma defensa del Esequibo",
+      "fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    {
+      "hash": "beedc9e437cc",
+      "actor": "OSINT",
+      "alert_level": "A1",
+      "titulo_corto": "Verificación desmiente imagen viral sobre supuestas tropas de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "522aba32e063",
+      "actor": "OP1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte ausencia de cronograma electoral presidencial y de renovación del CNE",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "517041c5f63c",
+      "actor": "SOC1",
+      "alert_level": "A1",
+      "titulo_corto": "Video reporta fallecimiento de una joven por descarga eléctrica en Táchira",
+      "fuente_url": "https://www.tiktok.com/@vpitv/video/7648158385463889170"
+    },
+    {
+      "hash": "852c0e2f23a0",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Publicación opositora de María Corina Machado desde Panamá circula en redes",
+      "fuente_url": "https://www.instagram.com/reel/DZQ6gXEM77V/"
+    },
+    {
+      "hash": "8661ad797fc4",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuestas tropas de EE. UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "a98649698c47",
+      "actor": "Venezuela",
+      "alert_level": "A2",
+      "titulo_corto": "Diagnóstico opositor sobre una recomposición autoritaria en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    },
+    {
+      "hash": "2298620aa382",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno venezolano rechaza declaraciones del primer ministro sobre Guayana Esequiba",
+      "fuente_url": "https://www.facebook.com/VTVtuCanal/posts/envideo-%EF%B8%8Fla-cuenta-oficial-miraflores-al-momento-en-la-plataforma-x-desmiente-el/1476651717826560/?locale=af_ZA"
+    },
+    {
+      "hash": "69e22371d9d2",
+      "actor": "FMI",
+      "alert_level": "A3",
+      "titulo_corto": "FMI designa nuevo jefe de misión para Venezuela",
+      "fuente_url": "https://laceiba.substack.com/p/fmi-designa-a-su-nuevo-jefe-de-mision"
+    },
+    {
+      "hash": "96db8e71dfd3",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación desmentida sobre supuestas tropas de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "09d34bab79a4",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "La cobertura internacional asociada al oro venezolano enfatiza la vía diplomática y regulatoria",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "e87176728834",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desmienten imagen viral sobre supuestas tropas de EE.UU. en una mina de oro venezolana",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "b944d610b35e",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Circula señal de rechazo del gobierno venezolano a declaraciones del primer ministro de Guyana",
+      "fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    {
+      "hash": "967551b3323e",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Señal de narrativa oficial sobre atención social pese a sanciones de EE.UU.",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH"
+    },
+    {
+      "hash": "f9c398f1f30c",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "VTV difunde desmentido sobre supuesto contingente militar extranjero",
+      "fuente_url": "https://www.facebook.com/VTVtuCanal/posts/envideo-%EF%B8%8Fla-cuenta-oficial-miraflores-al-momento-en-la-plataforma-x-desmiente-el/1476651717826560/?locale=af_ZA"
+    },
+    {
+      "hash": "2a3e95f994fb",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuesta presencia militar de EE. UU. en minas de oro de Bolívar",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "a9acd0691df6",
+      "actor": "ORG1",
+      "alert_level": "A2",
+      "titulo_corto": "Laboratorio de Paz advierte ausencia de cronograma electoral y de renovación del CNE",
+      "fuente_url": "https://www.elnacional.com/2026/06/laboratorio-de-paz-venezuela-esta-mas-cerca-de-una-recomposicion-autoritaria-que-de-una-transicion-democratica/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
