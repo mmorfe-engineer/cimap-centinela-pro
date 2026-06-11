@@ -1973,6 +1973,7 @@ def _render_texto_plano(
 def redactar_informe(
     resultado_busqueda: dict[str, Any],
     novedades: dict[str, Any] | None = None,
+    modulo: str = "",
 ) -> dict[str, Any]:
     """
     Toma el resultado del buscador y produce informe_texto + informe_html.
@@ -1980,11 +1981,17 @@ def redactar_informe(
 
     Fase D: acepta parámetro `novedades` (dict producido por estado_pipeline)
     para renderizar la sección "Novedades vs. corte anterior".
+    
+    Parametros de modulizacion:
+    - modulo: "nacional", "internacional", "energia" para paths de salida
     """
     correlativo = resultado_busqueda.get("correlativo", "sin-correlativo")
     turno = resultado_busqueda.get("turno", "cierre")
     rango_inicio_iso = resultado_busqueda.get("rango_inicio", "")
     rango_fin_iso = resultado_busqueda.get("rango_fin", "")
+    
+    # Subdirectorio para informes por modulo
+    pages_subdir = modulo if modulo else "informes"
 
     config = _cargar_config()
     actores_data = _cargar_actores()
@@ -2193,6 +2200,7 @@ def redactar_informe(
         "informe_html": html_completo,
         "fuentes": fuentes,
         "headlines_for_teaser": headlines_for_teaser,
+        "pages_subdir": pages_subdir,
         "metadata": {
             "version_redactor": "2.0-fase-b",
             "estado_general": estado,
@@ -2200,6 +2208,8 @@ def redactar_informe(
             "turno": turno,
             "rango_inicio": rango_inicio_iso,
             "rango_fin": rango_fin_iso,
+            "modulo": modulo,
+            "pages_subdir": pages_subdir,
             "contadores": contadores,
             "actores_catalogados": len(actores_index),
             "actores_en_silencio": [a.get("codigo") for a in silencios],

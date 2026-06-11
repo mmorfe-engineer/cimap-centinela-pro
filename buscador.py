@@ -91,9 +91,26 @@ PLAN_EXTRAS_CIERRE: list[dict[str, Any]] = [
     {"capa": 9, "submodules": [], "label": "seguridad_defensa_osint"},
 ]
 
+# Plan para modulo NACIONAL: solo capas nacionales (8 llamadas)
+PLAN_NACIONAL: list[dict[str, Any]] = [
+    # === Capa 3: prensa nacional, desagregada (4 calls) ===
+    {"capa": 3, "submodules": ["oficialismo_y_estado"], "label": "oficialismo_estado"},
+    {"capa": 3, "submodules": ["oposicion"], "label": "oposicion_venezolana"},
+    {"capa": 3, "submodules": ["asamblea_nacional"], "label": "asamblea_nacional"},
+    {"capa": 3, "submodules": ["agenda_nacional"], "label": "agenda_nacional"},
+    # === Capa 5: energía nacional ===
+    {"capa": 5, "submodules": ["comunicados_oficiales"], "label": "energia_comunicados_nacional"},
+    # === Capas sociales/OSINT ===
+    {"capa": 2, "submodules": [], "label": "redes_sociales_nacional"},
+    {"capa": 10, "submodules": [], "label": "telegram_osint_nacional"},
+    # === Capas datos/institucionales ===
+    {"capa": 7, "submodules": [], "label": "datos_estadisticas_nacional"},
+]
+
 PLAN_LLAMADAS: dict[str, list[dict[str, Any]]] = {
     "matutino": PLAN_BASE_MATUTINO,
     "cierre": PLAN_BASE_MATUTINO + PLAN_EXTRAS_CIERRE,
+    "nacional": PLAN_NACIONAL,
 }
 
 # Portales para Top 3 internacionales (P3)

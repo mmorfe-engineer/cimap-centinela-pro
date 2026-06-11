@@ -96,18 +96,18 @@ def _esc(texto: Any) -> str:
 # =============================================================================
 
 
-def _build_link_informe(correlativo: str) -> str:
+def _build_link_informe(correlativo: str, pages_subdir: str = "informes") -> str:
     base = _github_pages_base_url()
     if base:
-        return f"{base}/informes/{correlativo}.html"
+        return f"{base}/{pages_subdir}/{correlativo}.html"
     return ""
 
 
-def _build_teaser(informe: dict[str, Any], correlativo: str) -> str:
+def _build_teaser(informe: dict[str, Any], correlativo: str, prefijo_telegram: str = "") -> str:
     """
     Teaser de ~400-600 chars optimizado para Telegram/Discord/Slack.
     Estructura:
-        [emoji estado] CENTINELA PRO · [turno] [correlativo]
+        [prefijo] [emoji estado] CENTINELA PRO · [turno] [correlativo]
         ESTADO: [label]
         🔴 [n] · 🟠 [n] · 🟡 [n] · Total [n]
         ▸ HEADLINES:
@@ -135,8 +135,9 @@ def _build_teaser(informe: dict[str, Any], correlativo: str) -> str:
     n_total = int(contadores.get("total", 0))
 
     # --- Cabecera ---
+    prefix = f"{prefijo_telegram} " if prefijo_telegram else ""
     lineas = [
-        f"{estado_meta['emoji']} CENTINELA PRO · {turno_label}",
+        f"{prefix}{estado_meta['emoji']} CENTINELA PRO · {turno_label}",
         f"#{correlativo}",
         "",
         f"📊 ESTADO: {estado_meta['label']}",
@@ -464,8 +465,10 @@ def _build_index_html(informes_rel: list[str]) -> str:
 """
 
 
-def publicar_en_github_pages(correlativo: str, informe_html: str) -> dict[str, Any]:
-    """Publica el informe en la rama gh-pages (sin cambios funcionales vs. versión anterior)."""
+def publicar_en_github_pages(
+    correlativo: str, informe_html: str, pages_subdir: str = "informes"
+) -> dict[str, Any]:
+    """Publica el informe en la rama gh-pages con subdirectorio parametrizable."""
     repo_root = Path(__file__).resolve().parent
     worktree: Path | None = None
     tmp_dir: TemporaryDirectory | None = None  # type: ignore[type-arg]
@@ -518,22 +521,27 @@ def publicar_en_github_pages(correlativo: str, informe_html: str) -> dict[str, A
             check=True,
         )
 
-        informes_dir = worktree / "informes"
+        informes_dir = worktree / pages_subdir
         informes_dir.mkdir(parents=True, exist_ok=True)
-        (worktree / f"informes/{correlativo_seguro}.html").write_text(
+        (worktree / f"{pages_subdir}/{correlativo_seguro}.html").write_text(
             informe_html, encoding="utf-8"
         )
 
-        informes_rel = sorted(
-            [f"informes/{p.name}" for p in informes_dir.glob("*.html")],
-            reverse=True,
-        )
+        # Recolectar todos los HTML de todos los subdirectorios
+        todos_informes = []
+        for subdir in ["nacional", "internacional", "energia", "informes"]:
+            subdir_path = worktree / subdir
+            if subdir_path.exists():
+                todos_informes.extend(
+                    [f"{subdir}/{p.name}" for p in subdir_path.glob("*.html")]
+                )
+
         (worktree / "index.html").write_text(
-            _build_index_html(informes_rel),
+            _build_index_html(todos_informes),
             encoding="utf-8",
         )
 
-        subprocess.run(["git", "add", "index.html", "informes"], cwd=worktree, check=True)
+        subprocess.run(["git", "add", "index.html", pages_subdir], cwd=worktree, check=True)
         commit = subprocess.run(
             ["git", "commit", "-m", f"chore: publicar informe {correlativo}"],
             cwd=worktree,
@@ -563,7 +571,12 @@ def publicar_en_github_pages(correlativo: str, informe_html: str) -> dict[str, A
 # =============================================================================
 
 
-def entregar_informe(informe: dict[str, Any], correlativo: str) -> dict[str, Any]:
+def entregar_informe(
+    informe: dict[str, Any],
+    correlativo: str,
+    prefijo_telegram: str = "",
+    pages_subdir: str = "informes",
+) -> dict[str, Any]:
     """
     Toma el dict del redactor y entrega por todos los canales configurados.
     Devuelve un dict con success agregado y detalle por canal.
@@ -573,12 +586,20 @@ def entregar_informe(informe: dict[str, Any], correlativo: str) -> dict[str, Any
       - informe_html: str
       - metadata: dict (estado_general, contadores, turno, etc.)
       - headlines_for_teaser: list[dict]
+    
+    Parametros adicionales para modulizacion:
+      - prefijo_telegram: prefijo para el teaser (ej: "🇻🇪 NACIONAL")
+      - pages_subdir: subdirectorio para GitHub Pages (ej: "nacional")
     """
     texto = informe.get("informe_texto", "")
     html_body = informe.get("informe_html") or f"<pre>{html.escape(texto)}</pre>"
+    
+    # Obtener pages_subdir del informe si no se proporciona
+    if not pages_subdir:
+        pages_subdir = informe.get("pages_subdir", "informes")
 
     asunto = _build_subject_email(informe, correlativo)
-    teaser = _build_teaser(informe, correlativo)
+    teaser = _build_teaser(informe, correlativo, prefijo_telegram)
 
     pdf_result = _generar_pdf_simple(correlativo, texto)
     pdf_path = pdf_result.get("path") if pdf_result.get("success") else None
@@ -588,7 +609,7 @@ def entregar_informe(informe: dict[str, Any], correlativo: str) -> dict[str, Any
         "discord": enviar_discord(teaser),
         "slack": enviar_slack(teaser),
         "gmail": enviar_gmail(asunto, texto, html_body, pdf_path=pdf_path),
-        "github_pages": publicar_en_github_pages(correlativo, html_body),
+        "github_pages": publicar_en_github_pages(correlativo, html_body, pages_subdir),
         "pdf": _resultado(
             bool(pdf_result.get("success")),
             pdf_result.get("detalle", ""),
