@@ -34,10 +34,12 @@ Reescritura completa del redactor. Cambios clave vs. versión anterior:
 
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import os
 import re
+import unicodedata
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -218,6 +220,192 @@ def _safe_get(d: dict | None, key: str, default: Any = "") -> Any:
     return v if v is not None else default
 
 
+def _clean_metadata_string(texto: str) -> str:
+    """
+    Limpia strings que contienen metadata interna cruda.
+    Elimina patrones como 'key=value', '{\'valor\': ...}' o dicts serializados.
+    """
+    if not texto or not isinstance(texto, str):
+        return texto
+    
+    # Si el texto ES un dict serializado (empieza con { y contiene 'valor':)
+    if texto.strip().startswith("{") and ("'valor'" in texto or '"valor"' in texto):
+        return ""
+    
+    # Si el texto contiene patrones clave=valor de metadata interna
+    # Ej: fecha_publicacion_primaria=2026-06-07
+    metadata_patterns = [
+        r'\bfecha_publicacion\w*=',
+        r'\bfecha_mencion\w*=',
+        r'\bfecha_circulacion=',
+        r'\bal_menos_\d+_',
+        r'\bpresos_politicos_mencionados\b',
+        r'\b\w+=',  # Cualquier palabra=valor
+    ]
+    
+    for pattern in metadata_patterns:
+        if re.search(pattern, texto):
+            return ""
+    
+    return texto
+
+
+def _safe_clean(d: dict[str, Any], key: str) -> str:
+    """Helper para obtener y limpiar un campo de texto de un dict."""
+    valor = d.get(key) if isinstance(d, dict) else ""
+    if isinstance(valor, str):
+        return _clean_metadata_string(valor)
+    return str(valor) if valor else ""
+
+
+def _format_complex_value(valor: Any) -> str:
+    """
+    Formatea valores complejos (dicts, listas) para display en HTML.
+    - dict: extrae 'valor' + 'unidad' -> "X unidad"
+    - list: une elementos con ', '
+    - otros: convierte a string
+    """
+    if valor is None:
+        return ""
+    
+    if isinstance(valor, dict):
+        # Intentar extraer valor y unidad
+        val = valor.get('valor', valor.get('value', ''))
+        unidad = valor.get('unidad', valor.get('unit', ''))
+        if val and unidad:
+            return f"{val} {unidad}".strip()
+        elif val:
+            return str(val)
+        else:
+            # Si no tiene formato conocido, no mostrar
+            return ""
+    
+    if isinstance(valor, list):
+        # Formatear cada elemento
+        elementos = []
+        for item in valor:
+            formatted = _format_complex_value(item)
+            if formatted:
+                elementos.append(formatted)
+        return ", ".join(elementos) if elementos else ""
+    
+    return str(valor)
+
+
+def _limpiar_campo(valor: Any) -> str:
+    """
+    Limpia un campo individual antes de renderizar en HTML.
+    Aplicar a: data_points, extract_fields, fecha_publicacion, cualquier campo adicional.
+    """
+    if valor is None:
+        return ""
+    if isinstance(valor, dict):
+        v = valor.get('valor', '')
+        u = valor.get('unidad', '')
+        return f"{v} {u}".strip() if v else ""
+    s = str(valor).strip()
+    if s.startswith('{') and ':' in s:
+        return ""
+    if re.match(r'^\w+=\d{4}-\d{2}', s):
+        return ""
+    if re.match(r'^al menos \d+', s):
+        return ""
+    return s
+
+
+def _normalizar(texto: str) -> str:
+    """
+    Normaliza texto para deduplicacion.
+    Garantiza que "EE.UU.", "EE. UU.", "EEUU" -> mismo hash.
+    """
+    texto = texto.lower()
+    texto = unicodedata.normalize('NFKD', texto)
+    texto = ''.join(c for c in texto if not unicodedata.combining(c))
+    texto = re.sub(r'[^a-z0-9\s]', ' ', texto)
+    texto = re.sub(r'\s+', ' ', texto).strip()
+    stopwords = {'de','el','la','los','las','un','una','en','y','a',
+                 'por','con','sin','que','del','al','se','no','es',
+                 'su','sobre','para','como','pero','fue','han','has'}
+    tokens = [t for t in texto.split() if t not in stopwords and len(t) > 2]
+    return ' '.join(sorted(tokens[:8]))
+
+
+def _hash_hallazgo(titulo: str, actor: str = '') -> str:
+    """
+    Genera hash MD5 para deduplicacion de hallazgos.
+    Usa titulo + actor normalizados.
+    """
+    clave = _normalizar(f"{titulo} {actor}")
+    return hashlib.md5(clave.encode()).hexdigest()
+
+
+def _sanitize_hallazgo_for_render(hallazgo: dict[str, Any]) -> dict[str, Any]:
+    """
+    Prepara un hallazgo para renderizado en HTML.
+    - Elimina keys internas que no deben aparecer
+    - Limpia valores de metadata en campos de texto
+    - Formatea valores complejos
+    """
+    if not isinstance(hallazgo, dict):
+        return {}
+    
+    # Keys internas a preservar (no se renderizan pero se usan en funciones)
+    preserve_keys = {
+        '_actor_info', '_source_registry_match', '_tarea_origen',
+        '_es_nuevo', 'archivos', 'archivo_timestamp_utc'
+    }
+    
+    # Keys a eliminar completamente (no se usan en render)
+    remove_keys = {
+        'submodules_consultados', 'tarea_label', 'capa_descripcion',
+        'capa', 'extract_fields', 'contadores'
+    }
+    
+    # Campos de texto que se renderizan y deben limpiarse
+    text_fields = [
+        'titulo', 'fact_summary', 'why_it_matters', 'actor_principal',
+        'actor_nombre', 'ubicacion', 'categoria', 'fuente_nombre',
+        'source_type', 'verification_status', 'alert_level',
+        'alert_level_motivo', 'warning_label', 'social_alert_level',
+        'fecha_hora_utc', 'data_points', 'entities_detected',
+    ]
+    
+    sanitized = {}
+    
+    for key, value in hallazgo.items():
+        # Eliminar keys que no deben estar
+        if key in remove_keys:
+            continue
+        
+        # Preservar keys internas
+        if key in preserve_keys:
+            sanitized[key] = value
+            continue
+        
+        # Limpiar campos de texto
+        if key in text_fields:
+            if isinstance(value, str):
+                cleaned = _clean_metadata_string(value)
+                cleaned = _limpiar_campo(cleaned)  # Aplicar limpieza adicional
+                if cleaned != value:
+                    sanitized[key] = cleaned
+                else:
+                    sanitized[key] = value
+            elif isinstance(value, dict):
+                sanitized[key] = _format_complex_value(value)
+                sanitized[key] = _limpiar_campo(sanitized[key])
+            elif isinstance(value, list):
+                # Para data_points y entities_detected, limpiar cada elemento
+                sanitized[key] = [_limpiar_campo(_format_complex_value(item)) for item in value]
+            else:
+                sanitized[key] = _limpiar_campo(value)
+        else:
+            # Otros campos, copiar directamente
+            sanitized[key] = value
+    
+    return sanitized
+
+
 # =============================================================================
 # Carga de configuración y catálogos
 # =============================================================================
@@ -379,7 +567,7 @@ def _construir_headlines_para_teaser(
         actor_nombre = actor_info.get("nombre") or str(h.get("actor_principal") or "")
         actor_codigo = actor_info.get("codigo") or ""
         iconografia = actor_info.get("iconografia") or ""
-        titulo_raw = str(h.get("titulo") or h.get("fact_summary") or "").strip()
+        titulo_raw = _clean_metadata_string(str(h.get("titulo") or h.get("fact_summary") or "").strip())
         # Compactar: una sola línea, máximo ~80 chars
         titulo_compacto = re.sub(r"\s+", " ", titulo_raw)
         if len(titulo_compacto) > 80:
@@ -447,26 +635,47 @@ def _agrupar_por_seccion(
     hallazgos: list[dict[str, Any]],
 ) -> dict[str, list[dict[str, Any]]]:
     """
-    Distribuye cada hallazgo a una sección del brief según prioridad:
-    1. Si capa 4 → internacional
-    2. Si capa 5 → energía
-    3. Si capa 7 o categoría economia → datos económicos
-    4. Si capa 9 o categoría seguridad → seguridad
-    5. Si actor en bloque GOB/legislativo_oficialismo → anuncios ejecutivo
-    6. Si actor en bloque oposicion → reacciones oposición
-    7. Resto → hechos críticos si A4/A3, sino contexto
+    Distribuye cada hallazgo a UNA SOLA sección del brief según jerarquía estricta (P6).
+    
+    JERARQUÍA DE PRIORIDAD (de mayor a menor):
+    1. Hechos críticos (A4) → siempre primera
+    2. Capas específicas (4→internacional, 5→energía, 6/7→datos, 9→seguridad)
+    3. Bloques de actores (GOB→ejecutivo, oposicion→oposición)
+    4. Resto → hechos críticos o contexto
+    
+    IMPORTANTE: Usa deduplicación por hash para evitar que el mismo hecho
+    aparezca en múltiples secciones (ej: un hecho de capa 3 + capa 4).
     """
     secciones: dict[str, list[dict[str, Any]]] = defaultdict(list)
-
+    
+    # Deduplicación: un hallazgo solo va a UNA sección
+    # Usamos un set de hashes para detectar duplicados
+    hashes_vistos: set[str] = set()
+    
     for h in hallazgos:
         capa_str = str(h.get("capa") or "")
         categoria = str(h.get("categoria") or "").lower()
         actor_info = h.get("_actor_info") or {}
         bloque = actor_info.get("bloque") or ""
         alert_level = str(h.get("alert_level") or "A2")
-
-        # Prioridad de clasificación
-        if capa_str == "capa_4" or categoria in CATS_INTERNACIONAL:
+        
+        # Calcular hash para deduplicación (P6)
+        actor_ref = str(h.get("actor_principal") or "")
+        titulo = str(h.get("titulo") or "")
+        h_hash = _hash_hallazgo(titulo, actor_ref)
+        
+        # Si ya vimos este hash, omitir (evita duplicación en múltiples secciones)
+        if h_hash in hashes_vistos:
+            continue
+        hashes_vistos.add(h_hash)
+        
+        # Jerarquía estricta: primera condición que cumpla = sección definitiva
+        # Nivel 1: Hechos críticos (siempre prioridad máxima)
+        if alert_level == "A4":
+            secciones[SECCION_HECHOS_CRITICOS].append(h)
+        
+        # Nivel 2: Capas específicas (prioridad sobre bloques)
+        elif capa_str == "capa_4" or categoria in CATS_INTERNACIONAL:
             secciones[SECCION_INTERNACIONAL].append(h)
         elif capa_str == "capa_5" or categoria in CATS_ENERGIA:
             secciones[SECCION_ENERGIA].append(h)
@@ -474,14 +683,19 @@ def _agrupar_por_seccion(
             secciones[SECCION_DATOS].append(h)
         elif capa_str == "capa_9" or categoria in CATS_SEGURIDAD:
             secciones[SECCION_SEGURIDAD].append(h)
+        
+        # Nivel 3: Bloques de actores
         elif bloque in BLOQUES_GOBIERNO:
             secciones[SECCION_EJECUTIVO].append(h)
         elif bloque in BLOQUES_OPOSICION:
             secciones[SECCION_OPOSICION].append(h)
-        elif alert_level in ("A4", "A3"):
+        
+        # Nivel 4: A3 o alertas sociales
+        elif alert_level == "A3":
             secciones[SECCION_HECHOS_CRITICOS].append(h)
+        
+        # Nivel 5: Resto
         else:
-            # Si no clasifica claro pero es nacional, va a hechos críticos
             secciones[SECCION_HECHOS_CRITICOS].append(h)
 
     # Ordenar cada sección por relevancia
@@ -564,9 +778,9 @@ def _contexto_para_resumen(hallazgos_top: list[dict[str, Any]]) -> str:
         nivel = h.get("alert_level", "A2")
         actor_info = h.get("_actor_info") or {}
         actor_nombre = actor_info.get("nombre") or h.get("actor_principal") or "sin actor"
-        fact = h.get("fact_summary") or h.get("titulo") or ""
-        why = h.get("why_it_matters") or ""
-        fuente = h.get("fuente_nombre") or ""
+        fact = _clean_metadata_string(h.get("fact_summary") or h.get("titulo") or "")
+        why = _clean_metadata_string(h.get("why_it_matters") or "")
+        fuente = _clean_metadata_string(h.get("fuente_nombre") or "")
         lineas.append(
             f"[{nivel}] {actor_nombre}: {fact} "
             f"(Por qué importa: {why}) "
@@ -623,7 +837,7 @@ En esta entrega encontrarás:
         lineas = ["En esta entrega encontrarás:"]
         for i, h in enumerate(hallazgos_top[:5], 1):
             actor = (h.get("_actor_info") or {}).get("nombre") or h.get("actor_principal") or ""
-            fact = h.get("fact_summary") or h.get("titulo") or ""
+            fact = _clean_metadata_string(h.get("fact_summary") or h.get("titulo") or "")
             lineas.append(f"{i}. {actor}: {fact}")
         return "\n".join(lineas)
     return resultado
@@ -1120,6 +1334,10 @@ def _render_badge_verif(estado: str) -> str:
 
 def _render_info_actor(hallazgo: dict[str, Any]) -> str:
     actor_info = hallazgo.get("_actor_info")
+    actor_principal = str(hallazgo.get("actor_principal") or "")
+    actor_nombre = str(hallazgo.get("actor_nombre") or "")
+    
+    # P4: Si hay actor_info, usar código + nombre del catálogo
     if actor_info:
         nombre = _esc(actor_info.get("nombre", ""))
         codigo = _esc(actor_info.get("codigo", ""))
@@ -1133,10 +1351,12 @@ def _render_info_actor(hallazgo: dict[str, Any]) -> str:
             + (f' <em>({cargo})</em>' if cargo else "")
             + '</p>'
         )
-    # Actor no catalogado
-    actor_raw = _esc(hallazgo.get("actor_principal") or "")
-    if actor_raw:
-        return f'<p class="info-actor">Actor: {actor_raw}</p>'
+    
+    # P4: Actor no catalogado - mostrar solo el nombre sin código ni "Actor:" prefix
+    # Priorizar actor_nombre si existe, sino actor_principal
+    nombre_a_mostrar = actor_nombre or actor_principal
+    if nombre_a_mostrar:
+        return f'<p class="info-actor">{_esc(nombre_a_mostrar)}</p>'
     return ""
 
 
@@ -1177,24 +1397,33 @@ def _render_warning_social(hallazgo: dict[str, Any]) -> str:
 
 
 def _render_hallazgo_card(hallazgo: dict[str, Any]) -> str:
-    nivel = str(hallazgo.get("alert_level") or "A2")
+    # Sanitizar el hallazgo antes de renderizar (P1: ocultar metadata cruda)
+    h = _sanitize_hallazgo_for_render(hallazgo)
+    
+    nivel = str(h.get("alert_level") or "A2")
     if nivel not in ALERT_LEVEL_META:
         nivel = "A2"
 
-    source_type = str(hallazgo.get("source_type") or "independent_media")
-    verif = str(hallazgo.get("verification_status") or "single_source")
-    titulo = _esc(hallazgo.get("titulo") or "Sin título")
-    fact_summary = _esc(hallazgo.get("fact_summary") or "")
-    why_matters = _esc(hallazgo.get("why_it_matters") or "")
-    fecha_dt = _parse_dt(str(hallazgo.get("fecha_hora_utc") or ""))
-    fecha_str = _fmt_dt_humano(fecha_dt) if fecha_dt else _esc(hallazgo.get("fecha_hora_utc") or "")
+    source_type = str(h.get("source_type") or "independent_media")
+    verif = str(h.get("verification_status") or "single_source")
+    titulo = _esc(h.get("titulo") or "Sin título")
+    fact_summary = _esc(h.get("fact_summary") or "")
+    why_matters = _esc(h.get("why_it_matters") or "")
+    fecha_dt = _parse_dt(str(h.get("fecha_hora_utc") or ""))
+    # P5: Si no hay fecha verificada, mostrar "fecha no verificada"
+    if h.get("fecha_hora_utc") in (None, "", "null"):
+        fecha_str = "fecha no verificada"
+    elif fecha_dt:
+        fecha_str = _fmt_dt_humano(fecha_dt)
+    else:
+        fecha_str = "fecha no verificada"
 
-    # Data points
-    data_points = hallazgo.get("data_points") or []
+    # Data points (ya sanitizados en _sanitize_hallazgo_for_render)
+    data_points = h.get("data_points") or []
     dp_html = ""
     if isinstance(data_points, list) and data_points:
-        dp_items = "".join(f"<li>{_esc(str(d))}</li>" for d in data_points[:6])
-        dp_html = f'<ul class="data-points">{dp_items}</ul>'
+        dp_items = "".join(f"<li>{_esc(str(d))}</li>" for d in data_points[:6] if d)
+        dp_html = f'<ul class="data-points">{dp_items}</ul>' if dp_items else ""
 
     badges_html = " ".join([
         _render_badge_nivel(nivel),
@@ -1202,9 +1431,9 @@ def _render_hallazgo_card(hallazgo: dict[str, Any]) -> str:
         _render_badge_verif(verif),
     ])
 
-    info_actor_html = _render_info_actor(hallazgo)
-    enlaces_html = _render_enlaces_hallazgo(hallazgo)
-    warning_html = _render_warning_social(hallazgo)
+    info_actor_html = _render_info_actor(h)
+    enlaces_html = _render_enlaces_hallazgo(h)
+    warning_html = _render_warning_social(h)
 
     fecha_html = (
         f'<p class="info-actor"><em>Publicado:</em> {_esc(fecha_str)}</p>'
@@ -1344,7 +1573,7 @@ def _render_seccion_novedades(
             actor_ref = str(n.get("actor") or "")
             actor_info = actores_index.get(actor_ref, {})
             actor_label = actor_info.get("nombre", actor_ref) if actor_info else actor_ref
-            titulo = _esc(n.get("titulo") or "")
+            titulo = _esc(_clean_metadata_string(n.get("titulo") or ""))
             url = n.get("fuente_url") or ""
             link = f' <a href="{_esc(url)}" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a>' if url else ""
             items_html.append(
@@ -1367,7 +1596,7 @@ def _render_seccion_novedades(
             actor_ref = str(p.get("actor") or "")
             actor_info = actores_index.get(actor_ref, {})
             actor_label = actor_info.get("nombre", actor_ref) if actor_info else actor_ref
-            titulo = _esc(p.get("titulo") or "")
+            titulo = _esc(_clean_metadata_string(p.get("titulo") or ""))
             items_html.append(
                 f'<li><span class="badge badge-{nivel}">{nivel}</span> '
                 f'<strong>{_esc(actor_label)}</strong>: {titulo}</li>'
@@ -1471,6 +1700,51 @@ def _render_silencios(silencios: list[dict[str, Any]]) -> str:
   <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
 </div>
 """
+
+
+def _render_top_internacional(
+    top_internacional: dict[str, Any],
+    numero: int
+) -> str:
+    """Renderiza sección de top 3 titulares por portal (P3)."""
+    if not top_internacional:
+        return ""
+    
+    portales_ordenados = sorted(top_internacional.keys())
+    html_parts = []
+    
+    for portal in portales_ordenados:
+        noticias = top_internacional.get(portal, [])[:3]  # Máximo 3
+        if not noticias:
+            continue
+        
+        items = []
+        for n in noticias:
+            titulo = _esc(n.get("titulo") or "Sin título")
+            url = n.get("url") or ""
+            items.append(f'<li><a href="{url}" target="_blank" rel="noopener">{titulo}</a></li>')
+        
+        html_parts.append(f'''
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>{_esc(portal)}</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;">{"".join(items)}</ul>
+        </div>
+        ''')
+    
+    if not html_parts:
+        return ""
+    
+    return f'''
+    <section class="brief">
+      <h2>{numero}. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      {"".join(html_parts)}
+    </section>
+    '''.strip()
 
 
 def _agrupar_fuentes_por_tipo(
@@ -1730,16 +2004,11 @@ def redactar_informe(
                 hashes_nuevos_set.add(n["hash"])
     # Inyectar flag _es_nuevo en cada hallazgo (recalculando el hash con misma función)
     if hashes_nuevos_set:
-        # Importación local para evitar dependencia dura en tests offline
-        try:
-            from estado_pipeline import _hash_hallazgo  # type: ignore
-            for h in hallazgos:
-                actor_ref = str(h.get("actor_principal") or "")
-                titulo = str(h.get("titulo") or "")
-                h_hash = _hash_hallazgo(actor_ref, titulo)
-                h["_es_nuevo"] = h_hash in hashes_nuevos_set
-        except ImportError:
-            pass
+        for h in hallazgos:
+            actor_ref = str(h.get("actor_principal") or "")
+            titulo = str(h.get("titulo") or "")
+            h_hash = _hash_hallazgo(titulo, actor_ref)
+            h["_es_nuevo"] = h_hash in hashes_nuevos_set
 
     # 2. Estado general del día
     estado = _calcular_estado_general(hallazgos)
@@ -1823,7 +2092,12 @@ def redactar_informe(
                        "Sin cobertura internacional relevante en este corte.")
     )
 
-    # Sección 7: Energía / petróleo / sanciones / mercados
+    # Sección 7: Contexto internacional - Top 3 por portal (P3)
+    top_internacional_data = resultado_busqueda.get("top_internacional", {})
+    if top_internacional_data:
+        secciones_html.append(_render_top_internacional(top_internacional_data, _next()))
+
+    # Sección 8: Energía / petróleo / sanciones / mercados
     secciones_html.append(
         _render_seccion(_next(), "Energía, petróleo, sanciones y mercados",
                        por_seccion.get(SECCION_ENERGIA, []),

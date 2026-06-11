@@ -96,6 +96,25 @@ PLAN_LLAMADAS: dict[str, list[dict[str, Any]]] = {
     "cierre": PLAN_BASE_MATUTINO + PLAN_EXTRAS_CIERRE,
 }
 
+# Portales para Top 3 internacionales (P3)
+TOP_INTERNACIONAL_PORTALS = [
+    "reuters.com",
+    "apnews.com",
+    "afp.com",
+    "bbc.com/news",
+    "nytimes.com",
+    "washingtonpost.com",
+    "theguardian.com",
+    "bloomberg.com",
+    "ft.com",
+    "wsj.com",
+    "aljazeera.com",
+    "rt.com",
+    "tass.com",
+    "xinhuanet.com",
+    "cgtn.com",
+]
+
 # Capas que deben llevar clasificación SA0-SA4 obligatoriamente
 CAPAS_SOCIALES = {2, 10}
 
@@ -125,10 +144,10 @@ def _calcular_rango(
     horas_atras: int | None,
     turno: str,
 ) -> tuple[datetime, datetime]:
-    """Ventana fija de 24h (ciclo único diario). Max 72h para búsquedas ad-hoc."""
+    """Ventana fija de 24h siempre."""
     if horas_atras is None:
         horas_atras = 24
-    horas_atras = max(1, min(int(horas_atras), 72))
+    horas_atras = max(24, min(int(horas_atras), 72))  # Minimo 24h
     inicio = ahora_utc - timedelta(hours=horas_atras)
     return inicio, ahora_utc
 
@@ -194,6 +213,16 @@ def _indexar_actores(actores_data: dict[str, Any]) -> dict[str, dict[str, Any]]:
         if codigo:
             index[codigo] = actor
     return index
+
+
+def _obtener_codigos_validos(actores_data: dict[str, Any]) -> list[str]:
+    """Obtiene la lista de códigos de actores válidos para inyectar en el prompt."""
+    codigos = []
+    for actor in actores_data.get("actores", []):
+        codigo = actor.get("codigo")
+        if codigo:
+            codigos.append(codigo)
+    return sorted(codigos)
 
 
 def _actores_relevantes_para_tarea(
@@ -294,6 +323,47 @@ def _resumen_fuentes_registry(config: dict[str, Any]) -> str:
 # =============================================================================
 
 
+def _build_top_internacional_prompt(
+    fechas: dict[str, str],
+    portales: list[str],
+) -> str:
+    """Prompt para extraer 3 titulares principales de cada portal (P3)."""
+    portales_str = "\n".join(f"- {p}" for p in portales)
+    fecha_humana = fechas.get("fecha_humana", "hoy")
+
+    return f"""Eres un extractor de titulares internacionales de precisión.
+Devuelve JSON estricto sin preámbulo ni texto adicional.
+
+OBJETIVO:
+Extraer EXACTAMENTE los **3 titulares más importantes del día ({fecha_humana})** 
+de CADA portal de la lista. No filtres por tema, país o palabra clave.
+
+PORTALS A CONSULTAR:
+{portales_str}
+
+FORMATO DE RESPUESTA OBLIGATORIO:
+{{
+  "top_internacional": {{
+    "reuters.com": [
+      {{"titulo": "Título 1", "url": "https://...", "fecha_hora_utc": "YYYY-MM-DDTHH:MM:SSZ"}},
+      {{"titulo": "Título 2", "url": "https://...", "fecha_hora_utc": "YYYY-MM-DDTHH:MM:SSZ"}},
+      {{"titulo": "Título 3", "url": "https://...", "fecha_hora_utc": "YYYY-MM-DDTHH:MM:SSZ"}}
+    ],
+    "bbc.com/news": [...]
+  }}
+}}
+
+REGLAS ABSOLUTAS:
+1. EXACTAMENTE 3 titulares por portal (los más relevantes/visibles en portada)
+2. Extrae de homepage o sección "Top News"/"Latest"
+3. URL debe ser completa y verificable
+4. Si un portal no tiene noticias, devuelve [] para ese portal
+5. NO apliques ningún filtro temático (Venezuela, América, etc.)
+6. Prioriza: política > economía > energía > seguridad > otros
+7. Si un titular no tiene hora exacta, usa fecha del día + hora estimada
+"""
+
+
 def _build_prompt(
     *,
     capa: dict[str, Any],
@@ -302,6 +372,7 @@ def _build_prompt(
     actores_relevantes: list[dict[str, Any]],
     fechas: dict[str, str],
     config: dict[str, Any],
+    codigos_validos: list[str] | None = None,
 ) -> str:
     """Construye el prompt completo con toda la inteligencia metodológica del JSON v1.1."""
 
@@ -359,6 +430,22 @@ def _build_prompt(
                 handles_parts.append(f"IG: @{redes['instagram'].lstrip('@')}")
             handles_str = f" — {' / '.join(handles_parts)}" if handles_parts else ""
             actores_block += f"- `{a['codigo']}` — {a['nombre']} ({cargo}){handles_str}\n"
+
+    # --- Bloque de códigos válidos (P4: evitar códigos inventados) ---
+    codigos_block = ""
+    if codigos_validos:
+        codigos_str = ", ".join(codigos_validos)
+        codigos_block = f"""
+## CÓDIGOS DE ACTOR VÁLIDOS
+
+La lista CERRADA de códigos de actor permitidos es: {codigos_str}.
+
+**REGLAS CRÍTICAS SOBRE ACTORES:**
+- El campo `actor_principal` DEBE ser uno de los códigos de la lista anterior O el string vacío `''`.
+- Si el actor del hallazgo NO está en el catálogo, deja `actor_principal=''` y pon el nombre completo en `actor_nombre`.
+- NUNCA inventes códigos de actor. Si no estás seguro, usa el nombre completo en `actor_nombre` y deja `actor_principal=''`.
+- NUNCA uses valores como 'EEUU', 'LabPaz', 'NA', 'FMI', 'Gobierno de Venezuela', 'ONG/DDHH' como códigos.
+"""
 
     fuentes_block = ""
     fuentes_str = _resumen_fuentes_registry(config)
@@ -448,13 +535,14 @@ REGLAS DE LLENADO:
 - Filtro fecha recomendado: `after:{fechas['after']} before:{fechas['before']}`
 
 # REGLAS CRÍTICAS NO NEGOCIABLES
-1. Prioriza eventos de HOY ({fecha_humana}) o las últimas 24h. Acepta noticias fechadas por día aunque no tengan hora UTC exacta. Descarta solo lo claramente más viejo de 48h o sin fecha alguna.
+1. Busca noticias publicadas HOY {fecha_humana} o en las últimas 24 horas. Acepta articulos fechados por día aunque no tengan hora exacta. Descarta solo contenido claramente anterior a 24 horas o sin fecha verificable.
 2. Cita siempre URL verificable. Sin URL = no entra al resultado.
 3. Clasifica TODOS los hallazgos con `alert_level` (A0-A4).
-4. Si el actor coincide con el catálogo, usa el CÓDIGO en `actor_principal`.
+4. Si el actor coincide con el catálogo, usa el CÓDIGO en `actor_principal`. Si no está en el catálogo, deja `actor_principal=''` y usa el nombre en `actor_nombre`.
 5. No reproduzcas texto literal de los artículos. Parafrasea.
 6. Si no hay hallazgos verificables, devuelve "hallazgos": [] y explica en notas.
-{questions_block}{what_block}{queries_block}{rules_block}{actores_block}{fuentes_block}
+7. **FECHAS (P5):** Si NO puedes verificar la fecha de publicación de la fuente, deja `fecha_hora_utc=null`. NO uses fecha actual ni fecha del corte como sustituto.
+{questions_block}{what_block}{queries_block}{rules_block}{actores_block}{codigos_block}{fuentes_block}
 {a_levels_block}{sa_block}
 {json_schema_block}
 """
@@ -712,6 +800,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
 
         directrices = _recolectar_directrices(capa, tarea["submodules"])
         actores_relevantes = _actores_relevantes_para_tarea(tarea, actores_data)
+        codigos_validos = _obtener_codigos_validos(actores_data)
 
         prompt = _build_prompt(
             capa=capa,
@@ -720,6 +809,7 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
             actores_relevantes=actores_relevantes,
             fechas=fechas,
             config=config,
+            codigos_validos=codigos_validos,
         )
 
         salida = _consulta_perplexity(prompt, timeout)
@@ -746,6 +836,15 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
         f.get("name") for f in (config.get("source_registry") or []) if f.get("name")
     ]
 
+    # === P3: Llamada para top 3 titulares internacionales ===
+    top_internacional_result = _consulta_perplexity(
+        _build_top_internacional_prompt(fechas, TOP_INTERNACIONAL_PORTALS),
+        timeout=60
+    )
+    top_internacional_parsed = _intentar_parsear_json(
+        top_internacional_result.get("texto", "")
+    ) or {"top_internacional": {}}
+
     return {
         "success": len(errores) < len(plan),
         "turno": turno,
@@ -764,6 +863,8 @@ def buscar_noticias(horas_atras: int | None = None) -> dict[str, Any]:
         "fuentes_consultadas_base": fuentes_consultadas_base,
         "actores_catalogados": len(actores_index),
         "total_llamadas_ejecutadas": len(resultados_por_tarea),
+        # P3: Top 3 titulares por portal internacional
+        "top_internacional": top_internacional_parsed.get("top_internacional", {}),
     }
 
 
