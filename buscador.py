@@ -180,11 +180,53 @@ PLAN_INTERNACIONAL: list[dict[str, Any]] = [
     },
 ]
 
+# Plan para modulo ENERGIA: 5 llamadas especificas
+PLAN_ENERGIA: list[dict[str, Any]] = [
+    # === PDVSA y comunicados oficiales ===
+    {
+        "capa": 5,
+        "submodules": ["comunicados_oficiales"],
+        "label": "pdvsa_comunicados",
+        "fuentes_objetivo": ["pdvsa.com"]
+    },
+    # === OPEP ===
+    {
+        "capa": 5,
+        "submodules": ["portales_energia"],
+        "label": "opep_oficial",
+        "fuentes_objetivo": ["opec.org/en/news"]
+    },
+    # === IEA ===
+    {
+        "capa": 5,
+        "submodules": ["portales_energia"],
+        "label": "iea_datos",
+        "fuentes_objetivo": ["iea.org"]
+    },
+    # === EIA ===
+    {
+        "capa": 5,
+        "submodules": ["portales_energia"],
+        "label": "eia_estadisticas",
+        "fuentes_objetivo": ["eia.gov/petroleum"]
+    },
+    # === OFAC/Sanciones ===
+    {
+        "capa": 4,
+        "submodules": ["financieros_economicos"],
+        "label": "ofac_sanciones_energia",
+        "fuentes_objetivo": [
+            "home.treasury.gov/policy-issues/financial-sanctions"
+        ]
+    },
+]
+
 PLAN_LLAMADAS: dict[str, list[dict[str, Any]]] = {
     "matutino": PLAN_BASE_MATUTINO,
     "cierre": PLAN_BASE_MATUTINO + PLAN_EXTRAS_CIERRE,
     "nacional": PLAN_NACIONAL,
     "internacional": PLAN_INTERNACIONAL,
+    "energia": PLAN_ENERGIA,
 }
 
 # Portales para Top 3 internacionales (P3)
