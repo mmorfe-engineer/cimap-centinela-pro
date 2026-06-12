@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260612-14H-195946</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260612-14H-195946</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-11T19:59:46.174402+00:00 → 2026-06-12T19:59:46.174402+00:00<br>
+    <strong>Generado:</strong> 2026-06-12 20:05 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 3 A3</span>
+    <span class="stat-pill">🟡 6 A2</span>
+    <span class="stat-pill">📊 10 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día calificado como ALTO, sin hallazgos críticos (A4) y tres de nivel A3 relacionados con desinformación y tensiones diplomáticas.
+2. Confirmación de que imágenes y videos sobre convoyes estadounidenses en el Arco Minero del Orinoco (8 de junio) son composiciones digitales generadas por IA, sin evidencia de presencia militar real.
+3. Verificación de que una imagen viral de vehículos blindados en minas de Bolívar es falsa, descartando presencia de fuerzas militares de EE.UU. en zonas mineras venezolanas.
+4. Rechazo oficial del Gobierno de Venezuela a declaraciones del Primer Ministro de Guyana sobre un eventual fallo de la Corte Internacional, reafirmando postura de no reconocimiento a arbitrajes contrarios a su soberanía territorial.
+5. Fuentes de los hallazgos provienen de VenezEconomist y Venezcoeconomist, sin datos adicionales verificados fuera de los reportados.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260611-14H-201241</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (10):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>GOV1</strong>: Desmentida de despliegue militar de EE.UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>GOV1</strong>: Rechazo oficial de Venezuela a declaraciones de Guyana sobre la Corte Internacional <a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: Desinformación verificada sobre presencia militar de EE.UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Delcy Rodríguez</strong>: Opacidad en traslado de presos políticos desde El Helicoide sin lista oficial <a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-seguen-sin-lista-oficial" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Provea</strong>: Provea alerta sobre incremento de desapariciones forzadas en Venezuela <a href="https://www.facebook.com/ElImpulsocom/posts/video-provea-alerta-sobre-un-%E2%80%9Ceclipse-de-la-constituci%C3%B3n%E2%80%9D-y-documenta-95-/1742872904514946/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: Traslado de presos políticos desde El Helicoide sin lista oficial <a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>GOV1</strong>: Sanciones económicas de EE.UU. y UE reportadas por vicepresidente de Venezuela <a href="https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Diosdado Cabello</strong>: TeleSUR difunde mensaje sobre sanciones de EE.UU. y atención social en Venezuela <a href="https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Delcy Rodríguez</strong>: Venezuela rechaza declaraciones de Guyana sobre la disputa del Esequibo <a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A1">🟢 A1</span> <strong>Departamento de Estado EE.UU.</strong>: Desinformación sobre supuesta presencia de tropas de EE.UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB1</code> (Delcy Rodríguez), <code>GOB2</code> (Diosdado Cabello), <code>GOV1</code> (GOV1), <code>INST1</code> (Asamblea Nacional), <code>Provea</code> (Provea)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>EEUU</code> (EEUU), <code>FMI</code> (FMI), <code>Laboratorio de Paz</code> (Laboratorio de Paz), <code>N/A</code> (N/A), <code>ONG1</code> (ONG1), <code>SEBIN</code> (SEBIN), <code>Vene Economist</code> (Vene Economist)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>14 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#888;">news_aggregator</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Opacidad en traslado de presos políticos desde El Helicoide sin lista oficial</h3>
+  <p class="fact-summary">ONG Justicia, Encuentro y Perdón reporta que al menos 25 presos políticos permanecían recluidos en El Helicoide el 2 de junio, y que tras su traslado no existe lista oficial ni comunicación a familias.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 01/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2 de junio de 2026</li><li>25 presos políticos recluidos en El Helicoide reportados</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida sin confirmación primaria oficial; opacidad documentada por ONG, pero sin lista verificable de trasladados.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La falta de información oficial sobre traslados de presos políticos aumenta la incertidumbre humanitaria y puede intensificar críticas internacionales sobre el sistema de justicia venezolano.</div>
+  <div class="enlaces"><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-seguen-sin-lista-oficial" target="_blank" rel="noopener">📰 Mi Diario</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela rechaza declaraciones de Guyana sobre la disputa del Esequibo</h3>
+  <p class="fact-summary">La Cancillería de Venezuela difundió un comunicado rechazando las declaraciones del primer ministro de Guyana vinculadas con la eventual decisión de la Corte Internacional de Justicia sobre la controversia territorial.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 11/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT de cobertura secundaria; requiere confirmación oficial adicional para tratarse como hecho plenamente consolidado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la narrativa oficial venezolana sobre el Esequibo y puede anticipar mayor fricción diplomática con Guyana y cobertura regional sobre la disputa.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">📰 Instagram</a> · <a href="https://www.instagram.com/p/DZSZaHallbQ/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Desinformación verificada sobre presencia militar de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Images y videos difundidos el 8 de junio sobre convoyes estadounidenses en el Arco Minero del Orinoco fueron confirmados como composiciones digitales generadas por IA, sin evidencia de fuerzas militares reales.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>8 de junio de 2026</li><li>0 presencia militar de EE.UU. verificada</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil OSINT pero confirmada como desinformación por verificación técnica; no reflejar presencia militar real.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La desinformación repetida sobre intervención militar externa puede generar tensiones diplomáticas innecesarias y distorsionar la percepción de riesgos regulatorios en la zona minera.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VenezEconomist</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Rechazo oficial de Venezuela a declaraciones de Guyana sobre la Corte Internacional</h3>
+  <p class="fact-summary">El Gobierno de Venezuela rechaza categóricamente las declaraciones provocadoras del Primer Ministro de Guyana relacionadas con un eventual fallo de la Corte Internacional.</p>
+  <p class="info-actor">Actor: GOV1</p>
+  <p class="info-actor"><em>Publicado:</em> 12/06/2026 10:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Establece la línea de defensa legal y diplomática de Venezuela frente a Guyana, refuerza la posición de no reconocimiento de arbitrajes que contradicen la soberanía territorial y podría influir en la respuesta ante la Corte Internacional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">📰 Venezcoeconomist</a> · <a href="https://www.instagram.com/p/DZSZaHallbQ/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Desinformación sobre supuesta presencia de tropas de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Una verificación publicada por VeneEconomist concluye que el video viral sobre convoyes militares estadounidenses en una mina de oro venezolana fue una composición digital y no hay fuente primaria que respalde la afirmación.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Ayuda a depurar el entorno informativo sobre el sector aurífero venezolano y reduce el riesgo de sobreinterpretar material viral como evidencia geopolítica.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VeneEconomist</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>7. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>8. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>TeleSUR difunde mensaje sobre sanciones de EE.UU. y atención social en Venezuela</h3>
+  <p class="fact-summary">Una publicación de teleSUR recoge que Diosdado Cabello afirmó que Venezuela continúa bajo sanciones económicas de Estados Unidos y la Unión Europea mientras el gobierno mantiene la atención social.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 11/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT basada en cobertura secundaria; no constituye confirmación primaria del contenido completo.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Sostiene un marco discursivo de resistencia a sanciones que suele aparecer en comunicaciones oficiales y puede influir en la agenda doméstica y regional.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH" target="_blank" rel="noopener">📰 teleSUR en Facebook</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Sanciones económicas de EE.UU. y UE reportadas por vicepresidente de Venezuela</h3>
+  <p class="fact-summary">Cabello, vicepresidente de Venezuela, afirma que el país ha sido sometido a sanciones económicas perversas por EE.UU. y la UE, intensificando la atención social pese a estas medidas.</p>
+  <p class="info-actor">Actor: GOV1</p>
+  <p class="info-actor"><em>Publicado:</em> 12/06/2026 12:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Confirma la percepción oficial del impacto de las sanciones en la economía venezolana y su uso como justificación para mantener o intensificar programas sociales, lo cual es relevante para la evaluación de la estabilidad interna.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH" target="_blank" rel="noopener">📰 teleSUR</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Desmentida de despliegue militar de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Una imagen viral de vehículos blindados en minas de oro de Bolívar fue verificada como composición generada por IA; no existe evidencia de fuerzas militares de EE.UU. en zonas mineras venezolanas.</p>
+  <p class="info-actor">Actor: GOV1</p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>8 de junio de 2026 - fecha de circulación masiva de la imagen falsa</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Elimina el fundamento de una narrativa de amenaza militar externa, reenfocando la interacción Venezuela-EE.UU. en el ámbito regulatorio y diplomático, lo cual es vital para la planificación de seguridad y política exterior.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 Venezcoeconomist</a> · <a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Desinformación verificada sobre presencia militar de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Images y videos difundidos el 8 de junio sobre convoyes estadounidenses en el Arco Minero del Orinoco fueron confirmados como composiciones digitales generadas por IA, sin evidencia de fuerzas militares reales.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>8 de junio de 2026</li><li>0 presencia militar de EE.UU. verificada</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil OSINT pero confirmada como desinformación por verificación técnica; no reflejar presencia militar real.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La desinformación repetida sobre intervención militar externa puede generar tensiones diplomáticas innecesarias y distorsionar la percepción de riesgos regulatorios en la zona minera.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VenezEconomist</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#888;">news_aggregator</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Opacidad en traslado de presos políticos desde El Helicoide sin lista oficial</h3>
+  <p class="fact-summary">ONG Justicia, Encuentro y Perdón reporta que al menos 25 presos políticos permanecían recluidos en El Helicoide el 2 de junio, y que tras su traslado no existe lista oficial ni comunicación a familias.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 01/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2 de junio de 2026</li><li>25 presos políticos recluidos en El Helicoide reportados</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida sin confirmación primaria oficial; opacidad documentada por ONG, pero sin lista verificable de trasladados.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La falta de información oficial sobre traslados de presos políticos aumenta la incertidumbre humanitaria y puede intensificar críticas internacionales sobre el sistema de justicia venezolano.</div>
+  <div class="enlaces"><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-seguen-sin-lista-oficial" target="_blank" rel="noopener">📰 Mi Diario</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Traslado de presos políticos desde El Helicoide sin lista oficial</h3>
+  <p class="fact-summary">Una nota publicada por Mi Diario reporta que, tras traslados desde El Helicoide, no existe una lista oficial pública de personas movidas ni información verificable para sus familias.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>25</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT basada en cobertura secundaria; requiere confirmación oficial o independiente adicional.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La falta de lista oficial eleva el riesgo reputacional e internacional para las autoridades y puede generar nueva presión de ONG y familiares.</div>
+  <div class="enlaces"><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">📰 Mi Diario</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela rechaza declaraciones de Guyana sobre la disputa del Esequibo</h3>
+  <p class="fact-summary">La Cancillería de Venezuela difundió un comunicado rechazando las declaraciones del primer ministro de Guyana vinculadas con la eventual decisión de la Corte Internacional de Justicia sobre la controversia territorial.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 11/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT de cobertura secundaria; requiere confirmación oficial adicional para tratarse como hecho plenamente consolidado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la narrativa oficial venezolana sobre el Esequibo y puede anticipar mayor fricción diplomática con Guyana y cobertura regional sobre la disputa.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">📰 Instagram</a> · <a href="https://www.instagram.com/p/DZSZaHallbQ/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>TeleSUR difunde mensaje sobre sanciones de EE.UU. y atención social en Venezuela</h3>
+  <p class="fact-summary">Una publicación de teleSUR recoge que Diosdado Cabello afirmó que Venezuela continúa bajo sanciones económicas de Estados Unidos y la Unión Europea mientras el gobierno mantiene la atención social.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 11/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT basada en cobertura secundaria; no constituye confirmación primaria del contenido completo.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Sostiene un marco discursivo de resistencia a sanciones que suele aparecer en comunicaciones oficiales y puede influir en la agenda doméstica y regional.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH" target="_blank" rel="noopener">📰 teleSUR en Facebook</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Provea alerta sobre incremento de desapariciones forzadas en Venezuela</h3>
+  <p class="fact-summary">Una cobertura en red social resume que Provea documentó 95 casos y advirtió sobre un deterioro grave del marco constitucional y de derechos humanos en Venezuela.</p>
+  <p class="info-actor">Actor: Provea</p>
+  <p class="info-actor"><em>Publicado:</em> 11/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>95</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT de cobertura secundaria; los datos citados requieren contraste con el informe primario de Provea.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede alimentar presión de ONG y observadores internacionales sobre la situación interna venezolana y reforzar narrativas de deterioro institucional.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/ElImpulsocom/posts/video-provea-alerta-sobre-un-%E2%80%9Ceclipse-de-la-constituci%C3%B3n%E2%80%9D-y-documenta-95-/1742872904514946/" target="_blank" rel="noopener">📰 Facebook de ElImpulso.com</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Reacciones oficiales venezolanas al fallo de la CIJ** — El rechazo del gobierno a declaraciones de Guyana sobre el arbitraje territorial marca una postura firme que podría escalar en acciones legales o diplomáticas, afectando la estrategia de defensa soberana.
+
+2. 🟠 **Desinformación sobre presencia militar extranjera en el Arco Minero** — La confirmación de imágenes falsas como IA reduce el riesgo de tensiones inmediatas, pero exige monitorear si persisten narrativas similares para evitar distorsiones en seguridad y regulación minera.
+
+3. 🟡 **Silencio de actores clave (Jorge Rodríguez, María Corina Machado, PDVSA)** — La inactividad de figuras políticas y económicas relevantes podría indicar preparación de respuestas coordinadas o falta de consenso interno, especialmente ante temas sensibles como la CIJ o sanciones.
+
+4. 🟠 **Posibles represalias diplomáticas de EE.UU. por desinformación** — Aunque no hay evidencia de intervención militar, la difusión de fake news podría generar fricciones en la relación bilateral, requiriendo seguimiento a declaraciones o medidas regulatorias.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(3)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZTKTxLM6fA/</a></td><td>2026-06-12</td></tr><tr><td>teleSUR en Facebook</td><td><a href="https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH" target="_blank" rel="noopener">https://www.facebook.com/teleSUR/posts/venezuela-intensifica-atenci%C3%B3n-social-pese-a-sanciones-de-eeuu-el-gobierno-venez/1517154673786897/?locale=th_TH</a></td><td>2026-06-12</td></tr><tr><td>Facebook de ElImpulso.com</td><td><a href="https://www.facebook.com/ElImpulsocom/posts/video-provea-alerta-sobre-un-%E2%80%9Ceclipse-de-la-constituci%C3%B3n%E2%80%9D-y-documenta-95-/1742872904514946/" target="_blank" rel="noopener">https://www.facebook.com/ElImpulsocom/posts/video-provea-alerta-sobre-un-%E2%80%9Ceclipse-de-la-constituci%C3%B3n%E2%80%9D-y-documenta-95-/1742872904514946/</a></td><td>2026-06-12</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>VeneEconomist</td><td><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026</a></td><td>2026-06-08</td></tr><tr><td>Mi Diario</td><td><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/" target="_blank" rel="noopener">https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-siguen-sin-lista-oficial/</a></td><td>2026-06-07</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#888;">news_aggregator</span> news_aggregator <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Mi Diario</td><td><a href="https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-seguen-sin-lista-oficial" target="_blank" rel="noopener">https://www.midiario.com/mundo/presos-politicos-de-el-helicoide-seguen-sin-lista-oficial</a></td><td>2026-06-02</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-12</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
