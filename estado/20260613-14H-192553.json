@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "correlativo": "20260613-14H-192553",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-13T19:29:33.325801+00:00",
+  "rango_inicio": "2026-06-12T19:25:53.677964+00:00",
+  "rango_fin": "2026-06-13T19:25:53.677964+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 1,
+    "A2": 5,
+    "A1": 0,
+    "A0": 1,
+    "total": 7
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Delcy Rodríguez impulsa formación en China para aplicar inteligencia artificial en medicina",
+      "ultima_fuente_url": "https://www.facebook.com/eluniversal/posts/la-presidenta-encargada-delcy-rodr%C3%ADguez-en-conjunto-con-la-comisi%C3%B3n-presidencial/1456556196515517/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Vigilia de familiares de presos políticos frente a sede diplomática de EE. UU. en Caracas",
+      "ultima_fuente_url": "https://www.facebook.com/NTN24/posts/un-grupo-de-familiares-de-presos-pol%C3%ADticos-venezolanos-mantiene-desde-hace-seis-/1549763826505918/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "ec2f75a9ecac",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno rechaza declaraciones del primer ministro de Guyana sobre la CIJ",
+      "fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    {
+      "hash": "ec1e6627d632",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Vigilia de familiares de presos políticos frente a sede diplomática de EE. UU. en Caracas",
+      "fuente_url": "https://www.facebook.com/NTN24/posts/un-grupo-de-familiares-de-presos-pol%C3%ADticos-venezolanos-mantiene-desde-hace-seis-/1549763826505918/"
+    },
+    {
+      "hash": "51c61aefd846",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez impulsa formación en China para aplicar inteligencia artificial en medicina",
+      "fuente_url": "https://www.facebook.com/eluniversal/posts/la-presidenta-encargada-delcy-rodr%C3%ADguez-en-conjunto-con-la-comisi%C3%B3n-presidencial/1456556196515517/"
+    },
+    {
+      "hash": "58ff90b1b1ed",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura sobre muerte de presunto líder del Tren de Aragua circula en video de TikTok",
+      "fuente_url": "https://www.tiktok.com/@rtvenoticias/video/7650797059787820310"
+    },
+    {
+      "hash": "053802555a01",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Transparencia Venezuela advierte que la corrupción ya no es solo un problema financiero",
+      "fuente_url": "https://www.facebook.com/lapatilla/posts/13jun-la-corrupci%C3%B3n-en-venezuela-dej%C3%B3-de-ser-una-discusi%C3%B3n-sobre-dinero-perdido-/1447606640744687/"
+    },
+    {
+      "hash": "e49b9ab2792c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis descarta presencia militar de EE. UU. en minas de oro de Bolívar",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "740ce3fd9c77",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "No se verificaron noticias relevantes con URL y fecha segura en la ventana solicitada",
+      "fuente_url": "https://example.invalid"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
