@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "correlativo": "20260614-14H-211457",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-14T21:16:20.230224+00:00",
+  "rango_inicio": "2026-06-13T21:14:57.336802+00:00",
+  "rango_fin": "2026-06-14T21:14:57.336802+00:00",
+  "estado_general": "NORMAL",
+  "contadores": {
+    "A4": 0,
+    "A3": 0,
+    "A2": 1,
+    "A1": 0,
+    "A0": 0,
+    "total": 1
+  },
+  "actores_activos": {},
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "7c9bf1f49570",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Desmentida una supuesta presencia militar de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
