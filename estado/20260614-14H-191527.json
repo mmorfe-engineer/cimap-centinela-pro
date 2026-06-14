@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "correlativo": "20260614-14H-191527",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-14T19:23:31.103065+00:00",
+  "rango_inicio": "2026-06-13T19:15:27.592981+00:00",
+  "rango_fin": "2026-06-14T19:15:27.592981+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 1,
+    "A3": 1,
+    "A2": 5,
+    "A1": 1,
+    "A0": 2,
+    "total": 10
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Gobierno de Venezuela rechazó declaraciones del primer ministro de Guyana",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Desmentida: No hay presencia militar de EE.UU. en minas de oro de Venezuela",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "bb923c720889",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "EEUU, oro venezolano y desinformación sobre presencia militar en minas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "3de206150e66",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Venezuela rechazó declaraciones del primer ministro de Guyana",
+      "fuente_url": "https://www.instagram.com/reel/DZTKTxLM6fA/"
+    },
+    {
+      "hash": "6e9a9340bff9",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Boric mantendría no reconocimiento de resultados en Venezuela sin verificación",
+      "fuente_url": "https://www.instagram.com/p/DZhwLOcjYpd/"
+    },
+    {
+      "hash": "9acc7c8711e9",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Voz Media atribuye a EE. UU. autorización de operaciones de la CIA en Venezuela",
+      "fuente_url": "https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/"
+    },
+    {
+      "hash": "073455bf666f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela denunció nuevo derrame de petróleo que habría alcanzado costas en Trinidad y Tobago",
+      "fuente_url": "https://www.tiktok.com/@vpitv/video/7650615051912547591"
+    },
+    {
+      "hash": "2c1c9c2d1df1",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Desmentida: No hay presencia militar de EE.UU. en minas de oro de Venezuela",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "16f116f84e58",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuestas tropas de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "faa900a4432b",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "No se identificaron comunicados oficiales nuevos y verificables del sector energético venezolano en ",
+      "fuente_url": ""
+    },
+    {
+      "hash": "0d3d6de413f2",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "No se verificaron hallazgos noticiosos suficientes sobre Venezuela en las últimas 24 horas",
+      "fuente_url": ""
+    },
+    {
+      "hash": "01780ef1fbfe",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Presunto video sobre tropas de EE.UU. en minas de oro venezolanas fue desmentido como IA",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "9acc7c8711e9",
+      "actor": "",
+      "titulo": "Voz Media atribuye a EE. UU. autorización de operaciones de la CIA en Venezuela",
+      "fuente_url": "https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
