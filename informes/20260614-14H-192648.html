@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260614-14H-192648</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260614-14H-192648</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-13T19:26:48.763918+00:00 → 2026-06-14T19:26:48.763918+00:00<br>
+    <strong>Generado:</strong> 2026-06-14 19:29 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 2 A3</span>
+    <span class="stat-pill">🟡 5 A2</span>
+    <span class="stat-pill">📊 7 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día clasificado como ALTO, sin hallazgos críticos (A4) y dos hallazgos de relevancia media (A3).
+2. Denuncia no verificada de un derrame petrolero en Trinidad y Tobago que habría alcanzado costas venezolanas, reportado por VPItv sin trazabilidad documental completa.
+3. Riesgo potencial de reclamos bilaterales y presión política por responsabilidades ambientales derivado del supuesto derrame.
+4. Confirmación técnica de que la imagen de convoyes venezolano-estadounidenses en minas auríferas es una composición digital generada con IA, sin fuentes primarias.
+5. Aclaratoria de que la relación entre Washington y Venezuela en el Arco Minero del Orinoco es regulatorio/diplomática, no militar, según verificación de Veneconomist.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260614-14H-191527</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-desescalada">
+  <strong>⬇️ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[DESESCALADA]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (7):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Denuncia sobre nuevo derrame petrolero en aguas de Trinidad y Tobago con impacto en costas venezolanas <a href="https://www.tiktok.com/@vpitv/video/7650615051912547591" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Información militar falsa sobre EE.UU. en minas de oro de Venezuela verificada como desmentida por IA <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Desinformación sobre supuesta presencia militar de EE.UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: Desinformación sobre supuestas tropas de EE.UU. en minas de oro venezolanas <a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Gobierno de Venezuela rechaza declaraciones del primer ministro de Guyana <a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: Estados Unidos: señal atribuida al secretario de Estado sobre muerte de venezolano <a href="https://www.instagram.com/p/DZhwLOcjYpd/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Presidencia de Chile mantendría no reconocimiento de resultados en Venezuela sin verificación <a href="https://www.instagram.com/p/DZhwLOcjYpd/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB1</code> (Delcy Rodríguez)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>9 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>6 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 1</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Denuncia sobre nuevo derrame petrolero en aguas de Trinidad y Tobago con impacto en costas venezolanas</h3>
+  <p class="fact-summary">Un medio difundió hoy la denuncia de que un nuevo derrame de petróleo en aguas de Trinidad y Tobago habría alcanzado las costas venezolanas y sería mayor que el anterior.</p>
+  <p class="info-actor">Gobierno de Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede activar reclamos bilaterales, monitoreo costero y presión política sobre responsabilidades ambientales. Por ahora queda como señal no verificada porque la fuente disponible es una publicación social y no incluye trazabilidad documental completa.</div>
+  <div class="enlaces"><a href="https://www.tiktok.com/@vpitv/video/7650615051912547591" target="_blank" rel="noopener">📰 VPItv</a> · <a href="https://web.archive.org/web/20260614192741/https://www.tiktok.com/@vpitv/video/7650615051912547591" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Información militar falsa sobre EE.UU. en minas de oro de Venezuela verificada como desmentida por IA</h3>
+  <p class="fact-summary">La verificación técnica confirma que el relato de convoyes conjunto venezolano-estadounidense en minas auríferas es una composición digital generada con IA sin fuentes primarias.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 13/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El nexo real entre Washington y Venezuela es regulatorio/diplomático, no militar; esta verificación previene interpretaciones erróneas sobre presencia militar extranjera en el Arco Minero del Orinoco.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 Veneconomist</a> · <a href="https://web.archive.org/web/20260614191747/https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Desinformación sobre supuestas tropas de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Una verificación publicada hoy concluye que el video que afirmaba un operativo militar conjunto EE.UU.-Venezuela en minas de oro es una composición digital generada con IA y no tiene respaldo en fuentes primarias.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reduce la credibilidad de una pieza viral que podría influir en percepciones sobre presencia militar estadounidense en Venezuela. También sugiere que el eje real de la relación Washington-Caracas sigue siendo regulatorio y diplomático, no militar.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VeneEconomist</a> · <a href="https://web.archive.org/web/20260614191747/https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno de Venezuela rechaza declaraciones del primer ministro de Guyana</h3>
+  <p class="fact-summary">Una publicación en redes atribuye al Gobierno de Venezuela el rechazo a declaraciones del primer ministro de Guyana sobre una eventual decisión de la Corte Internacional de Justicia.</p>
+  <p class="info-actor">Gobierno de Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza el seguimiento de la tensión diplomática con Guyana y del encuadre sobre la Corte Internacional de Justicia. Al no haber fecha ni documento primario accesible en el resultado, debe tratarse como indicio, no como confirmación.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Presidencia de Chile mantendría no reconocimiento de resultados en Venezuela sin verificación</h3>
+  <p class="fact-summary">Una publicación social afirma que el presidente de Chile insistió en que su país no reconocerá resultados electorales en Venezuela mientras no sean verificables.</p>
+  <p class="info-actor">Presidencia de Chile</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Es relevante para el mapa de reconocimiento regional y para el aislamiento o apoyo diplomático a Caracas. Sin fuente primaria visible ni fecha verificable, no puede elevarse a hecho confirmado.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZhwLOcjYpd/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Estados Unidos: señal atribuida al secretario de Estado sobre muerte de venezolano</h3>
+  <p class="fact-summary">Una publicación social recoge que el secretario de Estado estadounidense se refirió a la muerte de un venezolano, pero el resultado no aporta el contenido completo ni una fuente oficial accesible.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, podría incidir en la narrativa bilateral entre Washington y Caracas y en la agenda de derechos humanos. Por ahora solo es una señal parcial y no un hallazgo plenamente verificable.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZhwLOcjYpd/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>afp.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://afp.com/sports/world-cup-2026-opens-ecuador-ivory-coast-global-celebration-june-14" target="_blank" rel="noopener">World Cup 2026 opens with Ecuador-Ivory Coast match as global celebration begins</a></li><li><a href="https://afp.com/world/russia-asean-summit-kazan-35-years-diplomatic-ties-june-14" target="_blank" rel="noopener">Russia-Asean summit convenes in Kazan marking 35 years of diplomatic ties</a></li><li><a href="https://afp.com/world/iran-us-nuclear-negotiations-pakistan-mediation-obstacles-june-14" target="_blank" rel="noopener">Obstacles remain in Iran-US nuclear negotiations despite Pakistan mediation efforts</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>aljazeera.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.aljazeera.com/sports/world-cup-2026-kicks-off-ecuador-ivory-coast-june-14" target="_blank" rel="noopener">World Cup 2026 kicks off with Ecuador-Ivory Coast match amid global attention</a></li><li><a href="https://www.aljazeera.com/world/gaza-humanitarian-situation-israel-blockade-attacks-june-14" target="_blank" rel="noopener">Gaza humanitarian situation deteriorates as Israel continues blockade and attacks</a></li><li><a href="https://www.aljazeera.com/world/pakistan-iran-us-nuclear-deal-regional-tensions-june-14" target="_blank" rel="noopener">Pakistan mediates Iran-US nuclear deal amid regional tensions</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>apnews.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://apnews.com/sports/world-cup-2026-opening-day-ecuador-germany-netherlands-june-14" target="_blank" rel="noopener">World Cup 2026 begins: Ecuador, Germany, Netherlands debut on opening Sunday</a></li><li><a href="https://apnews.com/world/pakistan-iran-us-peace-text-nuclear-program-june-14" target="_blank" rel="noopener">Pakistan mediates final peace text for Iran-US crisis over nuclear program</a></li><li><a href="https://apnews.com/world/gaza-humanitarian-situation-israel-blockade-attacks-june-14" target="_blank" rel="noopener">Gaza humanitarian situation worsens amid continued Israeli blockade and attacks</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>bbc.com/news</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.bbc.com/news/world-cup-2026-kicks-off-ecuador-germany-netherlands-june-14" target="_blank" rel="noopener">World Cup 2026 kicks off: Ecuador, Germany, Netherlands begin tournament on opening day</a></li><li><a href="https://www.bbc.com/news/world-pk-mediation-iran-us-nuclear-deal-gaza-june-14" target="_blank" rel="noopener">PK mediation brings Iran-US to brink of nuclear deal amid worsening Gaza crisis</a></li><li><a href="https://www.bbc.com/news/world-russia-asean-summit-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit held in Kazan as diplomatic relations celebrate 35-year milestone</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>bloomberg.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.bloomberg.com/sports/world-cup-2026-launches-ecuador-ivory-coast-economic-impact-june-14" target="_blank" rel="noopener">World Cup 2026 launches with Ecuador-Ivory Coast as global economic impact begins</a></li><li><a href="https://www.bloomberg.com/world/iran-us-nuclear-negotiations-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear negotiations advance via Pakistan mediation despite Gaza crisis</a></li><li><a href="https://www.bloomberg.com/world/russia-asean-summit-2026-kazan-35-year-jungle-14" target="_blank" rel="noopener">Russia-Asean summit 2026 in Kazan highlights 35-year diplomatic partnership</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>cgtn.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.cgtn.com/sports/world-cup-2026-kicks-off-ecuador-ivory-coast-june-14" target="_blank" rel="noopener">World Cup 2026 kicks off with Ecuador-Ivory Coast as global tournament begins</a></li><li><a href="https://www.cgtn.com/world/china-strong-support-cuba-us-threats-june-14" target="_blank" rel="noopener">China expresses strong support for Cuba amid US threats and regional tensions</a></li><li><a href="https://www.cgtn.com/world/iran-us-nuclear-negotiations-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear negotiations advance via Pakistan mediation despite Gaza crisis</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>ft.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.ft.com/sports/world-cup-2026-opens-ecuador-ivory-coast-sporting-economy-june-14" target="_blank" rel="noopener">World Cup 2026 opens with Ecuador-Ivory Coast as global sporting economy ignites</a></li><li><a href="https://www.ft.com/world/iran-us-nuclear-deal-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear deal nears with Pakistan mediation amid worsening Gaza humanitarian situation</a></li><li><a href="https://www.ft.com/world/russia-asean-summit-2026-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 in Kazan marks 35 years of diplomatic cooperation</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>nytimes.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.nytimes.com/sports/world-cup-2026-begins-ecuador-ivory-coast-global-spectacle-june-14" target="_blank" rel="noopener">World Cup 2026 begins with Ecuador-Ivory Coast clash as global spectacle unfolds</a></li><li><a href="https://www.nytimes.com/world/iran-us-nuclear-talks-pakistan-mediation-gaza-collapse-june-14" target="_blank" rel="noopener">Iran-US nuclear talks advance via Pakistan mediation despite Gaza humanitarian collapse</a></li><li><a href="https://www.nytimes.com/world/kazan-hosts-russia-asean-summit-35-years-june-14" target="_blank" rel="noopener">Kazan hosts Russia-Asean summit marking 35 years of diplomatic cooperation</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/sports/world-cup-2026-ecuador-ivory-coast-debut-2026-06-14" target="_blank" rel="noopener">Ecuador debuts in World Cup 2026 against Ivory Coast as global tournament kicks off</a></li><li><a href="https://www.reuters.com/world/iran-us-nuclear-talks-pakistan-mediation-gaza-june-14-2026" target="_blank" rel="noopener">Iran-US nuclear talks progress with Pakistan mediation amid Gaza deterioration</a></li><li><a href="https://www.reuters.com/world/russia-asean-summit-2026-kazan-relations-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 held in Kazan as diplomatic relations mark 35 years</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>rt.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.rt.com/sports/world-cup-2026-opens-ecuador-ivory-coast-june-14" target="_blank" rel="noopener">World Cup 2026 opens with Ecuador-Ivory Coast match as global spectacle begins</a></li><li><a href="https://www.rt.com/world/russia-asean-summit-2026-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 held in Kazan marking 35 years of diplomatic relations</a></li><li><a href="https://www.rt.com/world/iran-us-nuclear-talks-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear talks progress with Pakistan mediation amid Gaza crisis</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>tass.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.tass.com/sports/world-cup-2026-begins-ecuador-ivory-coast-june-14" target="_blank" rel="noopener">World Cup 2026 begins with Ecuador-Ivory Coast match as global tournament kicks off</a></li><li><a href="https://www.tass.com/world/russia-asean-summit-2026-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 in Kazan celebrates 35 years of diplomatic cooperation</a></li><li><a href="https://www.tass.com/world/iran-us-nuclear-negotiations-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear negotiations advance via Pakistan mediation despite Gaza crisis</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>theguardian.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.theguardian.com/sports/world-cup-2026-begins-ecuador-ivory-coast-june-14" target="_blank" rel="noopener">World Cup 2026 begins with Ecuador-Ivory Coast match as global tournament kicks off</a></li><li><a href="https://www.theguardian.com/world/iran-us-nuclear-talks-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear talks progress with Pakistan mediation amid Gaza humanitarian crisis</a></li><li><a href="https://www.theguardian.com/world/russia-asean-summit-2026-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 held in Kazan marking 35 years of diplomatic ties</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>washingtonpost.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.washingtonpost.com/sports/world-cup-2026-opens-ecuador-germany-netherlands-june-14" target="_blank" rel="noopener">World Cup 2026 opens: Ecuador, Germany, Netherlands debut on Sunday</a></li><li><a href="https://www.washingtonpost.com/world/pakistan-iran-us-nuclear-deal-gaza-june-14" target="_blank" rel="noopener">Pakistan mediates Iran-US nuclear deal amid devastating Gaza situation</a></li><li><a href="https://www.washingtonpost.com/world/russia-asean-summit-2026-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 in Kazan celebrates 35 years of diplomatic relations</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>wsj.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.wsj.com/sports/world-cup-2026-begins-ecuador-germany-netherlands-june-14" target="_blank" rel="noopener">World Cup 2026 begins: Ecuador, Germany, Netherlands debut on opening Sunday</a></li><li><a href="https://www.wsj.com/world/iran-us-nuclear-talks-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear talks advance via Pakistan mediation despite Gaza crisis</a></li><li><a href="https://www.wsj.com/world/russia-asean-summit-2026-kazan-35-years-june-14" target="_blank" rel="noopener">Russia-Asean summit 2026 in Kazan celebrates 35 years of diplomatic ties</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>xinhuanet.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.xinhuanet.com/sports/world-cup-2026-opens-ecuador-ivory-coast-june-14" target="_blank" rel="noopener">World Cup 2026 opens with Ecuador-Ivory Coast match as global celebration begins</a></li><li><a href="https://www.xinhuanet.com/world/china-reaffirms-support-cuba-us-threats-june-14" target="_blank" rel="noopener">China reaffirms support for Cuba against US threats amid rising tensions</a></li><li><a href="https://www.xinhuanet.com/world/iran-us-nuclear-talks-pakistan-mediation-gaza-june-14" target="_blank" rel="noopener">Iran-US nuclear talks progress with Pakistan mediation amid Gaza humanitarian crisis</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Desinformación sobre supuesta presencia militar de EE.UU. en minas de oro venezolanas</h3>
+  <p class="fact-summary">Un análisis publicado desmiente la versión viral de que tropas estadounidenses habrían tomado instalaciones auríferas en el Arco Minero del Orinoco y señala que no hay evidencia verificable de presencia militar de EE.UU. sobre el terreno.</p>
+  <p class="info-actor">VeneEconomist</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Es útil para descartar una narrativa que podría distorsionar la evaluación de riesgos en el sur de Venezuela y en la relación bilateral con EE.UU.</div>
+  <div class="enlaces"><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">📰 VeneEconomist</a> · <a href="https://web.archive.org/web/20260614191747/https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 Verificación oficial del derrame en costas venezolanas — Confirma o descarta impacto ambiental y activa protocolos bilaterales con Trinidad y Tobago; sin respuesta gubernamental, aumenta riesgo de crisis diplomática o desinformación.
+
+2. 🟠 Silencio de Delcy Rodríguez (GOB1) sobre derrame — Su ausencia en declaraciones públicas puede indicar evaluación interna o estrategia de contención; su voz suele marcar postura oficial en temas limítrofes.
+
+3. 🟡 Monitoreo de medios y redes para nuevas filtraciones sobre IA en Arco Minero — Aunque ya desmentido, el tema puede resurgir con variaciones; útil para medir capacidad de desinformación y respuesta del gobierno.
+
+4. 🟡 Reacciones de actores políticos (Machado/González) al derrame — Su postura podría polarizar el tema, vinculándolo a gestión gubernamental o exigiendo transparencia; hasta ahora, silencio no es dato concluyente.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB1</strong> — Delcy Rodríguez (Presidenta encargada / Vicepresidenta)</li><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(3)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>VPItv</td><td><a href="https://www.tiktok.com/@vpitv/video/7650615051912547591" target="_blank" rel="noopener">https://www.tiktok.com/@vpitv/video/7650615051912547591</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZTKTxLM6fA/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZTKTxLM6fA/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZhwLOcjYpd/" target="_blank" rel="noopener">https://www.instagram.com/p/DZhwLOcjYpd/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Veneconomist</td><td><a href="https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026" target="_blank" rel="noopener">https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026</a></td><td>2026-06-14</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-14</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
