@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "correlativo": "20260615-14H-222059",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-15T22:23:17.033693+00:00",
+  "rango_inicio": "2026-06-14T22:20:59.813193+00:00",
+  "rango_fin": "2026-06-15T22:20:59.813193+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 1,
+    "A2": 0,
+    "A1": 1,
+    "A0": 0,
+    "total": 2
+  },
+  "actores_activos": {
+    "VPITV": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Derrame de petróleo en aguas de Trinidad y Tobago habría alcanzado costas venezolanas",
+      "ultima_fuente_url": "https://www.tiktok.com/@vpitv/video/7650615051912547591"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Desmienten video sobre supuesta presencia militar de EE. UU. en minas de oro venezolanas",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "7b1043fe44f2",
+      "actor": "VPITV",
+      "alert_level": "A3",
+      "titulo_corto": "Derrame de petróleo en aguas de Trinidad y Tobago habría alcanzado costas venezolanas",
+      "fuente_url": "https://www.tiktok.com/@vpitv/video/7650615051912547591"
+    },
+    {
+      "hash": "33502f74d419",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "Desmienten video sobre supuesta presencia militar de EE. UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
