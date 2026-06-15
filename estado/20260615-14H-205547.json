@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "correlativo": "20260615-14H-205547",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-15T20:59:39.141741+00:00",
+  "rango_inicio": "2026-06-14T20:55:47.380285+00:00",
+  "rango_fin": "2026-06-15T20:55:47.380285+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 1,
+    "A2": 2,
+    "A1": 0,
+    "A0": 0,
+    "total": 3
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela denunció derrame petrolero en aguas de Trinidad y Tobago con impacto en costas venezolanas",
+      "ultima_fuente_url": "https://www.tiktok.com/@vpitv/video/7650615051912547591"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Venezuela desmiente video viral sobre tropas de EE.UU. en minas de oro",
+      "ultima_fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "0253b4f1eb51",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela denunció derrame petrolero en aguas de Trinidad y Tobago con impacto en costas venezolanas",
+      "fuente_url": "https://www.tiktok.com/@vpitv/video/7650615051912547591"
+    },
+    {
+      "hash": "c8da8d0d8bb0",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela desmiente video viral sobre tropas de EE.UU. en minas de oro",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    },
+    {
+      "hash": "1ae481bc455c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Desinformación sobre supuesta presencia militar de EE.UU. en minas de oro venezolanas",
+      "fuente_url": "https://veneeconomist.com/es/analisis/eeuu-minas-oro-venezuela-desinformacion-2026"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
