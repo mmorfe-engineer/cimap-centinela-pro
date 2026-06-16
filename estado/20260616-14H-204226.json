@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "correlativo": "20260616-14H-204226",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-16T20:46:56.989592+00:00",
+  "rango_inicio": "2026-06-15T20:42:26.480767+00:00",
+  "rango_fin": "2026-06-16T20:42:26.480767+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 0,
+    "A2": 6,
+    "A1": 0,
+    "A0": 0,
+    "total": 6
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Discusión sobre la influencia de la inteligencia estadounidense y la CIA en Venezuela y el tráfico d",
+      "ultima_fuente_url": "https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "3a5193198052",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura de correlación entre volatilidad del bolívar y modelos predictivos de IA sin capacidad de ",
+      "fuente_url": "https://www.instagram.com/reel/DZfomFSFT8D/"
+    },
+    {
+      "hash": "be0b93a65dab",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Debate sobre la corrupción en cadenas de importación de alimentos y medicinas post-Chávez",
+      "fuente_url": "https://www.facebook.com/lapatilla/posts/13jun-la-corrupci%C3%B3n-en-venezuela-dej%C3%B3-de-ser-una-discusi%C3%B3n-sobre-dinero-perdido-/1447606640744687/"
+    },
+    {
+      "hash": "14a55c1bd893",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Discusión sobre la influencia de la inteligencia estadounidense y la CIA en Venezuela y el tráfico d",
+      "fuente_url": "https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/"
+    },
+    {
+      "hash": "584c72e89ca6",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "ONG exige a Venezuela datos verificables sobre fallecidos y detenidos por la captura de Maduro",
+      "fuente_url": "https://www.facebook.com/fansheraldo/posts/la-ong-se%C3%B1al%C3%B3-que-venezuela-tiene-la-obligaci%C3%B3n-de-suministrar-informaci%C3%B3n-fided/1369518771948222/"
+    },
+    {
+      "hash": "d6e094ea621c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Santiago Abascal alerta sobre corrupción en aerolínea Plus vinculada a Venezuela en entrevista con N",
+      "fuente_url": "https://www.facebook.com/NTN24/posts/el-presidente-de-vox-santiago-abascal-advirti%C3%B3-en-entrevista-exclusiva-con-ntn24/1552999602849007/"
+    },
+    {
+      "hash": "e026cabf520c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Debate sobre legitimidad de Petro en la ONU sobre reconocimiento del Tren de Aragua como grupo terro",
+      "fuente_url": "https://www.tiktok.com/@luisernestogl/video/7650135344628681991"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
