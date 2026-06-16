@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260616-14H-221329</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260616-14H-221329</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-15T22:13:29.269422+00:00 → 2026-06-16T22:13:29.269422+00:00<br>
+    <strong>Generado:</strong> 2026-06-16 22:27 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 6 A3</span>
+    <span class="stat-pill">🟡 4 A2</span>
+    <span class="stat-pill">📊 13 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Sin confirmación independiente, Donald Trump anunció la muerte de Héctor Rusthenford Guerrero Flores, alias &#x27;Niño Guerrero&#x27;, líder del Tren de Aragua, según nota de BBC Mundo que podría alterar dinámicas de seguridad y cooperación regional.
+
+2. Venezuela registró su nivel más alto de exportaciones de crudo en siete años, en un contexto de relajación de sanciones estadounidenses y retorno de firmas occidentales, según OilPrice.
+
+3. El Departamento del Tesoro de EE.UU. emitió seis licencias generales vinculadas a Venezuela, autorizando transacciones con productos sancionados en sectores como crudo, petroquímica y minería, reportó Global Sanctions.
+
+4. Las reservas internacionales de Venezuela aumentaron 4,53% (+US$583 millones) en la semana del 12 de junio, cerrando en US$13.447 millones, según datos de la Asamblea Nacional citados por Finanzas Digital.
+
+5. Venezuela firmó un acuerdo con General Electric para reconstruir su red eléctrica nacional, mientras se reportó un memorando de entendimiento entre GE Vernova y el gobierno para recuperar el Sistema Eléctrico Nacional, según Le Monde y Televen.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260616-14H-205148</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-escalada">
+  <strong>⬆️ CAMBIO DE ESTADO:</strong>
+  <span style="color:#757575; font-weight:600;">⚪ RUTINARIO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[ESCALADA]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (13):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Venezuela firma acuerdo con General Electric para reconstruir su red eléctrica <a href="https://www.lemonde.fr/en/international/article/2026/06/16/venezuela-signs-deal-with-general-electical-to-rebuild-its-power-grid_6754549_4.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Reservas Internacionales de Venezuela aumentan 4,53% en la semana del 12 de junio de 2026 <a href="https://finanzasdigital.com/reservas-internacionales-bcv-12-06-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Andrés Velásquez</strong>: Estados Unidos emite licencias generales relacionadas con Venezuela para petróleo, petroquímica y minerales <a href="https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: BBC informa sobre la supuesta muerte de &#x27;Niño Guerrero&#x27; en una operación estadounidense <a href="https://www.bbc.com/mundo/articles/c75yw52yq5yo" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Andrés Velásquez</strong>: Las exportaciones petroleras de Venezuela suben a un máximo de siete años <a href="https://oilprice.com/Energy/Energy-General/Venezuelas-Oil-Exports-Hit-Seven-Year-High-as-Global-Buyers-Return.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Televen reporta entendimiento entre General Electric Vernova y el Gobierno venezolano para el sistema eléctrico <a href="https://www.youtube.com/watch?v=GhDPC1onHr4" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: BCV permite compras mensuales de hasta $1.000 en instituciones bancarias <a href="https://www.youtube.com/watch?v=GhDPC1onHr4" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Andrés Velásquez</strong>: Petroleras vuelven a mirar Venezuela tras meses de cautela <a href="https://www.politico.com/news/2026/06/15/oil-venezuela-mideast-fomo-00960720" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: CNN destaca caso de venezolano deportado con su hija de 4 años <a href="https://cnnespanol.cnn.com/2026/06/16/mundo/5-cosas-16-junio-2026-orix" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: BBC vincula a Venezuela en la cobertura del acuerdo de EE.UU. e Irán <a href="https://www.bbc.com/mundo/articles/c74yxxwd73vo" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INST1</code> (Asamblea Nacional), <code>P5</code> (Andrés Velásquez)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>13 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BBC informa sobre la supuesta muerte de &#x27;Niño Guerrero&#x27; en una operación estadounidense</h3>
+  <p class="fact-summary">BBC Mundo publicó una nota que recoge el anuncio de Donald Trump de que fuerzas estadounidenses habrían matado a Héctor Rusthenford Guerrero Flores, alias &#x27;Niño Guerrero&#x27;, líder del Tren de Aragua.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el hecho se confirma, implicaría una escalada en la respuesta estadounidense contra el Tren de Aragua y podría impactar dinámicas de seguridad, narrativas sobre crimen transnacional y cooperación regional. La nota, sin embargo, solo reporta el anuncio y no ofrece verificación independiente del deceso.</div>
+  <div class="enlaces"><a href="https://www.bbc.com/mundo/articles/c75yw52yq5yo" target="_blank" rel="noopener">📰 BBC Mundo</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Las exportaciones petroleras de Venezuela suben a un máximo de siete años</h3>
+  <p class="fact-summary">Venezuela elevó sus exportaciones de crudo a su nivel más alto en siete años, en un contexto de relajación de sanciones estadounidenses y regreso de firmas occidentales a operaciones locales.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>1.3 million bpd</li><li>1.5 million bpd</li><li>600,000 bpd</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Implica mayor resiliencia exportadora de PDVSA y un posible cambio en el equilibrio entre cumplimiento de sanciones, inversión extranjera y oferta de crudo venezolano. También sugiere que compradores globales están reanudando compras pese al riesgo regulatorio.</div>
+  <div class="enlaces"><a href="https://oilprice.com/Energy/Energy-General/Venezuelas-Oil-Exports-Hit-Seven-Year-High-as-Global-Buyers-Return.html" target="_blank" rel="noopener">📰 OilPrice</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Estados Unidos emite licencias generales relacionadas con Venezuela para petróleo, petroquímica y minerales</h3>
+  <p class="fact-summary">Se reportó la emisión de seis licencias generales vinculadas a Venezuela que autorizan actividades y transacciones con productos venezolanos sancionados.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>6</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede ampliar el margen operativo para comercio y pagos en sectores sensibles, con efectos directos sobre crudo, petroquímica y minería. También es un indicador útil para medir el tono real de la política de sanciones de Washington.</div>
+  <div class="enlaces"><a href="https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/" target="_blank" rel="noopener">📰 Global Sanctions</a> · <a href="https://web.archive.org/web/20260616222402/https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela firma acuerdo con General Electric para reconstruir su red eléctrica</h3>
+  <p class="fact-summary">Venezuela firmó un acuerdo el 15 de junio de 2026 con General Electric, gigante estadounidense de energía, para reconstruir su red eléctrica nacional en medio de una situación calamitosa</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 08:00 VET</p>
+  <ul class="data-points"><li>15 de junio de 2026</li><li>General Electric</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Este acuerdo podría mejorar gradualmente el sistema eléctrico nacional y representa un realineamiento diplomático con intereses energéticos estadounidenses</div>
+  <div class="enlaces"><a href="https://www.lemonde.fr/en/international/article/2026/06/16/venezuela-signs-deal-with-general-electical-to-rebuild-its-power-grid_6754549_4.html" target="_blank" rel="noopener">📰 Le Monde</a> · <a href="https://www.yahoo.com/news/politics/articles/venezuela-signs-deal-us-energy-151956576.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Televen reporta entendimiento entre General Electric Vernova y el Gobierno venezolano para el sistema eléctrico</h3>
+  <p class="fact-summary">Una transmisión informativa del 16 de junio señaló la firma de un memorando de entendimiento entre General Electric Vernova y el Gobierno venezolano para recuperar el Sistema Eléctrico Nacional.</p>
+  <p class="info-actor">General Electric Vernova / Gobierno venezolano</p>
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Podría implicar avances en la recuperación del sistema eléctrico y abrir una señal de apertura hacia cooperación técnica internacional.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=GhDPC1onHr4" target="_blank" rel="noopener">📰 Televen / contenido televisivo en YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BBC vincula a Venezuela en la cobertura del acuerdo de EE.UU. e Irán</h3>
+  <p class="fact-summary">BBC Mundo publicó una nota sobre el posible acuerdo para poner fin a la guerra entre Estados Unidos e Irán, y en el texto usa a Venezuela como punto de comparación retórica de Trump al hablar de la intervención estadounidense en recursos petroleros.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La referencia a Venezuela muestra cómo el país sigue siendo usado como marco comparativo en debates sobre energía y coerción estratégica, lo que ayuda a medir la posición discursiva de Washington en asuntos globales.</div>
+  <div class="enlaces"><a href="https://www.bbc.com/mundo/articles/c74yxxwd73vo" target="_blank" rel="noopener">📰 BBC Mundo</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Petroleras vuelven a mirar Venezuela tras meses de cautela</h3>
+  <p class="fact-summary">Empresas petroleras grandes y pequeñas han renovado su interés en perforar en Venezuela después de meses de prudencia tras la retirada parcial de restricciones estadounidenses.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 14/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere que el apetito corporativo por activos venezolanos está mejorando, lo que puede anticipar nuevas asociaciones, memorandos o reasignación de campos. Eso afectaría expectativas de producción, financiamiento y negociación con Caracas.</div>
+  <div class="enlaces"><a href="https://www.politico.com/news/2026/06/15/oil-venezuela-mideast-fomo-00960720" target="_blank" rel="noopener">📰 Politico</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV permite compras mensuales de hasta $1.000 en instituciones bancarias</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) anunció formalmente que las personas naturales podrán comprar hasta $1.000 mensuales en instituciones bancarias del país</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 14:30 VET</p>
+  <ul class="data-points"><li>$1.000 mensuales</li><li>Banco Central de Venezuela</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Esta medida podría influir en la dinámica de acceso a divisas y en la estabilidad económica del país</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=GhDPC1onHr4" target="_blank" rel="noopener">📰 Canal de YouTube (The News First Edition)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>CNN destaca caso de venezolano deportado con su hija de 4 años</h3>
+  <p class="fact-summary">CNN en Español incluyó entre sus principales temas del día el caso de un venezolano deportado junto con su hija de 4 años, presentado como parte de su cobertura de actualidad internacional.</p>
+  <p class="info-actor">Venezolano no identificado en el artículo</p>
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aporta contexto sobre la situación migratoria de venezolanos en el exterior y puede anticipar fricciones diplomáticas o consulares si el caso escala.</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/16/mundo/5-cosas-16-junio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a> · <a href="https://web.archive.org/web/20260616221859/https://cnnespanol.cnn.com/2026/06/16/mundo/5-cosas-16-junio-2026-orix" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Caracol Radio cita al BCV con nueva tasa del dólar en Venezuela</h3>
+  <p class="fact-summary">Caracol Radio publicó que, según el Banco Central de Venezuela, el dólar cerró en 100,33 bolívares, 0,64 por encima del día anterior.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>100,33 bolívares</li><li>0,64 bolívares de alza diaria</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia de la presión cambiaria y del pulso macroeconómico interno para seguimiento de corto plazo.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/caracolradio/posts/conozca-aqu%C3%AD-el-precio-del-d%C3%B3lar-en-venezuela-este-martes-16-de-junio-de-2026-ju/1054063743635239/" target="_blank" rel="noopener">📰 Caracol Radio</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BBC sobre recortes de plantilla y ajuste financiero en la corporación</h3>
+  <p class="fact-summary">Una cobertura citada por Radio Miraflores indica que la BBC planea recortar cientos de empleos en su división de noticias y reducir gastos en torno al 10% como parte de una reestructuración.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>10</li><li>2000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> No aporta un evento sobre Venezuela, pero sí contexto sobre la capacidad operativa de BBC como fuente internacional frecuente en el monitoreo de la cobertura sobre el país.</div>
+  <div class="enlaces"><a href="https://radiomiraflores.net.ve/bbc-recortara-buena-parte-de-su-plantilla-de-trabajadores/" target="_blank" rel="noopener">📰 Radio Miraflores</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>cgtn.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.cgtn.com/special/Live-updates-US-Iran-confirm-peace-deal-official-signing-on-June-19.html" target="_blank" rel="noopener">Live updates: US, Iran confirm peace deal, official signing on June 19</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Reservas Internacionales de Venezuela aumentan 4,53% en la semana del 12 de junio de 2026</h3>
+  <p class="fact-summary">Las Reservas Internacionales de Venezuela cerraron la semana del 12 de junio de 2026 en US$13.447 millones, un incremento de 4,53% (+US$583 millones) respecto a la semana anterior [1].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 11/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>US$13.447 millones</li><li>4,53%</li><li>+US$583 millones</li><li>US$12.864 millones</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento de US$583 millones en reservas refuerza la capacidad de Venezuela para atender importaciones y estabilizar el tipo de cambio, proporcionando un indicador positivo de la gestión macroeconómica actual [1].</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/reservas-internacionales-bcv-12-06-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Tasa de cambio del BCV sube a 592,5163 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa oficial en 592,5163 bolívares por dólar para el 16 de junio de 2026, con un aumento diario de 0,87%.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>592.5163</li><li>0.87</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa oficial del BCV es una referencia operativa para precios, pagos y expectativas cambiarias en Venezuela.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-16-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 Verificación del anuncio de Trump sobre muerte de &#x27;Niño Guerrero&#x27; — Confirmar el deceso impactaría en cooperación regional contra crimen transnacional y narrativas de seguridad, además de marcar un precedente en la estrategia estadounidense contra el Tren de Aragua.
+
+2. 🟠 Exportaciones de crudo venezolano y licencias generales de EE.UU. — Monitorear volumen de ventas y alcance de las licencias para evaluar resiliencia de PDVSA, flexibilización real de sanciones y reintegración del crudo venezolano en mercados globales.
+
+3. 🟡 Acuerdo con General Electric para red eléctrica — Seguir avances del memorando de entendimiento, ya que su implementación podría mejorar la infraestructura crítica y reflejar un cambio en la relación Venezuela-EE.UU. en energía.
+
+4. 🟡 Silencio de actores clave (Rodríguez, Cabello, Machado) — Su ausencia de declaraciones en contexto de cambios económicos y diplomáticos puede indicar alineación estratégica o tensiones internas no visibles.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB1</strong> — Delcy Rodríguez (Presidenta encargada / Vicepresidenta)</li><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(9)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Le Monde</td><td><a href="https://www.lemonde.fr/en/international/article/2026/06/16/venezuela-signs-deal-with-general-electical-to-rebuild-its-power-grid_6754549_4.html" target="_blank" rel="noopener">https://www.lemonde.fr/en/international/article/2026/06/16/venezuela-signs-deal-with-general-electical-to-rebuild-its-power-grid_6754549_4.html</a></td><td>2026-06-15</td></tr><tr><td>BBC Mundo</td><td><a href="https://www.bbc.com/mundo/articles/c75yw52yq5yo" target="_blank" rel="noopener">https://www.bbc.com/mundo/articles/c75yw52yq5yo</a></td><td></td></tr><tr><td>BBC Mundo</td><td><a href="https://www.bbc.com/mundo/articles/c74yxxwd73vo" target="_blank" rel="noopener">https://www.bbc.com/mundo/articles/c74yxxwd73vo</a></td><td></td></tr><tr><td>CNN en Español</td><td><a href="https://cnnespanol.cnn.com/2026/06/16/mundo/5-cosas-16-junio-2026-orix" target="_blank" rel="noopener">https://cnnespanol.cnn.com/2026/06/16/mundo/5-cosas-16-junio-2026-orix</a></td><td>2026-06-16</td></tr><tr><td>Caracol Radio</td><td><a href="https://www.facebook.com/caracolradio/posts/conozca-aqu%C3%AD-el-precio-del-d%C3%B3lar-en-venezuela-este-martes-16-de-junio-de-2026-ju/1054063743635239/" target="_blank" rel="noopener">https://www.facebook.com/caracolradio/posts/conozca-aqu%C3%AD-el-precio-del-d%C3%B3lar-en-venezuela-este-martes-16-de-junio-de-2026-ju/1054063743635239/</a></td><td>2026-06-16</td></tr><tr><td>OilPrice</td><td><a href="https://oilprice.com/Energy/Energy-General/Venezuelas-Oil-Exports-Hit-Seven-Year-High-as-Global-Buyers-Return.html" target="_blank" rel="noopener">https://oilprice.com/Energy/Energy-General/Venezuelas-Oil-Exports-Hit-Seven-Year-High-as-Global-Buyers-Return.html</a></td><td></td></tr><tr><td>Politico</td><td><a href="https://www.politico.com/news/2026/06/15/oil-venezuela-mideast-fomo-00960720" target="_blank" rel="noopener">https://www.politico.com/news/2026/06/15/oil-venezuela-mideast-fomo-00960720</a></td><td>2026-06-15</td></tr><tr><td>Global Sanctions</td><td><a href="https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/" target="_blank" rel="noopener">https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/</a></td><td></td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-16-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-16-junio-2026/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#5d4037;">Opinión</span> Opinión <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Canal de YouTube (The News First Edition)</td><td><a href="https://www.youtube.com/watch?v=GhDPC1onHr4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=GhDPC1onHr4</a></td><td>2026-06-15</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Radio Miraflores</td><td><a href="https://radiomiraflores.net.ve/bbc-recortara-buena-parte-de-su-plantilla-de-trabajadores/" target="_blank" rel="noopener">https://radiomiraflores.net.ve/bbc-recortara-buena-parte-de-su-plantilla-de-trabajadores/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/reservas-internacionales-bcv-12-06-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/reservas-internacionales-bcv-12-06-2026/</a></td><td>2026-06-12</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-16</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
