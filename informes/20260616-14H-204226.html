@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260616-14H-204226</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#fbc02d;">
+    🟡 ESTADO DEL DÍA: MEDIO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260616-14H-204226</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-15T20:42:26.480767+00:00 → 2026-06-16T20:42:26.480767+00:00<br>
+    <strong>Generado:</strong> 2026-06-16 20:46 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 0 A3</span>
+    <span class="stat-pill">🟡 6 A2</span>
+    <span class="stat-pill">📊 6 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Críticas en redes sociales sobre la inestabilidad del bolívar pese a modelos predictivos con IA, reflejando descontento con medidas económicas y percepción de fallas estructurales.
+2. Denuncias en medios y redes sobre corrupción en importaciones de alimentos y medicinas, vinculando el esquema CLAP a la cúpula política post-Chávez.
+3. Declaraciones del Departamento de Estado de EE.UU. sobre presencia de la CIA en Venezuela y advertencias sobre tráfico de drogas, según reportes en redes y portales.
+4. Exigencia de una organización de derechos humanos al gobierno venezolano para transparentar datos de fallecidos, heridos y detenidos tras la captura de Nicolás Maduro.
+5. Advertencia del presidente de VOX, Santiago Abascal, sobre vínculos hispano-venezolanos en el escándalo de corrupción de la aerolínea Plus, con potencial impacto en sanciones diplomáticas.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260615-14H-222059</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#fbc02d; font-weight:600;">🟡 MEDIO</span>
+  &rarr;
+  <span style="color:#fbc02d; font-weight:600;">🟡 MEDIO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (6):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Debate sobre la corrupción en cadenas de importación de alimentos y medicinas post-Chávez <a href="https://www.facebook.com/lapatilla/posts/13jun-la-corrupci%C3%B3n-en-venezuela-dej%C3%B3-de-ser-una-discusi%C3%B3n-sobre-dinero-perdido-/1447606640744687/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Cobertura de correlación entre volatilidad del bolívar y modelos predictivos de IA sin capacidad de estabilización <a href="https://www.instagram.com/reel/DZfomFSFT8D/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: ONG exige a Venezuela datos verificables sobre fallecidos y detenidos por la captura de Maduro <a href="https://www.facebook.com/fansheraldo/posts/la-ong-se%C3%B1al%C3%B3-que-venezuela-tiene-la-obligaci%C3%B3n-de-suministrar-informaci%C3%B3n-fided/1369518771948222/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: Discusión sobre la influencia de la inteligencia estadounidense y la CIA en Venezuela y el tráfico de drogas <a href="https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Debate sobre legitimidad de Petro en la ONU sobre reconocimiento del Tren de Aragua como grupo terrorista <a href="https://www.tiktok.com/@luisernestogl/video/7650135344628681991" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Santiago Abascal alerta sobre corrupción en aerolínea Plus vinculada a Venezuela en entrevista con NTN24 <a href="https://www.facebook.com/NTN24/posts/el-presidente-de-vox-santiago-abascal-advirti%C3%B3-en-entrevista-exclusiva-con-ntn24/1552999602849007/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>VPITV</code> (VPITV)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>11 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Discusión sobre la influencia de la inteligencia estadounidense y la CIA en Venezuela y el tráfico de drogas</h3>
+  <p class="fact-summary">Fuentes en redes sociales y portales reportaron declaraciones sobre la presencia de la CIA en Venezuela y advertencias sobre el tráfico de drogas por mar y tierra, vinculadas a la política exterior estadounidense.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal observada en múltiples fuentes sin confirmación oficial directa; refleja percepción de intervención extranjera.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Muestra la percepción pública de que la política exterior estadounidense y la inteligencia de EE.UU. están activamente involucradas en la dinámica política y de seguridad de Venezuela.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/" target="_blank" rel="noopener">📰 VozMediaUSA / Facebook</a> · <a href="https://www.instagram.com/p/DZfomFSFT8D/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Santiago Abascal alerta sobre corrupción en aerolínea Plus vinculada a Venezuela en entrevista con NTN24</h3>
+  <p class="fact-summary">El presidente de VOX, Santiago Abascal, advirtió en una entrevista exclusiva que el escándalo de corrupción de la aerolínea Plus está vinculado a intereses hispano-venezolanos.</p>
+  <p class="info-actor">Santiago Abascal</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La advertencia de un líder europeo sobre corrupción vinculada a Venezuela podría intensificar sanciones o presiones diplomáticas en 2026.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/NTN24/posts/el-presidente-de-vox-santiago-abascal-advirti%C3%B3-en-entrevista-exclusiva-con-ntn24/1552999602849007/" target="_blank" rel="noopener">📰 NTN24</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Debate sobre legitimidad de Petro en la ONU sobre reconocimiento del Tren de Aragua como grupo terrorista</h3>
+  <p class="fact-summary">El senador Iván Cepeda criticó las declaraciones del presidente Gustavo Petro en la ONU, quien negó que el Tren de Aragua sea un grupo terrorista, generando debate sobre la postura de Colombia.</p>
+  <p class="info-actor">Gustavo Petro</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La negativa de Petro a reconocer el Tren de Aragua como terrorista podría debilitar la cooperación internacional contra el crimen organizado en la frontera con Venezuela.</div>
+  <div class="enlaces"><a href="https://www.tiktok.com/@luisernestogl/video/7650135344628681991" target="_blank" rel="noopener">📰 TikTok (luisernestogl)</a></div>
+</div>
+</section>
+
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura de correlación entre volatilidad del bolívar y modelos predictivos de IA sin capacidad de estabilización</h3>
+  <p class="fact-summary">Múltiples fuentes en redes sociales discutieron la falta de estabilidad del bolívar a pesar de la implementación de modelos predictivos con IA, destacando la desconexión política.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida en observación sin confirmación primaria oficial; refleja percepción social sobre la crisis económica.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica la creciente frustración pública con las medidas económicas y la percepción de que la tecnología no resuelve problemas estructurales de la economía venezolana.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZfomFSFT8D/" target="_blank" rel="noopener">📰 VozMediaUSA / Instagram</a> · <a href="https://www.instagram.com/reel/DZfCwp4Crm-" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#00838f;">ONG</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>ONG exige a Venezuela datos verificables sobre fallecidos y detenidos por la captura de Maduro</h3>
+  <p class="fact-summary">Una organización de derechos humanos instó al gobierno venezolano a suministrar información fidedigna y verificable sobre el número exacto de fallecidos, heridos y detenidos tras la captura de Nicolás Maduro.</p>
+  <p class="info-actor">ONG de derechos humanos</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La demanda de datos verificables pone presión sobre la transparencia del gobierno y podría afectar la legitimidad internacional ante la crisis de seguridad post-captura.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/fansheraldo/posts/la-ong-se%C3%B1al%C3%B3-que-venezuela-tiene-la-obligaci%C3%B3n-de-suministrar-informaci%C3%B3n-fided/1369518771948222/" target="_blank" rel="noopener">📰 Facebook (fansheraldo)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura de correlación entre volatilidad del bolívar y modelos predictivos de IA sin capacidad de estabilización</h3>
+  <p class="fact-summary">Múltiples fuentes en redes sociales discutieron la falta de estabilidad del bolívar a pesar de la implementación de modelos predictivos con IA, destacando la desconexión política.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida en observación sin confirmación primaria oficial; refleja percepción social sobre la crisis económica.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica la creciente frustración pública con las medidas económicas y la percepción de que la tecnología no resuelve problemas estructurales de la economía venezolana.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZfomFSFT8D/" target="_blank" rel="noopener">📰 VozMediaUSA / Instagram</a> · <a href="https://www.instagram.com/reel/DZfCwp4Crm-" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Debate sobre la corrupción en cadenas de importación de alimentos y medicinas post-Chávez</h3>
+  <p class="fact-summary">Artículos en portales indexables y redes sociales analizaron la corrupción en las importaciones de alimentos y medicinas, vinculando el esquema CLAP a la cúpula política tras la muerte de Chávez.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal observada en múltiples fuentes sin verificación oficial directa; refleja denuncia social sobre corrupción en cadenas de suministro.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere persistencia de corrupción en la gestión de recursos esenciales, con potencial impacto en la estabilidad política y la confianza pública en el gobierno.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/lapatilla/posts/13jun-la-corrupci%C3%B3n-en-venezuela-dej%C3%B3-de-ser-una-discusi%C3%B3n-sobre-dinero-perdido-/1447606640744687/" target="_blank" rel="noopener">📰 La Patilla / Facebook</a> · <a href="https://www.instagram.com/p/DZfCwp4Crm-" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Discusión sobre la influencia de la inteligencia estadounidense y la CIA en Venezuela y el tráfico de drogas</h3>
+  <p class="fact-summary">Fuentes en redes sociales y portales reportaron declaraciones sobre la presencia de la CIA en Venezuela y advertencias sobre el tráfico de drogas por mar y tierra, vinculadas a la política exterior estadounidense.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal observada en múltiples fuentes sin confirmación oficial directa; refleja percepción de intervención extranjera.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Muestra la percepción pública de que la política exterior estadounidense y la inteligencia de EE.UU. están activamente involucradas en la dinámica política y de seguridad de Venezuela.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/" target="_blank" rel="noopener">📰 VozMediaUSA / Facebook</a> · <a href="https://www.instagram.com/p/DZfomFSFT8D/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Percepción pública sobre ineficacia de IA en estabilidad del bolívar** — La frustración por medidas económicas fallidas puede escalar protestas o descontento social en días próximos, especialmente si el tipo de cambio sigue volátil.
+
+2. 🟠 **Corrupción en importaciones CLAP y vínculos con cúpula política** — Persistencia del esquema podría generar sanciones internacionales o movilizaciones ciudadanas si se filtran más pruebas, afectando legitimidad del gobierno.
+
+3. 🟡 **Declaraciones de EE.UU. sobre presencia de la CIA y tráfico de drogas** — Monitorear reacciones del gobierno venezolano o grupos armados; podría usarse como narrativa para justificar represión o tensiones diplomáticas.
+
+4. 🔴 **Demanda de datos verificables sobre víctimas post-captura de Maduro** — Presión por transparencia aumenta riesgo de crisis institucional si el gobierno no responde o manipula cifras, afectando relaciones con organismos internacionales.
+
+5. 🟠 **Silencio de Diosdado Cabello (GOB2)** — Su ausencia en discursos públicos durante crisis de corrupción (CLAP/Plus) sugiere posible reacomodo interno o evasión de responsabilidad, clave para dinámicas de poder chavistas.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB1</strong> — Delcy Rodríguez (Presidenta encargada / Vicepresidenta)</li><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>VozMediaUSA / Instagram</td><td><a href="https://www.instagram.com/reel/DZfomFSFT8D/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZfomFSFT8D/</a></td><td></td></tr><tr><td>VozMediaUSA / Facebook</td><td><a href="https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/" target="_blank" rel="noopener">https://www.facebook.com/VozMediaUSA/posts/el-presidente-detall%C3%B3-que-la-acci%C3%B3n-militar-se-coordin%C3%B3-estrechamente-con-las-ac/987648217363973/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>La Patilla / Facebook</td><td><a href="https://www.facebook.com/lapatilla/posts/13jun-la-corrupci%C3%B3n-en-venezuela-dej%C3%B3-de-ser-una-discusi%C3%B3n-sobre-dinero-perdido-/1447606640744687/" target="_blank" rel="noopener">https://www.facebook.com/lapatilla/posts/13jun-la-corrupci%C3%B3n-en-venezuela-dej%C3%B3-de-ser-una-discusi%C3%B3n-sobre-dinero-perdido-/1447606640744687/</a></td><td></td></tr><tr><td>TikTok (luisernestogl)</td><td><a href="https://www.tiktok.com/@luisernestogl/video/7650135344628681991" target="_blank" rel="noopener">https://www.tiktok.com/@luisernestogl/video/7650135344628681991</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#00838f;">ONG</span> ONG <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Facebook (fansheraldo)</td><td><a href="https://www.facebook.com/fansheraldo/posts/la-ong-se%C3%B1al%C3%B3-que-venezuela-tiene-la-obligaci%C3%B3n-de-suministrar-informaci%C3%B3n-fided/1369518771948222/" target="_blank" rel="noopener">https://www.facebook.com/fansheraldo/posts/la-ong-se%C3%B1al%C3%B3-que-venezuela-tiene-la-obligaci%C3%B3n-de-suministrar-informaci%C3%B3n-fided/1369518771948222/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>NTN24</td><td><a href="https://www.facebook.com/NTN24/posts/el-presidente-de-vox-santiago-abascal-advirti%C3%B3-en-entrevista-exclusiva-con-ntn24/1552999602849007/" target="_blank" rel="noopener">https://www.facebook.com/NTN24/posts/el-presidente-de-vox-santiago-abascal-advirti%C3%B3-en-entrevista-exclusiva-con-ntn24/1552999602849007/</a></td><td></td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-16</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
