@@ -1,0 +1,150 @@
+{
+  "version": "1.0",
+  "correlativo": "20260616-14H-221329",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-16T22:27:03.747617+00:00",
+  "rango_inicio": "2026-06-15T22:13:29.269422+00:00",
+  "rango_fin": "2026-06-16T22:13:29.269422+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 6,
+    "A2": 4,
+    "A1": 2,
+    "A0": 1,
+    "total": 13
+  },
+  "actores_activos": {
+    "P5": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A1",
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Estados Unidos emite licencias generales relacionadas con Venezuela para petróleo, petroquímica y mi",
+      "ultima_fuente_url": "https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A1"
+      ],
+      "ultimo_titulo": "Tasa de cambio del BCV sube a 592,5163 Bs/USD",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-16-junio-2026/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "e61d5ab04851",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela firma acuerdo con General Electric para reconstruir su red eléctrica",
+      "fuente_url": "https://www.lemonde.fr/en/international/article/2026/06/16/venezuela-signs-deal-with-general-electical-to-rebuild-its-power-grid_6754549_4.html"
+    },
+    {
+      "hash": "0cfe957d0cd0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "BCV permite compras mensuales de hasta $1.000 en instituciones bancarias",
+      "fuente_url": "https://www.youtube.com/watch?v=GhDPC1onHr4"
+    },
+    {
+      "hash": "c6ac46366f8d",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "BBC informa sobre la supuesta muerte de 'Niño Guerrero' en una operación estadounidense",
+      "fuente_url": "https://www.bbc.com/mundo/articles/c75yw52yq5yo"
+    },
+    {
+      "hash": "4b71912b9435",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "BBC vincula a Venezuela en la cobertura del acuerdo de EE.UU. e Irán",
+      "fuente_url": "https://www.bbc.com/mundo/articles/c74yxxwd73vo"
+    },
+    {
+      "hash": "8e64adfb2725",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "BBC sobre recortes de plantilla y ajuste financiero en la corporación",
+      "fuente_url": "https://radiomiraflores.net.ve/bbc-recortara-buena-parte-de-su-plantilla-de-trabajadores/"
+    },
+    {
+      "hash": "b8a0ce4f6b8d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "CNN destaca caso de venezolano deportado con su hija de 4 años",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/16/mundo/5-cosas-16-junio-2026-orix"
+    },
+    {
+      "hash": "e48c639be4c8",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Televen reporta entendimiento entre General Electric Vernova y el Gobierno venezolano para el sistem",
+      "fuente_url": "https://www.youtube.com/watch?v=GhDPC1onHr4"
+    },
+    {
+      "hash": "eaa522220a35",
+      "actor": "P5",
+      "alert_level": "A1",
+      "titulo_corto": "Caracol Radio cita al BCV con nueva tasa del dólar en Venezuela",
+      "fuente_url": "https://www.facebook.com/caracolradio/posts/conozca-aqu%C3%AD-el-precio-del-d%C3%B3lar-en-venezuela-este-martes-16-de-junio-de-2026-ju/1054063743635239/"
+    },
+    {
+      "hash": "738afd586efa",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "Las exportaciones petroleras de Venezuela suben a un máximo de siete años",
+      "fuente_url": "https://oilprice.com/Energy/Energy-General/Venezuelas-Oil-Exports-Hit-Seven-Year-High-as-Global-Buyers-Return.html"
+    },
+    {
+      "hash": "1ae31e411496",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "Petroleras vuelven a mirar Venezuela tras meses de cautela",
+      "fuente_url": "https://www.politico.com/news/2026/06/15/oil-venezuela-mideast-fomo-00960720"
+    },
+    {
+      "hash": "6772bfbda39a",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "Estados Unidos emite licencias generales relacionadas con Venezuela para petróleo, petroquímica y mi",
+      "fuente_url": "https://globalsanctions.com/2026/06/us-issues-venezuela-related-general-licences-authorising-oil-petrochemical-and-mineral-transactions/"
+    },
+    {
+      "hash": "fc778d4108d3",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Reservas Internacionales de Venezuela aumentan 4,53% en la semana del 12 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/reservas-internacionales-bcv-12-06-2026/"
+    },
+    {
+      "hash": "c9342e7d4d97",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Tasa de cambio del BCV sube a 592,5163 Bs/USD",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-16-junio-2026/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
