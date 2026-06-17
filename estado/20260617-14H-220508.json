@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "correlativo": "20260617-14H-220508",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-17T22:09:10.658793+00:00",
+  "rango_inicio": "2026-06-16T22:05:08.651447+00:00",
+  "rango_fin": "2026-06-17T22:05:08.651447+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 1,
+    "A2": 2,
+    "A1": 2,
+    "A0": 1,
+    "total": 6
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Kaine presenta ley para impulsar elecciones presidenciales en Venezuela 2026",
+      "ultima_fuente_url": "https://www.kaine.senate.gov/press-releases/kaine-introduces-bill-to-push-for-2026-presidential-elections-in-venezuela"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Indicadores cambiarios y petroleros reportados para el mercado venezolano",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZsAw3rRPLP/"
+    },
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV publicada para el 17 de junio de 2026",
+      "ultima_fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "441c1e60e5c2",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Kaine presenta ley para impulsar elecciones presidenciales en Venezuela 2026",
+      "fuente_url": "https://www.kaine.senate.gov/press-releases/kaine-introduces-bill-to-push-for-2026-presidential-elections-in-venezuela"
+    },
+    {
+      "hash": "8fd581e24fbe",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela firma acuerdos con Shell para proyecto Loran gas field",
+      "fuente_url": "https://www.reuters.com/business/energy/venezuela-signs-agreements-with-shell-including-loran-gas-field-2026-06-11/"
+    },
+    {
+      "hash": "a75f39c4b3cb",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Opinión: EE.UU. debe detener el 'gold rush' que explode Venezuela",
+      "fuente_url": "https://nypost.com/2026/06/17/opinion/us-must-halt-the-terror-driven-gold-rush-looting-venezuela/"
+    },
+    {
+      "hash": "92b9b83f2193",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "No se verificaron notas relevantes de hoy en los dominios objetivo",
+      "fuente_url": "https://www.reuters.com/business/energy/us-refiners-can-still-absorb-more-venezuelan-crude-energy-secretary-wright-says-2026-06-12/"
+    },
+    {
+      "hash": "ca89df077fd5",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Indicadores cambiarios y petroleros reportados para el mercado venezolano",
+      "fuente_url": "https://www.instagram.com/p/DZsAw3rRPLP/"
+    },
+    {
+      "hash": "33a7e1287799",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Tasa de cambio BCV publicada para el 17 de junio de 2026",
+      "fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
