@@ -1,0 +1,380 @@
+{
+  "version": "1.0",
+  "correlativo": "20260617-14H-200439",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-17T20:19:49.338725+00:00",
+  "rango_inicio": "2026-06-16T20:04:39.325771+00:00",
+  "rango_fin": "2026-06-17T20:04:39.325771+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 11,
+    "A2": 14,
+    "A1": 8,
+    "A0": 2,
+    "total": 35
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 10,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A1",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela firma acuerdo con General Electric para recuperar 1000 MW de capacidad eléctrica",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=cs7j48MK5XY"
+    },
+    "INST2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "Colegios privados proyectan estabilidad en matrículas para el próximo ciclo",
+      "ultima_fuente_url": "https://mundour.com/2026/06/17/colegios-privados-proyectan-estabilidad-en-las-matriculas-para-el-inicio-del-proximo-ciclo-escolar/"
+    },
+    "INST4": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura matinal menciona inflación de 6,3% en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=PFaM7-oISog"
+    },
+    "INST1": {
+      "n_hallazgos": 9,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A1",
+        "A2",
+        "A0",
+        "A2",
+        "A1",
+        "A2",
+        "A3",
+        "A0"
+      ],
+      "ultimo_titulo": "BCV fija la tasa de cambio oficial en 596,7824 Bs/USD",
+      "ultima_fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "India evalúa reanudar operaciones petroleras en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=PFaM7-oISog"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura internacional vincula a Venezuela con sanciones petroleras contra Rusia",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "OPEP reporta producción venezolana de 1,17 millones de barriles diarios en mayo",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZdAXDfFX-h/"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "PDVSA y Repsol habrían firmado un memorando de entendimiento en petróleo y gas",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Mención a nuevas sanciones petroleras en cobertura del día",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "33ded6d4725d",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez oficializó acuerdo energético con GE Vernova en presencia de representante de EE. UU",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/"
+    },
+    {
+      "hash": "44e4621982df",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Prensa Presidencial reporta anuncio de Delcy Rodríguez sobre reinicio y culminación de obra",
+      "fuente_url": "https://prensapresidencialvenezuela.gob.ve"
+    },
+    {
+      "hash": "9306937f444b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Washington respaldó acuerdo entre GE Vernova y la gestión de Delcy Rodríguez",
+      "fuente_url": "https://www.elnacional.com/2026/06/washington-respalda-acuerdo-de-general-electric-vernova-con-delcy-rodriguez/"
+    },
+    {
+      "hash": "bf17647c9a73",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol firman memorando de entendimiento en petróleo y gas",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "cc6feca93abe",
+      "actor": "INST2",
+      "alert_level": "A2",
+      "titulo_corto": "Cedice Libertad reporta inflación mensual de 6,77% en bolívares",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "35d309a136b1",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija la tasa de cambio en 596,7824 Bs/USD",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    {
+      "hash": "9eeb19f3d6c1",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "BBC/EL PAÍS mantienen cobertura de transición y poder en Venezuela",
+      "fuente_url": "https://elpais.com/hemeroteca/2026-06-17/4/"
+    },
+    {
+      "hash": "252179305ba4",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "VPItv reporta operación militar en frontera con Colombia contra un presunto guerrillero de las FARC",
+      "fuente_url": "https://www.youtube.com/watch?v=VA5LRuUvJjA"
+    },
+    {
+      "hash": "8b1aa451b8bc",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "VPItv menciona aumento de vuelos internacionales hacia Venezuela en el segundo semestre",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "ab40f5b90916",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "General Electric y Venezuela acuerdan impulsar la recuperación del sistema eléctrico",
+      "fuente_url": "https://www.youtube.com/watch?v=cs7j48MK5XY"
+    },
+    {
+      "hash": "9856a5927e5a",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "India evalúa reanudar operaciones petroleras en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=PFaM7-oISog"
+    },
+    {
+      "hash": "ebf8fc6c73ae",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol firman memorando sobre petróleo y gas",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "4e0c232cc167",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "La petrolera estatal de India evalúa reanudar operaciones en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=PFaM7-oISog"
+    },
+    {
+      "hash": "079abcdd4849",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura internacional vincula a Venezuela con sanciones petroleras contra Rusia",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "e12a9e2b138a",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela y Repsol acuerdan explorar una nueva zona petrolera",
+      "fuente_url": "https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html"
+    },
+    {
+      "hash": "c544d5c8b1f1",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "BCV fija la tasa de cambio en 596,7824 Bs/USD",
+      "fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    },
+    {
+      "hash": "e3ce3a6329e2",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Repsol y Venezuela habrían acordado sumar crudo en nuevos campos",
+      "fuente_url": "https://www.jornada.com.mx/2026/06/17/mundo/023n2mun"
+    },
+    {
+      "hash": "ed453707fc87",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "OPEP reporta producción venezolana de 1,17 millones de barriles diarios en mayo",
+      "fuente_url": "https://www.instagram.com/p/DZdAXDfFX-h/"
+    },
+    {
+      "hash": "4081c4e46ec4",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol firman memorando sobre crudo y gas",
+      "fuente_url": "https://www.laradiodelsur.com.ve/pdvsa-y-repsol-firman-memorando-de-entendimiento-en-materia-de-crudo-y-gas/"
+    },
+    {
+      "hash": "fa420e3b7fb5",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela firma acuerdo con General Electric para recuperar 1000 MW de capacidad eléctrica",
+      "fuente_url": "https://www.youtube.com/watch?v=cs7j48MK5XY"
+    },
+    {
+      "hash": "de128a443339",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 596,7824 Bs/USD con incremento de 0,72% el 17 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    {
+      "hash": "88be9a630a9b",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA y Repsol firman memorando de entendimiento en materia de petróleo y gas",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fgXj0g"
+    },
+    {
+      "hash": "298012f12dd2",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Cedice Libertad registró inflación en bolívares de 6,77% en mayo de 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "b9272891e853",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol habrían firmado un memorando de entendimiento en petróleo y gas",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "4bec4f9fd298",
+      "actor": "INST4",
+      "alert_level": "A1",
+      "titulo_corto": "BCV habría fijado la tasa de cambio en 596,7824 Bs/USD el 17 de junio",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    {
+      "hash": "7017e1e02f0f",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura matinal menciona inflación de 6,3% en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=PFaM7-oISog"
+    },
+    {
+      "hash": "03674e48bd40",
+      "actor": "INT2",
+      "alert_level": "A1",
+      "titulo_corto": "Mención a nuevas sanciones petroleras en cobertura del día",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "72b33100791d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Videoanálisis de EL PAÍS sobre quién manda ahora en Venezuela",
+      "fuente_url": "https://elpais.com/hemeroteca/2026-06-17/4/"
+    },
+    {
+      "hash": "1a0aece98aff",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura matutina de Venezuela con énfasis en inflación y revocación de visas de EE. UU.",
+      "fuente_url": "https://www.youtube.com/watch?v=VA5LRuUvJjA"
+    },
+    {
+      "hash": "780827c38d0b",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "La RELE condenó el asesinato del periodista Cristian Herrera",
+      "fuente_url": "https://www.oas.org/es/CIDH/jsForm/?File=%2Fes%2Fcidh%2Fexpresion%2Fprensa%2Fcomunicados%2F2026%2F108.asp"
+    },
+    {
+      "hash": "9547ae782a56",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "BCV publica actualización cambiaria de apertura con dólar promedio de Bs. 735,03",
+      "fuente_url": "https://www.instagram.com/p/DZsAw3rRPLP/"
+    },
+    {
+      "hash": "8183a6846cb1",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV habría divulgado variación intermensual del INPC de 6,3% para junio",
+      "fuente_url": "https://www.instagram.com/p/DZp2qSCAEfE/"
+    },
+    {
+      "hash": "0152c8f6bff4",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "La Academia venezolana advierte sobre el deterioro democrático",
+      "fuente_url": "https://www.elnacional.com/2026/06/la-academia-advierte-el-rescate-de-la-democracia-ya-no-admite-demora/"
+    },
+    {
+      "hash": "26cf9d742bd8",
+      "actor": "INST2",
+      "alert_level": "A1",
+      "titulo_corto": "Colegios privados proyectan estabilidad en matrículas para el próximo ciclo",
+      "fuente_url": "https://mundour.com/2026/06/17/colegios-privados-proyectan-estabilidad-en-las-matriculas-para-el-inicio-del-proximo-ciclo-escolar/"
+    },
+    {
+      "hash": "ad7769527a57",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "BCV fija la tasa de cambio oficial en 596,7824 Bs/USD",
+      "fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 7
+}
