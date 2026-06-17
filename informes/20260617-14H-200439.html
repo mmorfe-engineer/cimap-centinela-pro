@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260617-14H-200439</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260617-14H-200439</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-16T20:04:39.325771+00:00 → 2026-06-17T20:04:39.325771+00:00<br>
+    <strong>Generado:</strong> 2026-06-17 20:19 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 11 A3</span>
+    <span class="stat-pill">🟡 14 A2</span>
+    <span class="stat-pill">📊 35 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Posible acuerdo entre Corpoelec y General Electric Vernova, anunciado por Delcy Rodríguez con presencia del encargado de negocios de EE.UU., para modernización del sistema eléctrico y recuperación de 1.000 MW, según reportes de Noticiero VV y Venevisión.
+
+2. Firma de memorandos de entendimiento entre PDVSA y Repsol para cooperación en petróleo y gas, incluyendo el desarrollo del área Horcón (Lago de Maracaibo), reportado por EVTV Miami, El País y La Radio del Sur.
+
+3. Advertencia de la Academia de Ciencias Políticas y Sociales sobre la crisis constitucional en Venezuela, difundida por El Nacional, que refuerza la percepción de deterioro institucional.
+
+4. Captura o neutralización de un presunto integrante de las FARC en la frontera con Colombia (municipio Eloy Alfaro), según noticiero de VPItv, relevante para seguridad transnacional.
+
+5. Evaluación de la petrolera estatal de India para reanudar operaciones en Venezuela tras reunión entre Narendra Modi y Delcy Rodríguez, reportado por Venevisión, con posibles implicaciones en el mapa de socios de PDVSA.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260616-14H-221329</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (35):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: La Academia venezolana advierte sobre el deterioro democrático <a href="https://www.elnacional.com/2026/06/la-academia-advierte-el-rescate-de-la-democracia-ya-no-admite-demora/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Venezuela firma acuerdo con General Electric para recuperar 1000 MW de capacidad eléctrica <a href="https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Delcy Rodríguez oficializó acuerdo energético con GE Vernova en presencia de representante de EE. UU. <a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>PDVSA</strong>: PDVSA y Repsol habrían firmado un memorando de entendimiento en petróleo y gas <a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: PDVSA y Repsol firman memorando de entendimiento en petróleo y gas <a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: General Electric y Venezuela acuerdan impulsar la recuperación del sistema eléctrico <a href="https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Venezuela y Repsol acuerdan explorar una nueva zona petrolera <a href="https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: VPItv reporta operación militar en frontera con Colombia contra un presunto guerrillero de las FARC <a href="https://www.youtube.com/watch?v=VA5LRuUvJjA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>PDVSA</strong>: PDVSA y Repsol firman memorando sobre crudo y gas <a href="https://www.laradiodelsur.com.ve/pdvsa-y-repsol-firman-memorando-de-entendimiento-en-materia-de-crudo-y-gas/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Unión Europea</strong>: India evalúa reanudar operaciones petroleras en Venezuela <a href="https://www.youtube.com/watch?v=PFaM7-oISog" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB1</code> (Delcy Rodríguez), <code>GOB2</code> (Diosdado Cabello), <code>INST2</code> (Tribunal Supremo de Justicia), <code>INST4</code> (Banco Central de Venezuela), <code>INST5</code> (PDVSA), <code>INT1</code> (Departamento de Estado EE.UU.), <code>INT2</code> (OFAC / U.S. Treasury), <code>INT4</code> (Unión Europea)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>P5</code> (Andrés Velásquez)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>14 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>Prensa Presidencial reporta anuncio de Delcy Rodríguez sobre reinicio y culminación de obra</h3>
+  <p class="fact-summary">Prensa Presidencial publicó que Delcy Rodríguez anunció el reinicio y culminación de una obra, pero el resumen disponible no identifica con claridad cuál proyecto fue ni aporta fecha verificable en el extracto consultado.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede corresponder a un anuncio oficial de infraestructura o gestión pública, pero sin el artículo completo no es posible medir impacto ni confirmar detalles operativos.</div>
+  <div class="enlaces"><a href="https://prensapresidencialvenezuela.gob.ve" target="_blank" rel="noopener">📰 Prensa Presidencial</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PDVSA y Repsol firman memorando sobre petróleo y gas</h3>
+  <p class="fact-summary">Una cobertura televisiva del 17 de junio de 2026 reporta que PDVSA y Repsol suscribieron un memorando de entendimiento en materia de petróleo y gas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede reflejar una vía de cooperación internacional en hidrocarburos en un momento de reacomodo energético. Si se confirma con fuente oficial, tendría implicaciones para la política petrolera venezolana y la relación con Europa.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PDVSA y Repsol firman memorando de entendimiento en petróleo y gas</h3>
+  <p class="fact-summary">Un noticiero venezolano del 17 de junio de 2026 reportó que PDVSA y Repsol suscribieron un memorando de entendimiento para cooperación en petróleo y gas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cooperación con Repsol es relevante para la recuperación operativa del sector hidrocarburos y para la lectura de apertura o reacomodo de socios internacionales en Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami (YouTube, noticiero del 17 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>VPItv reporta operación militar en frontera con Colombia contra un presunto guerrillero de las FARC</h3>
+  <p class="fact-summary">Un noticiero de VPItv del 17 de junio de 2026 informó sobre la captura o neutralización de un presunto integrante de las FARC en una operación en el municipio Eloy Alfaro, zona fronteriza con Colombia.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Es una señal relevante para monitoreo de frontera, seguridad transnacional y posible presión sobre relaciones bilaterales con Colombia.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=VA5LRuUvJjA" target="_blank" rel="noopener">📰 VPItv (YouTube, noticiero del 17 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>General Electric y Venezuela acuerdan impulsar la recuperación del sistema eléctrico</h3>
+  <p class="fact-summary">Venezuela anunció un acuerdo con General Electric para apoyar la recuperación del sistema eléctrico y recuperar 1.000 MW, según un video de noticias del 17 de junio de 2026.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El dato apunta a posibles medidas de alivio en un sistema eléctrico con déficit persistente, relevante para industria, servicios y estabilidad doméstica.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube, emisión matutina del 17 de junio de 2026)</a> · <a href="https://web.archive.org/web/20260617201012/https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>India evalúa reanudar operaciones petroleras en Venezuela</h3>
+  <p class="fact-summary">Noticias Venevisión reportó el 17 de junio de 2026 que la petrolera estatal de India evalúa reanudar operaciones en Venezuela tras una reunión entre Narendra Modi y Delcy Rodríguez.</p>
+  <p class="info-actor"><strong>INT4</strong> — Unión Europea <em>(Política exterior comunitaria europea)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede alterar el mapa de socios de PDVSA y aportar señales sobre relajación práctica de restricciones, financiamiento o cooperación técnica.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=PFaM7-oISog" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube, emisión matutina del 17 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Washington respaldó acuerdo entre GE Vernova y la gestión de Delcy Rodríguez</h3>
+  <p class="fact-summary">El Nacional reportó que el gobierno de Donald Trump respaldó un acuerdo entre la gestión de Delcy Rodríguez y GE Vernova.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> De confirmarse, sugiere una ventana de negociación entre actores vinculados al oficialismo venezolano y Washington, con posibles implicaciones para sanciones, energía y gobernabilidad.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/washington-respalda-acuerdo-de-general-electric-vernova-con-delcy-rodriguez/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>La petrolera estatal de India evalúa reanudar operaciones en Venezuela</h3>
+  <p class="fact-summary">Una emisión matutina del 17 de junio de 2026 indicó que la petrolera estatal de India está evaluando reanudar operaciones en Venezuela tras una reunión entre actores vinculados al sector.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere interés de un actor estatal asiático en el sector venezolano, relevante para multipolaridad energética y eventuales canales de financiamiento o cooperación.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=PFaM7-oISog" target="_blank" rel="noopener">📰 Noticias Venevision (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura internacional vincula a Venezuela con sanciones petroleras contra Rusia</h3>
+  <p class="fact-summary">Una transmisión del 17 de junio de 2026 mencionó nuevas sanciones en el área petrolera dirigidas contra el gobierno de Rusia dentro de un bloque de noticias internacionales que también trató Venezuela.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Es relevante para la lectura comparada de sanciones, energía y reordenamiento global, especialmente si se cruza con la estrategia venezolana de diversificación de socios.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cedice Libertad reporta inflación mensual de 6,77% en bolívares</h3>
+  <p class="fact-summary">Un noticiero venezolano del 17 de junio de 2026 citó a Cedice Libertad con una inflación de 6,77% en bolívares durante mayo.</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>6.77</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aporta una referencia de presión inflacionaria que ayuda a monitorear el deterioro o la estabilización del poder adquisitivo en Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami (YouTube, noticiero del 17 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija la tasa de cambio en 596,7824 Bs/USD</h3>
+  <p class="fact-summary">Finanzas Digital informó que el Banco Central de Venezuela publicó para el 17 de junio de 2026 una tasa de 596,7824 bolívares por dólar, con alza diaria de 0,72%.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>596.7824</li><li>0.72</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cotización oficial del dólar es un referente central para precios, salarios, comercio y expectativas cambiarias en Venezuela.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BBC/EL PAÍS mantienen cobertura de transición y poder en Venezuela</h3>
+  <p class="fact-summary">La hemeroteca de EL PAÍS para el 17 de junio de 2026 muestra una pieza titulada sobre quién manda ahora en Venezuela, reflejando interés internacional en la reconfiguración política del país.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cobertura europea sirve como termómetro de la lectura internacional sobre gobernabilidad y distribución de poder en Venezuela.</div>
+  <div class="enlaces"><a href="https://elpais.com/hemeroteca/2026-06-17/4/" target="_blank" rel="noopener">📰 EL PAÍS</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>VPItv menciona aumento de vuelos internacionales hacia Venezuela en el segundo semestre</h3>
+  <p class="fact-summary">El noticiero de VPItv del 17 de junio de 2026 indicó que se ratificó un mayor número de vuelos internacionales que tocarán Venezuela durante el segundo semestre de 2026.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La expansión de vuelos internacionales puede reflejar normalización parcial de conectividad y mayor circulación comercial o migratoria.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 VPItv (YouTube, noticiero del 17 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Mención a nuevas sanciones petroleras en cobertura del día</h3>
+  <p class="fact-summary">Una transmisión del 17 de junio de 2026 alude a nuevas sanciones en el área petrolera contra Rusia, dentro de un bloque de noticias internacionales; no hay evidencia directa en el resultado de que afecten específicamente a Venezuela.</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>❔ No verificada:</strong> Mención aislada: no tratar como hecho confirmado ni como impacto directo sobre Venezuela sin contraste adicional.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Solo aporta contexto de entorno sancionatorio internacional; podría ser relevante si aparece conexión explícita con petróleo venezolano en fuentes primarias.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami / YouTube</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/commentary/reuters-open-interest/global-markets-view-usa-2026-06-17/" target="_blank" rel="noopener">Morning Bid: Welcome to the Warsh era</a></li><li><a href="https://www.reuters.com/world/middle-east/14-point-draft-us-iran-deal-2026-06-17/" target="_blank" rel="noopener">The 14-point draft of the U.S.-Iran deal</a></li><li><a href="https://www.reuters.com/business/energy/us-quietly-allows-waiver-russian-oil-expire-2026-06-17/" target="_blank" rel="noopener">US quietly allows waiver on Russian oil to expire</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela y Repsol acuerdan explorar una nueva zona petrolera</h3>
+  <p class="fact-summary">El Gobierno de Venezuela, PDVSA y Repsol firmaron un acuerdo de intenciones para estudiar el desarrollo de Horcón, al sureste del lago de Maracaibo, con potencial de exploración y producción futura.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede abrir una nueva vía de cooperación energética y, si se concreta, añadir capacidad de exploración y eventualmente producción en una zona clave del occidente venezolano.</div>
+  <div class="enlaces"><a href="https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html" target="_blank" rel="noopener">📰 El País</a> · <a href="https://mundour.com/2026/06/17/venezuela-firma-con-repsol-un-memorando-en-materia-de-gas-y-petroleo/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA y Repsol firman memorando sobre crudo y gas</h3>
+  <p class="fact-summary">PDVSA y Repsol firmaron un memorando de entendimiento en materia de crudo y gas, según cobertura publicada el 17 de junio de 2026 por medios que reportan el acto desde Caracas/Miraflores.</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede señalar continuidad o ampliación de cooperación energética en Venezuela, con posibles implicaciones para producción de crudo y gas y para el marco de asociación con actores internacionales.</div>
+  <div class="enlaces"><a href="https://www.laradiodelsur.com.ve/pdvsa-y-repsol-firman-memorando-de-entendimiento-en-materia-de-crudo-y-gas/" target="_blank" rel="noopener">📰 La Radio del Sur</a> · <a href="https://www.jornada.com.mx/2026/06/17/mundo/023n2mun" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela firma acuerdo con General Electric para recuperar 1000 MW de capacidad eléctrica</h3>
+  <p class="fact-summary">El gobierno venezolano anunció un acuerdo con la estadounidense General Electric para impulsar la recuperación del sistema eléctrico, con la presidenta encargada Delcy Rodríguez indicando que el plan permitirá recuperar 1000 MW en medio de un déficit energético que afecta gran parte del país[5]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1000</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura de medio de televisión; falta confirmación directa de fuente oficial de GE o BCV sobre el monto y detalles del contrato[5]</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La recuperación de 1000 MW podría reducir el déficit energético que afecta a gran parte del país, impactando directamente la estabilidad económica y social[5]</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener">📰 Noticias Venevision</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PDVSA y Repsol habrían firmado un memorando de entendimiento en petróleo y gas</h3>
+  <p class="fact-summary">Una emisión informativa del 17 de junio de 2026 menciona que PDVSA y Repsol firmaron un memorando de entendimiento sobre petróleo y gas, pero en el resultado disponible no hay respaldo documental independiente adicional.</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Alerta temprana: mención en cobertura audiovisual; requiere validación primaria antes de tratarse como hecho confirmado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede indicar movimientos en la relación comercial y técnica de Venezuela con una empresa internacional en un sector sensible. Si se valida, tendría impacto sobre expectativas de producción, financiamiento y diplomacia energética.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami / YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Repsol y Venezuela habrían acordado sumar crudo en nuevos campos</h3>
+  <p class="fact-summary">Medios reportaron que el nuevo entendimiento con Repsol apunta a aumentar la producción mediante la incorporación de dos campos y un posible aporte adicional de unos 20.000 barriles diarios en los próximos meses.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>20000 barriles/día</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el incremento se materializa, podría reforzar la producción venezolana en el corto plazo y respaldar la estrategia de recuperación de crudo.</div>
+  <div class="enlaces"><a href="https://www.jornada.com.mx/2026/06/17/mundo/023n2mun" target="_blank" rel="noopener">📰 La Jornada</a> · <a href="https://www.chicagotribune.com/2026/06/16/venezuela-y-espaola-repsol-firman-otro-acuerdo-para-aumentar-produccin-de-crudo-tras-reforma/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA y Repsol firman memorando de entendimiento en materia de petróleo y gas</h3>
+  <p class="fact-summary">PDVSA y la empresa española Repsol firmaron un memorando de entendimiento en materia de petróleo y gas, con proyección hasta 2050, según se reportó en noticias del 17 de junio de 2026[1][2]</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2050</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida en dos medios de televisión (EVTV Miami y Televen TV), pero falta confirmación oficial de PDVSA o Repsol sobre el alcance del memorando[1][2]</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Un memorando con proyección hasta 2050 podría fortalecer la capacidad de producción de hidrocarburos de Venezuela, con impacto en la economía y la seguridad energética[1][2]</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fgXj0g" target="_blank" rel="noopener">📰 EVTV MIAMI</a> · <a href="https://www.youtube.com/watch?v=WdpgbdenhxY" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>OPEP reporta producción venezolana de 1,17 millones de barriles diarios en mayo</h3>
+  <p class="fact-summary">Según una publicación citada en redes, la OPEP habría registrado una producción promedio de crudo venezolana de 1,17 millones de barriles diarios en mayo de 2026.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>1.17 millones de barriles/día</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> De confirmarse en fuente primaria, indicaría un nivel de producción elevado para el país y sería relevante para exportaciones e ingresos petroleros.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZdAXDfFX-h/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija la tasa de cambio en 596,7824 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó para el 17 de junio de 2026 una tasa de cambio de 596,7824 bolívares por dólar.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>596.7824 Bs/USD</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia macroeconómica para el entorno operativo del sector energético y para costos internos expresados en moneda local.</div>
+  <div class="enlaces"><a href="https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/" target="_blank" rel="noopener">📰 El Diario de Guayana</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez oficializó acuerdo energético con GE Vernova en presencia de representante de EE. UU.</h3>
+  <p class="fact-summary">La presidenta encargada Delcy Rodríguez habría oficializado un acuerdo estratégico entre Corpoelec y General Electric Vernova en presencia del encargado de negocios de Estados Unidos, John Barrett.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, apunta a una señal de reacomodo pragmático en infraestructura eléctrica y a un posible canal de interlocución con actores estadounidenses. También puede anticipar anuncios sobre suministro, mantenimiento o modernización del sistema eléctrico.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/" target="_blank" rel="noopener">📰 Noticiero VV (resumen republicado en Facebook/Instagram)</a> · <a href="https://www.instagram.com/reel/DZpK16rkl0Q/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>La RELE condenó el asesinato del periodista Cristian Herrera</h3>
+  <p class="fact-summary">La Relatoría Especial para la Libertad de Expresión de la OEA publicó un comunicado sobre el asesinato del periodista Cristian Herrera en Cúcuta y pidió investigar el caso con enfoque de libertad de expresión.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>6 de junio de 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cobertura de violencia contra prensa en la región afecta el contexto de derechos humanos y puede influir en el monitoreo internacional sobre garantías para periodistas, incluido el caso venezolano por comparación regional.</div>
+  <div class="enlaces"><a href="https://www.oas.org/es/CIDH/jsForm/?File=%2Fes%2Fcidh%2Fexpresion%2Fprensa%2Fcomunicados%2F2026%2F108.asp" target="_blank" rel="noopener">📰 OEA - Comisión Interamericana de Derechos Humanos / RELE</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV habría divulgado variación intermensual del INPC de 6,3% para junio</h3>
+  <p class="fact-summary">Una publicación en redes atribuye al Banco Central de Venezuela una variación intermensual del Índice Nacional de Precios al Consumidor de 6,3%.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>6,3%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el dato es correcto, refuerza la lectura de presión inflacionaria en Venezuela y puede afectar expectativas sobre precios, salarios y tipo de cambio.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZp2qSCAEfE/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV fija tasa de cambio en 596,7824 Bs/USD con incremento de 0,72% el 17 de junio de 2026</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) publicó la tasa de cambio oficial al 17 de junio de 2026 en 596,7824 Bs/USD, con un incremento de +4,2661 (+0,72%) respecto al día anterior[6]</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>596.7824</li><li>0.72</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa de cambio oficial es un indicador clave para la inflación y el costo de los bienes importados, afectando directamente la estabilidad económica de los ciudadanos[6]</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura matinal menciona inflación de 6,3% en Venezuela</h3>
+  <p class="fact-summary">Una emisión informativa del 17 de junio de 2026 menciona que el índice de precios al consumidor fue de 6,3%, aunque el resultado disponible no aporta la fuente primaria ni el detalle metodológico.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>6.3</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Alerta en observación: mención en cobertura audiovisual sin acceso a la fuente primaria completa.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el dato se confirma, aportaría una señal útil sobre dinámica de precios y capacidad de consumo, con posible efecto en narrativa económica oficial y opositora.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=PFaM7-oISog" target="_blank" rel="noopener">📰 Noticias Venevisión / YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura matutina de Venezuela con énfasis en inflación y revocación de visas de EE. UU.</h3>
+  <p class="fact-summary">Un programa matutino en YouTube sobre Venezuela mencionó una desaceleración inflacionaria reportada por el Observatorio de Gasto Público de Se Dice Libertad y la revocación de visas por parte del gobierno de Estados Unidos a personas vinculadas a Venezuela.</p>
+  <p class="info-actor">Se Dice Libertad</p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>6.77</li><li>1.89</li><li>676.35</li><li>53</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La inflación y las restricciones de visado son indicadores útiles para seguimiento de presión económica y diplomática sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=VA5LRuUvJjA" target="_blank" rel="noopener">📰 YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cedice Libertad registró inflación en bolívares de 6,77% en mayo de 2026</h3>
+  <p class="fact-summary">Cedice Libertad reportó una inflación en bolívares de 6,77% en mayo de 2026 en Venezuela, con una reducción respecto al mes anterior, según se citó en noticias del 17 de junio de 2026[1]</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>6.77</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Datos de Cedice Libertad, fuente independiente; falta verificación cruzada con BCV o FMI sobre el mismo indicador[1]</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La inflación de 6,77% en mayo refleja la presión sobre el precio de los bienes y la estabilidad económica, afectando directamente el poder adquisitivo de los ciudadanos[1]</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV MIAMI</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV habría fijado la tasa de cambio en 596,7824 Bs/USD el 17 de junio</h3>
+  <p class="fact-summary">Una nota financiera del 17 de junio de 2026 reporta que el Banco Central de Venezuela publicó una tasa de 596,7824 bolívares por dólar, con un aumento diario de 4,2661 bolívares (+0,72%).</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>596.7824</li><li>4.2661</li><li>0.72</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil: dato de mercado reportado por un medio financiero; conviene contrastar con publicación oficial del BCV.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa de cambio oficial es un indicador clave para monitoreo económico y puede ayudar a contextualizar presión inflacionaria, expectativas de devaluación y precios internos.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV publica actualización cambiaria de apertura con dólar promedio de Bs. 735,03</h3>
+  <p class="fact-summary">Una publicación de indicadores económicos reporta para el martes 17 de junio una tasa de dólar promedio de Bs. 735,03, dólar BCV de Bs. 596,78 y euro BCV de Bs. 692,05.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 05:00 VET</p>
+  <ul class="data-points"><li>Bs. 735,03</li><li>Bs. 596,78</li><li>Bs. 692,05</li><li>17/06/2026</li><li>9:00 AM</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El dato actualiza la referencia diaria de cambio usada por comercio, pagos y cálculo de costos en Venezuela. También permite evaluar la brecha entre tasa oficial y promedio digital del día.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZsAw3rRPLP/" target="_blank" rel="noopener">📰 Instagram</a> · <a href="https://www.instagram.com/reel/DZqprPRgQ_-/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija la tasa de cambio oficial en 596,7824 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó la tasa oficial de 596,7824 bolívares por dólar para el 17 de junio de 2026.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>596.7824</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia operativa para seguimiento macroeconómico y de costos internos, especialmente en un entorno de alta dolarización de facto.</div>
+  <div class="enlaces"><a href="https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/" target="_blank" rel="noopener">📰 El Diario de Guayana</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela firma acuerdo con General Electric para recuperar 1000 MW de capacidad eléctrica</h3>
+  <p class="fact-summary">El gobierno venezolano anunció un acuerdo con la estadounidense General Electric para impulsar la recuperación del sistema eléctrico, con la presidenta encargada Delcy Rodríguez indicando que el plan permitirá recuperar 1000 MW en medio de un déficit energético que afecta gran parte del país[5]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1000</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura de medio de televisión; falta confirmación directa de fuente oficial de GE o BCV sobre el monto y detalles del contrato[5]</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La recuperación de 1000 MW podría reducir el déficit energético que afecta a gran parte del país, impactando directamente la estabilidad económica y social[5]</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener">📰 Noticias Venevision</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PDVSA y Repsol habrían firmado un memorando de entendimiento en petróleo y gas</h3>
+  <p class="fact-summary">Una emisión informativa del 17 de junio de 2026 menciona que PDVSA y Repsol firmaron un memorando de entendimiento sobre petróleo y gas, pero en el resultado disponible no hay respaldo documental independiente adicional.</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Alerta temprana: mención en cobertura audiovisual; requiere validación primaria antes de tratarse como hecho confirmado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede indicar movimientos en la relación comercial y técnica de Venezuela con una empresa internacional en un sector sensible. Si se valida, tendría impacto sobre expectativas de producción, financiamiento y diplomacia energética.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami / YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA y Repsol firman memorando de entendimiento en materia de petróleo y gas</h3>
+  <p class="fact-summary">PDVSA y la empresa española Repsol firmaron un memorando de entendimiento en materia de petróleo y gas, con proyección hasta 2050, según se reportó en noticias del 17 de junio de 2026[1][2]</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2050</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida en dos medios de televisión (EVTV Miami y Televen TV), pero falta confirmación oficial de PDVSA o Repsol sobre el alcance del memorando[1][2]</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Un memorando con proyección hasta 2050 podría fortalecer la capacidad de producción de hidrocarburos de Venezuela, con impacto en la economía y la seguridad energética[1][2]</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fgXj0g" target="_blank" rel="noopener">📰 EVTV MIAMI</a> · <a href="https://www.youtube.com/watch?v=WdpgbdenhxY" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura matinal menciona inflación de 6,3% en Venezuela</h3>
+  <p class="fact-summary">Una emisión informativa del 17 de junio de 2026 menciona que el índice de precios al consumidor fue de 6,3%, aunque el resultado disponible no aporta la fuente primaria ni el detalle metodológico.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>6.3</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Alerta en observación: mención en cobertura audiovisual sin acceso a la fuente primaria completa.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el dato se confirma, aportaría una señal útil sobre dinámica de precios y capacidad de consumo, con posible efecto en narrativa económica oficial y opositora.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=PFaM7-oISog" target="_blank" rel="noopener">📰 Noticias Venevisión / YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cedice Libertad registró inflación en bolívares de 6,77% en mayo de 2026</h3>
+  <p class="fact-summary">Cedice Libertad reportó una inflación en bolívares de 6,77% en mayo de 2026 en Venezuela, con una reducción respecto al mes anterior, según se citó en noticias del 17 de junio de 2026[1]</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>6.77</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Datos de Cedice Libertad, fuente independiente; falta verificación cruzada con BCV o FMI sobre el mismo indicador[1]</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La inflación de 6,77% en mayo refleja la presión sobre el precio de los bienes y la estabilidad económica, afectando directamente el poder adquisitivo de los ciudadanos[1]</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV MIAMI</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV habría fijado la tasa de cambio en 596,7824 Bs/USD el 17 de junio</h3>
+  <p class="fact-summary">Una nota financiera del 17 de junio de 2026 reporta que el Banco Central de Venezuela publicó una tasa de 596,7824 bolívares por dólar, con un aumento diario de 4,2661 bolívares (+0,72%).</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>596.7824</li><li>4.2661</li><li>0.72</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil: dato de mercado reportado por un medio financiero; conviene contrastar con publicación oficial del BCV.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa de cambio oficial es un indicador clave para monitoreo económico y puede ayudar a contextualizar presión inflacionaria, expectativas de devaluación y precios internos.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Mención a nuevas sanciones petroleras en cobertura del día</h3>
+  <p class="fact-summary">Una transmisión del 17 de junio de 2026 alude a nuevas sanciones en el área petrolera contra Rusia, dentro de un bloque de noticias internacionales; no hay evidencia directa en el resultado de que afecten específicamente a Venezuela.</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>❔ No verificada:</strong> Mención aislada: no tratar como hecho confirmado ni como impacto directo sobre Venezuela sin contraste adicional.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Solo aporta contexto de entorno sancionatorio internacional; podría ser relevante si aparece conexión explícita con petróleo venezolano en fuentes primarias.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">📰 EVTV Miami / YouTube</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Acuerdo Corpoelec-GE Vernova con presencia de EE.UU.** — Confirmar alcance técnico, financiero y político del acuerdo. Impacta en estabilidad eléctrica, relaciones con EE.UU. y narrativa de pragmatismo gubernamental.
+
+2. 🔴 **Memorando PDVSA-Repsol y posible desarrollo de Horcón** — Verificar fuentes oficiales y términos del acuerdo. Define cooperación energética con Europa, capacidad de producción y marco legal para inversiones extranjeras.
+
+3. 🟠 **Posible reanudación de operaciones de India en Venezuela** — Monitorear declaraciones oficiales o movimientos de ONGC/IOC. Podría alterar dinámica de socios de PDVSA y relajación de sanciones *de facto*.
+
+4. 🟡 **Silencio de Jorge Rodríguez y María Corina Machado** — Ausencia de declaraciones en contexto de acuerdos internacionales y crisis institucional. Puede indicar estrategia de bajo perfil o bloqueo comunicacional.
+
+5. 🟡 **Operación contra presunto integrante de las FARC en frontera** — Seguimiento a reacciones de Colombia y detalles de la captura. Relevante para seguridad binacional y tensión con Petro.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(11)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/washington-respalda-acuerdo-de-general-electric-vernova-con-delcy-rodriguez/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/washington-respalda-acuerdo-de-general-electric-vernova-con-delcy-rodriguez/</a></td><td></td></tr><tr><td>EVTV Miami (YouTube, noticiero del 17 de junio de 2026)</td><td><a href="https://www.youtube.com/watch?v=ChpC8fqXj0g" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ChpC8fqXj0g</a></td><td>2026-06-17</td></tr><tr><td>EL PAÍS</td><td><a href="https://elpais.com/hemeroteca/2026-06-17/4/" target="_blank" rel="noopener">https://elpais.com/hemeroteca/2026-06-17/4/</a></td><td>2026-06-17</td></tr><tr><td>VPItv (YouTube, noticiero del 17 de junio de 2026)</td><td><a href="https://www.youtube.com/watch?v=VA5LRuUvJjA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=VA5LRuUvJjA</a></td><td>2026-06-17</td></tr><tr><td>Noticias Venevisión (YouTube, emisión matutina del 17 de junio de 2026)</td><td><a href="https://www.youtube.com/watch?v=cs7j48MK5XY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=cs7j48MK5XY</a></td><td>2026-06-17</td></tr><tr><td>Noticias Venevisión (YouTube, emisión matutina del 17 de junio de 2026)</td><td><a href="https://www.youtube.com/watch?v=PFaM7-oISog" target="_blank" rel="noopener">https://www.youtube.com/watch?v=PFaM7-oISog</a></td><td>2026-06-17</td></tr><tr><td>El País</td><td><a href="https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html" target="_blank" rel="noopener">https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html</a></td><td></td></tr><tr><td>El Diario de Guayana</td><td><a href="https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/" target="_blank" rel="noopener">https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/</a></td><td></td></tr><tr><td>La Jornada</td><td><a href="https://www.jornada.com.mx/2026/06/17/mundo/023n2mun" target="_blank" rel="noopener">https://www.jornada.com.mx/2026/06/17/mundo/023n2mun</a></td><td></td></tr><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/la-academia-advierte-el-rescate-de-la-democracia-ya-no-admite-demora/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/la-academia-advierte-el-rescate-de-la-democracia-ya-no-admite-demora/</a></td><td></td></tr><tr><td>Mundo UR</td><td><a href="https://mundour.com/2026/06/17/colegios-privados-proyectan-estabilidad-en-las-matriculas-para-el-inicio-del-proximo-ciclo-escolar/" target="_blank" rel="noopener">https://mundour.com/2026/06/17/colegios-privados-proyectan-estabilidad-en-las-matriculas-para-el-inicio-del-proximo-ciclo-escolar/</a></td><td>2026-06-17</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Noticiero VV (resumen republicado en Facebook/Instagram)</td><td><a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZdAXDfFX-h/" target="_blank" rel="noopener">https://www.instagram.com/p/DZdAXDfFX-h/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZsAw3rRPLP/" target="_blank" rel="noopener">https://www.instagram.com/p/DZsAw3rRPLP/</a></td><td>2026-06-17</td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZp2qSCAEfE/" target="_blank" rel="noopener">https://www.instagram.com/p/DZp2qSCAEfE/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>La Radio del Sur</td><td><a href="https://www.laradiodelsur.com.ve/pdvsa-y-repsol-firman-memorando-de-entendimiento-en-materia-de-crudo-y-gas/" target="_blank" rel="noopener">https://www.laradiodelsur.com.ve/pdvsa-y-repsol-firman-memorando-de-entendimiento-en-materia-de-crudo-y-gas/</a></td><td>2026-06-17</td></tr><tr><td>EVTV MIAMI</td><td><a href="https://www.youtube.com/watch?v=ChpC8fgXj0g" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ChpC8fgXj0g</a></td><td>2026-06-17</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Prensa Presidencial</td><td><a href="https://prensapresidencialvenezuela.gob.ve" target="_blank" rel="noopener">https://prensapresidencialvenezuela.gob.ve</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/</a></td><td>2026-06-17</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>OEA - Comisión Interamericana de Derechos Humanos / RELE</td><td><a href="https://www.oas.org/es/CIDH/jsForm/?File=%2Fes%2Fcidh%2Fexpresion%2Fprensa%2Fcomunicados%2F2026%2F108.asp" target="_blank" rel="noopener">https://www.oas.org/es/CIDH/jsForm/?File=%2Fes%2Fcidh%2Fexpresion%2Fprensa%2Fcomunicados%2F2026%2F108.asp</a></td><td></td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-17</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
