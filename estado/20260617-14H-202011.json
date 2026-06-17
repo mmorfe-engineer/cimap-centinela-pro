@@ -1,0 +1,320 @@
+{
+  "version": "1.0",
+  "correlativo": "20260617-14H-202011",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-17T20:49:41.677800+00:00",
+  "rango_inicio": "2026-06-16T20:20:11.373818+00:00",
+  "rango_fin": "2026-06-17T20:20:11.373818+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 9,
+    "A2": 10,
+    "A1": 5,
+    "A0": 3,
+    "total": 27
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 6,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Delcy Rodríguez participa en firma de memorando en Miraflores",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZrv4dmiHcS/"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "PSUV reporta 94,65% de avance en la segunda Consulta Popular Nacional de 2026",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZoE4zYMM0Z/"
+    },
+    "P5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "BCV habría difundido inflación intermensual de 6,3%",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZp2qSCAEfE/"
+    },
+    "P2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Repsol y Venezuela acuerdan estudiar una nueva zona petrolera en Horcón",
+      "ultima_fuente_url": "https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html"
+    },
+    "INST5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura televisiva reporta acuerdo PDVSA-Repsol en petróleo y gas",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "BCV fija tasa de cambio en 596,7824 Bs/USD",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura regional menciona revocación de visas por parte de Estados Unidos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=VA5LRuUvJjA"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura televisiva reporta discusión sobre sanciones petroleras a Rusia y Venezuela como contexto ",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A0",
+        "A0",
+        "A2",
+        "A0"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV publicada para el 17 de junio de 2026",
+      "ultima_fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    },
+    "INST2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Mundo UR reporta estabilidad de matrículas en colegios privados para el próximo ciclo",
+      "ultima_fuente_url": "https://mundour.com/2026/06/17/colegios-privados-proyectan-estabilidad-en-las-matriculas-para-el-inicio-del-proximo-ciclo-escolar/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB3",
+    "GOB4",
+    "P1",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "aaba398c8554",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez oficializa acuerdo entre Corpoelec y General Electric Vernova",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/"
+    },
+    {
+      "hash": "a9ee39b8c6f4",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia reinicio y culminación de proyectos desde Miraflores",
+      "fuente_url": "https://prensapresidencialvenezuela.gob.ve"
+    },
+    {
+      "hash": "6860dace8293",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez designa nuevos ministros",
+      "fuente_url": "https://www.instagram.com/p/DZo3oFYlgZt/"
+    },
+    {
+      "hash": "0cc567842181",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Repsol firma acuerdo para explorar un campo de crudo en Venezuela",
+      "fuente_url": "https://es-us.noticias.yahoo.com/repsol-firma-acuerdo-explorar-campo-110857319.html"
+    },
+    {
+      "hash": "8698f36e428c",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "TeleSur reporta acto del Gobierno liderado por Delcy Rodríguez el 15 de junio",
+      "fuente_url": "https://www.tiktok.com/@telesurclips/video/7651974334256434439"
+    },
+    {
+      "hash": "c7b732fd945b",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "PSUV reporta 94,65% de avance en la segunda Consulta Popular Nacional de 2026",
+      "fuente_url": "https://www.instagram.com/reel/DZoE4zYMM0Z/"
+    },
+    {
+      "hash": "9ff8fd21e3e9",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol firman memorando sobre petróleo y gas",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "8044cd7308a3",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cedice Libertad reporta inflación mensual de 6,77% en mayo",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "20b333fa22c1",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija la tasa de cambio en 596,7824 Bs/USD",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    {
+      "hash": "cd5c48b35ac3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venevisión reporta que la petrolera estatal de India evalúa reanudar operaciones en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=PFaM7-oISog"
+    },
+    {
+      "hash": "cccf16dd76f3",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Cobertura regional destaca posible ampliación de vuelos internacionales hacia Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "e3f8da40cba8",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "EL PAÍS mantiene cobertura editorial sobre la pregunta de quién manda ahora en Venezuela",
+      "fuente_url": "https://elpais.com/hemeroteca/2026-06-17/4/"
+    },
+    {
+      "hash": "5b2b95c412e9",
+      "actor": "P2",
+      "alert_level": "A3",
+      "titulo_corto": "Repsol y Venezuela acuerdan estudiar una nueva zona petrolera en Horcón",
+      "fuente_url": "https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html"
+    },
+    {
+      "hash": "2d2936d04de6",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol firman memorando para crudo y gas en Venezuela",
+      "fuente_url": "https://lanacionweb.com/nacional/repsol-firma-un-acuerdo-en-caracas-para-explorar-crudo-y-gas-en-el-pais/"
+    },
+    {
+      "hash": "8649b4decfdb",
+      "actor": "INST4",
+      "alert_level": "A1",
+      "titulo_corto": "BCV fija tasa de cambio en 596,7824 Bs/USD",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    {
+      "hash": "785d062f6d2c",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura televisiva reporta acuerdo PDVSA-Repsol en petróleo y gas",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "e14e602ce522",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura matutina reporta plan de recuperación eléctrica con participación de General Electric",
+      "fuente_url": "https://www.youtube.com/watch?v=cs7j48MK5XY"
+    },
+    {
+      "hash": "e0537a5cb873",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura regional menciona revocación de visas por parte de Estados Unidos",
+      "fuente_url": "https://www.youtube.com/watch?v=VA5LRuUvJjA"
+    },
+    {
+      "hash": "754823ba2361",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez participa en firma de memorando en Miraflores",
+      "fuente_url": "https://www.instagram.com/reel/DZrv4dmiHcS/"
+    },
+    {
+      "hash": "3a71b5a24bdb",
+      "actor": "INT2",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura televisiva reporta discusión sobre sanciones petroleras a Rusia y Venezuela como contexto ",
+      "fuente_url": "https://www.youtube.com/watch?v=ChpC8fqXj0g"
+    },
+    {
+      "hash": "5b4e1e68a3d9",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "BCV fijó el dólar en 596,7824 Bs/USD para el 17 de junio",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-17-junio-2026/"
+    },
+    {
+      "hash": "85ae6c0787a8",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "BCV publicó tasas de otras divisas para la jornada del 17 de junio",
+      "fuente_url": "https://www.noticiascol.com/2026/06/17/dolar-y-euro-bcv-para-el-miercoles-17-de-junio-asi-se-cotizaran-las-divisas-extranjeras/"
+    },
+    {
+      "hash": "294c2d76eb0c",
+      "actor": "P5",
+      "alert_level": "A1",
+      "titulo_corto": "Actualización matutina de indicadores digitales en Venezuela",
+      "fuente_url": "https://www.instagram.com/p/DZsAw3rRPLP/"
+    },
+    {
+      "hash": "91611a6888fb",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "BCV habría difundido inflación intermensual de 6,3%",
+      "fuente_url": "https://www.instagram.com/p/DZp2qSCAEfE/"
+    },
+    {
+      "hash": "62fa6fa19240",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Academia venezolana advierte sobre la gravedad constitucional y la urgencia democrática",
+      "fuente_url": "https://www.elnacional.com/2026/06/la-academia-advierte-el-rescate-de-la-democracia-ya-no-admite-demora/"
+    },
+    {
+      "hash": "49c12d7c067d",
+      "actor": "INST2",
+      "alert_level": "A1",
+      "titulo_corto": "Mundo UR reporta estabilidad de matrículas en colegios privados para el próximo ciclo",
+      "fuente_url": "https://mundour.com/2026/06/17/colegios-privados-proyectan-estabilidad-en-las-matriculas-para-el-inicio-del-proximo-ciclo-escolar/"
+    },
+    {
+      "hash": "cf668915fe10",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "Tasa de cambio BCV publicada para el 17 de junio de 2026",
+      "fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-17-de-junio-de-2026-5967824-bs-usd-072/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 5
+}
