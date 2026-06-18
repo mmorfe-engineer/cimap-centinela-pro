@@ -1,0 +1,90 @@
+{
+  "version": "1.0",
+  "correlativo": "20260618-14H-221040",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-18T22:16:24.473455+00:00",
+  "rango_inicio": "2026-06-17T22:10:40.803747+00:00",
+  "rango_fin": "2026-06-18T22:10:40.803747+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 2,
+    "A2": 2,
+    "A1": 0,
+    "A0": 1,
+    "total": 5
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Repsol amplía su presencia en Venezuela con nuevos acuerdos de petróleo y gas",
+      "ultima_fuente_url": "https://www.zacks.com/stock/news/2939510/repsol-expands-venezuela-footprint-with-new-oil-gas-deals"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "El dólar oficial supera la barrera de Bs. 600 en operaciones cambiarias",
+      "ultima_fuente_url": "https://cronica.uno/tipo-de-cambio-oficial-del-bcv-rompe-la-barrera-de-los-bs-600-por-dolar-y-el-euro-roza-los-bs-700/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "9640b58c59c6",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Tribunal de corrupción en Caracas mantiene foco sobre Tareck El Aissami",
+      "fuente_url": "https://www.nampa.org/text/22949280"
+    },
+    {
+      "hash": "723ae60fa90f",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Repsol amplía su presencia en Venezuela con nuevos acuerdos de petróleo y gas",
+      "fuente_url": "https://www.zacks.com/stock/news/2939510/repsol-expands-venezuela-footprint-with-new-oil-gas-deals"
+    },
+    {
+      "hash": "5c9d4fd93a9b",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "US Bank publica perfil de una chef venezolana en Minnesota",
+      "fuente_url": "https://www.usbank.com/about-us-bank/news-and-stories/article-library/from-venezuela-to-minnesota-one-chef-creates-connection-through-food.html"
+    },
+    {
+      "hash": "60ec04fbd806",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija el dólar oficial en 602,33 bolívares",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/"
+    },
+    {
+      "hash": "06083d871063",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "El dólar oficial supera la barrera de Bs. 600 en operaciones cambiarias",
+      "fuente_url": "https://cronica.uno/tipo-de-cambio-oficial-del-bcv-rompe-la-barrera-de-los-bs-600-por-dolar-y-el-euro-roza-los-bs-700/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
