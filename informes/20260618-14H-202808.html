@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260618-14H-202808</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260618-14H-202808</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-17T20:28:08.685081+00:00 → 2026-06-18T20:28:08.685081+00:00<br>
+    <strong>Generado:</strong> 2026-06-18 21:15 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 11 A3</span>
+    <span class="stat-pill">🟡 25 A2</span>
+    <span class="stat-pill">📊 50 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día calificado como ALTO, con 11 hallazgos de nivel A3 y ningún A4, destacando rumores sobre cambios ministeriales atribuidos a Delcy Rodríguez sin confirmación oficial.
+
+2. Posible reconfiguración del gabinete venezolano con menciones a designaciones en ecosocialismo y vivienda, junto a un anuncio no oficial de exportaciones vinculadas al proyecto Petroquiriquire (20.000 barriles/día).
+
+3. Cierre temporal de la frontera Colombia-Venezuela (20-22 junio) por segunda vuelta presidencial colombiana, y reportes no confirmados de diálogo político entre gobierno y oposición con participación de Dinorah Figuera, Delcy Rodríguez y Jorge Rodríguez.
+
+4. Acuerdo entre Repsol y Venezuela para explorar yacimiento en Orcón (Lago de Maracaibo), con proyecciones de aumento del 50% en producción bruta de la empresa en 12 meses, y cifra no oficial de producción petrolera en mayo (1,072 millones de barriles/día).
+
+5. Tipo de cambio oficial supera por primera vez los 600 bolívares por dólar (602,33 VES), mientras vence plazo constitucional el 2 de julio para suplencia presidencial temporal, según alerta de Laboratorio de Paz.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260618-14H-201430</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (50):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Se reportó un anuncio de nuevos ministros por parte de Delcy Rodríguez <a href="https://www.instagram.com/p/DZo3oFYlgZt/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Gobierno desmintió versión sobre una reforma constitucional <a href="https://2001online.com/nacionales/reforma-constitucional-en-venezuela-gobierno-de-delcy-rodriguez-se-pronuncia-20266171980" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: BCV confirma dólar a 602.33 VES, rompe brecha de 600 y alza continua <a href="https://caracol.com.co/2026/06/18/precio-del-dolar-en-venezuela-para-hoy-18-de-junio-de-2026-divisa-rompe-nueva-brecha-con-aumentos/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Julio Borges</strong>: Prensa local reporta alza de 3,97% en la producción petrolera venezolana de mayo <a href="https://www.elnacional.com/2026/06/venezuela-produce-en-mayo-1072-millones-de-barriles-de-petroleo-alza-de-397/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>PDVSA</strong>: Delcy Rodríguez anuncia primera exportación petrolera del proyecto Petroquiriquire <a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflores/1477935381037727/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Julio Borges</strong>: Repsol y Venezuela firman nuevo acuerdo para explorar y desarrollar crudo en la zona de Orcón <a href="https://www.youtube.com/watch?v=e5XfYXznTNc" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Gustavo Petro</strong>: Cierre temporal de la frontera colombo-venezolana por la segunda vuelta presidencial en Colombia <a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Jorge Rodríguez</strong>: Forbes reportó un posible acercamiento político entre gobierno y oposición <a href="https://forbes.co/2026/06/18/actualidad/gobierno-y-oposicion-de-venezuela-abriran-dialogo-por-primera-vez-para-reconciliacion-politica/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Laboratorio de Paz advierte vencimiento constitucional sobre la suplencia presidencial en Venezuela <a href="https://efectococuyo.com/politica/laboratorio-de-paz-el-2-de-julio-vence-el-plazo-constitucional-para-la-suplencia-presidencial-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Julio Borges</strong>: Repsol proyecta elevar más de 50% su producción bruta en Venezuela en 12 meses <a href="https://horacritica.com/2026/06/18/repsol-confia-en-incrementar-un-50-la-produccion-de-petroleo-en-venezuela-en-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INST3</code> (Consejo Nacional Electoral), <code>P4</code> (Julio Borges)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>P2</code> (Edmundo González Urrutia)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P1</code> — María Corina Machado (<em>Opositora</em>): <strong>14 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>Se reportó un anuncio de nuevos ministros por parte de Delcy Rodríguez</h3>
+  <p class="fact-summary">Una publicación en Instagram atribuyó a Delcy Rodríguez la designación de nuevos ministros, incluyendo ecosocialismo y hábitat/vivienda, pero no se dispone de verificación oficial en la evidencia entregada.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si fuera correcto, indicaría una reconfiguración del gabinete con posible impacto en la gestión sectorial y alineamientos internos.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZo3oFYlgZt/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno desmintió versión sobre una reforma constitucional</h3>
+  <p class="fact-summary">El Ejecutivo nacional negó que exista un proceso formal para presentar ante la Asamblea Nacional un proyecto de reforma constitucional, según una publicación atribuida a la vocería oficial de Miraflores.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aclara públicamente la postura del Ejecutivo frente a rumores sobre una reforma constitucional, un tema con impacto directo en la agenda política interna.</div>
+  <div class="enlaces"><a href="https://2001online.com/nacionales/reforma-constitucional-en-venezuela-gobierno-de-delcy-rodriguez-se-pronuncia-20266171980" target="_blank" rel="noopener">📰 2001 Online</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Oficialismo y oposición abrirían diálogo político de reconciliación</h3>
+  <p class="fact-summary">Forbes reportó que actores del gobierno y la oposición venezolana abrirían un diálogo político por primera vez, con una agenda preliminar de conversaciones entre Dinorah Figuera, Delcy Rodríguez y Jorge Rodríguez.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Es una señal política de alto valor porque sugiere un posible canal formal de बातचीत entre sectores enfrentados. Si se materializa, podría reordenar la narrativa de negociación y presión interna.</div>
+  <div class="enlaces"><a href="https://forbes.co/2026/06/18/actualidad/gobierno-y-oposicion-de-venezuela-abriran-dialogo-por-primera-vez-para-reconciliacion-politica/" target="_blank" rel="noopener">📰 Forbes Colombia</a> · <a href="https://web.archive.org/web/20260618201612/https://forbes.co/actualidad/gobierno-y-oposicion-de-venezuela-abriran-dialogo-por-primera-vez-para-reconciliacion-politica" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Forbes reportó un posible acercamiento político entre gobierno y oposición</h3>
+  <p class="fact-summary">Forbes publicó que Dinorah Figuera llegaría a Venezuela para reunirse con Delcy Rodríguez y Jorge Rodríguez en un intento de diálogo político.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, sería una señal relevante de deshielo político y de posible reactivación de canales institucionales entre actores enfrentados.</div>
+  <div class="enlaces"><a href="https://forbes.co/2026/06/18/actualidad/gobierno-y-oposicion-de-venezuela-abriran-dialogo-por-primera-vez-para-reconciliacion-politica/" target="_blank" rel="noopener">📰 Forbes Colombia</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Medios reportan desmentido oficial sobre una supuesta reforma constitucional</h3>
+  <p class="fact-summary">Una cobertura televisiva del 18 de junio reportó que el gobierno nacional rechazó rumores sobre un supuesto proyecto para reformar la Constitución y reducir el período presidencial.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La información apunta a una posible señal de agenda constitucional y a la reacción inmediata del Ejecutivo frente a rumores políticos.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=1OzKi29JJyk" target="_blank" rel="noopener">📰 EVTV Miami / Noticias Emisión Matutina</a> · <a href="https://web.archive.org/web/20260618203521/https://www.youtube.com/watch?v=1OzKi29JJyk" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Audiencia de Nicolás Maduro y Cilia Flores aplazada al 22 de julio</h3>
+  <p class="fact-summary">El juez de la Corte Federal de Nueva York, con acuerdo de las partes, aplazó la audiencia de Nicolás Maduro y Cilia Flores del 30 de junio al 22 de julio de 2026</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>22</li><li>7</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Retrasa proceso judicial internacional, afectando estrategia legal y timeline de posibles sanciones o resoluciones</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube (Noticias más importantes del 18 de junio de 2026)</a> · <a href="https://web.archive.org/web/20260618202012/https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cierre temporal de la frontera colombo-venezolana por la segunda vuelta presidencial en Colombia</h3>
+  <p class="fact-summary">Varios noticieros de hoy informaron que Colombia cerrará temporalmente la frontera con Venezuela entre el 20 y el 22 de junio por la segunda vuelta presidencial colombiana.</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>2026-06-20</li><li>2026-06-22</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede afectar comercio formal e informal, tránsito migratorio y coordinación de seguridad en la frontera. También es un indicador de sensibilidad política bilateral en un contexto electoral.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 Noticias más importantes del 18 de junio de 2026 - YouTube</a> · <a href="https://www.youtube.com/watch?v=_LvoTBRZAHM" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260618202012/https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura de TV señala posible cierre temporal de frontera colombo-venezolana</h3>
+  <p class="fact-summary">Otra transmisión informativa indicó que la frontera entre Colombia y Venezuela cerraría del 20 al 22 de junio por el balotaje colombiano y reabriría el lunes posterior.</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: información indirecta difundida en transmisión, pendiente de confirmación oficial o de segunda fuente.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Un cierre fronterizo afecta movilidad, comercio binacional y lectura política entre Caracas y Bogotá en un momento sensible para ambos países.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=_LvoTBRZAHM" target="_blank" rel="noopener">📰 Al Día con Sergio EN VIVO - YouTube</a> · <a href="https://web.archive.org/web/20260618210002/https://www.youtube.com/watch?v=_LvoTBRZAHM" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se atribuyó a Delcy Rodríguez una agenda de alianzas petroleras en India</h3>
+  <p class="fact-summary">Una publicación en Instagram indicó que Delcy Rodríguez inició una gira oficial en India el 3 de junio para sellar alianzas petroleras y comerciales.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 02/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> De confirmarse, reflejaría una estrategia de diversificación de socios energéticos y comerciales fuera del eje tradicional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZuT7aCCZPt/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Repsol habría firmado acuerdo con Venezuela para evaluar exploración en Horcón</h3>
+  <p class="fact-summary">La prensa española reportó hoy que Repsol firmó un acuerdo con Venezuela para analizar la posible exploración y desarrollo de Horcón, una nueva zona petrolera al sureste.</p>
+  <p class="info-actor">Repsol</p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, podría indicar reactivación o ampliación de interés corporativo europeo en el sector petrolero venezolano. Por ahora debe tratarse como señal periodística no confirmada.</div>
+  <div class="enlaces"><a href="https://www.larazon.es/opinion/caras-noticia-18-junio-2026_202606186a331ffc8774b34d61e13791.html" target="_blank" rel="noopener">📰 Las caras de la noticia: 18 de junio de 2026 - La Razón</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Tasa de cambio BCV 18 de junio de 2026: 602,3324 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa de cambio en 602,3324 Bs/USD con un incremento de +5,55 (+0,93%) respecto al día anterior[3].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>602,3324 Bs/USD</li><li>+5,55 Bs</li><li>+0,93%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa toca niveles históricos que afectan directamente el poder adquisitivo y la planificación de empresas en el sector energético y comercial[3].</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">📰 finanzasdigital.com</a> · <a href="https://web.archive.org/web/20260618201811/https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Producción petrolera de Venezuela: +3,78% en mayo, 1,179 millones bpd</h3>
+  <p class="fact-summary">La producción petrolera venezolana aumentó 3,78% en mayo de 2026, alcanzando 1,179 millones de barriles diarios[7].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>+3,78%</li><li>1,179 millones bpd</li><li>mayo 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento en producción respalda la claims de recuperación de la capacidad operativa de PDVSA y su rol en el mercado global de energía[7].</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZuT7aCCZPt/" target="_blank" rel="noopener">📰 Instagram (Gregorio Rojas)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Tren de Aragua expulsado de Venezuela tras muerte de &#x27;Niño Guerrero&#x27;</h3>
+  <p class="fact-summary">Diosdado Cabello afirmó que el Tren de Aragua fue expulsado de Venezuela después de la muerte del &#x27;Niño Guerrero&#x27;[2].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Esta afirmación podría reconfigurar la percepción internacional sobre la seguridad en Venezuela y la gestión de grupos criminales transnacionales[2].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube (Noticias más importantes del 18 de junio de 2026)</a> · <a href="https://web.archive.org/web/20260618202012/https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Frontera entre Colombia y Venezuela cerrada el 22 de junio</h3>
+  <p class="fact-summary">La frontera entre Colombia y Venezuela se cerrará el 22 de junio de 2026 a las 7 p.m. y reabrirá el 23 de junio a las 7 a.m.[2].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>22 de junio 2026</li><li>7 p.m.</li><li>23 de junio 2026</li><li>7 a.m.</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El cierre fronterizo impacta en el comercio bilateral y podría intensificar la presión sobre grupos criminales que operan en zonas limítrofes[2].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube (Noticias más importantes del 18 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Estados Unidos e Irán firman memorando de entendimiento digital con 14 puntos</h3>
+  <p class="fact-summary">EEUU e Irán acordaron un memorando de entendimiento digital con 14 puntos clave, sin mención directa a Venezuela[2].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>14 puntos clave</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Este acuerdo podría reconfigurar la dinámica de sanciones y tecnología en el Sur Global, con implicaciones indirectas para países como Venezuela[2].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube (Noticias más importantes del 18 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura televisiva menciona cierre temporal de frontera entre Colombia y Venezuela</h3>
+  <p class="fact-summary">En una transmisión de noticias del 18 de junio de 2026 se dijo que la frontera entre Colombia y Venezuela se cerraría el sábado 21 de junio por elecciones en Colombia y reabriría el lunes siguiente.</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>18 de junio de 2026</li><li>sábado 21 de junio de 2026</li><li>lunes siguiente</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal preliminar: requiere confirmación oficial de autoridades colombianas o venezolanas antes de tratarla como hecho.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Un cierre fronterizo afecta movilidad, comercio y vigilancia en una zona sensible para seguridad y flujo migratorio.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube - Noticias más importantes del 18 de junio de 2026</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Diligence Diario resume efectos regionales y energéticos de un acuerdo provisional entre EE. UU. e Irán</h3>
+  <p class="fact-summary">Un boletín analítico señaló que un acuerdo provisional entre Estados Unidos e Irán reabrió el Estrecho de Ormuz y podría favorecer al comercio, con impacto potencial sobre energía y mercados vinculados a Venezuela.</p>
+  <p class="info-actor">Estados Unidos e Irán</p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>cerca de una quinta parte del petróleo comercializado en el mundo</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aunque no es un evento venezolano directo, puede influir en el entorno petrolero internacional que condiciona ingresos y expectativas para Venezuela.</div>
+  <div class="enlaces"><a href="https://diligenceec.substack.com/p/diligence-diario-18-de-junio-de-2026" target="_blank" rel="noopener">📰 Diligence Diario</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura internacional destaca guerra en Medio Oriente y Ucrania, con impacto indirecto en Venezuela por energía y sanciones</h3>
+  <p class="fact-summary">Euronews y France 24 dedicaron su cobertura de hoy a la guerra en Gaza/Líbano y a la guerra en Ucrania, incluyendo ataques de Ucrania a Moscú y reportes de bajas rusas.</p>
+  <p class="info-actor">Medios internacionales</p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>3</li><li>30</li><li>35</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La continuidad de conflictos en regiones energéticas y financieras puede afectar precios, riesgos logísticos y el contexto de sanciones que rodea a Venezuela.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde" target="_blank" rel="noopener">📰 Últimas noticias | 18 junio 2026 - Tarde - Euronews.com</a> · <a href="https://www.youtube.com/watch?v=Wk-QGlrNuM4" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Justicia española investiga hijas de Zapatero y su secretaria</h3>
+  <p class="fact-summary">La justicia española inició una investigación contra las hijas del ex-presidente Zapatero y su secretaria[1].</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aunque no menciona Venezuela, refleja tendencias de investigación de corrupción que pueden influir en la narrativa internacional sobre gobernanza[1].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=oTx7gYrIYcs" target="_blank" rel="noopener">📰 YouTube (EN VIVO Román Lozinski 18.06.2026 Titulares)</a> · <a href="https://web.archive.org/web/20260618205027/https://www.youtube.com/watch?v=oTx7gYrIYcs" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Ayuda financiera de España a Plus Ultra: 53 millones de euros</h3>
+  <p class="fact-summary">El Estado español otorgó 53 millones de euros de auxilio financiero a la empresa Plus Ultra[2].</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>53 millones de euros</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Este monto refleja la tendencia de intervención estatal en sectores estratégicos, con posibles paralelos en políticas económicas de países como Venezuela[2].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube (Noticias más importantes del 18 de junio de 2026)</a> · <a href="https://web.archive.org/web/20260618202012/https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Euronews publicó bloque de noticias internacionales del 18 de junio</h3>
+  <p class="fact-summary">Euronews difundió una pieza de video con un resumen de noticias internacionales y de negocios del 18 de junio de 2026.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>❔ No verificada:</strong> Mención aislada en agregador; no tratar como hecho específico sin revisar el contenido completo.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Solo aporta contexto de agenda informativa global; no añade por sí misma una señal específica sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde" target="_blank" rel="noopener">📰 Euronews</a> · <a href="https://web.archive.org/web/20260618210052/https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>CLACSO anuncia actividad sobre imperialismo y América Latina en Caracas</h3>
+  <p class="fact-summary">CLACSO publicó una actividad presencial para el 18 de junio de 2026 en Caracas, centrada en geopolítica, soberanía, capitalismo y neofascismo, con mención específica a Venezuela.</p>
+  <p class="info-actor"><strong>INST3</strong> — Consejo Nacional Electoral <em>(Poder Electoral)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 18/06/2026 11:00 VET</p>
+  <ul class="data-points"><li>15</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aporta contexto discursivo sobre debates regionales que pueden influir en narrativas políticas y académicas sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://www.clacso.org/actividad/el-imperialismo-y-america-latina-en-el-momento-actual/2026-06-18/" target="_blank" rel="noopener">📰 CLACSO</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>afp.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>aljazeera.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>apnews.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>bbc.com/news</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>bloomberg.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>cgtn.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>ft.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>nytimes.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/middle-east/white-house-sends-text-interim-us-iran-agreement-us-congress-2026-06-18/" target="_blank" rel="noopener">White House sends text of interim US-Iran agreement to US Congress</a></li><li><a href="https://www.reuters.com/business/us-weekly-jobless-claims-fall-amid-low-layoffs-2026-06-18/" target="_blank" rel="noopener">US weekly jobless claims fall amid low layoffs</a></li><li><a href="https://www.reuters.com/pictures/pictures-day-june-18-2026-2026-06-18/" target="_blank" rel="noopener">Pictures of the Day | June 18, 2026</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>rt.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>tass.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>theguardian.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>washingtonpost.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>wsj.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-18-2026" target="_blank" rel="noopener">Stock Market Today: Nasdaq Jumps, Oil Is Now Close to Pre-War Levels</a></li><li><a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-18-2026" target="_blank" rel="noopener">U.S. Stocks Poised to Close Week on Strong Note</a></li><li><a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-18-2026" target="_blank" rel="noopener">Gasoline slips below $4 a gallon</a></li></ul>
+        </div>
+        
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>xinhuanet.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li><li><a href="" target="_blank" rel="noopener">Sin título</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Repsol y Venezuela firman nuevo acuerdo para explorar y desarrollar crudo en la zona de Orcón</h3>
+  <p class="fact-summary">Un reporte difundido el 18 de junio señala que Repsol y Venezuela firmaron un acuerdo para explorar y desarrollar un yacimiento de crudo liviano en la zona de Orcón, en el oriente del lago de Maracaibo.</p>
+  <p class="info-actor"><strong>P4</strong> — Julio Borges <em>(Dirigente Primero Justicia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma operativamente, el acuerdo podría añadir capacidad incremental y reforzar la presencia de capital extranjero en upstream venezolano. También sugiere continuidad de apertura contractual en el sector petrolero.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=e5XfYXznTNc" target="_blank" rel="noopener">📰 YouTube</a> · <a href="https://horacritica.com/2026/06/18/repsol-confia-en-incrementar-un-50-la-produccion-de-petroleo-en-venezuela-en-2026/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260618202030/https://www.youtube.com/watch?v=e5XfYXznTNc" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez anuncia primera exportación petrolera del proyecto Petroquiriquire</h3>
+  <p class="fact-summary">Una publicación difundida el 17 de junio de 2026 indica que Delcy Rodríguez anunció el arranque de la primera exportación asociada al proyecto Petroquiriquire, con expectativa de sumar 20.000 barriles diarios a la producción mediante exploración de crudo liviano y gas en la Costa Oriental del Lago de Maracaibo.</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>20000 barriles diarios</li><li>2026-06-17 fecha</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si el anuncio se confirma en comunicado oficial, sugiere una ampliación concreta de la capacidad productiva en un activo petrolero clave. También apunta a actividad reciente en exportaciones, relevante para seguimiento de ingresos y sanciones.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflores/1477935381037727/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Repsol proyecta elevar más de 50% su producción bruta en Venezuela en 12 meses</h3>
+  <p class="fact-summary">Un medio publicó el 18 de junio que Repsol espera incrementar su producción bruta de petróleo en Venezuela en más de 50% durante los próximos doce meses.</p>
+  <p class="info-actor"><strong>P4</strong> — Julio Borges <em>(Dirigente Primero Justicia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>50 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La expectativa de mayor producción sugiere una señal de expansión operacional en un contexto de restricciones y reactivación gradual del sector. Para monitoreo político-energético, es un indicador de continuidad de acuerdos con empresas internacionales.</div>
+  <div class="enlaces"><a href="https://horacritica.com/2026/06/18/repsol-confia-en-incrementar-un-50-la-produccion-de-petroleo-en-venezuela-en-2026/" target="_blank" rel="noopener">📰 Hora Cero Crítica</a> · <a href="https://www.youtube.com/watch?v=e5XfYXznTNc" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Prensa local reporta alza de 3,97% en la producción petrolera venezolana de mayo</h3>
+  <p class="fact-summary">Un artículo difundido el 18 de junio afirma que la producción de petróleo de Venezuela subió en mayo 3,97% frente a abril y alcanzó 1,072 millones de barriles por día.</p>
+  <p class="info-actor"><strong>P4</strong> — Julio Borges <em>(Dirigente Primero Justicia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>3.97 %</li><li>1072000 barriles por día</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra sugiere una mejora mensual de la producción, relevante para estimar ingresos, exportaciones y cumplimiento operativo. Al no tener confirmación oficial en los resultados, debe tratarse como dato periodístico pendiente de contraste.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/venezuela-produce-en-mayo-1072-millones-de-barriles-de-petroleo-alza-de-397/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez habría proyectado mayor inversión petrolera para 2026</h3>
+  <p class="fact-summary">Un medio en Facebook reportó que Delcy Rodríguez proyectó un crecimiento de 55% en la inversión petrolera para 2026, pero el material no permite verificar plenamente el contexto ni la fuente primaria.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>55</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, implicaría una señal de prioridades económicas del Ejecutivo en el sector petrolero y posibles decisiones de asignación de capital.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a> · <a href="https://web.archive.org/web/20260618202144/https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se reportaron contactos con Siemens y General Electric por apagones</h3>
+  <p class="fact-summary">Una publicación de Facebook afirmó que Delcy Rodríguez sostuvo contactos con Siemens y General Electric para atender los apagones, pero no se aportó una fuente oficial primaria en los resultados disponibles.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Podría anticipar acuerdos técnicos o comerciales para infraestructura eléctrica, un frente sensible de gobernabilidad.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del/1476985361132729/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Reporte de prensa afirma que las exportaciones de petróleo venezolano a Estados Unidos siguen por tercera semana consecutiva</h3>
+  <p class="fact-summary">Una publicación en redes citada por una cuenta informativa local indica que las exportaciones de petróleo venezolano a Estados Unidos continuaron por tercera semana consecutiva.</p>
+  <p class="info-actor"><strong>P4</strong> — Julio Borges <em>(Dirigente Primero Justicia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se verifica, el dato apuntaría a continuidad de flujos petroleros bilaterales y a un canal comercial sensible para ingresos externos. Por ahora solo sirve como indicio preliminar.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZu9UMRE7BI/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se informó que la Asamblea Nacional evaluó la ley del sistema eléctrico nacional</h3>
+  <p class="fact-summary">Un boletín político citó al diputado Omar Veracierto afirmando que la Ley del Sistema Eléctrico Nacional es necesaria para el país.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La discusión sobre el sistema eléctrico puede anticipar iniciativas legislativas o regulatorias con impacto en servicios públicos.</div>
+  <div class="enlaces"><a href="https://www.polianalitica.com/boletines/5008/boletin-informativo-polianalitica-jueves-18-de-junio-de-2026-1200-m" target="_blank" rel="noopener">📰 Polianalítica</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se reporta cotización del crudo Merey y Brent en contexto venezolano</h3>
+  <p class="fact-summary">Una pieza difundida el 18 de junio de 2026 reporta que el crudo Merey se ubicó en 73,45 dólares por barril y que el Brent estuvo en 79,16 dólares por barril.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>73,45 USD/barril</li><li>79,16 USD/barril</li><li>2026-06-18 fecha</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia de precios para evaluar el entorno de ingresos petroleros y la competitividad del crudo venezolano, aunque no equivale a un comunicado oficial.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflores/1477935381037727/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a> · <a href="https://web.archive.org/web/20260618202144/https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV confirma dólar a 602.33 VES, rompe brecha de 600 y alza continua</h3>
+  <p class="fact-summary">El Banco Central de Venezuela informó que el precio estimado del dólar para hoy 18 de junio de 2026 es de 602,33240000 bolívares, superando por primera vez los 600 VES y manteniendo tendencia de alzas, con cotización ayer de $596,78240000</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>602.3324</li><li>596.7824</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Rompe barrera psicológica de 600 VES, confirma presión inflacionaria y afecta decisiones de precios, salarios y reserva de valor</div>
+  <div class="enlaces"><a href="https://caracol.com.co/2026/06/18/precio-del-dolar-en-venezuela-para-hoy-18-de-junio-de-2026-divisa-rompe-nueva-brecha-con-aumentos/" target="_blank" rel="noopener">📰 Caracol.com.co</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija la tasa en 602,3324 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó para el 18 de junio de 2026 una tasa de cambio de 602,3324 bolívares por dólar, con alza diaria reportada por el medio que la replicó.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>602.3324</li><li>5.55</li><li>0.93</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa oficial del BCV es una referencia clave para operaciones comerciales, formación de precios y lectura de presiones cambiarias en Venezuela.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://web.archive.org/web/20260618201811/https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela fortalece lazos con la Comunidad de África Oriental</h3>
+  <p class="fact-summary">El Ministerio de Relaciones Exteriores de Venezuela informó sobre una reunión de trabajo para impulsar la cooperación y revisar la situación política y comercial con la Comunidad de África Oriental.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede indicar una línea de activación diplomática y comercial con un bloque regional africano, útil para monitoreo de alianzas externas de Venezuela.</div>
+  <div class="enlaces"><a href="https://mppre.gob.ve/publicacion/7411-0" target="_blank" rel="noopener">📰 Ministerio del Poder Popular para Relaciones Exteriores</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Indicadores oficiales del BCV superan umbral de 600 bolívares por dólar</h3>
+  <p class="fact-summary">Un reporte difundido hoy por Noticiero Venevisión indica que el dólar oficial del Banco Central de Venezuela se ubicó en 602,33 bolívares, mientras el euro quedó en 698,22 bolívares y el crudo Merey en 73,45 dólares por barril.</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>602,33 Bs/USD</li><li>698,22 Bs/EUR</li><li>73,45 USD/barril</li><li>79,16 USD/barril Brent</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El cruce del umbral de 600 bolívares por dólar sugiere mayor presión nominal sobre el tipo de cambio oficial y afecta la lectura de precios, ingresos y expectativas en Venezuela. El dato del Merey también aporta contexto sobre el ingreso petrolero de referencia.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener">📰 Noticiero Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>CNN Español reporta interés de inversores en Venezuela pese a debilidad de estadísticas</h3>
+  <p class="fact-summary">CNN Español publicó que algunos inversores empiezan a mirar a Venezuela, aunque persiste la falta de estadísticas confiables y la incertidumbre económica y política.</p>
+  <p class="info-actor">Inversores</p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Es una señal útil para evaluar expectativas de capital, percepción de riesgo y condiciones para eventual actividad económica vinculada a Venezuela.</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/18/venezuela/inversores-interes-falta-estadisticas-confianza-orix" target="_blank" rel="noopener">📰 CNN Español</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#4527a0;">Think tank</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PoliAnalítica destaca dependencia del desarrollo económico de Venezuela respecto al sistema eléctrico</h3>
+  <p class="fact-summary">Un boletín de PoliAnalítica recoge la afirmación del diputado Omar Veracierto de que el desarrollo económico del país es imposible sin energía eléctrica.</p>
+  <p class="info-actor">Omar Veracierto / PoliAnalítica</p>
+  <p class="info-actor"><em>Publicado:</em> 18/06/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la centralidad del colapso eléctrico en el debate económico venezolano y puede anticipar presión política sobre infraestructura y gobernanza energética.</div>
+  <div class="enlaces"><a href="https://www.polianalitica.com/boletines/5008/boletin-informativo-polianalitica-jueves-18-de-junio-de-2026-1200-m" target="_blank" rel="noopener">📰 PoliAnalítica</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fijó las tasas del dólar y euro para el 18 de junio</h3>
+  <p class="fact-summary">Una publicación en redes citó las tasas oficiales del Banco Central de Venezuela para el 18 de junio: 602,33 bolívares por dólar y 698,22 bolívares por euro.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>602.33</li><li>698.22</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia diaria de mercado para seguimiento económico y de expectativas cambiarias.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del/1476985361132729/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV publica tasa de cambio de 602,3324 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa de cambio oficial en 602,3324 bolívares por dólar para el 18 de junio de 2026, según una cobertura financiera secundaria publicada ese día.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>602,3324 Bs/USD</li><li>18 de junio de 2026</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT no confirmada por fuente primaria en esta consulta; requiere validación directa con el BCV.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia para operaciones cambiarias y seguimiento macroeconómico, pero por sí solo no indica un evento de riesgo político o de seguridad.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija tasa oficial en 602,3324 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó para el 18 de junio de 2026 una tasa de cambio oficial de 602,3324 bolívares por dólar, con un alza diaria de 0,93%.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>602.3324</li><li>0.93</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia oficial de tipo de cambio para operaciones financieras, cobertura de precios y lectura de presión cambiaria interna.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://web.archive.org/web/20260618201811/https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura televisiva menciona declaración de Cabello sobre el Tren de Aragua</h3>
+  <p class="fact-summary">Un programa informativo difundido en YouTube mencionó que Diosdado Cabello afirmó que el Tren de Aragua fue expulsado de Venezuela tras la muerte de &#x27;Niño Guerrero&#x27;.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: mención indirecta sin confirmación primaria en la evidencia disponible.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa sobre el Tren de Aragua afecta la percepción internacional sobre seguridad interna, crimen organizado y capacidad estatal venezolana.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 Noticias más importantes del 18 de junio de 2026 - YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Diosdado Cabello afirma que Tren de Aragua fue expulsado de Venezuela tras muerte del &#x27;Niño Guerrero&#x27;</h3>
+  <p class="fact-summary">Diosdado Cabello declaró en medios que el grupo criminal Tren de Aragua fue expulsado de Venezuela después de la muerte del conocido &#x27;Niño Guerrero&#x27;</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Posiciona narrativa de control de seguridad y podría influir en percepción pública sobre eficacia del Estado, pero requiere corroboración independiente</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube (Noticias más importantes del 18 de junio de 2026)</a> · <a href="https://web.archive.org/web/20260618202012/https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Noticiero Venevisión destaca afirmación de Cabello sobre el Tren de Aragua</h3>
+  <p class="fact-summary">Una publicación de entretenimiento/noticias de Venevisión difundió que Diosdado Cabello afirmó que el Tren de Aragua fue expulsado de Venezuela tras la muerte de &quot;Niño Guerrero&quot;.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>18 de junio de 2026</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: mención reproducida en red social/medio, sin validación primaria independiente en esta consulta.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa sobre el Tren de Aragua y Cabello puede anticipar mensajes de seguridad interna o externalización del riesgo criminal, relevante para monitoreo político y regional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZuT7aCCZPt/" target="_blank" rel="noopener">📰 Noticiero Venevisión (Instagram)</a> · <a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Programa de noticias menciona posible aplazamiento de audiencia vinculada a Nicolás Maduro</h3>
+  <p class="fact-summary">Una transmisión de noticias del 18 de junio de 2026 mencionó que se aplazó nuevamente una audiencia en un caso relacionado con Nicolás Maduro, aunque el fragmento no ofrece detalle documental suficiente para validar el expediente exacto.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, afecta la agenda judicial y política del oficialismo; por ahora solo sirve como indicio preliminar de seguimiento.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hBqHxeDcwn8" target="_blank" rel="noopener">📰 YouTube - Noticias en la Mañana en Vivo</a> · <a href="https://web.archive.org/web/20260618211335/https://www.youtube.com/watch?v=hBqHxeDcwn8" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura televisiva menciona cierre temporal de la frontera Colombia-Venezuela por elecciones en Colombia</h3>
+  <p class="fact-summary">Una emisión informativa del 18 de junio de 2026 señaló que la frontera entre Colombia y Venezuela se cerraría temporalmente el sábado por las elecciones en Colombia y reabriría después del proceso electoral.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Los cierres fronterizos temporales suelen alterar tránsito binacional, flujos comerciales y vigilancia de corredores sensibles.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube - Noticias más importantes del 18 de junio de 2026</a> · <a href="https://web.archive.org/web/20260618202012/https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Balance oficial: 54 personas del Tren de Aragua evaluadas, estabilizadas y con alta total</h3>
+  <p class="fact-summary">El balance médico oficial registra que 54 personas, incluyendo niños, niñas, docentes y personal médico, fueron evaluadas, estabilizadas y están con alta médica completa</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>54</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Confirma impacto de operación de seguridad en población civil, pero no genera acción política inmediata</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=qjKiqB4H8GA" target="_blank" rel="noopener">📰 YouTube (Así amanece Venezuela este 18 de junio de 2026)</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venevisión reporta cobertura informativa del día sobre Venezuela</h3>
+  <p class="fact-summary">Venevisión publicó una transmisión informativa del 18 de junio de 2026 centrada en noticias del día en Venezuela, pero el extracto disponible no permite extraer un hecho específico verificable adicional.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede ser útil como señal de agenda mediática del día, pero no aporta por sí sola un incidente o decisión específica.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=UVia9M02TeE" target="_blank" rel="noopener">📰 Venevisión</a> · <a href="https://web.archive.org/web/20260618211253/https://www.youtube.com/watch?v=UVia9M02TeE" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura televisiva menciona declaración de Cabello sobre el Tren de Aragua</h3>
+  <p class="fact-summary">Un programa informativo difundido en YouTube mencionó que Diosdado Cabello afirmó que el Tren de Aragua fue expulsado de Venezuela tras la muerte de &#x27;Niño Guerrero&#x27;.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: mención indirecta sin confirmación primaria en la evidencia disponible.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa sobre el Tren de Aragua afecta la percepción internacional sobre seguridad interna, crimen organizado y capacidad estatal venezolana.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 Noticias más importantes del 18 de junio de 2026 - YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura de TV señala posible cierre temporal de frontera colombo-venezolana</h3>
+  <p class="fact-summary">Otra transmisión informativa indicó que la frontera entre Colombia y Venezuela cerraría del 20 al 22 de junio por el balotaje colombiano y reabriría el lunes posterior.</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: información indirecta difundida en transmisión, pendiente de confirmación oficial o de segunda fuente.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Un cierre fronterizo afecta movilidad, comercio binacional y lectura política entre Caracas y Bogotá en un momento sensible para ambos países.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=_LvoTBRZAHM" target="_blank" rel="noopener">📰 Al Día con Sergio EN VIVO - YouTube</a> · <a href="https://web.archive.org/web/20260618210002/https://www.youtube.com/watch?v=_LvoTBRZAHM" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Noticiero Venevisión destaca afirmación de Cabello sobre el Tren de Aragua</h3>
+  <p class="fact-summary">Una publicación de entretenimiento/noticias de Venevisión difundió que Diosdado Cabello afirmó que el Tren de Aragua fue expulsado de Venezuela tras la muerte de &quot;Niño Guerrero&quot;.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>18 de junio de 2026</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal en observación: mención reproducida en red social/medio, sin validación primaria independiente en esta consulta.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa sobre el Tren de Aragua y Cabello puede anticipar mensajes de seguridad interna o externalización del riesgo criminal, relevante para monitoreo político y regional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZuT7aCCZPt/" target="_blank" rel="noopener">📰 Noticiero Venevisión (Instagram)</a> · <a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura televisiva menciona cierre temporal de frontera entre Colombia y Venezuela</h3>
+  <p class="fact-summary">En una transmisión de noticias del 18 de junio de 2026 se dijo que la frontera entre Colombia y Venezuela se cerraría el sábado 21 de junio por elecciones en Colombia y reabriría el lunes siguiente.</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 17/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>18 de junio de 2026</li><li>sábado 21 de junio de 2026</li><li>lunes siguiente</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal preliminar: requiere confirmación oficial de autoridades colombianas o venezolanas antes de tratarla como hecho.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Un cierre fronterizo afecta movilidad, comercio y vigilancia en una zona sensible para seguridad y flujo migratorio.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">📰 YouTube - Noticias más importantes del 18 de junio de 2026</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Euronews publicó bloque de noticias internacionales del 18 de junio</h3>
+  <p class="fact-summary">Euronews difundió una pieza de video con un resumen de noticias internacionales y de negocios del 18 de junio de 2026.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>❔ No verificada:</strong> Mención aislada en agregador; no tratar como hecho específico sin revisar el contenido completo.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Solo aporta contexto de agenda informativa global; no añade por sí misma una señal específica sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde" target="_blank" rel="noopener">📰 Euronews</a> · <a href="https://web.archive.org/web/20260618210052/https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV publica tasa de cambio de 602,3324 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa de cambio oficial en 602,3324 bolívares por dólar para el 18 de junio de 2026, según una cobertura financiera secundaria publicada ese día.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>602,3324 Bs/USD</li><li>18 de junio de 2026</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal social/OSINT no confirmada por fuente primaria en esta consulta; requiere validación directa con el BCV.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia para operaciones cambiarias y seguimiento macroeconómico, pero por sí solo no indica un evento de riesgo político o de seguridad.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Cierre temporal de frontera Colombia-Venezuela (20-22 junio)** — Impacta comercio, migración y seguridad en zona clave; refleja tensión bilateral en contexto electoral colombiano.
+
+2. 🔴 **Diálogo político entre gobierno y oposición (Figuera, Delcy y Jorge Rodríguez)** — Si se confirma, redefine narrativa de negociación y presión interna, con posibles implicaciones institucionales.
+
+3. 🟠 **Acuerdo Repsol-Venezuela (yacimiento Orcón) y meta de +50% producción** — Señal de expansión operativa en sector petrolero; monitorear confirmación oficial y avance en sanciones.
+
+4. 🟠 **Vencimiento plazo constitucional suplencia presidencial (2 julio)** — Puede activar disputas legales y escenarios de continuidad institucional; clave para actores políticos y sociedad civil.
+
+5. 🟡 **Silencio de María Corina Machado y Edmundo González Urrutia** — Ausencia de declaraciones en contexto de diálogo y crisis económica sugiere estrategia o exclusión; relevante para dinámica opositora.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(11)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>2001 Online</td><td><a href="https://2001online.com/nacionales/reforma-constitucional-en-venezuela-gobierno-de-delcy-rodriguez-se-pronuncia-20266171980" target="_blank" rel="noopener">https://2001online.com/nacionales/reforma-constitucional-en-venezuela-gobierno-de-delcy-rodriguez-se-pronuncia-20266171980</a></td><td>2026-06-17</td></tr><tr><td>Forbes Colombia</td><td><a href="https://forbes.co/2026/06/18/actualidad/gobierno-y-oposicion-de-venezuela-abriran-dialogo-por-primera-vez-para-reconciliacion-politica/" target="_blank" rel="noopener">https://forbes.co/2026/06/18/actualidad/gobierno-y-oposicion-de-venezuela-abriran-dialogo-por-primera-vez-para-reconciliacion-politica/</a></td><td>2026-06-18</td></tr><tr><td>EVTV Miami / Noticias Emisión Matutina</td><td><a href="https://www.youtube.com/watch?v=1OzKi29JJyk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=1OzKi29JJyk</a></td><td>2026-06-18</td></tr><tr><td>Polianalítica</td><td><a href="https://www.polianalitica.com/boletines/5008/boletin-informativo-polianalitica-jueves-18-de-junio-de-2026-1200-m" target="_blank" rel="noopener">https://www.polianalitica.com/boletines/5008/boletin-informativo-polianalitica-jueves-18-de-junio-de-2026-1200-m</a></td><td>2026-06-18</td></tr><tr><td>Últimas noticias | 18 junio 2026 - Tarde - Euronews.com</td><td><a href="https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde" target="_blank" rel="noopener">https://es.euronews.com/video/2026/06/18/ultimas-noticias-18-junio-2026-tarde</a></td><td>2026-06-18</td></tr><tr><td>YouTube</td><td><a href="https://www.youtube.com/watch?v=e5XfYXznTNc" target="_blank" rel="noopener">https://www.youtube.com/watch?v=e5XfYXznTNc</a></td><td></td></tr><tr><td>Hora Cero Crítica</td><td><a href="https://horacritica.com/2026/06/18/repsol-confia-en-incrementar-un-50-la-produccion-de-petroleo-en-venezuela-en-2026/" target="_blank" rel="noopener">https://horacritica.com/2026/06/18/repsol-confia-en-incrementar-un-50-la-produccion-de-petroleo-en-venezuela-en-2026/</a></td><td>2026-06-18</td></tr><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/venezuela-produce-en-mayo-1072-millones-de-barriles-de-petroleo-alza-de-397/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/venezuela-produce-en-mayo-1072-millones-de-barriles-de-petroleo-alza-de-397/</a></td><td>2026-06-18</td></tr><tr><td>Efecto Cocuyo</td><td><a href="https://efectococuyo.com/politica/laboratorio-de-paz-el-2-de-julio-vence-el-plazo-constitucional-para-la-suplencia-presidencial-en-venezuela/" target="_blank" rel="noopener">https://efectococuyo.com/politica/laboratorio-de-paz-el-2-de-julio-vence-el-plazo-constitucional-para-la-suplencia-presidencial-en-venezuela/</a></td><td></td></tr><tr><td>CNN Español</td><td><a href="https://cnnespanol.cnn.com/2026/06/18/venezuela/inversores-interes-falta-estadisticas-confianza-orix" target="_blank" rel="noopener">https://cnnespanol.cnn.com/2026/06/18/venezuela/inversores-interes-falta-estadisticas-confianza-orix</a></td><td>2026-06-18</td></tr><tr><td>Diligence Diario</td><td><a href="https://diligenceec.substack.com/p/diligence-diario-18-de-junio-de-2026" target="_blank" rel="noopener">https://diligenceec.substack.com/p/diligence-diario-18-de-junio-de-2026</a></td><td>2026-06-18</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(8)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Noticiero VV (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/</a></td><td></td></tr><tr><td>Noticiero VV (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del/1476985361132729/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del/1476985361132729/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZo3oFYlgZt/" target="_blank" rel="noopener">https://www.instagram.com/p/DZo3oFYlgZt/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZuT7aCCZPt/" target="_blank" rel="noopener">https://www.instagram.com/p/DZuT7aCCZPt/</a></td><td>2026-06-03</td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZu9UMRE7BI/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZu9UMRE7BI/</a></td><td>2026-06-18</td></tr><tr><td>Noticiero VV (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflores/1477935381037727/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflores/1477935381037727/</a></td><td>2026-06-17</td></tr><tr><td>Al Día con Sergio EN VIVO - YouTube</td><td><a href="https://www.youtube.com/watch?v=_LvoTBRZAHM" target="_blank" rel="noopener">https://www.youtube.com/watch?v=_LvoTBRZAHM</a></td><td></td></tr><tr><td>Noticiero Venevisión</td><td><a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZtOAg3EeKF/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>YouTube (Noticias más importantes del 18 de junio de 2026)</td><td><a href="https://www.youtube.com/watch?v=5KDZ1gsRb7w" target="_blank" rel="noopener">https://www.youtube.com/watch?v=5KDZ1gsRb7w</a></td><td>2026-06-18</td></tr><tr><td>YouTube (Así amanece Venezuela este 18 de junio de 2026)</td><td><a href="https://www.youtube.com/watch?v=qjKiqB4H8GA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=qjKiqB4H8GA</a></td><td>2026-06-18</td></tr><tr><td>YouTube (EN VIVO Román Lozinski 18.06.2026 Titulares)</td><td><a href="https://www.youtube.com/watch?v=oTx7gYrIYcs" target="_blank" rel="noopener">https://www.youtube.com/watch?v=oTx7gYrIYcs</a></td><td>2026-06-18</td></tr><tr><td>Venevisión</td><td><a href="https://www.youtube.com/watch?v=UVia9M02TeE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=UVia9M02TeE</a></td><td>2026-06-18</td></tr><tr><td>YouTube - Noticias en la Mañana en Vivo</td><td><a href="https://www.youtube.com/watch?v=hBqHxeDcwn8" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hBqHxeDcwn8</a></td><td>2026-06-18</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Asamblea Nacional de Venezuela</td><td><a href="https://www.asambleanacional.gob.ve/noticias/grupo-venezolano-del-parlamento-indigena-evalua-plan-de-trabajo-para-segundo-periodo-de-sesiones" target="_blank" rel="noopener">https://www.asambleanacional.gob.ve/noticias/grupo-venezolano-del-parlamento-indigena-evalua-plan-de-trabajo-para-segundo-periodo-de-sesiones</a></td><td>2026-06-17</td></tr><tr><td>Caracol.com.co</td><td><a href="https://caracol.com.co/2026/06/18/precio-del-dolar-en-venezuela-para-hoy-18-de-junio-de-2026-divisa-rompe-nueva-brecha-con-aumentos/" target="_blank" rel="noopener">https://caracol.com.co/2026/06/18/precio-del-dolar-en-venezuela-para-hoy-18-de-junio-de-2026-divisa-rompe-nueva-brecha-con-aumentos/</a></td><td>2026-06-18</td></tr><tr><td>finanzasdigital.com</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-18-junio-2026/</a></td><td>2026-06-18</td></tr><tr><td>Ministerio del Poder Popular para Relaciones Exteriores</td><td><a href="https://mppre.gob.ve/publicacion/7411-0" target="_blank" rel="noopener">https://mppre.gob.ve/publicacion/7411-0</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#5d4037;">Opinión</span> Opinión <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Las caras de la noticia: 18 de junio de 2026 - La Razón</td><td><a href="https://www.larazon.es/opinion/caras-noticia-18-junio-2026_202606186a331ffc8774b34d61e13791.html" target="_blank" rel="noopener">https://www.larazon.es/opinion/caras-noticia-18-junio-2026_202606186a331ffc8774b34d61e13791.html</a></td><td>2026-06-18</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>CLACSO</td><td><a href="https://www.clacso.org/actividad/el-imperialismo-y-america-latina-en-el-momento-actual/2026-06-18/" target="_blank" rel="noopener">https://www.clacso.org/actividad/el-imperialismo-y-america-latina-en-el-momento-actual/2026-06-18/</a></td><td>2026-06-18</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-18</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
