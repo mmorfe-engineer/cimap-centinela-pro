@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260620-14H-191433</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260620-14H-191433</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-19T19:14:33.641441+00:00 → 2026-06-20T19:14:33.641441+00:00<br>
+    <strong>Generado:</strong> 2026-06-20 19:39 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 17 A3</span>
+    <span class="stat-pill">🟡 16 A2</span>
+    <span class="stat-pill">📊 42 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Cambios ministeriales: TeleSUR reportó la designación de Gustavo González López como ministro de Defensa por Delcy Rodríguez, lo que podría alterar la conducción política y de seguridad del Ejecutivo.
+
+2. Negociaciones políticas: Medios como Venevisión y DW informaron sobre acuerdos entre oficialismo y oposición para instalar una mesa técnica y política paritaria, con potencial impacto en gobernabilidad y reinstitucionalización.
+
+3. Flexibilización de sanciones: Noticias Ahora Mediodía en Vivo mencionó que OFAC habría emitido nuevas licencias para PDVSA y Conviaza, lo que podría modificar el espacio operativo de actores energéticos.
+
+4. Cierre fronterizo: Colombia decretó el cierre temporal de la frontera con Venezuela (20-22 de junio), según reportó Venevisión, afectando tránsito y comercio informal.
+
+5. Tasa cambiaria: El BCV fijó la tasa oficial del dólar en Bs 607,3919 (19/06/2026), con un alza diaria de 0,84%, presionando precios internos.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260619-14H-211119</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (42):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Washington y Caracas reordenan la transición venezolana bajo mediación institucional <a href="https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Mesa política paritaria entre oficialismo y oposición en Caracas <a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Exportaciones marítimas de petróleo de Venezuela crecieron 144% en el primer semestre de 2026 <a href="https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: Venevisión menciona flexibilización de sanciones de OFAC a Venezuela <a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Mesa paritaria chavismo-oposición para reinstitucionalización de Venezuela <a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: OFAC flexibiliza sanciones a Venezuela y emite nuevas licencias <a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: BCV reporta aumento de 21,5% en exportaciones petroleras del primer trimestre de 2026 <a href="http://www.petroguia.com/pet/noticias/petr%C3%B3leo/bcv-exportaciones-petroleras-de-venezuela-aumentaron-215-en-primer-trimestre-de" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Delcy Rodríguez anunció nuevos nombramientos ministeriales <a href="https://www.facebook.com/teleSUR/posts/venezuela-anuncia-nuevos-nombramientos-ministeriales-la-presidenta-encargada-del/1522254899943541/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Delcy Rodríguez oficializó acuerdo energético con General Electric Vernova y Corpoelec <a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Edmundo González Urrutia</strong>: Dinorah Figuera viajó a Estados Unidos tras reunión opositora con Jorge Rodríguez <a href="https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB3</code> (Jorge Rodríguez), <code>INST5</code> (PDVSA), <code>INT2</code> (OFAC / U.S. Treasury), <code>P1</code> (María Corina Machado), <code>P2</code> (Edmundo González Urrutia)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>5 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>4 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>4 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez anunció nuevos nombramientos ministeriales</h3>
+  <p class="fact-summary">TeleSUR difundió que Delcy Rodríguez designó a Gustavo González López como ministro de Defensa dentro de un paquete de cambios ministeriales.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Un cambio en Defensa puede alterar la conducción política y de seguridad del Ejecutivo.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/teleSUR/posts/venezuela-anuncia-nuevos-nombramientos-ministeriales-la-presidenta-encargada-del/1522254899943541/" target="_blank" rel="noopener">📰 teleSUR</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Reunión entre Jorge Rodríguez y Dinora Figuera para una mesa política paritaria</h3>
+  <p class="fact-summary">Fuentes de televisión informaron que Jorge Rodríguez y Dinora Figuera acordaron avanzar en una comisión o mesa técnica y política paritaria para discutir una hoja de ruta de reinstitucionalización o transición democrática.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede indicar reactivación de canales de negociación entre oficialismo y oposición/AN 2015, con efectos sobre gobernabilidad y narrativa política.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=rlr9mo9fK0o" target="_blank" rel="noopener">📰 Noticias Venevisión / YouTube</a> · <a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno de Delcy Rodríguez pidió respetar derechos de refugiados</h3>
+  <p class="fact-summary">Un medio nacional reportó que el gobierno venezolano exhortó a la comunidad internacional a respetar los derechos de los refugiados.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede afectar la postura internacional del Ejecutivo sobre movilidad humana y coordinación con otros gobiernos y organismos.</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/gobierno-de-delcy-rodriguez-exhorto-a-la-comunidad-internacional-respetar-derechos-de-los-refugiados/" target="_blank" rel="noopener">📰 El Nacional</a> · <a href="https://web.archive.org/web/20260620191608/https://www.elnacional.com/2026/06/gobierno-de-delcy-rodriguez-exhorto-a-la-comunidad-internacional-respetar-derechos-de-los-refugiados/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez acompañó firma de un acuerdo en Miraflores</h3>
+  <p class="fact-summary">Una publicación atribuye a Delcy Rodríguez la presencia en la firma de un acuerdo desde el Palacio de Miraflores, sin que el recorte disponible identifique con claridad el objeto del convenio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 16/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica actividad política/institucional de la vicepresidencia, pero sin suficiente detalle documental para evaluar impacto material.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Dinorah Figuera viajó a Estados Unidos tras reunión opositora con Jorge Rodríguez</h3>
+  <p class="fact-summary">La opositora vinculada al diálogo político salió desde Caracas hacia Miami para sostener reuniones, después de haber regresado brevemente a Venezuela y reunirse con actores del Parlamento y de la oposición.</p>
+  <p class="info-actor"><strong>P2</strong> — Edmundo González Urrutia <em>(Candidato presidencial 2024 reconocido por sectores opositores)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 20/06/2026 09:16 VET</p>
+  <ul class="data-points"><li>2026-06-20</li><li>2026-06-18</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere que el canal de negociación sigue activo y que habrá nuevas interacciones entre oposición y gobierno bajo seguimiento de actores externos.</div>
+  <div class="enlaces"><a href="https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html" target="_blank" rel="noopener">📰 Yahoo Noticias (cita AFP)</a> · <a href="https://www.dw.com/es/eeuu-respalda-reuni%C3%B3n-de-gobierno-y-oposici%C3%B3n-en-venezuela/a-77619795" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Mesa paritaria chavismo-oposición para reinstitucionalización de Venezuela</h3>
+  <p class="fact-summary">Un resumen televisivo del 19 de junio reporta que la Asamblea Nacional chavista acordó instalar una mesa paritaria con Dinora Figuera para avanzar en una agenda de reinstitucionalización del país.</p>
+  <p class="info-actor">Asamblea Nacional chavista y Dinora Figuera</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Una mesa paritaria entre oficialismo y oposición puede alterar la dinámica política interna y abrir una vía de negociación con efectos sobre gobernabilidad, legitimidad institucional y condiciones electorales.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Ahora Mediodía en Vivo</a> · <a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>OFAC flexibiliza sanciones a Venezuela y emite nuevas licencias</h3>
+  <p class="fact-summary">El resumen televisivo menciona que OFAC habría flexibilizado sanciones a Venezuela y emitido nuevas licencias para entidades vinculadas con PDBESA y Conviaza.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se confirma, la flexibilización podría modificar el espacio operativo de actores energéticos y comerciales, con efectos sobre liquidez, contratos y cumplimiento regulatorio.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Ahora Mediodía en Vivo</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venevisión menciona flexibilización de sanciones de OFAC a Venezuela</h3>
+  <p class="fact-summary">En su cobertura de hoy, Venevisión afirmó que OFAC flexibilizó sanciones a Venezuela y emitió nuevas licencias vinculadas a PDBESA y Conviaza.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Podría alterar el marco de sanciones y abrir espacio para actividad económica o logística de actores vinculados al sector petrolero y transporte.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez fue mencionada en agenda regional en Granada</h3>
+  <p class="fact-summary">Un reporte indicó que Rodríguez viajó a Granada para impulsar alianzas en el Caribe, centradas en cooperación bilateral, comercio e integración regional.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere gestión externa de alianzas regionales que podría incidir en apoyo político y comercial para el gobierno.</div>
+  <div class="enlaces"><a href="https://efectococuyo.com/politica/delcy-rodriguez-aterriza-en-granada-y-busca-consolidar-alianzas-en-el-caribe/" target="_blank" rel="noopener">📰 Efecto Cocuyo</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>EE. UU. reportó una nueva operación contra una presunta narcolancha en el Pacífico Oriental</h3>
+  <p class="fact-summary">Un video/noticiero difundió que el organismo militar estadounidense ejecutó una operación contra una presunta embarcación vinculada al narcotráfico, con tres muertos y sin bajas estadounidenses reportadas.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede influir en el entorno regional de seguridad y en narrativas sobre narcotráfico, pero no hay evidencia en la fuente consultada de vínculo operativo directo con Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Ahora Mediodía en Vivo / YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Comando Sur reporta ataque contra presunta narcolancha en el Pacífico Oriental</h3>
+  <p class="fact-summary">El resumen televisivo indica que el Comando Sur de Estados Unidos informó una nueva operación militar contra una presunta narcolancha en el Pacífico Oriental, con tres muertos y sin bajas estadounidenses.</p>
+  <p class="info-actor">Comando Sur de Estados Unidos</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>3</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Este tipo de operación refuerza el marco de seguridad hemisférica y puede influir en narrativas sobre narcotráfico, presión militar y el entorno estratégico de Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Ahora Mediodía en Vivo</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venevisión anticipa endurecimiento migratorio y control extremo</h3>
+  <p class="fact-summary">Otro segmento de Venevisión resumió una propuesta de política migratoria con identificación de migrantes irregulares en un plazo máximo de siete días, registro biométrico desde los seis años y deportación exprés.</p>
+  <p class="info-actor">Propuesta migratoria no atribuida en la fuente disponible</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>7</li><li>6</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La narrativa migratoria estricta afecta el entorno regional de movilidad, especialmente para venezolanos en tránsito o bajo marcos de control fronterizo.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Prensa Latina reporta agenda política venezolana con retorno de Dinorah Figuera y nuevos nombramientos ministeriales</h3>
+  <p class="fact-summary">Prensa Latina informó hoy que la semana política en Venezuela está marcada por la llegada de la exdiputada opositora Dinorah Figuera, nuevos cambios en el gabinete y la divulgación de 657 casos de presunto maltrato infantil en un contexto de debate institucional.</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>657 casos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede anticipar movimientos en la agenda política venezolana y reordenamientos internos que afecten gobernabilidad y negociación con actores opositores.</div>
+  <div class="enlaces"><a href="https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/" target="_blank" rel="noopener">📰 Prensa Latina</a> · <a href="https://web.archive.org/web/20260620192413/https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venevisión reporta mesa paritaria y restricciones fronterizas en Zulia</h3>
+  <p class="fact-summary">Un noticiero de Venevisión difundió hoy que se acordó una mesa técnica y política paritaria vinculada a conversaciones entre oficialismo y oposición, y además informó restricciones de tránsito fronterizo entre el 20 y el 22 de junio en el paso de Paraguachón, Zulia.</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-20</li><li>2026-06-22</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere avances de diálogo político y posibles tensiones operativas en frontera, con implicaciones para movilidad, migración y control territorial.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Comando Sur informó ataque a presunta narcolancha en el Pacífico Oriental</h3>
+  <p class="fact-summary">Venevisión reportó que el Comando Sur de Estados Unidos realizó una operación contra una presunta narcolancha en el Pacífico Oriental, con tres muertos y sin bajas estadounidenses.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>3</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aporta contexto sobre la postura de seguridad de Estados Unidos en la región y posibles efectos sobre cooperación, narrativa antidrogas y presión sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venevisión reporta restricción fronteriza en Zulia para el fin de semana</h3>
+  <p class="fact-summary">Un noticiero de Venevisión difundió que desde el 20 de junio por la noche hasta el lunes por la mañana se restringe el tránsito por pasos fronterizos en Zulia y se refuerzan controles migratorios.</p>
+  <p class="info-actor">Autoridades fronterizas en Zulia</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Las restricciones fronterizas afectan movilidad, control migratorio y comercio local en una zona sensible para Venezuela y Colombia.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Resumen internacional del día con posible ángulo geopolítico para Venezuela</h3>
+  <p class="fact-summary">Un portal de noticias internacionales publicó un resumen del día 20 de junio de 2026 con cobertura global que puede ser útil para seguimiento de tendencias geopolíticas y económicas.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>❔ No verificada:</strong> Mención aislada sin evidencia específica sobre Venezuela en el fragmento disponible; no tratar como hecho sobre el país sin verificación adicional.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede ayudar a contextualizar shocks globales del día, pero no ofrece una señal directa sobre Venezuela en la evidencia consultada.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/06/20/ultimas-noticias-20-junio-2026-manana" target="_blank" rel="noopener">📰 Euronews</a> · <a href="https://es-us.noticias.yahoo.com/noticias-20-junio-2026-tarde-160023227.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>BBC y otros medios de referencia no arrojaron hallazgos verificables con URL fechada en el rango consultado</h3>
+  <p class="fact-summary">Con los resultados disponibles no se pudo verificar hoy una nota específica de BBC sobre Venezuela dentro del rango temporal pedido.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Limita la cobertura comparada por foco editorial internacional; se recomienda una búsqueda adicional específica en BBC con fecha exacta.</div>
+  
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/asia-pacific/trump-envoy-iranian-minister-head-switzerland-talks-2026-06-20/" target="_blank" rel="noopener">Iran negotiators head for Switzerland but Lebanon fighting continues</a></li><li><a href="https://www.reuters.com/world/middle-east/least-five-killed-israeli-strikes-south-lebanon-despite-ceasefire-2026-06-20/" target="_blank" rel="noopener">Israeli strikes kill at least 20 in Lebanon hours after ceasefire</a></li><li><a href="https://www.usnews.com/news/world/articles/2026-06-20/us-forces-monitoring-strait-of-hormuz-to-ensure-it-stays-open" target="_blank" rel="noopener">US Forces Monitoring Strait of Hormuz to Ensure It Stays Open</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez oficializó acuerdo energético con General Electric Vernova y Corpoelec</h3>
+  <p class="fact-summary">Medios difundieron que Delcy Rodríguez acompañó la firma de un acuerdo estratégico entre Corpoelec y General Electric Vernova, en presencia del encargado de negocios de EE. UU., John Barrett.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere una señal de apertura o ajuste en la política energética y en la interlocución con actores estadounidenses, con posibles efectos en el sistema eléctrico nacional.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a> · <a href="https://www.instagram.com/reel/DZxfMl2M4JF/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA y Repsol firman memorando para crudo y gas en Venezuela</h3>
+  <p class="fact-summary">PDVSA y Repsol suscribieron un memorando de entendimiento para ampliar cooperación en crudo y gas en Venezuela, según cobertura publicada con fecha 16 de junio de 2026.</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cooperación con Repsol puede influir en producción, inversión y desarrollo de áreas petroleras, pero la evidencia disponible no es de hoy ni de las últimas 24 horas.</div>
+  <div class="enlaces"><a href="https://www.jornada.com.mx/noticia/2026/06/16/mundo/venezolana-pdvsa-y-repsol-firman-memorando-de-entendimiento-de-crudo-y-gas" target="_blank" rel="noopener">📰 La Jornada</a> · <a href="https://elpais.com/economia/2026-06-16/repsol-firma-un-acuerdo-con-venezuela-para-explorar-una-nueva-zona-petrolifera-en-el-pais.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Exportaciones marítimas de petróleo de Venezuela crecieron 144% en el primer semestre de 2026</h3>
+  <p class="fact-summary">Un reporte difundido el 20 de junio de 2026 atribuye a Bloomberg que las exportaciones marítimas de petróleo venezolano aumentaron 144% en el primer semestre de 2026 y que el promedio acumulado del año ronda 1,10 millones de barriles diarios.</p>
+  <p class="info-actor">Bloomberg</p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>144 %</li><li>1.1 millones de barriles diarios</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere una mejora sustancial del flujo exportador venezolano, útil para monitoreo de divisas, cumplimiento comercial y capacidad operativa del sector.</div>
+  <div class="enlaces"><a href="https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/" target="_blank" rel="noopener">📰 La Patilla</a> · <a href="https://www.aporrea.org/amp/energia/n420125.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV reporta aumento de 21,5% en exportaciones petroleras del primer trimestre de 2026</h3>
+  <p class="fact-summary">Una nota publicada el 20 de junio de 2026 indica que el Banco Central de Venezuela informó un aumento de 21,5% en las exportaciones petroleras del primer trimestre de 2026 y un alza de ingresos por ventas externas de crudo.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>21.5 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Apunta a una mejora verificable en el desempeño exportador del sector petrolero, con implicaciones para caja externa y recaudación.</div>
+  <div class="enlaces"><a href="http://www.petroguia.com/pet/noticias/petr%C3%B3leo/bcv-exportaciones-petroleras-de-venezuela-aumentaron-215-en-primer-trimestre-de" target="_blank" rel="noopener">📰 Petroguía</a> · <a href="https://web.archive.org/web/20260620193143/http://www.petroguia.com/pet/noticias/petr%C3%B3leo/bcv-exportaciones-petroleras-de-venezuela-aumentaron-215-en-primer-trimestre-de" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez proyecta aumento de 55% en inversión petrolera para 2026</h3>
+  <p class="fact-summary">Una publicación difundida en redes atribuye a Delcy Rodríguez la proyección de un crecimiento de 55% en la inversión petrolera para 2026.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>55 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si la cifra fuera confirmada oficialmente, indicaría una orientación de gasto e inversión con impacto en el sector petrolero venezolano; por ahora solo puede tratarse como señal no verificada.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/" target="_blank" rel="noopener">📰 noticierovv (Facebook)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>Presunto comunicado sobre suministro de gasolina para el 20 de junio de 2026</h3>
+  <p class="fact-summary">Circula una publicación en Instagram sobre el suministro de gasolina para el sábado 20 de junio de 2026 y precios de referencia vigentes, pero no se identificó un emisor oficial verificable en el material disponible.</p>
+  <p class="info-actor">publicación en Instagram no atribuible con certeza</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>20 día del mes</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Si fuera un comunicado oficial, afectaría la logística de distribución y consumo de combustible; con la evidencia actual, solo sirve como indicio preliminar.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZyQ2sfGgUB/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Resumen económico difundido hoy destaca crudo Merey y Brent</h3>
+  <p class="fact-summary">Un reporte publicado hoy menciona que el crudo Merey se ubicó alrededor de US$73,45 por barril y el Brent en US$79,16 por barril.</p>
+  <p class="info-actor">crudo Merey</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>US$73,45 por barril</li><li>US$79,16 por barril</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El precio del Merey es una referencia clave para los ingresos petroleros de Venezuela. Si se mantiene en ese rango, puede sostener parcialmente los ingresos externos, aunque no compensa por sí solo los desequilibrios macroeconómicos.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV eleva la tasa oficial del dólar a Bs 607,39</h3>
+  <p class="fact-summary">La tasa oficial del dólar del Banco Central de Venezuela fue reportada en Bs 607,3919 por dólar para el 19 de junio de 2026, con una variación diaria de +0,84%.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>607,3919 Bs/USD</li><li>+0,84%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Actualiza la referencia cambiaria que usan empresas y consumidores en Venezuela. Un ajuste al alza refuerza la presión sobre precios internos y sobre la brecha entre tasas oficiales y paralelas si existiera.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Reportan dólar BCV por encima de Bs 600 y euro cerca de Bs 700</h3>
+  <p class="fact-summary">Un resumen económico difundido hoy indica que el dólar BCV superó los Bs 600 y que el euro se ubicó en torno a Bs 697,36, mientras el USDT en Binance P2P rondó Bs 804.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>Bs 607,39</li><li>Bs 697,36</li><li>Bs 804</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere aceleración de la presión cambiaria y mayor uso de referencias no oficiales para fijar precios. Para Venezuela, esto suele traducirse en más incertidumbre para comercio minorista, nómina y reposición de inventarios.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZxIfPlRbLq/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV actualiza la tasa del dólar y euro para el cierre del 19 de junio</h3>
+  <p class="fact-summary">Medios que replican el dato del BCV reportan que el dólar oficial cerró en 607,3919 bolívares y el euro en 702,42 bolívares, con variación al alza frente a la jornada previa.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>607,3919 Bs/USD</li><li>702,42 Bs/EUR</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia operativa para monitoreo económico y seguimiento de la trayectoria del tipo de cambio oficial.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/category/tasa-bcv/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://puntodecorte.net/precio-del-dolar-oficial-en-venezuela-segun-el-bcv/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Departamento de Estado mantiene a Venezuela en Nivel 3 de viaje</h3>
+  <p class="fact-summary">Un texto de hoy indica que el Departamento de Estado sigue clasificando a Venezuela en Nivel 3 de advertencia de viaje para la mayor parte del territorio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La clasificación de viaje es una señal operativa relevante para diplomacia, negocios y seguridad, aunque aquí aparece citada en una columna de opinión y no en la fuente oficial primaria.</div>
+  <div class="enlaces"><a href="https://theelnews.org/2026/06/20/opinion-el-informe-alvarez-junio-20-de-2026-por-alfredo-alvarez/" target="_blank" rel="noopener">📰 The EL News</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>No se identificaron noticias venezolanas verificables de alto interés en las fuentes proporcionadas</h3>
+  <p class="fact-summary">Las fuentes de búsqueda visibles en el prompt no aportan, por sí solas, un conjunto suficiente de artículos venezolanos del 20 de junio de 2026 con fecha y URL verificables para construir hallazgos confiables.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sin artículos periodísticos directamente verificables y fechados sobre Venezuela, no es posible inferir incidentes, anuncios o cambios de riesgo con la precisión requerida.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Fuentes de búsqueda proporcionadas en el prompt</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Mesa política paritaria entre oficialismo y oposición en Caracas</h3>
+  <p class="fact-summary">Un noticiero venezolano reportó que representantes del bloque oficialista y de la oposición acordaron instalar una mesa técnica y política paritaria para avanzar en la reinstitucionalización del país.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal secundaria no confirmada por documento primario en esta capa; requiere verificación adicional antes de tratarla como hecho plenamente confirmado.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Si se consolida, podría abrir una vía de negociación política con efectos sobre gobernabilidad, agenda legislativa y percepción externa del conflicto político venezolano.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube)</a> · <a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Resumen internacional del día con posible ángulo geopolítico para Venezuela</h3>
+  <p class="fact-summary">Un portal de noticias internacionales publicó un resumen del día 20 de junio de 2026 con cobertura global que puede ser útil para seguimiento de tendencias geopolíticas y económicas.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>❔ No verificada:</strong> Mención aislada sin evidencia específica sobre Venezuela en el fragmento disponible; no tratar como hecho sobre el país sin verificación adicional.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede ayudar a contextualizar shocks globales del día, pero no ofrece una señal directa sobre Venezuela en la evidencia consultada.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/06/20/ultimas-noticias-20-junio-2026-manana" target="_blank" rel="noopener">📰 Euronews</a> · <a href="https://es-us.noticias.yahoo.com/noticias-20-junio-2026-tarde-160023227.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Designación de Gustavo González López como ministro de Defensa** — Cambio en la cúpula militar puede alterar dinámica de seguridad interna, lealtades institucionales y alineación con el Ejecutivo, con impacto en estabilidad política.
+
+2. 🔴 **Instalación de mesa técnica y política paritaria entre oficialismo y oposición** — Formalización de negociaciones podría redefinir gobernabilidad, agenda legislativa y legitimidad institucional, con efectos en condiciones electorales y percepción internacional.
+
+3. 🟠 **Flexibilización de sanciones OFAC (PDVSA/Conviasa)** — Si se confirma, modificaría el marco operativo de actores energéticos, afectando liquidez, contratos y cumplimiento regulatorio, con posibles ajustes en producción y comercio.
+
+4. 🟡 **Cierre temporal de frontera Colombia-Venezuela (20-22 junio)** — Impacto en tránsito fronterizo, comercio informal y tensiones diplomáticas, aunque efecto limitado por duración corta.
+
+5. 🟡 **Silencio de Diosdado Cabello** — Ausencia de actividad pública del actor clave sugiere posible reacomodo interno o estrategia de bajo perfil en contexto de negociaciones políticas.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(13)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/gobierno-de-delcy-rodriguez-exhorto-a-la-comunidad-internacional-respetar-derechos-de-los-refugiados/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/gobierno-de-delcy-rodriguez-exhorto-a-la-comunidad-internacional-respetar-derechos-de-los-refugiados/</a></td><td></td></tr><tr><td>Efecto Cocuyo</td><td><a href="https://efectococuyo.com/politica/delcy-rodriguez-aterriza-en-granada-y-busca-consolidar-alianzas-en-el-caribe/" target="_blank" rel="noopener">https://efectococuyo.com/politica/delcy-rodriguez-aterriza-en-granada-y-busca-consolidar-alianzas-en-el-caribe/</a></td><td></td></tr><tr><td>DW</td><td><a href="https://www.dw.com/es/eeuu-respalda-reuni%C3%B3n-de-gobierno-y-oposici%C3%B3n-en-venezuela/a-77619795" target="_blank" rel="noopener">https://www.dw.com/es/eeuu-respalda-reuni%C3%B3n-de-gobierno-y-oposici%C3%B3n-en-venezuela/a-77619795</a></td><td>2026-06-20</td></tr><tr><td>Yahoo Noticias / AFP</td><td><a href="https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html" target="_blank" rel="noopener">https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html</a></td><td>2026-06-20</td></tr><tr><td>EL PAÍS</td><td><a href="https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html" target="_blank" rel="noopener">https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html</a></td><td>2026-06-20</td></tr><tr><td>La Jornada</td><td><a href="https://www.jornada.com.mx/2026/06/20/mundo/019n2mun" target="_blank" rel="noopener">https://www.jornada.com.mx/2026/06/20/mundo/019n2mun</a></td><td>2026-06-20</td></tr><tr><td>Noticias Venevisión / YouTube</td><td><a href="https://www.youtube.com/watch?v=rlr9mo9fK0o" target="_blank" rel="noopener">https://www.youtube.com/watch?v=rlr9mo9fK0o</a></td><td></td></tr><tr><td>La Patilla</td><td><a href="https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/" target="_blank" rel="noopener">https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/</a></td><td>2026-06-20</td></tr><tr><td>Petroguía</td><td><a href="http://www.petroguia.com/pet/noticias/petr%C3%B3leo/bcv-exportaciones-petroleras-de-venezuela-aumentaron-215-en-primer-trimestre-de" target="_blank" rel="noopener">http://www.petroguia.com/pet/noticias/petr%C3%B3leo/bcv-exportaciones-petroleras-de-venezuela-aumentaron-215-en-primer-trimestre-de</a></td><td>2026-06-20</td></tr><tr><td>La Jornada</td><td><a href="https://www.jornada.com.mx/noticia/2026/06/16/mundo/venezolana-pdvsa-y-repsol-firman-memorando-de-entendimiento-de-crudo-y-gas" target="_blank" rel="noopener">https://www.jornada.com.mx/noticia/2026/06/16/mundo/venezolana-pdvsa-y-repsol-firman-memorando-de-entendimiento-de-crudo-y-gas</a></td><td>2026-06-16</td></tr><tr><td>Noticias Venevisión (YouTube)</td><td><a href="https://www.youtube.com/watch?v=2ycEvy4hFWE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2ycEvy4hFWE</a></td><td>2026-06-20</td></tr><tr><td>Euronews</td><td><a href="https://es.euronews.com/video/2026/06/20/ultimas-noticias-20-junio-2026-manana" target="_blank" rel="noopener">https://es.euronews.com/video/2026/06/20/ultimas-noticias-20-junio-2026-manana</a></td><td>2026-06-20</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/category/tasa-bcv/" target="_blank" rel="noopener">https://finanzasdigital.com/category/tasa-bcv/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(6)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Noticiero VV (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/</a></td><td>2026-06-16</td></tr><tr><td>Noticiero VV (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/</a></td><td>2026-06-17</td></tr><tr><td>noticierovv (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZyQ2sfGgUB/" target="_blank" rel="noopener">https://www.instagram.com/p/DZyQ2sfGgUB/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZxIfPlRbLq/" target="_blank" rel="noopener">https://www.instagram.com/p/DZxIfPlRbLq/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZtOAg3EeKF/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>teleSUR</td><td><a href="https://www.facebook.com/teleSUR/posts/venezuela-anuncia-nuevos-nombramientos-ministeriales-la-presidenta-encargada-del/1522254899943541/" target="_blank" rel="noopener">https://www.facebook.com/teleSUR/posts/venezuela-anuncia-nuevos-nombramientos-ministeriales-la-presidenta-encargada-del/1522254899943541/</a></td><td></td></tr><tr><td>Noticias Venevisión / YouTube</td><td><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bacmuKe-nCA</a></td><td></td></tr><tr><td>Partido PSUV / VTV / Instagram</td><td><a href="https://www.facebook.com/PartidoPSUV/posts/este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-venezuela-jorg/1439168318244771/" target="_blank" rel="noopener">https://www.facebook.com/PartidoPSUV/posts/este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-venezuela-jorg/1439168318244771/</a></td><td>2026-06-18</td></tr><tr><td>Prensa Latina</td><td><a href="https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/" target="_blank" rel="noopener">https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/</a></td><td>2026-06-20</td></tr><tr><td>Noticias Venevisión</td><td><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=l7IKbq5aSpQ</a></td><td>2026-06-20</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#5d4037;">Opinión</span> Opinión <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>The EL News</td><td><a href="https://theelnews.org/2026/06/20/opinion-el-informe-alvarez-junio-20-de-2026-por-alfredo-alvarez/" target="_blank" rel="noopener">https://theelnews.org/2026/06/20/opinion-el-informe-alvarez-junio-20-de-2026-por-alfredo-alvarez/</a></td><td>2026-06-20</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com" target="_blank" rel="noopener">https://finanzasdigital.com</a></td><td></td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-20</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
