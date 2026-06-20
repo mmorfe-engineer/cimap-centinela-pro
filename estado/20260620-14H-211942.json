@@ -1,0 +1,164 @@
+{
+  "version": "1.0",
+  "correlativo": "20260620-14H-211942",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-20T21:21:51.901188+00:00",
+  "rango_inicio": "2026-06-19T21:19:42.389096+00:00",
+  "rango_fin": "2026-06-20T21:19:42.389096+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 2,
+    "A3": 5,
+    "A2": 4,
+    "A1": 0,
+    "A0": 0,
+    "total": 11
+  },
+  "actores_activos": {
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela acuerda con General Electric la reconstrucción de la red eléctrica",
+      "ultima_fuente_url": "https://www.bbc.com/news/articles/c0jyzpv52yyo"
+    },
+    "INT3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Mesa política paritaria en Caracas avanza en diálogo institucional",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    "INT1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A4",
+        "A4"
+      ],
+      "ultimo_titulo": "Medios reportan versión no verificada sobre abatimiento de Héctor Guerrero 'Niño Guerrero'",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    "P5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "OFAC flexibiliza sanciones y emite nuevas licencias para Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "7839efbc1932",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela acuerda con General Electric la reconstrucción de la red eléctrica",
+      "fuente_url": "https://www.bbc.com/news/articles/c0jyzpv52yyo"
+    },
+    {
+      "hash": "1845f07d17db",
+      "actor": "INT3",
+      "alert_level": "A3",
+      "titulo_corto": "Mesa política paritaria en Caracas avanza en diálogo institucional",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "84612a5835a4",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Comando Sur reporta nueva operación contra presunta narcolancha en el Pacífico Oriental",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "56c5b337e27f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura regional incluye restricción de tránsito y endurecimiento migratorio en el Caribe/LatAm",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "e570e60e9966",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "OFAC otorga licencias limitadas para operaciones de PDVSA y Conviasa sin retirar sanciones",
+      "fuente_url": "https://orinocotribune.com/us-ofac-issues-licenses-for-limited-operations-of-pdvsa-and-conviasa-while-sanctions-remain/"
+    },
+    {
+      "hash": "bcffeda3d46f",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Control de EE.UU. sobre ingresos petroleros de Venezuela complica reestructuración de deuda de $150B",
+      "fuente_url": "https://www.tbsnews.net/worldbiz/usa/us-control-venezuela-oil-risks-debt-restructuring-showdown-china-1342126"
+    },
+    {
+      "hash": "4453c51ee797",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA y Repsol firman acuerdo para aumentar producción de petróleo y gas en el noroeste de Venezuela",
+      "fuente_url": "https://www.reuters.com/business/energy/venezuelas-pdvsa-repsol-sign-deal-oil-gas-production-2026-06-16/"
+    },
+    {
+      "hash": "3f0af67a6fee",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "OFAC flexibiliza sanciones y emite nuevas licencias para Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "56edd8ed1c2c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Se anunció una comisión paritaria para reinstitucionalización política en Caracas",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "53f32be623fa",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Restricción fronteriza nocturna en Zulia desde el 20 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "6c118e5de694",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Medios reportan versión no verificada sobre abatimiento de Héctor Guerrero 'Niño Guerrero'",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "bcffeda3d46f",
+      "actor": "INT1",
+      "titulo": "Control de EE.UU. sobre ingresos petroleros de Venezuela complica reestructuración de deuda de $150B con China",
+      "fuente_url": "https://www.tbsnews.net/worldbiz/usa/us-control-venezuela-oil-risks-debt-restructuring-showdown-china-1342126"
+    },
+    {
+      "hash": "6c118e5de694",
+      "actor": "INT1",
+      "titulo": "Medios reportan versión no verificada sobre abatimiento de Héctor Guerrero 'Niño Guerrero'",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
