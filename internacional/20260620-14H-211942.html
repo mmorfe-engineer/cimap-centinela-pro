@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260620-14H-211942</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260620-14H-211942</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-19T21:19:42.389096+00:00 → 2026-06-20T21:19:42.389096+00:00<br>
+    <strong>Generado:</strong> 2026-06-20 21:21 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 2 A4</span>
+    <span class="stat-pill">🟠 5 A3</span>
+    <span class="stat-pill">🟡 4 A2</span>
+    <span class="stat-pill">📊 11 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado crítico del día con 2 hallazgos de máxima relevancia (A4) y 5 de alta prioridad (A3), incluyendo afirmaciones no verificadas sobre la supuesta baja de Héctor Guerrero Flores en Bolívar y el control de ingresos petroleros venezolanos por EE.UU. mediante una cuenta en Qatar.
+
+2. Flexibilización parcial de sanciones por OFAC, con nuevas licencias para PDVSA y Conviasa, permitiendo operaciones limitadas en petróleo, aviación civil y telecomunicaciones sin levantar el régimen sancionatorio.
+
+3. Acuerdo entre el gobierno interino venezolano y General Electric para reconstruir infraestructura eléctrica, según informe de BBC, con potencial impacto en capacidad energética y cooperación externa.
+
+4. Restricción de tránsito en pasos fronterizos del norte de Zulia (20-21 de junio), reportada por Venevisión, que podría afectar movilidad, controles migratorios y dinámicas de contrabando.
+
+5. Avances en diálogo político con la instalación de una comisión paritaria y mesa técnica en Caracas, según cobertura de Venevisión, para discutir reinstitucionalización y hoja de ruta electoral.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260620-14H-193943</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (11):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong>Departamento de Estado EE.UU.</strong>: Medios reportan versión no verificada sobre abatimiento de Héctor Guerrero &#x27;Niño Guerrero&#x27; <a href="https://www.youtube.com/watch?v=2ycEvy4hFWE" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Departamento de Estado EE.UU.</strong>: Control de EE.UU. sobre ingresos petroleros de Venezuela complica reestructuración de deuda de $150B con China <a href="https://www.tbsnews.net/worldbiz/usa/us-control-venezuela-oil-risks-debt-restructuring-showdown-china-1342126" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Gustavo Petro</strong>: Mesa política paritaria en Caracas avanza en diálogo institucional <a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Restricción fronteriza nocturna en Zulia desde el 20 de junio <a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: OFAC otorga licencias limitadas para operaciones de PDVSA y Conviasa sin retirar sanciones <a href="https://orinocotribune.com/us-ofac-issues-licenses-for-limited-operations-of-pdvsa-and-conviasa-while-sanctions-remain/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Unión Europea</strong>: Venezuela acuerda con General Electric la reconstrucción de la red eléctrica <a href="https://www.bbc.com/news/articles/c0jyzpv52yyo" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Andrés Velásquez</strong>: OFAC flexibiliza sanciones y emite nuevas licencias para Venezuela <a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: PDVSA y Repsol firman acuerdo para aumentar producción de petróleo y gas en el noroeste de Venezuela <a href="https://www.reuters.com/business/energy/venezuelas-pdvsa-repsol-sign-deal-oil-gas-production-2026-06-16/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Se anunció una comisión paritaria para reinstitucionalización política en Caracas <a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Cobertura regional incluye restricción de tránsito y endurecimiento migratorio en el Caribe/LatAm <a href="https://www.youtube.com/watch?v=2ycEvy4hFWE" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INT3</code> (Gustavo Petro), <code>INT4</code> (Unión Europea)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB1</code> (Delcy Rodríguez), <code>GOB3</code> (Jorge Rodríguez), <code>GOB5</code> (Nicolás Maduro), <code>INST1</code> (Asamblea Nacional), <code>INST5</code> (PDVSA), <code>INT2</code> (OFAC / U.S. Treasury), <code>P1</code> (María Corina Machado)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>6 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>6 cortes sin actividad</strong></li><li><code>INST4</code> — Banco Central de Venezuela (<em>Autoridad monetaria</em>): <strong>3 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 2</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 2</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>Medios reportan versión no verificada sobre abatimiento de Héctor Guerrero &#x27;Niño Guerrero&#x27;</h3>
+  <p class="fact-summary">Una transmisión del 20 de junio repitió la afirmación de que Héctor Guerrero Flores habría sido abatido en una operación militar conjunta en Bolívar, pero no se aportó confirmación primaria verificable en los resultados disponibles.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Podría alterar la correlación de fuerzas del Tren de Aragua, pero por ahora debe tratarse como rumor/afirmación no confirmada.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=2ycEvy4hFWE" target="_blank" rel="noopener">📰 Noticias Venevisión: Edición Fin de Semana (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Control de EE.UU. sobre ingresos petroleros de Venezuela complica reestructuración de deuda de $150B con China</h3>
+  <p class="fact-summary">El gobierno de EE.UU. indicó que los ingresos por venta de petróleo venezolano se depositarán en una cuenta en Qatar controlada por Washington, otorgando al presidente estadounidense poder sobre el pago a acreedores, lo que podría desencadenar un enfrentamiento con China[2].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Deuda de Venezuela: $150B</li><li>Control de ingresos: cuenta en Qatar controlada por EE.UU.</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Cambia la dinámica de pago de deuda venezolana, otorgando a EE.UU. control directo sobre flujo de ingresos petroleros y afectando relaciones con China, máximo acreedor de Venezuela.</div>
+  <div class="enlaces"><a href="https://www.tbsnews.net/worldbiz/usa/us-control-venezuela-oil-risks-debt-restructuring-showdown-china-1342126" target="_blank" rel="noopener">📰 TBS News</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela acuerda con General Electric la reconstrucción de la red eléctrica</h3>
+  <p class="fact-summary">BBC informa que el presidente interino de Venezuela firmó un acuerdo con General Electric para reconstruir la infraestructura eléctrica del país.</p>
+  <p class="info-actor"><strong>INT4</strong> — Unión Europea <em>(Política exterior comunitaria europea)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede implicar cambios relevantes en capacidad eléctrica, inversión y cooperación externa en un sector sensible para estabilidad económica y política.</div>
+  <div class="enlaces"><a href="https://www.bbc.com/news/articles/c0jyzpv52yyo" target="_blank" rel="noopener">📰 BBC News</a> · <a href="https://www.bbc.co.uk/news/articles/c0jyzpv52yyo" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260620211951/https://www.bbc.com/news/articles/c0jyzpv52yyo" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Mesa política paritaria en Caracas avanza en diálogo institucional</h3>
+  <p class="fact-summary">Cobertura televisiva reporta que sectores del oficialismo y de la oposición acordaron instalar una comisión paritaria y una mesa técnica-política en Caracas para discutir reinstitucionalización y hoja de ruta electoral/institucional.</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede anticipar movimientos de diálogo político y ajustes institucionales con impacto sobre la dinámica interna venezolana y la interlocución regional.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>OFAC otorga licencias limitadas para operaciones de PDVSA y Conviasa sin retirar sanciones</h3>
+  <p class="fact-summary">El Departamento del Tesoro de EE.UU. emitó tres licencias generales que permiten operaciones limitadas en los sectores de petróleo, aviación civil y telecomunicaciones de Venezuela, aunque el régimen de sanciones permanece vigente[1].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>General License 5X: autoriza transacciones relacionadas con el bono PDVSA 2020 8.5% desde 04 de agosto de 2026</li><li>General License 59: autoriza transacciones exclusivamente para seguridad y operabilidad técnica de Conviasa</li><li>General License 24A: facilita transmisión de comunicaciones y envío de paquetes dentro de Venezuela</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Permite mantenimiento, reparación y seguridad de activos de PDVSA y Conviasa, facilitando operaciones esenciales de seguridad en aviación y telecomunicaciones, pero no comercialización general.</div>
+  <div class="enlaces"><a href="https://orinocotribune.com/us-ofac-issues-licenses-for-limited-operations-of-pdvsa-and-conviasa-while-sanctions-remain/" target="_blank" rel="noopener">📰 Orinoco Tribune</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>PDVSA y Repsol firman acuerdo para aumentar producción de petróleo y gas en el noroeste de Venezuela</h3>
+  <p class="fact-summary">PDVSA y el grupo energético español Repsol firmaron un acuerdo de crudo y gas para impulsar la producción en el noroeste de Venezuela[5].</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 15/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la tendencia de reactivación de producción petrolera en Venezuela con socios internacionales, demostrando continuidad en acuerdos de cooperación energética.</div>
+  <div class="enlaces"><a href="https://www.reuters.com/business/energy/venezuelas-pdvsa-repsol-sign-deal-oil-gas-production-2026-06-16/" target="_blank" rel="noopener">📰 Reuters</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Comando Sur reporta nueva operación contra presunta narcolancha en el Pacífico Oriental</h3>
+  <p class="fact-summary">Una emisión informativa indicó que el Comando Sur de Estados Unidos informó una acción militar contra una presunta narcolancha, con tres personas muertas y sin bajas estadounidenses.</p>
+  <p class="info-actor">Comando Sur de Estados Unidos</p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>3</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Mantiene atención sobre la postura de seguridad de EE. UU. en el hemisferio y su posible efecto indirecto en la agenda venezolana sobre narcotráfico y presión regional.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Ahora Mediodía en Vivo</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura regional incluye restricción de tránsito y endurecimiento migratorio en el Caribe/LatAm</h3>
+  <p class="fact-summary">Otra cobertura televisiva del día reunió temas de movilidad regional, incluyendo restricciones temporales de tránsito y referencias a políticas de control, identificación y deportación exprés para migrantes irregulares.</p>
+  <p class="info-actor">Autoridad migratoria no identificada en la cobertura</p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>7</li><li>6</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede impactar flujos migratorios y la agenda fronteriza venezolana si las medidas citadas corresponden a países receptores de migración venezolana.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=2ycEvy4hFWE" target="_blank" rel="noopener">📰 Noticias Venevisión: Edición Fin de Semana</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/middle-east/least-five-killed-israeli-strikes-south-lebanon-despite-ceasefire-2026-06-20/" target="_blank" rel="noopener">Israeli strikes kill at least 20 in Lebanon hours after ceasefire</a></li><li><a href="https://www.reuters.com/world/asia-pacific/trump-envoy-iranian-minister-head-switzerland-talks-2026-06-20/" target="_blank" rel="noopener">Iran negotiators head for Switzerland but Lebanon fighting continues</a></li><li><a href="https://www.reuters.com/world/middle-east/us-forces-monitoring-strait-hormuz-ensure-it-stays-open-2026-06-20/" target="_blank" rel="noopener">US forces monitoring Strait of Hormuz to ensure it stays open</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>OFAC flexibiliza sanciones y emite nuevas licencias para Venezuela</h3>
+  <p class="fact-summary">Un resumen noticioso difundido el 19 de junio señala que OFAC flexibilizó sanciones a Venezuela y emitió nuevas licencias para PDBESA y Conviaza.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede modificar márgenes operativos en hidrocarburos y transporte estatal, con impacto inmediato en flujos financieros y coordinación regulatoria.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">📰 Noticias Ahora Mediodía en Vivo (YouTube)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Restricción fronteriza nocturna en Zulia desde el 20 de junio</h3>
+  <p class="fact-summary">La cobertura de Venevisión reportó una restricción de tránsito en pasos fronterizos del norte de Zulia desde las 7:00 p. m. del sábado 20 de junio hasta las 7:00 a. m. del lunes.</p>
+  <p class="info-actor">autoridades gubernamentales y militares de Zulia</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede alterar cruces fronterizos, controles migratorios y dinámicas de contrabando o movilidad irregular en un corredor sensible.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión a esta hora (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se anunció una comisión paritaria para reinstitucionalización política en Caracas</h3>
+  <p class="fact-summary">Una cobertura televisiva indicó que se acordó instalar en Caracas una comisión paritaria y una mesa técnica-política para definir una hoja de ruta institucional.</p>
+  <p class="info-actor">sectores oficialistas y representantes de la Plataforma Unitaria Democrática</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere continuidad de negociaciones o reacomodo institucional con potencial efecto sobre la gobernabilidad y el calendario político.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">📰 Noticias Venevisión a esta hora (YouTube)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Confirmación o desmentido oficial sobre abatimiento de Héctor Guerrero Flores** — Rumor no verificado podría reconfigurar liderazgo del Tren de Aragua y dinámica de seguridad en Bolívar, con impacto en grupos armados y operativos militares.
+
+2. 🔴 **Movimientos en cuenta petrolera en Qatar y reacción de China** — Control estadounidense sobre ingresos petroleros venezolanos tensiona relaciones con China (principal acreedor) y altera negociaciones de deuda, con riesgo de represalias financieras o comerciales.
+
+3. 🟠 **Implementación de licencias OFAC para PDVSA y Conviasa** — Flexibilización de sanciones modifica capacidad operativa de hidrocarburos y transporte estatal; monitorear ajustes logísticos, flujos de caja y cumplimiento de condiciones impuestas.
+
+4. 🟠 **Instalación de comisión paritaria y mesa técnica en Caracas** — Diálogo entre oficialismo y oposición podría definir hoja de ruta electoral e institucional; observar avances concretos, actores participantes y señales de fracturas internas.
+
+5. 🟡 **Silencio de Diosdado Cabello (GOB2) y María Corina Machado (P1)** — Ausencia de declaraciones de figuras clave en contexto de flexibilización de sanciones y diálogos sugiere alineación estratégica o disidencia no pública; su postura futura podría redefinir equilibrios políticos.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB1</strong> — Delcy Rodríguez (Presidenta encargada / Vicepresidenta)</li><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(6)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>BBC News</td><td><a href="https://www.bbc.com/news/articles/c0jyzpv52yyo" target="_blank" rel="noopener">https://www.bbc.com/news/articles/c0jyzpv52yyo</a></td><td></td></tr><tr><td>Noticias Venevisión</td><td><a href="https://www.youtube.com/watch?v=l7IKbq5aSpQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=l7IKbq5aSpQ</a></td><td>2026-06-20</td></tr><tr><td>Noticias Ahora Mediodía en Vivo</td><td><a href="https://www.youtube.com/watch?v=bacmuKe-nCA" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bacmuKe-nCA</a></td><td>2026-06-20</td></tr><tr><td>Noticias Venevisión: Edición Fin de Semana</td><td><a href="https://www.youtube.com/watch?v=2ycEvy4hFWE" target="_blank" rel="noopener">https://www.youtube.com/watch?v=2ycEvy4hFWE</a></td><td>2026-06-20</td></tr><tr><td>TBS News</td><td><a href="https://www.tbsnews.net/worldbiz/usa/us-control-venezuela-oil-risks-debt-restructuring-showdown-china-1342126" target="_blank" rel="noopener">https://www.tbsnews.net/worldbiz/usa/us-control-venezuela-oil-risks-debt-restructuring-showdown-china-1342126</a></td><td>2026-06-20</td></tr><tr><td>Reuters</td><td><a href="https://www.reuters.com/business/energy/venezuelas-pdvsa-repsol-sign-deal-oil-gas-production-2026-06-16/" target="_blank" rel="noopener">https://www.reuters.com/business/energy/venezuelas-pdvsa-repsol-sign-deal-oil-gas-production-2026-06-16/</a></td><td>2026-06-16</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Orinoco Tribune</td><td><a href="https://orinocotribune.com/us-ofac-issues-licenses-for-limited-operations-of-pdvsa-and-conviasa-while-sanctions-remain/" target="_blank" rel="noopener">https://orinocotribune.com/us-ofac-issues-licenses-for-limited-operations-of-pdvsa-and-conviasa-while-sanctions-remain/</a></td><td>2026-06-20</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-20</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
