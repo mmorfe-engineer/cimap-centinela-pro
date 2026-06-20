@@ -1,0 +1,422 @@
+{
+  "version": "1.0",
+  "correlativo": "20260620-14H-191433",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-20T19:39:29.713389+00:00",
+  "rango_inicio": "2026-06-19T19:14:33.641441+00:00",
+  "rango_fin": "2026-06-20T19:14:33.641441+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 17,
+    "A2": 16,
+    "A1": 5,
+    "A0": 4,
+    "total": 42
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 8,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Departamento de Estado mantiene a Venezuela en Nivel 3 de viaje",
+      "ultima_fuente_url": "https://theelnews.org/2026/06/20/opinion-el-informe-alvarez-junio-20-de-2026-por-alfredo-alvarez/"
+    },
+    "INST1": {
+      "n_hallazgos": 6,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Mesa política paritaria entre oficialismo y oposición en Caracas",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    "INT1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Comando Sur informó ataque a presunta narcolancha en el Pacífico Oriental",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    "P2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Dinorah Figuera viajó a Estados Unidos tras reunión opositora con Jorge Rodríguez",
+      "ultima_fuente_url": "https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Cierre temporal de frontera anunciado por Colombia para el 20 al 22 de junio",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=rlr9mo9fK0o"
+    },
+    "P1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Venevisión reporta mesa paritaria y restricciones fronterizas en Zulia",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "PDVSA y Repsol firman memorando para crudo y gas en Venezuela",
+      "ultima_fuente_url": "https://www.jornada.com.mx/noticia/2026/06/16/mundo/venezolana-pdvsa-y-repsol-firman-memorando-de-entendimiento-de-crudo-y-gas"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A0",
+      "alert_levels": [
+        "A0"
+      ],
+      "ultimo_titulo": "BCV actualiza la tasa del dólar y euro para el cierre del 19 de junio",
+      "ultima_fuente_url": "https://finanzasdigital.com/category/tasa-bcv/"
+    },
+    "P5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Reportan dólar BCV por encima de Bs 600 y euro cerca de Bs 700",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZxIfPlRbLq/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "INST4",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "8bd48a17621d",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez oficializó acuerdo energético con General Electric Vernova y Corpoelec",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/-iniciamos-este-martes-16-de-junio-de-2026-con-1-en-presencia-del-encargado-de-n/1970343080273021/"
+    },
+    {
+      "hash": "2d051e2aa1bd",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez acompañó firma de un acuerdo en Miraflores",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/"
+    },
+    {
+      "hash": "36db4684bd4a",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Delcy Rodríguez pidió respetar derechos de refugiados",
+      "fuente_url": "https://www.elnacional.com/2026/06/gobierno-de-delcy-rodriguez-exhorto-a-la-comunidad-internacional-respetar-derechos-de-los-refugiados/"
+    },
+    {
+      "hash": "8e69dcbe63c7",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anunció nuevos nombramientos ministeriales",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/venezuela-anuncia-nuevos-nombramientos-ministeriales-la-presidenta-encargada-del/1522254899943541/"
+    },
+    {
+      "hash": "f4fbc55d7362",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez fue mencionada en agenda regional en Granada",
+      "fuente_url": "https://efectococuyo.com/politica/delcy-rodriguez-aterriza-en-granada-y-busca-consolidar-alianzas-en-el-caribe/"
+    },
+    {
+      "hash": "2c6bf79a7d37",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno y oposición reanudan diálogo político en Caracas",
+      "fuente_url": "https://www.dw.com/es/eeuu-respalda-reuni%C3%B3n-de-gobierno-y-oposici%C3%B3n-en-venezuela/a-77619795"
+    },
+    {
+      "hash": "8edc427b48d7",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Dinorah Figuera viaja a Estados Unidos para reuniones políticas",
+      "fuente_url": "https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html"
+    },
+    {
+      "hash": "b82ff3b98848",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Washington impulsa la transición política venezolana, según reportes de prensa",
+      "fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    {
+      "hash": "7cd4cdfd83cd",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "La prensa reporta instalación de una mesa técnica y política paritaria",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "1a194b0e0645",
+      "actor": "P2",
+      "alert_level": "A3",
+      "titulo_corto": "Dinorah Figuera viajó a Estados Unidos tras reunión opositora con Jorge Rodríguez",
+      "fuente_url": "https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html"
+    },
+    {
+      "hash": "fd62c705684f",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional reportó una primera reunión en el Palacio Federal Legislativo con diputados oposit",
+      "fuente_url": "https://www.facebook.com/PartidoPSUV/posts/este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-venezuela-jorg/1439168318244771/"
+    },
+    {
+      "hash": "7880dfe9a321",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Medios reportan apertura de un nuevo proceso de diálogo político en Caracas",
+      "fuente_url": "https://www.jornada.com.mx/2026/06/20/mundo/019n2mun"
+    },
+    {
+      "hash": "9911dd7ef9f0",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Prensa Latina destacó nuevas designaciones ministeriales y otros temas de agenda nacional",
+      "fuente_url": "https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/"
+    },
+    {
+      "hash": "9ad44aacb162",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Reunión entre Jorge Rodríguez y Dinora Figuera para una mesa política paritaria",
+      "fuente_url": "https://www.youtube.com/watch?v=rlr9mo9fK0o"
+    },
+    {
+      "hash": "b0261d39e8b5",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "EE. UU. reportó una nueva operación contra una presunta narcolancha en el Pacífico Oriental",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "a893efbee32c",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "Cierre temporal de frontera anunciado por Colombia para el 20 al 22 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=rlr9mo9fK0o"
+    },
+    {
+      "hash": "fa4e24b19f6b",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Prensa Latina reporta agenda política venezolana con retorno de Dinorah Figuera y nuevos nombramient",
+      "fuente_url": "https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/"
+    },
+    {
+      "hash": "2f47e25ec9e4",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Venevisión reporta mesa paritaria y restricciones fronterizas en Zulia",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "4191a9ab8a9d",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Venevisión menciona flexibilización de sanciones de OFAC a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "3dccb064c133",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Comando Sur informó ataque a presunta narcolancha en el Pacífico Oriental",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "0421065ea790",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "BBC y otros medios de referencia no arrojaron hallazgos verificables con URL fechada en el rango con",
+      "fuente_url": ""
+    },
+    {
+      "hash": "45122eab26f0",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Mesa paritaria chavismo-oposición para reinstitucionalización de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "e93e510f2e06",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "OFAC flexibiliza sanciones a Venezuela y emite nuevas licencias",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "37d16650bde7",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Comando Sur reporta ataque contra presunta narcolancha en el Pacífico Oriental",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "501b5da84e0b",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Venevisión reporta restricción fronteriza en Zulia para el fin de semana",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "ba0d54b71e78",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venevisión anticipa endurecimiento migratorio y control extremo",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "0493505c7945",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones marítimas de petróleo de Venezuela crecieron 144% en el primer semestre de 2026",
+      "fuente_url": "https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/"
+    },
+    {
+      "hash": "af06b242b355",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV reporta aumento de 21,5% en exportaciones petroleras del primer trimestre de 2026",
+      "fuente_url": "http://www.petroguia.com/pet/noticias/petr%C3%B3leo/bcv-exportaciones-petroleras-de-venezuela-aumentaron-215-en-primer-trimestre-de"
+    },
+    {
+      "hash": "2d2936d04de6",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y Repsol firman memorando para crudo y gas en Venezuela",
+      "fuente_url": "https://www.jornada.com.mx/noticia/2026/06/16/mundo/venezolana-pdvsa-y-repsol-firman-memorando-de-entendimiento-de-crudo-y-gas"
+    },
+    {
+      "hash": "b91f9df7e779",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez proyecta aumento de 55% en inversión petrolera para 2026",
+      "fuente_url": "https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1477935381037727/"
+    },
+    {
+      "hash": "c7c986a1666d",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Presunto comunicado sobre suministro de gasolina para el 20 de junio de 2026",
+      "fuente_url": "https://www.instagram.com/p/DZyQ2sfGgUB/"
+    },
+    {
+      "hash": "dc584cdf947a",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Mesa política paritaria entre oficialismo y oposición en Caracas",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "c1e624394260",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Cobertura de noticias de última hora sobre Venezuela y el mundo en noticiero del 20 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "80ab4b432ecb",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Resumen internacional del día con posible ángulo geopolítico para Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/20/ultimas-noticias-20-junio-2026-manana"
+    },
+    {
+      "hash": "0742a84e9d57",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Washington y Caracas reordenan la transición venezolana bajo mediación institucional",
+      "fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    {
+      "hash": "e71b4032966c",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Departamento de Estado mantiene a Venezuela en Nivel 3 de viaje",
+      "fuente_url": "https://theelnews.org/2026/06/20/opinion-el-informe-alvarez-junio-20-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "e4c9e9f606d0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Comisión paritaria y reinstitucionalización política en Caracas",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "f5e2d726e5f5",
+      "actor": "GOB3",
+      "alert_level": "A0",
+      "titulo_corto": "BCV actualiza la tasa del dólar y euro para el cierre del 19 de junio",
+      "fuente_url": "https://finanzasdigital.com/category/tasa-bcv/"
+    },
+    {
+      "hash": "7ff52ea33a4e",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "BCV eleva la tasa oficial del dólar a Bs 607,39",
+      "fuente_url": "https://finanzasdigital.com"
+    },
+    {
+      "hash": "52623b426d5e",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "Reportan dólar BCV por encima de Bs 600 y euro cerca de Bs 700",
+      "fuente_url": "https://www.instagram.com/p/DZxIfPlRbLq/"
+    },
+    {
+      "hash": "bea92c8a2d3c",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Resumen económico difundido hoy destaca crudo Merey y Brent",
+      "fuente_url": "https://www.instagram.com/reel/DZtOAg3EeKF/"
+    },
+    {
+      "hash": "0587d2d413b9",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "No se identificaron noticias venezolanas verificables de alto interés en las fuentes proporcionadas",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
