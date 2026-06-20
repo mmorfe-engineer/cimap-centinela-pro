@@ -1,0 +1,352 @@
+{
+  "version": "1.0",
+  "correlativo": "20260620-14H-193943",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-20T19:49:48.487662+00:00",
+  "rango_inicio": "2026-06-19T19:39:43.146750+00:00",
+  "rango_fin": "2026-06-20T19:39:43.146750+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 2,
+    "A3": 10,
+    "A2": 12,
+    "A1": 6,
+    "A0": 1,
+    "total": 31
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Zulia restringe el tránsito fronterizo y refuerza controles migratorios",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Asamblea Nacional habría difundido comunicado sobre fecha y dinámica política interna",
+      "ultima_fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-ven/1525308736304824/"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Asamblea Nacional y oposición sostienen encuentro de diálogo",
+      "ultima_fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-ven/1525308736304824/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Llegada de Dinorah Figuera y mesa paritaria en Caracas",
+      "ultima_fuente_url": "https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/"
+    },
+    "GOB5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "American Airlines retomaría vuelos a Maracaibo en julio",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    "INT1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "Cobertura internacional destaca alto el fuego Israel-Hezbolá y su impacto regional",
+      "ultima_fuente_url": "https://es-us.noticias.yahoo.com/noticias-20-junio-2026-tarde-160023227.html"
+    },
+    "P5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Reporte periodístico indica un repunte de exportaciones petroleras venezolanas en 2026",
+      "ultima_fuente_url": "https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A1",
+        "A1",
+        "A1"
+      ],
+      "ultimo_titulo": "Precio del crudo Merey se ubicó alrededor de 73,45 dólares por barril",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZtOAg3EeKF/"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "OFAC flexibiliza sanciones a Venezuela y emite nuevas licencias a PDBESA y Conviaza",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "P2",
+    "INST4",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "ed59b4beb409",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez habría acompañado firma de acuerdo estratégico con GE Vernova",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflore/1690418985513571/"
+    },
+    {
+      "hash": "23fc6518b55c",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno venezolano pidió respeto a derechos de refugiados",
+      "fuente_url": "https://www.elnacional.com/2026/06/gobierno-de-delcy-rodriguez-exhorto-a-la-comunidad-internacional-respetar-derechos-de-los-refugiados/"
+    },
+    {
+      "hash": "6e87d98c0dd5",
+      "actor": "INST5",
+      "alert_level": "A1",
+      "titulo_corto": "Asamblea Nacional habría difundido comunicado sobre fecha y dinámica política interna",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-ven/1525308736304824/"
+    },
+    {
+      "hash": "e90ed07b8515",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno y oposición abren un nuevo ciclo de diálogo en Caracas",
+      "fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    {
+      "hash": "e21924b470d2",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Dinorah Figuera viaja a Estados Unidos para reuniones vinculadas al diálogo",
+      "fuente_url": "https://es-us.noticias.yahoo.com/opositora-cargo-di%C3%A1logo-gobierno-venezuela-131651070.html"
+    },
+    {
+      "hash": "b40c1ab6a49f",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "TeleSUR difunde comunicado sobre el diálogo político del 18 de junio",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-/1525308736304824/"
+    },
+    {
+      "hash": "b591c1bad818",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional y oposición sostienen encuentro de diálogo",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-ven/1525308736304824/"
+    },
+    {
+      "hash": "b82139d910bf",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura regional reporta apertura de nuevo proceso de diálogo político en Caracas",
+      "fuente_url": "https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/"
+    },
+    {
+      "hash": "f6d9f48ada96",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Llegada de Dinorah Figuera y mesa paritaria en Caracas",
+      "fuente_url": "https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/"
+    },
+    {
+      "hash": "55464d340c79",
+      "actor": "GOB5",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela refuerza controles fronterizos desde Zulia",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "0aa1ebc773d6",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Comando Sur reporta operación contra presunta narcolancha en el Pacífico Oriental",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "fe5140a5778c",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "Exportaciones marítimas de petróleo de Venezuela crecieron 144% en el primer semestre de 2026",
+      "fuente_url": "https://www.elnacional.com/2026/06/exportaciones-maritimas-de-petroleo-de-venezuela-crecieron-un-144-en-2026-segun-bloomberg/"
+    },
+    {
+      "hash": "b74bfde4be0d",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "RepsoI y PDVSA habrían firmado un nuevo acuerdo petrolero",
+      "fuente_url": "https://www.facebook.com/teleSUR/videos/petr%C3%B3leos-de-venezuela-sa-pdvsa-y-la-empresa-espa%C3%B1ola-repsol-firmaron-un-nuevo-a/2561365617648662/"
+    },
+    {
+      "hash": "35b434d281ee",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "Reporte periodístico indica un repunte de exportaciones petroleras venezolanas en 2026",
+      "fuente_url": "https://lapatilla.com/2026/06/20/bloomberg-asi-crecieron-las-exportaciones-de-petroleo-de-venezuela-tras-la-captura-de-maduro/"
+    },
+    {
+      "hash": "21f9c7f1e4b5",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Sin hallazgos verificables dentro de las últimas 24 horas",
+      "fuente_url": ""
+    },
+    {
+      "hash": "e3004dda3709",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Cierre de un acuerdo político en Caracas entre el oficialismo y la oposición de 2015",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "c5a6e3e366bf",
+      "actor": "GOB5",
+      "alert_level": "A2",
+      "titulo_corto": "American Airlines retomaría vuelos a Maracaibo en julio",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "5223a7c32917",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "EE. UU. ejecuta nueva operación militar contra una narcolancha en el Pacífico Oriental",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "4b22e4c27169",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "Cobertura internacional destaca alto el fuego Israel-Hezbolá y su impacto regional",
+      "fuente_url": "https://es-us.noticias.yahoo.com/noticias-20-junio-2026-tarde-160023227.html"
+    },
+    {
+      "hash": "ddf4c1d92dba",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "OFAC flexibiliza sanciones a Venezuela y emite nuevas licencias a PDBESA y Conviaza",
+      "fuente_url": "https://www.youtube.com/watch?v=bacmuKe-nCA"
+    },
+    {
+      "hash": "bf93231356c0",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Héctor Guerrero (Niño Guerrero), líder de Tren de Aragua, abatido en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "591f32655f08",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "American Airlines retoma vuelos a Maracaibo desde julio",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "40a9ca4fde54",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Dinorah Figuera (opositora) llega a Venezuela con nuevos ministros",
+      "fuente_url": "https://www.prensa-latina.cu/2026/06/20/llegada-de-opositora-y-nuevos-ministros-en-semana-de-venezuela/"
+    },
+    {
+      "hash": "a3b69f6f0d44",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Washington condiciona la transición venezolana a una nueva instancia de diálogo",
+      "fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    {
+      "hash": "a150cbac234b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Se reporta que el Departamento de Estado mantiene a Venezuela en Nivel 3 de viaje",
+      "fuente_url": "https://theelnews.org/2026/06/20/opinion-el-informe-alvarez-junio-20-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "2f435f69ef77",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "BCV reportó dólar oficial en 607,3919 bolívares por dólar",
+      "fuente_url": "https://finanzasdigital.com"
+    },
+    {
+      "hash": "aef2bc31ec7e",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "BCV elevó el dólar oficial por encima de los 600 bolívares",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/-iniciamos-este-jueves-18-de-junio-de-2026-con1-el-banco-central-/1568471324622732/?locale=is_IS"
+    },
+    {
+      "hash": "edd361176d1e",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Precio del crudo Merey se ubicó alrededor de 73,45 dólares por barril",
+      "fuente_url": "https://www.instagram.com/reel/DZtOAg3EeKF/"
+    },
+    {
+      "hash": "ef4d68fff3e8",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Instalan mesa técnica y política paritaria entre oficialismo y oposición",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "43bdb916e492",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Zulia restringe el tránsito fronterizo y refuerza controles migratorios",
+      "fuente_url": "https://www.youtube.com/watch?v=l7IKbq5aSpQ"
+    },
+    {
+      "hash": "03fe5802ac5b",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venevisión difunde afirmación sobre supuesto abatimiento de líder del Tren de Aragua",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "bf93231356c0",
+      "actor": "",
+      "titulo": "Héctor Guerrero (Niño Guerrero), líder de Tren de Aragua, abatido en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "03fe5802ac5b",
+      "actor": "",
+      "titulo": "Venevisión difunde afirmación sobre supuesto abatimiento de líder del Tren de Aragua",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 6
+}
