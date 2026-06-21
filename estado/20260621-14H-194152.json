@@ -1,0 +1,217 @@
+{
+  "version": "1.0",
+  "correlativo": "20260621-14H-194152",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-21T19:47:29.200456+00:00",
+  "rango_inicio": "2026-06-20T19:41:52.126869+00:00",
+  "rango_fin": "2026-06-21T19:41:52.126869+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 1,
+    "A3": 7,
+    "A2": 6,
+    "A1": 1,
+    "A0": 1,
+    "total": 16
+  },
+  "actores_activos": {
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Asamblea Nacional y oposición sostuvieron reunión de trabajo en el Palacio Federal Legislativo",
+      "ultima_fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-ven/1525308736304824/"
+    },
+    "P5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Se reporta que las exportaciones petroleras venezolanas se duplicaron en el primer semestre de 2026",
+      "ultima_fuente_url": "https://impactove.com/las-exportaciones-petroleras-de-venezuela-se-duplicaron-en-el-primer-semestre-del-2026"
+    },
+    "INT3": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Cierre temporal de frontera Colombia-Venezuela con canal humanitario",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=G8MRY5qYqfU"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Venevisión afirma que EE. UU. confirmó muerte de alias 'Niño Guerrero' en Bolívar",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    "P2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Central News HN destaca respaldo de EE.UU. al diálogo con la Asamblea Nacional de 2015",
+      "ultima_fuente_url": "https://centralnewshn.com/2026/06/21/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Resumen semanal de Venezuela incluye aplazamientos judiciales y retorno de opositora",
+      "ultima_fuente_url": "https://eldiario.com/2026/06/21/resumen-noticias-venezuela-semana-domingo-21-junio/"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Brecha cambiaria y caída de ventas en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=G8MRY5qYqfU"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "INST5",
+    "INT2"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "e3830e9a66df",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "EEUU reúne al chavismo y a la oposición para acelerar negociaciones en Venezuela",
+      "fuente_url": "https://www.elfinanciero.com.mx/mundo/2026/06/19/venezuela-hacia-la-transicion-en-2026-eu-reune-al-chavismo-y-a-la-oposicion-para-acelerar-negociaciones/"
+    },
+    {
+      "hash": "70598f20dc32",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Opositor Antonio Ecarri celebra negociación respaldada por EEUU para transición",
+      "fuente_url": "https://holanews.com/opositor-celebra-negociacion-respaldada-por-estados-unidos-para-transicion-en-venezuela/"
+    },
+    {
+      "hash": "e368277e9b4f",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional y oposición sostuvieron reunión de trabajo en el Palacio Federal Legislativo",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/comunicado-este-18-de-junio-de-2026-el-presidente-de-la-asamblea-nacional-de-ven/1525308736304824/"
+    },
+    {
+      "hash": "7ebd84f3c549",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "Resumen semanal en Venezuela menciona aplazamiento de audiencia de Maduro y Cilia Flores",
+      "fuente_url": "https://eldiario.com/2026/06/21/resumen-noticias-venezuela-semana-domingo-21-junio/"
+    },
+    {
+      "hash": "c6a565c02e95",
+      "actor": "INT3",
+      "alert_level": "A3",
+      "titulo_corto": "Cobertura televisiva reporta cierre temporal de frontera Colombia-Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=G8MRY5qYqfU"
+    },
+    {
+      "hash": "e539724cbacf",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Venevisión afirma que EE. UU. confirmó muerte de alias 'Niño Guerrero' en Bolívar",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "219726470110",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura de fin de semana en Venevisión menciona presión política, frontera con Colombia y segurida",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "eb2c59832bcb",
+      "actor": "P2",
+      "alert_level": "A2",
+      "titulo_corto": "Central News HN destaca respaldo de EE.UU. al diálogo con la Asamblea Nacional de 2015",
+      "fuente_url": "https://centralnewshn.com/2026/06/21/"
+    },
+    {
+      "hash": "4c6bc2b28e4c",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "ElDiario.com publica resumen semanal sobre Venezuela con énfasis en audiencias y reacomodos opositor",
+      "fuente_url": "https://eldiario.com/2026/06/21/resumen-noticias-venezuela-semana-domingo-21-junio/"
+    },
+    {
+      "hash": "fbce98d545a9",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venevisión reporta afirmación sobre abatimiento de alias 'Niño Guerrero' en Bolívar",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    },
+    {
+      "hash": "0814461c82c1",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones marítimas de petróleo venezolano crecieron 144% en el primer semestre de 2026",
+      "fuente_url": "https://curadas.com/2026/06/21/el-renacer-del-crudo-exportaciones-de-petroleo-de-venezuela-se-disparan-144/"
+    },
+    {
+      "hash": "3199071fc020",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "Se reporta que las exportaciones petroleras venezolanas se duplicaron en el primer semestre de 2026",
+      "fuente_url": "https://impactove.com/las-exportaciones-petroleras-de-venezuela-se-duplicaron-en-el-primer-semestre-del-2026"
+    },
+    {
+      "hash": "1de36d531bfc",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "No se verificaron comunicados oficiales nuevos de PDVSA, OPEP, IEA, EIA o OFAC dentro de la ventana ",
+      "fuente_url": "https://www.facebook.com/noticierovv/posts/-iniciamos-este-mi%C3%A9rcoles-17-de-junio-de-2026-con1-desde-el-palacio-de-miraflores/1477935381037727/"
+    },
+    {
+      "hash": "2590d8afec3b",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Resumen semanal de Venezuela incluye aplazamientos judiciales y retorno de opositora",
+      "fuente_url": "https://eldiario.com/2026/06/21/resumen-noticias-venezuela-semana-domingo-21-junio/"
+    },
+    {
+      "hash": "2cce261fcacc",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Brecha cambiaria y caída de ventas en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=G8MRY5qYqfU"
+    },
+    {
+      "hash": "49ef63cc3d81",
+      "actor": "INT3",
+      "alert_level": "A3",
+      "titulo_corto": "Cierre temporal de frontera Colombia-Venezuela con canal humanitario",
+      "fuente_url": "https://www.youtube.com/watch?v=G8MRY5qYqfU"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "e539724cbacf",
+      "actor": "INT1",
+      "titulo": "Venevisión afirma que EE. UU. confirmó muerte de alias 'Niño Guerrero' en Bolívar",
+      "fuente_url": "https://www.youtube.com/watch?v=2ycEvy4hFWE"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
