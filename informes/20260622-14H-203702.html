@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260622-14H-203702</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260622-14H-203702</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-21T20:37:02.910845+00:00 → 2026-06-22T20:37:02.910845+00:00<br>
+    <strong>Generado:</strong> 2026-06-22 20:44 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 3 A3</span>
+    <span class="stat-pill">🟡 7 A2</span>
+    <span class="stat-pill">📊 18 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día clasificado como ALTO, sin hallazgos críticos (A4) y tres de nivel A3, según corte del informe.
+2. La Asamblea Nacional anunció sesión especial con consejos legislativos por el Bicentenario del Congreso Anfictiónico, confirmando actividad legislativa oficial.
+3. Diálogo entre EE.UU. e Irán concluyó positivamente en Suiza, con conversaciones técnicas programadas para continuar en Venezuela esta semana.
+4. PDVSA registró ingresos facturados por $9.400 millones en los primeros cinco meses de 2026, según boletín de Polianalítica.
+5. Fuentes oficiales citadas incluyen Asamblea Nacional de Venezuela, CNN en Español y Polianalítica. No se reportan datos no verificados.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260621-14H-211535</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-desescalada">
+  <strong>⬇️ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[DESESCALADA]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (18):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: EE.UU. e Irán concluyen diálogo positivo en Suiza con continuidad técnica <a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Asamblea Nacional y consejos legislativos celebrarán sesión especial por el Bicentenario del Congreso Anfictiónico <a href="https://www.asambleanacional.gob.ve/noticias/an-y-consejos-legislativos-celebraran-sesion-especial-por-bicentenario-del-congreso-anfictionico" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>PDVSA</strong>: PDVSA acumula $9.400 millones en ingresos facturados durante cinco meses de 2026 <a href="https://www.polianalitica.com/boletines/5042/boletin-informativo-polianalitica-lunes-22-de-junio-de-2026-800-am" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Oposición venezolana felicita a De la Espriella tras elección en Colombia <a href="https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Edmundo González Urrutia</strong>: El País reporta que Washington marca el ritmo de la transición en Venezuela <a href="https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Banco Central de Venezuela</strong>: Leve aumento en la cotización del dólar en Venezuela <a href="https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: PUD felicitó a Abelardo De la Espriella tras la elección presidencial en Colombia <a href="https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Gustavo Petro</strong>: Elecciones en Colombia: Abelardo de la Espriella se perfila como vencedor <a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Suministro de gasolina restringido para lunes 22 de junio 2026: solo placas 8 <a href="https://www.instagram.com/p/DZ28iIjmvTw/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: CNN en Español resume agenda regional con foco en Colombia y EE.UU.-Irán <a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB3</code> (Jorge Rodríguez), <code>INST4</code> (Banco Central de Venezuela), <code>INST5</code> (PDVSA), <code>INT3</code> (Gustavo Petro), <code>INT4</code> (Unión Europea), <code>P2</code> (Edmundo González Urrutia), <code>P5</code> (Andrés Velásquez)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>10 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>4 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>4 cortes sin actividad</strong></li><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 1</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela envía condolencias por fallecimiento de Ramiro Valdés</h3>
+  <p class="fact-summary">Venezuela envió condolencias oficiales tras el fallecimiento del comandante cubano Ramiro Valdés</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Ramiro Valdés</li><li>Cuba</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida en múltiples plataformas sin confirmación oficial del gobierno cubano</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleza alineación política histórica con Cuba, pero no genera nuevas políticas o acciones</div>
+  <div class="enlaces"><a href="https://pueblocombatiente.wordpress.com/2026/06/22/resumen-de-noticias-de-venezuela-22-06-2026/" target="_blank" rel="noopener">📰 Pueblo Combatiente</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Registro OPSU 2026 inicia el proceso digital de ingreso universitario</h3>
+  <p class="fact-summary">El portal del sistema de ingreso universitario de la OPSU abrió el registro digital para aspirantes y publicó instrucciones de gestión de usuario, carga de datos y validación final.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede afectar el acceso a cupos universitarios y la coordinación institucional del sistema de admisión, pero no sugiere una crisis o cambio estratégico.</div>
+  <div class="enlaces"><a href="https://contrapunto.com/nacional/educacion/registro-opsu-2026-inicia-el-proceso-digital-de-ingreso-universitario-en-venezuela/" target="_blank" rel="noopener">📰 Contrapunto</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>El País reporta que Washington marca el ritmo de la transición en Venezuela</h3>
+  <p class="fact-summary">El País publicó el 20 de junio de 2026 un análisis sobre el papel de Washington en la transición venezolana y la reactivación de interlocutores opositores.</p>
+  <p class="info-actor"><strong>P2</strong> — Edmundo González Urrutia <em>(Candidato presidencial 2024 reconocido por sectores opositores)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 19/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Señala cómo actores opositores y externos estarían influyendo en la agenda de transición, un tema central para monitoreo político venezolano.</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html" target="_blank" rel="noopener">📰 EL PAÍS</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>EE.UU. e Irán concluyen diálogo positivo en Suiza con continuidad técnica</h3>
+  <p class="fact-summary">El diálogo entre EE.UU. e Irán concluyó de manera positiva en Suiza el domingo 21 de junio, con conversaciones técnicas programadas para continuar durante la semana en Venezuela</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-21</li><li>Suiza</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura mediática secundaria; requiere confirmación oficial de ambos gobiernos</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede influir en sanciones energéticas y dinámicas de petróleo en el mercado global, afectando indirectamente a PDVSA</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>CNN en Español resume agenda regional con foco en Colombia y EE.UU.-Irán</h3>
+  <p class="fact-summary">CNN en Español publicó una pieza de &#x27;5 cosas&#x27; del 22 de junio que incluye las elecciones en Colombia y la continuación del diálogo entre EE.UU. e Irán en Suiza.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como termómetro regional de cobertura internacional relevante para Venezuela por el peso de Colombia y la dinámica de EE.UU. en la agenda hemisférica.</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Elecciones en Colombia: Abelardo de la Espriella se perfila como vencedor</h3>
+  <p class="fact-summary">Datos de preconteo indican que Abelardo de la Espriella se perfila como vencedor en las elecciones colombianas</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Abelardo de la Espriella</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura mediática; requiere confirmación oficial de la comisión electoral colombiana</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> El nuevo gobierno colombiano puede modificar relaciones diplomáticas y energéticas con Venezuela, afectando flujos de petróleo</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a> · <a href="https://web.archive.org/web/20260622204227/https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura de Euronews sobre noticias internacionales del día</h3>
+  <p class="fact-summary">Euronews publicó un video-resumen del 22 de junio con las principales noticias de Europa y el mundo, pero el extracto disponible no detalla hechos específicos sobre Venezuela.</p>
+  <p class="info-actor"><strong>INT4</strong> — Unión Europea <em>(Política exterior comunitaria europea)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aporta contexto sobre la agenda europea e internacional del día, útil para detectar posibles cruces con sanciones, energía o diplomacia sobre Venezuela.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/06/22/ultimas-noticias-22-junio-2026-mediodia" target="_blank" rel="noopener">📰 Euronews</a> · <a href="https://web.archive.org/web/20260622204008/https://es.euronews.com/video/2026/06/22/ultimas-noticias-22-junio-2026-mediodia" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA acumula $9.400 millones en ingresos facturados durante cinco meses de 2026</h3>
+  <p class="fact-summary">Los ingresos facturados por PDVSA registran un acumulado de $9.400 millones en cinco meses de 2026, según boletín oficial de Polianalítica.</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 04:00 VET</p>
+  <ul class="data-points"><li>9400 USD millones</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica continuidad operativa y capacidad de facturación de PDVSA en 2026, relevante para análisis de estabilidad petrolera nacional.</div>
+  <div class="enlaces"><a href="https://www.polianalitica.com/boletines/5042/boletin-informativo-polianalitica-lunes-22-de-junio-de-2026-800-am" target="_blank" rel="noopener">📰 Polianalítica</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Suministro de gasolina restringido para lunes 22 de junio 2026: solo placas 8</h3>
+  <p class="fact-summary">Diario El Progreso News anuncia que el suministro de gasolina para el lunes 22 de junio de 2026 estará limitado solo a vehículos con placas 8.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 20/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>8 placas</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja restricciones en acceso a combustible, indicador de posible presión en inventarios o decisiones de distribución.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZ28iIjmvTw/" target="_blank" rel="noopener">📰 Diario El Progreso News</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Leve aumento en la cotización del dólar en Venezuela</h3>
+  <p class="fact-summary">Se registró un incremento moderado en las cotizaciones del dólar y otras divisas en Venezuela el 22 de junio de 2026</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Leve aumento en cotizaciones</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida sin confirmación primaria de fuente oficial; en observación</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento en el precio del dólar puede impactar la inflación, el costo de importaciones y la percepción de estabilidad económica</div>
+  <div class="enlaces"><a href="https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/" target="_blank" rel="noopener">📰 Caracol Radio</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Diario El Progreso destaca reordenamiento del sector minero no metálico en Cedeño</h3>
+  <p class="fact-summary">Un titular regional difundido por Diario El Progreso señala un impulso al reordenamiento del sector minero no metálico en el municipio Cedeño.</p>
+  <p class="info-actor">Diario El Progreso</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede reflejar actividad sectorial en minería no metálica, pero la fuente disponible es solo un titular sin detalle verificable adicional.</div>
+  <div class="enlaces"><a href="https://diarioelprogresonews.com/blogs/noticas-de-venezuela/titulares-diario-el-progreso-edicion-lunes-22-de-junio-de-2026" target="_blank" rel="noopener">📰 Diario El Progreso News</a> · <a href="https://web.archive.org/web/20260622203751/https://diarioelprogresonews.com/blogs/noticas-de-venezuela/titulares-diario-el-progreso-edicion-lunes-22-de-junio-de-2026" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>BCV fija la tasa oficial del dólar para el 22 de junio de 2026</h3>
+  <p class="fact-summary">La tasa de cambio oficial del BCV para el dólar se ubicó en 612,4332 bolívares por dólar, con un alza diaria de 0,83% respecto a la jornada previa.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>612,4332 Bs/USD</li><li>+5,0413 Bs</li><li>+0,83%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como referencia diaria para precios, pagos y cálculos financieros en Venezuela, y es un indicador relevante de seguimiento macroeconómico.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-bcv-22-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://puntodecorte.net/tasa-oficial-del-dolar-en-venzuela-para-este-22jun/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>BCV publica cotización oficial del euro para el 22 de junio de 2026</h3>
+  <p class="fact-summary">La cotización oficial del euro fue reportada en 702,42 bolívares por euro para el 22 de junio de 2026.</p>
+  <p class="info-actor"><strong>P5</strong> — Andrés Velásquez <em>(Dirigente sindical / La Causa R)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>702,42 Bs/EUR</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La referencia del euro afecta importaciones, contabilidad en moneda extranjera y formación de precios en sectores con exposición cambiaria.</div>
+  <div class="enlaces"><a href="https://puntodecorte.net/tasa-oficial-del-dolar-en-venzuela-para-este-22jun/" target="_blank" rel="noopener">📰 Punto de Corte</a> · <a href="https://noticias24carabobo.com/precio-del-dolar-bcv-22-de-junio-de-2026-y-los-indicadores/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>EE.UU. e Irán concluyen diálogo positivo en Suiza con continuidad técnica</h3>
+  <p class="fact-summary">El diálogo entre EE.UU. e Irán concluyó de manera positiva en Suiza el domingo 21 de junio, con conversaciones técnicas programadas para continuar durante la semana en Venezuela</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-21</li><li>Suiza</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura mediática secundaria; requiere confirmación oficial de ambos gobiernos</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede influir en sanciones energéticas y dinámicas de petróleo en el mercado global, afectando indirectamente a PDVSA</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Elecciones en Colombia: Abelardo de la Espriella se perfila como vencedor</h3>
+  <p class="fact-summary">Datos de preconteo indican que Abelardo de la Espriella se perfila como vencedor en las elecciones colombianas</p>
+  <p class="info-actor"><strong>INT3</strong> — Gustavo Petro <em>(Presidente de Colombia)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Abelardo de la Espriella</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura mediática; requiere confirmación oficial de la comisión electoral colombiana</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> El nuevo gobierno colombiano puede modificar relaciones diplomáticas y energéticas con Venezuela, afectando flujos de petróleo</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a> · <a href="https://web.archive.org/web/20260622204227/https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Leve aumento en la cotización del dólar en Venezuela</h3>
+  <p class="fact-summary">Se registró un incremento moderado en las cotizaciones del dólar y otras divisas en Venezuela el 22 de junio de 2026</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Leve aumento en cotizaciones</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida sin confirmación primaria de fuente oficial; en observación</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento en el precio del dólar puede impactar la inflación, el costo de importaciones y la percepción de estabilidad económica</div>
+  <div class="enlaces"><a href="https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/" target="_blank" rel="noopener">📰 Caracol Radio</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela envía condolencias por fallecimiento de Ramiro Valdés</h3>
+  <p class="fact-summary">Venezuela envió condolencias oficiales tras el fallecimiento del comandante cubano Ramiro Valdés</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Ramiro Valdés</li><li>Cuba</li></ul>
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Señal repetida en múltiples plataformas sin confirmación oficial del gobierno cubano</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleza alineación política histórica con Cuba, pero no genera nuevas políticas o acciones</div>
+  <div class="enlaces"><a href="https://pueblocombatiente.wordpress.com/2026/06/22/resumen-de-noticias-de-venezuela-22-06-2026/" target="_blank" rel="noopener">📰 Pueblo Combatiente</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 Sesión especial de la Asamblea Nacional y consejos legislativos (hoy) — Posible anuncio de acuerdos institucionales o mensajes políticos clave en marco del Bicentenario, con impacto en estabilidad legislativa y relaciones interinstitucionales.
+
+2. 🟠 Diálogos técnicos EE.UU.-Irán en Venezuela (esta semana) — Continuación de negociaciones podría afectar sanciones energéticas globales y condiciones operativas de PDVSA, con riesgo de volatilidad en mercados petroleros.
+
+3. 🟡 Ingresos facturados por PDVSA ($9.400M en 5 meses de 2026) — Datos confirman capacidad de facturación, pero no detallan liquidez real ni destino de fondos; requiere seguimiento a boletines posteriores para evaluar sostenibilidad.
+
+4. 🔴 Silencio de Diosdado Cabello (GOB2) — Ausencia de actividad pública del actor clave en contexto de sesión legislativa y negociaciones internacionales sugiere posible alineación estratégica no comunicada o discreción en temas sensibles.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(10)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Yahoo Noticias / Agencia EFE</td><td><a href="https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html" target="_blank" rel="noopener">https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html</a></td><td>2026-06-22</td></tr><tr><td>Diario El Progreso News</td><td><a href="https://diarioelprogresonews.com/blogs/noticas-de-venezuela/titulares-diario-el-progreso-edicion-lunes-22-de-junio-de-2026" target="_blank" rel="noopener">https://diarioelprogresonews.com/blogs/noticas-de-venezuela/titulares-diario-el-progreso-edicion-lunes-22-de-junio-de-2026</a></td><td></td></tr><tr><td>EL PAÍS</td><td><a href="https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html" target="_blank" rel="noopener">https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html</a></td><td>2026-06-20</td></tr><tr><td>elDiario.com</td><td><a href="https://eldiario.com/2026/06/22/transicion-americana-los-votos-no-estan-decidiendo-futuro-venezuela/" target="_blank" rel="noopener">https://eldiario.com/2026/06/22/transicion-americana-los-votos-no-estan-decidiendo-futuro-venezuela/</a></td><td>2026-06-22</td></tr><tr><td>CNN en Español</td><td><a href="https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix" target="_blank" rel="noopener">https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix</a></td><td>2026-06-22</td></tr><tr><td>Euronews</td><td><a href="https://es.euronews.com/video/2026/06/22/ultimas-noticias-22-junio-2026-mediodia" target="_blank" rel="noopener">https://es.euronews.com/video/2026/06/22/ultimas-noticias-22-junio-2026-mediodia</a></td><td>2026-06-22</td></tr><tr><td>Caracol Radio</td><td><a href="https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/" target="_blank" rel="noopener">https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/</a></td><td>2026-06-22</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-bcv-22-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-bcv-22-junio-2026/</a></td><td></td></tr><tr><td>Punto de Corte</td><td><a href="https://puntodecorte.net/tasa-oficial-del-dolar-en-venzuela-para-este-22jun/" target="_blank" rel="noopener">https://puntodecorte.net/tasa-oficial-del-dolar-en-venzuela-para-este-22jun/</a></td><td></td></tr><tr><td>Contrapunto</td><td><a href="https://contrapunto.com/nacional/educacion/registro-opsu-2026-inicia-el-proceso-digital-de-ingreso-universitario-en-venezuela/" target="_blank" rel="noopener">https://contrapunto.com/nacional/educacion/registro-opsu-2026-inicia-el-proceso-digital-de-ingreso-universitario-en-venezuela/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Asamblea Nacional de Venezuela</td><td><a href="https://www.asambleanacional.gob.ve/noticias/an-y-consejos-legislativos-celebraran-sesion-especial-por-bicentenario-del-congreso-anfictionico" target="_blank" rel="noopener">https://www.asambleanacional.gob.ve/noticias/an-y-consejos-legislativos-celebraran-sesion-especial-por-bicentenario-del-congreso-anfictionico</a></td><td>2026-06-22</td></tr><tr><td>Polianalítica</td><td><a href="https://www.polianalitica.com/boletines/5042/boletin-informativo-polianalitica-lunes-22-de-junio-de-2026-800-am" target="_blank" rel="noopener">https://www.polianalitica.com/boletines/5042/boletin-informativo-polianalitica-lunes-22-de-junio-de-2026-800-am</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZ48wOqltJk/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ48wOqltJk/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Diario El Progreso News</td><td><a href="https://www.instagram.com/p/DZ28iIjmvTw/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ28iIjmvTw/</a></td><td>2026-06-21</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> Actor opositor <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Pueblo Combatiente</td><td><a href="https://pueblocombatiente.wordpress.com/2026/06/22/resumen-de-noticias-de-venezuela-22-06-2026/" target="_blank" rel="noopener">https://pueblocombatiente.wordpress.com/2026/06/22/resumen-de-noticias-de-venezuela-22-06-2026/</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-22</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
