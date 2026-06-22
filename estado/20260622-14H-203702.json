@@ -1,0 +1,248 @@
+{
+  "version": "1.0",
+  "correlativo": "20260622-14H-203702",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-22T20:44:39.743989+00:00",
+  "rango_inicio": "2026-06-21T20:37:02.910845+00:00",
+  "rango_fin": "2026-06-22T20:37:02.910845+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 3,
+    "A2": 7,
+    "A1": 4,
+    "A0": 4,
+    "total": 18
+  },
+  "actores_activos": {
+    "P2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "El País reporta que Washington marca el ritmo de la transición en Venezuela",
+      "ultima_fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Asamblea Nacional y consejos legislativos celebrarán sesión especial por el Bicentenario del Congres",
+      "ultima_fuente_url": "https://www.asambleanacional.gob.ve/noticias/an-y-consejos-legislativos-celebraran-sesion-especial-por-bicentenario-del-congreso-anfictionico"
+    },
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "EE.UU. e Irán concluyen diálogo positivo en Suiza con continuidad técnica",
+      "ultima_fuente_url": "https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Cobertura de Euronews sobre noticias internacionales del día",
+      "ultima_fuente_url": "https://es.euronews.com/video/2026/06/22/ultimas-noticias-22-junio-2026-mediodia"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "PDVSA acumula $9.400 millones en ingresos facturados durante cinco meses de 2026",
+      "ultima_fuente_url": "https://www.polianalitica.com/boletines/5042/boletin-informativo-polianalitica-lunes-22-de-junio-de-2026-800-am"
+    },
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Venezuela envía condolencias por fallecimiento de Ramiro Valdés",
+      "ultima_fuente_url": "https://pueblocombatiente.wordpress.com/2026/06/22/resumen-de-noticias-de-venezuela-22-06-2026/"
+    },
+    "INT3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Elecciones en Colombia: Abelardo de la Espriella se perfila como vencedor",
+      "ultima_fuente_url": "https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Leve aumento en la cotización del dólar en Venezuela",
+      "ultima_fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    },
+    "P5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A0",
+      "alert_levels": [
+        "A0",
+        "A0"
+      ],
+      "ultimo_titulo": "BCV publica cotización oficial del euro para el 22 de junio de 2026",
+      "ultima_fuente_url": "https://puntodecorte.net/tasa-oficial-del-dolar-en-venzuela-para-este-22jun/"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A0",
+      "alert_levels": [
+        "A0"
+      ],
+      "ultimo_titulo": "Registro OPSU 2026 inicia el proceso digital de ingreso universitario",
+      "ultima_fuente_url": "https://contrapunto.com/nacional/educacion/registro-opsu-2026-inicia-el-proceso-digital-de-ingreso-universitario-en-venezuela/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "P1",
+    "INT2"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "12902dd1153a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Oposición venezolana felicita a De la Espriella tras elección en Colombia",
+      "fuente_url": "https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html"
+    },
+    {
+      "hash": "69f93e944686",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Embajada de Japón en Venezuela cerrará por feriado venezolano el 24 de junio",
+      "fuente_url": "https://www.instagram.com/p/DZ48wOqltJk/"
+    },
+    {
+      "hash": "277ab2efc3c4",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Diario El Progreso destaca reordenamiento del sector minero no metálico en Cedeño",
+      "fuente_url": "https://diarioelprogresonews.com/blogs/noticas-de-venezuela/titulares-diario-el-progreso-edicion-lunes-22-de-junio-de-2026"
+    },
+    {
+      "hash": "71a8c8323744",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "PUD felicitó a Abelardo De la Espriella tras la elección presidencial en Colombia",
+      "fuente_url": "https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html"
+    },
+    {
+      "hash": "3db3a6c4b704",
+      "actor": "P2",
+      "alert_level": "A2",
+      "titulo_corto": "El País reporta que Washington marca el ritmo de la transición en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    {
+      "hash": "d72f12f8ae5b",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "ElDiario.com publica análisis sobre la transición venezolana y el peso de los votos",
+      "fuente_url": "https://eldiario.com/2026/06/22/transicion-americana-los-votos-no-estan-decidiendo-futuro-venezuela/"
+    },
+    {
+      "hash": "213927da86ab",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional y consejos legislativos celebrarán sesión especial por el Bicentenario del Congres",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/an-y-consejos-legislativos-celebraran-sesion-especial-por-bicentenario-del-congreso-anfictionico"
+    },
+    {
+      "hash": "b736666cf2d2",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "CNN en Español resume agenda regional con foco en Colombia y EE.UU.-Irán",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix"
+    },
+    {
+      "hash": "0150339b0542",
+      "actor": "INT4",
+      "alert_level": "A1",
+      "titulo_corto": "Cobertura de Euronews sobre noticias internacionales del día",
+      "fuente_url": "https://es.euronews.com/video/2026/06/22/ultimas-noticias-22-junio-2026-mediodia"
+    },
+    {
+      "hash": "51e9792767d1",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA acumula $9.400 millones en ingresos facturados durante cinco meses de 2026",
+      "fuente_url": "https://www.polianalitica.com/boletines/5042/boletin-informativo-polianalitica-lunes-22-de-junio-de-2026-800-am"
+    },
+    {
+      "hash": "f6f5a92fb313",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Suministro de gasolina restringido para lunes 22 de junio 2026: solo placas 8",
+      "fuente_url": "https://www.instagram.com/p/DZ28iIjmvTw/"
+    },
+    {
+      "hash": "9f571066a709",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "EE.UU. e Irán concluyen diálogo positivo en Suiza con continuidad técnica",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix"
+    },
+    {
+      "hash": "66747f379332",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela envía condolencias por fallecimiento de Ramiro Valdés",
+      "fuente_url": "https://pueblocombatiente.wordpress.com/2026/06/22/resumen-de-noticias-de-venezuela-22-06-2026/"
+    },
+    {
+      "hash": "a2766437d117",
+      "actor": "INT3",
+      "alert_level": "A2",
+      "titulo_corto": "Elecciones en Colombia: Abelardo de la Espriella se perfila como vencedor",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/22/mundo/5-cosas-22-junio-2026-orix"
+    },
+    {
+      "hash": "704b65f3c799",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Leve aumento en la cotización del dólar en Venezuela",
+      "fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    },
+    {
+      "hash": "6d8acd2f2e93",
+      "actor": "P5",
+      "alert_level": "A0",
+      "titulo_corto": "BCV fija la tasa oficial del dólar para el 22 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-bcv-22-junio-2026/"
+    },
+    {
+      "hash": "f97b8661ff02",
+      "actor": "P5",
+      "alert_level": "A0",
+      "titulo_corto": "BCV publica cotización oficial del euro para el 22 de junio de 2026",
+      "fuente_url": "https://puntodecorte.net/tasa-oficial-del-dolar-en-venzuela-para-este-22jun/"
+    },
+    {
+      "hash": "26be93b9746e",
+      "actor": "GOB3",
+      "alert_level": "A0",
+      "titulo_corto": "Registro OPSU 2026 inicia el proceso digital de ingreso universitario",
+      "fuente_url": "https://contrapunto.com/nacional/educacion/registro-opsu-2026-inicia-el-proceso-digital-de-ingreso-universitario-en-venezuela/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 4
+}
