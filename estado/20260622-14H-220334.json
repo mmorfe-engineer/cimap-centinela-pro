@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "correlativo": "20260622-14H-220334",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-22T22:10:36.282304+00:00",
+  "rango_inicio": "2026-06-21T22:03:34.394126+00:00",
+  "rango_fin": "2026-06-22T22:03:34.394126+00:00",
+  "estado_general": "MEDIO",
+  "contadores": {
+    "A4": 0,
+    "A3": 1,
+    "A2": 10,
+    "A1": 1,
+    "A0": 1,
+    "total": 13
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Podcasts jurídicos en EE. UU. vuelven a poner el foco en la política de Washington sobre Venezuela",
+      "ultima_fuente_url": "https://www.jdsupra.com/legalnews/podcast-white-house-policy-and-the-con-27074/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Cobertura internacional sobre un supuesto giro político en Venezuela vinculado a Delcy Rodríguez",
+      "ultima_fuente_url": "https://www.barrons.com/news/maduro-ouster-put-venezuela-on-the-right-path-interim-leader-30fb6783"
+    },
+    "INST1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A0",
+        "A2",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Publicación de hoy informa dólar BCV en 612,4332 y euro en 698,22 bolívares",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZtKJodmIGT/"
+    },
+    "GOB1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Colombia reabre los pasos fronterizos con Venezuela tras operativo de seguridad",
+      "ultima_fuente_url": "https://reporteconfidencial.info/2026/06/22/colombia-transito-fronterizo/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "1138d8217d0b",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela Energy Week 2026 lanza un “Deal Room” para atraer inversión energética",
+      "fuente_url": "https://www.einpresswire.com/article/921329893/venezuela-energy-week-2026-launches-high-impact-deal-room-to-accelerate-energy-investment-and-transactions"
+    },
+    {
+      "hash": "a6707d0316b9",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Podcasts jurídicos en EE. UU. vuelven a poner el foco en la política de Washington sobre Venezuela",
+      "fuente_url": "https://www.jdsupra.com/legalnews/podcast-white-house-policy-and-the-con-27074/"
+    },
+    {
+      "hash": "a32f56780fa2",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Cobertura internacional sobre un supuesto giro político en Venezuela vinculado a Delcy Rodríguez",
+      "fuente_url": "https://www.barrons.com/news/maduro-ouster-put-venezuela-on-the-right-path-interim-leader-30fb6783"
+    },
+    {
+      "hash": "b2fb963b432f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "121 ciudadanos venezolanos regresan a Venezuela desde Miami",
+      "fuente_url": "https://www.instagram.com/p/DZ5luM7lhbR/"
+    },
+    {
+      "hash": "5618e924fa02",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "El dólar se cotiza a 612,43 bolívares en Venezuela según BCV",
+      "fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    },
+    {
+      "hash": "a82eaf2c07ea",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "BCV fija la tasa de referencia en Bs 612,4332 por dólar",
+      "fuente_url": "https://finanzasdigital.com/tasa-bcv-22-junio-2026/"
+    },
+    {
+      "hash": "b68b8520e4ff",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija el dólar oficial en 612,4332 bolívares para hoy",
+      "fuente_url": "https://www.instagram.com/p/DZtKJodmIGT/"
+    },
+    {
+      "hash": "b84fb649fef1",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "El IBC reporta una variación acumulada de 169,03% en 2026",
+      "fuente_url": "https://www.instagram.com/reel/DZ5r7Tkx5Zu/"
+    },
+    {
+      "hash": "0d4462b26faf",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Se reporta cotización del crudo Merey en 73,45 dólares por barril",
+      "fuente_url": "https://www.instagram.com/reel/DZtOAg3EeKF/"
+    },
+    {
+      "hash": "393e9996874e",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Publicación de hoy informa dólar BCV en 612,4332 y euro en 698,22 bolívares",
+      "fuente_url": "https://www.instagram.com/p/DZtKJodmIGT/"
+    },
+    {
+      "hash": "0cefcafa3f01",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Colombia reabre los pasos fronterizos con Venezuela tras operativo de seguridad",
+      "fuente_url": "https://reporteconfidencial.info/2026/06/22/colombia-transito-fronterizo/"
+    },
+    {
+      "hash": "8ff8fc81db2b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Mundo UR reporta una nueva fase de negociación política en Venezuela",
+      "fuente_url": "https://mundour.com/2026/06/22/nueva-fase-de-negociacion-en-venezuela-panorama-politico-actual-segun-periodistas/"
+    },
+    {
+      "hash": "b370bc7ecfb9",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis advierte que la estabilidad política condiciona el desarrollo petrolero venezolano",
+      "fuente_url": "https://www.abc.com.py/internacionales/2026/06/22/el-desarrollo-petrolero-en-venezuela-dependera-de-la-estabilidad-politica-segun-expertos/?outputType=amp"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
