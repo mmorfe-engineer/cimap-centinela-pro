@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260622-14H-220334</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#fbc02d;">
+    🟡 ESTADO DEL DÍA: MEDIO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260622-14H-220334</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-21T22:03:34.394126+00:00 → 2026-06-22T22:03:34.394126+00:00<br>
+    <strong>Generado:</strong> 2026-06-22 22:10 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 1 A3</span>
+    <span class="stat-pill">🟡 10 A2</span>
+    <span class="stat-pill">📊 13 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Estado general del día calificado como *medio*, sin hallazgos críticos (A4) y un solo hallazgo de relevancia alta (A3) en el corte 20260622-14H-220334.
+2. Colombia restableció el tránsito terrestre y fluvial en la frontera con Venezuela este 22 de junio, tras la restricción aplicada durante el fin de semana por el *Plan Democracia*.
+3. El anuncio sobre la reapertura fronteriza fue atribuido a Delcy Rodríguez, según fuente de *Reporte Confidencial*.
+4. La normalización del flujo en corredores binacionales podría impactar dinámicas de contrabando, migración y vigilancia en la frontera occidental venezolana.
+5. No se registraron hallazgos adicionales de nivel A2 o inferior en este informe.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260622-14H-204847</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-desescalada">
+  <strong>⬇️ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#fbc02d; font-weight:600;">🟡 MEDIO</span>
+  <span class="cambio-etiqueta">[DESESCALADA]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (13):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Colombia reabre los pasos fronterizos con Venezuela tras operativo de seguridad <a href="https://reporteconfidencial.info/2026/06/22/colombia-transito-fronterizo/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Mundo UR reporta una nueva fase de negociación política en Venezuela <a href="https://mundour.com/2026/06/22/nueva-fase-de-negociacion-en-venezuela-panorama-politico-actual-segun-periodistas/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: Podcasts jurídicos en EE. UU. vuelven a poner el foco en la política de Washington sobre Venezuela <a href="https://www.jdsupra.com/legalnews/podcast-white-house-policy-and-the-con-27074/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: BCV fija el dólar oficial en 612,4332 bolívares para hoy <a href="https://www.instagram.com/p/DZtKJodmIGT/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Análisis advierte que la estabilidad política condiciona el desarrollo petrolero venezolano <a href="https://www.abc.com.py/internacionales/2026/06/22/el-desarrollo-petrolero-en-venezuela-dependera-de-la-estabilidad-politica-segun-expertos/?outputType=amp" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: El IBC reporta una variación acumulada de 169,03% en 2026 <a href="https://www.instagram.com/reel/DZ5r7Tkx5Zu/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: Se reporta cotización del crudo Merey en 73,45 dólares por barril <a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: Publicación de hoy informa dólar BCV en 612,4332 y euro en 698,22 bolívares <a href="https://www.instagram.com/p/DZtKJodmIGT/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>María Corina Machado</strong>: Cobertura internacional sobre un supuesto giro político en Venezuela vinculado a Delcy Rodríguez <a href="https://www.barrons.com/news/maduro-ouster-put-venezuela-on-the-right-path-interim-leader-30fb6783" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: 121 ciudadanos venezolanos regresan a Venezuela desde Miami <a href="https://www.instagram.com/p/DZ5luM7lhbR/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INT1</code> (Departamento de Estado EE.UU.), <code>P1</code> (María Corina Machado)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>INST4</code> (Banco Central de Venezuela), <code>INT2</code> (OFAC / U.S. Treasury), <code>P3</code> (Henrique Capriles), <code>P5</code> (Andrés Velásquez)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>12 cortes sin actividad</strong></li><li><code>P1</code> — María Corina Machado (<em>Opositora</em>): <strong>3 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Podcasts jurídicos en EE. UU. vuelven a poner el foco en la política de Washington sobre Venezuela</h3>
+  <p class="fact-summary">Una publicación jurídica estadounidense difundió un podcast sobre el panorama político en Washington respecto a Venezuela y señaló que la señal más clara es la lentitud con la que se está moviendo el alivio de sanciones.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como indicador del tono de mercado y del sector legal sobre sanciones y política estadounidense, útil para anticipar expectativas de actores económicos.</div>
+  <div class="enlaces"><a href="https://www.jdsupra.com/legalnews/podcast-white-house-policy-and-the-con-27074/" target="_blank" rel="noopener">📰 JDSupra</a> · <a href="https://www.hklaw.com/en/insights/media-entities/2026/05/06/podcast-white-house-policy-and-the-congressional-landscape" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cobertura internacional sobre un supuesto giro político en Venezuela vinculado a Delcy Rodríguez</h3>
+  <p class="fact-summary">Barron&#x27;s publicó una nota citando a Delcy Rodríguez con una valoración positiva sobre la situación posterior a la salida de Nicolás Maduro, pero el contenido disponible no permite verificar plenamente el contexto ni el hecho central con la información mostrada.</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Podría reflejar un ángulo internacional sobre la narrativa de transición en Venezuela y el posicionamiento de actores políticos, aunque requiere verificación adicional por falta de detalle completo.</div>
+  <div class="enlaces"><a href="https://www.barrons.com/news/maduro-ouster-put-venezuela-on-the-right-path-interim-leader-30fb6783" target="_blank" rel="noopener">📰 Barron&#x27;s</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>121 ciudadanos venezolanos regresan a Venezuela desde Miami</h3>
+  <p class="fact-summary">El lunes 22 de junio de 2026, 121 ciudadanos venezolanos procedentes de Miami, Florida, regresaron al país en un movimiento de retorno migratorio documentado.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>121 ciudadanos</li><li>22 de junio de 2026</li><li>Miami, Florida</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El retorno de 121 ciudadanos evidencia flujos migratorios activos desde EE.UU., lo que puede influir en dinámicas políticas internas y en la percepción de la gestión gubernamental sobre desplazamientos.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZ5luM7lhbR/" target="_blank" rel="noopener">📰 Instagram Oficial (Cuenta de retorno migratorio)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>El dólar se cotiza a 612,43 bolívares en Venezuela según BCV</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) informó que el dólar se cotiza oficialmente a 612,43320000 bolívares (VES) el 22 de junio de 2026.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>612,43320000 VES</li><li>22 de junio de 2026</li><li>Banco Central de Venezuela</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cotización oficial del dólar es un indicador clave para la economía venezolana; su aumento refleja presiones en el mercado de divisas y puede afectar precios de bienes y servicios.</div>
+  <div class="enlaces"><a href="https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/" target="_blank" rel="noopener">📰 Caracol.com.co (reporte basado en BCV)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela Energy Week 2026 lanza un “Deal Room” para atraer inversión energética</h3>
+  <p class="fact-summary">Un evento sectorial en Caracas anunció un espacio de negociación para acelerar inversiones, alianzas y financiamiento en energía en Venezuela.</p>
+  <p class="info-actor">Venezuela Energy Week 2026</p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sugiere continuidad de interés comercial en el sector energético venezolano y posible canal para acuerdos o financiamiento, útil para monitoreo de inversiones y licencias.</div>
+  <div class="enlaces"><a href="https://www.einpresswire.com/article/921329893/venezuela-energy-week-2026-launches-high-impact-deal-room-to-accelerate-energy-investment-and-transactions" target="_blank" rel="noopener">📰 EIN Presswire</a> · <a href="https://www.einnews.com/pr_news/921332924/venezuela-energy-week-2026-launches-high-impact-deal-room-to-accelerate-energy-investment-and-transactions" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260622220348/https://www.einpresswire.com/article/921329893/venezuela-energy-week-2026-launches-high-impact-deal-room-to-accelerate-energy-investment-and-transactions" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/asia-pacific/us-iran-talks-go-into-day-2-after-trump-threats-hormuz-closure-2026-06-22/" target="_blank" rel="noopener">Optimism after first talks as US waives Iran sanctions and Lebanon fighting abates</a></li><li><a href="https://www.reuters.com/world/trump-signs-memo-aimed-ending-iran-war-white-house-official-says-2026-06-17/" target="_blank" rel="noopener">Trump signs memo aimed at ending Iran war, White House official says</a></li><li><a href="https://www.reuters.com/pictures/pictures-day-june-22-2026-2026-06-22/" target="_blank" rel="noopener">Pictures of the Day | June 22, 2026</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se reporta cotización del crudo Merey en 73,45 dólares por barril</h3>
+  <p class="fact-summary">Una publicación difundida hoy menciona que el crudo Merey se ubicó en 73,45 dólares por barril, junto con una referencia Brent de 79,16 dólares.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>73,45 USD/barril</li><li>79,16 USD/barril</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La referencia del Merey es clave para estimar el valor de exportación del crudo venezolano y su impacto potencial en caja fiscal y de divisas. También permite comparar el diferencial frente al Brent en un contexto de mercado internacional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Análisis advierte que la estabilidad política condiciona el desarrollo petrolero venezolano</h3>
+  <p class="fact-summary">ABC publicó el 22 de junio un artículo que recoge la idea de que el desarrollo petrolero en Venezuela dependerá de la estabilidad política.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 13:10 VET</p>
+  <ul class="data-points"><li>2026-06-22</li><li>17:10</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La lectura enlaza riesgo político con producción e inversión petrolera, un vínculo clave para anticipar desempeño del sector y decisiones de actores externos.</div>
+  <div class="enlaces"><a href="https://www.abc.com.py/internacionales/2026/06/22/el-desarrollo-petrolero-en-venezuela-dependera-de-la-estabilidad-politica-segun-expertos/?outputType=amp" target="_blank" rel="noopener">📰 ABC</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija el dólar oficial en 612,4332 bolívares para hoy</h3>
+  <p class="fact-summary">Una publicación difundida hoy indica que el Banco Central de Venezuela oficializó el tipo de cambio del dólar en 612,4332 bolívares para el 22 de junio de 2026.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>612,4332 bolívares por dólar</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El dato actualiza la referencia oficial usada en transacciones y fijación de precios internos en Venezuela. También sirve como señal inmediata sobre presión cambiaria y velocidad de ajuste nominal.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZtKJodmIGT/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>El IBC reporta una variación acumulada de 169,03% en 2026</h3>
+  <p class="fact-summary">Una publicación de hoy señala que el Índice Bursátil Caracas acumula una variación positiva de 169,03% en lo que va de año.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>169,03 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Un avance acumulado tan alto en el índice bursátil puede reflejar revaluación de activos locales, efectos inflacionarios o baja base comparativa. Para Venezuela, ayuda a leer el comportamiento del mercado de capitales frente al resto de la economía.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZ5r7Tkx5Zu/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Publicación de hoy informa dólar BCV en 612,4332 y euro en 698,22 bolívares</h3>
+  <p class="fact-summary">Una pieza de hoy resume los indicadores del día y atribuye al Banco Central de Venezuela una cotización del dólar de 612,4332 bolívares y del euro de 698,22 bolívares.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>612,4332 bolívares por dólar</li><li>698,22 bolívares por euro</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La coincidencia de ambas referencias sugiere actualización nominal relevante para precios, importaciones y cobertura cambiaria. En Venezuela, el diferencial entre monedas suele influir en costos y decisiones de fijación de precios.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZtKJodmIGT/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV fija la tasa de referencia en Bs 612,4332 por dólar</h3>
+  <p class="fact-summary">La tasa de cambio oficial del BCV para el 22 de junio de 2026 se ubicó en 612,4332 Bs/USD, con un alza diaria de 0,83%.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>612,4332 Bs/USD</li><li>+5,0413 Bs</li><li>0,83%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Sirve como insumo operativo para seguimiento de precios, liquidez y expectativas cambiarias en Venezuela.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-bcv-22-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://www.instagram.com/p/DZvcYYAGu3u/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260622210122/https://finanzasdigital.com/tasa-bcv-22-junio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Colombia reabre los pasos fronterizos con Venezuela tras operativo de seguridad</h3>
+  <p class="fact-summary">Colombia restableció el tránsito terrestre y fluvial en la frontera con Venezuela este 22 de junio, después de la restricción aplicada durante el fin de semana por el Plan Democracia.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 02:00 VET</p>
+  <ul class="data-points"><li>2026-06-22</li><li>06:00</li><li>Norte de Santander</li><li>Arauca</li><li>La Guajira</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La normalización del flujo en corredores binacionales puede modificar dinámicas de contrabando, migración y vigilancia en la frontera occidental de Venezuela.</div>
+  <div class="enlaces"><a href="https://reporteconfidencial.info/2026/06/22/colombia-transito-fronterizo/" target="_blank" rel="noopener">📰 Reporte Confidencial</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Mundo UR reporta una nueva fase de negociación política en Venezuela</h3>
+  <p class="fact-summary">Un medio venezolano publicó el 22 de junio un análisis sobre un punto de inflexión en el panorama político del país a partir de un reciente encuentro político mencionado en la nota.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-06-22</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Los reportes sobre negociación o reacomodo político pueden anticipar cambios en correlación de fuerzas, agenda institucional o ventanas de diálogo.</div>
+  <div class="enlaces"><a href="https://mundour.com/2026/06/22/nueva-fase-de-negociacion-en-venezuela-panorama-politico-actual-segun-periodistas/" target="_blank" rel="noopener">📰 Mundo UR</a> · <a href="https://web.archive.org/web/20260622220922/https://mundour.com/2026/06/22/nueva-fase-de-negociacion-en-venezuela-panorama-politico-actual-segun-periodistas/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Reactivación del tránsito fronterizo Colombia-Venezuela (22/06)** — Cambios en patrones de contrabando, migración irregular y control militar/policial en Táchira y Zulia podrían alterar estabilidad operativa de grupos ilegales y presión sobre recursos locales.
+
+2. 🟠 **Silencio de Diosdado Cabello (GOB2) y Jorge Rodríguez (GOB3)** — Ausencia de declaraciones públicas tras reapertura fronteriza sugiere posible coordinación interna o divergencias no resueltas sobre manejo de la crisis binacional.
+
+3. 🟡 **Respuesta de actores económicos (PDVSA, BCV)** — Reacciones a fluctuaciones en comercio informal (combustible, alimentos) por mayor flujo en frontera podrían impactar precios o disponibilidad de productos clave en occidente.
+
+4. 🟡 **Movimientos de Edmundo González Urrutia (P2)** — Posible activación de narrativa opositora sobre &quot;flexibilización de controles&quot; como concesión del gobierno, útil para agenda electoral o presión internacional.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Barron&#x27;s</td><td><a href="https://www.barrons.com/news/maduro-ouster-put-venezuela-on-the-right-path-interim-leader-30fb6783" target="_blank" rel="noopener">https://www.barrons.com/news/maduro-ouster-put-venezuela-on-the-right-path-interim-leader-30fb6783</a></td><td>2026-06-22</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-bcv-22-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-bcv-22-junio-2026/</a></td><td></td></tr><tr><td>Reporte Confidencial</td><td><a href="https://reporteconfidencial.info/2026/06/22/colombia-transito-fronterizo/" target="_blank" rel="noopener">https://reporteconfidencial.info/2026/06/22/colombia-transito-fronterizo/</a></td><td>2026-06-22</td></tr><tr><td>Mundo UR</td><td><a href="https://mundour.com/2026/06/22/nueva-fase-de-negociacion-en-venezuela-panorama-politico-actual-segun-periodistas/" target="_blank" rel="noopener">https://mundour.com/2026/06/22/nueva-fase-de-negociacion-en-venezuela-panorama-politico-actual-segun-periodistas/</a></td><td>2026-06-22</td></tr><tr><td>ABC</td><td><a href="https://www.abc.com.py/internacionales/2026/06/22/el-desarrollo-petrolero-en-venezuela-dependera-de-la-estabilidad-politica-segun-expertos/?outputType=amp" target="_blank" rel="noopener">https://www.abc.com.py/internacionales/2026/06/22/el-desarrollo-petrolero-en-venezuela-dependera-de-la-estabilidad-politica-segun-expertos/?outputType=amp</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram Oficial (Cuenta de retorno migratorio)</td><td><a href="https://www.instagram.com/p/DZ5luM7lhbR/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ5luM7lhbR/</a></td><td>2026-06-22</td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZtKJodmIGT/" target="_blank" rel="noopener">https://www.instagram.com/p/DZtKJodmIGT/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZ5r7Tkx5Zu/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZ5r7Tkx5Zu/</a></td><td></td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/reel/DZtOAg3EeKF/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZtOAg3EeKF/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#616161;">Agregador</span> Agregador <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>EIN Presswire</td><td><a href="https://www.einpresswire.com/article/921329893/venezuela-energy-week-2026-launches-high-impact-deal-room-to-accelerate-energy-investment-and-transactions" target="_blank" rel="noopener">https://www.einpresswire.com/article/921329893/venezuela-energy-week-2026-launches-high-impact-deal-room-to-accelerate-energy-investment-and-transactions</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#5d4037;">Opinión</span> Opinión <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>JDSupra</td><td><a href="https://www.jdsupra.com/legalnews/podcast-white-house-policy-and-the-con-27074/" target="_blank" rel="noopener">https://www.jdsupra.com/legalnews/podcast-white-house-policy-and-the-con-27074/</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Caracol.com.co (reporte basado en BCV)</td><td><a href="https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/" target="_blank" rel="noopener">https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-22</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
