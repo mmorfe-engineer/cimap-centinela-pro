@@ -1,0 +1,309 @@
+{
+  "version": "1.0",
+  "correlativo": "20260622-14H-204847",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-22T21:06:02.960050+00:00",
+  "rango_inicio": "2026-06-21T20:48:47.862554+00:00",
+  "rango_fin": "2026-06-22T20:48:47.862554+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 7,
+    "A2": 8,
+    "A1": 8,
+    "A0": 7,
+    "total": 30
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Análisis menciona ajustes en el esquema cambiario y fiscal del gobierno",
+      "ultima_fuente_url": "https://theelnews.org/2026/06/22/el-informe-alvarez-22-de-junio-de-2026-por-alfredo-alvarez/"
+    },
+    "P3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Aníbal Sánchez llama a la oposición interna a mantener cautela",
+      "ultima_fuente_url": "https://contrapunto.com/nacional/politica/anibal-sanchez-la-oposicion-que-hace-vida-en-el-pais-debe-tener-cabeza-fria/"
+    },
+    "INST1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A0",
+        "A0",
+        "A1",
+        "A0",
+        "A3",
+        "A3",
+        "A0"
+      ],
+      "ultimo_titulo": "Cotización del dólar BCV reportada para el 22 de junio",
+      "ultima_fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    },
+    "P5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Repsol y Venezuela firmaron memorando para explorar gas y petróleo en el Lago de Maracaibo",
+      "ultima_fuente_url": "https://www.elindependiente.com/economia/2026/06/16/venezuela-y-repsol-firman-acuerdo-para-impulsar-la-exploracion-de-gas-y-petroleo/"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "OFAC emitió tres nuevas autorizaciones relacionadas con PDVSA",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DZvnRcjxe_Q/"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Cobertura de precios del dólar en Venezuela para el 22 de junio de 2026",
+      "ultima_fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST5",
+    "INT1",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "ca1c27ffd0e1",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Prensa Presidencial destaca respaldo de Delcy Rodríguez a producción nacional",
+      "fuente_url": "https://prensapresidencialvenezuela.gob.ve"
+    },
+    {
+      "hash": "25f816059904",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "TeleSUR difunde nuevos nombramientos ministeriales en Venezuela",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/venezuela-anuncia-nuevos-nombramientos-ministeriales-la-presidenta-encargada-del/1522254899943541/"
+    },
+    {
+      "hash": "74cfada0a0fa",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez reiteró que Venezuela no reconocerá el fallo de la CIJ",
+      "fuente_url": "https://www.instagram.com/p/DZsHMsARiYd/"
+    },
+    {
+      "hash": "cc021d012cbf",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Semana presidencial de Delcy Rodríguez incluyó firma de acuerdo con General Electric",
+      "fuente_url": "https://www.instagram.com/reel/DZ2QXL7x13y/"
+    },
+    {
+      "hash": "ed79a87c3cbc",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "PUD felicita a Abelardo de la Espriella tras resultados en Colombia",
+      "fuente_url": "https://es-us.noticias.yahoo.com/oposici%C3%B3n-venezolana-felicita-espriella-aspira-154814023.html"
+    },
+    {
+      "hash": "db9cd7034693",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Dinorah Figuera vuelve a ser señalada como pieza en la transición venezolana",
+      "fuente_url": "https://elpais.com/america/2026-06-20/washington-marca-el-ritmo-de-la-transicion-en-venezuela.html"
+    },
+    {
+      "hash": "99458fb22599",
+      "actor": "P3",
+      "alert_level": "A1",
+      "titulo_corto": "Aníbal Sánchez llama a la oposición interna a mantener cautela",
+      "fuente_url": "https://contrapunto.com/nacional/politica/anibal-sanchez-la-oposicion-que-hace-vida-en-el-pais-debe-tener-cabeza-fria/"
+    },
+    {
+      "hash": "5a8e581d34fc",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "Asamblea Nacional difundió su agenda legislativa para el 22 de junio",
+      "fuente_url": "https://x.com/asambleapa/status/2069041921016639891"
+    },
+    {
+      "hash": "b785645bcf05",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "Asamblea Nacional mantiene canal oficial de noticias con actividad reciente",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias"
+    },
+    {
+      "hash": "a07b0859861b",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Parlamento venezolano celebrará sesión solemne por el bicentenario del Congreso Anfictiónico de Pana",
+      "fuente_url": "https://rnv.gob.ve/parlamento-venezolano-celebra-sesion-solemne-por-el-bicentenario-del-congreso-anfictionico-de-panama/"
+    },
+    {
+      "hash": "4cc047f2bc90",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Oposición en debate sobre renovación institucional y transición política",
+      "fuente_url": "https://www.youtube.com/watch?v=5tzZUTIi9lw"
+    },
+    {
+      "hash": "c6ded2510799",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Reporte regional menciona cierre temporal de pasos fronterizos entre Colombia y Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=GCD9TnYhr3U"
+    },
+    {
+      "hash": "7f23394d5e81",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones marítimas de crudo venezolano crecieron 144% en el primer semestre de 2026",
+      "fuente_url": "https://elsoldemargarita.com.ve/posts/post/id:258233/Venezuela-aumenta-"
+    },
+    {
+      "hash": "7e9b5411ca26",
+      "actor": "P5",
+      "alert_level": "A3",
+      "titulo_corto": "Repsol y Venezuela firmaron memorando para explorar gas y petróleo en el Lago de Maracaibo",
+      "fuente_url": "https://www.elindependiente.com/economia/2026/06/16/venezuela-y-repsol-firman-acuerdo-para-impulsar-la-exploracion-de-gas-y-petroleo/"
+    },
+    {
+      "hash": "bf2aef07fe16",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "OFAC emitió tres nuevas autorizaciones relacionadas con PDVSA",
+      "fuente_url": "https://www.instagram.com/reel/DZvnRcjxe_Q/"
+    },
+    {
+      "hash": "5349cfada891",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Incautación de presuntas sustancias ilícitas en Barinas",
+      "fuente_url": "https://www.youtube.com/watch?v=OTm0qYE2b08"
+    },
+    {
+      "hash": "ef6782b03cd8",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Cobertura diaria de noticias en Venezuela con potencial para nuevas señales",
+      "fuente_url": "https://www.youtube.com/watch?v=hFBh97Ry0zk"
+    },
+    {
+      "hash": "d5e7e5079c5c",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Cobertura matutina sobre Venezuela sin señal específica verificable",
+      "fuente_url": "https://www.youtube.com/watch?v=hFBh97Ry0zk"
+    },
+    {
+      "hash": "e38914b6fd8d",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Portada impresa con referencia a Venezuela sin hecho de inteligencia claro",
+      "fuente_url": "https://www.instagram.com/p/DZ3ma79NiWX/"
+    },
+    {
+      "hash": "c058e183b39e",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Programación de noticias con titulares potencialmente sensibles sobre Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=5tzZUTIi9lw"
+    },
+    {
+      "hash": "bc062d9d0109",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Titular televisivo matinal menciona Venezuela sin detalle verificable en el resultado disponible",
+      "fuente_url": "https://www.youtube.com/watch?v=9DJ8mFTnUlQ"
+    },
+    {
+      "hash": "7924a08abcac",
+      "actor": "INST4",
+      "alert_level": "A1",
+      "titulo_corto": "Cobertura de precios del dólar en Venezuela para el 22 de junio de 2026",
+      "fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    },
+    {
+      "hash": "651143c113d6",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "BCV fija la tasa oficial del dólar en 612,4332 Bs/USD",
+      "fuente_url": "https://finanzasdigital.com/tasa-bcv-22-junio-2026/"
+    },
+    {
+      "hash": "1d111f0afb9e",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija el dólar en 612,4332 Bs/USD para el 22 de junio",
+      "fuente_url": "https://finanzasdigital.com/tasa-bcv-22-junio-2026/"
+    },
+    {
+      "hash": "8fd0e2b33f20",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV habría inyectado 60 millones de dólares a la banca para contener el tipo de cambio",
+      "fuente_url": "https://theelnews.org/2026/06/22/el-informe-alvarez-22-de-junio-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "9a0f0835ae97",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Observatorio Venezolano de Conflictividad Social reporta 12 protestas laborales en tres estados",
+      "fuente_url": "https://theelnews.org/2026/06/22/el-informe-alvarez-22-de-junio-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "bda9d89684ad",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis menciona ajustes en el esquema cambiario y fiscal del gobierno",
+      "fuente_url": "https://theelnews.org/2026/06/22/el-informe-alvarez-22-de-junio-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "a68b599739a7",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Alerta sobre incremento de ideación suicida en jóvenes venezolanos",
+      "fuente_url": "https://theelnews.org/2026/06/22/el-informe-alvarez-22-de-junio-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "b8789f69f1d5",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis advierte persistencia de economías criminales en el Arco Minero",
+      "fuente_url": "https://theelnews.org/2026/06/22/el-informe-alvarez-22-de-junio-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "0d6478421425",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "Cotización del dólar BCV reportada para el 22 de junio",
+      "fuente_url": "https://caracol.com.co/2026/06/22/precio-del-dolar-en-venezuela-para-hoy-22-de-junio-de-2026-leve-aumento-en-las-cotizaciones/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 7
+}
