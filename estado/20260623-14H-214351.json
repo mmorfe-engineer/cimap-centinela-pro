@@ -1,0 +1,115 @@
+{
+  "version": "1.0",
+  "correlativo": "20260623-14H-214351",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-23T21:48:14.755820+00:00",
+  "rango_inicio": "2026-06-22T21:43:51.214477+00:00",
+  "rango_fin": "2026-06-23T21:43:51.214477+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 6,
+    "A2": 2,
+    "A1": 0,
+    "A0": 0,
+    "total": 8
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 6,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Ingresos por venta de crudo del primer trimestre 2026 suben 21% según Banco Central",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=U5xGQx1HTpY"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "BCV fija tasa de cambio oficial en 617,6388 Bs/USD con incremento de 0,85%",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "6cfb5c1d8599",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Trump Should Link U.S. Help in Venezuela to Market Reforms",
+      "fuente_url": "https://www.nationalreview.com/2026/06/trump-should-link-u-s-help-in-venezuela-to-market-reforms/"
+    },
+    {
+      "hash": "e95b2c6c4918",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Trump afirma Venezuela es país 'feliz' bajo supervisión de EEUU mientras sus habitantes rechazan la ",
+      "fuente_url": "https://www.nytimes.com/2026/06/23/world/americas/venezuela-oil-delcy-rodriguez-trump.html"
+    },
+    {
+      "hash": "1c8421ba6004",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "EEUU autoriza producción y venta de petróleo iraní por 60 días hasta agosto 21, 2026",
+      "fuente_url": "https://www.hklaw.com/en/insights/publications/2026/06/us-authorizes-sale-of-iranian-oil-for-60-days"
+    },
+    {
+      "hash": "481fb7b2ef17",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "EEUU impone nuevas sanciones a empresas cubanas clave para la economía de la isla, profundizando cri",
+      "fuente_url": "https://www.pbs.org/newshour/world/u-s-slaps-new-sanctions-on-cuban-companies-key-to-islands-economy"
+    },
+    {
+      "hash": "5be1223ff78c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Cepal confirma crecimiento económico del 6,5% para Venezuela en 2026 y aumento del consumo de 28%",
+      "fuente_url": "https://finanzasdigital.com/consumo-venezuela-enero-mayo-2026/"
+    },
+    {
+      "hash": "b1f7d642006c",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija tasa de cambio oficial en 617,6388 Bs/USD con incremento de 0,85%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "c514822a7118",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija tasa de cambio en 617,6388 Bs/USD con incremento de 0,85%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "06551e0037a0",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Ingresos por venta de crudo del primer trimestre 2026 suben 21% según Banco Central",
+      "fuente_url": "https://www.youtube.com/watch?v=U5xGQx1HTpY"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
