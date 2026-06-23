@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260623-14H-195225</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#f57c00;">
+    🟠 ESTADO DEL DÍA: ALTO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260623-14H-195225</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-22T19:52:25.082846+00:00 → 2026-06-23T19:52:25.082846+00:00<br>
+    <strong>Generado:</strong> 2026-06-23 20:12 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 0 A4</span>
+    <span class="stat-pill">🟠 14 A3</span>
+    <span class="stat-pill">🟡 15 A2</span>
+    <span class="stat-pill">📊 33 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. EE.UU. levantó parcialmente sanciones contra Venezuela, según reportes del Departamento de Estado con corte al 23 de junio de 2026, lo que podría facilitar operaciones económicas y financieras internacionales.
+2. El Banco Central de Venezuela (BCV) reportó ingresos por exportaciones no petroleras de aproximadamente 2.268 millones de dólares, junto a un crecimiento del 21% en exportaciones petroleras en el primer trimestre de 2026.
+3. Las exportaciones marítimas de petróleo venezolano aumentaron 144% en el primer semestre de 2026, según datos de Bloomberg citados por *El Nacional*, confirmando expansión logística y de ventas.
+4. Delcy Rodríguez destacó que Venezuela exporta 292.000 barriles diarios de petróleo a India, representando el 6% de sus importaciones hidrocarburíferas, con estabilidad tras récord de Rusia.
+5. El BCV fijó la tasa de cambio oficial en 617,6388 Bs/USD, registrando un aumento del 0,85% respecto al día anterior, reflejando depreciación gradual del bolívar.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260622-14H-220334</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-escalada">
+  <strong>⬆️ CAMBIO DE ESTADO:</strong>
+  <span style="color:#fbc02d; font-weight:600;">🟡 MEDIO</span>
+  &rarr;
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  <span class="cambio-etiqueta">[ESCALADA]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (33):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Propuesta de negociación política abre debate sobre vías de negociación en medio de la crisis venezolana <a href="https://www.instagram.com/p/DZ8CvZXH499/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: BCV reporta ingresos petroleros de US$5.491 millones en primer trimestre 2026 <a href="https://efe.com/economia/2026-06-23/ingresos-exportaciones-petroleo-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Ratificación del compromiso de unidad continental en Coloquio &#x27;Patria es América&#x27; <a href="https://contrapunto.com/nacional/gobierno/delcy-rodriguez-asegura-que-venezuela-ratifica-el-compromiso-de-unidad-continental-en-el-coloquio-internacional-patria-es-america/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Venezuela se consolida como cuarto mayor proveedor de petróleo de la India con 292,000 barriles diarios <a href="https://www.youtube.com/watch?v=-lPYaJcw3x0" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: USA permite levantamiento parcial de sanciones en Venezuela <a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Banco Central de Venezuela reporta aumento de exportaciones no petroleras e ingresos de 2.268 millones de dólares <a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Exportaciones marítimas de petróleo venezolano crecen 144% en primer semestre 2026 <a href="https://www.elnacional.com/2026/06/exportaciones-maritimas-de-petroleo-de-venezuela-crecieron-un-144-en-2026-segun-bloomberg/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Tasa de cambio BCV al 23 de junio de 2026: 617,6388 Bs/USD con incremento de 0,85% <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Banco Central de Venezuela</strong>: El Banco Central de Venezuela reporta aumento de exportaciones no petroleras e ingresos de 2.268 millones de dólares <a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Banco Central de Venezuela reporta aumento en exportaciones no petroleras e ingresos de 2.268 millones de dólares <a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INST2</code> (Tribunal Supremo de Justicia), <code>INST3</code> (Consejo Nacional Electoral), <code>INST4</code> (Banco Central de Venezuela)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>14 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>13 cortes sin actividad</strong></li><li><code>GOB3</code> — Jorge Rodríguez (<em>Presidente de la Asamblea Nacional</em>): <strong>2 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>2 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>2 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <p class="seccion-vacia">Sin hallazgos A4 en este corte. El día se mantiene sin alertas críticas.</p>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Ratificación del compromiso de unidad continental en Coloquio &#x27;Patria es América&#x27;</h3>
+  <p class="fact-summary">Delcy Rodríguez aseguró que Venezuela ratifica el compromiso de unidad continental en el coloquio internacional &#x27;Patria es América&#x27;, realizado el 22 de junio de 2026.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>22 junio, 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la posición de Venezuela como líder de la unidad continental, lo que podría influir en las negociaciones diplomáticas y la alineación de bloques políticos en la región.</div>
+  <div class="enlaces"><a href="https://contrapunto.com/nacional/gobierno/delcy-rodriguez-asegura-que-venezuela-ratifica-el-compromiso-de-unidad-continental-en-el-coloquio-internacional-patria-es-america/" target="_blank" rel="noopener">📰 Contrapunto</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Delcy Rodríguez clausura Coloquio Internacional &#x27;Patria es América&#x27; en Caracas</h3>
+  <p class="fact-summary">La presidenta encargada clausuró el Coloquio Internacional &#x27;Patria es América&#x27; el 22 de junio de 2026 en Caracas, reforzando la agenda de integración continental</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 16:00 VET</p>
+  <ul class="data-points"><li>2026-06-22</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Consolida la posición del gobierno venezolano en la agenda de integración latinoamericana y refuerza el discurso de &#x27;Patria es América&#x27;</div>
+  <div class="enlaces"><a href="https://www.facebook.com/teleSUR/posts/-la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-clausur%C3%B3-el-coloquio-inter/1529266422575722/" target="_blank" rel="noopener">📰 teleSUR</a> · <a href="https://web.archive.org/web/20260623195244/https://www.facebook.com/teleSUR/posts/-la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-clausur%C3%B3-el-coloquio-inter/1529266422575722/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Delcy Rodríguez aprueba extensión de la temporada de la Liga Profesional de Baloncesto (SPB)</h3>
+  <p class="fact-summary">La presidenta encargada de la República, Delcy Rodríguez, aprobó extender la duración de la temporada de la Liga Profesional de Baloncesto (SPB)[7].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La medida refuerza la estrategia de normalización social del gobierno chavista y busca mantener el apoyo en sectores populares mediante actividades culturales[7]</div>
+  <div class="enlaces"><a href="https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/" target="_blank" rel="noopener">📰 Pueblo Combatiente - Resumen de noticias de Venezuela</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez condecora campeonas y campeones del baloncesto en Miraflores</h3>
+  <p class="fact-summary">La presidenta encargada condecoró a campeonas y campeones del baloncesto en el Palacio de Miraflores el 23 de junio de 2026</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Muestra el respaldo del Ejecutivo a la actividad deportiva nacional como parte de la agenda cotidiana</div>
+  <div class="enlaces"><a href="https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/" target="_blank" rel="noopener">📰 Pueblo Combatiente</a> · <a href="https://web.archive.org/web/20260623195312/https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#4527a0;">Think tank</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Boletín Polianalitica menciona a María Corina Machado en contexto de propuesta parlamentaria</h3>
+  <p class="fact-summary">El boletín informativo de Polianalitica del 23 de junio de 2026 menciona a María Corina Machado en relación con una propuesta del actual diputado a la Asamblea Nacional y miembro del Consejo Político Nacional del Partido Socialista Unido[5].</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja la participación de la oposición en debates parlamentarios y posibles reacciones a medidas oficiales</div>
+  <div class="enlaces"><a href="https://www.polianalitica.com/boletines/5063/boletin-informativo-polianalitica-martes-23-de-junio-de-2026-1200-m" target="_blank" rel="noopener">📰 Polianalitica</a> · <a href="https://web.archive.org/web/20260623195439/https://www.polianalitica.com/boletines/5063/boletin-informativo-polianalitica-martes-23-de-junio-de-2026-1200-m" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>USA permite levantamiento parcial de sanciones en Venezuela</h3>
+  <p class="fact-summary">El gobierno de los Estados Unidos ha permitido, según se conoce hasta este fin de semana, el levantamiento parcial de sanciones en Venezuela.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El levantamiento de sanciones puede facilitar operaciones económicas y financieras internacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Top News for June 23, 2026 - The Morning News Broadcast</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV reporta aumento en exportaciones no petroleras e ingresos de 2.268 millones de dólares</h3>
+  <p class="fact-summary">El Banco Central de Venezuela confirmó que subieron las exportaciones no petroleras y se recibieron ingresos de aproximadamente 2.268 millones de dólares en el periodo reciente.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2268</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica una mejora en la balanza comercial no petrolera y refuerza la capacidad de ingresos del Estado, clave para la estabilidad financiera en 2026.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Venezuela News Top (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Gobierno de EE.UU. permite levantamiento parcial de sanciones en Venezuela</h3>
+  <p class="fact-summary">El gobierno de los Estados Unidos ha permitido, según reportes, el levantamiento de ciertas sanciones en el contexto de negociaciones en Venezuela.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Cambio significativo en la política de sanciones de EE.UU. hacia Venezuela, con posible apertura a negociaciones diplomáticas y reducción de presión económica.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Venezuela News Top (YouTube)</a> · <a href="https://web.archive.org/web/20260623195836/https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez afirma que la detención de Maduro marcó giro en relaciones con EEUU</h3>
+  <p class="fact-summary">La presidenta encargada Delcy Rodríguez declaró que la captura de Nicolás Maduro el 3 de enero de 2026 fue un &#x27;punto de inflexión&#x27; que puso las relaciones entre Venezuela y EEUU en el &#x27;camino correcto&#x27;</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 23/06/2026 06:10 VET</p>
+  <ul class="data-points"><li>2026-01-03</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Define el nuevo marco de la relación bilateral con EEUU, indicando un cambio de rumbo desde la relación antagónica histórica hacia una cooperación en curso</div>
+  <div class="enlaces"><a href="https://es-us.noticias.yahoo.com/relaci%C3%B3n-venezuela-eeuu-camino-correcto-101022685.html" target="_blank" rel="noopener">📰 Yahoo Noticias</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Análisis sobre la transición en Venezuela y el no papel de los votos en la decisión del futuro</h3>
+  <p class="fact-summary">El artículo de eldiario.com del 22 de junio de 2026 analiza el giro definitivo del 3 de enero de 2026 y afirma que los votos no están decidiendo el futuro de Venezuela, con una interpretación no pro-democracia de la intervención en Washington[6].</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 21/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Impacta la percepción estratégica de la intervención estadounidense y su relación con la crisis política venezolana</div>
+  <div class="enlaces"><a href="https://eldiario.com/2026/06/22/transicion-americana-los-votos-no-estan-decidiendo-futuro-venezuela/" target="_blank" rel="noopener">📰 eldiario.com</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>LATAM Airlines solicita más frecuencias en ruta Bogotá-Caracas-Bogotá</h3>
+  <p class="fact-summary">LATAM Airlines, operando desde Colombia, ha solicitado a las autoridades aeronáuticas de Colombia y Venezuela aumentar las frecuencias en su ruta Bogotá-Caracas-Bogotá.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Potencial fortalecimiento de la conexión aérea comercial entre Venezuela y Colombia, facilitando el comercio y la migración en la región.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Venezuela News Top (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Exportaciones de petróleo venezolano a EE.UU. mantienen 500.000 bpd por tercera semana</h3>
+  <p class="fact-summary">Por tercera semana consecutiva, las exportaciones de petróleo venezolano a Estados Unidos se mantienen con un promedio de 500.000 barriles diarios[2].</p>
+  <p class="info-actor">Noticiero VV</p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>500000 barriles diarios</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El mantenimiento de 500.000 bpd hacia EE.UU. indica estabilidad en la relación comercial petrolera y validates la apertura económica reciente</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/videos/por-tercera-semana-consecutiva-las-exportaciones-de-petr%C3%B3leo-venezolano-a-estado/1646821846402117/" target="_blank" rel="noopener">📰 Noticiero VV</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela es cuarto proveedor de petróleo de India con 292.000 bpd en junio 2026</h3>
+  <p class="fact-summary">Venezuela se convirtió en el cuarto mayor proveedor de petróleo de India en junio de 2026, con envíos de 292.000 barriles diarios[7].</p>
+  <p class="info-actor">Instagram post</p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>292000 barriles diarios</li><li>4 posición</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El ingreso de Venezuela como cuarto proveedor de India con 292.000 bpd refuerza la diversificación de mercados y la recuperación de la exportación petrolera</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZ5AosrRlTl/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Lat Airlines solicita aumento de frecuencias en ruta Bogotá-Caracas a autoridades aeronáuticas</h3>
+  <p class="fact-summary">La línea Lat Airlines, operando desde Colombia, ha solicitado a las autoridades aeronáuticas de Colombia y Venezuela sumar más frecuencias en su ruta Bogotá-Caracas-Bogotá.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento de frecuencias aéreas podría fortalecer la integración fronteriza y el flujo de personas y bienes entre Colombia y Venezuela, con implicaciones en seguridad y economía.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Morning News Broadcast (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A0">
+  <div class="hallazgo-meta"><span class="badge badge-A0">⚪ A0</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>España gana 4-0 a Arabia Saudí en la FIFA 2026 con gol de Lamine Yamal</h3>
+  <p class="fact-summary">España venceu Arabia Saudí por 4-0 en el grupo H de la Copa Mundial de la FIFA 2026, con gol de la joven estrella Lamine Yamal del Barcelona en el minuto 10.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>4</li><li>0</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Noticia deportiva de relevancia global, sin implicaciones directas para la política o economía de Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=SNCNX3cuzI8" target="_blank" rel="noopener">📰 Últimas noticias Europa (YouTube)</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/asia-pacific/us-disputes-iranian-claims-about-closing-strait-hormuz-negotiators-head-2026-06-20/" target="_blank" rel="noopener">Trump threatens new attacks as US-Iran peace talks open in Switzerland</a></li><li><a href="https://www.reuters.com/pictures/pictures-day-june-23-2026-2026-06-23/GDCC7M5EJ5KZPFRGUFYEQZ6EXQ/" target="_blank" rel="noopener">Pictures of the Day | June 23, 2026: Displaced people return to homes in southern Lebanon</a></li><li><a href="https://www.reuters.com/legal/litigation/top-cases-be-heard-during-us-supreme-courts-2025-2026-term-2026-06-18/" target="_blank" rel="noopener">Top cases on the US Supreme Court&#x27;s 2025-2026 docket: voting rights, presidential powers, tariffs</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV reporta ingresos petroleros de US$5.491 millones en primer trimestre 2026</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) confirmó que los ingresos por exportaciones petroleras alcanzaron 5.491 millones de dólares en el primer trimestre de 2026, un aumento del 21% respecto a 2025[1][4][6].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>5491 millones de dólares</li><li>21 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Este repido oficial valida la recuperación de la exportación petrolera y el impacto del 21% en ingresos, crucial para proyecciones de caja del Estado venezolano</div>
+  <div class="enlaces"><a href="https://efe.com/economia/2026-06-23/ingresos-exportaciones-petroleo-venezuela/" target="_blank" rel="noopener">📰 EFE</a> · <a href="https://amp.larepublica.co/globoeconomia/exportaciones-petroleras-de-venezuela-suben-a-us-5-491-millones-en-primer-trimestre-de-este-ano-4421294" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Exportaciones marítimas de petróleo venezolano crecen 144% en primer semestre 2026</h3>
+  <p class="fact-summary">Las exportaciones marítimas de petróleo de Venezuela registraron un crecimiento de 144% durante el primer semestre de 2026, según datos de Bloomberg citados por El Nacional[5].</p>
+  <p class="info-actor">Bloomberg</p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>144 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El 144% de crecimiento en exportaciones marítimas confirma la expansión de la capacidad logística y de venta de crudo venezolano, clave para la sostenibilidad de ingresos petroleros</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/06/exportaciones-maritimas-de-petroleo-de-venezuela-crecieron-un-144-en-2026-segun-bloomberg/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela se consolida como cuarto mayor proveedor de petróleo de la India con 292,000 barriles diarios</h3>
+  <p class="fact-summary">Venezuela exporta un promedio de 292,000 barriles diarios de petróleo a la India, representando aproximadamente 6% de las importaciones hidrocarburíferas del país asiático, volumen estabilizado tras un récord de Rusia[2].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>292,000 barriles diarios</li><li>6% de importaciones de hidrocarburos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La estabilidad de exportaciones a India indica capacidad operativa de PDVSA y reduce dependencia de mercados tradicionales, con impacto directo en ingresos del sector energético[2].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=-lPYaJcw3x0" target="_blank" rel="noopener">📰 Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Ministerio de Hidrocarburos proyecta producción de 1.37 millones bpd para finales de 2026</h3>
+  <p class="fact-summary">El Ministerio de Hidrocarburos ha proyectado una producción de crudo de 1,37 millones de barriles diarios para finales de 2026, con un aumento de 22% respecto a 2025[4].</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>1370000 barriles diarios</li><li>22 %</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La proyección de 1.37 millones bpd para finales de 2026 con aumento del 22% valida la recuperación de la capacidad productiva y el impulso regulatorio del sector</div>
+  <div class="enlaces"><a href="https://amp.larepublica.co/globoeconomia/exportaciones-petroleras-de-venezuela-suben-a-us-5-491-millones-en-primer-trimestre-de-este-ano-4421294" target="_blank" rel="noopener">📰 La República</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Banco Central de Venezuela reporta aumento en exportaciones no petroleras e ingresos de 2.268 millones de dólares</h3>
+  <p class="fact-summary">El Banco Central de Venezuela señaló que subieron las exportaciones no petroleras y se recibieron ingresos de alrededor de 2.268 millones de dólares.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>2.268 millones de dólares</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica una mejora en la balanza comercial no petrolera y entrada de recursos externos, relevante para la estabilidad económica</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Top News for June 23, 2026 - The Morning News Broadcast</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Tasa de cambio BCV al 23 de junio de 2026: 617,6388 Bs/USD con incremento de 0,85%</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) fijó la tasa de cambio oficial en 617,6388 Bs/USD, registrando un aumento de 5,2056 Bs (+0,85%) respecto al día anterior</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>617,6388 Bs/USD</li><li>+5,2056 Bs</li><li>+0,85%</li><li>23 de junio de 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Define el valor oficial del dólar en Venezuela para operaciones comerciales y financieras, reflejando la dinámica de depreciación gradual del bolívar</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://www.instagram.com/reel/DZ7gbpgRdTt/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260623200754/https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV reporta ingresos de 2.268 millones de dólares por exportaciones no petroleras</h3>
+  <p class="fact-summary">El Banco Central de Venezuela confirmó un aumento en las exportaciones no petroleras con ingresos de aproximadamente 2.268 millones de dólares.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 23/06/2026 08:00 VET</p>
+  <ul class="data-points"><li>2268000000</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura de video de noticias; requiere validación oficial directa del BCV.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica una recuperación en sectores no petroleros y un flujo de capital que puede mitigar presiones económicas inmediatas en Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Top News for June 23, 2026 - The Morning News Broadcast</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV fija tasa de cambio en 617,6388 Bs/USD con incremento de 0,85%</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó la tasa de cambio oficial al 23 de junio de 2026 en 617,6388 Bs/USD, registrando un alza de 5,2056 unidades (+0,85%) respecto al día anterior[1].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>617,6388 Bs/USD</li><li>+5,2056 unidades</li><li>+0,85%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa oficial es referencia clave para precios de bienes importados, contratos públicos y estabilidad monetaria; el incremento sugiere mayor volatilidad en el mercado[1].</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://web.archive.org/web/20260623200754/https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Índice Bursátil Caracas (IBC) registra variación positiva de 169,03% en lo que va de 2026</h3>
+  <p class="fact-summary">El Índice Bursátil Caracas (IBC) muestra un crecimiento acumulado de 169,03% desde enero de 2026, con actividad significativa en la semana del 15 al 19 de junio</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>169,03%</li><li>2026</li><li>15 al 19 de junio de 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica una recuperación o dinamismo en el mercado de capitales venezolano, lo que podría atraer inversión o reflejar expectativas positivas en el sector económico</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DZ6GMpjxO8y/" target="_blank" rel="noopener">📰 Nelin Escalante (Instagram)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Prensa Presidencial reporta respaldo de Delcy Rodríguez a emprendimiento &#x27;Ania Gluten Free&#x27;</h3>
+  <p class="fact-summary">La presidenta encargada respaldó la producción nacional visitando el emprendimiento &#x27;Ania Gluten Free&#x27; en Caracas</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Muestra el enfoque del gobierno en el apoyo a la producción nacional y emprendimientos locales como parte de su política económica</div>
+  <div class="enlaces"><a href="https://prensapresidencialvenezuela.gob.ve" target="_blank" rel="noopener">📰 Prensa Presidencial Venezuela</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Delcy Rodríguez clausura coloquio internacional &#x27;Patria&#x27; en Teatro Teresa Carreño</h3>
+  <p class="fact-summary">La presidenta (E) Delcy Rodríguez clausuró el coloquio internacional &#x27;Patria&#x27; en el Teatro Teresa Carreño, según reporte de inicio del día 23 de junio de 2026.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 22/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El coloquio internacional refuerza la presencia de la administración en la agenda política y diplomática, con implicaciones en la consolidación de la gobernabilidad y el discurso oficial.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-23-junio-de-2026-con1-desde-el-teatro-teresa-carre%C3%B1o-l/1483727183791880/" target="_blank" rel="noopener">📰 Noticiero VV (Facebook)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV reporta ingresos de 2.268 millones de dólares por exportaciones no petroleras</h3>
+  <p class="fact-summary">El Banco Central de Venezuela confirmó un aumento en las exportaciones no petroleras con ingresos de aproximadamente 2.268 millones de dólares.</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 23/06/2026 08:00 VET</p>
+  <ul class="data-points"><li>2268000000</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura de video de noticias; requiere validación oficial directa del BCV.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica una recuperación en sectores no petroleros y un flujo de capital que puede mitigar presiones económicas inmediatas en Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">📰 Top News for June 23, 2026 - The Morning News Broadcast</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez aprueba extensión de temporada de la Liga Profesional de Baloncesto</h3>
+  <p class="fact-summary">La presidenta encargada de la República, Delcy Rodríguez, aprobó la propuesta para extender la duración de la temporada de la Liga Profesional de Baloncesto.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 23/06/2026 08:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Base en resumen de noticias de medios; se clasifica como señal verosímil de decisión institucional.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleca la continuidad de la gestión de Delcy Rodríguez en la aprobación de políticas internas y deportivas.</div>
+  <div class="enlaces"><a href="https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/" target="_blank" rel="noopener">📰 Resumen de noticias de Venezuela 23-06-2026 - Pueblo Combatiente</a> · <a href="https://web.archive.org/web/20260623195312/https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Levantamiento parcial de sanciones EE.UU. a Venezuela** — Cambio en la política de presión económica de EE.UU. puede reactivar flujos financieros y comerciales internacionales, afectando estabilidad macroeconómica y negociaciones diplomáticas.
+
+2. 🔴 **Crecimiento de exportaciones petroleras (144% marítimas y 21% trimestral)** — Ingresos récord validan recuperación de PDVSA y capacidad logística, clave para sostenibilidad fiscal del Estado en 2026.
+
+3. 🟠 **Exportaciones no petroleras (USD 2.268 millones)** — Diversificación económica en curso; monitorear si el ritmo se mantiene o si es coyuntural, dado su impacto en liquidez externa.
+
+4. 🟠 **Silencio de Diosdado Cabello y Jorge Rodríguez** — Ausencia de declaraciones de figuras clave del oficialismo en contexto de negociaciones y cambios estratégicos; su postura podría definir alineamientos internos.
+
+5. 🟡 **Tasa de cambio oficial (Bs 617,63/USD, +0,85%)** — Depreciación controlada del bolívar; observar si se acelera o estabiliza, ya que afecta inflación y confianza en el mercado local.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(7)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Yahoo Noticias</td><td><a href="https://es-us.noticias.yahoo.com/relaci%C3%B3n-venezuela-eeuu-camino-correcto-101022685.html" target="_blank" rel="noopener">https://es-us.noticias.yahoo.com/relaci%C3%B3n-venezuela-eeuu-camino-correcto-101022685.html</a></td><td>2026-06-23</td></tr><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZ8CvZXH499/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ8CvZXH499/</a></td><td>2026-06-23</td></tr><tr><td>eldiario.com</td><td><a href="https://eldiario.com/2026/06/22/transicion-americana-los-votos-no-estan-decidiendo-futuro-venezuela/" target="_blank" rel="noopener">https://eldiario.com/2026/06/22/transicion-americana-los-votos-no-estan-decidiendo-futuro-venezuela/</a></td><td>2026-06-22</td></tr><tr><td>Al Día con Sergio EN VIVO - Martes 23 de Junio del 2026</td><td><a href="https://www.youtube.com/watch?v=Xj2DBlHzssg" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Xj2DBlHzssg</a></td><td>2026-06-23</td></tr><tr><td>Últimas noticias Europa (YouTube)</td><td><a href="https://www.youtube.com/watch?v=SNCNX3cuzI8" target="_blank" rel="noopener">https://www.youtube.com/watch?v=SNCNX3cuzI8</a></td><td>2026-06-23</td></tr><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/06/exportaciones-maritimas-de-petroleo-de-venezuela-crecieron-un-144-en-2026-segun-bloomberg/" target="_blank" rel="noopener">https://www.elnacional.com/2026/06/exportaciones-maritimas-de-petroleo-de-venezuela-crecieron-un-144-en-2026-segun-bloomberg/</a></td><td>2026-06-23</td></tr><tr><td>Contrapunto</td><td><a href="https://contrapunto.com/nacional/gobierno/delcy-rodriguez-asegura-que-venezuela-ratifica-el-compromiso-de-unidad-continental-en-el-coloquio-internacional-patria-es-america/" target="_blank" rel="noopener">https://contrapunto.com/nacional/gobierno/delcy-rodriguez-asegura-que-venezuela-ratifica-el-compromiso-de-unidad-continental-en-el-coloquio-internacional-patria-es-america/</a></td><td>2026-06-22</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(6)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Prensa Presidencial Venezuela</td><td><a href="https://prensapresidencialvenezuela.gob.ve" target="_blank" rel="noopener">https://prensapresidencialvenezuela.gob.ve</a></td><td></td></tr><tr><td>Top News for June 23, 2026 - The Morning News Broadcast</td><td><a href="https://www.youtube.com/watch?v=bOPzJk9xDgg" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bOPzJk9xDgg</a></td><td>2026-06-23</td></tr><tr><td>EFE</td><td><a href="https://efe.com/economia/2026-06-23/ingresos-exportaciones-petroleo-venezuela/" target="_blank" rel="noopener">https://efe.com/economia/2026-06-23/ingresos-exportaciones-petroleo-venezuela/</a></td><td>2026-06-23</td></tr><tr><td>La República</td><td><a href="https://amp.larepublica.co/globoeconomia/exportaciones-petroleras-de-venezuela-suben-a-us-5-491-millones-en-primer-trimestre-de-este-ano-4421294" target="_blank" rel="noopener">https://amp.larepublica.co/globoeconomia/exportaciones-petroleras-de-venezuela-suben-a-us-5-491-millones-en-primer-trimestre-de-este-ano-4421294</a></td><td></td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/</a></td><td>2026-06-23</td></tr><tr><td>Noticiero VV (Facebook)</td><td><a href="https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-23-junio-de-2026-con1-desde-el-teatro-teresa-carre%C3%B1o-l/1483727183791880/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/posts/-iniciamos-este-martes-23-junio-de-2026-con1-desde-el-teatro-teresa-carre%C3%B1o-l/1483727183791880/</a></td><td>2026-06-23</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>teleSUR</td><td><a href="https://www.facebook.com/teleSUR/posts/-la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-clausur%C3%B3-el-coloquio-inter/1529266422575722/" target="_blank" rel="noopener">https://www.facebook.com/teleSUR/posts/-la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-clausur%C3%B3-el-coloquio-inter/1529266422575722/</a></td><td>2026-06-22</td></tr><tr><td>VPI TV</td><td><a href="https://www.facebook.com/vpitv/videos/noticias-en-la-ma%C3%B1ana-en-vivo-buenos-d%C3%ADas-martes-23-de-junio-2026-venezuela/1024327436681712/" target="_blank" rel="noopener">https://www.facebook.com/vpitv/videos/noticias-en-la-ma%C3%B1ana-en-vivo-buenos-d%C3%ADas-martes-23-de-junio-2026-venezuela/1024327436681712/</a></td><td></td></tr><tr><td>Noticiero VV</td><td><a href="https://www.facebook.com/noticierovv/videos/por-tercera-semana-consecutiva-las-exportaciones-de-petr%C3%B3leo-venezolano-a-estado/1646821846402117/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/videos/por-tercera-semana-consecutiva-las-exportaciones-de-petr%C3%B3leo-venezolano-a-estado/1646821846402117/</a></td><td>2026-06-23</td></tr><tr><td>Venevisión</td><td><a href="https://www.youtube.com/watch?v=-lPYaJcw3x0" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-lPYaJcw3x0</a></td><td>2026-06-23</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#616161;">Agregador</span> Agregador <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Pueblo Combatiente</td><td><a href="https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/" target="_blank" rel="noopener">https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/</a></td><td>2026-06-23</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#4527a0;">Think tank</span> Think tank <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Polianalitica</td><td><a href="https://www.polianalitica.com/boletines/5063/boletin-informativo-polianalitica-martes-23-de-junio-de-2026-1200-m" target="_blank" rel="noopener">https://www.polianalitica.com/boletines/5063/boletin-informativo-polianalitica-martes-23-de-junio-de-2026-1200-m</a></td><td>2026-06-23</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/DZ5AosrRlTl/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ5AosrRlTl/</a></td><td>2026-06-23</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Nelin Escalante (Instagram)</td><td><a href="https://www.instagram.com/reel/DZ6GMpjxO8y/" target="_blank" rel="noopener">https://www.instagram.com/reel/DZ6GMpjxO8y/</a></td><td>2026-06-23</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-23</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
