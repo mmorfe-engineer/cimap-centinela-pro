@@ -1,0 +1,325 @@
+{
+  "version": "1.0",
+  "correlativo": "20260623-14H-201255",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-23T20:24:32.463646+00:00",
+  "rango_inicio": "2026-06-22T20:12:55.444949+00:00",
+  "rango_fin": "2026-06-23T20:12:55.444949+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 13,
+    "A2": 17,
+    "A1": 3,
+    "A0": 0,
+    "total": 33
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 9,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A3",
+        "A1",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "BCV fija tasa de cambio en 617,6388 Bs/USD para el 23 de junio de 2026",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    "INST1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV 23 de junio 2026: 617,6388 Bs/USD con incremento de 0,85%",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    "INST2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Tribunal Supremo condena a exministro José Luis Ávalos a 24 años de prisión por corrupción",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=SNCNX3cuzI8"
+    },
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Producción de petróleo venezolano alcanza 1,25 millones de bpd en mayo 2026",
+      "ultima_fuente_url": "https://amp.larepublica.co/globoeconomia/exportaciones-petroleras-de-venezuela-suben-a-us-5-491-millones-en-primer-trimestre-de-este-ano-4421294"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Banco Central de Venezuela reporta aumento en exportaciones no petroleras e ingresos de 2.268 millon",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=bOPzJk9xDgg"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "cf92a3c2d67a",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez clausura Coloquio Internacional 'Patria es América' en Caracas",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/-la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-clausur%C3%B3-el-coloquio-inter/1529266422575722/"
+    },
+    {
+      "hash": "ba899f9fba62",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez condecora campeonas y campeones de baloncesto en Miraflores",
+      "fuente_url": "https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/"
+    },
+    {
+      "hash": "1cf5bb65084f",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Desminten rumor falso sobre eliminación de 107 viceministerios por el gobierno de Delcy Rodríguez",
+      "fuente_url": "https://eldiario.com/2026/06/22/falso-gobierno-encargado-elimino-viceministerios-venezuela/"
+    },
+    {
+      "hash": "fc2551940d0c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez evalúa relaciones diplomáticas con EE. UU. a seis meses de restablecimiento",
+      "fuente_url": "https://www.instagram.com/p/DZ537oOSNsO/"
+    },
+    {
+      "hash": "4bf013ded242",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Senador Rick Scott critica a Delcy Rodríguez y exige fecha a elecciones en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/06/rick-scott-entrevista-elecciones-venezuela-sanciones-delcy-rodriguez/"
+    },
+    {
+      "hash": "c860087e9204",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Parlamentarios venezolanos reafirman en Belarús compromiso con la multipolaridad y soberanía",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/parlamentarios-reafirman-en-belarus-compromiso-de-venezuela-con-la-multipolaridad-y-la-soberania"
+    },
+    {
+      "hash": "32cba1f5a769",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Apagón repentino interrumpe sesión de la Asamblea Nacional en Caracas",
+      "fuente_url": "https://www.instagram.com/reel/DZ7xKiwPKrg/"
+    },
+    {
+      "hash": "9ba7fe357eb1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 617,6388 Bs/USD el 23 de junio de 2026",
+      "fuente_url": "https://eldiariodeguayana.com.ve/tasa-de-cambio-bcv-23-de-junio-de-2026-6176388-bs-usd-085/"
+    },
+    {
+      "hash": "671f3fda35e3",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez aprueba extensión de temporada de Baloncesto Profesional",
+      "fuente_url": "https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/"
+    },
+    {
+      "hash": "3949ca722a9d",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Banco Central de Venezuela reporta alza en exportaciones no petroleras con ingresos de 2.268 millone",
+      "fuente_url": "https://www.youtube.com/watch?v=bOPzJk9xDgg"
+    },
+    {
+      "hash": "9ff18b00ed31",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Línea LatArialines solicita más frecuencias en ruta Bogotá-Caracas a autoridades aeronáuticas",
+      "fuente_url": "https://www.youtube.com/watch?v=bOPzJk9xDgg"
+    },
+    {
+      "hash": "c0d8bc038dea",
+      "actor": "INST2",
+      "alert_level": "A1",
+      "titulo_corto": "Tribunal Supremo condena a exministro José Luis Ávalos a 24 años de prisión por corrupción",
+      "fuente_url": "https://www.youtube.com/watch?v=SNCNX3cuzI8"
+    },
+    {
+      "hash": "cc3b3e52273c",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Exportación petrolera venezolana supera los $5 mil millones en el primer trimestre",
+      "fuente_url": "https://www.youtube.com/watch?v=U5xGQx1HTpY"
+    },
+    {
+      "hash": "c48370e8f6ce",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV fija el dólar en 617,6388 Bs/USD con incremento de 0,85%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "e616a6772b7d",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Estados Unidos autoriza venta temporal de crudo iraní por 60 días",
+      "fuente_url": "https://www.youtube.com/watch?v=U5xGQx1HTpY"
+    },
+    {
+      "hash": "aa3036a222a1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Exministro español José Luis Ávalos condenado a 24 años por corrupción",
+      "fuente_url": "https://www.youtube.com/watch?v=SNCNX3cuzI8"
+    },
+    {
+      "hash": "98407bdcb101",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV reporta alza de 21% en exportaciones petroleras de Venezuela en Q1-2026",
+      "fuente_url": "https://efe.com/economia/2026-06-23/ingresos-exportaciones-petroleo-venezuela/"
+    },
+    {
+      "hash": "4a2e4cae47e2",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones marítimas de petróleo venezolano crecen 144% en H1-2026",
+      "fuente_url": "https://www.elnacional.com/2026/06/exportaciones-maritimas-de-petroleo-de-venezuela-crecieron-un-144-en-2026-segun-bloomberg/"
+    },
+    {
+      "hash": "e257211d3d3a",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Producción de petróleo venezolano alcanza 1,25 millones de bpd en mayo 2026",
+      "fuente_url": "https://amp.larepublica.co/globoeconomia/exportaciones-petroleras-de-venezuela-suben-a-us-5-491-millones-en-primer-trimestre-de-este-ano-4421294"
+    },
+    {
+      "hash": "74afbdd2efc7",
+      "actor": "INST4",
+      "alert_level": "A3",
+      "titulo_corto": "Banco Central de Venezuela reporta aumento en exportaciones no petroleras e ingresos de 2.268 millon",
+      "fuente_url": "https://www.youtube.com/watch?v=bOPzJk9xDgg"
+    },
+    {
+      "hash": "99a002ad5da4",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Delcy Rodríguez aprora extensión de la temporada de baloncesto profesional (SPB)",
+      "fuente_url": "https://pueblocombatiente.wordpress.com/2026/06/23/resumen-de-noticias-de-venezuela-23-06-2026/"
+    },
+    {
+      "hash": "46d67b162c03",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez reconoce publicamente situación sobre la diá...",
+      "fuente_url": "https://www.facebook.com/vpitv/videos/noticias-en-la-ma%C3%B1ana-en-vivo-buenos-d%C3%ADas-martes-23-06-2026-venezuela/1024327436681712/"
+    },
+    {
+      "hash": "0c684a0d5338",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Banco Central de Venezuela reporta ingresos de 2.268 millones de dólares por exportaciones no petrol",
+      "fuente_url": "https://www.youtube.com/watch?v=bOPzJk9xDgg"
+    },
+    {
+      "hash": "4f9013757ef6",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 617,6388 Bs/USD con incremento de 0,85%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "5286fbda5987",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela se consolida como cuarto mayor proveedor de petróleo de la India",
+      "fuente_url": "https://www.youtube.com/watch?v=-lPYaJcw3x0"
+    },
+    {
+      "hash": "2b0de5c4444d",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "El Niño tendrá impacto relativamente bajo en Venezuela según experto",
+      "fuente_url": "https://mundour.com/2026/06/23/fenomeno-el-nino-tendra-un-impacto-relativamente-bajo-en-venezuela-segun-experto/"
+    },
+    {
+      "hash": "e75784793665",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio oficial a 617,6388 Bs/USD el 23 de junio con aumento de 0,85%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "0800427ab5e0",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV 23 de junio 2026: 617,6388 Bs/USD con incremento de 0,85%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "319e0e1a448a",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Reporte de Análisis Energético: pragmatismo de potencias redefine mercados y acelera transición en V",
+      "fuente_url": "https://lagranaldea.com/2026/06/23/reporte-de-analisis-energetico23-de-junio/"
+    },
+    {
+      "hash": "28bca34a37b2",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuelan Press entrega IX Premio Miguel Otero Silva en Madrid con mesa sobre transición venezolana",
+      "fuente_url": "https://www.elnacional.com/2026/06/venezuelan-press-entregara-en-madrid-el-ix-premio-miguel-otero-silva/"
+    },
+    {
+      "hash": "9053e1bbd553",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Aumento de muertes bajo custodia estatal en Venezuela entre abril y junio de 2026",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/hoy-23-de-junio-conmemoramos-el-d%C3%ADa-nacional-del-abogado-pilares-para-el-funcion/27734126212940322/"
+    },
+    {
+      "hash": "772f70559b09",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 617,6388 Bs/USD para el 23 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-23-junio-2026/"
+    },
+    {
+      "hash": "2beb5d338f61",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Dos adolescentes rescatados de trata de personas en Anzuáegui, Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=U5xGQx1HTpY"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
