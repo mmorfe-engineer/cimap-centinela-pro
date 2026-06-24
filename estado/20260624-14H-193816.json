@@ -1,0 +1,286 @@
+{
+  "version": "1.0",
+  "correlativo": "20260624-14H-193816",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-24T19:51:33.316295+00:00",
+  "rango_inicio": "2026-06-23T19:38:16.030587+00:00",
+  "rango_fin": "2026-06-24T19:38:16.030587+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 11,
+    "A2": 11,
+    "A1": 3,
+    "A0": 0,
+    "total": 25
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A1",
+        "A3"
+      ],
+      "ultimo_titulo": "Ingresos por exportaciones petroleras crecen 21% en primer trimestre de 2026",
+      "ultima_fuente_url": "https://n24.lostubazos.com/2026/06/24/ingresos-por-exportaciones-petroleras-crecen-21-en-primer-trimestre-de-2026/"
+    },
+    "P1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Oposición venezolana se alinea con plan de EE.UU. para transición pacífica",
+      "ultima_fuente_url": "https://es-us.noticias.yahoo.com/dinorah-figuera-opositora-ee-uu-135942227.html"
+    },
+    "INT3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "NTN24 advierte a Petro y Cepeda: sanciones si no aceptan resultados electorales en Colombia",
+      "ultima_fuente_url": "https://www.ntn24.com/en-vivo"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Exportaciones de petróleo de Venezuela suben 144% en primer semestre de 2026",
+      "ultima_fuente_url": "https://www.facebook.com/BloombergLinea/videos/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/27008400975498689/"
+    },
+    "INT1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "FMI reanuda relaciones con Venezuela y anuncia nuevas tasas del DEG",
+      "ultima_fuente_url": "https://www.imf.org/es/home"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Donald Trump propone incluir Venezuela en cifras de producción petrolera de EE.UU",
+      "ultima_fuente_url": "https://www.jornada.com.mx/2026/06/24/mundo/023n2mun"
+    },
+    "INST5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A1"
+      ],
+      "ultimo_titulo": "Programación de combustible para San Cristóbal el 24 de junio 2026",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZ9q9l0FlL6/"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Plataforma Unitaria respalda ruta de EE.UU. para transición política en Venezuela",
+      "ultima_fuente_url": "https://eldiario.com/2026/06/24/plataforma-unitaria-venezuela/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB3",
+    "GOB4",
+    "P2",
+    "INST4"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "14c10bff8ea0",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez admite giro oficial del chavismo hacia EE. UU. tras enero 2026",
+      "fuente_url": "https://www.noticiasrcn.com/internacional/delcy-rodriguez-admite-giro-del-chavismo-hacia-ee-uu-1033429"
+    },
+    {
+      "hash": "fa31bad61cb7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez refirma que relación con EE. UU. transita el camino correcto",
+      "fuente_url": "https://www.ntn24.com/noticias-actualidad/ante-la-mirada-fria-del-hijo-de-maduro-delcy-rodriguez-admite-que-entrada-de-ee-uu-en-venezuela-es-el-camino-correcto-628738"
+    },
+    {
+      "hash": "3fe22241fcff",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno de Delcy Rodríguez revela decisión que cambiaría futuro económico de Venezuela",
+      "fuente_url": "https://www.semana.com/mundo/articulo/la-decision-que-podria-cambiar-el-futuro-economico-de-venezuela-revelan-detalle-inedito-del-gobierno-de-delcy-rodriguez/202637/"
+    },
+    {
+      "hash": "cf92a3c2d67a",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Delcy Rodríguez clausura Coloquio Internacional 'Patria es América' en Caracas",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/-la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-clausur%C3%B3-el-coloquio-inter/1529266422575722/"
+    },
+    {
+      "hash": "188c3501aa02",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Oposición venezolana ofrece contribuir a transición política",
+      "fuente_url": "https://efe.com/mundo/2026-06-24/oposicion-venezuela-transicion-politica/"
+    },
+    {
+      "hash": "dcf1104b255c",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Plataforma Unitaria respalda ruta de tres pasos de Marco Rubio",
+      "fuente_url": "https://www.elimpulso.com/2026/06/24/oposicion-venezolana-se-alinea-con-el-plan-de-ee-uu-para-una-transicion-pacifica-24jun/"
+    },
+    {
+      "hash": "7bd3d373afe3",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Oposición venezolana se alinea con plan de EE.UU. para transición pacífica",
+      "fuente_url": "https://es-us.noticias.yahoo.com/dinorah-figuera-opositora-ee-uu-135942227.html"
+    },
+    {
+      "hash": "ef263e59c429",
+      "actor": "INT3",
+      "alert_level": "A3",
+      "titulo_corto": "NTN24 advierte a Petro y Cepeda: sanciones si no aceptan resultados electorales en Colombia",
+      "fuente_url": "https://www.ntn24.com/en-vivo"
+    },
+    {
+      "hash": "1d3b7b72778d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Observatorio Venezolano de Prisiones: 5 muertos en junio, 28 bajo custodia entre abril y junio",
+      "fuente_url": "https://www.youtube.com/watch?v=43A84rT6dQE"
+    },
+    {
+      "hash": "11f10b1789c5",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones de petróleo de Venezuela suben 144% en primer semestre de 2026",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/videos/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/27008400975498689/"
+    },
+    {
+      "hash": "bfe83c675ad5",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela exportó 1,25 millones de barriles diarios en junio de 2026, máximo en siete años",
+      "fuente_url": "https://www.instagram.com/p/DZ5AosrRlTl/"
+    },
+    {
+      "hash": "82290d3f0ff2",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Ingresos por exportaciones petroleras crecen 21% en primer trimestre de 2026",
+      "fuente_url": "https://n24.lostubazos.com/2026/06/24/ingresos-por-exportaciones-petroleras-crecen-21-en-primer-trimestre-de-2026/"
+    },
+    {
+      "hash": "4af654561b77",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Donald Trump propone incluir Venezuela en cifras de producción petrolera de EE.UU",
+      "fuente_url": "https://www.jornada.com.mx/2026/06/24/mundo/023n2mun"
+    },
+    {
+      "hash": "4e41d5ea98c6",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela funciona como un protectorado petrolero de EE.UU",
+      "fuente_url": "https://ipsnoticias.net/2026/06/venezuela-funciona-como-un-protectorado-petrolero-de-eeuu/"
+    },
+    {
+      "hash": "7b62798258b4",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Producción petrolera de Venezuela aumenta 3.78% en mayo de 2026",
+      "fuente_url": "https://www.instagram.com/reel/DZ8TpL_q2eO/"
+    },
+    {
+      "hash": "9d959bca7ed1",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA asesorada por Greenberg Traurig para contratos petroleros y cumplimiento",
+      "fuente_url": "https://www.facebook.com/vision24television/posts/-pdvsa-en-modo-desperaci%C3%B3n-legal-para-salvar-la-producci%C3%B3nla-petrolera-estatal-v/1486168966878524/"
+    },
+    {
+      "hash": "2695258eacb2",
+      "actor": "INST5",
+      "alert_level": "A1",
+      "titulo_corto": "Programación de combustible para San Cristóbal el 24 de junio 2026",
+      "fuente_url": "https://www.instagram.com/p/DZ9q9l0FlL6/"
+    },
+    {
+      "hash": "0939a5f9b02f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Pronunciamiento sobre uso obligatorio de etanol en combustible por viceministro de Hidrocarburos",
+      "fuente_url": "https://www.instagram.com/p/DZ8Natjms7N/"
+    },
+    {
+      "hash": "f461cf4f0e54",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Feriado bancario en Venezuela por celebración de la Batalla de Carabobo",
+      "fuente_url": "https://www.instagram.com/p/DZ8PvDXlgI7/"
+    },
+    {
+      "hash": "2beee51cb0bd",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cotización del dólar en Venezuela a 622 bolívares",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-miercoles-24-de-junio-de-2026_0_zqslyBXSHD.html"
+    },
+    {
+      "hash": "9cdfce6ad7e0",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "OEA urgió liberación de presos políticos en Venezuela y ofreció acompañar elecciones",
+      "fuente_url": "https://enperspectiva.uy/en-perspectiva-programa/noticias-del-miercoles-24-de-junio-de-2026/"
+    },
+    {
+      "hash": "7dc151b2abb5",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Plataforma Unitaria respalda ruta de EE.UU. para transición política en Venezuela",
+      "fuente_url": "https://eldiario.com/2026/06/24/plataforma-unitaria-venezuela/"
+    },
+    {
+      "hash": "e65c289e565a",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "FMI reanuda relaciones con Venezuela y anuncia nuevas tasas del DEG",
+      "fuente_url": "https://www.imf.org/es/home"
+    },
+    {
+      "hash": "a5d069bfa85a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Exportaciones totales de Venezuela cerraron Q1 2026 en 7.759 millones",
+      "fuente_url": "https://www.instagram.com/reel/DZ-NquSOXh-/"
+    },
+    {
+      "hash": "be9afafd35d9",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Reporte de análisis petrolero y energético del 23 de junio de 2026 emitido por Costa del Sol",
+      "fuente_url": "https://www.costadelsolfm.org/2026/06/el-reporte-del-analisis-petrolero-y-energetico-del-23-de-junio-de-2026-por-luis-a-pacheco-y-matias-j-szabo/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
