@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260625-14H-214427</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260625-14H-214427</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-24T21:44:27.040645+00:00 → 2026-06-25T21:44:27.040645+00:00<br>
+    <strong>Generado:</strong> 2026-06-25 21:52 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 6 A4</span>
+    <span class="stat-pill">🟠 6 A3</span>
+    <span class="stat-pill">🟡 4 A2</span>
+    <span class="stat-pill">📊 16 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Dos terremotos consecutivos de magnitudes 7.2 y 7.5 (el más fuerte en Venezuela desde 1900) sacudieron el país el 24-25 de junio, dejando al menos 164 fallecidos, 970 heridos y daños estructurales masivos en Caracas y La Guaira, según reportes de Delcy Rodríguez, Nicolás Maduro y medios internacionales.
+
+2. El gobierno venezolano declaró estado de emergencia y solicitó ayuda internacional, mientras potencias como EE.UU., China, Rusia y Francia ofrecieron equipos de rescate, suministros médicos y asistencia humanitaria, según fuentes como France 24 y el Departamento de Estado de EE.UU.
+
+3. El FMI anunció la reanudación de relaciones diplomáticas y técnicas con Venezuela, lo que podría facilitar acceso a financiamiento internacional y ajustes en política fiscal, según comunicado oficial del organismo.
+
+4. El USGS proyectó daños económicos entre $10 mil y $100 mil millones (este último equivalente al PIB venezolano), lo que exigirá intervención internacional para la recuperación, según CNN.
+
+5. Organizaciones como WOLA y gobiernos regionales (Colombia, Brasil, España) presionan para eliminar obstáculos a la ayuda humanitaria, mientras EE.UU. activó equipos de asistencia pese a sanciones históricas, según USA Today y Al Jazeera.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260625-14H-200813</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (16):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong>Pedro Infante Aparicio</strong>: Dos terremotos de 7.2 y 7.5 en Venezuela dejan al menos 188 muertos y más de 1.500 heridos <a href="https://www.bbc.com/news/live/c621z18wznet" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Nicolás Maduro</strong>: Doble terremoto de magnitud 7.2 y 7.5 sacude Venezuela con más de 164 muertos y 970 heridos <a href="https://www.mediotiempo.com/actualidad/virales/terremoto-en-venezuela-ultimas-noticias-al-momento-hoy-25-de-junio-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Pedro Infante Aparicio</strong>: Doble terremoto de magnitud 7.2 y 7.5 sacude Venezuela; 164 muertos y ofrenda de ayuda global <a href="https://www.youtube.com/watch?v=Vvn0Y75O4FY" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Doble terremoto de magnitud 7.2 y 7.5 en Venezuela con 164 fallecidos confirmados <a href="https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-25-junio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Departamento de Estado EE.UU.</strong>: FMI reanuda relaciones con Venezuela y anuncia nuevo marco de cooperación <a href="https://www.imf.org/es/home" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Dos terremotos de magnitud 7.2 y 7.5 devastan costa norte de Venezuela; al menos 188 muertos y miles temen fallecidos <a href="https://www.nytimes.com/live/2026/06/25/world/venezuela-earthquake" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Nicolás Maduro</strong>: China, Rusia, Francia y EE.UU. ofrecen ayuda inmediata de rescate a Venezuela tras terremoto <a href="https://www.youtube.com/watch?v=Vvn0Y75O4FY" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: EE.UU. y múltiples países despliegan ayuda humanitaria a Venezuela tras terremotos; Estado EE.UU. activa equipo de asist <a href="https://www.usatoday.com/story/news/world/2026/06/25/venezuela-earthquakes-deaths-rescue-efforts-what-to-know/90688005007/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: WOLA expresa solidaridad con Venezuela tras sismos devastadores y llama a respuesta humanitaria inmediata <a href="https://www.wola.org/es/2026/06/wola-expresa-solidaridad-con-venezuela-tras-devastadores-sismos-y-llama-a-una-respuesta-humanitaria-inmediata-y-sin-obstaculos/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: Preliminary economic damage from Venezuela earthquakes estimated at $10B-$100B <a href="https://www.cnn.com/2026/06/25/economy/venezuela-economy-analysis-intl-hnk" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB5</code> (Nicolás Maduro), <code>INST2</code> (Tribunal Supremo de Justicia)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB3</code> (Jorge Rodríguez), <code>INST1</code> (Asamblea Nacional), <code>INST5</code> (PDVSA), <code>P1</code> (María Corina Machado)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>10 cortes sin actividad</strong></li><li><code>INST4</code> — Banco Central de Venezuela (<em>Autoridad monetaria</em>): <strong>6 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>3 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 6</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 11</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Doble terremoto de magnitud 7.2 y 7.5 en Venezuela con 164 fallecidos confirmados</h3>
+  <p class="fact-summary">Dos potentes terremotos consecutivos de magnitud 7.2 y 7.5 sacudieron Venezuela la noche del 24 de junio, causando 164 fallecidos y más de 970 heridos, según la presidenta encargada Delcy Rodríguez, quien declaró estado de emergencia[1][2][3].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 24/06/2026 18:30 VET</p>
+  <ul class="data-points"><li>164</li><li>970</li><li>7.2</li><li>7.5</li><li>200000000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Necesita activación de protocolos de emergencia nacional, coordinación internacional de rescate y asignación inmediata de fondos de reconstrucción de 200 millones de dólares[1][4].</div>
+  <div class="enlaces"><a href="https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-25-junio-2026/" target="_blank" rel="noopener">📰 RTVC</a> · <a href="https://www.youtube.com/watch?v=hzFbPwGyAfU" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Doble terremoto de magnitud 7.2 y 7.5 sacude Venezuela; 164 muertos y ofrenda de ayuda global</h3>
+  <p class="fact-summary">Dos sismos de magnitud 7.2 y 7.5 azotaron Venezuela el 25 de junio de 2026, causando al menos 164 fallecidos y 970 heridos, mientras China, Rusia, Francia y Estados Unidos (bajo el gobierno de Trump) ofrecen envío de socorristas y asistencia humanitaria inmediata[1][2]</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 03:30 VET</p>
+  <ul class="data-points"><li>164</li><li>970</li><li>7.2</li><li>7.5</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Cambia la dinámica geopolítica inmediata: Occidente y potencias emergentes (China, Rusia) se Coordina en respuesta humanitaria, reduciendo temporalmente la tensión de sanciones y abriendo espacio para cooperación diplomática en crisis</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=Vvn0Y75O4FY" target="_blank" rel="noopener">📰 FRANCE 24 Español</a> · <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-jueves-25-junio-2026_202606256a3cda2c95cc61359cdd3ea2.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Dos terremotos de magnitud 7.2 y 7.5 devastan costa norte de Venezuela; al menos 188 muertos y miles temen fallecidos</h3>
+  <p class="fact-summary">Dos terremotos de magnitud 7.2 y 7.5 ocurrieron 39 segundos aparte el 24 de junio en la costa norte de Venezuela, causando al menos 188 muertos, 1520 heridos y daños estructurales masivos, con proyección de miles de fallecidos [1][3][5][6]</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 09:04 VET</p>
+  <ul class="data-points"><li>188 muertos</li><li>1520 heridos</li><li>magnitud 7.2 y 7.5</li><li>39 segundos entre terremotos</li><li>riesgo de 10,000 muertes</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Exige movilización inmediata de ayuda internacional, coordinación de rescate y adaptación de políticas de sanciones para permitir operaciones humanitarias [1][7]</div>
+  <div class="enlaces"><a href="https://www.nytimes.com/live/2026/06/25/world/venezuela-earthquake" target="_blank" rel="noopener">📰 New York Times</a> · <a href="https://www.reuters.com/business/environment/thousands-feared-dead-after-two-major-earthquakes-strike-venezuela-2026-06-25/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Doble terremoto de magnitud 7.2 y 7.5 sacude Venezuela con más de 164 muertos y 970 heridos</h3>
+  <p class="fact-summary">Dos potentes sismos consecutivos de magnitud 7.2 y 7.5, con 39-40 segundos de diferencia, causaron al menos 164 fallecidos y más de 970 heridos en Venezuela, con edificios colapsados en La Guaira y Caracas</p>
+  <p class="info-actor"><strong>GOB5</strong> — Nicolás Maduro <em>(Ex Presidente (período hasta enero 2026))</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 14:00 VET</p>
+  <ul class="data-points"><li>7.2 magnitud primer sismo</li><li>7.5 magnitud segundo sismo</li><li>39 segundos diferencia entre sismos</li><li>164 muertos reportados</li><li>970+ heridos</li><li>971 heridos (balance preliminar)</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de ayuda internacional, declaración de estado de emergencia y coordinación de rescate en zonas de desastre; afecta estabilidad política y seguridad nacional</div>
+  <div class="enlaces"><a href="https://www.mediotiempo.com/actualidad/virales/terremoto-en-venezuela-ultimas-noticias-al-momento-hoy-25-de-junio-2026" target="_blank" rel="noopener">📰 Medio Tiempo / Euronews / France 24</a> · <a href="https://es.euronews.com/video/2026/06/25/ultimas-noticias-25-junio-2026-tarde" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>FMI reanuda relaciones con Venezuela y anuncia nuevo marco de cooperación</h3>
+  <p class="fact-summary">El Fondo Monetario Internacional (FMI) anunció oficialmente la reanudación de relaciones diplomáticas y técnicas con Venezuela, lo que implica un cambio estratégico en la política económica internacional del país[7].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 14:30 VET</p>
+  <ul class="data-points"><li>2.799%</li><li>25 de junio de 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La reanudación de relaciones con el FMI abre la posibilidad de acceso a financiamiento internacional, requiere ajustes en política fiscal y puede estabilizar el tipo de cambio y reducir el riesgo país</div>
+  <div class="enlaces"><a href="https://www.imf.org/es/home" target="_blank" rel="noopener">📰 Fondo Monetario Internacional</a> · <a href="https://web.archive.org/web/20260625200617/https://www.imf.org/es/home" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Dos terremotos de 7.2 y 7.5 en Venezuela dejan al menos 188 muertos y más de 1.500 heridos</h3>
+  <p class="fact-summary">Dos terremotos consecutivos de magnitudes 7.2 y 7.5, el segundo el más fuerte en Venezuela desde 1900, causaron al menos 188 muertos y más de 1.500 heridos, con más de 100 edificios colapsados en Caracas y La Guaira</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 17:44 VET</p>
+  <ul class="data-points"><li>188 muertos</li><li>1.500+ heridos</li><li>7.2 magnitud primer terremoto</li><li>7.5 magnitud segundo terremoto</li><li>100+ edificios colapsados</li><li>44% probabilidad de más de 10.000 fallecidos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de ayuda internacional, despliegue de equipos de rescate y recursos médicos; la proyección del USGS indica riesgo de que las muertes superen 10.000</div>
+  <div class="enlaces"><a href="https://www.bbc.com/news/live/c621z18wznet" target="_blank" rel="noopener">📰 BBC News</a> · <a href="https://www.bbc.com/news/articles/czx5k8pxdevo" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>EE.UU. y múltiples países despliegan ayuda humanitaria a Venezuela tras terremotos; Estado EE.UU. activa equipo de asistencia</h3>
+  <p class="fact-summary">El Departamento de Estado de EE.UU. activó un equipo de asistencia por desastres y enviará equipos de rescate, suministros médicos y humanitarios; Colombia, Israel, EE.UU., España y Brasil también anunciaron ayuda [1][2][4][7]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 09:04 VET</p>
+  <ul class="data-points"><li>60 rescates colombianos</li><li>4 perros de rescate</li><li>envío de equipos médicos y humanitarios</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Permite reconfiguración temporal de sanciones para facilitar envío de ayuda, fortaleciendo diplomacia de crisis y cooperación regional [1][7]</div>
+  <div class="enlaces"><a href="https://www.usatoday.com/story/news/world/2026/06/25/venezuela-earthquakes-deaths-rescue-efforts-what-to-know/90688005007/" target="_blank" rel="noopener">📰 USA Today</a> · <a href="https://www.cnn.com/2026/06/24/weather/live-news/venezuela-earthquake-puerto-rico-tsunami" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela declara estado de emergencia y pide ayuda internacional tras catástrofe sísmica</h3>
+  <p class="fact-summary">El gobierno venezolano declaró estado de emergencia debido al impacto de los dos terremotos, con edificios colapsados en múltiples zonas y solicitud formal de ayuda internacional para labores de rescate</p>
+  <p class="info-actor"><strong>GOB5</strong> — Nicolás Maduro <em>(Ex Presidente (período hasta enero 2026))</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 13:00 VET</p>
+  <ul class="data-points"><li>estado de emergencia declarado</li><li>edificios colapsados en La Guaira</li><li>Caracas afectada</li><li>Miranda afectada</li><li>154-167 fallecidos (balances preliminares)</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La declaración de estado de emergencia permite activar protocolos de defensa civil, priorizar recursos de rescate y facilitar acceso de ayuda internacional en zonas de desastre</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=Go_IS15RNS0" target="_blank" rel="noopener">📰 Noticias Caracol</a> · <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-jueves-25-junio-2026_202606256a3cda2c95cc61359cdd3ea2.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Preliminary economic damage from Venezuela earthquakes estimated at $10B-$100B</h3>
+  <p class="fact-summary">The US Geological Survey predicts economic damages from twin earthquakes in Venezuela could range from $10 billion to $100 billion, where the upper estimate equals the total size of the Venezuelan economy[3].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 14:30 VET</p>
+  <ul class="data-points"><li>$10 billion</li><li>$100 billion</li><li>32 fatalities</li><li>700 injuries</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Quantifies the scale of the crisis, indicating that recovery will require external resources comparable to the entire national GDP, complicating recovery without international intervention[3].</div>
+  <div class="enlaces"><a href="https://www.cnn.com/2026/06/25/economy/venezuela-economy-analysis-intl-hnk" target="_blank" rel="noopener">📰 CNN</a> · <a href="https://web.archive.org/web/20260625214923/https://www.cnn.com/2026/06/25/economy/venezuela-economy-analysis-intl-hnk" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>China, Rusia, Francia y EE.UU. ofrecen ayuda inmediata de rescate a Venezuela tras terremoto</h3>
+  <p class="fact-summary">Potencias mundiales (China, Rusia, Francia, EE.UU.) y naciones latinoamericanas ofrecieron enviar socorristas y equipos de búsqueda y rescate, incluyendo 85 cistas franceses y recursos médicos estadounidenses</p>
+  <p class="info-actor"><strong>GOB5</strong> — Nicolás Maduro <em>(Ex Presidente (período hasta enero 2026))</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 15:30 VET</p>
+  <ul class="data-points"><li>85 cistas franceses especializados</li><li>equipos de búsqueda y rescate de EE.UU.</li><li>recursos médicos estadounidenses</li><li>asistencia de China y Rusia</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Coordinación de ayuda internacional acelera rescate y reduce víctimas; implica realineamiento diplomático y acceso de fuerzas extranjeras en territorio venezolano</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=Vvn0Y75O4FY" target="_blank" rel="noopener">📰 France 24 Español</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>US mobilizes search and rescue aid for Venezuela after earthquakes despite sanctions</h3>
+  <p class="fact-summary">The US Department of State announced it is dispatching search and rescue teams, medical supplies, and humanitarian aid to Venezuela following earthquakes, collaborating with the interim Venezuelan government despite historical sanctions barriers[1][9].</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 16:15 VET</p>
+  <ul class="data-points"><li>32 fatalities reported</li><li>700 injuries reported</li><li>US sending search and rescue teams</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Breaks historical precedent of aid hinderance by sanctions, potentially enabling immediate life-saving operations and shifting geopolitical narrative on Venezuela[1].</div>
+  <div class="enlaces"><a href="https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations" target="_blank" rel="noopener">📰 Al Jazeera</a> · <a href="https://www.reuters.com/world/americas/us-says-it-is-mobilizing-assistance-venezuela-after-earthquakes-2026-06-25/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Sanciones de EE.UU. podrían obstaculizar operaciones de ayuda en Venezuela tras terremotos; Estado EE.UU. confirma comunicación con gobierno interino</h3>
+  <p class="fact-summary">Al Jazeera reporta que las sanciones históricas de EE.UU. podrían limitar la ayuda, aunque el Departamento de Estado confirmó comunicación con el gobierno interino de Venezuela y disposición a enviar ayuda humanitaria [7]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Detecta riesgo de bloqueo logístico por sanciones, exigiendo examen de exenciones humanitarias para evitar crisis agravada [7]</div>
+  <div class="enlaces"><a href="https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations" target="_blank" rel="noopener">📰 Al Jazeera</a> · <a href="https://web.archive.org/web/20260625214526/https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>RTVC centra programación en seguimiento del terremoto de Venezuela</h3>
+  <p class="fact-summary">El grupo RTVC de España reorientó su programación el 25 de junio de 2026 para cubrir el seguimiento del terremoto ocurrido en Venezuela</p>
+  <p class="info-actor">RTVC (Grupo de Radiotelevisión de Colombia)</p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 09:41 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Implicación estratégica: cobertura mediática internacional masiva aumenta visibilidad de la crisis por sismos y presión para acción humanitaria</div>
+  <div class="enlaces"><a href="https://rtvc.es/el-grupo-rtvc-centra-su-programacion-en-el-seguimiento-del-terremoto-de-venezuela-prensa25junio26/" target="_blank" rel="noopener">📰 RTVC (Grupo de Radiotelevisión de Colombia)</a> · <a href="https://web.archive.org/web/20260625200644/https://rtvc.es/el-grupo-rtvc-centra-su-programacion-en-el-seguimiento-del-terremoto-de-venezuela-prensa25junio26/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>US sanctions on Venezuela oil and financial sectors exacerbated economic crisis post-earthquakes</h3>
+  <p class="fact-summary">Sanctions by the US, Canada, and EU on Venezuela&#x27;s oil and financial sectors have deepened the economic crisis, now complicating aid operations following the recent earthquakes[1][7].</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 15:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Highlights the structural barrier sanctions pose to aid delivery, making the US decision to mobilize assistance a significant geopolitical shift despite existing constraints[1][7].</div>
+  <div class="enlaces"><a href="https://www.yahoo.com/news/politics/articles/venezuela-quakes-sanctions-impact-aid-130311366.html" target="_blank" rel="noopener">📰 Yahoo News</a> · <a href="https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/middle-east/iran-fired-cargo-ship-us-officials-tell-reuters-2026-06-25/" target="_blank" rel="noopener">Iran fired on cargo ship, US officials tell Reuters</a></li><li><a href="https://www.reuters.com/world/india/india-says-substantial-progress-made-trade-talks-with-us-2026-06-24/" target="_blank" rel="noopener">India says substantial progress made in trade talks with US</a></li><li><a href="https://www.youtube.com/watch?v=YHCkqp4Q6e8" target="_blank" rel="noopener">Trump dismisses victories by Mamdani-backed New York Democrats</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#00838f;">ONG</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>WOLA expresa solidaridad con Venezuela tras sismos devastadores y llama a respuesta humanitaria inmediata</h3>
+  <p class="fact-summary">La organización WOLA publicó un comunicado el 25 de junio de 2026 expresando solidaridad con Venezuela ante los sismos devastadores y solicitando una respuesta humanitaria inmediata sin obstáculos</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 24/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Implicación estratégica: presión internacional para acceso humanitario sin obstáculos ante crisis por sismos, podría acelerar apertura de rutas de ayuda</div>
+  <div class="enlaces"><a href="https://www.wola.org/es/2026/06/wola-expresa-solidaridad-con-venezuela-tras-devastadores-sismos-y-llama-a-una-respuesta-humanitaria-inmediata-y-sin-obstaculos/" target="_blank" rel="noopener">📰 WOLA (Washington Office on Latin America)</a> · <a href="https://web.archive.org/web/20260625215111/https://www.wola.org/es/2026/06/wola-expresa-solidaridad-con-venezuela-tras-devastadores-sismos-y-llama-a-una-respuesta-humanitaria-inmediata-y-sin-obstaculos/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Funvisis reporta sismo de magnitud 3.8 Mw en litoral central de Venezuela</h3>
+  <p class="fact-summary">La Fundación Venezolana de Investigaciones Sismológicas (Funvisis) reportó un sismo de 3.8 Mw ocurrido el 25 de junio de 2026 a las 09:29 a.m. en el litoral central de Venezuela</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 05:29 VET</p>
+  <ul class="data-points"><li>3.8 Mw</li><li>09:29 a.m.</li><li>25 de junio de 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Implicación operativa: evento natural reciente requiere monitoreo de réplicas y evaluación de daños en infraestructura crítica del litoral central</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DaA6qMqlm2m/" target="_blank" rel="noopener">📰 Funvisis (Fundación Venezolana de Investigaciones Sismológicas)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Coordinación internacional de ayuda humanitaria (próximas 24-48 horas)** — Activación de equipos de rescate y suministros médicos por EE.UU., China, Rusia, Francia y otros exige monitorear acuerdos logísticos, acceso a zonas afectadas y posibles tensiones diplomáticas por presencia de actores extranjeros en territorio venezolano.
+
+2. 🔴 **Reactivación de relaciones FMI-Venezuela (7 días)** — Reanudación de vínculos técnicos y diplomáticos con el FMI implica ajustes fiscales, posibles condicionantes y acceso a financiamiento; clave para estabilidad económica post-desastre y reducción de riesgo país.
+
+3. 🟠 **Declaración de estado de emergencia y protocolos de defensa civil (48 horas)** — Evaluar eficacia en movilización de recursos, priorización de zonas críticas (Caracas, La Guaira) y transparencia en gestión de fondos de reconstrucción (USD 200 millones anunciados).
+
+4. 🟠 **Silencio de Jorge Rodríguez (GOB3) y María Corina Machado (P1)** — Ausencia de declaraciones de figuras clave del gobierno y oposición en crisis nacional puede indicar desacuerdos internos, estrategias de comunicación o falta de coordinación en respuesta al desastre.
+
+5. 🟡 **Proyección de daños económicos (USGS: USD 10-100 mil millones)** — Monitorear estimaciones oficiales y comparar con capacidad de respuesta local; impacto en infraestructura crítica (PDVSA, puertos) y necesidad de fondos externos para evitar colapso económico.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(7)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>New York Times</td><td><a href="https://www.nytimes.com/live/2026/06/25/world/venezuela-earthquake" target="_blank" rel="noopener">https://www.nytimes.com/live/2026/06/25/world/venezuela-earthquake</a></td><td>2026-06-25</td></tr><tr><td>USA Today</td><td><a href="https://www.usatoday.com/story/news/world/2026/06/25/venezuela-earthquakes-deaths-rescue-efforts-what-to-know/90688005007/" target="_blank" rel="noopener">https://www.usatoday.com/story/news/world/2026/06/25/venezuela-earthquakes-deaths-rescue-efforts-what-to-know/90688005007/</a></td><td>2026-06-25</td></tr><tr><td>Al Jazeera</td><td><a href="https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations" target="_blank" rel="noopener">https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations</a></td><td>2026-06-25</td></tr><tr><td>BBC News</td><td><a href="https://www.bbc.com/news/live/c621z18wznet" target="_blank" rel="noopener">https://www.bbc.com/news/live/c621z18wznet</a></td><td>2026-06-25</td></tr><tr><td>Medio Tiempo / Euronews / France 24</td><td><a href="https://www.mediotiempo.com/actualidad/virales/terremoto-en-venezuela-ultimas-noticias-al-momento-hoy-25-de-junio-2026" target="_blank" rel="noopener">https://www.mediotiempo.com/actualidad/virales/terremoto-en-venezuela-ultimas-noticias-al-momento-hoy-25-de-junio-2026</a></td><td>2026-06-25</td></tr><tr><td>Noticias Caracol</td><td><a href="https://www.youtube.com/watch?v=Go_IS15RNS0" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Go_IS15RNS0</a></td><td>2026-06-25</td></tr><tr><td>CNN</td><td><a href="https://www.cnn.com/2026/06/25/economy/venezuela-economy-analysis-intl-hnk" target="_blank" rel="noopener">https://www.cnn.com/2026/06/25/economy/venezuela-economy-analysis-intl-hnk</a></td><td>2026-06-25</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(3)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>France 24 Español</td><td><a href="https://www.youtube.com/watch?v=Vvn0Y75O4FY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Vvn0Y75O4FY</a></td><td>2026-06-25</td></tr><tr><td>RTVC (Grupo de Radiotelevisión de Colombia)</td><td><a href="https://rtvc.es/el-grupo-rtvc-centra-su-programacion-en-el-seguimiento-del-terremoto-de-venezuela-prensa25junio26/" target="_blank" rel="noopener">https://rtvc.es/el-grupo-rtvc-centra-su-programacion-en-el-seguimiento-del-terremoto-de-venezuela-prensa25junio26/</a></td><td>2026-06-25</td></tr><tr><td>RTVC</td><td><a href="https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-25-junio-2026/" target="_blank" rel="noopener">https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-25-junio-2026/</a></td><td>2026-06-24</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#616161;">Agregador</span> Agregador <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Yahoo News</td><td><a href="https://www.yahoo.com/news/politics/articles/venezuela-quakes-sanctions-impact-aid-130311366.html" target="_blank" rel="noopener">https://www.yahoo.com/news/politics/articles/venezuela-quakes-sanctions-impact-aid-130311366.html</a></td><td>2026-06-25</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#00838f;">ONG</span> ONG <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>WOLA (Washington Office on Latin America)</td><td><a href="https://www.wola.org/es/2026/06/wola-expresa-solidaridad-con-venezuela-tras-devastadores-sismos-y-llama-a-una-respuesta-humanitaria-inmediata-y-sin-obstaculos/" target="_blank" rel="noopener">https://www.wola.org/es/2026/06/wola-expresa-solidaridad-con-venezuela-tras-devastadores-sismos-y-llama-a-una-respuesta-humanitaria-inmediata-y-sin-obstaculos/</a></td><td>2026-06-25</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Funvisis (Fundación Venezolana de Investigaciones Sismológicas)</td><td><a href="https://www.instagram.com/p/DaA6qMqlm2m/" target="_blank" rel="noopener">https://www.instagram.com/p/DaA6qMqlm2m/</a></td><td>2026-06-25</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Fondo Monetario Internacional</td><td><a href="https://www.imf.org/es/home" target="_blank" rel="noopener">https://www.imf.org/es/home</a></td><td>2026-06-25</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-25</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
