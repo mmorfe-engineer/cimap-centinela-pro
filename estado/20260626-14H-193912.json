@@ -1,0 +1,510 @@
+{
+  "version": "1.0",
+  "correlativo": "20260626-14H-193912",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-26T20:01:06.168730+00:00",
+  "rango_inicio": "2026-06-25T19:39:12.263076+00:00",
+  "rango_fin": "2026-06-26T19:39:12.263076+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 12,
+    "A3": 18,
+    "A2": 12,
+    "A1": 3,
+    "A0": 0,
+    "total": 45
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 17,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A1",
+        "A4",
+        "A4",
+        "A4",
+        "A2",
+        "A4",
+        "A2",
+        "A2",
+        "A4",
+        "A4",
+        "A4",
+        "A4"
+      ],
+      "ultimo_titulo": "Delcy Rodríguez confirma 589 muertos y 2.980 heridos tras dos terremotos en Venezuela",
+      "ultima_fuente_url": "https://www.atresplayer.com/antena3/noticias/noticias-1/junio-2026/26-06-26-delcy-rodriguez-confirma-589-muertos-y-2980-heridos-mientras-continuan-las-labores-de-rescate-en-venezuela_6a3e2cf8a5945b00077ff3a7/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Opositora Dinorah Figuera regresa a Venezuela para negociar autoridad electoral",
+      "ultima_fuente_url": "https://www.bbc.com/mundo/articles/cx2v3e5n3zeo"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez eleva a 920 fallecidos por doble terremoto en Venezuela",
+      "ultima_fuente_url": "https://es-us.noticias.yahoo.com/presidente-asamblea-nacional-venezuela-informa-172920780.html"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Exportaciones petroleras de Venezuela alcanzaron 5.491 millones de dólares en Q1 2026",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZ8VVpeS9tl/"
+    },
+    "INT1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A2",
+        "A3",
+        "A1",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Misiones internacionales comienzan tareas de rescate tras terremotos en Venezuela con 235 muertos co",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=RoQ9M1leU-A"
+    },
+    "GOB2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "EE.UU. aporta 150 millones de dólares para contingencia en Venezuela tras terremoto",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=91pJOdrF_lY"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "PDVSA evalúa daños en plantas venezolanas tras terremotos",
+      "ultima_fuente_url": "https://revistamercado.do/empresas/afectaron-los-terremotos-de-venezuela-la-produccion-de-petroleo-lo-que-dice-chevron-y-pdvsa/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "P2",
+    "INST4",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "a5c9929df321",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez actualiza balance de fallecidos tras doble sismo del 24 de junio",
+      "fuente_url": "https://www.tiktok.com/@aristeguinoticias/video/7655750164237405461"
+    },
+    {
+      "hash": "a3963c7852ca",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Activación del estado de excepción como respuesta oficial a los sismos del 24 de junio",
+      "fuente_url": "https://www.instagram.com/reel/DZ_fOXBMtzH/"
+    },
+    {
+      "hash": "9b2606d3ded9",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Declaración de emergencia nacional por terremoto que sacudió gran parte del país",
+      "fuente_url": "https://www.instagram.com/p/DaARcrYlnvk/"
+    },
+    {
+      "hash": "dfd59d457096",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez ofrece nuevo balance de afectados tras sismos del 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=bCVDmGahhwM"
+    },
+    {
+      "hash": "5bdfca506891",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Marco Rubio se comunica con Delcy Rodríguez tras dos terremotos para despliegue de equipos",
+      "fuente_url": "https://www.univision.com/noticias/marco-rubio-se-comunica-con-delcy-rodriguez-tras-dos-terremotos-video"
+    },
+    {
+      "hash": "1c024593ef49",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez se dirige a la nación y afirma que su gobierno no obedecerá órdenes de Washington",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/posts/la-presidente-interina-delcy-rodr%C3%ADguez-se-dirigi%C3%B3-a-la-naci%C3%B3n-luego-de-los-fuert/1330171362554596/"
+    },
+    {
+      "hash": "cddcaa9efca7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Terremoto cambia panorama político para Delcy Rodríguez según Reuters",
+      "fuente_url": "https://es.tradingview.com/news/reuters.com,2026:newsml_L6N42Y04L:0/"
+    },
+    {
+      "hash": "50fe983af2a0",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Delcy Rodríguez llama a unirse al pueblo venezolano para orar por hallazgo de víctimas",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/la-presidenta-e-de-venezuela-delcy-rodr%C3%ADguez-llam%C3%B3-a-unirse-al-pueblo-venezolano/1531963575639340/"
+    },
+    {
+      "hash": "4f4604cfbb3c",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Opositora Dinorah Figuera regresa a Venezuela para negociar autoridad electoral",
+      "fuente_url": "https://www.bbc.com/mundo/articles/cx2v3e5n3zeo"
+    },
+    {
+      "hash": "20e184f0763f",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Jorge Rodríguez eleva a 920 fallecidos por doble terremoto en Venezuela",
+      "fuente_url": "https://es-us.noticias.yahoo.com/presidente-asamblea-nacional-venezuela-informa-172920780.html"
+    },
+    {
+      "hash": "a84867531da6",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Gobierno venezolano reporta 235 fallecidos y 4.300 heridos por terremotos",
+      "fuente_url": "https://elpais.com/america/2026-06-26/el-terremoto-en-venezuela-en-vivo.html"
+    },
+    {
+      "hash": "0b635d95c65f",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional aprueba nueve leyes en primer semestre de 2026",
+      "fuente_url": "https://www.instagram.com/p/DZ-J2ZUDsV5/"
+    },
+    {
+      "hash": "8ef1117e7266",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela supera 235 muertos y 4.300 heridos según cifras oficiales",
+      "fuente_url": "https://amp.antena3.com/noticias/sociedad/noticias-hoy-viernes-26-junio-2026_202606266a3e21e8c7a2892f04a3e8fe.html"
+    },
+    {
+      "hash": "9aa193342d92",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Estados Unidos aporta 150 millones de dólares y brigadas de rescate para Venezuela tras terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=91pJOdrF_lY"
+    },
+    {
+      "hash": "38eb1a6f7d2d",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Balance oficial de terremoto en Venezuela: 920 muertos y 3.000 heridos según Jorge Rodríguez",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-26-junio-2026"
+    },
+    {
+      "hash": "bef176428611",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "España confirma muerte de dos connacionales y 80 desaparecidos tras terremoto en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=91pJOdrF_lY"
+    },
+    {
+      "hash": "f517492da971",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Terremoto de magnitud 7.1 sacude Venezuela y provoca pánico en Caracas",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/26/mundo/5-cosas-26-junio-2026-orix"
+    },
+    {
+      "hash": "cce7ec2d7c48",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto de magnitud 7,1 en Venezuela deja 235 muertos y 4.300 heridos",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/26/mundo/5-cosas-26-junio-2026-orix"
+    },
+    {
+      "hash": "478e13f8cf80",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "EE.UU. aporta 150 millones de dólares para contingencia en Venezuela tras terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=91pJOdrF_lY"
+    },
+    {
+      "hash": "f22b272f370e",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "70.000 familias afectadas por terremoto en Venezuela según autoridades",
+      "fuente_url": "https://www.youtube.com/watch?v=91pJOdrF_lY"
+    },
+    {
+      "hash": "c90743c53a23",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos de 7,2 y 7,5 en Venezuela: 235 muertos y parálisis temporal de la infraestructura petrole",
+      "fuente_url": "https://www.merca2.es/2026/06/26/terremoto-venezuela-petroleo-impacto-geopolitica-2405779/"
+    },
+    {
+      "hash": "624ce8f583c2",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Parada total pero preventiva en el Complejo Petroquímico de Morón tras terremotos",
+      "fuente_url": "https://www.huffingtonpost.es/economia/terremotos-venezuela-efectos-economia-esta-rodillas-encomienda-petroleo-f202606.html"
+    },
+    {
+      "hash": "24fc396ff714",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Exportaciones de petróleo de Venezuela subieron 144% en primer semestre de 2026 impulsadas por flexi",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de-petroleo-impulsadas-licencias-estado-unidos-hacia/1329745969263802/"
+    },
+    {
+      "hash": "512d5bbddcfa",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela exportó 1,25 millones de barriles diarios en junio 2026: máximo en siete años",
+      "fuente_url": "https://www.instagram.com/p/DZ5AosrRlTl/"
+    },
+    {
+      "hash": "1267f244ba83",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Producción de petróleo cae de 466.398 a 460.326 barriles diarios entre enero y junio 2026",
+      "fuente_url": "https://www.facebook.com/llamingo.riobamba/posts/atención-la-producción-de-petróleo-cae-durante-el-primer-semestre-de-2026-la-pro/1787274399315410/"
+    },
+    {
+      "hash": "709f429d533c",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela impulsa exportaciones de petróleo 144% en primer semestre de 2026",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/"
+    },
+    {
+      "hash": "ad37542a5133",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibirá 35.000 millones de dólares por petróleo en 2026, pero destino de fondos es incier",
+      "fuente_url": "https://www.elnacional.com/2026/06/venezuela-recibira-35-000-millones-de-dolares-por-petroleo-en-2026-pero-el-destino-de-los-fondos-sigue-bajo-la-sombra/"
+    },
+    {
+      "hash": "1550c38d73d5",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA evalúa daños en plantas venezolanas tras terremotos",
+      "fuente_url": "https://revistamercado.do/empresas/afectaron-los-terremotos-de-venezuela-la-produccion-de-petroleo-lo-que-dice-chevron-y-pdvsa/"
+    },
+    {
+      "hash": "5ca5ca3acd2d",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela enfrenta tragedia sísmica con 235 muertos y 4300 heridos tras dos terremotos de magnitud 7",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "a8f50d615e05",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Ayuda humanitaria internacional especializada llega a Maquetía y se desplaza en La Guaira",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "8ca5b7cc527a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Reactivación de operaciones aéreas internacionales desde y hacia Venezuela: Copa Airlines amplía vue",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "20fa87cee32d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Saqueos de comercios registrados en medio de la tragedia sísmica en Venezuela",
+      "fuente_url": "https://www.facebook.com/NoticiasTelemundo/posts/%EF%B8%8F%EF%B8%8F-buenos-d%C3%ADas-estas-son-las-noticias-m%C3%A1s-importantes-que-debes-saber-este-viern/1585987856225818/"
+    },
+    {
+      "hash": "646cc6dafa59",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Geólogo reveló alerta de 2017 que anticipó terremoto de hasta 7.5 en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=RoQ9M1leU-A"
+    },
+    {
+      "hash": "609303a51c7b",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Delcy Rodríguez confirma 589 muertos y 2.980 heridos por terremotos en Venezuela",
+      "fuente_url": "https://www.atresplayer.com/antena3/noticias/noticias-1/junio-2026/26-06-26-delcy-rodriguez-confirma-589-muertos-y-2980-heridos-mientras-continuan-las-labores-de-rescate-en-venezuela_6a3e2cf8a5945b00077ff3a7/"
+    },
+    {
+      "hash": "8749ce2dafb7",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos duplicados en Venezuela: 235 muertos confirmados inicialmente por misiones internacionale",
+      "fuente_url": "https://www.youtube.com/watch?v=RoQ9M1leU-A"
+    },
+    {
+      "hash": "ab6bd7a7f61a",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 235 fallecidos y 43,300 heridos; attivo fondo de reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "682975ca2deb",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 622,2135 Bs/USD el 26 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-26-junio-2026/"
+    },
+    {
+      "hash": "023ba5b428be",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno destinará 200 millones de dólares para reconstrucción tras el terremoto",
+      "fuente_url": "https://www.instagram.com/reel/DaDBUWKMDgd/"
+    },
+    {
+      "hash": "cf223ba817ba",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "BCV fija tasa de cambio del dólar en 622,2135 Bs/USD al 26 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-26-junio-2026/"
+    },
+    {
+      "hash": "2362536adb88",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza tasa cambiaria a 621,52 bolívares por dólar para 24 y 25 de junio",
+      "fuente_url": "https://www.instagram.com/reel/DZ0Gnn4Rymm/"
+    },
+    {
+      "hash": "533ae79cbbb9",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones petroleras de Venezuela alcanzaron 5.491 millones de dólares en Q1 2026",
+      "fuente_url": "https://www.instagram.com/p/DZ8VVpeS9tl/"
+    },
+    {
+      "hash": "250ae89cba78",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "FMI anuncia reanudación de relaciones con Venezuela",
+      "fuente_url": "https://www.imf.org/es/home"
+    },
+    {
+      "hash": "846c2235d597",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Doblete sísmico masivo en Yaracuy con 235 muertos y ayuda internacional en Venezuela",
+      "fuente_url": "https://es.euronews.com/2026/06/26/doblete-sismico-el-fenomeno-que-convirtio-la-tragedia-de-venezuela-en-catastrofe"
+    },
+    {
+      "hash": "04fe465dda61",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Delcy Rodríguez confirma 589 muertos y 2.980 heridos tras dos terremotos en Venezuela",
+      "fuente_url": "https://www.atresplayer.com/antena3/noticias/noticias-1/junio-2026/26-06-26-delcy-rodriguez-confirma-589-muertos-y-2980-heridos-mientras-continuan-las-labores-de-rescate-en-venezuela_6a3e2cf8a5945b00077ff3a7/"
+    },
+    {
+      "hash": "8d32812c952b",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Misiones internacionales comienzan tareas de rescate tras terremotos en Venezuela con 235 muertos co",
+      "fuente_url": "https://www.youtube.com/watch?v=RoQ9M1leU-A"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "20e184f0763f",
+      "actor": "GOB3",
+      "titulo": "Jorge Rodríguez eleva a 920 fallecidos por doble terremoto en Venezuela",
+      "fuente_url": "https://es-us.noticias.yahoo.com/presidente-asamblea-nacional-venezuela-informa-172920780.html"
+    },
+    {
+      "hash": "a84867531da6",
+      "actor": "GOB1",
+      "titulo": "Gobierno venezolano reporta 235 fallecidos y 4.300 heridos por terremotos",
+      "fuente_url": "https://elpais.com/america/2026-06-26/el-terremoto-en-venezuela-en-vivo.html"
+    },
+    {
+      "hash": "8ef1117e7266",
+      "actor": "INT1",
+      "titulo": "Doble terremoto en Venezuela supera 235 muertos y 4.300 heridos según cifras oficiales",
+      "fuente_url": "https://amp.antena3.com/noticias/sociedad/noticias-hoy-viernes-26-junio-2026_202606266a3e21e8c7a2892f04a3e8fe.html"
+    },
+    {
+      "hash": "38eb1a6f7d2d",
+      "actor": "GOB1",
+      "titulo": "Balance oficial de terremoto en Venezuela: 920 muertos y 3.000 heridos según Jorge Rodríguez",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-26-junio-2026"
+    },
+    {
+      "hash": "cce7ec2d7c48",
+      "actor": "GOB1",
+      "titulo": "Terremoto de magnitud 7,1 en Venezuela deja 235 muertos y 4.300 heridos",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/26/mundo/5-cosas-26-junio-2026-orix"
+    },
+    {
+      "hash": "c90743c53a23",
+      "actor": "GOB1",
+      "titulo": "Terremotos de 7,2 y 7,5 en Venezuela: 235 muertos y parálisis temporal de la infraestructura petrolera",
+      "fuente_url": "https://www.merca2.es/2026/06/26/terremoto-venezuela-petroleo-impacto-geopolitica-2405779/"
+    },
+    {
+      "hash": "5ca5ca3acd2d",
+      "actor": "GOB1",
+      "titulo": "Venezuela enfrenta tragedia sísmica con 235 muertos y 4300 heridos tras dos terremotos de magnitud 7.1",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "609303a51c7b",
+      "actor": "GOB1",
+      "titulo": "Delcy Rodríguez confirma 589 muertos y 2.980 heridos por terremotos en Venezuela",
+      "fuente_url": "https://www.atresplayer.com/antena3/noticias/noticias-1/junio-2026/26-06-26-delcy-rodriguez-confirma-589-muertos-y-2980-heridos-mientras-continuan-las-labores-de-rescate-en-venezuela_6a3e2cf8a5945b00077ff3a7/"
+    },
+    {
+      "hash": "ab6bd7a7f61a",
+      "actor": "",
+      "titulo": "Doble terremoto en Venezuela: 235 fallecidos y 43,300 heridos; attivo fondo de reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "250ae89cba78",
+      "actor": "INT1",
+      "titulo": "FMI anuncia reanudación de relaciones con Venezuela",
+      "fuente_url": "https://www.imf.org/es/home"
+    },
+    {
+      "hash": "846c2235d597",
+      "actor": "GOB1",
+      "titulo": "Doblete sísmico masivo en Yaracuy con 235 muertos y ayuda internacional en Venezuela",
+      "fuente_url": "https://es.euronews.com/2026/06/26/doblete-sismico-el-fenomeno-que-convirtio-la-tragedia-de-venezuela-en-catastrofe"
+    },
+    {
+      "hash": "04fe465dda61",
+      "actor": "GOB1",
+      "titulo": "Delcy Rodríguez confirma 589 muertos y 2.980 heridos tras dos terremotos en Venezuela",
+      "fuente_url": "https://www.atresplayer.com/antena3/noticias/noticias-1/junio-2026/26-06-26-delcy-rodriguez-confirma-589-muertos-y-2980-heridos-mientras-continuan-las-labores-de-rescate-en-venezuela_6a3e2cf8a5945b00077ff3a7/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
