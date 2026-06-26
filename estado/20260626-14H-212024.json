@@ -1,0 +1,296 @@
+{
+  "version": "1.0",
+  "correlativo": "20260626-14H-212024",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-26T21:28:44.061006+00:00",
+  "rango_inicio": "2026-06-25T21:20:24.822567+00:00",
+  "rango_fin": "2026-06-26T21:20:24.822567+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 7,
+    "A3": 10,
+    "A2": 5,
+    "A1": 1,
+    "A0": 0,
+    "total": 23
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Ayuda humanitaria especializada de EE.UU. desplegada en La Guaira tras terremoto en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Venezuela: 589 fallecidos y 2.980 heridos por doble terremoto de magnitud 7.2 y 7.5",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    "GOB1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A1",
+        "A3",
+        "A4",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Fondo para reconstrucción anunciado por la presidenta encargada Rodríguez tras terremoto en Venezuel",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela activa mecanismo de protección civil de la Unión Europea",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Ingresos petroleros Q1 2026: 5.491 millones de dólares",
+      "ultima_fuente_url": "https://www.instagram.com/p/DZ8VVpeS9tl/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "9df09bcb3dae",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela: 920 muertos en terremotos simultáneos, ayuda estadounidense de $150M",
+      "fuente_url": "https://abcnews.com/International/live-updates/venezuela-earthquakes-updates/?id=134196335"
+    },
+    {
+      "hash": "b34a302ebfb9",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "SCOTUS otorga a Trump dos victorias migratorias clave: termina TPS para haitianos y syrios",
+      "fuente_url": "https://www.usnews.com/news/national-news/articles/2026-06-26/todays-news-taylor-swift-wedding-trump-court-rulings-venezuela-earthquake-br"
+    },
+    {
+      "hash": "af85b963172d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Inflación en EE.UU. acelera a 4.1% en mayo, máxima desde 2023",
+      "fuente_url": "https://www.usnews.com/news/national-news/articles/2026-06-26/todays-news-taylor-swift-wedding-trump-court-rulings-venezuela-earthquake-br"
+    },
+    {
+      "hash": "d75a444af971",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela: 589 fallecidos y 2.980 heridos por doble terremoto de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    {
+      "hash": "906047ca497c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "España reporta 99 desaparecidos venezolanos tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    {
+      "hash": "09eac615d98f",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela activa mecanismo de protección civil de la Unión Europea",
+      "fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    {
+      "hash": "08bac82eac43",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Sismólogos clasifican el evento como 'doblete sísmico' en Venezuela",
+      "fuente_url": "https://elpais.com/videos/2026-06-26/por-que-venezuela-temblo-dos-veces-en-40-segundos.html"
+    },
+    {
+      "hash": "45261948d1d1",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela registra 235 fallecidos y 4.300 heridos tras dos terremotos de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.youtube.com/watch?v=RoQ9M1leU-A"
+    },
+    {
+      "hash": "247fd6a69259",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela: balance oficial asciende a 589 fallecidos y 3.000 heridos tras doblete sísmico",
+      "fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    {
+      "hash": "420d76ef2d21",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "¿Por qué Venezuela tembló dos veces en 40 segundos? Doblete sísmico confirmado por expertos",
+      "fuente_url": "https://elpais.com/videos/2026-06-26/por-que-venezuela-temblo-dos-veces-en-40-segundos.html"
+    },
+    {
+      "hash": "6652190f46ae",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Exposición fotográfica en Moscú destaca logros de la industria electrónica china",
+      "fuente_url": "http://spanish.xinhuanet.com/20260626/d2794bf1dfe140e08f782dd53ce8cf3a/c.html"
+    },
+    {
+      "hash": "a8e09fc0db1f",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Ministro de Foreign Affairs de Venezuela agradece condolencias de Siria",
+      "fuente_url": "https://www.facebook.com/SyrianArabNewsAgencySana/"
+    },
+    {
+      "hash": "16c0ef854c6e",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela's oil production and refining remain unharmed after June 24 earthquakes",
+      "fuente_url": "https://www.spglobal.com/energy/en/news-research/latest-news/shipping/062526-venezuelas-oil-production-refining-unharmed-by-june-24-earthquakes"
+    },
+    {
+      "hash": "82b2ff2a2f8d",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "U.S. sanctions on Venezuela complicate humanitarian aid operations post-earthquakes",
+      "fuente_url": "https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations"
+    },
+    {
+      "hash": "e73ff78999cf",
+      "actor": "INST1",
+      "alert_level": "A4",
+      "titulo_corto": "U.S. Treasury temporarily eases Venezuela sanctions to facilitate oil transactions",
+      "fuente_url": "https://www.facebook.com/travis.chase2/posts/hgp-nightly-news-us-treasury-temporarily-eases-venezuela-sanctions-to-facilitate/10237071783388888/"
+    },
+    {
+      "hash": "6e7e9c58e4a4",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija dólar en 622,21 Bs y euro en 708,39 Bs",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-26-junio-2026/"
+    },
+    {
+      "hash": "e1ec6327222b",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Dos terremotos de magnitud 7,2 y 7,5 causan 164 muertes en Venezuela",
+      "fuente_url": "https://www.bbc.com/mundo/articles/cly7qe4542xo"
+    },
+    {
+      "hash": "b44afeaee1ff",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Actualización tasa BCV y nueva intervención cambiaria para junio 24-25",
+      "fuente_url": "https://www.instagram.com/reel/DZ51YrWJfgI/"
+    },
+    {
+      "hash": "65e8285cad9f",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Ingresos petroleros Q1 2026: 5.491 millones de dólares",
+      "fuente_url": "https://www.instagram.com/p/DZ8VVpeS9tl/"
+    },
+    {
+      "hash": "48283ea81011",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "FMI reanuda relaciones con Venezuela y publica tasa DEG",
+      "fuente_url": "https://www.imf.org/es/home"
+    },
+    {
+      "hash": "623ae4a32c9f",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto de magnitudes 7.2 y 7.5 en Venezuela: 235 muertos y más de 4.300 heridos",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "c7009291627a",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Ayuda humanitaria especializada de EE.UU. desplegada en La Guaira tras terremoto en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    },
+    {
+      "hash": "a01a48920caf",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Fondo para reconstrucción anunciado por la presidenta encargada Rodríguez tras terremoto en Venezuel",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "9df09bcb3dae",
+      "actor": "INT1",
+      "titulo": "Venezuela: 920 muertos en terremotos simultáneos, ayuda estadounidense de $150M",
+      "fuente_url": "https://abcnews.com/International/live-updates/venezuela-earthquakes-updates/?id=134196335"
+    },
+    {
+      "hash": "d75a444af971",
+      "actor": "GOB4",
+      "titulo": "Venezuela: 589 fallecidos y 2.980 heridos por doble terremoto de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    {
+      "hash": "45261948d1d1",
+      "actor": "",
+      "titulo": "Venezuela registra 235 fallecidos y 4.300 heridos tras dos terremotos de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.youtube.com/watch?v=RoQ9M1leU-A"
+    },
+    {
+      "hash": "247fd6a69259",
+      "actor": "",
+      "titulo": "Venezuela: balance oficial asciende a 589 fallecidos y 3.000 heridos tras doblete sísmico",
+      "fuente_url": "https://www.youtube.com/watch?v=Oe2feogjYGI"
+    },
+    {
+      "hash": "e73ff78999cf",
+      "actor": "INST1",
+      "titulo": "U.S. Treasury temporarily eases Venezuela sanctions to facilitate oil transactions",
+      "fuente_url": "https://www.facebook.com/travis.chase2/posts/hgp-nightly-news-us-treasury-temporarily-eases-venezuela-sanctions-to-facilitate/10237071783388888/"
+    },
+    {
+      "hash": "e1ec6327222b",
+      "actor": "GOB1",
+      "titulo": "Dos terremotos de magnitud 7,2 y 7,5 causan 164 muertes en Venezuela",
+      "fuente_url": "https://www.bbc.com/mundo/articles/cly7qe4542xo"
+    },
+    {
+      "hash": "623ae4a32c9f",
+      "actor": "GOB1",
+      "titulo": "Doble terremoto de magnitudes 7.2 y 7.5 en Venezuela: 235 muertos y más de 4.300 heridos",
+      "fuente_url": "https://www.youtube.com/watch?v=xNUmGdF5q-0"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
