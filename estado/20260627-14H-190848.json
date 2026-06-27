@@ -1,0 +1,504 @@
+{
+  "version": "1.0",
+  "correlativo": "20260627-14H-190848",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-27T19:30:05.679545+00:00",
+  "rango_inicio": "2026-06-26T19:08:48.342325+00:00",
+  "rango_fin": "2026-06-27T19:08:48.342325+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 11,
+    "A3": 20,
+    "A2": 12,
+    "A1": 1,
+    "A0": 0,
+    "total": 44
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 20,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A4",
+        "A4",
+        "A4",
+        "A2",
+        "A2",
+        "A2",
+        "A4",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Rescate en Tucacas: 3 cuerpos recuperados de edificio Lamar Suite; 8 fallecidos totales, 5 aún bajo ",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=gr8xnlPo88U"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "María Corina Machado intenta regresar a Venezuela tras sismos frustrando planes de EE.UU",
+      "ultima_fuente_url": "https://es-us.noticias.yahoo.com/intentos-machado-volver-venezuela-terremotos-161928779.html"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela eleva a 920 muertos y 3,360 heridos por doble terremoto de magnitudes 7.2 y 7.5",
+      "ultima_fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    "GOB3": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez reporta 920 fallecidos y 3.360 heridos por doble terremoto en el norte de Venezuela",
+      "ultima_fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    "INT1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A3",
+        "A3",
+        "A4"
+      ],
+      "ultimo_titulo": "Irán acusa a EEUU de lanzar ataques contra sus costas, rompiendo memorando de entendimiento para fin",
+      "ultima_fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Venezuela declara emergencia tras dos sismos de 7.2 y 7.5; 920 muertos y 51.000 desaparecidos",
+      "ultima_fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Funvisis reporta dos sismos de baja magnitud (2.7) en Venezuela después del desastre",
+      "ultima_fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "ONU estima daños por terremoto en Venezuela de US$ 6.700 millones",
+      "ultima_fuente_url": "https://larepublica.pe/amp/mundo/2026/06/27/terremoto-en-venezuela-en-vivo-cifra-de-fallecidos-heridos-y-ultimas-noticias-sobre-la-catastrofe-hoy-27-de-junio-343143"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "P2",
+    "INST4",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "733214e9835c",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Delcy Rodríguez anuncia 173 fallecidos y 1000 heridos tras sismo en Venezuela",
+      "fuente_url": "https://www.instagram.com/reel/DaGOLeDu0bu/"
+    },
+    {
+      "hash": "0cfc50c5c6ce",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez: prioridad es rescatar personas atrapadas en escombros",
+      "fuente_url": "https://es-us.noticias.yahoo.com/delcy-rodr%C3%ADguez-prioridad-rescatar-personas-115700786.html"
+    },
+    {
+      "hash": "1491c8bc151a",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "ONU exige a Delcy Rodríguez liberación inmediata de presos políticos",
+      "fuente_url": "https://www.facebook.com/eluniversoec/posts/-internacional-delcyrodr%C3%ADguez-asegur%C3%B3-que-la-prioridad-del-gobierno-es-rescatar-/1483393630496372/"
+    },
+    {
+      "hash": "b34fd9bb76eb",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Plataforma Unitaria denuncia falta de preparación estatal ante sismos devastadores",
+      "fuente_url": "https://kchcomunicacion.com/2026/06/27/oposicion-venezolana-denuncia-falta-de-preparacion-estatal-ante-sismos-devastadores/"
+    },
+    {
+      "hash": "143c83d9eb09",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "María Corina Machado intenta regresar a Venezuela tras sismos frustrando planes de EE.UU",
+      "fuente_url": "https://es-us.noticias.yahoo.com/intentos-machado-volver-venezuela-terremotos-161928779.html"
+    },
+    {
+      "hash": "95bc2576e4be",
+      "actor": "INST1",
+      "alert_level": "A4",
+      "titulo_corto": "Jorge Rodríguez eleva cifra de muertos a 920 por doble terremoto en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "0f2dc4a3ffc1",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez emite balance oficial tras terremotos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=GBib9FYiNys"
+    },
+    {
+      "hash": "77ed78022325",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia llegada de ayuda internacional de Qatar para emergencias por sismos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "6cb096fee98d",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez eleva cifra de fallecidos a 1.430 y heridos a 3.300 por sismos en Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "51300d6c62bf",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional desplaza más de 14 mil rescatistas en zonas devastadas por sismos del 24 de junio",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/mas-de-14-mil-rescatistas-estan-desplegados-por-zonas-que-devasto-el-doble-terremoto-del-24-de-junio"
+    },
+    {
+      "hash": "d877053d7d20",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez reporta 920 fallecidos y 3.360 heridos por doble terremoto en el norte de Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "151f604463a2",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Asamblea Nacional de Venezuela aprobó nueve leyes en el primer semestre de 2026",
+      "fuente_url": "https://www.instagram.com/p/DZ-J2ZUDsV5/"
+    },
+    {
+      "hash": "94ac55e72433",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno de Venezuela anuncia distribución de 2,600 toneladas de alimentos y agua en La Guaira tras ",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "edd517e17f84",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez confirma llegada de apoyo internacional para asistencia humanitaria tras sismos en V",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "45ebede3b848",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela eleva a 920 muertos y 3,360 heridos por doble terremoto de magnitudes 7.2 y 7.5",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "ce40ff7745a1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Brigadas de rescate de 9 países actúan en Venezuela tras sismos, incluyendo España y EEUU",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "89e0d0c3aa80",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Univision reporta 1,430 muertos y más de 50,000 desaparecidos bajo escombros en Venezuela por sismos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "cf77c069e0d9",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela afronta tercer día de emergencia por dos sismos con 920 muertos y ayuda internacional",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "0f23417b7007",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Irán acusa a Estados Unidos de violar alto al fuego tras bombardeo de sus costas",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "781f6d91f864",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rusia y Ucrania intercambian 320 soldados en nuevo canje de prisioneros",
+      "fuente_url": "https://www.youtube.com/watch?v=ys5_jbsuUoU"
+    },
+    {
+      "hash": "358ee9066f32",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela declara emergencia tras dos sismos de 7.2 y 7.5; 920 muertos y 51.000 desaparecidos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "d123dcf0179a",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Qatar, Perú, Portugal y República Dominicana envían ayuda humanitaria a Venezuela tras sismos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "a99e42f112ea",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "España reporta 5 fallecidos y 133 desaparecidos en el terremoto de Venezuela",
+      "fuente_url": "https://www.atresplayer.com/antena3/noticias/noticias-fin-de-semana/junio-2026/27-06-26-al-menos-cinco-espanoles-muertos-en-venezuela-133-desaparecidos-y-14-localizados-bajo-los-escombros_6a3fa5dcf9a3be000779b1aa/"
+    },
+    {
+      "hash": "3cd4ba178444",
+      "actor": "INST5",
+      "alert_level": "A1",
+      "titulo_corto": "Funvisis reporta dos sismos de baja magnitud (2.7) en Venezuela después del desastre",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "f43fe114ab5d",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA reporta producción petrolera estable tras sismos",
+      "fuente_url": "https://www.reuters.com/business/energy/power-outage-slows-operations-key-port-plants-after-earthquakes-venezuela-2026-06-26/"
+    },
+    {
+      "hash": "c51ad420df1a",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Sector de hidrocarburos activa operaciones de emergencia por sismos",
+      "fuente_url": "https://www.telesurenglish.net/venezuela-hydrocarbonsector-quake-relief/"
+    },
+    {
+      "hash": "81495a7305ee",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones de petróleo de Venezuela aumentaron 144% en el primer semestre de 2026",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/"
+    },
+    {
+      "hash": "c7cdab2ba525",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela en tercer día de emergencia por terremotos: 920 fallecidos y 3.360 heridos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "b8bd226aeeb4",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela sobrepasan 920 muertos; ayuda internacional movilizada",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    {
+      "hash": "b5742fdeb9e1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela Update: Junio 2026 de Holland & Knight",
+      "fuente_url": "https://www.hklaw.com/es/insights/publications/2026/06/venezuela-update-june-2026"
+    },
+    {
+      "hash": "be3edb214716",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela asciende a 920 muertos y 50.000 desaparecidos",
+      "fuente_url": "https://www.martinoticias.com/amp/venezolanos-ante-la-devastaci%C3%B3n-masiva-y-la-impotencia-crece-la-ayuda-internacional/469631.html"
+    },
+    {
+      "hash": "af9c753d1c67",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "EE.UU. levanta sanciones parciales para permitir ayuda tras terremoto en Venezuela",
+      "fuente_url": "https://www.laprensani.com/2026/06/26/internacionales/3723445-eeuu-levanta-sanciones-venezuela-terremoto"
+    },
+    {
+      "hash": "743ab4e1f18f",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "ONU estima daños por terremoto en Venezuela de US$ 6.700 millones",
+      "fuente_url": "https://larepublica.pe/amp/mundo/2026/06/27/terremoto-en-venezuela-en-vivo-cifra-de-fallecidos-heridos-y-ultimas-noticias-sobre-la-catastrofe-hoy-27-de-junio-343143"
+    },
+    {
+      "hash": "165262307ad6",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto 7.1 colapsa techo del Aeropuerto Internacional de Maiquetía",
+      "fuente_url": "https://www.instagram.com/reel/DaEncn4CO11/"
+    },
+    {
+      "hash": "683227fc0185",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV actualiza tasa de cambio para junio 24 y 25: 621,52 Bs/$",
+      "fuente_url": "https://www.instagram.com/reel/DZ8ovEZp4ix/"
+    },
+    {
+      "hash": "b440cfbc415e",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV reporta divisa estadounidense en 601,33 Bs/$ en actualización reciente",
+      "fuente_url": "https://www.instagram.com/reel/DaEpMTnRjz8/"
+    },
+    {
+      "hash": "15e4e8a4289a",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Ingresos petroleros alcanzaron 5.491 millones de dólares en el primer trimestre 2026",
+      "fuente_url": "https://www.instagram.com/p/DZ8VVpeS9tl/"
+    },
+    {
+      "hash": "034a4162bce0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Consecomercio prevé inflación de 170% para 2026 en Venezuela",
+      "fuente_url": "https://www.instagram.com/reel/DZ-sm_5pb5I/"
+    },
+    {
+      "hash": "b59bf6712e7a",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Estudio The Lancet: sanciones de EE.UU. y UE causaron 38 millones de muertes en 51 años",
+      "fuente_url": "https://estrategia.la/2026/06/27/venezuela-sanciones-homicidas/"
+    },
+    {
+      "hash": "fb7ba6403ba8",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Dobblete sísmico en Yaracuy: 235 muertos y mayores daños en La Guaira, con réplicas de magnitud 3 a ",
+      "fuente_url": "https://es.euronews.com/2026/06/26/doblete-sismico-el-fenomeno-que-convirtio-la-tragedia-de-venezuela-en-catastrofe"
+    },
+    {
+      "hash": "757e313ec743",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Ingeniera sismica explica colapsos de edificios: tres factores combinados (amenaza excepcional, zona",
+      "fuente_url": "https://www.latercera.com/tendencias/noticia/por-que-tantos-edificios-colapsaron-tras-el-doble-terremoto-en-venezuela-esto-dice-una-ingeniera-sismica/"
+    },
+    {
+      "hash": "c57a9637f187",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela: 920 fallecidos y 3.360 heridos por doble terremoto; 17 países y ONU envían ayuda",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "3016abc38f9d",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Irán acusa a EEUU de lanzar ataques contra sus costas, rompiendo memorando de entendimiento para fin",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "24841e89c638",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Rescate en Tucacas: 3 cuerpos recuperados de edificio Lamar Suite; 8 fallecidos totales, 5 aún bajo ",
+      "fuente_url": "https://www.youtube.com/watch?v=gr8xnlPo88U"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "733214e9835c",
+      "actor": "GOB1",
+      "titulo": "Delcy Rodríguez anuncia 173 fallecidos y 1000 heridos tras sismo en Venezuela",
+      "fuente_url": "https://www.instagram.com/reel/DaGOLeDu0bu/"
+    },
+    {
+      "hash": "95bc2576e4be",
+      "actor": "INST1",
+      "titulo": "Jorge Rodríguez eleva cifra de muertos a 920 por doble terremoto en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "cf77c069e0d9",
+      "actor": "",
+      "titulo": "Venezuela afronta tercer día de emergencia por dos sismos con 920 muertos y ayuda internacional",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "0f23417b7007",
+      "actor": "INT1",
+      "titulo": "Irán acusa a Estados Unidos de violar alto al fuego tras bombardeo de sus costas",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "358ee9066f32",
+      "actor": "GOB4",
+      "titulo": "Venezuela declara emergencia tras dos sismos de 7.2 y 7.5; 920 muertos y 51.000 desaparecidos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "b8bd226aeeb4",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela sobrepasan 920 muertos; ayuda internacional movilizada",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    {
+      "hash": "be3edb214716",
+      "actor": "GOB1",
+      "titulo": "Terremoto en Venezuela asciende a 920 muertos y 50.000 desaparecidos",
+      "fuente_url": "https://www.martinoticias.com/amp/venezolanos-ante-la-devastaci%C3%B3n-masiva-y-la-impotencia-crece-la-ayuda-internacional/469631.html"
+    },
+    {
+      "hash": "165262307ad6",
+      "actor": "GOB1",
+      "titulo": "Terremoto 7.1 colapsa techo del Aeropuerto Internacional de Maiquetía",
+      "fuente_url": "https://www.instagram.com/reel/DaEncn4CO11/"
+    },
+    {
+      "hash": "fb7ba6403ba8",
+      "actor": "GOB1",
+      "titulo": "Dobblete sísmico en Yaracuy: 235 muertos y mayores daños en La Guaira, con réplicas de magnitud 3 a 5 por semanas",
+      "fuente_url": "https://es.euronews.com/2026/06/26/doblete-sismico-el-fenomeno-que-convirtio-la-tragedia-de-venezuela-en-catastrofe"
+    },
+    {
+      "hash": "c57a9637f187",
+      "actor": "GOB1",
+      "titulo": "Venezuela: 920 fallecidos y 3.360 heridos por doble terremoto; 17 países y ONU envían ayuda",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "3016abc38f9d",
+      "actor": "INT1",
+      "titulo": "Irán acusa a EEUU de lanzar ataques contra sus costas, rompiendo memorando de entendimiento para fin de guerra",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 1
+}
