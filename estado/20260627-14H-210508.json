@@ -1,0 +1,276 @@
+{
+  "version": "1.0",
+  "correlativo": "20260627-14H-210508",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-27T21:13:12.033131+00:00",
+  "rango_inicio": "2026-06-26T21:05:08.583351+00:00",
+  "rango_fin": "2026-06-27T21:05:08.583351+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 5,
+    "A3": 10,
+    "A2": 5,
+    "A1": 0,
+    "A0": 0,
+    "total": 20
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "PNUD estimación preliminar de daños por terremotos en Venezuela equivalente a 6% del PIB",
+      "ultima_fuente_url": "https://finanzasdigital.com/coste-terremotos-venezuela-pib-onu/"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Sismos en Venezuela: 920 muertos y 52,000 desaparecidos con ayuda internacional de Qatar",
+      "ultima_fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    "GOB2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Perú envía equipo de rescate con apoyo canino a Venezuela tras sismos devastadores",
+      "ultima_fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    "GOB3": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Portugal despliega 60 especialistas de rescate en Venezuela tras sismos de magnitud 7+",
+      "ultima_fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    "GOB1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A4",
+        "A4",
+        "A4"
+      ],
+      "ultimo_titulo": "Balance actualizado a 72 horas: 1.430 fallecidos y 3.238 heridos con 430 réplicas en Venezuela",
+      "ultima_fuente_url": "https://ultimasnoticias.com.ve/linea-de-tiempo/minuto-a-minuto-despues-de-la-tragedia-sabado-27-de-junio-2026/"
+    },
+    "INST3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Venezuela's oil production, refining unharmed by June 24 earthquakes",
+      "ultima_fuente_url": "https://www.hellenicshippingnews.com/venezuelas-oil-production-refining-unharmed-by-june-24-earthquakes/"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Divisa estadounidense se ubica en 601,33 bolívares según tasa actualizada del BCV",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DaEpMTnRjz8/"
+    }
+  },
+  "actores_en_silencio": [
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "94f33a1e8115",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela recibe 1,600 rescatistas de 17 países; mortalidad de sismos supera 1,430",
+      "fuente_url": "https://ca.news.yahoo.com/venezuela-welcomes-1-600-foreign-132205457.html"
+    },
+    {
+      "hash": "025ea245f093",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Departamento de Estado EE.UU. activa tercera unidad de rescate urbano para Venezuela",
+      "fuente_url": "https://abcnews.com/International/live-updates/venezuela-earthquakes-updates/?id=134196335"
+    },
+    {
+      "hash": "382537752575",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Sismos en Venezuela: mortalidad confirmada alcanza 920; 51,000 desaparecidos",
+      "fuente_url": "https://apnews.com/article/earthquakes-venezuela-rescues-survivors-92a3d6c13c0f9af9c1bfb4ff6d041254"
+    },
+    {
+      "hash": "58bccc84b75e",
+      "actor": "GOB4",
+      "alert_level": "A3",
+      "titulo_corto": "Sismos en Venezuela: 920 muertos y 52,000 desaparecidos con ayuda internacional de Qatar",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "24543b08bcb9",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Panamá registra 271 homicidios en junio con incremento del 6% frente a 2025",
+      "fuente_url": "https://www.prensa-latina.cu/2026/06/27/"
+    },
+    {
+      "hash": "7b1ac3728d7a",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "El presidente de la Asamblea Nacional de Venezuela eleva a 920 el número de fallecidos por el doble ",
+      "fuente_url": "https://elpais.com/america/2026-06-27/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "b0c2bfaacb90",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Portugal envía 60 especialistas a Venezuela para labores de rescate tras terremotos devastadores",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    {
+      "hash": "d284727941f5",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Yas 60% recuperación del suministro eléctrico en La Guaira tras terremotos de magnitudes 7.2 y 7.5",
+      "fuente_url": "https://ultimasnoticias.com.ve/linea-de-tiempo/minuto-a-minuto-despues-de-la-tragedia-sabado-27-de-junio-2026/"
+    },
+    {
+      "hash": "f0e90bf4c0e4",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibe ayuda humanitaria de Qatar tras sismos de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026"
+    },
+    {
+      "hash": "e27bc6f9491e",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Perú envía equipo de rescate con apoyo canino a Venezuela tras sismos devastadores",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    {
+      "hash": "dd03f4a7f026",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Portugal despliega 60 especialistas de rescate en Venezuela tras sismos de magnitud 7+",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-26-junio-2026/"
+    },
+    {
+      "hash": "942c125f5696",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela earthquakes: How will sanctions impact aid operations?",
+      "fuente_url": "https://www.aljazeera.com/news/2026/6/25/venezuela-quakes-how-will-sanctions-impact-aid-operations"
+    },
+    {
+      "hash": "b036c1b908ee",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela Was on the Cusp of Rebirth. Then Disaster Struck, Again.",
+      "fuente_url": "https://www.nytimes.com/2026/06/27/world/americas/venezuelas-economy-earthquake.html"
+    },
+    {
+      "hash": "8e98d34a1144",
+      "actor": "INST3",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela's oil production, refining unharmed by June 24 earthquakes",
+      "fuente_url": "https://www.hellenicshippingnews.com/venezuelas-oil-production-refining-unharmed-by-june-24-earthquakes/"
+    },
+    {
+      "hash": "a1d1430492f5",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela reporta al menos 920 muertos y más de 50.000 desaparecidos tras terremotos devastadores",
+      "fuente_url": "https://www.martinoticias.com/amp/venezolanos-ante-la-devastaci%C3%B3n-masiva-y-la-impotencia-crece-la-ayuda-internacional/469631.html"
+    },
+    {
+      "hash": "132b3891a55f",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "PNUD estimación preliminar de daños por terremotos en Venezuela equivalente a 6% del PIB",
+      "fuente_url": "https://finanzasdigital.com/coste-terremotos-venezuela-pib-onu/"
+    },
+    {
+      "hash": "6028c2bfedd2",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Actualización de balance de víctimas: más de 900-920 muertos confirmados por terremoto en Venezuela",
+      "fuente_url": "https://www.notimetropoli.com/2026/06/27/venezuela-al-26-de-junio-de-2026-la-principal-noticia-es-la-catastrofe-sismica/"
+    },
+    {
+      "hash": "f68fbcee64b2",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Divisa estadounidense se ubica en 601,33 bolívares según tasa actualizada del BCV",
+      "fuente_url": "https://www.instagram.com/reel/DaEpMTnRjz8/"
+    },
+    {
+      "hash": "d0c6c8675f60",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela enfrenta tercer día de emergencia por sismos: 920 fallecidos, 3.360 heridos y 430 réplicas",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "37450f53fc7f",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Balance actualizado a 72 horas: 1.430 fallecidos y 3.238 heridos con 430 réplicas en Venezuela",
+      "fuente_url": "https://ultimasnoticias.com.ve/linea-de-tiempo/minuto-a-minuto-despues-de-la-tragedia-sabado-27-de-junio-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "94f33a1e8115",
+      "actor": "",
+      "titulo": "Venezuela recibe 1,600 rescatistas de 17 países; mortalidad de sismos supera 1,430",
+      "fuente_url": "https://ca.news.yahoo.com/venezuela-welcomes-1-600-foreign-132205457.html"
+    },
+    {
+      "hash": "a1d1430492f5",
+      "actor": "GOB1",
+      "titulo": "Venezuela reporta al menos 920 muertos y más de 50.000 desaparecidos tras terremotos devastadores",
+      "fuente_url": "https://www.martinoticias.com/amp/venezolanos-ante-la-devastaci%C3%B3n-masiva-y-la-impotencia-crece-la-ayuda-internacional/469631.html"
+    },
+    {
+      "hash": "6028c2bfedd2",
+      "actor": "",
+      "titulo": "Actualización de balance de víctimas: más de 900-920 muertos confirmados por terremoto en Venezuela",
+      "fuente_url": "https://www.notimetropoli.com/2026/06/27/venezuela-al-26-de-junio-de-2026-la-principal-noticia-es-la-catastrofe-sismica/"
+    },
+    {
+      "hash": "d0c6c8675f60",
+      "actor": "GOB1",
+      "titulo": "Venezuela enfrenta tercer día de emergencia por sismos: 920 fallecidos, 3.360 heridos y 430 réplicas con ayuda internaci",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-27-junio-2026_202606276a3fcb0a95cc61359ce00b0e.html"
+    },
+    {
+      "hash": "37450f53fc7f",
+      "actor": "GOB1",
+      "titulo": "Balance actualizado a 72 horas: 1.430 fallecidos y 3.238 heridos con 430 réplicas en Venezuela",
+      "fuente_url": "https://ultimasnoticias.com.ve/linea-de-tiempo/minuto-a-minuto-despues-de-la-tragedia-sabado-27-de-junio-2026/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
