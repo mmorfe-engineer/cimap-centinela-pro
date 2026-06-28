@@ -1,5 +1,19 @@
 [
   {
+    "correlativo": "20260628-14H-192858",
+    "turno": "cierre",
+    "timestamp_utc": "2026-06-28T19:45:19.688284+00:00",
+    "estado_general": "CRITICO",
+    "contadores": {
+      "A4": 8,
+      "A3": 16,
+      "A2": 9,
+      "A1": 3,
+      "A0": 0,
+      "total": 36
+    }
+  },
+  {
     "correlativo": "20260628-14H-190716",
     "turno": "cierre",
     "timestamp_utc": "2026-06-28T19:28:41.724443+00:00",
@@ -179,20 +193,6 @@
       "A1": 3,
       "A0": 0,
       "total": 25
-    }
-  },
-  {
-    "correlativo": "20260623-14H-214351",
-    "turno": "cierre",
-    "timestamp_utc": "2026-06-23T21:48:14.755820+00:00",
-    "estado_general": "ALTO",
-    "contadores": {
-      "A4": 0,
-      "A3": 6,
-      "A2": 2,
-      "A1": 0,
-      "A0": 0,
-      "total": 8
     }
   }
 ]
