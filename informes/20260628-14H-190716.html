@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260628-14H-190716</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260628-14H-190716</code><br>
+    <strong>Ventana UTC:</strong> 2026-06-27T19:07:16.644376+00:00 → 2026-06-28T19:07:16.644376+00:00<br>
+    <strong>Generado:</strong> 2026-06-28 19:28 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 9 A4</span>
+    <span class="stat-pill">🟠 14 A3</span>
+    <span class="stat-pill">🟡 15 A2</span>
+    <span class="stat-pill">📊 41 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Venezuela enfrenta una crisis crítica tras un doble terremoto (24-25/06/2026) con 1.430 fallecidos, 3.238 heridos y 50.000 desaparecidos según balances oficiales, agravada por limitaciones operativas del Estado y restricciones en el acceso a ingresos internacionales (Fuentes: EL PAÍS, Noticias Venevisión, RTVC).
+
+2. La emergencia ha dejado 3.142 familias damnificadas y 60.000-73.000 personas sin hogar, concentrando los daños en La Guaira, lo que exige movilización inmediata de ayuda humanitaria y logística internacional (Fuentes: EL PAÍS América, Antena 3/EFE).
+
+3. Equipos de rescate internacionales (21 delegaciones, 1.242 rescatistas) y asistencia médica (ej. hospital de campaña de India) operan en el país, con 430 réplicas registradas, requiriendo coordinación urgente entre actores nacionales y extranjeros (Fuentes: EFE, Asamblea Nacional).
+
+4. España reporta 9 ciudadanos fallecidos y 152 desaparecidos, con 14 localizados bajo escombros, lo que presiona la gestión diplomática y la respuesta especializada en la crisis (Fuente: EL PAÍS América).
+
+5. La producción petrolera venezolana (1,2 millones de barriles/día) no sufrió daños significativos en infraestructura crítica, según el Ministerio de Hidrocarburos, asegurando continuidad operativa del sector (Fuente: Valora Analitik).</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260627-14H-210508</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (41):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Venezuela afronta catástrofe con Estado sobrepasado: fallecidos ascienden a 1.430 <a href="https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Más de 50.000 desaparecidos reportados por el gobierno venezolano <a href="https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Jorge Rodríguez</strong>: Jorge Rodríguez actualiza balance oficial: 1.430 fallecidos y más de 3.200 heridos por terremotos en Venezuela <a href="https://rtvc.es/https-rtvc-es-terremoto-venezuela-minuto-a-minuto-ultima-hora-28-junio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Jorge Rodríguez</strong>: Sismos en Venezuela: 1.430 fallecidos y 3.238 heridos por dos terremotos intensos <a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Terremoto en Venezuela: 1.430 fallecidos y Venezuela recibe delegación india con hospital de campaña <a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Doble terremoto en Venezuela: 1.430 muertos y más de 3.238 heridos <a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Doble terremoto en Venezuela: 1.430 fallecidos y 3.238 heridos <a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Se elevan a 1.430 las personas fallecidas por el doble terremoto en Venezuela <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Terremoto en Venezuela: 1.430 muertos y crisis de emergencia con el Estado sobrepasado <a href="https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Terremoto en Venezuela: 1.430 fallecidos y 3.238 heridos según Gobierno <a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>P1</code> (María Corina Machado)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB2</code> (Diosdado Cabello), <code>GOB4</code> (Pedro Infante Aparicio), <code>INST3</code> (Consejo Nacional Electoral)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>14 cortes sin actividad</strong></li><li><code>INST4</code> — Banco Central de Venezuela (<em>Autoridad monetaria</em>): <strong>4 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 9</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 5</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela afronta catástrofe con Estado sobrepasado: fallecidos ascienden a 1.430</h3>
+  <p class="fact-summary">El país sudamericano, tutelado por Estados Unidos y sin acceso libre a sus ingresos, enfrenta la catástrofe del terremoto con un Estado operando al límite, con 1.430 fallecidos confirmados este sábado.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1.430 fallecidos</li><li>32 muertos (inicio)</li><li>164, 235, 589, 920 (evolución)</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La descripción del Estado sobrepasado y la tutela de EE.UU. subraya la vulnerabilidad geopolítica del país ante la crisis, limitando su capacidad de respuesta autónoma.</div>
+  <div class="enlaces"><a href="https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html" target="_blank" rel="noopener">📰 EL PAÍS</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremoto en Venezuela: 1.430 muertos y crisis de emergencia con el Estado sobrepasado</h3>
+  <p class="fact-summary">Un terremoto en el norte de Venezuela ha causado 1.430 muertos según balance del sábado 28 de junio, con el sistema de emergencias operando al límite y告诉 sin acceso libre a ingresos internacionales[1]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1430</li><li>32</li><li>164</li><li>235</li><li>589</li><li>920</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere activación inmediata de protocolos de emergencia nacional, movilización internacional de ayuda y reorientación de recursos estatales para supervivencia de población[1]</div>
+  <div class="enlaces"><a href="https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html" target="_blank" rel="noopener">📰 EL PAÍS</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Doble terremoto en Venezuela: 1.430 fallecidos y 3.238 heridos</h3>
+  <p class="fact-summary">El doble terremoto en Venezuela confirma 1.430 muertos y 3.238 heridos más de 72 horas después del seísmo, con despliegue internacional de rescate.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 08:00 VET</p>
+  <ul class="data-points"><li>1430</li><li>3238</li><li>9</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere coordinación de emergencia nacional e internacional, movilización de recursos miliares y respuesta diplomática inmediata.</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">📰 EL PAÍS América</a> · <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Jorge Rodríguez actualiza balance oficial: 1.430 fallecidos y más de 3.200 heridos por terremotos en Venezuela</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez,発表した borrador oficial que contabiliza 1.430 muertos, 3.238 heridos y 3.142 familias damnificadas tras el doble terremoto que sacudió la costa venezolana el 24 de junio[1][3][7].</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 09:45 VET</p>
+  <ul class="data-points"><li>1430</li><li>3238</li><li>3142</li><li>774</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El Estado venezolano está sobrepasado por la magnitud de la catástrofe natural; requiere coordinación internacional urgente para rescates y asistencia humanitaria</div>
+  <div class="enlaces"><a href="https://rtvc.es/https-rtvc-es-terremoto-venezuela-minuto-a-minuto-ultima-hora-28-junio-2026/" target="_blank" rel="noopener">📰 RTVC</a> · <a href="https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Más de 50.000 desaparecidos reportados por el gobierno venezolano</h3>
+  <p class="fact-summary">Según el balance oficial del gobierno, más de 50.000 personas permanecen desaparecidas tras los terremotos devastadores que iniciaron su cuarto día de emergencia</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 09:49 VET</p>
+  <ul class="data-points"><li>50000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La magnitud de desaparecidos exige priorización máxima en búsqueda de supervivientes y reorientación de recursos de rescate</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">📰 Noticias Venevisión</a> · <a href="https://www.rtve.es/play/videos/telediario-matinal/telediario-matinal-cuatro-minutos-28-06-2026/17134648/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260628192744/https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Doble terremoto en Venezuela: 1.430 muertos y más de 3.238 heridos</h3>
+  <p class="fact-summary">El doble seísmo ocurrido en el norte de Venezuela el miércoles ha dejado 1.430 fallecidos y 3.238 heridos más de 72 horas después, con 60.000 personas sin hogar y despliegue internacional de rescate en La Guaira.</p>
+  <p class="info-actor">Gobierno de Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  <ul class="data-points"><li>1430</li><li>3238</li><li>60000</li><li>3142</li><li>73000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de recursos humanitarios, logística internacional y coordinación de ayuda médica; la cifra de víctimas y damnificados impacta decisiones políticas y financieras regionales.</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">📰 EL PAÍS América</a> · <a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Se elevan a 1.430 las personas fallecidas por el doble terremoto en Venezuela</h3>
+  <p class="fact-summary">El doble sismo ocurrido el pasado miércoles en Venezuela ha causado 1.430 muertes y más de 3.200 heridos, con 3.142 familias damnificadas y 73.000 personas atendidas por emergencias, concentrando la mayoría de los daños en La Guaira[1][6]</p>
+  <p class="info-actor">Gobierno de Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  <ul class="data-points"><li>1430</li><li>3200</li><li>3142</li><li>73000</li><li>9</li><li>152</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Exige coordinación urgente de ayuda humanitaria internacional y activación de protocolos de emergencia nacional[1][6]</div>
+  <div class="enlaces"><a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener">📰 Antena 3 / EFE</a> · <a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Sismos en Venezuela: 1.430 fallecidos y 3.238 heridos por dos terremotos intensos</h3>
+  <p class="fact-summary">Dos terremotos intensos sacudieron Venezuela el miércoles 25 de junio de 2026, causando 1.430 muertes y 3.238 heridos según balance oficial actualizado el 28 de junio a las 15:42 UTC[2][4].</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  <ul class="data-points"><li>1430</li><li>3238</li><li>21</li><li>1242</li><li>430</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Catástrofe nacional que requiere coordinación internacional inmediata con 21 delegaciones y 1.242 rescatistas en terreno, además de 430 réplicas registradas[2][4]</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a> · <a href="https://www.bbc.com/mundo/articles/cgrk18ynx4do" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260628191425/https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremoto en Venezuela: 1.430 fallecidos y Venezuela recibe delegación india con hospital de campaña</h3>
+  <p class="fact-summary">El número de fallecidos por el terremoto en Venezuela se elevó a 1.430 el 28 de junio de 2026, mientras el país recibe una delegación india con un hospital de campaña para la asistencia en la crisis.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  <ul class="data-points"><li>1.430 fallecidos</li><li>28 junio 2026 15:42</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra de fallecidos confirma la magnitud de la catástrofe y la llegada de asistencia internacional (India) exige coordinación operativa inmediata para la gestión de emergencias.</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Jorge Rodríguez exalta apoyo de rescatistas internacionales en Venezuela</h3>
+  <p class="fact-summary">El presidente del Parlamento, Jorge Rodríguez (PSUV/Nacional), exaltó el apoyo de los rescatistas internacionales que se encuentran en Venezuela para las labores de rescate en el Palacio Federal Legislativo de Caracas[4].</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Confirmación oficial de la presencia de equipos internacionales, lo que facilita la logística de ayuda y refuerza la cooperación multilateral en medio de la crisis</div>
+  <div class="enlaces"><a href="https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-exalta-apoyo-de-rescatistas-internacionales" target="_blank" rel="noopener">📰 Asamblea Nacional de Venezuela</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremoto en Venezuela: 1.430 fallecidos y 3.238 heridos según Gobierno</h3>
+  <p class="fact-summary">El Gobierno de Venezuela reportó 1.430 muertos y 3.238 heridos más de 72 horas después del doble terremoto que afectó el norte del país, con La Guaira como zona más dañada[1][2].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 09:49 VET</p>
+  <ul class="data-points"><li>1.430 fallecidos</li><li>3.238 heridos</li><li>152 españoles desaparecidos</li><li>9 fallecidos españoles</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Implica respuesta operativa inmediata de emergencia, coordinación internacional y gestión de crisis humanitaria en zonas críticas como La Guaira[1][2].</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">📰 EL PAÍS</a> · <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Jorge Rodríguez declara que los terremotos son el más fuerte vivido por Venezuela en 123 años</h3>
+  <p class="fact-summary">Jorge Rodríguez, presidente de la Asamblea Nacional, declaró oficialmente que los terremotos del miércoles fueron los más fuertes sufridos por Venezuela en los últimos 123 años[2].</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>123</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Contextualiza la magnitud del evento en historia nacional, reforzando la urgencia de la respuesta internacional y la necesidad de reconstrucción a largo plazo[2]</div>
+  <div class="enlaces"><a href="https://www.bbc.com/mundo/articles/cgrk18ynx4do" target="_blank" rel="noopener">📰 BBC Mundo</a> · <a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260628191809/https://www.bbc.com/mundo/articles/cgrk18ynx4do" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Nueva réplica de 3.3 Mw registrada por FUNVISIS con epicentro en La Guaira</h3>
+  <p class="fact-summary">FUNVISIS reportó un nuevo sismo de 3.3 Mw con epicentro en La Guaira el 28 de junio de 2026 a las 06:55 am, sintiéndose en Caracas[8].</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 02:55 VET</p>
+  <ul class="data-points"><li>3.3</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica actividad sísmica persistente four días después del evento principal, con riesgo de daños adicionales en estructuras vulnerables[8]</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DaIDtTev8em/" target="_blank" rel="noopener">📰 FUNVISIS</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Rescate de segunda víctima por UME bajo escombros del terremoto en Venezuela</h3>
+  <p class="fact-summary">La Unidad Militar de Emergencias (UME) rescata a una segunda persona atrapada bajo escombros del terremoto del 27 de junio en Venezuela[4]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 01:36 VET</p>
+  <ul class="data-points"><li>2</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica capacidad operativa de rescate activa pero limitada frente a magnitud de la catástrofe[4]</div>
+  <div class="enlaces"><a href="https://elpais.com/videos/2026-06-28/la-ume-rescata-a-una-segunda-persona-atrapada-bajo-los-escombros-tras-el-terrmoto-en-venezuela-antonio-bienvenido.html" target="_blank" rel="noopener">📰 EL PAÍS</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>2026: año del quiebre democrático en Venezuela según Machado y González Urrutia</h3>
+  <p class="fact-summary">María Corina Machado y Edmundo González Urrutia afirmaron que 2026 será el año decisivo para la libertad democrática en Venezuela[5]</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Define agenda política de oposición para 2026 con posible impacto en movilización ciudadana y negociaciones internacionales[5]</div>
+  <div class="enlaces"><a href="https://www.facebook.com/Rdmaquiavelo/posts/al-d%C3%ADa-con-don-maquipor-yaressi-ortega-28062026-m%C3%A9xico-extiende-la-mano-hasta-ve/1425019962979901/" target="_blank" rel="noopener">📰 Facebook - RDmaquiavelo</a> · <a href="https://web.archive.org/web/20260628192633/https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FRdmaquiavelo%2Fposts%2Fal-d%25C3%25ADa-con-don-maquipor-yaressi-ortega-28062026-m%25C3%25A9xico-extiende-la-mano-hasta-ve%2F1425019962979901%2F" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>España eleva a 9 fallecidos y 152 desaparecidos por el terremoto en Venezuela</h3>
+  <p class="fact-summary">El Ministerio de Exteriores español confirmó que 9 ciudadanos españoles han muerto y 152 están desaparecidos por el doble seísmo en Venezuela, con 14 localizados bajo los escombros.</p>
+  <p class="info-actor">Ministerio de Exteriores español</p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>9</li><li>152</li><li>14</li><li>6</li><li>133</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Implica presión diplomática sobre Venezuela para gestionar casos de ciudadanos europeos y movilizar ayuda especializada; afecta relaciones bilaterales y gestión de crisis internacional.</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">📰 EL PAÍS América</a> · <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremotos en Venezuela: golpe devastador para democracia y seguridad regionales</h3>
+  <p class="fact-summary">Los dos terremotos de magnitud 7.1 en el noroeste de Montalbán afectan gran parte del país, ocurriendo menos de seis meses después de la captura de Nicolás Maduro por fuerzas estadounidenses, golpeando la estabilidad.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>Magnitud 7.1</li><li>24 de junio 2026</li><li>Montalbán</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La conexión entre el desastre natural y el contexto político (captura de Maduro) sugiere un riesgo sistémico para la gobernanza y la estabilidad de América Latina.</div>
+  <div class="enlaces"><a href="https://www.bbc.com/mundo/articles/c1my31l7z3vo" target="_blank" rel="noopener">📰 BBC</a> · <a href="https://web.archive.org/web/20260628192132/https://www.bbc.com/mundo/articles/c1my31l7z3vo" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PNUD estima costo de daños por terremotos en Venezuela en US$6.700 millones</h3>
+  <p class="fact-summary">El Programa de las Naciones Unidas para el Desarrollo publicó un informe preliminar que sitúa los daños físicos directos por terremotos en más de US$6.700 millones, equivalente a cerca del 6% del PIB venezolano, con un rango de afectaciones entre US$4.700 y US$8.700 millones.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>US$6.700 millones</li><li>6% del PIB</li><li>US$4.700 millones (rango mínimo)</li><li>US$8.700 millones (rango máximo)</li><li>1.430 fallecidos</li><li>3.238 heridos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Esta cifra representa un shock económico de alto impacto que podría afectar la estabilidad fiscal y la capacidad de respuesta del gobierno ante una crisis humanitaria masiva, con 1.430 fallecidos y 3.238 heridos registrados.</div>
+  <div class="enlaces"><a href="https://www.larepublica.co/globoeconomia/pnud-estima-costo-de-los-terremotos-en-venezuela-en-us-6-700-millones-4425028" target="_blank" rel="noopener">📰 La República</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>España confirma 9 muertos y 152 desaparecidos por terremoto en Venezuela</h3>
+  <p class="fact-summary">El Ministerio de Exteriores español eleva a 9 la cifra de muertos españoles y a 152 la de desaparecidos por el doble terremoto en Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 08:30 VET</p>
+  <ul class="data-points"><li>9</li><li>152</li><li>14</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Genera presión diplomática bilateral y requiere coordinación de ayuda humanitaria entre España y Venezuela.</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">📰 EL PAÍS América</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Venezuela recibe delegación india con hospital de campaña tras el terremoto</h3>
+  <p class="fact-summary">Venezuela ha recibido una delegación de India que llegará con un hospital de campaña para apoyar la respuesta al doble terremoto del pasado miércoles[6]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la cooperación internacional Sur Global y acelera la recuperación de servicios médicos locales[6]</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela recibe delegación india con hospital de campaña</h3>
+  <p class="fact-summary">Venezuela recibe a una delegación india que incluye un hospital de campaña para atender víctimas de los terremotos</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La llegada de hospital de campaña indio mejora capacidad de atención médica y estabilización de víctimas</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE Mundo</a> · <a href="https://web.archive.org/web/20260628191425/https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#283593;">Académica</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Análisis preliminar: terremoto asociado al corredor tectónico del norte venezolano</h3>
+  <p class="fact-summary">Informes preliminares sitúan el fenómeno en el sistema de fallas activo del norte venezolano, asociado al corredor tectónico que atraviesa la región[3]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Base científica para evaluación de riesgo sísmico futuro y planificación de infraestructura resiliente en Venezuela[3]</div>
+  <div class="enlaces"><a href="https://lauicom.edu.ve/2026/06/28/" target="_blank" rel="noopener">📰 Lauicom.edu.ve</a> · <a href="https://web.archive.org/web/20260628192703/https://lauicom.edu.ve/2026/06/28/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>16 rescatistas internacionales llegan a Venezuela para ayuda en terremoto</h3>
+  <p class="fact-summary">16 rescatistas internacionales provenientes de América y Europa han llegado a Venezuela para apoyar en las labores de rescate tras el doble terremoto que afectó La Guaira y Caracas.</p>
+  <p class="info-actor">Comunidad internacional de rescate</p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 04:30 VET</p>
+  <ul class="data-points"><li>16</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja realineamiento diplomático y cooperación regional en crisis; la llegada de ayuda internacional es clave para mitigar el impacto humanitario y fortalecer legitimidad del gobierno venezolano.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=66TMa2b2szY" target="_blank" rel="noopener">📰 FRANCE 24 Español</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Unión Europea envía 500 efectivos para rescate en Venezuela</h3>
+  <p class="fact-summary">La Unión Europea activa mecanismo de protección civil con ocho países colaborando, enviando más de 500 efectivos para tareas de rescate en Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 07:00 VET</p>
+  <ul class="data-points"><li>500</li><li>8</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con evidencia de cobertura secundaria confiable.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza cooperación multilateral y puede influir en relaciones diplomáticas entre Venezuela y organismos internacionales.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=EgL_542i1Mg" target="_blank" rel="noopener">📰 Informativos Tvc</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>España eleva a 9 fallecidos y 152 desaparecidos por terremoto en Venezuela</h3>
+  <p class="fact-summary">El Ministerio de Exteriores español confirmó 9 ciudadanos españoles fallecidos y 152 desaparecidos debido al doble terremoto en el norte de Venezuela[1][2].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 09:49 VET</p>
+  <ul class="data-points"><li>9 fallecidos españoles</li><li>152 desaparecidos</li><li>14 localizados bajo escombros</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la necesidad de coordinación diplomática y asistencia humanitaria bilateral entre España y Venezuela en medio de la crisis[1][2].</div>
+  <div class="enlaces"><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">📰 EL PAÍS</a> · <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela recibe delegación india con hospital de campaña post-terremoto</h3>
+  <p class="fact-summary">Venezuela recibió una delegación india que incluye un hospital de campaña para ayudar en la crisis humanitaria tras el doble terremoto del miércoles.</p>
+  <p class="info-actor">Gobierno de India</p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La llegada de hospital de campaña de India refuerza la cooperación internacional en crisis y puede influir en relaciones bilaterales; es clave para la gestión médico-sanitaria de la emergencia.</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE Mundo</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.youtube.com/watch?v=vkZKemJZ-24" target="_blank" rel="noopener">Supreme Court hands Trump two big immigration wins on asylum and Haitian, Syrian deportations</a></li><li><a href="https://www.youtube.com/watch?v=eUr5CkuVPtU" target="_blank" rel="noopener">US and Iran launch strikes in worst escalation since interim peace deal, tensions brew in Trump administration</a></li><li><a href="https://www.reuters.com/video/watch/idRW322128062026RP1/" target="_blank" rel="noopener">Light aircraft crashes in eastern France, officials say eleven killed</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Producción de crudo venezolana se mantiene en 1,2 millones de barriles diarios pese a terremotos</h3>
+  <p class="fact-summary">La ministra de Hidrocarburos Paula Henao confirmó que la producción total de crudo en Venezuela es de 1,2 millones de barriles diarios y que los yacimientos y terminales no registraron daños de consideración tras los terremotos.</p>
+  <p class="info-actor">Paula Henao, ministra de Hidrocarburos</p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1,2 millones de barriles diarios</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Garantiza la continuidad operativa del sector petrolero venezolano, asegurando que no hay daños en infraestructura crítica a pesar de eventos geológicos recientes.</div>
+  <div class="enlaces"><a href="https://www.valoraanalitik.com/industria-petrolera-venezolana-sigue-intacta-tras-los-terremotos-las-dificultades-estan-en-los-cortes-de-energia/" target="_blank" rel="noopener">📰 Valora Analitik</a> · <a href="https://www.reuters.com/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Exportaciones de petróleo de Venezuela llegan a 1,25 millones de barriles diarios en junio 2026</h3>
+  <p class="fact-summary">Venezuela exportó 1,25 millones de barriles diarios de petróleo en junio de 2026, su máximo en siete años, con un aumento de 144% en el primer semestre impulsado por flexibilización de licencias de Estados Unidos.</p>
+  <p class="info-actor">Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>1,25 millones de barriles diarios</li><li>144% aumento en primer semestre 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja una recuperación significativa del sector petrolero venezolano, con impacto directo en ingresos por exportaciones y en la relación con actores internacionales clave como Estados Unidos.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZ5AosrRlTl/" target="_blank" rel="noopener">📰 Instagram / Bloomberg Linea</a> · <a href="https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%c3%b3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Exportaciones petroleras de Venezuela alcanzaron US$5.491 millones en el primer trimestre de 2026</h3>
+  <p class="fact-summary">El Banco Central de Venezuela informó que los ingresos por exportaciones petroleras durante el primer trimestre de 2026 fueron de US$5.491 millones, con un crecimiento superior al 22% en exportaciones de bienes en general.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>US$5.491 millones</li><li>&gt;22% (crecimiento exportaciones)</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El incremento en exportaciones petroleras sugiere una mejora en la producción y ventas de crudo, lo que puede fortalecer las reservas internacionales y reducir la presión sobre el tipo de cambio, siendo un indicador positivo para la economía venezolana.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DZ8VVpeS9tl/" target="_blank" rel="noopener">📰 Monitor Venezuela (Instagram)</a> · <a href="https://www.instagram.com/p/DaD6bFNCTEM/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Ingresos por exportaciones petroleras de Venezuela alcanzan 5,490 millones de dólares en primer trimestre 2026</h3>
+  <p class="fact-summary">Las exportaciones de petróleo de Venezuela generaron 5,490 millones de dólares durante el primer trimestre de 2026, con un incremento de 21,5% según datos del BCV.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>5,490 millones de dólares</li><li>21,5% incremento</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica una mejora en la capacidad de generación de ingresos por exportaciones, lo que podría fortalecer la posición financiera del gobierno venezolano en el corto plazo.</div>
+  <div class="enlaces"><a href="https://www.analitica.com/economia/bcv-ingresos-petroleros-de-venezuela-suben-un-215-en-el-primer-trimestre/" target="_blank" rel="noopener">📰 Analitica</a> · <a href="https://web.archive.org/web/20260628191648/https://www.analitica.com/economia/bcv-ingresos-petroleros-de-venezuela-suben-un-215-en-el-primer-trimestre/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Banco Central de Venezuela fija tasa de cambio en 622,2135 Bs/USD al 26 de junio</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó la tasa de cambio oficial al 26 de junio de 2026, fijada en 622,2135 Bs/USD, con un incremento de 0,6836 Bs (+0,11%) respecto al día anterior.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 25/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>622,2135 Bs/USD</li><li>0,6836 Bs (+0,11%)</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa oficial es un referente para operaciones comerciales y financieras; su incremento moderado indica una depreciación controlada que puede influir en expectativas de inflación y en la política monetaria del gobierno.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-26-junio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV fija tasa de cambio de 623,02 Bs/USD para 27 y 28 de junio</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) publicó la tasa de cambio oficial para el dólar de 623,02 bolívares por unidad y el euro en 710,10 Bs para los días 27 y 28 de junio de 2026[6].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 26/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>623.02</li><li>710.1</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Define el marco cambiario oficial para la comercialización de divisas en los últimos días de junio, impactando presupuestos y transacciones[6].</div>
+  <div class="enlaces"><a href="https://www.noticiascol.com/2026/06/27/dolar-y-euro-bcv-para-los-dias-27-y-28-de-junio-precio-del-fin-de-semana/" target="_blank" rel="noopener">📰 Noticias Col</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#4527a0;">Think tank</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Holland &amp; Knight: Novedades de Venezuela - Junio 2026</h3>
+  <p class="fact-summary">Holland &amp; Knight publica su actualización de junio de 2026 sobre Venezuela, analizando noticias, tendencias y desarrollos que afectan los intereses empresariales en todos los sectores.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El análisis de tendencias empresariales proporciona orientación estratégica para la inversión y operaciones en un entorno de crisis y sanciones.</div>
+  <div class="enlaces"><a href="https://www.hklaw.com/es/insights/publications/2026/06/venezuela-update-june-2026" target="_blank" rel="noopener">📰 Holland &amp; Knight</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>BCV reporta incremento de liquidez monetaria de más de 69% en abril 2026</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) indicó en abril de 2026 que la liquidez monetaria en el país se habría incrementado más de 69%[5].</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>69.0</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja expansión monetaria previa del sistema, aunque el dato no es de la fecha de referencia actual[5].</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DaD6bFNCTEM/" target="_blank" rel="noopener">📰 Noticias Instagram</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela activa mecanismo de coordinación de emergencia en Caracas</h3>
+  <p class="fact-summary">El gobierno venezolano activó desde la madrugada del sábado un mecanismo de coordinación en una oficina especial habilitada en Caracas para atender la emergencia por los terremotos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 27/06/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La activación de oficina especial de coordinación permite centralizar ayuda internacional y optimizar recursos de rescate</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">📰 Noticias Venevisión</a> · <a href="https://web.archive.org/web/20260628192744/https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Más de 1.600 rescatistas internacionales trabajando en Venezuela</h3>
+  <p class="fact-summary">Al menos 1.600 rescatistas internacionales de Europa y América trabajan sin descanso en las labores de búsqueda y atención de víctimas</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 09:49 VET</p>
+  <ul class="data-points"><li>1600</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La presencia de más de 1.600 rescatistas indica solidaridad internacional robusta pero requiere coordinación logística avanzada</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">📰 Noticias Venevisión</a> · <a href="https://www.youtube.com/watch?v=EgL_542i1Mg" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260628192744/https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Se eleva a 1.430 el número de fallecidos por los terremotos en Venezuela</h3>
+  <p class="fact-summary">El balance oficial confirma 1.430 víctimas mortales y más de 3.000 heridos tras los terremotos del miércoles que iniciaron su cuarto día de emergencia</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 11:42 VET</p>
+  <ul class="data-points"><li>1430</li><li>3000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento en fallecidos requiere intensificación de rescate y reorganización de recursos humanitarios internacionales</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE Mundo</a> · <a href="https://www.rtve.es/play/videos/telediario-matinal/telediario-matinal-cuatro-minutos-28-06-2026/17134648/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260628191425/https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Unión Europea envía 500 efectivos para rescate en Venezuela</h3>
+  <p class="fact-summary">La Unión Europea activa mecanismo de protección civil con ocho países colaborando, enviando más de 500 efectivos para tareas de rescate en Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 07:00 VET</p>
+  <ul class="data-points"><li>500</li><li>8</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con evidencia de cobertura secundaria confiable.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza cooperación multilateral y puede influir en relaciones diplomáticas entre Venezuela y organismos internacionales.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=EgL_542i1Mg" target="_blank" rel="noopener">📰 Informativos Tvc</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Más de 1.600 rescatistas trabajan sin descanso en Venezuela</h3>
+  <p class="fact-summary">Más de 1.600 rescatistas trabajan sin descanso para atender víctimas y buscar supervivientes en las zonas afectadas por el terremoto en Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 28/06/2026 09:00 VET</p>
+  <ul class="data-points"><li>1600</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con evidencia de cobertura secundaria confiable.</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica capacidad operativa de respuesta y necesidad de recursos continuos para labores de rescate.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=EgL_542i1Mg" target="_blank" rel="noopener">📰 Informativos Tvc</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Coordinación internacional de ayuda humanitaria** — La magnitud de víctimas (1.430 muertos, 3.238 heridos, 50.000 desaparecidos) y damnificados (60.000 sin hogar) exige activación inmediata de protocolos, logística de rescate y gestión de recursos externos (ej. hospital de campaña indio). Sin acceso libre a ingresos, la dependencia de cooperación extranjera es crítica.
+
+2. 🔴 **Respuesta del Estado venezolano y capacidad operativa** — El informe confirma un sistema de emergencias &quot;operando al límite&quot;, con réplicas (430 registradas) y despliegue militar insuficiente. Monitorear si hay reasignación de recursos estatales o cambios en la narrativa oficial sobre autonomía vs. tutela de EE.UU.
+
+3. 🟠 **Impacto en sector petrolero y estabilidad económica** — Aunque no hay daños reportados en infraestructura crítica (1,2M barriles/día), verificar si la crisis humanitaria desvía atención o recursos de PDVSA, o si hay presiones adicionales por sanciones (OFAC). Silencio de PDVSA (INST5) y BCV (INST4) es relevante.
+
+4. 🟠 **Gestión diplomática de víctimas extranjeras (España)** — 9 muertos y 152 desaparecidos españoles aumentan presión sobre Venezuela para facilitar acceso a equipos de rescate y transparencia en localización. Riesgo de tensión bilateral si no hay avances en 48-72 horas.
+
+5. 🟡 **Silencio de Diosdado Cabello (GOB2) y Edmundo González (P2)** — Ausencia de declaraciones de figuras clave del oficialismo y oposición en crisis nacional. Podría indicar división interna, estrategia de comunicación o falta de capacidad de respuesta. Monitorear si rompen silencio en próximos días.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT2</strong> — OFAC / U.S. Treasury (Sanciones financieras estadounidenses)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(12)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>EL PAÍS</td><td><a href="https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html" target="_blank" rel="noopener">https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html</a></td><td>2026-06-28</td></tr><tr><td>Antena 3</td><td><a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html" target="_blank" rel="noopener">https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html</a></td><td>2026-06-28</td></tr><tr><td>FRANCE 24 Español</td><td><a href="https://www.youtube.com/watch?v=66TMa2b2szY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=66TMa2b2szY</a></td><td>2026-06-28</td></tr><tr><td>EFE Mundo</td><td><a href="https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">https://efe.com/mundo/2026-06-28/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/</a></td><td>2026-06-28</td></tr><tr><td>Valora Analitik</td><td><a href="https://www.valoraanalitik.com/industria-petrolera-venezolana-sigue-intacta-tras-los-terremotos-las-dificultades-estan-en-los-cortes-de-energia/" target="_blank" rel="noopener">https://www.valoraanalitik.com/industria-petrolera-venezolana-sigue-intacta-tras-los-terremotos-las-dificultades-estan-en-los-cortes-de-energia/</a></td><td>2026-06-28</td></tr><tr><td>Analitica</td><td><a href="https://www.analitica.com/economia/bcv-ingresos-petroleros-de-venezuela-suben-un-215-en-el-primer-trimestre/" target="_blank" rel="noopener">https://www.analitica.com/economia/bcv-ingresos-petroleros-de-venezuela-suben-un-215-en-el-primer-trimestre/</a></td><td>2026-06-28</td></tr><tr><td>BBC Mundo</td><td><a href="https://www.bbc.com/mundo/articles/cgrk18ynx4do" target="_blank" rel="noopener">https://www.bbc.com/mundo/articles/cgrk18ynx4do</a></td><td>2026-06-28</td></tr><tr><td>EL PAÍS</td><td><a href="https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html" target="_blank" rel="noopener">https://elpais.com/internacional/2026-06-28/venezuela-afronta-la-catastrofe-con-el-estado-sobrepasado.html</a></td><td>2026-06-28</td></tr><tr><td>BBC</td><td><a href="https://www.bbc.com/mundo/articles/c1my31l7z3vo" target="_blank" rel="noopener">https://www.bbc.com/mundo/articles/c1my31l7z3vo</a></td><td>2026-06-28</td></tr><tr><td>EL PAÍS</td><td><a href="https://elpais.com/videos/2026-06-28/que-son-los-huecos-de-vida-y-por-que-son-clave-para-salvar-vidas-bajo-los-escombros-tras-el-terrmoto-de-venezuela.html" target="_blank" rel="noopener">https://elpais.com/videos/2026-06-28/que-son-los-huecos-de-vida-y-por-que-son-clave-para-salvar-vidas-bajo-los-escombros-tras-el-terrmoto-de-venezuela.html</a></td><td>2026-06-28</td></tr><tr><td>EL PAÍS</td><td><a href="https://elpais.com/videos/2026-06-28/la-ume-rescata-a-una-segunda-persona-atrapada-bajo-los-escombros-tras-el-terrmoto-en-venezuela-antonio-bienvenido.html" target="_blank" rel="noopener">https://elpais.com/videos/2026-06-28/la-ume-rescata-a-una-segunda-persona-atrapada-bajo-los-escombros-tras-el-terrmoto-en-venezuela-antonio-bienvenido.html</a></td><td>2026-06-28</td></tr><tr><td>Noticias Venevisión</td><td><a href="https://www.youtube.com/watch?v=RRLlEB27jK0" target="_blank" rel="noopener">https://www.youtube.com/watch?v=RRLlEB27jK0</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(7)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Asamblea Nacional de Venezuela</td><td><a href="https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-exalta-apoyo-de-rescatistas-internacionales" target="_blank" rel="noopener">https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-exalta-apoyo-de-rescatistas-internacionales</a></td><td>2026-06-28</td></tr><tr><td>Instagram - Asamblea Nacional</td><td><a href="https://www.instagram.com/p/DZ-J2ZUDsV5/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ-J2ZUDsV5/</a></td><td></td></tr><tr><td>FUNVISIS</td><td><a href="https://www.instagram.com/p/DaIDtTev8em/" target="_blank" rel="noopener">https://www.instagram.com/p/DaIDtTev8em/</a></td><td>2026-06-28</td></tr><tr><td>Noticias Col</td><td><a href="https://www.noticiascol.com/2026/06/27/dolar-y-euro-bcv-para-los-dias-27-y-28-de-junio-precio-del-fin-de-semana/" target="_blank" rel="noopener">https://www.noticiascol.com/2026/06/27/dolar-y-euro-bcv-para-los-dias-27-y-28-de-junio-precio-del-fin-de-semana/</a></td><td>2026-06-27</td></tr><tr><td>Noticias Instagram</td><td><a href="https://www.instagram.com/p/DaD6bFNCTEM/" target="_blank" rel="noopener">https://www.instagram.com/p/DaD6bFNCTEM/</a></td><td></td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-26-junio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-26-junio-2026/</a></td><td>2026-06-26</td></tr><tr><td>Monitor Venezuela (Instagram)</td><td><a href="https://www.instagram.com/p/DZ8VVpeS9tl/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ8VVpeS9tl/</a></td><td>2026-06-26</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>RTVC</td><td><a href="https://rtvc.es/https-rtvc-es-terremoto-venezuela-minuto-a-minuto-ultima-hora-28-junio-2026/" target="_blank" rel="noopener">https://rtvc.es/https-rtvc-es-terremoto-venezuela-minuto-a-minuto-ultima-hora-28-junio-2026/</a></td><td>2026-06-28</td></tr><tr><td>Informativos Tvc</td><td><a href="https://www.youtube.com/watch?v=EgL_542i1Mg" target="_blank" rel="noopener">https://www.youtube.com/watch?v=EgL_542i1Mg</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram / Bloomberg Linea</td><td><a href="https://www.instagram.com/p/DZ5AosrRlTl/" target="_blank" rel="noopener">https://www.instagram.com/p/DZ5AosrRlTl/</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#4527a0;">Think tank</span> Think tank <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Holland &amp; Knight</td><td><a href="https://www.hklaw.com/es/insights/publications/2026/06/venezuela-update-june-2026" target="_blank" rel="noopener">https://www.hklaw.com/es/insights/publications/2026/06/venezuela-update-june-2026</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>La República</td><td><a href="https://www.larepublica.co/globoeconomia/pnud-estima-costo-de-los-terremotos-en-venezuela-en-us-6-700-millones-4425028" target="_blank" rel="noopener">https://www.larepublica.co/globoeconomia/pnud-estima-costo-de-los-terremotos-en-venezuela-en-us-6-700-millones-4425028</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> Actor opositor <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Facebook - RDmaquiavelo</td><td><a href="https://www.facebook.com/Rdmaquiavelo/posts/al-d%C3%ADa-con-don-maquipor-yaressi-ortega-28062026-m%C3%A9xico-extiende-la-mano-hasta-ve/1425019962979901/" target="_blank" rel="noopener">https://www.facebook.com/Rdmaquiavelo/posts/al-d%C3%ADa-con-don-maquipor-yaressi-ortega-28062026-m%C3%A9xico-extiende-la-mano-hasta-ve/1425019962979901/</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#283593;">Académica</span> Académica <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Lauicom.edu.ve</td><td><a href="https://lauicom.edu.ve/2026/06/28/" target="_blank" rel="noopener">https://lauicom.edu.ve/2026/06/28/</a></td><td>2026-06-28</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-06-28</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
