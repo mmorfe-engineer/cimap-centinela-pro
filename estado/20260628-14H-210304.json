@@ -1,0 +1,217 @@
+{
+  "version": "1.0",
+  "correlativo": "20260628-14H-210304",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-28T21:10:05.782335+00:00",
+  "rango_inicio": "2026-06-27T21:03:04.717701+00:00",
+  "rango_fin": "2026-06-28T21:03:04.717701+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 6,
+    "A3": 7,
+    "A2": 1,
+    "A1": 0,
+    "A0": 0,
+    "total": 14
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Unión Europea despliega 520 efectivos de 8 países para rescate en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=EgL_542i1Mg"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Dos terremotos de magnitud 7.2 y 7.5 en Venezuela dejan al menos 1430 muertos y 50,000 desaparecidos",
+      "ultima_fuente_url": "https://www.bbc.com/news/articles/cjegdqw5d3yo"
+    },
+    "GOB1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A4"
+      ],
+      "ultimo_titulo": "Doble terremoto en Venezuela: 1.430 fallecidos y 680.000 niños en riesgo según UNICEF",
+      "ultima_fuente_url": "https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Terremotos en Venezuela: 1.430 fallecidos y 50.000 desaparecidos reportados",
+      "ultima_fuente_url": "https://www.busqueda.com.uy/internacional/murio-un-uruguayo-junto-su-familia-los-terremotos-venezuela-que-ya-dejaron-1430-fallecidos-n5414681"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "España eleva a 9 fallecidos y 152 desaparecidos por terremoto en Venezuela",
+      "ultima_fuente_url": "https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB3",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "86b2329027dc",
+      "actor": "INT1",
+      "alert_level": "A4",
+      "titulo_corto": "Dos terremotos en Venezuela: 1,450 muertos y más de 3,500 heridos; EE.UU. envía equipos de rescate",
+      "fuente_url": "https://abcnews.com/International/live-updates/venezuela-earthquakes-updates/?id=134196335"
+    },
+    {
+      "hash": "3ea8d5790ae8",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Canadá despliega ayuda humanitaria a Venezuela tras terremotos con 1,430 muertos confirmados",
+      "fuente_url": "https://www.youtube.com/watch?v=Up7-Np-_s3s"
+    },
+    {
+      "hash": "df2c284cb249",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "EE.UU. confirma despliegue máximo de equipos de búsqueda y rescate en Venezuela",
+      "fuente_url": "https://www.facebook.com/statedept/videos/against-impossible-odds-hope-endures-american-search-and-rescue-teams-rescued-an/1334746731413821/"
+    },
+    {
+      "hash": "f57d18c8d1bc",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Dos terremotos de magnitud 7.2 y 7.5 en Venezuela dejan al menos 1430 muertos y 50,000 desaparecidos",
+      "fuente_url": "https://www.bbc.com/news/articles/cjegdqw5d3yo"
+    },
+    {
+      "hash": "83f34ff69a6c",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 1.430 muertos y más de 3.200 heridos con despliegue internacional de r",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html"
+    },
+    {
+      "hash": "7160344f9e4c",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Mecanismo de protección civil de la Unión Europea activa despliegue de 520 efectivos en Venezuela tr",
+      "fuente_url": "https://www.youtube.com/watch?v=EgL_542i1Mg"
+    },
+    {
+      "hash": "f47ce22e418c",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "ONU reporta cerca de 1.000 muertos y más de 50.000 desaparecidos en doble terremoto de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=VZJ5KVw-veQ&vl=es-ES"
+    },
+    {
+      "hash": "6e85c8f0d658",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno chino y Sociedad de la Cruz Roja de China donarán ayuda humanitaria a Venezuela",
+      "fuente_url": "https://www.facebook.com/ConsuladoCHNSC/posts/el-gobierno-chino-y-la-sociedad-de-la-cruz-roja-de-china-proporcionar%C3%A1n-respecti/1045358297845783/"
+    },
+    {
+      "hash": "5f4020675273",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Comunidad venezolana en Ecuador expresa preocupación por terremotos en Venezuela",
+      "fuente_url": "https://www.facebook.com/RTS.LaNoticia/posts/seguimiento-la-comunidad-venezolana-en-ecuador-expresan-su-preocupaci%C3%B3n-por-fami/1502057465299004/"
+    },
+    {
+      "hash": "7d2153a049c9",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez agradece solidaridad de rescatistas internacionales en Venezuela",
+      "fuente_url": "https://www.dw.com/es/delcy-rodr%C3%ADguez-agradece-a-rescatistas-internacionales/live-77719281"
+    },
+    {
+      "hash": "c79b9bb467a4",
+      "actor": "INST1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 1.430 fallecidos y 50.000 desaparecidos reportados",
+      "fuente_url": "https://www.busqueda.com.uy/internacional/murio-un-uruguayo-junto-su-familia-los-terremotos-venezuela-que-ya-dejaron-1430-fallecidos-n5414681"
+    },
+    {
+      "hash": "15811fbe218b",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 1.430 fallecidos y 680.000 niños en riesgo según UNICEF",
+      "fuente_url": "https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "52ac386c1823",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "España eleva a 9 fallecidos y 152 desaparecidos por terremoto en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "db18974bc6d6",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Unión Europea despliega 520 efectivos de 8 países para rescate en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=EgL_542i1Mg"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "86b2329027dc",
+      "actor": "INT1",
+      "titulo": "Dos terremotos en Venezuela: 1,450 muertos y más de 3,500 heridos; EE.UU. envía equipos de rescate",
+      "fuente_url": "https://abcnews.com/International/live-updates/venezuela-earthquakes-updates/?id=134196335"
+    },
+    {
+      "hash": "f57d18c8d1bc",
+      "actor": "GOB4",
+      "titulo": "Dos terremotos de magnitud 7.2 y 7.5 en Venezuela dejan al menos 1430 muertos y 50,000 desaparecidos",
+      "fuente_url": "https://www.bbc.com/news/articles/cjegdqw5d3yo"
+    },
+    {
+      "hash": "83f34ff69a6c",
+      "actor": "",
+      "titulo": "Doble terremoto en Venezuela: 1.430 muertos y más de 3.200 heridos con despliegue internacional de rescate",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-28-junio-2026_202606286a411e55c7a2892f04a66ce4.html"
+    },
+    {
+      "hash": "f47ce22e418c",
+      "actor": "",
+      "titulo": "ONU reporta cerca de 1.000 muertos y más de 50.000 desaparecidos en doble terremoto de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=VZJ5KVw-veQ&vl=es-ES"
+    },
+    {
+      "hash": "c79b9bb467a4",
+      "actor": "INST1",
+      "titulo": "Terremotos en Venezuela: 1.430 fallecidos y 50.000 desaparecidos reportados",
+      "fuente_url": "https://www.busqueda.com.uy/internacional/murio-un-uruguayo-junto-su-familia-los-terremotos-venezuela-que-ya-dejaron-1430-fallecidos-n5414681"
+    },
+    {
+      "hash": "15811fbe218b",
+      "actor": "GOB1",
+      "titulo": "Doble terremoto en Venezuela: 1.430 fallecidos y 680.000 niños en riesgo según UNICEF",
+      "fuente_url": "https://elpais.com/america/2026-06-28/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
