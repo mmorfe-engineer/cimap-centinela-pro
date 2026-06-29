@@ -1,0 +1,477 @@
+{
+  "version": "1.0",
+  "correlativo": "20260629-14H-201319",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-29T20:37:23.194933+00:00",
+  "rango_inicio": "2026-06-28T20:13:19.082787+00:00",
+  "rango_fin": "2026-06-29T20:13:19.082787+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 5,
+    "A3": 20,
+    "A2": 21,
+    "A1": 0,
+    "A0": 0,
+    "total": 46
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A4",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Delcy Rodríguez crea comisión presidencial para evaluar habitabilidad de viviendas afectadas",
+      "ultima_fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    "P1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "María Corina Machado pide volver a Venezuela, lo que habría irritado a funcionarios de EE. UU.",
+      "ultima_fuente_url": "https://www.nytimes.com/es/2026/06/28/espanol/america-latina/venezuela-terremotos-maria-corina-machado.html"
+    },
+    "GOB3": {
+      "n_hallazgos": 9,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A2",
+        "A2",
+        "A4",
+        "A3",
+        "A4"
+      ],
+      "ultimo_titulo": "Doble terremoto en Venezuela: 1450 fallecidos confirmados y 6.700 millones de USD en daños materiale",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    },
+    "INST3": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez actualiza cifras: 774 edificios afectados, 189 colapsados totalmente",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=jhwfOtuSaS8"
+    },
+    "GOB2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "USA Interumps asistencia a Venezuela mediante Comando Sur; salvadoreños y otros países aportan ayuda",
+      "ultima_fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "ONU evalúa preliminar daños materiales por terremoto en Venezuela: 6.700 millones de USD (6% del PIB",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "BCV reporta aumento de 21,5% en ingresos petroleros por exportaciones en Q1 2026",
+      "ultima_fuente_url": "https://www.facebook.com/teleSUR/posts/-venezuela-reporta-aumento-del-215-en-ingresos-petroleros-durante-primer-trimest/1529551422547222/"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Divisa BCV en banda de 620 bolívares el 29 de junio",
+      "ultima_fuente_url": "https://noticias24carabobo.com/precio-del-dolar-bcv-hoy-29-de-junio-de-2026-y-los-indicadores/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "P2",
+    "INST4",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "091a58cde256",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia suspensión de clases por semana del 29 de junio al 4 de julio",
+      "fuente_url": "https://www.facebook.com/cgtnenespanol/posts/la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-anunci%C3%B3-el-pasado-domingo-2/1380017697647374/"
+    },
+    {
+      "hash": "b1d1c59f7d7b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno de Venezuela reporta 33 personas rescatadas con vida por sismos",
+      "fuente_url": "https://www.dw.com/es/delcy-rodr%C3%ADguez-agradece-a-rescatistas-internacionales/live-77719281"
+    },
+    {
+      "hash": "a436b92d8261",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez genera críticas por convocar brigadas internacionales a acto político",
+      "fuente_url": "https://www.elnacional.com/2026/06/critican-a-delcy-rodriguez-por-sacar-a-rescatistas-de-sus-labores-por-los-terremotos-para-hacer-acto-politico/"
+    },
+    {
+      "hash": "59d66e2c30e5",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Oposición venezolana critica respuesta del gobierno tras terremotos y acusa falta de preparación",
+      "fuente_url": "https://www.latercera.com/mundo/noticia/oposicion-venezolana-critica-respuesta-del-gobierno-tras-terremotos-y-acusa-falta-de-preparacion-ante-la-emergencia/"
+    },
+    {
+      "hash": "94d806620f19",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "María Corina Machado pide volver a Venezuela, lo que habría irritado a funcionarios de EE. UU.",
+      "fuente_url": "https://www.nytimes.com/es/2026/06/28/espanol/america-latina/venezuela-terremotos-maria-corina-machado.html"
+    },
+    {
+      "hash": "d64fb921dc46",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Advierten que la reconstrucción de Venezuela requiere liderazgo con legitimidad democrática",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/06/28/advierten-que-la-reconstruccion-de-venezuela-requiere-un-liderazgo-con-legitimidad-democratica/"
+    },
+    {
+      "hash": "b504c9c11343",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez anuncia comisión presidencial especial para inspeccionar viviendas y evaluate edific",
+      "fuente_url": "https://www.lasexta.com/noticias/internacional/terremotos-venezuela-ultima-hora_202606296a4201b526ebc75a77f6f539.html"
+    },
+    {
+      "hash": "3ab649e6725e",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Balance oficial actualizado: 1,719 muertos y 5,034 heridos por terremotos del 24 de junio en Venezue",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/06/29/en-vivo-terremototos-en-venezuela/"
+    },
+    {
+      "hash": "f611c29b6bc0",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Suspensión de clases extendida hasta el 5 de julio por afectaciones de terremotos en Venezuela",
+      "fuente_url": "https://www.lasexta.com/noticias/internacional/terremotos-venezuela-ultima-hora_202606296a4201b526ebc75a77f6f539.html"
+    },
+    {
+      "hash": "1df542c55437",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "78% del servicio de agua recuperado en Venezuela según reporte oficial de la presidencia",
+      "fuente_url": "https://www.youtube.com/watch?v=-yvoUP4dsUA"
+    },
+    {
+      "hash": "7ffccfac5481",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Más de 430 réplicas registradas desde los terremotos del 24 de junio en Venezuela",
+      "fuente_url": "https://www.lasexta.com/noticias/internacional/terremotos-venezuela-ultima-hora_202606296a4201b526ebc75a77f6f539.html"
+    },
+    {
+      "hash": "6b77279f9c0e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Ayuda de la Unión Europea anunciada para Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=-yvoUP4dsUA"
+    },
+    {
+      "hash": "30b5303f9099",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "33 personas rescatadas con vida tras los terremotos en Venezuela",
+      "fuente_url": "https://www.lasexta.com/noticias/internacional/terremotos-venezuela-ultima-hora_202606296a4201b526ebc75a77f6f539.html"
+    },
+    {
+      "hash": "26dc929a6126",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Naciones Unidas estima hasta 50,000 desaparecidos por la catástrofe de terremotos en Venezuela",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/06/29/en-vivo-terremototos-en-venezuela/"
+    },
+    {
+      "hash": "60a37f038658",
+      "actor": "INST3",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto de magnitud 4,6 sacude nuevamente Venezuela; 1.450 fallecidos confirmados",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "3dfb621b2094",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia comisión para inspección inmediata de viviendas damaged",
+      "fuente_url": "https://www.youtube.com/watch?v=jhwfOtuSaS8"
+    },
+    {
+      "hash": "820e3b49b599",
+      "actor": "INST3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez actualiza cifras: 774 edificios afectados, 189 colapsados totalmente",
+      "fuente_url": "https://www.youtube.com/watch?v=jhwfOtuSaS8"
+    },
+    {
+      "hash": "210138c7cf05",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela recibe ayuda internacional tras terremoto; 73.937 familias atendidas",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/29/mundo/5-cosas-29-junio-2026-orix"
+    },
+    {
+      "hash": "ec0f853fad26",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Nuevo sismo de magnitud 4.6 sacude zona devastada por terremotos en el norte de Venezuela",
+      "fuente_url": "https://efe.com/mundo/2026-06-29/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "395f471cc99f",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Cifra oficial de fallecidos por terremotos en Venezuela sube a 1.719 según fuentes nuevas",
+      "fuente_url": "https://efe.com/mundo/2026-06-29/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "67a1958dc6b7",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Cifra oficial de fallecidos por terremotos en Venezuela confirmada en 1.450 según Jorge Rodríguez",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "65645a991d8c",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "ONU estima daños materiales por terremotos en Venezuela superan 6.700 millones de dólares",
+      "fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    },
+    {
+      "hash": "b82ff2f48437",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "27 países y Estados Unidos colaboran con labores de rescate en Venezuela tras terremotos",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/06/29/mundo/5-cosas-29-junio-2026-orix"
+    },
+    {
+      "hash": "9ac1921dc7ab",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela suspende actividades escolares por una semana tras terremotos",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "78d33964ee6b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Nuevos temblores registrados en el norte de Venezuela el 29 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=xiLBEwDDLTc"
+    },
+    {
+      "hash": "b13e96669cd9",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Balance oficial de víctimas y daños por doble terremoto en Venezuela: 1450 fallecidos, 3150 heridos ",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "7d9f9695edab",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Nuevos sismos de magnitud 4.6 y 5.1 ocurren en Venezuela cinco días después del doble terremoto",
+      "fuente_url": "https://efe.com/mundo/2026-06-29/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "06820991759f",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "USA Interumps asistencia a Venezuela mediante Comando Sur; salvadoreños y otros países aportan ayuda",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "17e1ed718a20",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "ONU evalúa preliminar daños materiales por terremoto en Venezuela: 6.700 millones de USD (6% del PIB",
+      "fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    },
+    {
+      "hash": "a56ed071082b",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela de magnitud 7,2-7,5 deja 1.450 muertos y amenaza suministro petrolero",
+      "fuente_url": "https://www.merca2.es/2026/06/29/terremoto-venezuela-1450-muertos-17-espanoles-2407205/"
+    },
+    {
+      "hash": "d380c1db5f16",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV reporta aumento de 21,5% en ingresos petroleros por exportaciones en Q1 2026",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/-venezuela-reporta-aumento-del-215-en-ingresos-petroleros-durante-primer-trimest/1529551422547222/"
+    },
+    {
+      "hash": "344c43a775a1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Mercado confirma que Venezuela ya no es factor swing del crudo Brent por terremoto",
+      "fuente_url": "https://criptotendencia.com/2026/06/29/petroleo-sanciones-y-terremoto-el-mercado-confirma-que-venezuela-ya-no-es-factor-swing-del-crudo/"
+    },
+    {
+      "hash": "d52f5423a210",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela amenaza suministro petrolero y deja 1.719 fallecidos",
+      "fuente_url": "https://www.merca2.es/2026/06/29/terremoto-venezuela-1450-muertos-17-espanoles-2407205/"
+    },
+    {
+      "hash": "7bcbad6a00a4",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Explosión en plataforma petrolera de PDVSA en Apure deja 8 a 17 trabajadores heridos",
+      "fuente_url": "https://bitacoraeconomica.com/explosion-en-una-plataforma-petrolera-en-venezuela-deja-al-menos-ocho-trabajadores-heridos-segun-reuters/"
+    },
+    {
+      "hash": "3506e6fffe85",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 1.450 fallecidos y daños de 6.700 millones de dólares",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "f71673ede723",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez crea comisión presidencial para evaluar habitabilidad de viviendas afectadas",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "fb33a9c2df41",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez: 189 edificios colapsados totalmente y 774 con daños graves en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    },
+    {
+      "hash": "aa6bf49e4f08",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Nueva réplica de magnitud 4.6 sacude zona devastada del norte de Venezuela",
+      "fuente_url": "https://efe.com/mundo/2026-06-29/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "45708e74aa82",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 1450 fallecidos confirmados y 6.700 millones de USD en daños materiale",
+      "fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    },
+    {
+      "hash": "5a37e1aefb3a",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Nuevo sismo de magnitud 4,6 sacude zona devastada en Venezuela",
+      "fuente_url": "https://efe.com/mundo/2026-06-29/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "042715934e7d",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Feriado bancario nacional por celebración de San Pedro y San Pablo",
+      "fuente_url": "https://finanzasdigital.com/feriado-bancario-lunes-29-junio-agencias-cerradas/"
+    },
+    {
+      "hash": "06b21ea75e0d",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "Divisa BCV en banda de 620 bolívares el 29 de junio",
+      "fuente_url": "https://noticias24carabobo.com/precio-del-dolar-bcv-hoy-29-de-junio-de-2026-y-los-indicadores/"
+    },
+    {
+      "hash": "1b0a7826eef5",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Nueva réplica de magnitud 4,2 sacuda costa central de Venezuela con 500 réplicas acumuladas",
+      "fuente_url": "https://eldiario.com/2026/06/29/replica-costa-central-venezuela/"
+    },
+    {
+      "hash": "2297648d412d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "SOLACI expresa solidaridad con colegas venezolanos tras terremoto",
+      "fuente_url": "https://solaci.org/2026/06/29/comunicado-institucional-solaci-expresa-su-solidaridad-con-el-pueblo-de-venezuela/"
+    },
+    {
+      "hash": "afcafc0ac56b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Universidad Católica de Chile organiza respuesta humanitaria a emergencia en Venezuela",
+      "fuente_url": "https://visionuniversitaria.uc.cl/noticias/la-uc-organiza-su-respuesta-humanitaria-a-la-emergencia-en-venezuela/"
+    },
+    {
+      "hash": "435f559ece0b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Asisa establece servicio gratuito de apoyo psicoemocional para afectados por terremoto en Venezuela",
+      "fuente_url": "https://isanidad.com/378363/noticias-breves-29-junio-de-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "60a37f038658",
+      "actor": "INST3",
+      "titulo": "Terremoto de magnitud 4,6 sacude nuevamente Venezuela; 1.450 fallecidos confirmados",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "a56ed071082b",
+      "actor": "GOB1",
+      "titulo": "Terremoto en Venezuela de magnitud 7,2-7,5 deja 1.450 muertos y amenaza suministro petrolero",
+      "fuente_url": "https://www.merca2.es/2026/06/29/terremoto-venezuela-1450-muertos-17-espanoles-2407205/"
+    },
+    {
+      "hash": "d52f5423a210",
+      "actor": "GOB1",
+      "titulo": "Doble terremoto en Venezuela amenaza suministro petrolero y deja 1.719 fallecidos",
+      "fuente_url": "https://www.merca2.es/2026/06/29/terremoto-venezuela-1450-muertos-17-espanoles-2407205/"
+    },
+    {
+      "hash": "3506e6fffe85",
+      "actor": "GOB3",
+      "titulo": "Doble terremoto en Venezuela: 1.450 fallecidos y daños de 6.700 millones de dólares",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-29-junio-2026/"
+    },
+    {
+      "hash": "45708e74aa82",
+      "actor": "GOB3",
+      "titulo": "Doble terremoto en Venezuela: 1450 fallecidos confirmados y 6.700 millones de USD en daños materiales",
+      "fuente_url": "https://www.youtube.com/watch?v=A22VHUKDw7U"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
