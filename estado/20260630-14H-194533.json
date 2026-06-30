@@ -1,0 +1,454 @@
+{
+  "version": "1.0",
+  "correlativo": "20260630-14H-194533",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-30T20:08:07.243859+00:00",
+  "rango_inicio": "2026-06-29T19:45:33.511306+00:00",
+  "rango_fin": "2026-06-30T19:45:33.511306+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 6,
+    "A3": 21,
+    "A2": 13,
+    "A1": 1,
+    "A0": 0,
+    "total": 41
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 9,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A4",
+        "A4",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Discrepancia en cifras de fallecidos: gobierno reporta menos de 600 mientras plataforma ciudadana in",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DaNZcPRuaxI/"
+    },
+    "GOB3": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Estados Unidos: Corte Suprema rechaza limitación de ciudadanía por derecho de nacimiento",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=VWJuUOOHBMM"
+    },
+    "INST1": {
+      "n_hallazgos": 9,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A4",
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Diputación de Cáceres aporta 40.000 euros a Cruz Roja para víctimas del terremoto en Venezuela",
+      "ultima_fuente_url": "https://www.regiondigital.com/noticias/ultima-hora/432234-la-diputacion-de-caceres-aporta-40000-euros-a-cruz-roja-para-atender-a-las-victimas-del-terremoto.html"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Balance de fallecidos en terremotos de Venezuela alcanza 1.943; 19 españoles confirmados muertos",
+      "ultima_fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-30-junio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Trump pierde ante Corte Suprema: se rechaza restricción de ciudadanía por nacimiento",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=VWJuUOOHBMM"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Terremoto en Venezuela: 1.719 muertos y 50.000 desaparecidos;_children de ayuda internacional",
+      "ultima_fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    "INST2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Demanda preliminar de 6.700 millones de dólares por daños en Venezuela tras terremotos",
+      "ultima_fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    "INST5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Explosión en plataforma petrolera de PDVSA en Apure deja 17 trabajadores lesionados y 1 fallecido",
+      "ultima_fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "España confirma 19 españoles muertos y 131 desaparecidos en terremotos de Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    }
+  },
+  "actores_en_silencio": [
+    "P1",
+    "P2",
+    "INST4",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "eb1c5432877b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez promete nuevas viviendas para damnificados por terremotos antes de fin de año",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/06/30/delcy-rodriguez-prometio-nuevas-viviendas-antes-de-fin-de-ano-para-damnificados-por-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "7fb46fe6ea43",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela crea comisión presidencial para evaluar habitabilidad de viviendas afectadas por sismos",
+      "fuente_url": "https://www.instagram.com/reel/DaJUTuqR2Rz/"
+    },
+    {
+      "hash": "7146868190ae",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "El balance oficial del terremoto en Venezuela: 1.719 fallecidos y 5.000 heridos",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/asciende-a-1719-el-numero-de-fallecidos-por-doble-terremoto-del-24-de-junio"
+    },
+    {
+      "hash": "ee950a119591",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Daños económicos preliminares del terremoto: 6.700 millones de dólares",
+      "fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "b514aeaacfde",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "La Asamblea Nacional aprueba nueve leyes en el primer semestre de 2026",
+      "fuente_url": "https://www.instagram.com/p/DZ-J2ZUDsV5/"
+    },
+    {
+      "hash": "b2b44a70f386",
+      "actor": "INST1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 1.719 muertos y más de 50.000 desaparecidos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "945537c2baac",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Rescates continúan en Venezuela con esperanza renovada",
+      "fuente_url": "https://www.youtube.com/watch?v=d693TG3V8ek"
+    },
+    {
+      "hash": "6b9583beca67",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "Balance de fallecidos en terremotos de Venezuela alcanza 1.943; 19 españoles confirmados muertos",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-30-junio-2026/"
+    },
+    {
+      "hash": "773b07e96cf3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "ONU lanza llamamiento de 50 millones de dólares para alimentar 500.000 personas en Venezuela tras te",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "c8354c17a8fb",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Trump pierde ante Corte Suprema: se rechaza restricción de ciudadanía por nacimiento",
+      "fuente_url": "https://www.youtube.com/watch?v=VWJuUOOHBMM"
+    },
+    {
+      "hash": "34a3c3546dac",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Venezuela suspende actividades escolares hasta 6 de julio y establece campamentos transi",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "efc3ade4057a",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: 1.719 muertos y 50.000 desaparecidos;_children de ayuda internacional",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "9151055442e7",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "España: 19 fallecidos en el doble terremoto de Venezuela; 131 desaparecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    {
+      "hash": "40f7f514f6fe",
+      "actor": "INST2",
+      "alert_level": "A3",
+      "titulo_corto": "Demanda preliminar de 6.700 millones de dólares por daños en Venezuela tras terremotos",
+      "fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "5f48e05a1492",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Estados Unidos: Corte Suprema rechaza limitación de ciudadanía por derecho de nacimiento",
+      "fuente_url": "https://www.youtube.com/watch?v=VWJuUOOHBMM"
+    },
+    {
+      "hash": "7ad470a1230c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Producción petrolera de Venezuela cae ligeramente en primer semestre de 2026",
+      "fuente_url": "https://www.facebook.com/llamingo.riobamba/posts/atenci%C3%B3n-la-producci%C3%B3n-de-petr%C3%B3leo-cae-durante-el-primer-semestre-de-2026-la-pro/1787274399315410/"
+    },
+    {
+      "hash": "3f8db7b337c1",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones de petróleo de Venezuela suben 144% en primer semestre de 2026",
+      "fuente_url": "https://www.instagram.com/reel/DZ-Q9UpFyOI/"
+    },
+    {
+      "hash": "0f42050a06ce",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Producción petrolera de Venezuela se mantiene en torno a 1,2 millones de BPD",
+      "fuente_url": "https://www.elnacional.com/columnas/2026/06/todos-los-ojos-en-venezuela-a-reforzar-su-sistema-energetico/"
+    },
+    {
+      "hash": "b901e583d73f",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA Gas despliega protocolo técnico por sismos en Venezuela",
+      "fuente_url": "https://ultimasnoticias.com.ve/apertura/minuto-a-minuto-despues-de-la-tragedia-martes-30-de-junio-2026/"
+    },
+    {
+      "hash": "64a5fff000ff",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Explosión en plataforma petrolera de PDVSA en Apure deja 17 trabajadores lesionados y 1 fallecido",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "e8dcf1b39c8d",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 1.719 muertos provisionales y más de 50.000 desaparecidos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "8253ec1e0abb",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Rescatistas internacionales denuncian trabas en operaciones de búsqueda en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=IsuZG7hA5QI"
+    },
+    {
+      "hash": "9b4bcba09fc5",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "La Guaira se convierte en morgue improvisada tras terremotos en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "eedf5b90ad09",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 1.719 muertos y más de 50.000 desapariciones",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/telediario-matinal-4-minutos-30-06-2026/17136861/"
+    },
+    {
+      "hash": "74ff27d0d030",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "ONU lanza llamado de 50 millones de USD para 500.000 venezolanos afectados por terremotos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "74397c04a7c3",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "EE.UU. aporta 47 toneladas de suministros de salud y ayuda de la UE para Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "d3d91fdf6616",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV se fija en 623,0223 Bs/USD el 30 de junio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-30-junio-2026/"
+    },
+    {
+      "hash": "94dd9f1b935c",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos en Venezuela: 1.719 fallecidos y daños estimados en 6.700 millones de dólares",
+      "fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "34368cdcbdac",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Reporte de análisis energético: impacto geopolítico de mercados petroleros y terremotos en Venezuela",
+      "fuente_url": "https://lagranaldea.com/2026/06/30/reporte-de-analisis-energetico-30-de-junio/"
+    },
+    {
+      "hash": "281036f73c8d",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea de Madrid trasladará apoyo institucional a Venezuela por terremotos",
+      "fuente_url": "https://www.europapress.es/madrid/noticia-asamblea-trasladara-apoyo-venezuela-terremotos-declaracion-institucional-jueves-20260630142245.html"
+    },
+    {
+      "hash": "e048b39a7292",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Cortes de Castilla y León expresan solidaridad y apoyo a Venezuela",
+      "fuente_url": "https://www.europapress.es/videos/video-cortes-cyl-expresan-solidaridad-venezuela-apoyo-actuaciones-cooperacion-20260630161528.html"
+    },
+    {
+      "hash": "e2856173446f",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Diputación de Cáceres aporta 40.000 euros a Cruz Roja para víctimas del terremoto en Venezuela",
+      "fuente_url": "https://www.regiondigital.com/noticias/ultima-hora/432234-la-diputacion-de-caceres-aporta-40000-euros-a-cruz-roja-para-atender-a-las-victimas-del-terremoto.html"
+    },
+    {
+      "hash": "caea15c705cd",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Llamada de emergencia de ayuda a población víctima de terremotos en Venezuela",
+      "fuente_url": "https://www.castelldefels.org/es/actualidad/el-castell/noticias/llamada-emergencia-ayuda-poblacion-victima-terremotos-venezuela"
+    },
+    {
+      "hash": "fb2af803ceea",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza tasa de cambio: 623,0223 Bs/USD con incremento de 0,13%",
+      "fuente_url": "https://finanzasdigital.com"
+    },
+    {
+      "hash": "27cc5bb50f3b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "USDT en Binance para Venezuela: 740 VES por unidad en reporte de mercado del 30 de junio",
+      "fuente_url": "https://www.instagram.com/p/DaNvLw_Kwfz/"
+    },
+    {
+      "hash": "2d1323be78cc",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela: catástrofe geológica + catástrofe política (ocupación militar en puerta)",
+      "fuente_url": "https://prensacomunitaria.org/2026/06/venezuela-catastrofe-geologica-catastrofe-politica-ocupacion-militar-en-puerta-una-peor-que-otra/"
+    },
+    {
+      "hash": "8cc2c6523374",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Reporte de Análisis Energético: 30 de junio - Mercados, estrecho de Ormuz y terremotos",
+      "fuente_url": "https://lagranaldea.com/2026/06/30/reporte-de-analisis-energetico-30-de-junio/"
+    },
+    {
+      "hash": "ab54f05e9043",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos en Venezuela: 1.719 muertos, 5.000 heridos y daños estimados en 6.700 millones de dólares",
+      "fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "6eec4fefc7c9",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "España confirma 19 españoles muertos y 131 desaparecidos en terremotos de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    {
+      "hash": "502834e7d8f6",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela registra más de 600 réplicas tras doble terremoto",
+      "fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "acac3682a042",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Discrepancia en cifras de fallecidos: gobierno reporta menos de 600 mientras plataforma ciudadana in",
+      "fuente_url": "https://www.instagram.com/reel/DaNZcPRuaxI/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "b2b44a70f386",
+      "actor": "INST1",
+      "titulo": "Terremotos en Venezuela: 1.719 muertos y más de 50.000 desaparecidos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "efc3ade4057a",
+      "actor": "GOB4",
+      "titulo": "Terremoto en Venezuela: 1.719 muertos y 50.000 desaparecidos;_children de ayuda internacional",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "e8dcf1b39c8d",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 1.719 muertos provisionales y más de 50.000 desaparecidos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "9b4bcba09fc5",
+      "actor": "GOB1",
+      "titulo": "La Guaira se convierte en morgue improvisada tras terremotos en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "eedf5b90ad09",
+      "actor": "",
+      "titulo": "Doble terremoto en Venezuela: 1.719 muertos y más de 50.000 desapariciones",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/telediario-matinal-4-minutos-30-06-2026/17136861/"
+    },
+    {
+      "hash": "2d1323be78cc",
+      "actor": "",
+      "titulo": "Venezuela: catástrofe geológica + catástrofe política (ocupación militar en puerta)",
+      "fuente_url": "https://prensacomunitaria.org/2026/06/venezuela-catastrofe-geologica-catastrofe-politica-ocupacion-militar-en-puerta-una-peor-que-otra/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 4
+}
