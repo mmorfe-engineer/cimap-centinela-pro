@@ -1,0 +1,534 @@
+{
+  "version": "1.0",
+  "correlativo": "20260630-14H-200827",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-30T20:24:24.443017+00:00",
+  "rango_inicio": "2026-06-29T20:08:27.384976+00:00",
+  "rango_fin": "2026-06-30T20:08:27.384976+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 8,
+    "A3": 22,
+    "A2": 16,
+    "A1": 2,
+    "A0": 0,
+    "total": 48
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 16,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A4",
+        "A4",
+        "A3",
+        "A2",
+        "A4",
+        "A4",
+        "A3",
+        "A2",
+        "A2",
+        "A4",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Terremoto en Venezuela requiere 30,000 personas desplegadas en labores de rescate y atención",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=YcBcyuwwhKw"
+    },
+    "P1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Exportaciones de petróleo venezolano suben 144% en primer semestre 2026",
+      "ultima_fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/"
+    },
+    "GOB3": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "España reporta 19 ciudadanos fallecidos y 131 desaparecidos en terremotos de Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    "INST1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Brecha de 20% entre tasa oficial y paralelo del dólar en Venezuela al 30 de junio",
+      "ultima_fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    "INT2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Las exportaciones de petróleo de Venezuela subieron 144% en el primer semestre de 2026 por flexibili",
+      "ultima_fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/"
+    },
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Consejo Ciudadano ofrece atención psicológica gratuita tras terremotos en Venezuela",
+      "ultima_fuente_url": "https://consejociudadanomx.org/contenido/ofrece-consejo-ciudadano-atencion-psicologica-gratuita-tras-terremotos-en-venezuela"
+    },
+    "GOB4": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "Inameh reporta Onda Tropical 21 con aguaceros en Venezuela el 30 de junio",
+      "ultima_fuente_url": "https://www.facebook.com/elperiodicodemonagas/posts/30junel-instituto-nacional-de-meteorolog%C3%ADa-e-hidrolog%C3%ADa-inameh-inform%C3%B3-en-su-pro/1581040627365654/"
+    },
+    "INST2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "UE entrega 47 toneladas de suministros de salud, agua y educación a Venezuela",
+      "ultima_fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "El Ministerio de Hidrocarburos y PDVSA Gas despliegan protocolo técnico por sismos en Venezuela",
+      "ultima_fuente_url": "https://ultimasnoticias.com.ve/apertura/minuto-a-minuto-despues-de-la-tragedia-despues-de-la-tragedia-martes-30-de-junio-2026/"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Ministerio de Educación venezolano comunica medida preventiva por emergencia nacional el 28 de junio",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DaJsHSbMuDO/"
+    }
+  },
+  "actores_en_silencio": [
+    "P2",
+    "INST4",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "18decac8a667",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez promete nuevas viviendas para damnificados antes de 2026",
+      "fuente_url": "https://www.cibercuba.com/noticas/2026-06-30-u1-e42839-s27061-nid333779-delcy-rodriguez-promete-nuevas-viviendas-damnificados"
+    },
+    {
+      "hash": "c7eb3da7214c",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Asamblea Nacional balancea 1.719 fallecidos por sismos",
+      "fuente_url": "https://www.instagram.com/p/DaMe3YokX0H/"
+    },
+    {
+      "hash": "b971247bbd93",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez visita centro de acopio y anuncia sistema de control biométrico en campamentos",
+      "fuente_url": "https://presidencia.gob.ve/Site/Web/Principal/paginas/classMostrarEvento3.php?id_evento=32514"
+    },
+    {
+      "hash": "fe945d4ecf04",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "María Corina Machado denuncia bloqueo aéreo de Delcy Rodríguez para impedir su regreso a Venezuela",
+      "fuente_url": "https://www.rtve.es/noticias/20260630/maria-corina-machado-denuncia-delcy-rodriguez-bloquea-regreso-venezuela/17137304.shtml"
+    },
+    {
+      "hash": "d272dc193407",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "La Asamblea de Madrid trasladará apoyo a Venezuela tras seísmos con declaración institucional",
+      "fuente_url": "https://www.europapress.es/madrid/noticia-asambleatrasladara-apoyo-venezuela-terremotos-declaracion-institucional-jueves-20260630142245.html"
+    },
+    {
+      "hash": "a74b8f55e331",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Actualización sobre cifras de desaparecidos y fallecidos en Venezuela según registros opositores",
+      "fuente_url": "https://www.facebook.com/Accurico/posts/actualizaci%C3%B3n-venezuela-30-de-junio-de-2026-la-situaci%C3%B3n-contin%C3%BAa-centrada-en-lo/1344303861245758/"
+    },
+    {
+      "hash": "fb7bcfe89605",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez anuncia que fallecidos por terremoto ascienden a 1.719",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/asciende-a-1719-el-numero-de-fallecidos-por-doble-terremoto-del-24-de-junio"
+    },
+    {
+      "hash": "825b392a7524",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Daños económicos del terremoto estimados en 6.700 millones de dólares",
+      "fuente_url": "https://elpais.com/america/2026-06-30/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "9760dc02d50a",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "6.461 personas rescatadas tras terremotos, según balance oficial",
+      "fuente_url": "https://www.instagram.com/p/DaOHIzixH72/"
+    },
+    {
+      "hash": "831bf62b10d8",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Asamblea Nacional inicia primer periodo de sesiones ordinarias junio-julio 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=u8XKLo3uOuI"
+    },
+    {
+      "hash": "28aea7838e0c",
+      "actor": "INT2",
+      "alert_level": "A2",
+      "titulo_corto": "Cuba acoge congreso sobre protección de patrimonio cultural y envía ayuda a Venezuela",
+      "fuente_url": "https://www.instagram.com/reel/DaN19SsiCpX/"
+    },
+    {
+      "hash": "dbc52e35df01",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez ordena suspensión escolar y establece Estado Mayor por terremotos",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "e015cce9b040",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Gobierno confirma 1.719 fallecidos por terremotos en Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "063b0f77e79b",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "PMA inicia llamamiento de 50 millones de dólares para alimentación en Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "d0ecc56bf8fe",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Unión Europea envía 47 toneladas de suministros de salud y agua a Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "f5e4f82d273a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Réplica de magnitud 4.6 sacude región central y obliga a evacuaciones",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "49b5343268d5",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "ONU proyecta 50.000 desaparecidos por colapso de edificios residenciales",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "c48e87e41360",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: 1.719 muertos y más de 50.000 desaparecidos; llegada de ayuda internacional",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/telediario-matinal-4-minutos-30-06-2026/17136861/"
+    },
+    {
+      "hash": "c6c81b574119",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Terremoto en Venezuela: 19 españoles fallecidos; 131 desaparecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    {
+      "hash": "1dcb100d40e8",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Suspensión escolar en Venezuela y 10.000 bolsas para cadáveres adquiridas",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "53ce6b8953ee",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: 1.943 fallecidos y 10.571 heridos según balance oficial del 30 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=hnejQF8SuzE"
+    },
+    {
+      "hash": "bb776e38c610",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "ONU lanza llamamiento de 50 millones de dólares para alimentar 500.000 personas en Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "97c0712c13c1",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "España reporta 19 ciudadanos fallecidos y 131 desaparecidos en terremotos de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    {
+      "hash": "90f6932b957e",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "Argentina envía brigadistas y perros entrenados para rescate en Venezuela tras terremotos",
+      "fuente_url": "https://tn.com.ar/internacional/2026/06/30/terremoto-en-venezuela-hoy-en-vivo-cuantos-muertos-confirmados-hay-y-las-ultimas-noticias-este-martes-30-de-junio/"
+    },
+    {
+      "hash": "87855273831c",
+      "actor": "INST2",
+      "alert_level": "A2",
+      "titulo_corto": "UE entrega 47 toneladas de suministros de salud, agua y educación a Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "cb0e7bb329b6",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez suspende actividades escolares hasta el 6 de julio y establece campamentos transitor",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "5a926895fd0b",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Producción petrolera de Venezuela cae durante primer semestre 2026",
+      "fuente_url": "https://www.facebook.com/llamingo.riobamba/posts/atenci%C3%B3n-la-producci%C3%B3n-de-petr%C3%B3leo-cae-durante-el-primer-semestre-de-2026-la-pro/1787274399315410/"
+    },
+    {
+      "hash": "82dd26f5b5cf",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Exportaciones de petróleo venezolano suben 144% en primer semestre 2026",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/"
+    },
+    {
+      "hash": "01f0dc0c72a7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Producción petrolera venezolana se mantiene en 1.2 millones BPD con pozos activos",
+      "fuente_url": "https://www.elnacional.com/columnas/2026/06/todos-los-ojos-en-venezuela-a-reforzar-su-sistema-energetico/"
+    },
+    {
+      "hash": "a3c5ce7c3a22",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "La producción petrolera venezolana se mantiene estable en 820.000 b/d en mayo, según OPEP",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "ab6e21491385",
+      "actor": "INST5",
+      "alert_level": "A4",
+      "titulo_corto": "One PDVSA worker dies after oil rig explosion and fire in Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "fb80fcd05872",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "El Ministerio de Hidrocarburos y PDVSA Gas despliegan protocolo técnico por sismos en Venezuela",
+      "fuente_url": "https://ultimasnoticias.com.ve/apertura/minuto-a-minuto-despues-de-la-tragedia-despues-de-la-tragedia-martes-30-de-junio-2026/"
+    },
+    {
+      "hash": "e23109d3521c",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "Las exportaciones de petróleo de Venezuela subieron 144% en el primer semestre de 2026 por flexibili",
+      "fuente_url": "https://www.facebook.com/BloombergLinea/posts/las-exportaciones-de-petr%C3%B3leo-de-venezuela-subieron-144-en-el-primer-semestre-de/1329745969263802/"
+    },
+    {
+      "hash": "a6dbf24bfcef",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 1.719 muertos provisionales y 50.000 desaparecidos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "53ad3d30591b",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Puerto de La Guaira se convierte en morgue improvisada tras terremotos",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "3f16b57ab59f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Rescatistas internacionales denuncian trabas de autoridades venezolanas en zonas de terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=IsuZG7hA5QI"
+    },
+    {
+      "hash": "acbe14e7e64a",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela vuelve a temblar, con nuevas sacudidas tras los terremotos principales",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "a6e64661aef4",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Sobrevivientes de terremoto en Venezuela suplican ayuda habitacional",
+      "fuente_url": "https://www.youtube.com/watch?v=LnAeZWeTCD0"
+    },
+    {
+      "hash": "5e79270183ab",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Puerto de La Guaira se convierte en morgue improvisada por terremoto en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "73f23c6b3241",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Consejo Ciudadano ofrece atención psicológica gratuita tras terremotos en Venezuela",
+      "fuente_url": "https://consejociudadanomx.org/contenido/ofrece-consejo-ciudadano-atencion-psicologica-gratuita-tras-terremotos-en-venezuela"
+    },
+    {
+      "hash": "fbe470b02d22",
+      "actor": "GOB4",
+      "alert_level": "A1",
+      "titulo_corto": "Inameh reporta Onda Tropical 21 con aguaceros en Venezuela el 30 de junio",
+      "fuente_url": "https://www.facebook.com/elperiodicodemonagas/posts/30junel-instituto-nacional-de-meteorolog%C3%ADa-e-hidrolog%C3%ADa-inameh-inform%C3%B3-en-su-pro/1581040627365654/"
+    },
+    {
+      "hash": "21e26ffaacc5",
+      "actor": "GOB2",
+      "alert_level": "A1",
+      "titulo_corto": "Ministerio de Educación venezolano comunica medida preventiva por emergencia nacional el 28 de junio",
+      "fuente_url": "https://www.instagram.com/reel/DaJsHSbMuDO/"
+    },
+    {
+      "hash": "4735eeccb422",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV reporta inflación de mayo en 6,3%: primer dígito tras 19 meses de doble dígito",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "b6be96ffba75",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Brecha de 20% entre tasa oficial y paralelo del dólar en Venezuela al 30 de junio",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "d95febfcc281",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Actividad industrial en Valencia (Carabobo) registra niveles mínimos según CIEC",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "3682176f78b7",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 19 españoles fallecidos y 1430 muertos confirmados",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    {
+      "hash": "0e4abc522496",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Aumento de víctimas españolas en Venezuela: ministerio confirma 18 fallecidos y 12 localizados bajo ",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-martes-30-junio-2026_202606306a436cdadcb2092ca8c025d9.html"
+    },
+    {
+      "hash": "d432c6286a2f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Terremoto en Venezuela requiere 30,000 personas desplegadas en labores de rescate y atención",
+      "fuente_url": "https://www.youtube.com/watch?v=YcBcyuwwhKw"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "e015cce9b040",
+      "actor": "GOB1",
+      "titulo": "Gobierno confirma 1.719 fallecidos por terremotos en Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "c48e87e41360",
+      "actor": "",
+      "titulo": "Terremoto en Venezuela: 1.719 muertos y más de 50.000 desaparecidos; llegada de ayuda internacional",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/telediario-matinal-4-minutos-30-06-2026/17136861/"
+    },
+    {
+      "hash": "53ce6b8953ee",
+      "actor": "GOB1",
+      "titulo": "Terremoto en Venezuela: 1.943 fallecidos y 10.571 heridos según balance oficial del 30 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=hnejQF8SuzE"
+    },
+    {
+      "hash": "ab6e21491385",
+      "actor": "INST5",
+      "titulo": "One PDVSA worker dies after oil rig explosion and fire in Venezuela",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "a6dbf24bfcef",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 1.719 muertos provisionales y 50.000 desaparecidos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "53ad3d30591b",
+      "actor": "GOB1",
+      "titulo": "Puerto de La Guaira se convierte en morgue improvisada tras terremotos",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "5e79270183ab",
+      "actor": "",
+      "titulo": "Puerto de La Guaira se convierte en morgue improvisada por terremoto en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "3682176f78b7",
+      "actor": "GOB1",
+      "titulo": "Doble terremoto en Venezuela: 19 españoles fallecidos y 1430 muertos confirmados",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
