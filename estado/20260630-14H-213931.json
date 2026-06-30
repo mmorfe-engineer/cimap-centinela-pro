@@ -1,0 +1,269 @@
+{
+  "version": "1.0",
+  "correlativo": "20260630-14H-213931",
+  "turno": "cierre",
+  "timestamp_utc": "2026-06-30T21:48:46.128345+00:00",
+  "rango_inicio": "2026-06-29T21:39:31.045547+00:00",
+  "rango_fin": "2026-06-30T21:39:31.045547+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 5,
+    "A3": 10,
+    "A2": 9,
+    "A1": 0,
+    "A0": 0,
+    "total": 24
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "19 españoles fallecidos y 131 desaparecidos en el doble terremoto de Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "US increases aid to Venezuela to $300 million, framing country as ally amid earthquake crisis",
+      "ultima_fuente_url": "https://www.bbc.com/news/live/cz9l490v5ldt"
+    },
+    "GOB1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A2",
+        "A4",
+        "A2"
+      ],
+      "ultimo_titulo": "639 réplicas sísmicas registradas; 855 edificaciones afectadas en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=JDe-NqDDGI4"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "1e3f4c978720",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Colapso sanitario en Venezuela: 1,943 muertos confirmados por terremotos, miles aún desaparecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=dQlOdFh3pCU"
+    },
+    {
+      "hash": "d9651bbc0a35",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "EE.UU. rescata segundo bebé de 9 meses y su madre atrapados bajo rubble en Venezuela",
+      "fuente_url": "https://www.facebook.com/statedept/videos/against-impossible-odds-hope-endures-american-search-and-rescue-teams-rescued-an/1334746731413821/"
+    },
+    {
+      "hash": "dd0df0df69f5",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Puerto de La Guaira convertido en morgue improvisada tras terremoto en Venezuela",
+      "fuente_url": "https://www.euronews.com/video/2026/06/30/venezuela-earthquake-la-guaira-port-turned-into-makeshift-morgue"
+    },
+    {
+      "hash": "3ad14f1ffd31",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela residents accuse government of negligence over earthquake response amid rising death toll",
+      "fuente_url": "https://www.bbc.com/news/articles/c5yzd18dxzxo"
+    },
+    {
+      "hash": "a75844e8b883",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "US increases aid to Venezuela to $300 million, framing country as ally amid earthquake crisis",
+      "fuente_url": "https://www.bbc.com/news/live/cz9l490v5ldt"
+    },
+    {
+      "hash": "a1bbe664e12f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Spain's Military Emergency Unit deploys rescue operations in Venezuela after deadly earthquakes",
+      "fuente_url": "https://www.bbc.com/news/videos/cqx1qpqgg2vo"
+    },
+    {
+      "hash": "0f6ff469b323",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Aumenta la cifra de fallecidos en el doble terremoto de Venezuela a 1.719 y 131 españoles desapareci",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/ultimas-noticias-30-junio-2026-mediodia"
+    },
+    {
+      "hash": "a54efc6c7ee9",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "La ONU lanza llamamiento de 50 millones de dólares para alimentar 500.000 personas afectadas por ter",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "5f3a8de0e999",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez ordena suspensión escolar hasta el 6 de julio y crea campamentos transitorios por te",
+      "fuente_url": "https://www.univision.com/noticias/america-latina/ultimas-noticias-terremotos-venezuela-hoy-martes-30-junio-2026-en-vivo"
+    },
+    {
+      "hash": "508a9816657e",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 1.719 fallecidos y más de 50.000 desaparecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=JDe-NqDDGI4"
+    },
+    {
+      "hash": "cf7e067b0140",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "La Guaira se convierte en morgue improvisada tras terremotos en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "6b8eb9a7ccc2",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela empieza a tomar conciencia de la magnitud de los terremotos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "c9f7e36c46b3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "El comercio de crudo venezolano: impacto de la lpivación de sanciones en 2026",
+      "fuente_url": "https://www.breakwaveadvisors.com/insights/2026/6/30/the-venezuelan-crude-trade"
+    },
+    {
+      "hash": "f581afa5c82c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela no creció más rápido a pesar de mayores ingresos petroleros en 1Q26",
+      "fuente_url": "https://cepr.net/publications/sanctions-watch-june-2026/"
+    },
+    {
+      "hash": "b7b0a824c04f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Consejo Ciudadano de México ofrece atención psicológica gratuita tras terremotos en Venezuela",
+      "fuente_url": "https://www.consejociudadanomx.org/contenido/ofrece-consejo-ciudadano-atencion-psicologica-gratuita-tras-terremotos-en-venezuela"
+    },
+    {
+      "hash": "fa94906c6d90",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "PARLATINO realiza conferencia virtual sobre alianzas de América Latina frente al escenario del Golfo",
+      "fuente_url": "https://parlatino.org/news/america-latina-ante-el-escenario-del-golfo-analisis-retos-y-oportunidades-de-alianza/"
+    },
+    {
+      "hash": "dcd7dab585e6",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV reporta inflación intermensual de 6,3% en mayo 2026, primera vez en 19 meses bajo 10%",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "5cc04cca84dd",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Brecha de 20% entre tasa oficial (621,53) y paralelo (747-748) del dólar en Venezuela",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "cec5365ad7f9",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Actividad manufacturera mínima en Valencia, Carabobo, según Cámara de Industriales",
+      "fuente_url": "https://theelnews.org/2026/06/30/el-informe-alvarez-junio-30-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "c8562252ed0e",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "FMI estima crecimiento de 4% en Venezuela para 2026",
+      "fuente_url": "https://www.instagram.com/p/DaNaF9ZkeV2/"
+    },
+    {
+      "hash": "bc195fcbcc97",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Sube a 1719 la cifra de fallecidos por el doble terremoto en Venezuela; más de 5,000 heridos",
+      "fuente_url": "https://www.youtube.com/watch?v=JDe-NqDDGI4"
+    },
+    {
+      "hash": "0f49067b65e3",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "19 españoles fallecidos y 131 desaparecidos en el doble terremoto de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=8MDAw27nsz8"
+    },
+    {
+      "hash": "e80ac6d5a454",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "639 réplicas sísmicas registradas; 855 edificaciones afectadas en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=JDe-NqDDGI4"
+    },
+    {
+      "hash": "60ea77f53344",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Contradicción en cifras: gobierno reporta menos de 600 fallecidos mientras plataforma ciudadana repo",
+      "fuente_url": "https://www.instagram.com/reel/DaNZcPRuaxI/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "1e3f4c978720",
+      "actor": "",
+      "titulo": "Colapso sanitario en Venezuela: 1,943 muertos confirmados por terremotos, miles aún desaparecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=dQlOdFh3pCU"
+    },
+    {
+      "hash": "508a9816657e",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 1.719 fallecidos y más de 50.000 desaparecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=JDe-NqDDGI4"
+    },
+    {
+      "hash": "cf7e067b0140",
+      "actor": "",
+      "titulo": "La Guaira se convierte en morgue improvisada tras terremotos en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/06/30/terremoto-en-venezuela-el-puerto-de-la-guaira-se-convierte-en-morgue-improvisada"
+    },
+    {
+      "hash": "6b8eb9a7ccc2",
+      "actor": "",
+      "titulo": "Venezuela empieza a tomar conciencia de la magnitud de los terremotos",
+      "fuente_url": "https://www.rtve.es/play/videos/telediario-matinal/7-horas-30-06-26/17136896/"
+    },
+    {
+      "hash": "bc195fcbcc97",
+      "actor": "GOB1",
+      "titulo": "Sube a 1719 la cifra de fallecidos por el doble terremoto en Venezuela; más de 5,000 heridos",
+      "fuente_url": "https://www.youtube.com/watch?v=JDe-NqDDGI4"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
