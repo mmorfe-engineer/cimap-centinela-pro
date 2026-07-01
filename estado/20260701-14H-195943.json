@@ -1,0 +1,501 @@
+{
+  "version": "1.0",
+  "correlativo": "20260701-14H-195943",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-01T20:16:35.991323+00:00",
+  "rango_inicio": "2026-06-30T19:59:43.235087+00:00",
+  "rango_fin": "2026-07-01T19:59:43.235087+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 3,
+    "A3": 21,
+    "A2": 21,
+    "A1": 5,
+    "A0": 1,
+    "total": 51
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 9,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A4",
+        "A2",
+        "A4",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Rescate de 12 cuerpos en edificio colapsado de Tucacas, estado Falcón",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    "P1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Plataforma Unitaria evalúa preparación estatal ante desastres naturales en Venezuela",
+      "ultima_fuente_url": "https://www.larepublica.ec/blog/2026/06/26/oposicion-de-venezuela-cree-que-el-estado-no-estaba-preparado-para-responder-a-terremotos/"
+    },
+    "GOB3": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A1",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Balance oficial de sismos en Venezuela: 1.943 fallecidos y 28.380 en atención médica",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    "INST1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A1",
+        "A3",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Funcionario del CICPC detenido por robo de dólares en edificio colapsado de La Guaira",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Funcionario del CICPC detenido por robar caja de dólares en edificio colapsado de Playa Grande",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    "GOB4": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "7 personas rescatadas en zona de sismos en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "PDVSA mantiene despliegue logístico y operativo en zonas clave",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DaOdKp2E3AE/"
+    },
+    "INT1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "26 españoles fallecidos por terremotos en Venezuela según Unicef y Euronews",
+      "ultima_fuente_url": "https://es.euronews.com/video/2026/07/01/euronews-hoy-las-noticias-del-miercoles-1-de-julio-26-los-espanoles-fallecidos-en-venezuel"
+    }
+  },
+  "actores_en_silencio": [
+    "P2",
+    "INST4",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "29f014aa9203",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia inspección de viviendas y alarga suspensión de clases tras sismos",
+      "fuente_url": "https://vanguardiadelpueblo.do/2026/07/01/delcy-rodriguez-anuncia-inspeccion-de-viviendas-y-alarga-suspension-de-clases/"
+    },
+    {
+      "hash": "de1e28f6a926",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "33 nacionessuman a labores de búsqueda y rescate tras sismos en Venezuela",
+      "fuente_url": "https://www.instagram.com/p/DaNm5uHxD-C/"
+    },
+    {
+      "hash": "bec4fedec156",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez reporta 164 fallecidos y 971 heridos por los terremotos",
+      "fuente_url": "https://www.instagram.com/reel/DaQkQbOR35C/"
+    },
+    {
+      "hash": "9c1de70df157",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Oposición venezolana denuncia graves debilidades del Estado ante crisis de terremotos",
+      "fuente_url": "https://tn.com.ar/internacional/2026/07/01/a-una-semana-de-los-terremotos-la-oposicion-venezolana-denuncio-graves-debilidades-del-estado-para-responder-a-la-crisis/"
+    },
+    {
+      "hash": "73eb75e4f636",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Plataforma Unitaria evalúa preparación estatal ante desastres naturales en Venezuela",
+      "fuente_url": "https://www.larepublica.ec/blog/2026/06/26/oposicion-de-venezuela-cree-que-el-estado-no-estaba-preparado-para-responder-a-terremotos/"
+    },
+    {
+      "hash": "ab95cf871c34",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez presenta balance oficial de sismos en Venezuela con 1.943 fallecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "498ed1125fbb",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Funcionario del CICPC detenido por robo de caja con dólares en edificio colapsado",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "fefff2b612fe",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "26 españoles fallecidos por terremotos en Venezuela, alerta de UNICEF sobre déficit de 5.000 millone",
+      "fuente_url": "https://es.euronews.com/video/2026/07/01/euronews-hoy-las-noticias-del-miercoles-1-de-julio-26-los-espanoles-fallecidos-en-venezuel"
+    },
+    {
+      "hash": "6ae402bd6623",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Instalación de la Asamblea Nacional registrada el 1 de julio de 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=UmSS9y8nf54"
+    },
+    {
+      "hash": "10b2c27d4187",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Delcy Rodríguez saluda plan nacional de reforestación, aunque el anuncio fue el 1 de junio",
+      "fuente_url": "https://www.instagram.com/p/DaPztJTFQQH/"
+    },
+    {
+      "hash": "debc7816137a",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez, presidente de la Asamblea Nacional, actualiza cifras oficiales de fallecidos y afec",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "3c1780c8235a",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Se confirma 58 fallecidos en el desplome de edificios en Los Palos Grandes y Altamira",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "fc0d882d03b5",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "28 personas rescatadas en Chacao según informe oficial de la alcaldía",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "4f5de30a82aa",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Se oficializa el rescate de 12 cuerpos en el edificio La Mar Suite, Tucacas, Falcón",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "0d4416500700",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Detención de funcionario del SIT por hurto de bolsa con dólares en edificios desplomados de Playa Gr",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "acd1b7cf068e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "26 españoles fallecidos en Venezuela por los sismos, según EURONEWS",
+      "fuente_url": "https://www.youtube.com/watch?v=6D71TRXvYuE&vl=es-419"
+    },
+    {
+      "hash": "9affd263de41",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Sismos en Venezuela: 1.943 fallecidos y 10.571 heridos segúnbalance oficial de la Asamblea Nacional",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "88467d5e2013",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "26 españoles fallecidos en Venezuela por sismos, según EURONEWS",
+      "fuente_url": "https://www.youtube.com/watch?v=X2-X0I2JKCk"
+    },
+    {
+      "hash": "33824722e50a",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Funcionario del CICPC detenido por robar caja de dólares en edificio colapsado de Playa Grande",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "5b1222626e0f",
+      "actor": "GOB4",
+      "alert_level": "A3",
+      "titulo_corto": "58 fallecidos por desplome de edificios en Los Palos Grandes y Altamira",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "f49e94122581",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "12 cuerpos rescatados en edificio 'La Mar Suite' en Tucacas, estado Falcón",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "811d80204410",
+      "actor": "GOB4",
+      "alert_level": "A1",
+      "titulo_corto": "7 personas rescatadas en zona de sismos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "c14ab9cdd3cc",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Exportaciones petroleras de Venezuela bajan a 1.2 millones de bpd en junio",
+      "fuente_url": "https://es-us.noticias.yahoo.com/exportaci%C3%B3n-petrolera-venezuela-cae-1-173914281.html"
+    },
+    {
+      "hash": "214b8cdec5b7",
+      "actor": "GOB3",
+      "alert_level": "A1",
+      "titulo_corto": "Ministro confirma producción estable de 1.2 millones de bpd con todos los pozos operando",
+      "fuente_url": "https://www.facebook.com/GlobalEnergyMx/posts/-venezuela-mantiene-su-producci%C3%B3n-en-12-millones-de-barriles-de-petr%C3%B3leo-diarios/1665965532201153/"
+    },
+    {
+      "hash": "83afb7d02554",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA mantiene despliegue logístico y operativo en zonas clave",
+      "fuente_url": "https://www.instagram.com/reel/DaOdKp2E3AE/"
+    },
+    {
+      "hash": "ea9153fb1422",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gran Misión Viva Venezuela se despliega en Parque Alí Primera de Catia",
+      "fuente_url": "https://contrapunto.com/nacional/tarek-william-saab-informo-el-despliegue-de-la-gran-mision-viva-venezuela-en-parque-ali-primera-de-catia/"
+    },
+    {
+      "hash": "80fd12d00d6b",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Jorge Rodríguez reporta cifras actualizadas de fallecidos y damnificados por sismos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "00c180543ad3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Españoles fallecidos por sismos en Venezuela ascienden a 26",
+      "fuente_url": "https://es.euronews.com/2026/07/01/euronews-hoy-las-noticias-del-miercoles-1-de-julio-26-los-espanoles-fallecidos-en-venezuel"
+    },
+    {
+      "hash": "8fc7b362462d",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Puerto de La Guaira convertido en morgue improvisada con riesgo de epidemias",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-miercoles-1-julio-2026_202607016a44ba1b403b9f2792e30bff.html"
+    },
+    {
+      "hash": "9b5ab1c59683",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Funcionario del CICPC detenido por intento de robo de dólares en zona de sismos",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "566e8a482e87",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Balance oficial de sismos en Venezuela: 1.943 fallecidos y 28.380 en atención médica",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "db2f206aeef4",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Detención de funcionario del CICPC por robo de dólares en área colapsada",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "48c47ef5b88f",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "España confirma 26 fallecidos por terremotos en Venezuela",
+      "fuente_url": "https://es.euronews.com/2026/07/01/euronews-hoy-las-noticias-del-miercoles-1-de-julio-26-los-espanoles-fallecidos-en-venezuel"
+    },
+    {
+      "hash": "288716afef67",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Número de españoles fallecidos en Venezuela por terremotos asciende a 26",
+      "fuente_url": "https://es.euronews.com/video/2026/07/01/euronews-hoy-las-noticias-del-miercoles-1-de-julio-26-los-espanoles-fallecidos-en-venezuel"
+    },
+    {
+      "hash": "737b88bcf42c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Fundación Real Madrid anuncia campaña de recaudación para afectados del terremoto en Venezuela",
+      "fuente_url": "https://www.larazon.es/opinion/caras-noticia-1-julio-2026_202607016a444384552c361f7c562a79.html"
+    },
+    {
+      "hash": "cb6c636cb2bc",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV se fija en 633,3644 Bs/USD con incremento de 1,66%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-01-julio-2026/"
+    },
+    {
+      "hash": "db067518df39",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Alivio de sanciones de EE.UU. a Venezuela impulsado por solidaridad internacional",
+      "fuente_url": "https://www.facebook.com/losabes.cl/videos/terremotos-en-venezuela-la-geolog%C3%ADa-detr%C3%A1s-de-la-emergencia/1709677450047050/"
+    },
+    {
+      "hash": "ebe31df6f082",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Rescatistas bolivianos recuperan cuerpos en Venezuela tras terremotos de junio",
+      "fuente_url": "https://www.mindef.gob.bo/index.php/nota_prensa/rescatistas-bolivianos-en-venezuela/"
+    },
+    {
+      "hash": "b5f2097e29e1",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "España reafirma compromiso con Venezuela para atender víctimas del 24 de junio",
+      "fuente_url": "https://www.polianalitica.com/internacionales/5161/espana-reafirmo-su-compromiso-con-el-gobierno-de-venezuela-para-atender-a-las-victimas-del-del-24"
+    },
+    {
+      "hash": "b2a21af7e897",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Ministerio de Educación de Venezuela confirma culminación de clases el 17 de julio",
+      "fuente_url": "https://www.instagram.com/reel/DaJsHSbMuDO/"
+    },
+    {
+      "hash": "afba50b0f989",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Dólar oficial BCV se duplica en primer semestre de 2026 con aumento de 106,7%",
+      "fuente_url": "https://finanzasdigital.com/dolar-oficial-bcv-primer-semestre-2026-venezuela/"
+    },
+    {
+      "hash": "6d1d98939fcf",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV al 1 de julio 2026 se fija en 633,3644 Bs/USD (+1,66%)",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-01-julio-2026/"
+    },
+    {
+      "hash": "1bb1b2b42be9",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Sanciones agravan respuesta humanitaria en Venezuela tras sismos, advierte académico emerito",
+      "fuente_url": "https://prensa.ibero.mx/nota/venezuela-vive-una-tragedia-sobre-otra-sanciones-agravan-resposta-humanitaria-tras-sismos-advierte-profesor-emerito-ibero"
+    },
+    {
+      "hash": "169ec778c333",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Comunidad médica y académica venezolana elabora guía de acción y protección posterremoto",
+      "fuente_url": "https://lawebdelasalud.com/2026/07/01/"
+    },
+    {
+      "hash": "980bd7e1878b",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Audiencia pública Caso Revilla Soto vs. Venezuela en Corte IDH",
+      "fuente_url": "https://www.facebook.com/CorteIDH/posts/audiencia-p%C3%BAblica-caso-revilla-soto-vs-venezuela%EF%B8%8F-mi%C3%A9rcoles-1-de-julio-de-2026-8/1460672216090348/"
+    },
+    {
+      "hash": "cd7b5609db9f",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "El puerto de La Guaira en Venezuela se convierte en morgue improvisada tras sismos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-miercoles-1-julio-2026_202607016a44ba1b403b9f2792e30bff.html"
+    },
+    {
+      "hash": "47e9f68d7a39",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Sismos en Venezuela: 1.943 fallecidos y 10.571 heridos según balance oficial de Jorge Rodríguez",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "aba86205603c",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "26 españoles fallecidos por terremotos en Venezuela según Unicef y Euronews",
+      "fuente_url": "https://es.euronews.com/video/2026/07/01/euronews-hoy-las-noticias-del-miercoles-1-de-julio-26-los-espanoles-fallecidos-en-venezuel"
+    },
+    {
+      "hash": "9140da18182b",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Funcionario del CICPC detenido por robo de dólares en edificio colapsado de La Guaira",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "457517741ab2",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Rescate de 58 cuerpos en edificios colapsados de Los Palos Grandes y Altamira, Caracas",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "dc1580566a72",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de 12 cuerpos en edificio colapsado de Tucacas, estado Falcón",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "9affd263de41",
+      "actor": "GOB1",
+      "titulo": "Sismos en Venezuela: 1.943 fallecidos y 10.571 heridos segúnbalance oficial de la Asamblea Nacional",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "80fd12d00d6b",
+      "actor": "GOB3",
+      "titulo": "Jorge Rodríguez reporta cifras actualizadas de fallecidos y damnificados por sismos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=QPA2QSD7VLg"
+    },
+    {
+      "hash": "cd7b5609db9f",
+      "actor": "GOB1",
+      "titulo": "El puerto de La Guaira en Venezuela se convierte en morgue improvisada tras sismos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-miercoles-1-julio-2026_202607016a44ba1b403b9f2792e30bff.html"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
