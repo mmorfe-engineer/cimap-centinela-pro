@@ -1,0 +1,527 @@
+{
+  "version": "1.0",
+  "correlativo": "20260702-14H-193529",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-02T19:51:06.021280+00:00",
+  "rango_inicio": "2026-07-01T19:35:29.358974+00:00",
+  "rango_fin": "2026-07-02T19:35:29.358974+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 8,
+    "A3": 21,
+    "A2": 16,
+    "A1": 4,
+    "A0": 1,
+    "total": 50
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 17,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A4",
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A3",
+        "A4",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A4",
+        "A3",
+        "A2",
+        "A1",
+        "A0"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV fija en 639.7029 Bs/USD el 2 de julio de 2026 con incremento de 1 unidad",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Edmundo González defiende derecho de entrada de María Corina Machado en Venezuela",
+      "ultima_fuente_url": "https://www.notimerica.com/politica/noticia-venezuela-gonzalez-defiende-machado-tiene-derecho-entrar-venezuela-especulaciones-vuelta-20260702124155.html"
+    },
+    "GOB2": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "España eleva a 27 fallecidos y reduce a 15 desaparecidos en terremotos de Venezuela",
+      "ultima_fuente_url": "https://www.europapress.es/videos/video-exteriores-eleva-27-espanoles-fallecidos-terremotos-venezuela-20260702095606.html"
+    },
+    "INST3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Daños preliminares por terremotos en Venezuela: 6.700 millones de dólares",
+      "ultima_fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A1",
+        "A3"
+      ],
+      "ultimo_titulo": "Academias Nacionales de Venezuela ofrecen asesoría técnica y científica para la reconstrucción tras ",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/07/academias-nacionales-de-venezuela-ofrecen-asesoria-tecnica-y-cientifica-para-la-reconstruccion-tras-los-terremotos/"
+    },
+    "GOB3": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela registra 2.295 fallecidos tras terremotos con crisis médica creciente",
+      "ultima_fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Estados Unidos levanta temporalmente sanciones económicas a Venezuela por labores de socorro",
+      "ultima_fuente_url": "https://www.facebook.com/dw.espanol/posts/estados-unidos-levanta-temporalmente-las-sanciones-econ%C3%B3micas-a-venezuela-por-te/1455838253249634/"
+    },
+    "INST5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Organismos de la ONU estiman 16.000 desplazados por los terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=HVPjBXRohuw"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "P2",
+    "INST4",
+    "INT1",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "f96052efc139",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia continuidad de rescate tras semana de terremotos",
+      "fuente_url": "https://www.vision360.bo/noticias/2026/07/02/56113-delcy-rodriguez-anuncia-que-las-labores-de-rescate-continuan-tras-una-semana-de-terremotos"
+    },
+    {
+      "hash": "2e32c5688d3b",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Meal de víctimas fatales en terremotos de Venezuela supera 2.295",
+      "fuente_url": "https://voz.us/es/mundo/260702/37070/oculta-informacion-regimen-delcy-rodriguez-sospechas-opacidad-rodean-balance-oficial-muertos-sismos-venezuela.html"
+    },
+    {
+      "hash": "d4d0ae1a85a6",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez decreta Duelo Nacional por 7 días tras terremotos",
+      "fuente_url": "https://www.instagram.com/reel/DaJ2LFOtZGf/"
+    },
+    {
+      "hash": "0296bff0dfbf",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Lauicom se suma al Duelo Nacional decretado por Delcy Rodríguez",
+      "fuente_url": "https://lauicom.edu.ve/2026/07/02/"
+    },
+    {
+      "hash": "41d1f2feecfb",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez lidia entre tragedia y vencimiento de mandato",
+      "fuente_url": "https://www.facebook.com/larazon.es/posts/delcy-rodr%C3%ADguez-lidia-entre-la-tragedia-y-el-vencimiento-de-su-mandato%EF%B8%8F-este-vie/1465496202274481/"
+    },
+    {
+      "hash": "4d1c5dd6492d",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "NTN24: EE.UU. blindaría régimen de Delcy Rodríguez ante intento de MCM de ir a Venezuela",
+      "fuente_url": "https://www.ntn24.com/noticias-actualidad/estados-unidos-se-esta-encargando-de-blindar-al-regimen-de-delcy-rodriguez-analista-sobre-respuesta-de-washington-a-intencion-de-maria-corina-machado-de-ir-a-venezuela-630613"
+    },
+    {
+      "hash": "8ce8a11307fb",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Edmundo González defiende derecho de entrada de María Corina Machado en Venezuela",
+      "fuente_url": "https://www.notimerica.com/politica/noticia-venezuela-gonzalez-defiende-machado-tiene-derecho-entrar-venezuela-especulaciones-vuelta-20260702124155.html"
+    },
+    {
+      "hash": "4c705f3ecb96",
+      "actor": "GOB2",
+      "alert_level": "A4",
+      "titulo_corto": "Jorge Rodríguez: 2.295 fallecidos y 11.267 heridos por terremotos en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "b084afe8a2bb",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibe 707.063 toneladas de ayuda humanitaria tras terremotos",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "85eeca6fb343",
+      "actor": "INST3",
+      "alert_level": "A3",
+      "titulo_corto": "Daños preliminares por terremotos en Venezuela: 6.700 millones de dólares",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "cd8a0e33e28e",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "12.841 venezolanos perdieron viviendas tras terremotos, según gobierno",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "569692150c45",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno venezolano decreta siete días de duelo nacional por víctimas de terremotos",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/-el-gobierno-venezolano-decret%C3%B3-siete-d%C3%ADas-de-duelo-nacional-a-partir-de-las-180/1538776854958012/"
+    },
+    {
+      "hash": "16e93a39a87c",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Asamblea Nacional publica agenda oficial para el 2 de julio de 2026",
+      "fuente_url": "https://x.com/asambleapa/status/2072670688394055753"
+    },
+    {
+      "hash": "5441e1f6a05e",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Reporte oficial de Jorge Rodríguez sobre actividades de la Asamblea Nacional (1 julio)",
+      "fuente_url": "https://www.instagram.com/p/DaQohFXgR_c/"
+    },
+    {
+      "hash": "9189b066ab0a",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "TVN Noticias: Noticiero de mediodía del 2 de julio de 2026 con plen de la Asamblea Nacional",
+      "fuente_url": "https://www.youtube.com/watch?v=spui3Lw1QmY"
+    },
+    {
+      "hash": "3566b8eb337f",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez ordena acelerar traslado de damnificados a campamentos traseros por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=HVPjBXRohuw"
+    },
+    {
+      "hash": "68101b3ca2c1",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Jorge Rodríguez confirma 2.295 muertos y 11.267 heridos por dos terremotos en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "eedf7283f898",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibe 707.063 toneladas de ayuda humanitaria internacional por terremotos",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "15df580861b8",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rescatado Hernán Gil, vigilante atrapado vivo 8 días después de los sismos en La Guaira",
+      "fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    {
+      "hash": "80ad8b6fa360",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno decreta 7 días de duelo nacional y daños estimados en 6.700 millones de dólares por sismos",
+      "fuente_url": "https://www.youtube.com/watch?v=WeEOqGRSVXo"
+    },
+    {
+      "hash": "767fd6aaab4e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "27 países envían especialistas y perros de rescate para apoyar labores en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=WeEOqGRSVXo"
+    },
+    {
+      "hash": "4bdcff34a57a",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "UN estimación: 16.000 personas deben buscar lugar alternativo para vivir por sismos en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "8fe0a3f322f3",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 2.295 muertos y crisis médica profunda",
+      "fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    {
+      "hash": "8e392cb6d27b",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Rusia ataca Kiev con 500 drones: más de 10 muertos",
+      "fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    {
+      "hash": "b60d4793a32a",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Mundial: Anfitriones avanzan a octavos de final",
+      "fuente_url": "https://www.facebook.com/NoticiasTelemundo/posts/%EF%B8%8F%EF%B8%8F-buenos-d%C3%ADas-estas-son-las-noticias-m%C3%A1s-importantes-que-debes-saber-este-2-de-/1592205545604049/"
+    },
+    {
+      "hash": "ab62bb2698fc",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Incendios en San Felipe, Venezuela: 38 afectados y 100 damnificados",
+      "fuente_url": "https://www.youtube.com/watch?v=WeEOqGRSVXo"
+    },
+    {
+      "hash": "459546497aaa",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Dos terremotos de magnitud 7.2 y 7.5 en Venezuela causan 2.295 muertos",
+      "fuente_url": "https://www.instagram.com/reel/DaLjHFQsHx-/"
+    },
+    {
+      "hash": "29dc7e7a04e3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Fortalecimiento de réplica sacude Caracas y La Guaira cinco días después del sismo",
+      "fuente_url": "https://www.dw.com/es/venezuela-se-agota-el-tiempo-para-encontrar-sobrevivientes/video-77778930"
+    },
+    {
+      "hash": "54cb7fbaaab7",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate milagroso de vigilante venezolano atrapado 8 días bajo escombros",
+      "fuente_url": "https://www.youtube.com/watch?v=D9em99Q6mOE"
+    },
+    {
+      "hash": "a80a63eaf685",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela despacha a EE.UU. segundo mayor volumen de crudo del año con 611.000 bpd",
+      "fuente_url": "https://somosnoticiascol.com/internacionales/venezuela-despacho-a-ee-uu-su-segundo-mayor-volumen-de-crudo-del-ano-tras-los-sismos/252756/"
+    },
+    {
+      "hash": "b7798390865b",
+      "actor": "INT2",
+      "alert_level": "A4",
+      "titulo_corto": "Estados Unidos levanta temporalmente sanciones económicas a Venezuela por labores de socorro",
+      "fuente_url": "https://www.facebook.com/dw.espanol/posts/estados-unidos-levanta-temporalmente-las-sanciones-econ%C3%B3micas-a-venezuela-por-te/1455838253249634/"
+    },
+    {
+      "hash": "7ecc5a458f95",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA confirma continuidad de plan de despacho de gasolina para placas 4 y 5",
+      "fuente_url": "https://www.instagram.com/reel/DaOc9QGEzkN/"
+    },
+    {
+      "hash": "d9047f3a9cfe",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela registra 2.295 fallecidos tras terremotos con crisis médica creciente",
+      "fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    {
+      "hash": "6aeae73a4c54",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de Hernán Gil a ocho días de los sismos en La Guaira",
+      "fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    {
+      "hash": "f55a91d5f56d",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "Organismos de la ONU estiman 16.000 desplazados por los terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=HVPjBXRohuw"
+    },
+    {
+      "hash": "a238d1187be0",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: 2.295 muertos y más de 16.000 damnificados según Euronews",
+      "fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    {
+      "hash": "d6464c0ca213",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Rescate de Hernán Gil en La Guaira tras terremoto en Venezuela",
+      "fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    {
+      "hash": "3cc008d04222",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "38 personas afectadas por desalojo en Venezuela tras terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=WeEOqGRSVXo"
+    },
+    {
+      "hash": "7f6f3932add6",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela registra al menos 2.295 muertos tras terremotos en norte con crisis médica agravada",
+      "fuente_url": "https://www.youtube.com/watch?v=HVPjBXRohuw"
+    },
+    {
+      "hash": "0099da4d7568",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Nueva entrega de ayuda humanitaria dirigida a Venezuela el 2 de julio de 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=OZwh_JIylz0"
+    },
+    {
+      "hash": "fc285a783cd6",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Tasa de cambio BCV 02 de julio de 2026: 639.7029 Bs/USD con incremento de 1 punto",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/"
+    },
+    {
+      "hash": "a8dc28f6f096",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "España eleva a 27 fallecidos y reduce a 15 desaparecidos en terremotos de Venezuela",
+      "fuente_url": "https://www.europapress.es/videos/video-exteriores-eleva-27-espanoles-fallecidos-terremotos-venezuela-20260702095606.html"
+    },
+    {
+      "hash": "f41cd4b106ec",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 639,7029 Bs/USD con incremento de +1,02% el 2 de julio",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/"
+    },
+    {
+      "hash": "6309cf72a33b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Banco Central de Venezuela actualiza tasa BCV a 596,78 Bs/USD el 2 de julio de 2026",
+      "fuente_url": "https://www.instagram.com/p/DaRD8EzEfhr/"
+    },
+    {
+      "hash": "399b8e6251d0",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Academias Nacionales de Venezuela ofrecen asesoría técnica y científica para la reconstrucción tras ",
+      "fuente_url": "https://www.elnacional.com/2026/07/academias-nacionales-de-venezuela-ofrecen-asesoria-tecnica-y-cientifica-para-la-reconstruccion-tras-los-terremotos/"
+    },
+    {
+      "hash": "becdd502a217",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto doble en Venezuela: 2.295 muertos y 11.267 heridos según balance oficial actualizado",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "780aa6307902",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "12.841 personas perdieron viviendas y 16.000 requieren alojamiento alternativo tras terremotos en Ve",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "84b3a7f3102b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "707.063 toneladas de ayuda humanitaria recibidas en Venezuela una semana tras los terremotos",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "0c806b565768",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Detenidos en La Guaira por apropiación de bienes económicos en escombros de edificios derrumbados",
+      "fuente_url": "https://www.youtube.com/watch?v=HVPjBXRohuw"
+    },
+    {
+      "hash": "d436242ec78e",
+      "actor": "GOB1",
+      "alert_level": "A0",
+      "titulo_corto": "Tasa de cambio BCV fija en 639.7029 Bs/USD el 2 de julio de 2026 con incremento de 1 unidad",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "2e32c5688d3b",
+      "actor": "GOB1",
+      "titulo": "Meal de víctimas fatales en terremotos de Venezuela supera 2.295",
+      "fuente_url": "https://voz.us/es/mundo/260702/37070/oculta-informacion-regimen-delcy-rodriguez-sospechas-opacidad-rodean-balance-oficial-muertos-sismos-venezuela.html"
+    },
+    {
+      "hash": "4c705f3ecb96",
+      "actor": "GOB2",
+      "titulo": "Jorge Rodríguez: 2.295 fallecidos y 11.267 heridos por terremotos en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "68101b3ca2c1",
+      "actor": "",
+      "titulo": "Jorge Rodríguez confirma 2.295 muertos y 11.267 heridos por dos terremotos en Venezuela",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "8fe0a3f322f3",
+      "actor": "",
+      "titulo": "Terremotos en Venezuela: 2.295 muertos y crisis médica profunda",
+      "fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    {
+      "hash": "459546497aaa",
+      "actor": "",
+      "titulo": "Dos terremotos de magnitud 7.2 y 7.5 en Venezuela causan 2.295 muertos",
+      "fuente_url": "https://www.instagram.com/reel/DaLjHFQsHx-/"
+    },
+    {
+      "hash": "b7798390865b",
+      "actor": "INT2",
+      "titulo": "Estados Unidos levanta temporalmente sanciones económicas a Venezuela por labores de socorro",
+      "fuente_url": "https://www.facebook.com/dw.espanol/posts/estados-unidos-levanta-temporalmente-las-sanciones-econ%C3%B3micas-a-venezuela-por-te/1455838253249634/"
+    },
+    {
+      "hash": "a238d1187be0",
+      "actor": "GOB1",
+      "titulo": "Terremoto en Venezuela: 2.295 muertos y más de 16.000 damnificados según Euronews",
+      "fuente_url": "https://es.euronews.com/video/2026/07/02/euronews-hoy-las-noticias-del-jueves-2-de-julio-venezuela-registra-al-menos-2295-muertos"
+    },
+    {
+      "hash": "becdd502a217",
+      "actor": "GOB1",
+      "titulo": "Terremoto doble en Venezuela: 2.295 muertos y 11.267 heridos según balance oficial actualizado",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
