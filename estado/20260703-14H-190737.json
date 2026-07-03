@@ -1,0 +1,462 @@
+{
+  "version": "1.0",
+  "correlativo": "20260703-14H-190737",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-03T19:26:35.617724+00:00",
+  "rango_inicio": "2026-07-02T19:07:37.359910+00:00",
+  "rango_fin": "2026-07-03T19:07:37.359910+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 5,
+    "A3": 17,
+    "A2": 20,
+    "A1": 2,
+    "A0": 2,
+    "total": 46
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 18,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A4",
+        "A2",
+        "A2",
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A2",
+        "A2",
+        "A4",
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A4",
+        "A2"
+      ],
+      "ultimo_titulo": "Rescate de vigilante Hernán Gil en La Guaira tras terremoto",
+      "ultima_fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "María Corina Machado en contexto de intento de regularización internacional",
+      "ultima_fuente_url": "https://elpais.com/hemeroteca/2026-07-03/4/"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez ratifica compromiso del Gobierno en labores de salvamento tras terremoto",
+      "ultima_fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-ratifica-compromiso-del-gobierno-naciomal-en-labores-de-salvamento"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV se fija en 652.97 Bs/USD al 3 de julio de 2026",
+      "ultima_fuente_url": "https://www.facebook.com/falconinformativa/posts/la-tasa-de-cambio-bcv-al-03-de-julio-de-2026-publicada-por-el-banco-central-de-v/1663362225789226/"
+    },
+    "INT1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "OMS alerta riesgo de brotes de enfermedades en Venezuela tras terremotos",
+      "ultima_fuente_url": "https://udgtv.com/noticias/oms-alerta-brotes-enfermedades-en-venezuela/323451"
+    },
+    "INST5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "PDVSA y asociaciones de gas activan plan de restitución de servicio en Táchira",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DaOc9QGEzkN/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "P2",
+    "INST4",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "713ea3d3b4ba",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez se defiende de críticas por respuesta lenta a catástrofe y cifra fallecidos en 2595",
+      "fuente_url": "https://es-us.noticias.yahoo.com/delcy-rodr%C3%ADguez-defiende-cr%C3%ADticas-respuesta-142818984.html"
+    },
+    {
+      "hash": "ba94f744263c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez lidera rueda de prensa con medios internacionales el 2 de julio",
+      "fuente_url": "https://www.youtube.com/watch?v=qXX4_weSVpI"
+    },
+    {
+      "hash": "dbe328b598df",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Plazo constitucional de Delcy Rodríguez como presidenta encargada termina este 3 de julio",
+      "fuente_url": "https://www.facebook.com/vision24television/posts/-el-plazo-constitucional-de-delcy-rodr%C3%ADguez-termina-este-3-de-julioeste-viernes-/1500628585432562/"
+    },
+    {
+      "hash": "b15a441a6eb9",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez revela que padece un problema de salud que afecta su voz",
+      "fuente_url": "https://as.com/actualidad/politica/delcy-rodriguez-revela-que-padece-un-problema-de-salud-f202607-n/"
+    },
+    {
+      "hash": "0b479c7669e7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Prensa extranjera acorraló a Delcy Rodríguez con preguntas sustentadas en hechos",
+      "fuente_url": "https://www.elnacional.com/2026/07/la-prensa-extranjera-acorralo-a-delcy-rodriguez/"
+    },
+    {
+      "hash": "dd05da2f107d",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Resumen de crisis institucional y aniquelamiento de oposición en Venezuela",
+      "fuente_url": "https://alertavenezuela.org/blog/2026/07/03/fin-del-interinato-y-consolidacion-del-regimen-de-facto/"
+    },
+    {
+      "hash": "fce903dadaef",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "María Corina Machado en contexto de intento de regularización internacional",
+      "fuente_url": "https://elpais.com/hemeroteca/2026-07-03/4/"
+    },
+    {
+      "hash": "feb7d097772d",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "El TSJ designa a Delcy Rodríguez como encargada de la Presidencia tras vencer plazo de falta tempora",
+      "fuente_url": "https://www.instagram.com/p/DaVgBcmpuzU/"
+    },
+    {
+      "hash": "ed05a7b66ab0",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez ratifica compromiso del Gobierno en labores de salvamento tras terremoto",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-ratifica-compromiso-del-gobierno-naciomal-en-labores-de-salvamento"
+    },
+    {
+      "hash": "abf941d3f0c8",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Blanca Rosa Mármol insta restablecer orden y propone junta de gobierno de facto",
+      "fuente_url": "https://www.elnacional.com/2026/07/blanca-rosa-marmol-fin-interinato-venezuela/"
+    },
+    {
+      "hash": "71a49d0e4d77",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela registra 12.841 personas sin vivienda tras dos terremotos en el norte del país",
+      "fuente_url": "https://elpais.com/america/2026-07-02/ultima-hora-del-terremoto-en-venezuela-en-directo.html"
+    },
+    {
+      "hash": "40e4780e7eb0",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez defiende respuesta gubernamental ante desastre de 2.300 fallecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=aLIpc_u-sXo"
+    },
+    {
+      "hash": "00b723d64c90",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Hernán Gil rescatado con vida tras 8 días bajo escombros en La Guaira",
+      "fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    {
+      "hash": "be6172c54df4",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Asamblea Nacional reporta 782 réplicas de sismos desde 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=zzb-AmyxQeM"
+    },
+    {
+      "hash": "2b49ece61ef5",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno ha enviado más de 800 toneladas de insumos a zonas afectadas",
+      "fuente_url": "https://www.youtube.com/watch?v=zzb-AmyxQeM"
+    },
+    {
+      "hash": "1b1fd0a355c0",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "OMS reporta 2.300 fallecidos y 16.000 damnificados en desastre venezolano",
+      "fuente_url": "https://www.youtube.com/watch?v=K5GXnY_Egis"
+    },
+    {
+      "hash": "5beda266f261",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 2.595 muertos y 12.400 heridos confirmados",
+      "fuente_url": "https://efe.com/mundo/2026-07-03/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "24284f4447b3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela solicita activación del mecanismo internacional de ayuda por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=K5GXnY_Egis"
+    },
+    {
+      "hash": "e8e2e0ef5f45",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezolanos viven tragedia por terremotos con pocas opciones de apoyo",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/03/mundo/5-cosas-3-de-julio-orix"
+    },
+    {
+      "hash": "fb6d402803fe",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "29 españoles fallecidos en Venezuela por terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=aLIpc_u-sXo"
+    },
+    {
+      "hash": "d4d37dcca4f9",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez agradece apoyo de Estados Unidos por terremoto",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-viernes-3-julio-2026_202607036a47613ba8768a6aee3f798d.html"
+    },
+    {
+      "hash": "3b33cc2aef1b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos en Venezuela generan más de 12,000 damnificados y 2,500 fallecidos",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/03/mundo/5-cosas-3-de-julio-orix"
+    },
+    {
+      "hash": "e0b7f37cee8a",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Estados Unidos ofrece apoyo humanitario a Venezuela tras terremotos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-viernes-3-julio-2026_202607036a47613ba8768a6aee3f798d.html"
+    },
+    {
+      "hash": "c0be18239f7d",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "China y Venezuela: coordinación en energía y multipolaridad",
+      "fuente_url": ""
+    },
+    {
+      "hash": "7582c0ca3f1a",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Rusia y Venezuela: narrativa sobre multipolaridad y energía",
+      "fuente_url": ""
+    },
+    {
+      "hash": "612330f7357b",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Trump asegura que la relación EE.UU.-Venezuela es 'excelente' y destaca auge petrolero",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-03-u1-e208574-s27061-nid334067-trump-asegura-relacion-venezuela-excelente-elogia"
+    },
+    {
+      "hash": "fc7e3fbc48c6",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "OPEP registra aumento de 27.6% en producción petrolera (jan-may 2026)",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-03-u1-e208574-s27061-nid334067-trump-asegura-relacion-venezuela-excelente-elogia"
+    },
+    {
+      "hash": "dad1be134514",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV se fija en 652.97 Bs/USD al 3 de julio de 2026",
+      "fuente_url": "https://www.facebook.com/falconinformativa/posts/la-tasa-de-cambio-bcv-al-03-de-julio-de-2026-publicada-por-el-banco-central-de-v/1663362225789226/"
+    },
+    {
+      "hash": "1f362b6500fc",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA restablece suministro de combustible en La Guaira tras terremotos",
+      "fuente_url": "https://elnacional.com.py/mundo/petroleos-venezuela-restablece-suministro-combustible-guaira-tras-terremotos-n108399"
+    },
+    {
+      "hash": "32f72ff12203",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA y asociaciones de gas activan plan de restitución de servicio en Táchira",
+      "fuente_url": "https://www.instagram.com/reel/DaOc9QGEzkN/"
+    },
+    {
+      "hash": "b0c112097672",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Shell dona 5 millones de dólares en ayuda humanitaria para Venezuela tras terremotos",
+      "fuente_url": "https://elsoldemargarita.com.ve/posts/post/id:258293/Shell-donar%C3%A1-cinco-millones-de-d%C3%B3lares-en-ayuda-humanitaria-para-Venezuela"
+    },
+    {
+      "hash": "b162327d935f",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "ACUMULACIÓN DE DIÉSEL PARA RESPALDO OPERATIVO EN LA GUAIRA",
+      "fuente_url": "https://contrapunto.com/nacional/garantizan-suministro-de-combustible-para-la-guaira/"
+    },
+    {
+      "hash": "dfa1e575e63b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez agradece apoyo de Estados Unidos tras desastre en Venezuela",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-viernes-3-julio-2026_202607036a47613ba8768a6aee3f798d.html"
+    },
+    {
+      "hash": "8a47d83e18a4",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos en Venezuela: más de 2,300 fallecidos y 16,000 damnificados según OMS",
+      "fuente_url": "https://www.youtube.com/watch?v=K5GXnY_Egis"
+    },
+    {
+      "hash": "e8e2e0ef5f45",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Venezolanos viven tragedia por terremotos con pocas opciones para apoyar",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/03/mundo/5-cosas-3-de-julio-orix"
+    },
+    {
+      "hash": "417a2c6d4841",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Muertes y heridos por terremotos en Venezuela: 2.595 fallecidos y 12.400 heridos",
+      "fuente_url": "https://efe.com/mundo/2026-07-03/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "4abccd12983b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez agradece apoyo de Estados Unidos y menciona ayuda de Trump",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-viernes-3-julio-2026_202607036a47613ba8768a6aee3f798d.html"
+    },
+    {
+      "hash": "7d649b5b22ec",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezolanos afectan por tragedia de terremotos con 12.000 damnificados, 2.200 fallecidos y 11.267 he",
+      "fuente_url": "https://www.youtube.com/watch?v=K5GXnY_Egis"
+    },
+    {
+      "hash": "63f0ea7fac84",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela cumple seis meses sin Nicolás Maduro, afectada por emergencia de terremotos",
+      "fuente_url": "https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316373024.html"
+    },
+    {
+      "hash": "036046d4db5f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza tasa de cambio a 652,97 Bs/USD con incremento de +13,27 Bs",
+      "fuente_url": "https://www.facebook.com/infomppe/posts/-actualizaci%C3%B3n-del-tipo-de-cambio-bcv-fecha-valor-viernes-03-de-julio-de-2026-el/1445481760945011/"
+    },
+    {
+      "hash": "41e8b9c44860",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Barquisimeto registra incremento de 3,8% en canasta alimentaria mensual por costos de distribución",
+      "fuente_url": "https://theelnews.org/2026/07/03/opinion-el-informe-alvarez-julio-03-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "9a7dc9550861",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "OMS alerta riesgo de brotes de enfermedades en Venezuela tras terremotos",
+      "fuente_url": "https://udgtv.com/noticias/oms-alerta-brotes-enfermedades-en-venezuela/323451"
+    },
+    {
+      "hash": "0bee0fa5bc1d",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Sector educativo en Venezuela anuncia culminación de clases 2026 por ola de calor y Mundial 2026",
+      "fuente_url": "https://2001online.com/nacionales/sector-educativo-en-venezuela-anuncian-detalles-de-como-culminaran-las-clases-2026-20267312480"
+    },
+    {
+      "hash": "884aad44a907",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: Daños de 37.000 millones de dólares y más de 2.295 fallecidos",
+      "fuente_url": "https://news.un.org/es/audio/2026/07/1541640"
+    },
+    {
+      "hash": "29d8e12157ce",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de vigilante Hernán Gil en La Guaira tras terremoto",
+      "fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    {
+      "hash": "9e64bb446a16",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Inditex dona 3 millones de euros para damnificados en Venezuela",
+      "fuente_url": "https://www.larazon.es/opinion/caras-noticia-3-julio-2026_202607036a46e7a1dcb2092ca8c3ac90.html"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "dbe328b598df",
+      "actor": "GOB1",
+      "titulo": "Plazo constitucional de Delcy Rodríguez como presidenta encargada termina este 3 de julio",
+      "fuente_url": "https://www.facebook.com/vision24television/posts/-el-plazo-constitucional-de-delcy-rodr%C3%ADguez-termina-este-3-de-julioeste-viernes-/1500628585432562/"
+    },
+    {
+      "hash": "feb7d097772d",
+      "actor": "",
+      "titulo": "El TSJ designa a Delcy Rodríguez como encargada de la Presidencia tras vencer plazo de falta temporal",
+      "fuente_url": "https://www.instagram.com/p/DaVgBcmpuzU/"
+    },
+    {
+      "hash": "5beda266f261",
+      "actor": "",
+      "titulo": "Terremotos en Venezuela: 2.595 muertos y 12.400 heridos confirmados",
+      "fuente_url": "https://efe.com/mundo/2026-07-03/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "417a2c6d4841",
+      "actor": "GOB1",
+      "titulo": "Muertes y heridos por terremotos en Venezuela: 2.595 fallecidos y 12.400 heridos",
+      "fuente_url": "https://efe.com/mundo/2026-07-03/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "884aad44a907",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: Daños de 37.000 millones de dólares y más de 2.295 fallecidos",
+      "fuente_url": "https://news.un.org/es/audio/2026/07/1541640"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 5
+}
