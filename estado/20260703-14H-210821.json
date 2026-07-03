@@ -1,0 +1,183 @@
+{
+  "version": "1.0",
+  "correlativo": "20260703-14H-210821",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-03T21:17:36.659968+00:00",
+  "rango_inicio": "2026-07-02T21:08:21.580401+00:00",
+  "rango_fin": "2026-07-03T21:08:21.580401+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 1,
+    "A3": 10,
+    "A2": 5,
+    "A1": 1,
+    "A0": 0,
+    "total": 17
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Update on SOUTHCOM support to Venezuela earthquake relief",
+      "ultima_fuente_url": "https://www.southcom.mil/News/PressReleases/Article/4533214/release-update-on-southcom-support-to-venezuela-earthquake-relief-july-3/"
+    },
+    "GOB1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "BCV actualiza tasa de cambio a 652,97 Bs/USD con incremento de +13 Bs",
+      "ultima_fuente_url": "https://www.facebook.com/infomppe/posts/-actualizaci%C3%B3n-del-tipo-de-cambio-bcv-fecha-valor-viernes-03-de-julio-de-2026-el/1445481760945011/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "c4ca0dcff3f4",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Update on SOUTHCOM support to Venezuela earthquake relief",
+      "fuente_url": "https://www.southcom.mil/News/PressReleases/Article/4533214/release-update-on-southcom-support-to-venezuela-earthquake-relief-july-3/"
+    },
+    {
+      "hash": "31ee0ff8281b",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela's 'skyrocketing' needs, AI risks at the UN",
+      "fuente_url": "https://www.thenewhumanitarian.org/news/2026/07/03/venezuela-skyrocketing-needs-ai-risks-un-refugees-world-cup-cheat-sheet"
+    },
+    {
+      "hash": "35ca37836224",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Official death toll rises to nearly 2,600 in Venezuela earthquake",
+      "fuente_url": "https://www.nampa.org/text/22959116"
+    },
+    {
+      "hash": "b479926b7b9d",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Venezuela responde a críticas por gestión de terremotos",
+      "fuente_url": "https://es-us.noticias.yahoo.com/respondido-gobierno-venezuela-cr%C3%ADticas-respuesta-140427926.html"
+    },
+    {
+      "hash": "27b65dbbf15b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Magtrud de los terremotos en Venezuela: cifras sin confirmar",
+      "fuente_url": "https://www.bbc.com/mundo/articles/ced4z7qq8y7o"
+    },
+    {
+      "hash": "21ae2166c60f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela enfrenta plazo constitucional de la Presidencia",
+      "fuente_url": "https://www.facebook.com/bbctvponcena/posts/venezuelaeste-3-de-julio-vence-el-plazo-constitucional-de-la-falta-temporal-de-l/1532882122185075/"
+    },
+    {
+      "hash": "0b905b5cf48c",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela matan a 2.595 personas y lesionan a 12.400",
+      "fuente_url": "https://www.youtube.com/watch?v=eiL5s20jRsg"
+    },
+    {
+      "hash": "ad94cd64e2bd",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela solicita activación de mecanismo internacional para equipos médicos de emergencia",
+      "fuente_url": "https://www.youtube.com/watch?v=K5GXnY_Egis"
+    },
+    {
+      "hash": "7acc2cf3056b",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "19.000 efectivos de la FANB desplegados en operaciones de rescate post-terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=HJOlP86KJzY"
+    },
+    {
+      "hash": "f6de81ceab4b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa BCV del 3 de julio 2026: 652,9726 Bs/USD con incremento de 2,07%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-03-julio-2026/"
+    },
+    {
+      "hash": "5ecb71dc7d9f",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Diputados legislativos se solidarizan con Venezuela tras terremotos del 3 de julio",
+      "fuente_url": "https://www.youtube.com/watch?v=hTPao7vAE5o"
+    },
+    {
+      "hash": "9b775f121106",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Mercado de petróleo venezolano vuelve a entrar en juego en mercado de tanqueros",
+      "fuente_url": "https://www.hellenicshippingnews.com/tanker-market-venezuelan-oil-market-coming-into-play-once-more/"
+    },
+    {
+      "hash": "c13a7024448a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Explosión de exportaciones de petróleo del Golfo Árabe en junio 2026",
+      "fuente_url": "https://www.instagram.com/p/DaVYoy0j4nP/"
+    },
+    {
+      "hash": "acd19f687eb0",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Sanciones de Estados Unidos continúan debilitando economía venezolana",
+      "fuente_url": "https://mronline.org/2026/07/03/the-earthquake-in-venezuela-and-the-politics-of-disaster-the-twenty-seventh-newsletter-2026/"
+    },
+    {
+      "hash": "5cf39439fca8",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela cumple seis meses sin Nicolás Maduro devastada por terremotos",
+      "fuente_url": "https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316373024.html"
+    },
+    {
+      "hash": "036046d4db5f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza tasa de cambio a 652,97 Bs/USD con incremento de +13 Bs",
+      "fuente_url": "https://www.facebook.com/infomppe/posts/-actualizaci%C3%B3n-del-tipo-de-cambio-bcv-fecha-valor-viernes-03-de-julio-de-2026-el/1445481760945011/"
+    },
+    {
+      "hash": "736f510b623d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Canasta alimentaria de Barquisimeto aumenta 3,8% en mes por costos de distribución",
+      "fuente_url": "https://theelnews.org/2026/07/03/opinion-el-informe-alvarez-julio-03-de-2026-por-alfredo-alvarez/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "0b905b5cf48c",
+      "actor": "",
+      "titulo": "Terremotos en Venezuela matan a 2.595 personas y lesionan a 12.400",
+      "fuente_url": "https://www.youtube.com/watch?v=eiL5s20jRsg"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
