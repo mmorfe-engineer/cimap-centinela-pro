@@ -1,0 +1,420 @@
+{
+  "version": "1.0",
+  "correlativo": "20260704-14H-190000",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-04T19:15:56.873098+00:00",
+  "rango_inicio": "2026-07-03T19:00:00.937483+00:00",
+  "rango_fin": "2026-07-04T19:00:00.937483+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 4,
+    "A3": 15,
+    "A2": 15,
+    "A1": 6,
+    "A0": 0,
+    "total": 40
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 8,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A4"
+      ],
+      "ultimo_titulo": "Terremotos en Venezuela: 2.645 fallecidos confirmados nueve días después",
+      "ultima_fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    "P1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Maria Corina Machado debería regresar a Venezuela para apoyar transición",
+      "ultima_fuente_url": "https://elpais.com/america/2026-07-04/el-cataclismo-ha-demostrado-quien-manda-en-venezuela-realmente.html"
+    },
+    "INST1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Venezuela registra al menos 2.295 muertos y 12.841 damnificados por terremoto",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=ZJqnnwdjUkI"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez agradece solidaridad mundial con Venezuela en mensaje de sábado",
+      "ultima_fuente_url": "https://www.asambleanacional.gob.ve/noticias/presidente-del-legislativo-agradece-al-mundo-solidaridad-con-venezuela"
+    },
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Donald Trump declara que la relación EE.UU.-Venezuela es 'excelente' y el petróleo venezolano mejora",
+      "ultima_fuente_url": "https://www.primicias.ec/internacional/donald-trump-estados-unidos-venezuela-terremoto-127002/"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "13 estaciones petroleras inoperativas por destrucción de terremotos de junio",
+      "ultima_fuente_url": "https://ultimasnoticias.com.ve/mas-vida/minuto-a-minuto-despues-de-la-tragedia-viernes-3-de-julio-2026/"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Cotización del dólar en Venezuela alcanza 667 bolívares el 4 de julio de 2026",
+      "ultima_fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Cuba reconoce rescatistas con medallas por ayuda en terremotos de Venezuela",
+      "ultima_fuente_url": "https://www.facebook.com/CanalCaribeCuba/videos/-titulares-del-noticiero-de-la-una-4-de-julio-de-2026-se-alista-cuba-para-celebr/1640894497005260/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "P2",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "6ca1f380392d",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia fondo de 200 millones de dólares para reconstrucción tras terremotos",
+      "fuente_url": "https://www.canal26.com/internacionales/2026/07/03/el-importante-anuncio-que-hizo-delcy-rodriguez-tras-los-terremotos-en-venezuela-la-situacion-es-dramatica/"
+    },
+    {
+      "hash": "fa32971706d4",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez anuncia apertura de cuenta especial en Banco de Desarrollo de América Latina para do",
+      "fuente_url": "https://www.canal26.com/internacionales/2026/07/03/el-importante-anuncio-que-hizo-delcy-rodriguez-tras-los-terremotos-en-venezuela-la-situacion-es-dramatica/"
+    },
+    {
+      "hash": "ef6d19e37591",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez mantiene conversaciones con Departamento de Estado de EE.UU. y redes de ayuda intern",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "c50f2718c3da",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Balance oficial de los terremotos: 2.595 fallecidos, más de 11.000 heridos y miles de desaparecidos",
+      "fuente_url": "https://www.canal26.com/internacionales/2026/07/03/el-importante-anuncio-que-hizo-delcy-rodriguez-tras-los-terremotos-en-venezuela-la-situacion-es-dramatica/"
+    },
+    {
+      "hash": "5b48da12bb28",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Oposición venezolana denuncia debilidades del Estado ante emergencia cataclismática",
+      "fuente_url": "https://www.eldiariodehoy.com/noticias/internacionales/oposicion-de-venezuela-reitera-graves-debilidades-del-estado-para-responder-a-emergencia/83854/2026/"
+    },
+    {
+      "hash": "23dcd5d659d4",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Se vencen 180 días constitucionales para suplir cargo en Venezuela",
+      "fuente_url": "https://www.facebook.com/lapapayadigital/posts/mundo-venezuela-cumple-este-4-de-julio-de-2026-un-momento-clave-en-su-panorama-p/1648208770644268/"
+    },
+    {
+      "hash": "b7df743b4bd9",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Maria Corina Machado debería regresar a Venezuela para apoyar transición",
+      "fuente_url": "https://elpais.com/america/2026-07-04/el-cataclismo-ha-demostrado-quien-manda-en-venezuela-realmente.html"
+    },
+    {
+      "hash": "e8530b1e2221",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez cumple plazo máximo de Presidencia Encargada; expertos advierten sobre legalidad del",
+      "fuente_url": "https://venedigitall.com/delcy-rodriguez-cumple-el-plazo-maximo-de-la-presidencia-encargada-y-expertos-advierten-por-la-legalidad-de-su-gobierno/"
+    },
+    {
+      "hash": "b0292efa70a9",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional debe declarar ausencia permanente del presidente según artículo 234",
+      "fuente_url": "https://eldiario.com/2026/07/03/ausencia-presidente-venezuela/"
+    },
+    {
+      "hash": "71cb916f77bb",
+      "actor": "GOB3",
+      "alert_level": "A1",
+      "titulo_corto": "Jorge Rodríguez agradece solidaridad mundial con Venezuela en mensaje de sábado",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/presidente-del-legislativo-agradece-al-mundo-solidaridad-con-venezuela"
+    },
+    {
+      "hash": "7fdb46039492",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Acto encabezado por Delcy Rodríguez incluye Jorge Rodríguez y ministros del gobierno",
+      "fuente_url": "https://www.facebook.com/teleSUR/videos/-en-un-acto-encabezado-por-la-por-la-presidenta-e-delcy-rodr%C3%ADguez-el-presidente-/1538799064374242/"
+    },
+    {
+      "hash": "09b93073e2d0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Allan Brewer Carias: omisión legislativa del 4 de abril 2026 implica voluntad tácita de convocar ele",
+      "fuente_url": "https://allanbrewercarias.com/wp-content/uploads/2026/07/A.R.-BREWER-CARIAS.-TERMINO-DE-LA-SUPLENCIA-DE-LA-VICEPRESIDENTA-EJECUTIVA-DE-LA-FALTA-TEMPORAL-DEL-PRESIDENTE.-3-Julio-2026.pdf"
+    },
+    {
+      "hash": "f082d6f789a6",
+      "actor": "INST1",
+      "alert_level": "A4",
+      "titulo_corto": "Fallecidos por terremoto en Venezuela suben a 2.645",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "0376b7a36f57",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez defiende respuesta del Gobierno a los terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aLIpc_u-sXo"
+    },
+    {
+      "hash": "9b277716c8d2",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de Hernán Gil en La Guaira tras terremoto",
+      "fuente_url": "https://www.univision.com/shows/la-voz-de-la-manana/venezuela-rescatan-hoy-2-de-julio-a-hernan-gil-con-la-ayuda-de-profesionales-de-varios-paises-video"
+    },
+    {
+      "hash": "e12eb3c07bf7",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela registra al menos 2.295 muertos y 12.841 damnificados por terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=ZJqnnwdjUkI"
+    },
+    {
+      "hash": "1c1ab23451e5",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "_Oposición venezolana: fecha de datos no verificable para declaración de líderes_",
+      "fuente_url": ""
+    },
+    {
+      "hash": "355511a69481",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Asamblea Nacional: sin anuncios oficiales verificables en el rango de interés",
+      "fuente_url": ""
+    },
+    {
+      "hash": "b232693424ac",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Chile envía tercer vuelo con 13 toneladas de ayuda humanitaria a Venezuela tras potentes terremotos",
+      "fuente_url": "https://www.prensa-latina.cu/2026/07/04/"
+    },
+    {
+      "hash": "207ecc2d23a4",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "España: 34 muertos y 140 desaparecidos por terremotos en Venezuela",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html"
+    },
+    {
+      "hash": "a0a3f26b3d68",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Fuerza Aérea Chilena enviará 9,5 toneladas de ayuda humanitaria a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "8f5ed4fe624b",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Dólar en Venezuela cotiza a 667 bolívares el 4 de julio de 2026",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "a96ddb6db459",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela cumple seis meses sin Nicolás Maduro tras terremotos de junio",
+      "fuente_url": "https://eldiario.com/2026/07/03/resumen-noticias-venezuela-viernes-3-julio/"
+    },
+    {
+      "hash": "f52339ba9e50",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Chile enviará 9,5 toneladas de ayuda humanitaria a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "e72a1539650f",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "OPEP+ evalúa aumentar oferta de crudo en agosto por quinto mes consecutivo",
+      "fuente_url": "https://es-us.noticias.yahoo.com/opep-eval%C3%BAa-aumentar-oferta-crudo-130849551.html"
+    },
+    {
+      "hash": "1f362b6500fc",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA restablece suministro de combustible en La Guaira tras terremotos",
+      "fuente_url": "https://www.antena3.com/noticias/mundo/ultima-hora-terremotos-venezuela-directo_202607036a474bfda8768a6aee3f6808.html"
+    },
+    {
+      "hash": "67010c894504",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "Vence el plazo de 180 días para revisar contratos petroleros en Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/07/se-acerca-el-vencimiento-del-plazo-para-revisar-contratos-petroleros-en-venezuela/"
+    },
+    {
+      "hash": "618bfd52ae28",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "13 estaciones petroleras inoperativas por destrucción de terremotos de junio",
+      "fuente_url": "https://ultimasnoticias.com.ve/mas-vida/minuto-a-minuto-despues-de-la-tragedia-viernes-3-de-julio-2026/"
+    },
+    {
+      "hash": "683f64166dca",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto de 4,8 sacude costa de Venezuela con 2.645 fallecidos confirmados",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "69fbad36a557",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Cotización del dólar en Venezuela alcanza 667 bolívares el 4 de julio de 2026",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "8a47aca465f1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Vencimiento de 180 días constitucionales para suplir cargo en Venezuela el 4 de julio de 2026",
+      "fuente_url": "https://www.facebook.com/lapapayadigital/posts/mundo-venezuela-cumple-este-4-de-julio-de-2026-un-momento-clave-en-su-panorama-p/1648208770644268/"
+    },
+    {
+      "hash": "fedfb14182b0",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Chile envía tercera ayuda humanitaria de 13 toneladas a Venezuela por víctimas de terremotos",
+      "fuente_url": "https://www.prensa-latina.cu/2026/07/04/"
+    },
+    {
+      "hash": "9fc05da2f18f",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela superan 2,500 muertos y 12,000 heridos según autoridades",
+      "fuente_url": "https://www.youtube.com/watch?v=csZGd1TgxiU"
+    },
+    {
+      "hash": "00ee36bd2118",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Cotización del dólar en Venezuela alcanza 667 bolívares por USD el 4 de julio de 2026",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "8db63c5e7614",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Donald Trump declara que la relación EE.UU.-Venezuela es 'excelente' y el petróleo venezolano mejora",
+      "fuente_url": "https://www.primicias.ec/internacional/donald-trump-estados-unidos-venezuela-terremoto-127002/"
+    },
+    {
+      "hash": "2f58ee0400b5",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Brecha cambiaria Venezuela se estrecha a 13,59% tras doblete sísmico",
+      "fuente_url": "https://finanzasdigital.com/brecha-cambiaria-venezuela-sismos-dolar-bcv-oliveros/"
+    },
+    {
+      "hash": "cd9ac0ca15f5",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Ministerio de Educación reprograma cierre del año escolar tras el doble terremoto en Venezuela",
+      "fuente_url": "https://www.analitica.com/actualidad/actualidad-nacional/ministerio-de-educacion-reprograma-el-calendario-escolar-tras-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "459668ac0d48",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Suspensión de clases mantiene en Distrito Capital y municipios por sismos",
+      "fuente_url": "https://eldiario.com/2026/07/04/suspension-clases-sismos/"
+    },
+    {
+      "hash": "653eff1a407a",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 2.645 fallecidos confirmados nueve días después",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "b9ceae47e58a",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Cuba reconoce rescatistas con medallas por ayuda en terremotos de Venezuela",
+      "fuente_url": "https://www.facebook.com/CanalCaribeCuba/videos/-titulares-del-noticiero-de-la-una-4-de-julio-de-2026-se-alista-cuba-para-celebr/1640894497005260/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "f082d6f789a6",
+      "actor": "INST1",
+      "titulo": "Fallecidos por terremoto en Venezuela suben a 2.645",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "683f64166dca",
+      "actor": "",
+      "titulo": "Terremoto de 4,8 sacude costa de Venezuela con 2.645 fallecidos confirmados",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "9fc05da2f18f",
+      "actor": "",
+      "titulo": "Terremotos en Venezuela superan 2,500 muertos y 12,000 heridos según autoridades",
+      "fuente_url": "https://www.youtube.com/watch?v=csZGd1TgxiU"
+    },
+    {
+      "hash": "653eff1a407a",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 2.645 fallecidos confirmados nueve días después",
+      "fuente_url": "https://efe.com/mundo/2026-07-04/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
