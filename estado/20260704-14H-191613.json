@@ -1,0 +1,526 @@
+{
+  "version": "1.0",
+  "correlativo": "20260704-14H-191613",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-04T19:41:32.995748+00:00",
+  "rango_inicio": "2026-07-03T19:16:13.493756+00:00",
+  "rango_fin": "2026-07-04T19:16:13.493756+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 5,
+    "A3": 17,
+    "A2": 16,
+    "A1": 9,
+    "A0": 4,
+    "total": 51
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 12,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A1",
+        "A3",
+        "A4",
+        "A4",
+        "A1",
+        "A3",
+        "A3",
+        "A1",
+        "A1"
+      ],
+      "ultimo_titulo": "Cotización del dólar en Venezuela a 667 bolívares con variación de +2,16%",
+      "ultima_fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A2"
+      ],
+      "ultimo_titulo": "Estudio jurídico sobre falta temporal presidencial por TSJ",
+      "ultima_fuente_url": "https://www.elnacional.com/columnas/2026/07/estudio-juridico-falta-temporal-presidencial/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Cataclismo demuestra real jerarquía de poder en Venezuela entre Trump, Rodríguez y Machado",
+      "ultima_fuente_url": "https://elpais.com/america/2026-07-04/el-cataclismo-ha-demostrado-quien-manda-en-venezuela-realmente.html"
+    },
+    "ORG1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Charla sobre eclipse constitucional con coordinador de PROVEA programada para domingo",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DaWiQ1SBH6N/"
+    },
+    "GOB3": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Chile: Fuerza Aérea enviará 9.5 toneladas de ayuda humanitaria a Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    "GOB2": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Presidenta (E) Delcy Rodríguez condecora a rescatistas internacionales tras terremotos",
+      "ultima_fuente_url": "https://pueblocombatiente.wordpress.com/2026/07/04/resumen-de-noticias-de-venezuela-04-07-2026/"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Vence plazo para revisar contratos petroleros en Venezuela el 28 de julio",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/07/se-acerca-el-vencimiento-del-plazo-para-revisar-contratos-petroleros-en-venezuela/"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Cotización del dólar en Venezuela: 667 bolívares por US$1",
+      "ultima_fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "Fuerza Aérea Chilena anuncia envío de 9,5 toneladas de ayuda humanitaria a Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "España eleva a 34 muertos y 140 desaparecidos por terremotos en Venezuela",
+      "ultima_fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "P2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "ffa3e545e0c8",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez confirma afección de salud que afecta su voz durante crisis por terremoto",
+      "fuente_url": "https://www.facebook.com/CiberCubaNoticias/posts/delcy-rodr%C3%ADguez-revela-problema-de-salud-en-plena-crisis-en-venezuelapublicado-e/1515934773912375/"
+    },
+    {
+      "hash": "9ac6185dfdfa",
+      "actor": "INST1",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela oficialmente sin presidente constitucional al vencer plazo de 180 días",
+      "fuente_url": "https://www.facebook.com/lapapayadigital/posts/mundo-venezuela-cumple-este-4-de-julio-de-2026-un-momento-clave-en-su-panorama-p/1648208770644268/"
+    },
+    {
+      "hash": "f407749a44f6",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "Cataclismo demuestra real jerarquía de poder en Venezuela entre Trump, Rodríguez y Machado",
+      "fuente_url": "https://elpais.com/america/2026-07-04/el-cataclismo-ha-demostrado-quien-manda-en-venezuela-realmente.html"
+    },
+    {
+      "hash": "ed89e40e302a",
+      "actor": "ORG1",
+      "alert_level": "A2",
+      "titulo_corto": "Charla sobre eclipse constitucional con coordinador de PROVEA programada para domingo",
+      "fuente_url": "https://www.instagram.com/reel/DaWiQ1SBH6N/"
+    },
+    {
+      "hash": "e8530b1e2221",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Delcy Rodríguez cumple plazo máximo de Presidencia Encargada; expertos advierten sobre legalidad del",
+      "fuente_url": "https://venedigitall.com/delcy-rodriguez-cumple-el-plazo-maximo-de-la-presidencia-encargada-y-expertos-advierten-por-la-legalidad-de-su-gobierno/"
+    },
+    {
+      "hash": "71cb916f77bb",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Jorge Rodríguez agradece solidaridad mundial con Venezuela en mensaje de 4 de julio",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/presidente-del-legislativo-agradece-al-mundo-solidaridad-con-venezuela"
+    },
+    {
+      "hash": "cb7635d380cd",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Alcance de 180 días en Constitución para suplir cargo de Presidencia encargada vence el 4 de julio",
+      "fuente_url": "https://www.facebook.com/lapapayadigital/posts/mundo-venezuela-cumple-este-4-de-julio-de-2026-un-momento-clave-en-su-panorama-p/1648208770644268/"
+    },
+    {
+      "hash": "75e1373a5c30",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez ofrece balance oficial a medios en transmisión desde La Carlota el 2 de julio",
+      "fuente_url": "https://www.facebook.com/noticierovv/videos/en-una-transmisi%C3%B3n-este-jueves-2-de-julio-de-2026-desde-la-carlota-la-presidenta/1569593254772561/"
+    },
+    {
+      "hash": "1853f266498c",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Jorge Rodríguez aparece en acto encabezado por Delcy Rodríguez junto a ministros del Gobierno",
+      "fuente_url": "https://www.facebook.com/teleSUR/videos/-en-un-acto-encabezado-por-la-por-la-presidenta-e-delcy-rodr%C3%ADguez-el-presidente-/1538799064374242/"
+    },
+    {
+      "hash": "02a73e635b13",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Oficial confirma más de 2.500 fallecidos tras terremotos en Venezuela; equipos de rescate reportan c",
+      "fuente_url": "https://www.youtube.com/watch?v=DPz9OwpMN8g"
+    },
+    {
+      "hash": "c850bf7175ea",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Espana confirma 29 españoles muertos y 154 desaparecidos en terremotos de Venezuela",
+      "fuente_url": "https://eldiario.com/2026/07/03/resumen-noticias-venezuela-viernes-3-julio/"
+    },
+    {
+      "hash": "1a2f0b206156",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Clarín reporta 2645 muertos, 12.000+ heridos y 50.000 desaparecidos en Venezuela tras terremotos",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-sabado-4-julio_0_n0Ah1aWor6.html"
+    },
+    {
+      "hash": "b53c83b01ebb",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Euronews confirma Delcy Rodríguez defiende respuesta del gobierno a terremotos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=aLIpc_u-sXo"
+    },
+    {
+      "hash": "70fff0e053e2",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Infobae reporta seguimiento en vivo de situación en Venezuela tras terremotos del 24 de junio",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/03/sabado-4-domingo-5-y-lunes-6-de-julio-de-2026-1930-gmt/"
+    },
+    {
+      "hash": "5bb5740a89b6",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Instagram reporta rescate milagroso de niño de 3 años bajo escombros en La Guaira",
+      "fuente_url": "https://www.instagram.com/reel/DaXuy6-RL8U/"
+    },
+    {
+      "hash": "80a146f6639f",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Euronews reporta 2.295 muertos y 11.267 heridos en Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=ZJqnnwdjUkI"
+    },
+    {
+      "hash": "9c2afb3a794a",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Yahoo Noticias publica resumen de última hora del 4 de julio 2026 con noticias de Europa y mundo",
+      "fuente_url": "https://es-us.noticias.yahoo.com/noticias-04-julio-2026-tarde-160023054.html"
+    },
+    {
+      "hash": "0334f5e51678",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "YouTube reporta noticias más importantes del 4 de julio 2026 tras terremoto con Román Lozinski y Mar",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "006ca45c89bf",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Latina Noticias reporta cobertura de Venezuela, Italia y Japón en matinal del 4 de julio 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=DPz9OwpMN8g"
+    },
+    {
+      "hash": "b232693424ac",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Chile envía tercer vuelo con 13 toneladas de ayuda humanitaria a Venezuela tras terremotos",
+      "fuente_url": "https://www.prensa-latina.cu/2026/07/04/"
+    },
+    {
+      "hash": "173ab2b77941",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Chile confirma envío de 9.5 toneladas de ayuda aérea a Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "9a5dcbbf7418",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Dólar en Venezuela cotiza a 667 bolívares con variación de +2.16% este sábado 4 de julio",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "7c1071a124ff",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela confirma más de 2,500 muertos tras terremotos del 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=DPz9OwpMN8g"
+    },
+    {
+      "hash": "b3e4b2c008ec",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela: fallecidos por terremotos superan 2.595, con 12.400 heridos y 189 edificios destruidos",
+      "fuente_url": "https://www.youtube.com/watch?v=DPz9OwpMN8g"
+    },
+    {
+      "hash": "a1cb0a36c4ae",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "España: 29 fallecidos y 154 desaparecidos en terremoto de Venezuela",
+      "fuente_url": "https://eldiario.com/2026/07/03/resumen-noticias-venezuela-viernes-3-julio/"
+    },
+    {
+      "hash": "f6ea65409295",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Chile: Fuerza Aérea enviará 9.5 toneladas de ayuda humanitaria a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "8e98d7df4a29",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela: dólar cotiza a 667 bolívares, con variación de +2.16%",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "9da030a59c22",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Vence plazo para revisar contratos petroleros en Venezuela el 28 de julio",
+      "fuente_url": "https://www.elnacional.com/2026/07/se-acerca-el-vencimiento-del-plazo-para-revisar-contratos-petroleros-en-venezuela/"
+    },
+    {
+      "hash": "2713a4c5d03c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "13 estaciones de gas inoperativas tras terremotos del 24 de junio",
+      "fuente_url": "https://ultimasnoticias.com.ve/mas-vida/minuto-a-minuto-despues-de-la-tragedia-viernes-3-de-julio-2026/"
+    },
+    {
+      "hash": "f570c427f937",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gremios se activan para normalizar servicio de gas doméstico en zonas afectadas por terremotos",
+      "fuente_url": "https://www.elimpulso.com/2026/07/03/gremios-se-activan-para-normalizar-servicio-de-gas-domestico-en-zonas-afectadas-por-terremotos-3jul/"
+    },
+    {
+      "hash": "609c03972082",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez condecora rescatistas tras terremoto en Venezuela",
+      "fuente_url": "https://pueblocombatiente.wordpress.com/2026/07/04/resumen-de-noticias-de-venezuela-04-07-2026/"
+    },
+    {
+      "hash": "1f886f1eaa51",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Cotización del dólar en Venezuela: 667 bolívares por US$1",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "071d4505024c",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Iterremoto en Venezuela: 164 fallecidos confirmados y cientos de heridos",
+      "fuente_url": "https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%AD-las-incid/1452966910196498/"
+    },
+    {
+      "hash": "54dc913f4d54",
+      "actor": "INT1",
+      "alert_level": "A1",
+      "titulo_corto": "Rumores sobre vehículos tácticos de EE.UU. apoyando distribución de ayuda en Venezuela",
+      "fuente_url": "https://www.instagram.com/reel/DaXuy6-RL8U/"
+    },
+    {
+      "hash": "3537e8d8abe7",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Chile envía tercer vuelo con ayuda humanitaria a Venezuela para víctimas de terremotos",
+      "fuente_url": "https://www.prensa-latina.cu/2026/07/04/"
+    },
+    {
+      "hash": "fb4467ae8aa2",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Balance de víctimas españolas por terremotos en Venezuela asciende a 34 muertos y 140 desaparecidos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html"
+    },
+    {
+      "hash": "a153436e3db4",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Autoridades venezolanas confirman más de 2,500 muertos por terremotos desde el 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=DPz9OwpMN8g"
+    },
+    {
+      "hash": "cb542e0cb0ed",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Diálogo Venezuela-Estados Unidos reanudado el 3 de julio de 2024 (dato histórico no verificable para",
+      "fuente_url": "https://www.facebook.com/eldiario/posts/teexplicamoseld%C3%ADa-viernes-3-de-julio/1498504555656481/"
+    },
+    {
+      "hash": "177b6f368560",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Terremotos en Venezuela: cobertura de noticias el 4 de julio de 2026 tras evento sísmico",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "7310a494a305",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Últimas noticias 04 julio 2026 - Tarde: cobertura general sin datos específicos sobre Venezuela",
+      "fuente_url": "https://es-us.noticias.yahoo.com/noticias-04-julio-2026-tarde-160023054.html"
+    },
+    {
+      "hash": "282f82ada600",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Actualización oficiales de víctimas y daños por doble terremoto en Venezuela (3 de julio 2026)",
+      "fuente_url": "https://www.youtube.com/watch?v=WXAxNVKfAJ4"
+    },
+    {
+      "hash": "50ee60880749",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Cooperación española inicia envío de hospital de campaña a Venezuela (1 de julio 2026)",
+      "fuente_url": "https://elpais.com/videos/2026-07-01/la-reina-letizia-despide-al-personal-medico-espanol-que-viaja-a-venezuela-para-atender-a-las-victimas-del-terremoto.html"
+    },
+    {
+      "hash": "8983c4dcae81",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV del 2 de julio 2026: 639,7029 Bs/USD con incremento de 1,0008%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/"
+    },
+    {
+      "hash": "4a521bd08d84",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Vencimiento de 180 días constitucionales del interinato en Venezuela",
+      "fuente_url": "https://www.instagram.com/p/DaV7IuJH9er/"
+    },
+    {
+      "hash": "007e8a11ba9f",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Estudio jurídico sobre falta temporal presidencial por TSJ",
+      "fuente_url": "https://www.elnacional.com/columnas/2026/07/estudio-juridico-falta-temporal-presidencial/"
+    },
+    {
+      "hash": "7c9b9a07526b",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Retorno a clases en zonas no afectadas por terremotos en Venezuela",
+      "fuente_url": "https://www.elsoldemexico.com.mx/elsoldemexico/mundo/venezuela-retomara-las-clases-a-partir-del-lunes-en-zonas-no-afectadas-por-los-terremotos-30935540"
+    },
+    {
+      "hash": "82ee3a801b31",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis sobre codependencia de leyes, sismos y lágrimas en San Luis",
+      "fuente_url": "https://panampost.com/luis_beltran/2026/07/04/la-codependencia-de-las-leyes-los-sismos-y-sus-lagrimas/"
+    },
+    {
+      "hash": "9411bc82e78e",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "España eleva a 34 muertos y 140 desaparecidos por terremotos en Venezuela",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html"
+    },
+    {
+      "hash": "45b345c7787f",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Fuerza Aérea Chilena anuncia envío de 9,5 toneladas de ayuda humanitaria a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6nW3C_cW3XQ"
+    },
+    {
+      "hash": "340fcf29d544",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Cotización del dólar en Venezuela a 667 bolívares con variación de +2,16%",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-sabado-4-de-julio-de-2026_0_HaGsmXBgvQ.html"
+    },
+    {
+      "hash": "52b0384eb552",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Presidenta (E) Delcy Rodríguez condecora a rescatistas internacionales tras terremotos",
+      "fuente_url": "https://pueblocombatiente.wordpress.com/2026/07/04/resumen-de-noticias-de-venezuela-04-07-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "9ac6185dfdfa",
+      "actor": "INST1",
+      "titulo": "Venezuela oficialmente sin presidente constitucional al vencer plazo de 180 días",
+      "fuente_url": "https://www.facebook.com/lapapayadigital/posts/mundo-venezuela-cumple-este-4-de-julio-de-2026-un-momento-clave-en-su-panorama-p/1648208770644268/"
+    },
+    {
+      "hash": "e8530b1e2221",
+      "actor": "",
+      "titulo": "Delcy Rodríguez cumple plazo máximo de Presidencia Encargada; expertos advierten sobre legalidad del Gobierno",
+      "fuente_url": "https://venedigitall.com/delcy-rodriguez-cumple-el-plazo-maximo-de-la-presidencia-encargada-y-expertos-advierten-por-la-legalidad-de-su-gobierno/"
+    },
+    {
+      "hash": "cb7635d380cd",
+      "actor": "",
+      "titulo": "Alcance de 180 días en Constitución para suplir cargo de Presidencia encargada vence el 4 de julio",
+      "fuente_url": "https://www.facebook.com/lapapayadigital/posts/mundo-venezuela-cumple-este-4-de-julio-de-2026-un-momento-clave-en-su-panorama-p/1648208770644268/"
+    },
+    {
+      "hash": "071d4505024c",
+      "actor": "GOB1",
+      "titulo": "Iterremoto en Venezuela: 164 fallecidos confirmados y cientos de heridos",
+      "fuente_url": "https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%AD-las-incid/1452966910196498/"
+    },
+    {
+      "hash": "a153436e3db4",
+      "actor": "GOB1",
+      "titulo": "Autoridades venezolanas confirman más de 2,500 muertos por terremotos desde el 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=DPz9OwpMN8g"
+    }
+  ],
+  "contradicciones_n": 1,
+  "alertas_sa_n": 3
+}
