@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260704-14H-205911</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260704-14H-205911</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-03T20:59:11.122848+00:00 → 2026-07-04T20:59:11.122848+00:00<br>
+    <strong>Generado:</strong> 2026-07-04 21:05 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 1 A4</span>
+    <span class="stat-pill">🟠 5 A3</span>
+    <span class="stat-pill">🟡 5 A2</span>
+    <span class="stat-pill">📊 12 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Crisis humanitaria por terremoto en Venezuela con al menos 164 fallecidos y cientos de heridos, según reportes de *Últimas Noticias VE* y la vicepresidenta Delcy Rodríguez, requiriendo movilización inmediata de ayuda internacional.
+2. El BCV fijó la tasa oficial en 639,7029 Bs/USD (+1,00% diario, +114,56% anual), obligando a empresas a ajustar costos y márgenes ante impacto inflacionario, según *Finanzas Digital*.
+3. España reporta 34 muertos y 140 desaparecidos en Venezuela por el sismo (*Antena 3*), tensionando relaciones diplomáticas y exigiendo coordinación para gestión de víctimas.
+4. Cifra de víctimas en Venezuela escaló a 2.595 muertos y 46.000 desaparecidos (*BBC News*), agravando la crisis de gobernabilidad y presión internacional.
+5. Ataque ucraniano a terminal petrolera en San Petersburgo (*Local10/ITV News*) eleva volatilidad en mercados energéticos, con posibles efectos indirectos en Venezuela por sanciones y precios de commodities.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260704-14H-191613</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (12):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Terremoto en Venezuela causa al menos 164 fallecidos y cientos de heridos <a href="https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%AD-las-incid/1452966910196498/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: España confirma 34 muertos y 140 desaparecidos por terremotos en Venezuela <a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Terremotos en Venezuela: 2,595 muertos y 46,000 desaparecidos <a href="https://www.youtube.com/watch?v=8ruhb-FYsg4" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Ukrainian drone strike hits St. Petersburg oil terminal amid Russia bombardment campaign <a href="https://www.local10.com/news/world/2026/07/04/ukrainian-drones-hit-st-petersburg-oil-terminal-in-latest-long-range-attack-on-russia/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Tasa de cambio BCV al 02 de julio de 2026: 639,7029 Bs/USD <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Terremoto en Venezuela: 164 fallecidos confirmados y cientos de heridos <a href="https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%ED-las-incid/1452966910196498/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Tribunal Supremo de Justicia</strong>: PDVSA rig explosion in Venezuela injures at least 17 workers <a href="https://www.reuters.com/world/americas/rig-explosion-venezuela-leaves-least-8-workers-injured-sources-say-2026-06-29/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Citi forecasts $60 oil price amid refinery utilization and Hormuz normalization narrative <a href="https://www.kingdomexploration.com/?page=news&amp;article=citi-60-oil-forecast-vs-refinery-utilization-inventory-draw-2026" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Hernán Gil rescatado vivo tras 8 días en ruinas de Venezuela <a href="https://www.bbc.com/news/articles/ce375v12z0qo" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Médicos globales llegan a Venezuela para ayudar a víctimas del terremoto <a href="https://www.youtube.com/watch?v=Ovs6lpZ87EU" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INST2</code> (Tribunal Supremo de Justicia)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB2</code> (Diosdado Cabello), <code>GOB3</code> (Jorge Rodríguez), <code>INST4</code> (Banco Central de Venezuela), <code>INST5</code> (PDVSA), <code>INT1</code> (Departamento de Estado EE.UU.), <code>INT2</code> (OFAC / U.S. Treasury), <code>ORG1</code> (ORG1), <code>P1</code> (María Corina Machado)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>5 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>3 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>3 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 1</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 5</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremoto en Venezuela causa al menos 164 fallecidos y cientos de heridos</h3>
+  <p class="fact-summary">Un terremoto devastador en Venezuela ha dejado al menos 164 fallecidos y cientos de heridos, con cifras que podrían aumentar según autoridades[2]</p>
+  <p class="info-actor">Gobierno de Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>164 fallecidos</li><li>cientos de heridos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de ayuda humanitaria y coordinación internacional para respuesta ante crisis</div>
+  <div class="enlaces"><a href="https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%AD-las-incid/1452966910196498/" target="_blank" rel="noopener">📰 Ultimas Noticias VE</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>España confirma 34 muertos y 140 desaparecidos por terremotos en Venezuela</h3>
+  <p class="fact-summary">España ha confirmado 34 ciudadanos muertos y 140 desaparecidos tras los terremotos devastadores en Venezuela[4]</p>
+  <p class="info-actor">Gobierno de España</p>
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>34 muertos</li><li>140 desaparecidos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Afecta relaciones diplomáticas entre España y Venezuela, requiere coordinación internacional para gestión de víctimas</div>
+  <div class="enlaces"><a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html" target="_blank" rel="noopener">📰 Antena 3</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremoto en Venezuela: 164 fallecidos confirmados y cientos de heridos</h3>
+  <p class="fact-summary">Un terremoto devastador en Venezuela ha causado al menos 164 fallecidos y cientos de heridos, con proyecciones de aumento en el número de víctimas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>164</li><li>cientos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La magnitud de la tragedia humanitaria requiere coordinación internacional y podría reconfigurar relaciones diplomáticas y de ayuda en la región.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%ED-las-incid/1452966910196498/" target="_blank" rel="noopener">📰 Facebook - Últimas Noticias VE</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Ukrainian drone strike hits St. Petersburg oil terminal amid Russia bombardment campaign</h3>
+  <p class="fact-summary">A Ukrainian drone attack struck an oil terminal in St. Petersburg on Saturday, July 4, 2026, marking Kyiv&#x27;s continued long-range bombardment of Russia&#x27;s oil infrastructure[2][6]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>July 4, 2026</li><li>St. Petersburg oil terminal</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Intensifies global oil market volatility and reinforces geopolitical risk in energy supply chains, indirectly affecting emerging markets like Venezuela via sanctions and commodity price shifts</div>
+  <div class="enlaces"><a href="https://www.local10.com/news/world/2026/07/04/ukrainian-drones-hit-st-petersburg-oil-terminal-in-latest-long-range-attack-on-russia/" target="_blank" rel="noopener">📰 Local10 / ITV News</a> · <a href="https://www.itv.com/news/2026-07-04/ukraine-hits-key-russian-oil-terminal-in-st-petersburg" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremotos en Venezuela: 2,595 muertos y 46,000 desaparecidos</h3>
+  <p class="fact-summary">La cifra de muertos por los terremotos en Venezuela asciende a 2,595 mientras 46,000 personas permanecen desaparecidas</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 04/07/2026 10:00 VET</p>
+  <ul class="data-points"><li>2,595 muertos</li><li>46,000 desaparecidos</li><li>1,700 muertos confirmados</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La alta cifra de víctimas y desaparecidos genera presión internacional y agrava la crisis de gobernabilidad</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=8ruhb-FYsg4" target="_blank" rel="noopener">📰 BBC News</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA rig explosion in Venezuela injures at least 17 workers</h3>
+  <p class="fact-summary">An explosion at a PDVSA-operated oil rig in Los Llanos, central Venezuela, injured at least 17 workers late on Sunday, June 29, 2026[7]</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 29/06/2026 19:00 VET</p>
+  <ul class="data-points"><li>17 injured workers</li><li>Los Llanos central region</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Highlights ongoing safety and operational challenges in Venezuela&#x27;s oil sector under PDVSA, potentially affecting production capacity and international perception of energy reliability</div>
+  <div class="enlaces"><a href="https://www.reuters.com/world/americas/rig-explosion-venezuela-leaves-least-8-workers-injured-sources-say-2026-06-29/" target="_blank" rel="noopener">📰 Reuters</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Chile envía 9.5 toneladas de ayuda humanitaria a Venezuela tras terremoto</h3>
+  <p class="fact-summary">La Fuerza Aérea Chilena confirmó que enviará 9.5 toneladas de ayuda humanitaria a Venezuela tras el terremoto devastador[1]</p>
+  <p class="info-actor">Gobierno de Chile</p>
+  <p class="info-actor"><em>Publicado:</em> 02/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>9.5 toneladas</li><li>ayuda humanitaria</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja solidaridad regional y fortalece relaciones diplomáticas entre Chile y Venezuela en contexto de crisis</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6nW3C_cW3XQ" target="_blank" rel="noopener">📰 YouTube - Román Lozinski</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Médicos globales llegan a Venezuela para ayudar a víctimas del terremoto</h3>
+  <p class="fact-summary">Médicos de Canadá y otros países se desplazan a Venezuela para asistir a víctimas del terremoto, según reporte del Weather Network el 4 de julio de 2026</p>
+  <p class="info-actor">Médicos de Canadá</p>
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica movilización de recursos internacionales para la emergencia humanitaria, lo que puede influir en la percepción de la capacidad de gestión estatal venezolana</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=Ovs6lpZ87EU" target="_blank" rel="noopener">📰 The Weather Network</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Citi forecasts $60 oil price amid refinery utilization and Hormuz normalization narrative</h3>
+  <p class="fact-summary">As of July 4, 2026, oil posted its fourth consecutive weekly loss, driven by Wall Street narrative that Hormuz normalization signals reduced scarcity, contradicting Citi’s $60 oil call[4]</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>$60 oil forecast</li><li>96.1% refinery utilization</li><li>fourth weekly loss</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reveals divergence in oil price forecasts that may influence export revenue projections for oil-dependent nations like Venezuela, especially amid sanctions and geopolitical uncertainty</div>
+  <div class="enlaces"><a href="https://www.kingdomexploration.com/?page=news&amp;article=citi-60-oil-forecast-vs-refinery-utilization-inventory-draw-2026" target="_blank" rel="noopener">📰 Kingdom Exploration (Citi analysis)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Hernán Gil rescatado vivo tras 8 días en ruinas de Venezuela</h3>
+  <p class="fact-summary">Hernán Gil fue rescatado vivo después de estar atrapado 140 horas bajo 140 toneladas de tierra tras dos terremotos en Venezuela</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 04/07/2026 08:30 VET</p>
+  <ul class="data-points"><li>140 horas de atrapamiento</li><li>140 toneladas de tierra</li><li>1,700 mortos confirmados</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El &#x27;milagro vivo&#x27; intensifica la indignación pública y expone la falta de respuesta oficial, afectando la legitimidad del gobierno</div>
+  <div class="enlaces"><a href="https://www.bbc.com/news/articles/ce375v12z0qo" target="_blank" rel="noopener">📰 BBC News</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Ronaldo envía mensaje a sobreviviente de terremoto en Venezuela</h3>
+  <p class="fact-summary">El futbolista Cristiano Ronaldo transmitió un mensaje de apoyo a una sobreviviente del terremoto en Venezuela, según cobertura de Al Jazeera publicada el 4 de julio de 2026</p>
+  <p class="info-actor">Cristiano Ronaldo</p>
+  <p class="info-actor"><em>Publicado:</em> 03/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleca atención internacional de figuras públicas sobre la crisis humanitaria por terremotos en Venezuela, aunque sin implicaciones políticas directas</div>
+  <div class="enlaces"><a href="https://www.aljazeera.com/video/newsfeed/2026/7/4/ronaldo-sends-message-to-venezuelan-earthquake-survivor" target="_blank" rel="noopener">📰 Al Jazeera</a> · <a href="https://web.archive.org/web/20260704205920/https://www.aljazeera.com/video/newsfeed/2026/7/4/ronaldo-sends-message-to-venezuelan-earthquake-survivor" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/us/trump-extols-america-rails-communism-us-250th-celebration-2026-07-04/" target="_blank" rel="noopener">Trump extols America, rails at communism in US 250th celebration</a></li><li><a href="https://www.reuters.com/business/finance/trump-accounts-debut-us-kicks-off-250th-independence-day-celebrations-2026-07-04/" target="_blank" rel="noopener">Trump Accounts to debut as US kicks off 250th Independence Day celebrations</a></li><li><a href="https://www.reuters.com/business/energy/world-cup-250th-anniversary-help-drive-up-july-4-travel-even-high-fuel-prices-2026-07-02/" target="_blank" rel="noopener">World Cup, 250th anniversary to help drive up July 4 travel even as high fuel prices bite</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Tasa de cambio BCV al 02 de julio de 2026: 639,7029 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa oficial en 639,7029 Bs/USD, con un incremento de +6,3385 (+1,0008%) respecto al día anterior y una variación anual de +114,5624%[1]</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 01/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>639,7029 Bs/USD</li><li>+6,3385 Bs/USD</li><li>+1,0008%</li><li>+114,5624% variación anual</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa supera 639 Bs/USD, lo que obliga a las empresas a indexar estructuras de costos y recalcular márgenes de inmediato, impactando la inflación y precios de bienes[1][10]</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Cifras reales de víctimas y desaparecidos en Venezuela** — Las discrepancias entre fuentes (164 vs. 2,595 fallecidos) exigen verificación urgente para dimensionar la crisis humanitaria y planificar respuesta internacional.
+
+2. 🔴 **Tasa oficial del BCV (639,7 Bs/USD) y ajuste de costos empresariales** — El salto cambiario obliga a recalcular precios y márgenes en tiempo real, con riesgo de acelerar inflación y desabastecimiento en sectores clave.
+
+3. 🟠 **Reacción de actores clave en silencio (Diosdado Cabello, Machado, González Urrutia)** — Su ausencia en declaraciones sobre el terremoto o la economía sugiere estrategias de bajo perfil o coordinación interna, relevante para estabilidad política.
+
+4. 🟠 **Impacto del ataque ucraniano a terminal petrolera rusa en mercados globales** — Aunque indirecto, la volatilidad en precios del crudo podría afectar a Venezuela por sanciones o cambios en flujos comerciales.
+
+5. 🟡 **Coordinación España-Venezuela por víctimas españolas** — La gestión diplomática será clave para evitar tensiones, pero no hay evidencia aún de acciones concretas.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT1</strong> — Departamento de Estado EE.UU. (Política exterior estadounidense)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(9)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Al Jazeera</td><td><a href="https://www.aljazeera.com/video/newsfeed/2026/7/4/ronaldo-sends-message-to-venezuelan-earthquake-survivor" target="_blank" rel="noopener">https://www.aljazeera.com/video/newsfeed/2026/7/4/ronaldo-sends-message-to-venezuelan-earthquake-survivor</a></td><td>2026-07-04</td></tr><tr><td>The Weather Network</td><td><a href="https://www.youtube.com/watch?v=Ovs6lpZ87EU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Ovs6lpZ87EU</a></td><td>2026-07-04</td></tr><tr><td>BBC News</td><td><a href="https://www.bbc.com/news/articles/ce375v12z0qo" target="_blank" rel="noopener">https://www.bbc.com/news/articles/ce375v12z0qo</a></td><td>2026-07-04</td></tr><tr><td>BBC News</td><td><a href="https://www.youtube.com/watch?v=8ruhb-FYsg4" target="_blank" rel="noopener">https://www.youtube.com/watch?v=8ruhb-FYsg4</a></td><td>2026-07-04</td></tr><tr><td>Ultimas Noticias VE</td><td><a href="https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%AD-las-incid/1452966910196498/" target="_blank" rel="noopener">https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%AD-las-incid/1452966910196498/</a></td><td>2026-07-04</td></tr><tr><td>Antena 3</td><td><a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html" target="_blank" rel="noopener">https://www.antena3.com/noticias/sociedad/noticias-hoy-sabado-4-julio-2026_202607046a49089aa8768a6aee40fe11.html</a></td><td>2026-07-04</td></tr><tr><td>YouTube - Román Lozinski</td><td><a href="https://www.youtube.com/watch?v=6nW3C_cW3XQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=6nW3C_cW3XQ</a></td><td>2026-07-03</td></tr><tr><td>Reuters</td><td><a href="https://www.reuters.com/world/americas/rig-explosion-venezuela-leaves-least-8-workers-injured-sources-say-2026-06-29/" target="_blank" rel="noopener">https://www.reuters.com/world/americas/rig-explosion-venezuela-leaves-least-8-workers-injured-sources-say-2026-06-29/</a></td><td>2026-06-29</td></tr><tr><td>Local10 / ITV News</td><td><a href="https://www.local10.com/news/world/2026/07/04/ukrainian-drones-hit-st-petersburg-oil-terminal-in-latest-long-range-attack-on-russia/" target="_blank" rel="noopener">https://www.local10.com/news/world/2026/07/04/ukrainian-drones-hit-st-petersburg-oil-terminal-in-latest-long-range-attack-on-russia/</a></td><td>2026-07-04</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Kingdom Exploration (Citi analysis)</td><td><a href="https://www.kingdomexploration.com/?page=news&amp;article=citi-60-oil-forecast-vs-refinery-utilization-inventory-draw-2026" target="_blank" rel="noopener">https://www.kingdomexploration.com/?page=news&amp;article=citi-60-oil-forecast-vs-refinery-utilization-inventory-draw-2026</a></td><td>2026-07-04</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-02-julio-2026/</a></td><td>2026-07-02</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Facebook - Últimas Noticias VE</td><td><a href="https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%ED-las-incid/1452966910196498/" target="_blank" rel="noopener">https://www.facebook.com/ultimasnoticiasve/posts/minuto-a-minuto-despu%C3%A9s-de-la-tragedia-s%C3%A1bado-4-de-julio-2026siga-aqu%C3%ED-las-incid/1452966910196498/</a></td><td>2026-07-04</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-04</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
