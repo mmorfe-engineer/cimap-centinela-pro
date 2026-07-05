@@ -1,0 +1,448 @@
+{
+  "version": "1.0",
+  "correlativo": "20260705-14H-192724",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-05T19:41:46.623668+00:00",
+  "rango_inicio": "2026-07-04T19:27:24.371532+00:00",
+  "rango_fin": "2026-07-05T19:27:24.371532+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 8,
+    "A3": 18,
+    "A2": 12,
+    "A1": 0,
+    "A0": 0,
+    "total": 38
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 12,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A4",
+        "A4",
+        "A4",
+        "A3",
+        "A2",
+        "A4",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Venezuela empieza a medir su catástrofe desde el espacio con escombros como primer problema",
+      "ultima_fuente_url": "https://elpais.com/hemeroteca/2026-07-05/"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Delcy Rodríguez cumple seis meses a cargo de Venezuela con país en conmoción",
+      "ultima_fuente_url": "https://elpais.com/america/2026-07-05/delcy-rodriguez-llega-a-sus-primeros-seis-meses-a-cargo-de-venezuela-con-el-pais-en-conmocion.html"
+    },
+    "P2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Oposición exige elecciones al cumplirse 180 días de ausencia temporal de Maduro",
+      "ultima_fuente_url": "https://www.cibercuba.com/noticias/2026-07-04-u1-e192519-s27061-nid334181-3-julio-venezuela-al-limite-constitucional-maduro"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "María Corina Machado busca regreso con interinato y presiones de EEUU",
+      "ultima_fuente_url": "https://efectococuyo.com/politica/machado-pelea-regreso-con-interinato-y-eeuu-se-plantean-nuevos-desafios-dicen-analistas/"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Asamblea Nacional despliega apoyo a víctimas del doble terremoto suspensión funciones legislativas",
+      "ultima_fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-gilberto-gimenez-an-se-despliega-para-apoyar-a-victimas-del-doble-terremoto"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Balance oficial: 2.954 muertos y 16.592 heridos por terremotos de 7.5 y 7.2 Richter en Venezuela",
+      "ultima_fuente_url": "https://rtvc.es/aumentan-35-espanoles-fallecidos-doble-terremoto-venezuela-5-julio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Italia ya desplegó bomberos, rescatistas urbanos y personal sanitario en dos vuelos militares hacia ",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "OPEP+ aumenta producción en 188.000 barriles diarios desde agosto",
+      "ultima_fuente_url": "https://www.aps.dz/es/economia/industria-energia-minas/mr7r6gy1-opep-argelia-y-otros-seis-paises-deciden-aumentar-su-produccion-en-188-000-barriles-diarios-a-partir-de-agosto-proximo"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Suministro de gasolina confirmado para 5 de julio de 2026 tras fallas en placas",
+      "ultima_fuente_url": "https://www.instagram.com/p/DaYxcrTGgq9/"
+    },
+    "INT3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Colombia y Cuba envían ayuda humanitaria y equipos de rescate a Venezuela tras doble terremoto",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "INST4"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "f0acffa6426b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia la Gran Misión Venezuela Renace para recuperación tras terremotos",
+      "fuente_url": "https://albaciudad.org/2026/07/delcy-rodriguez-anuncios-economicos-por-terremotos/"
+    },
+    {
+      "hash": "2ba01bf099e3",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez condecora brigadas internacionales y reporta cifras de víctimas fatales",
+      "fuente_url": "https://www.telesurtv.net/rodriguez-brigadas-internacionales-venezuela/"
+    },
+    {
+      "hash": "b81e02c0e340",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez niega falta de actuación estatal y descalifica denuncias como matrices políticas",
+      "fuente_url": "https://www.bbc.com/mundo/articles/c0lye319p58o"
+    },
+    {
+      "hash": "aac6f3224544",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez cumple seis meses a cargo de Venezuela con país en conmoción",
+      "fuente_url": "https://elpais.com/america/2026-07-05/delcy-rodriguez-llega-a-sus-primeros-seis-meses-a-cargo-de-venezuela-con-el-pais-en-conmocion.html"
+    },
+    {
+      "hash": "8a0f932ee9b0",
+      "actor": "P2",
+      "alert_level": "A4",
+      "titulo_corto": "Oposición exige elecciones al cumplirse 180 días de ausencia temporal de Maduro",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-04-u1-e192519-s27061-nid334181-3-julio-venezuela-al-limite-constitucional-maduro"
+    },
+    {
+      "hash": "517f15ba7734",
+      "actor": "P1",
+      "alert_level": "A3",
+      "titulo_corto": "María Corina Machado busca regreso con interinato y presiones de EEUU",
+      "fuente_url": "https://efectococuyo.com/politica/machado-pelea-regreso-con-interinato-y-eeuu-se-plantean-nuevos-desafios-dicen-analistas/"
+    },
+    {
+      "hash": "03659ba853dc",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez cumple seis meses como presidenta encargada con reconocimiento de acercamiento a EEU",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/05/venezuela/delcy-rodriguez-seis-meses-impacto-sismos-relacion-eeuu-orix"
+    },
+    {
+      "hash": "fea8ba0c6ff3",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional despliega apoyo a víctimas del doble terremoto suspensión funciones legislativas",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-gilberto-gimenez-an-se-despliega-para-apoyar-a-victimas-del-doble-terremoto"
+    },
+    {
+      "hash": "63246844c60c",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Balance oficial: 2.954 muertos y 16.592 heridos por terremotos de 7.5 y 7.2 Richter en Venezuela",
+      "fuente_url": "https://rtvc.es/aumentan-35-espanoles-fallecidos-doble-terremoto-venezuela-5-julio-2026/"
+    },
+    {
+      "hash": "3b11450b10c0",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Aumentan a 35 españoles fallecidos por doble terremoto en Venezuela con 140 desaparecidos",
+      "fuente_url": "https://rtvc.es/aumentan-35-espanoles-fallecidos-doble-terremoto-venezuela-5-julio-2026/"
+    },
+    {
+      "hash": "0708c4aa71cf",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez cumple seis meses en Venezuela con país en conmoción",
+      "fuente_url": "https://elpais.com/hemeroteca/2026-07-05/1/"
+    },
+    {
+      "hash": "c83d95fc9476",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Cifras oficiales actualizadas de víctimas por terremotos en Venezuela",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html"
+    },
+    {
+      "hash": "5e2ee72f2185",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Colaboración internacional en ayuda humanitaria para Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "defe228c47e8",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Réplicas continúan y crisis humanitaria se agudiza en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "9210e6e5ed97",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Despliegue de 50 toneladas de ayuda técnica y médicos para Caracas",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "33ff27731cef",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela: 2,954 muertos confirmados y 11 días después de doble terremoto de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.youtube.com/watch?v=G5tjQyg5pHs"
+    },
+    {
+      "hash": "bb0c6baa1006",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Colombia y EE.UU. aportan 300 rescatistas y 50 toneladas de insumos para reconstrucción en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "2eab6958e0ed",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Replica fuerte sacude Caracas y La Guaira, cinco días después del doble terremoto",
+      "fuente_url": "https://www.dw.com/es/venezuela-se-agota-el-tiempo-para-encontrar-sobrevivientes/video-77778930"
+    },
+    {
+      "hash": "6474b83ca3c4",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Fortalece réplica sacude Caracas y La Guaira cinco días después del doble terremoto",
+      "fuente_url": "https://www.dw.com/es/venezuela-se-agota-el-tiempo-para-encontrar-sobrevivientes/video-77778930"
+    },
+    {
+      "hash": "67a1bec42c35",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela con casi 3 mil muertos y 100 edificios caídos por terremotos de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "79a38debf117",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Italia despliega equipos de bomberos y 300 rescatistas para Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "8636df6adffb",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Delsy Rodríguez anuncia alianza internacional para reconstruir aeropuerto de Maquetía",
+      "fuente_url": "https://www.youtube.com/watch?v=G5tjQyg5pHs"
+    },
+    {
+      "hash": "cb07405dc0e9",
+      "actor": "INT2",
+      "alert_level": "A3",
+      "titulo_corto": "OPEP+ aumenta producción en 188.000 barriles diarios desde agosto",
+      "fuente_url": "https://www.aps.dz/es/economia/industria-energia-minas/mr7r6gy1-opep-argelia-y-otros-seis-paises-deciden-aumentar-su-produccion-en-188-000-barriles-diarios-a-partir-de-agosto-proximo"
+    },
+    {
+      "hash": "81591233f81c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Caída del 1.5% en producción nacional de petróleo de Venezuela",
+      "fuente_url": "https://www.instagram.com/p/DaamAnNDgJK/"
+    },
+    {
+      "hash": "dce938145a8f",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "Suministro de gasolina confirmado para 5 de julio de 2026 tras fallas en placas",
+      "fuente_url": "https://www.instagram.com/p/DaYxcrTGgq9/"
+    },
+    {
+      "hash": "59fbd2ff1593",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 3,000 fallecidos y 16,000 en crisis humanitaria",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "0bda29c5574f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez anuncia ayudas económicas y alianza internacional para reconstrucción de aeropuertos",
+      "fuente_url": "https://www.youtube.com/watch?v=G5tjQyg5pHs"
+    },
+    {
+      "hash": "a81b7f6d4776",
+      "actor": "INT3",
+      "alert_level": "A3",
+      "titulo_corto": "Colombia y Cuba envían ayuda humanitaria y equipos de rescate a Venezuela tras doble terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "710762402f8a",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Portugal decreta luto nacional por sismos en Venezuela que dejaron 2.645 fallecidos",
+      "fuente_url": "https://www.facebook.com/CancilleriaVE/posts/noticia-portugal-decreta-luto-nacional-el-pr%C3%B3ximo-domingo-5-de-julio-por-sismos-/1484585380379488/"
+    },
+    {
+      "hash": "f7ebc71d708a",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Sismos en Venezuela: emergencia expone limitaciones del país con 2.645 fallecidos y proyección de 10",
+      "fuente_url": "https://larepublica.pe/mundo/2026/07/05/el-terremoto-en-venezuela-el-desastre-que-golpea-a-un-pais-marcado-por-anos-de-crisis-295040"
+    },
+    {
+      "hash": "d87e5a04d71f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "El Nacional exige levantar bloqueo a más de 60 medios digitales en Venezuela",
+      "fuente_url": "https://www.elnuevodia.com/noticias/mundo/notas/la-informacion-puede-salvar-vidas-presidente-editor-de-el-nacional-exige-levantamiento-de-bloqueo-a-medios-digitales-en-venezuela/"
+    },
+    {
+      "hash": "6d2817811713",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Actualización oficial de tasa de cambio BCV 03 de julio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-03-julio-2026/"
+    },
+    {
+      "hash": "e2fb35d7c09d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "El debate militar sobre proteccion de vidas frente a blindaje de poder en desastres de Venezuela",
+      "fuente_url": "https://www.infobae.com/venezuela/2026/07/05/proteger-vidas-o-blindar-el-poder-el-debate-sobre-la-actuacion-militar-ante-contextos-de-desastre-en-venezuela/"
+    },
+    {
+      "hash": "07c8aeed2a8f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Nestor Hidalgo rechaza declaraciones de Guyana sobre referéndum consultivo en Venezuela",
+      "fuente_url": "https://lauicom.edu.ve/2026/07/05/"
+    },
+    {
+      "hash": "6fd1515e45ea",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Cifra oficial de víctimas por terremotos en Venezuela asciende a 2.954 muertos y 16.592 heridos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html"
+    },
+    {
+      "hash": "c69e5f0702d7",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Estado nacional declara La Guaira zona de desastre con colapso de más de 100 edificaciones",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "6ad80460ea17",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Italia ya desplegó bomberos, rescatistas urbanos y personal sanitario en dos vuelos militares hacia ",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "b8a7c65248ab",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela empieza a medir su catástrofe desde el espacio con escombros como primer problema",
+      "fuente_url": "https://elpais.com/hemeroteca/2026-07-05/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "8a0f932ee9b0",
+      "actor": "P2",
+      "titulo": "Oposición exige elecciones al cumplirse 180 días de ausencia temporal de Maduro",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-04-u1-e192519-s27061-nid334181-3-julio-venezuela-al-limite-constitucional-maduro"
+    },
+    {
+      "hash": "63246844c60c",
+      "actor": "GOB3",
+      "titulo": "Balance oficial: 2.954 muertos y 16.592 heridos por terremotos de 7.5 y 7.2 Richter en Venezuela",
+      "fuente_url": "https://rtvc.es/aumentan-35-espanoles-fallecidos-doble-terremoto-venezuela-5-julio-2026/"
+    },
+    {
+      "hash": "3b11450b10c0",
+      "actor": "",
+      "titulo": "Aumentan a 35 españoles fallecidos por doble terremoto en Venezuela con 140 desaparecidos",
+      "fuente_url": "https://rtvc.es/aumentan-35-espanoles-fallecidos-doble-terremoto-venezuela-5-julio-2026/"
+    },
+    {
+      "hash": "c83d95fc9476",
+      "actor": "GOB1",
+      "titulo": "Cifras oficiales actualizadas de víctimas por terremotos en Venezuela",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html"
+    },
+    {
+      "hash": "defe228c47e8",
+      "actor": "GOB1",
+      "titulo": "Réplicas continúan y crisis humanitaria se agudiza en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "59fbd2ff1593",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 3,000 fallecidos y 16,000 en crisis humanitaria",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "f7ebc71d708a",
+      "actor": "",
+      "titulo": "Sismos en Venezuela: emergencia expone limitaciones del país con 2.645 fallecidos y proyección de 10.000 víctimas",
+      "fuente_url": "https://larepublica.pe/mundo/2026/07/05/el-terremoto-en-venezuela-el-desastre-que-golpea-a-un-pais-marcado-por-anos-de-crisis-295040"
+    },
+    {
+      "hash": "6fd1515e45ea",
+      "actor": "GOB1",
+      "titulo": "Cifra oficial de víctimas por terremotos en Venezuela asciende a 2.954 muertos y 16.592 heridos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
