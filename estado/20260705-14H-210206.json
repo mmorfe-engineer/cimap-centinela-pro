@@ -1,0 +1,163 @@
+{
+  "version": "1.0",
+  "correlativo": "20260705-14H-210206",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-05T21:06:29.113720+00:00",
+  "rango_inicio": "2026-07-04T21:02:06.289518+00:00",
+  "rango_fin": "2026-07-05T21:02:06.289518+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 2,
+    "A3": 7,
+    "A2": 2,
+    "A1": 0,
+    "A0": 0,
+    "total": 11
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "República de Estados Unidos desplaza más de 900 militares para respuesta a terremoto en Venezuela",
+      "ultima_fuente_url": "https://www.reuters.com/world/americas/us-military-deploys-over-900-personnel-venezuela-earthquake-response-2026-07-01/"
+    },
+    "INT3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Colombia envía ayuda humanitaria y equipo de rescate a Venezuela tras terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    "GOB1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A3",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Estado de La Guaira declarado zona de desastre por gobierno venezolano",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "OPEP+ anuncia aumento de cuotas petroleras mientras el crudo se mantiene bajo presión bajista",
+      "ultima_fuente_url": "https://es.dailyforex.com/forex-technical-analysis/2026/07/petroleo-podria-dejar-sorpresas-en-julio-2026/247237"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT2"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "8cdbfab10236",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "República de Estados Unidos desplaza más de 900 militares para respuesta a terremoto en Venezuela",
+      "fuente_url": "https://www.reuters.com/world/americas/us-military-deploys-over-900-personnel-venezuela-earthquake-response-2026-07-01/"
+    },
+    {
+      "hash": "8c8d4f8ed7ec",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Muerte total por terremotos en Venezuela asciende a 2,594; un sobreviviente relata días bajo el derr",
+      "fuente_url": "https://www.reuters.com/world/americas/death-toll-venezuela-quakes-rises-2954-2026-07-04/"
+    },
+    {
+      "hash": "2ee29cd93f65",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Verisk estima pérdidas económicas de más de $10 millones por el terremoto en Venezuela",
+      "fuente_url": "https://www.reuters.com/business/environment/verisk-estimates-over-10-billion-economic-losses-venezuela-earthquake-2026-07-02/"
+    },
+    {
+      "hash": "2e047a106521",
+      "actor": "INT3",
+      "alert_level": "A3",
+      "titulo_corto": "Colombia envía ayuda humanitaria y equipo de rescate a Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "387e5a1830e6",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Italia despliega equipos especializados y personal sanitario en Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "cc47759af667",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Gobierno de Venezuela declara duelo nacional por terremotos de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.dw.com/es/gobierno-de-venezuela-declara-duelo-nacional-por-terremotos/a-77794059"
+    },
+    {
+      "hash": "8d5220d0c3dc",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza tasa de cambio a 652,9726 Bs/USD con incremento anual de +119%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-03-julio-2026/"
+    },
+    {
+      "hash": "83aca122b7f8",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "OPEP+ anuncia aumento de cuotas petroleras mientras el crudo se mantiene bajo presión bajista",
+      "fuente_url": "https://es.dailyforex.com/forex-technical-analysis/2026/07/petroleo-podria-dejar-sorpresas-en-julio-2026/247237"
+    },
+    {
+      "hash": "acf43db7ca0c",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: casi 3.000 muertos y 16.000 damnificados",
+      "fuente_url": "https://www.youtube.com/watch?v=LTqHJT0urew"
+    },
+    {
+      "hash": "d2056ee064be",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Estado de La Guaira declarado zona de desastre por gobierno venezolano",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    },
+    {
+      "hash": "5862f3607e29",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Italia despliega ayuda humanitaria con rescatistas y equipos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=qsUubDu14Bw"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "cc47759af667",
+      "actor": "GOB1",
+      "titulo": "Gobierno de Venezuela declara duelo nacional por terremotos de magnitud 7.2 y 7.5",
+      "fuente_url": "https://www.dw.com/es/gobierno-de-venezuela-declara-duelo-nacional-por-terremotos/a-77794059"
+    },
+    {
+      "hash": "acf43db7ca0c",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: casi 3.000 muertos y 16.000 damnificados",
+      "fuente_url": "https://www.youtube.com/watch?v=LTqHJT0urew"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
