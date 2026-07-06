@@ -1,0 +1,256 @@
+{
+  "version": "1.0",
+  "correlativo": "20260706-14H-213820",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-06T21:47:15.767485+00:00",
+  "rango_inicio": "2026-07-05T21:38:20.865636+00:00",
+  "rango_fin": "2026-07-06T21:38:20.865636+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 4,
+    "A3": 8,
+    "A2": 8,
+    "A1": 0,
+    "A0": 0,
+    "total": 20
+  },
+  "actores_activos": {
+    "INST3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Turkish Red Crescent: Response to the Venezuela Earthquake humanitarian situation",
+      "ultima_fuente_url": "https://reliefweb.int/report/venezuela-bolivarian-republic/turkish-red-crescent-response-venezuela-earthquake-humanitarian-situation-july-6-2026"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Venezuela confirma 3.342 muertos por terremotos; nuevas medidas de reconstrucción y ayuda internacio",
+      "ultima_fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    "INT1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "OPEC+ boosts output targets, causing oil prices to decline and US gas prices to fall",
+      "ultima_fuente_url": "https://www.facebook.com/groups/OurColdwater/posts/3951116968516847/"
+    },
+    "GOB1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Se anuncia creación de 'Gran Misión Venezuela Renace' y alianza internacional para recuperar aeropue",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=YfNlKwclRVU"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Russia stock market hits 3-year low amid MOEX 12.25% loss over 4 weeks",
+      "ultima_fuente_url": "https://tradingeconomics.com/russia/stock-market/news/564491"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "FIFA y Shakira crean fondo para educación en Venezuela en apoyo a víctimas de terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB3",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "d05dfa6493e7",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Toll de muertos en terremotos de Venezuela supera 3.300 personas",
+      "fuente_url": "https://www.democracynow.org/2026/7/6/headlines"
+    },
+    {
+      "hash": "dae5312c124b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Guardia venezolano rescatado de rubble de terremoto después de 8 días en Venezuela",
+      "fuente_url": "https://www.cbc.ca/player/play/video/9.7256984"
+    },
+    {
+      "hash": "3f24490eb412",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de niño pequeño en rubble de terremoto en Venezuela",
+      "fuente_url": "https://www.cbsnews.com/video/toddler-rubble-after-venezuela-earthquakes/"
+    },
+    {
+      "hash": "8d78acecf464",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela's interim leader alleges destabilization amid quake crisis",
+      "fuente_url": "https://www.upi.com/Top_News/World-News/2026/07/06/latam-venezuela-delcy-rodriguez-opponents-destabilization/5211783357136/"
+    },
+    {
+      "hash": "b30400cbb548",
+      "actor": "INST3",
+      "alert_level": "A2",
+      "titulo_corto": "Turkish Red Crescent: Response to the Venezuela Earthquake humanitarian situation",
+      "fuente_url": "https://reliefweb.int/report/venezuela-bolivarian-republic/turkish-red-crescent-response-venezuela-earthquake-humanitarian-situation-july-6-2026"
+    },
+    {
+      "hash": "b2599343b039",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuelan leader marks Independence Day with message of 'no social unrest'",
+      "fuente_url": "https://www.aljazeera.com/news/2026/7/5/venezuelan-leader-marks-independence-day-with-message-of-no-social-unrest"
+    },
+    {
+      "hash": "06bb0fd80fee",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela confirma 3.342 muertos por terremotos; nuevas medidas de reconstrucción y ayuda internacio",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "8632a64fb5bf",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "FIFA y Shakira crean fondo para educación en Venezuela tras terremotos; se anuncia alianza internaci",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "9ea3b150a9b2",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "EE.UU. despliega operativo logístico en La Guaira para movilizar suministros y donaciones internacio",
+      "fuente_url": "https://www.youtube.com/watch?v=YfNlKwclRVU"
+    },
+    {
+      "hash": "6271bbbdcf5a",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "US oil refiners gain, Chinese rivals lose as Trump's Venezuela strike reshapes oil exports",
+      "fuente_url": "https://www.tbsnews.net/world/us-oil-refiners-win-chinese-rivals-lose-trumps-venezuela-strike-1326331"
+    },
+    {
+      "hash": "6bf980b1ecb5",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela oil revenues reached $5.5 billion in Q1 2026 despite regime instability",
+      "fuente_url": "https://english.elpais.com/international/2026-07-06/trumps-paradox-in-venezuela-supporting-a-regime-he-promised-to-overthrow.html"
+    },
+    {
+      "hash": "8ba0dab9e614",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "US seizes $8 billion of Venezuela's oil wealth since overthrowing Maduro in January",
+      "fuente_url": "https://www.commondreams.org/news/venezuela-oil-wealth-earthquake"
+    },
+    {
+      "hash": "ab357bda3a47",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "OPEC+ boosts output targets, causing oil prices to decline and US gas prices to fall",
+      "fuente_url": "https://www.facebook.com/groups/OurColdwater/posts/3951116968516847/"
+    },
+    {
+      "hash": "7c1f5c3d669b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "UK sanctions Russian scientists and labs behind Novichok and Navalny poisoning",
+      "fuente_url": "https://www.euronews.com/my-europe/2026/07/06/uk-sanctions-russian-scientists-and-labs-behind-chemical-attacks-foreign-office-says"
+    },
+    {
+      "hash": "919fd9d08523",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Russia stock market hits 3-year low amid MOEX 12.25% loss over 4 weeks",
+      "fuente_url": "https://tradingeconomics.com/russia/stock-market/news/564491"
+    },
+    {
+      "hash": "f1b81d233dea",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Cuba tourism collapses 58% in 2026 due to US sanctions targeting military-linked hotel sector",
+      "fuente_url": "https://www.cnn.com/2026/07/06/americas/cuba-hotels-us-tourists-latam-intl"
+    },
+    {
+      "hash": "b65372a653cc",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "One tycoon profits from 'dark' oil shipments while others avoid Hormuz amid sanctions risk",
+      "fuente_url": "https://www.instagram.com/p/Dac5HrGGiG8/"
+    },
+    {
+      "hash": "c9ef452f6f91",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Gobierno de Venezuela confirma 3.535 muertos y más de 16.000 heridos por terremotos; se prohíbe expo",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix"
+    },
+    {
+      "hash": "b8e07cd635dc",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Se anuncia creación de 'Gran Misión Venezuela Renace' y alianza internacional para recuperar aeropue",
+      "fuente_url": "https://www.youtube.com/watch?v=YfNlKwclRVU"
+    },
+    {
+      "hash": "53b31ce46df2",
+      "actor": "INT2",
+      "alert_level": "A2",
+      "titulo_corto": "FIFA y Shakira crean fondo para educación en Venezuela en apoyo a víctimas de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "06bb0fd80fee",
+      "actor": "GOB4",
+      "titulo": "Venezuela confirma 3.342 muertos por terremotos; nuevas medidas de reconstrucción y ayuda internacional",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "6271bbbdcf5a",
+      "actor": "",
+      "titulo": "US oil refiners gain, Chinese rivals lose as Trump's Venezuela strike reshapes oil exports",
+      "fuente_url": "https://www.tbsnews.net/world/us-oil-refiners-win-chinese-rivals-lose-trumps-venezuela-strike-1326331"
+    },
+    {
+      "hash": "8ba0dab9e614",
+      "actor": "",
+      "titulo": "US seizes $8 billion of Venezuela's oil wealth since overthrowing Maduro in January",
+      "fuente_url": "https://www.commondreams.org/news/venezuela-oil-wealth-earthquake"
+    },
+    {
+      "hash": "c9ef452f6f91",
+      "actor": "GOB1",
+      "titulo": "Gobierno de Venezuela confirma 3.535 muertos y más de 16.000 heridos por terremotos; se prohíbe exportar materiales de c",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
