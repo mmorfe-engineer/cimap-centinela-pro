@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260706-14H-200857</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260706-14H-200857</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-05T20:08:57.887219+00:00 → 2026-07-06T20:08:57.887219+00:00<br>
+    <strong>Generado:</strong> 2026-07-06 20:34 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 6 A4</span>
+    <span class="stat-pill">🟠 20 A3</span>
+    <span class="stat-pill">🟡 19 A2</span>
+    <span class="stat-pill">📊 50 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Crisis humanitaria crítica tras terremotos: cifras oficiales reportan 3.342 fallecidos, 16.740 heridos, 95 desaparecidos (17 menores) y 6.642 rescatados, según declaraciones de Delcy Rodríguez y Jorge Rodríguez (Asamblea Nacional).
+
+2. Daños estructurales graves: 190 edificios hundidos y 856 con daños estructurales, según balance del presidente de la Asamblea Nacional, lo que agrava la emergencia habitacional.
+
+3. Activación de protocolos nacionales e internacionales: gobierno venezolano lanzó la *Gran Misión Venezuela Renace* para reconstrucción de viviendas y anunció financiamiento mensual para afectados, mientras la FIFA y Shakira crearon un fondo para educación de víctimas.
+
+4. Reconstrucción de infraestructura crítica: se anunció alianza internacional (sin detalles de países participantes) para recuperar el Aeropuerto Internacional de Maiquetía, clave para logística de ayuda humanitaria.
+
+5. Contexto geopolítico paralelo: la UE prepara reforma de ampliación y Hamas disolvió su gobierno en Gaza, eventos con potencial impacto en cooperación internacional hacia Venezuela.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260706-14H-194609</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (46):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Gobierno venezolano confirma 3.342 muertos por terremotos con 16.000 heridos <a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Terremotos en Venezuela: 3.342 muertos y 16.000 heridos confirmados por el Gobierno <a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Terremotos en Venezuela con casi 3,000 muertos y 16,000 sin vivienda <a href="https://www.youtube.com/watch?v=kYiX4EiwqSU" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Gobierno confirma 3.342 muertos y más de 16.000 heridos en terremotos de Venezuela <a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Terremotos en Venezuela: 95 desaparecidos y 17 menores de edad entre ellos <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Jorge Rodríguez</strong>: Doble terremoto en Venezuela: 3.340 fallecidos y 16.740 heridos según Asamblea Nacional <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: FIFA y Shakira crean fondo de educación en Venezuela para víctimas de terremotos <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Gobierno anuncia &#x27;Gran Misión Venezuela Renace&#x27; para reconstrucción de viviendas afectadas por terremotos <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Delcy Rodríguez condena estallidos de la oposición y anuncia despliegue de la Armada <a href="https://www.polianalitica.com/boletines/5215/boletin-informativo-polianalitica-lunes-6-de-julio-de-2026-800-am" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Delc Rodríguez anuncia alianza internacional para recuperar aeropuerto de Maiquetía <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+
+<div class="novedades-bloque novedades-persistentes">
+  <strong>🔁 TEMAS QUE PERSISTEN ENTRE CORTES (3):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A2">A2</span> <strong>Delcy Rodríguez</strong>: Exoneración de impuestos para registros de alquileres y compra de inmuebles</li><li><span class="badge badge-A2">A2</span> <strong>PDVSA</strong>: PDVSA reporta dificultades operativas en taladros del flanco oriental</li><li><span class="badge badge-A2">A2</span> <strong>Delcy Rodríguez</strong>: Exoneración de impuestos para registros de alquiler y compra de inmuebles en Venezuela</li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INT2</code> (OFAC / U.S. Treasury), <code>INT4</code> (Unión Europea), <code>P1</code> (María Corina Machado)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>10 cortes sin actividad</strong></li><li><code>INST4</code> — Banco Central de Venezuela (<em>Autoridad monetaria</em>): <strong>5 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>2 cortes sin actividad</strong></li><li><code>P1</code> — María Corina Machado (<em>Opositora</em>): <strong>2 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 6</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 3</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremotos en Venezuela: 95 desaparecidos y 17 menores de edad entre ellos</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, elevó la cifra de desaparecidos a 95, de los cuales 17 son menores de edad, con 16.740 heridos y 6.642 rescatados.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>95</li><li>17</li><li>16740</li><li>6642</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra de desaparecidos y menores obliga a activar protocolos de búsqueda y protección infantil, con impacto en logística de rescate y atención médica.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 YouTube / TelevenTV</a> · <a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Gobierno venezolano confirma 3.342 muertos por terremotos con 16.000 heridos</h3>
+  <p class="fact-summary">El Gobierno de Venezuela confirmó a 12 días de los terremotos que fallecieron 3.342 personas y hay más de 16.000 heridos, según autoridades nacionales.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra oficial define la escala de la respuesta humanitaria y requiere coordinación internacional inmediata para atención de heridos y rescatados.</div>
+  <div class="enlaces"><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">📰 Clarín</a> · <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706195344/https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Doble terremoto en Venezuela: 3.340 fallecidos y 16.740 heridos según Asamblea Nacional</h3>
+  <p class="fact-summary">La cifra oficial de fallecidos tras el doble terremoto en Venezuela asciende a 3.340, con 16.740 heridos y 6.642 rescatados, según Jorge Rodríguez, presidente de la Asamblea Nacional</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3340</li><li>16740</li><li>6642</li><li>16740</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria de fuente oficial (Asamblea Nacional); no confirmado por fuente primaria independiente</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La alta cifra de fallecidos y heridos requiere movilización inmediata de recursos internacionales y reactivación de protocolos de emergencia nacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a> · <a href="https://www.infobae.com/america/agencias/2026/07/06/lunes-6-de-julio-de-2026-0200-gmt/?outputType=amp-type" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Gobierno confirma 3.342 muertos y más de 16.000 heridos en terremotos de Venezuela</h3>
+  <p class="fact-summary">El Gobierno de Venezuela confirmó que el número de muertos asciende a 3.342 y hay más de 16.000 heridos a 12 días de los dos terremotos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 04:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Las cifras oficiales de víctimas determinan la escala de la respuesta humanitaria y allocation de recursos internacionales para Venezuela</div>
+  <div class="enlaces"><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">📰 Clarin</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremotos en Venezuela: 3.342 muertos y 16.000 heridos confirmados por el Gobierno</h3>
+  <p class="fact-summary">El Gobierno venezolano confirmó a 12 días de los dos terremotos que el número de muertos asciende a 3.342, con más de 16.000 heridos y cifras de rescatados y desaparecidos actualizadas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 04:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16000</li><li>12</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La magnitud de víctimas y heridos exige coordinación internacional urgente de ayuda humanitaria, logística de rescate y gestión de infraestructura crítica.</div>
+  <div class="enlaces"><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">📰 Clarín</a> · <a href="https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremotos en Venezuela con casi 3,000 muertos y 16,000 sin vivienda</h3>
+  <p class="fact-summary">Los terremotos que golperaron Venezuela 10 días atrás dejaron casi 3,000 muertos, más de 16,000 heridos y 16,000 sin vivienda</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 07:00 VET</p>
+  <ul class="data-points"><li>2,954 muertos</li><li>16,309 sin vivienda</li><li>85 edificios afectados</li><li>190 totalmente colapsados</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Desastre natural de alta magnitud con impacto humanitario inmediato, requiere respuesta coordinada de emergencia y asistencia internacional</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=kYiX4EiwqSU" target="_blank" rel="noopener">📰 Noticias Telemundo</a> · <a href="https://www.youtube.com/watch?v=GHR0NOCA5mw" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Jorge Rodríguez actualiza balance oficial de muertos por terremotos: 3.342 fallecidos y 16.740 heridos</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, informó el 6 de julio de 2026 que los terremotos de 7,5 y 7,2 grados del 28 de junio causaron 3.342 muertos, 16.740 heridos, 190 edificios hundidos y 856 con daños estructurales.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16740</li><li>190</li><li>856</li><li>17345</li><li>86794</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El balance oficial define la escala de la crisis humanitaria y requiere movilización inmediata de recursos estatales y coordinación internacional para asistencia y reconstrucción.</div>
+  <div class="enlaces"><a href="https://www.asambleanacional.gob.ve/noticias/labores-de-busqueda-permiten-rescatar-con-vida-a-6462-personas-y-atender-a-86794-familias" target="_blank" rel="noopener">📰 Asamblea Nacional de Venezuela</a> · <a href="https://rtvc.es/aumentan-a-mas-de-3-300-los-muertes-en-venezuela-6-julio-2026/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Gobierno venezolano confirma 3.342 muertos tras doble terremoto en Venezuela</h3>
+  <p class="fact-summary">A 12 días del doble sismo, el Gobierno confirmó 3.342 fallecidos, más de 16.000 heridos y 16.000 personas sin vivienda</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16000</li><li>16000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Cifra oficial actualizada de impacto humano que define la emergencia nacional y requiere respuesta inmediata internacional</div>
+  <div class="enlaces"><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">📰 Clarin</a> · <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Creación de Gran Misión Venezuela Renace para recuperación de viviendas tras terremotos</h3>
+  <p class="fact-summary">Gobierno anuncia creación de la Gran Misión Venezuela Renace con propósito de recuperar viviendas y estructuras afectadas por los terremotos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>79</li><li>86794</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Nueva misión estatal que centraliza la respuesta de recuperación y requiere coordinación con organismos internacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#4527a0;">Think tank</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez condena estallidos de la oposición y anuncia despliegue de la Armada</h3>
+  <p class="fact-summary">Delcy Rodríguez condenó que la oposición planifique estallidos sociales y la Armada Venezolana dispuso embarcaciones militares para distribuir ayuda</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 04:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la postura oficial de rechazo a la oposición y muestra capacidad de despliegue de fuerza estatal para control de emergencia</div>
+  <div class="enlaces"><a href="https://www.polianalitica.com/boletines/5215/boletin-informativo-polianalitica-lunes-6-de-julio-de-2026-800-am" target="_blank" rel="noopener">📰 Polianalitica</a> · <a href="https://web.archive.org/web/20260706194801/https://www.polianalitica.com/boletines/5215/boletin-informativo-polianalitica-lunes-6-de-julio-de-2026-800-am" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delc Rodríguez anuncia alianza internacional para recuperar aeropuerto de Maiquetía</h3>
+  <p class="fact-summary">Delc Rodríguez comunicó una alianza internacional para recuperar el aeropuerto internacional de Maiquetía afectado por los terremotos, aunque aún no se conocen los países participantes.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La recuperación del aeropuerto de Maiquetía es vital para la logística de ayuda y reactivación económica tras los terremotos en Venezuela</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Creación de Gran Misión Venezuela Renace para recuperación de viviendas</h3>
+  <p class="fact-summary">Se comunicó la creación de la Gran Misión Venezuela Renace, cuyo propósito es recuperar viviendas y estructuras afectadas por los terremotos en Venezuela.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Esta misión representa la respuesta gubernamental organizada para la reconstrucción de viviendas afectadas, con potencial impacto en la estabilidad social</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Misión Venezuela Renace creada para recuperar viviendas por terremotos</h3>
+  <p class="fact-summary">Se anunció la creación de la misión Venezuela Renace con propósito de recuperar viviendas y estructuras afectadas por los terremotos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 08:30 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Nueva política pública de gobierno enfocada en reconstrucción post-terremoto, con potencial impacto en recuperación de infraestructura y asistencia a afectados</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Jorge Rodríguez exhorta a unidad nacional por el renacer de Venezuela tras terremoto</h3>
+  <p class="fact-summary">El presidente del Parlamento, Jorge Rodríguez, exhortó el 6 de julio de 2026 al pueblo venezolano a sumarse al llamado de unidad por el renacer del país en medio de la crisis post-terremoto.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La declaración busca consolidar apoyos políticos y sociales en la respuesta a la emergencia, influyendo en la narrativa gubernamental de resiliencia nacional.</div>
+  <div class="enlaces"><a href="https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-sumemonos-al-llamado-de-unidad-por-el-renacer-de-venezuela" target="_blank" rel="noopener">📰 Asamblea Nacional de Venezuela</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Programa de financiamiento mensual para personas afectadas por terremoto anunciado por gobierno</h3>
+  <p class="fact-summary">Gobierno anuncia programa de financiamiento para realizar pagos mensuales a personas afectadas por la tragedia de los terremotos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Mecanismo de asistencia económica directa que puede estabilizar situación social post-terremoto</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Coronavirus transición venezolana: María Corina Machado como figura central</h3>
+  <p class="fact-summary">Caracas Chronicles analiza que la figura natural para impulsar la transición venezolana es María Corina Machado, aunque hay debate interno</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Mantiene el foco en Machado como líder de la oposición, lo que puede influir en negociaciones futuras y estrategias de unidad</div>
+  <div class="enlaces"><a href="https://www.caracaschronicles.com/2026/07/06/how-to-push-the-venezuelan-transition/?lang=es" target="_blank" rel="noopener">📰 Caracas Chronicles</a> · <a href="https://web.archive.org/web/20260706200921/https://www.caracaschronicles.com/2026/07/06/how-to-push-the-venezuelan-transition/?lang=es" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>FIFA y Shakira crean fondo para educación en Venezuela tras terremotos</h3>
+  <p class="fact-summary">La FIFA y la cantante Shakira anunciaron la creación de un fondo oficial para la educación en Venezuela dirigido a las víctimas de los terremotos, junto con exoneración de impuestos para registros de alquiler e compra de inmuebles.</p>
+  <p class="info-actor"><strong>P2</strong> — Edmundo González Urrutia <em>(Candidato presidencial 2024 reconocido por sectores opositores)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>16740</li><li>6642</li><li>95</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La alianza entre entidad deportiva global y figura artística internacional aporta recursos y visibilidad para la recuperación educativa y quite fiscal que facilita la reconstrucción habitacional.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 YouTube / TelevenTV</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Hamas disuelve su Gobierno en Gaza y UE reforma ampliación de Europa</h3>
+  <p class="fact-summary">Hamas anunció la disolución de su Gobierno en Gaza, mientras la Comisión Europea prepara una reforma sobre la ampliación de la UE, con impacto en OTAN y geopolítica regional.</p>
+  <p class="info-actor"><strong>INT4</strong> — Unión Europea <em>(Política exterior comunitaria europea)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La disolución del Gobierno de Hamas y la reforma de la UE afectan la estabilidad regional en Medio Oriente y la dinámica de integración europea, con repercusiones en OTAN y cooperación internacional.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza" target="_blank" rel="noopener">📰 Euronews</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela Renace: misión para recuperar viviendas afectadas por terremotos</h3>
+  <p class="fact-summary">El gobierno anunció la creación de la gran misión Venezuela Renace para recuperar viviendas y estructuras afectadas por los terremotos, con financiamiento mensual para personas afectadas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>79</li><li>86794</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La misión Venezuela Renace estructura la recuperación habitacional y el apoyo económico a afectados, con impacto en reducción de desplazamiento y estabilización social.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 YouTube / TelevenTV</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>FIFA y Shakira crean fondo para educación en Venezuela ante tragedia de terremotos</h3>
+  <p class="fact-summary">La FIFA y la cantante Shakira anunciaron la creación de un fondo oficial para educación en Venezuela para apoyar a víctimas de los terremotos.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El fondo internacional de educación aporta recursos críticos para la recuperación social y educativa de las víctimas afectadas por la tragedia.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 The Morning News Broadcast</a> · <a href="https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela anuncia alianza internacional para reconstruir aeropuerto de Maiquetía</h3>
+  <p class="fact-summary">El gobierno venezolano anunció una alianza internacional para recuperar el aeropuerto internacional de Maiquetía, aunque no se especificaron los países participantes.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La reconstrucción del aeropuerto es vital para la logística de ayuda humanitaria y la recuperación de la conectividad internacional de Venezuela.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 The Morning News Broadcast</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela crea misión &#x27;Venezuela Renace&#x27; para recuperar viviendas afectadas por terremotos</h3>
+  <p class="fact-summary">El gobierno venezolano anunció la creación de la misión &#x27;Venezuela Renace&#x27; con el propósito de recuperar viviendas y estructuras afectadas por los terremotos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La missão ofrece un marco estructurado para la recuperación habitacional, esencial para la estabilidad social de las familias afectadas.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 The Morning News Broadcast</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>OPEP+ acuerda aumentar producción en 188.000 barriles diarios desde agosto</h3>
+  <p class="fact-summary">Siete países de la alianza OPEP+ han acordado aumentar en 188.000 barriles diarios su producción conjunta de petróleo en agosto</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aumento de oferta global podría reducir precios del crudo, afectando economías de países productores como Venezuela</div>
+  <div class="enlaces"><a href="https://www.telesurtv.net/opep-aumentar-produccion-petrolera-ormuz/" target="_blank" rel="noopener">📰 Telesur TV</a> · <a href="https://es.euronews.com/video/2026/07/06/opep-sube-ligeramente-la-produccion-mientras-el-petroleo-vuelve-a-niveles-preguerra" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706202140/https://www.telesurtv.net/opep-aumentar-produccion-petrolera-ormuz/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>FIFA y Shakira crean fondo de educación en Venezuela para víctimas de terremotos</h3>
+  <p class="fact-summary">La FIFA y la cantante Shakira anunciaron la creación de un fondo oficial para la educación en Venezuela, destinado a apoyar víctimas de los terremotos con donación oficial[1][2]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La donación internacional aporta recursos críticos para la recuperación educativa y estabilización social en zonas afectadas</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV / YouTube</a> · <a href="https://www.youtube.com/watch?v=kYiX4EiwqSU" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>35 españoles muertos y 140 desaparecidos en Venezuela tras terremotos</h3>
+  <p class="fact-summary">Aumentan a 35 los españoles muertos mientras 140 continúan desaparecidos tras los terremotos sufridos en Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 14:00 VET</p>
+  <ul class="data-points"><li>35</li><li>140</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Las víctimas españolas tienen implicación en la respuesta diplomática y cooperación internacional de España con Venezuela post-terremoto</div>
+  <div class="enlaces"><a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html" target="_blank" rel="noopener">📰 Antena 3</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela en emergencia: 3.500 víctimas españolas y 140 desaparecidos de origen español</h3>
+  <p class="fact-summary">Se reportan 3.500 víctimas de origen español y 140 desaparecidos españoles en el contexto de los terremotos en Venezuela, con campamentos provisorios y atención médica continua.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3500</li><li>140</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La presencia de ciudadanos españoles requiere atención diplomática y potenciales medidas de coordinación con España para gestión de víctimas y desaparecidos.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 YouTube / TelevenTV</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno venezolano ofrece financiamiento mensual para víctimas de terremotos</h3>
+  <p class="fact-summary">El gobierno venezolano anunció un programa de financiamiento para pagos mensuales a personas afectadas por la tragedia de los terremotos, sin especificar el monto.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El financiamiento mensual es crucial para la sostenibilidad económica de las víctimas, aunque la falta de monto específico limita la evaluación de su impacto real.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 The Morning News Broadcast</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Exoneración de impuestos para registros de alquiler y compra de inmuebles en Venezuela</h3>
+  <p class="fact-summary">El gobierno venezolano exoneró impuestos para registros de alquileres y compra de inmuebles como medida de apoyo a víctimas de los terremotos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La exoneración de impuestos facilita el acceso a vivienda y reduce la carga económica para las familias afectadas por la pérdida de hogares.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 The Morning News Broadcast</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Alianza internacional planeada para recuperar aeropuerto internacional de Maiketí</h3>
+  <p class="fact-summary">Delcy Rodríguez anunció una alianza internacional para recuperar el aeropuerto internacional de Maiketí, aunque aún no se conocen los países integrantes</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con evidencia OSINT y cobertura secundaria confiable, sin confirmación primaria de países integrantes</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Infraestructura aeroportuaria clave para operaciones de ayuda internacional y recuperación económica</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Acuerdo internacional para recuperar aeropuerto internacional de Maiquetía</h3>
+  <p class="fact-summary">Delc Rodríguez anunció una alianza internacional para recuperar el aeropuerto internacional de Maiquetía, aunque los países integrantes aún no se conocen[1]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La recuperación del aeropuerto es esencial para facilitar la entrada de ayuda internacional y reactivar el flujo turístico y comercial</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV / YouTube</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>FIFA y Shakira crean fondo para educación en Venezuela como apoyo a víctimas de terremotos</h3>
+  <p class="fact-summary">La FIFA y la cantante Shakira crearon un fondo para la educación en Venezuela en apoyo a las víctimas de los terremotos, con una donación oficial anunciada.</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El fondo de FIFA y Shakira aporta recursos para educación, con impacto en la recuperación social y educativa de niños afectados por los terremotos</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Alianza internacional para recuperar aeropuerto de Maiketí</h3>
+  <p class="fact-summary">Delcy Rodríguez anunció una alianza internacional para recuperar el aeropuerto internacional de Maiketí, aunque no se conocen los países participantes</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 09:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Posible apertura de cooperación internacional para infraestructura aeroportuaria, con implicaciones estratégicas en conectividad y logística post-terremoto</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Análisis: OPEP lucha por supervivencia, precio podría caer a US$40 por barril</h3>
+  <p class="fact-summary">David Goldman de CNN analiza que el precio del petróleo podría llegar a US$40 por barril si la OPEP no resuelve su crisis</p>
+  <p class="info-actor">David Goldman (CNN)</p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 13:37 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Crisis de OPEP y caída de precios a US$40/barril tendría implicaciones graves para ingresos petroleros de Venezuela</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/07/06/mundo/petroleo-precio-opep-supervivencia-trax" target="_blank" rel="noopener">📰 CNN Español</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Jane&#x27;s: tendencia en mercados y sanciones políticas sin mención directa a Venezuela</h3>
+  <p class="fact-summary">Fuentes financieras y políticas globales reportan tendencias en mercados, sanciones y política exterior con enfoque en geopolítica y seguridad internacional sin mención directa a Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Las tendencias en mercados y sanciones políticas globales son relevantes para el análisis de riesgo y oportunidades de inversión en la región, aunque sin vínculo directo con Venezuela en este reporte.</div>
+  <div class="enlaces"><a href="https://www.janes.com/" target="_blank" rel="noopener">📰 Jane&#x27;s</a> · <a href="https://web.archive.org/web/20260703081246/https://www.janes.com/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>Narrativa de donación internacional para educación victima de terremotos en Venezuela</h3>
+  <p class="fact-summary">Se circula narrativa sobre donación oficial y propuesta de que FIFA y Shakira crean fondo para educación en Venezuela apoyando víctimas de terremotos</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Alerta en observación: señal repetida sin confirmación primaria de la donación oficial o creación del fondo por FIFA/Shakira</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Posible fuente de apoyo internacional educativo que podría movilizar recursos si se confirma</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>UEFA contra FIFA: estallido institucional en fútbol internacional sin impacto en Venezuela</h3>
+  <p class="fact-summary">La UEFA estalló contra la FIFA en un conflicto institucional sin mención directa a Venezuela, pero con impacto en la gobernanza del fútbol internacional.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El conflicto UEFA-FIFA afecta la gobernanza del fútbol internacional, pero sin repercusión directa en Venezuela en este reporte.</div>
+  <div class="enlaces"><a href="https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza" target="_blank" rel="noopener">📰 Euronews</a> · <a href="https://web.archive.org/web/20260706201822/https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/pictures/pictures-day-july-6-2026-2026-07-06/" target="_blank" rel="noopener">Trump intervention causes World Cup storm as FIFA clears US striker Balogun to face Belgium</a></li><li><a href="https://www.reuters.com/pictures/pictures-day-july-6-2026-2026-07-06/AWR23BPZSNINVDSDVQMKMMMD2U" target="_blank" rel="noopener">Displaced Palestinian children cool off in a water tank near buildings destroyed during the Israeli offensive, on a hot summer day in Gaza City</a></li><li><a href="https://www.reuters.com/pictures/best-world-cup-photos-day-25-2026-07-06/CE74NKVNABNPXIYIZHQ5MDGJZQ/" target="_blank" rel="noopener">Best World Cup photos from Day 25 - July 6, 2026</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela aumenta producción petrolera un 3.78% en mayo a 1.179 millones de barriles diarios</h3>
+  <p class="fact-summary">La producción petrolera de Venezuela registró un incremento de 3.78 por ciento en mayo, alcanzando 1.179 millones de barriles diarios, según datos del sector hidrocarburos</p>
+  <p class="info-actor">Sector hidrocarburos venezolano</p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica recuperación operativa en el sector petrolero venezolano después de años de declive, con implicaciones para exportaciones y economía nacional</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/Daaet_pJf0G/" target="_blank" rel="noopener">📰 Instagram (crecimiento sector hidrocarburos)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA confirma paralización y rearranque de Destiladora No. 5</h3>
+  <p class="fact-summary">PDVSA reconoció oficialmente la paralización de la Destiladora No. 5 y anunció su rearranque, según reportes de medios</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>Destiladora No. 5</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Impacto directo en capacidad de refinación nacional y posibles efectos en suministro de combustibles</div>
+  <div class="enlaces"><a href="https://www.facebook.com/CNNee/posts/las-5-cosas-que-debes-saber-este-6-de-julio-m%C3%A9xico-afuera-del-mundial-ataques-en/1429398779213625/" target="_blank" rel="noopener">📰 CNNee</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#4527a0;">Think tank</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PDVSA reporta dificultades operativas en taladros del flanco oriental</h3>
+  <p class="fact-summary">PDVSA reportó dificultades operativas en los taladros del flanco oriental de Venezuela durante las últimas 24 horas</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 16:08 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Dificultades operativas en taladros pueden reducir producción inmediata y afectar balances de crudo</div>
+  <div class="enlaces"><a href="https://theelnews.org/2026/07/06/el-informe-alvarez-julio-06-de-2026-por-alfredo-alvarez/" target="_blank" rel="noopener">📰 The El News</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Precios del petróleo Brent y WTI bajan 0.32% tras anuncio de OPEP+</h3>
+  <p class="fact-summary">Los precios del crudo descienden hasta 0.32% tras el acuerdo del cartel para aumentar el bombeo en agosto</p>
+  <p class="info-actor">Mercado de petróleo global</p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Bajada de precios del crudo afecta directamente ingresos por exportaciones de Venezuela, principal producto nacional</div>
+  <div class="enlaces"><a href="https://amp.milenio.com/negocios/precio-del-petroleo-6-de-julio-brent-y-wti-bajan-tras-dato-de-opep" target="_blank" rel="noopener">📰 Milenio Negocios</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>PDVSA Gas coordina planes de prevención y activa línea de emergencias</h3>
+  <p class="fact-summary">Gremios del sector hidrocarburos y autoridades de PDVSA Gas coordinaron planes de prevención y activaron la línea nacional de emergencias 0800-4273637</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>0800-4273637</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Muestra capacidad de respuesta operativa ante contingencias en el sector de hidrocarburos</div>
+  <div class="enlaces"><a href="https://www.facebook.com/noticierovv/posts/gremios-del-sector-hidrocarburos-y-autoridades-de-pdvsa-gas-coordinan-planes-de-/1490857353078863/" target="_blank" rel="noopener">📰 Noticiero VV</a> · <a href="https://web.archive.org/web/20260706202407/https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fnoticierovv%2Fposts%2Fgremios-del-sector-hidrocarburos-y-autoridades-de-pdvsa-gas-coordinan-planes-de-%2F1490857353078863%2F" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Cronograma de surtido de gasolina del 6 al 12 de julio 2026</h3>
+  <p class="fact-summary">Se publicó el cronograma de surtido de gasolina para el 6 de julio de 2026, restringido a placas 8 diario según terminal de placa</p>
+  <p class="info-actor">PDVSA</p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>Placas 8 diario</li><li>6-12 de julio de 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Restricción de surtido afecta acceso inmediato a combustible para usuarios no calificados</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DadjHSIkypO/" target="_blank" rel="noopener">📰 Instagram (PDVSA TV)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Exoneración de impuestos para registros de alquileres y compra de inmuebles</h3>
+  <p class="fact-summary">Gobierno anuncia exoneración de impuestos para registros de alquileres y compra de inmuebles como medida de apoyo a víctimas de terremotos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Medida fiscal que facilita reubicación y recuperación del mercado inmobiliario afectado</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Exoneración de impuestos para alquileres y compra de inmuebles afectados</h3>
+  <p class="fact-summary">Se anunció la exoneración de impuestos para registros de alquileres y compra de inmuebles afectados por los terremotos en Venezuela.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La exoneración de impuestos facilita el acceso a inmuebles para afectados, con impacto en la reactivación del mercado inmobiliario post-terremoto</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Balance actualizado de víctimas por terremotos en Venezuela asciende a 3.342 muertos</h3>
+  <p class="fact-summary">El Gobierno de Venezuela confirmó, a 12 días del doble sismo, que la cifra de fallecidos es de 3.342, con más de 16.000 heridos y 16.000 sin vivienda[1][5]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16000</li><li>16000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Esta cifra redefine la escala de la emergencia nacional y exige movilización inmediata de recursos de reconstrucción y asistencia internacional</div>
+  <div class="enlaces"><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">📰 Clarin</a> · <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno anuncia &#x27;Gran Misión Venezuela Renace&#x27; para reconstrucción de viviendas afectadas por terremotos</h3>
+  <p class="fact-summary">El gobierno comunicó la creación de la &#x27;Gran Misión Venezuela Renace&#x27;, con el propósito de recuperar viviendas y estructuras dañadas por los terremotos[1]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La misión establece el marco operativo para la reconstrucción de viviendas, vital para la estabilidad social y retorno de desplazados</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV / YouTube</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Más de 341 damnificados, 118 de ellos niños, en campamentos temporales en zona central</h3>
+  <p class="fact-summary">Se reportan 341 damnificados en campamentos temporales de la zona central, de los cuales 118 son niños, con 111 familias atendidas[3]</p>
+  <p class="info-actor">Rescatistas voluntarios y familias damnificadas</p>
+  <p class="info-actor"><em>Publicado:</em> 04/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>341</li><li>118</li><li>111</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La alta proporción de niños damnificados requiere atención prioritaria en programas de salud, educación y protección</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=YiWLp4PDU34" target="_blank" rel="noopener">📰 Venevisión / YouTube</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Doble terremoto en Venezuela: 3.340 fallecidos y 16.740 heridos según Asamblea Nacional</h3>
+  <p class="fact-summary">La cifra oficial de fallecidos tras el doble terremoto en Venezuela asciende a 3.340, con 16.740 heridos y 6.642 rescatados, según Jorge Rodríguez, presidente de la Asamblea Nacional</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3340</li><li>16740</li><li>6642</li><li>16740</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria de fuente oficial (Asamblea Nacional); no confirmado por fuente primaria independiente</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La alta cifra de fallecidos y heridos requiere movilización inmediata de recursos internacionales y reactivación de protocolos de emergencia nacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 TelevenTV444</a> · <a href="https://www.infobae.com/america/agencias/2026/07/06/lunes-6-de-julio-de-2026-0200-gmt/?outputType=amp-type" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706195125/https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Alianza internacional planeada para recuperar aeropuerto internacional de Maiketí</h3>
+  <p class="fact-summary">Delcy Rodríguez anunció una alianza internacional para recuperar el aeropuerto internacional de Maiketí, aunque aún no se conocen los países integrantes</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con evidencia OSINT y cobertura secundaria confiable, sin confirmación primaria de países integrantes</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Infraestructura aeroportuaria clave para operaciones de ayuda internacional y recuperación económica</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">❓ No verificado</span></div>
+  <h3>Narrativa de donación internacional para educación victima de terremotos en Venezuela</h3>
+  <p class="fact-summary">Se circula narrativa sobre donación oficial y propuesta de que FIFA y Shakira crean fondo para educación en Venezuela apoyando víctimas de terremotos</p>
+  
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  <div class="warning-social"><strong>⚠️ En observación:</strong> Alerta en observación: señal repetida sin confirmación primaria de la donación oficial o creación del fondo por FIFA/Shakira</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Posible fuente de apoyo internacional educativo que podría movilizar recursos si se confirma</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 Televen (YouTube)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Coordinación internacional para ayuda humanitaria** — Las cifras oficiales (3.342 muertos, 16.740 heridos) exigen movilización urgente de recursos externos para atención médica, rescate y logística, especialmente con 95 desaparecidos (17 menores).
+
+2. 🟠 **Avances de la *Misión Venezuela Renace*** — Monitorear ejecución del plan de recuperación de viviendas y financiamiento a afectados; su efectividad impacta en estabilidad social y reducción de desplazados.
+
+3. 🟠 **Fondo FIFA-Shakira para educación** — Verificar implementación del fondo y exoneraciones fiscales anunciadas; clave para reconstrucción educativa y habitacional, pero sin detalles operativos aún.
+
+4. 🟡 **Reconstrucción del aeropuerto de Maiquetía** — Seguimiento a países aliados en la alianza; su reactivación es crítica para entrada de ayuda humanitaria y conectividad internacional.
+
+5. 🔴 **Silencio de Diosdado Cabello** — Ausencia de declaraciones del número 2 del chavismo en crisis de esta magnitud sugiere posible reacomodo interno o estrategia de bajo perfil ante emergencia.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(7)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>TelevenTV444</td><td><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hZI8bM2Lqkw</a></td><td>2026-07-06</td></tr><tr><td>Telesur TV</td><td><a href="https://www.telesurtv.net/opep-aumentar-produccion-petrolera-ormuz/" target="_blank" rel="noopener">https://www.telesurtv.net/opep-aumentar-produccion-petrolera-ormuz/</a></td><td>2026-07-06</td></tr><tr><td>CNNee</td><td><a href="https://www.facebook.com/CNNee/posts/las-5-cosas-que-debes-saber-este-6-de-julio-m%C3%A9xico-afuera-del-mundial-ataques-en/1429398779213625/" target="_blank" rel="noopener">https://www.facebook.com/CNNee/posts/las-5-cosas-que-debes-saber-este-6-de-julio-m%C3%A9xico-afuera-del-mundial-ataques-en/1429398779213625/</a></td><td>2026-07-06</td></tr><tr><td>Noticiero VV</td><td><a href="https://www.facebook.com/noticierovv/posts/gremios-del-sector-hidrocarburos-y-autoridades-de-pdvsa-gas-coordinan-planes-de-/1490857353078863/" target="_blank" rel="noopener">https://www.facebook.com/noticierovv/posts/gremios-del-sector-hidrocarburos-y-autoridades-de-pdvsa-gas-coordinan-planes-de-/1490857353078863/</a></td><td>2026-07-06</td></tr><tr><td>Instagram (PDVSA TV)</td><td><a href="https://www.instagram.com/p/DadjHSIkypO/" target="_blank" rel="noopener">https://www.instagram.com/p/DadjHSIkypO/</a></td><td>2026-07-06</td></tr><tr><td>Noticias Telemundo</td><td><a href="https://www.youtube.com/watch?v=kYiX4EiwqSU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=kYiX4EiwqSU</a></td><td>2026-07-06</td></tr><tr><td>Venevisión / YouTube</td><td><a href="https://www.youtube.com/watch?v=YiWLp4PDU34" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YiWLp4PDU34</a></td><td>2026-07-05</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Caracas Chronicles</td><td><a href="https://www.caracaschronicles.com/2026/07/06/how-to-push-the-venezuelan-transition/?lang=es" target="_blank" rel="noopener">https://www.caracaschronicles.com/2026/07/06/how-to-push-the-venezuelan-transition/?lang=es</a></td><td>2026-07-06</td></tr><tr><td>Clarin</td><td><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html</a></td><td>2026-07-06</td></tr><tr><td>Antena 3</td><td><a href="https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html" target="_blank" rel="noopener">https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html</a></td><td>2026-07-05</td></tr><tr><td>Euronews</td><td><a href="https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza" target="_blank" rel="noopener">https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza</a></td><td>2026-07-06</td></tr><tr><td>CNN Español</td><td><a href="https://cnnespanol.cnn.com/2026/07/06/mundo/petroleo-precio-opep-supervivencia-trax" target="_blank" rel="noopener">https://cnnespanol.cnn.com/2026/07/06/mundo/petroleo-precio-opep-supervivencia-trax</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Asamblea Nacional de Venezuela</td><td><a href="https://www.asambleanacional.gob.ve/noticias/labores-de-busqueda-permiten-rescatar-con-vida-a-6462-personas-y-atender-a-86794-familias" target="_blank" rel="noopener">https://www.asambleanacional.gob.ve/noticias/labores-de-busqueda-permiten-rescatar-con-vida-a-6462-personas-y-atender-a-86794-familias</a></td><td>2026-07-06</td></tr><tr><td>Asamblea Nacional (X)</td><td><a href="https://x.com/asambleapa/status/2074120899716894722" target="_blank" rel="noopener">https://x.com/asambleapa/status/2074120899716894722</a></td><td>2026-07-06</td></tr><tr><td>Asamblea Nacional de Venezuela</td><td><a href="https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-sumemonos-al-llamado-de-unidad-por-el-renacer-de-venezuela" target="_blank" rel="noopener">https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-sumemonos-al-llamado-de-unidad-por-el-renacer-de-venezuela</a></td><td>2026-07-06</td></tr><tr><td>El imparcial</td><td><a href="https://www.elimparcial.com/mundo/2026/07/04/ministerio-de-educacion-de-venezuela-confirma-el-regreso-a-clases-el-6-de-julio-solo-en-planteles-seguros-las-regiones-afectadas-por-los-terremotos-permaneceran-sin-actividades/?outputType=amp-type" target="_blank" rel="noopener">https://www.elimparcial.com/mundo/2026/07/04/ministerio-de-educacion-de-venezuela-confirma-el-regreso-a-clases-el-6-de-julio-solo-en-planteles-seguros-las-regiones-afectadas-por-los-terremotos-permaneceran-sin-actividades/?outputType=amp-type</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#4527a0;">Think tank</span> Think tank <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Polianalitica</td><td><a href="https://www.polianalitica.com/boletines/5215/boletin-informativo-polianalitica-lunes-6-de-julio-de-2026-800-am" target="_blank" rel="noopener">https://www.polianalitica.com/boletines/5215/boletin-informativo-polianalitica-lunes-6-de-julio-de-2026-800-am</a></td><td>2026-07-06</td></tr><tr><td>The El News</td><td><a href="https://theelnews.org/2026/07/06/el-informe-alvarez-julio-06-de-2026-por-alfredo-alvarez/" target="_blank" rel="noopener">https://theelnews.org/2026/07/06/el-informe-alvarez-julio-06-de-2026-por-alfredo-alvarez/</a></td><td>2026-07-05</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Jane&#x27;s</td><td><a href="https://www.janes.com/" target="_blank" rel="noopener">https://www.janes.com/</a></td><td></td></tr><tr><td>Milenio Negocios</td><td><a href="https://amp.milenio.com/negocios/precio-del-petroleo-6-de-julio-brent-y-wti-bajan-tras-dato-de-opep" target="_blank" rel="noopener">https://amp.milenio.com/negocios/precio-del-petroleo-6-de-julio-brent-y-wti-bajan-tras-dato-de-opep</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram (crecimiento sector hidrocarburos)</td><td><a href="https://www.instagram.com/p/Daaet_pJf0G/" target="_blank" rel="noopener">https://www.instagram.com/p/Daaet_pJf0G/</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-06</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
