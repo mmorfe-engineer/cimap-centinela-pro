@@ -1,0 +1,528 @@
+{
+  "version": "1.0",
+  "correlativo": "20260706-14H-200857",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-06T20:34:44.105686+00:00",
+  "rango_inicio": "2026-07-05T20:08:57.887219+00:00",
+  "rango_fin": "2026-07-06T20:08:57.887219+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 6,
+    "A3": 20,
+    "A2": 19,
+    "A1": 5,
+    "A0": 0,
+    "total": 50
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 22,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A4",
+        "A2",
+        "A4",
+        "A4",
+        "A3",
+        "A4",
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A2",
+        "A2",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Acuerdo internacional para recuperar aeropuerto internacional de Maiquetía",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Coronavirus transición venezolana: María Corina Machado como figura central",
+      "ultima_fuente_url": "https://www.caracaschronicles.com/2026/07/06/how-to-push-the-venezuelan-transition/?lang=es"
+    },
+    "GOB3": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      "ultimo_titulo": "Doble terremoto en Venezuela: 3.340 fallecidos y 16.740 heridos según Asamblea Nacional",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "Venezuela reanuda clases el 6 de julio en zonas no afectadas por terremotos",
+      "ultima_fuente_url": "https://www.elimparcial.com/mundo/2026/07/04/ministerio-de-educacion-de-venezuela-confirma-el-regreso-a-clases-el-6-de-julio-solo-en-planteles-seguros-las-regiones-afectadas-por-los-terremotos-permaneceran-sin-actividades/?outputType=amp-type"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "FIFA y Shakira crean fondo para educación en Venezuela como apoyo a víctimas de terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    "P2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "FIFA y Shakira crean fondo para educación en Venezuela tras terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    "INT4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Hamas disuelve su Gobierno en Gaza y UE reforma ampliación de Europa",
+      "ultima_fuente_url": "https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza"
+    },
+    "INT1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "FIFA y Shakira crean fondo de educación en Venezuela para víctimas de terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "PDVSA reporta dificultades operativas en taladros del flanco oriental",
+      "ultima_fuente_url": "https://theelnews.org/2026/07/06/el-informe-alvarez-julio-06-de-2026-por-alfredo-alvarez/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "INST4",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "66993d8ff00f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez condena estallidos de la oposición y anuncia despliegue de la Armada",
+      "fuente_url": "https://www.polianalitica.com/boletines/5215/boletin-informativo-polianalitica-lunes-6-de-julio-de-2026-800-am"
+    },
+    {
+      "hash": "65d4ea24fd79",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Coronavirus transición venezolana: María Corina Machado como figura central",
+      "fuente_url": "https://www.caracaschronicles.com/2026/07/06/how-to-push-the-venezuelan-transition/?lang=es"
+    },
+    {
+      "hash": "146d741a21e0",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez actualiza balance oficial de muertos por terremotos: 3.342 fallecidos y 16.740 herid",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/labores-de-busqueda-permiten-rescatar-con-vida-a-6462-personas-y-atender-a-86794-familias"
+    },
+    {
+      "hash": "c68779b65651",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Agenda oficial de la Asamblea Nacional para el 6 de julio de 2026 publicada",
+      "fuente_url": "https://x.com/asambleapa/status/2074120899716894722"
+    },
+    {
+      "hash": "de68b82ccf80",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Jorge Rodríguez exhorta a unidad nacional por el renacer de Venezuela tras terremoto",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-sumemonos-al-llamado-de-unidad-por-el-renacer-de-venezuela"
+    },
+    {
+      "hash": "467cc8e56b80",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delc Rodríguez anuncia alianza internacional para recuperar aeropuerto de Maiquetía",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "8aa75f760af5",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Creación de Gran Misión Venezuela Renace para recuperación de viviendas",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "11a38067eec5",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Gobierno confirma 3.342 muertos y más de 16.000 heridos en terremotos de Venezuela",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "acaa0d871fe6",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Exoneración de impuestos para alquileres y compra de inmuebles afectados",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "d13452abd4ea",
+      "actor": "INT2",
+      "alert_level": "A2",
+      "titulo_corto": "FIFA y Shakira crean fondo para educación en Venezuela como apoyo a víctimas de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "7b5165a76f3f",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "35 españoles muertos y 140 desaparecidos en Venezuela tras terremotos",
+      "fuente_url": "https://www.antena3.com/noticias/sociedad/noticias-hoy-domingo-5-julio-2026_202607056a4a5837a8768a6aee42030d.html"
+    },
+    {
+      "hash": "ea3079153f17",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 3.342 muertos y 16.000 heridos confirmados por el Gobierno",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "8569e61d5b38",
+      "actor": "P2",
+      "alert_level": "A3",
+      "titulo_corto": "FIFA y Shakira crean fondo para educación en Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "18e705513c18",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela en emergencia: 3.500 víctimas españolas y 140 desaparecidos de origen español",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "3d1f91c99911",
+      "actor": "INT4",
+      "alert_level": "A3",
+      "titulo_corto": "Hamas disuelve su Gobierno en Gaza y UE reforma ampliación de Europa",
+      "fuente_url": "https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza"
+    },
+    {
+      "hash": "01b04751272c",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 95 desaparecidos y 17 menores de edad entre ellos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "30a3b4c46a71",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela Renace: misión para recuperar viviendas afectadas por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "49dca6d017e9",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Jane's: tendencia en mercados y sanciones políticas sin mención directa a Venezuela",
+      "fuente_url": "https://www.janes.com/"
+    },
+    {
+      "hash": "2fc23a46954d",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "UEFA contra FIFA: estallido institucional en fútbol internacional sin impacto en Venezuela",
+      "fuente_url": "https://es.euronews.com/video/2026/07/06/euronews-hoy-las-noticias-del-lunes-6-de-julio-de-2026-hamas-disuelve-el-gobierno-de-gaza"
+    },
+    {
+      "hash": "3a75c611f05d",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Gobierno venezolano confirma 3.342 muertos por terremotos con 16.000 heridos",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "776435883e95",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "FIFA y Shakira crean fondo para educación en Venezuela ante tragedia de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "4ecbac5a5e1b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela anuncia alianza internacional para reconstruir aeropuerto de Maiquetía",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "f615a74570f6",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela crea misión 'Venezuela Renace' para recuperar viviendas afectadas por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "37e1abe733c8",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno venezolano ofrece financiamiento mensual para víctimas de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "25c00748d8e9",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Exoneración de impuestos para registros de alquiler y compra de inmuebles en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "0c324f173bda",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela aumenta producción petrolera un 3.78% en mayo a 1.179 millones de barriles diarios",
+      "fuente_url": "https://www.instagram.com/p/Daaet_pJf0G/"
+    },
+    {
+      "hash": "a99b2369c0f0",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "OPEP+ acuerda aumentar producción en 188.000 barriles diarios desde agosto",
+      "fuente_url": "https://www.telesurtv.net/opep-aumentar-produccion-petrolera-ormuz/"
+    },
+    {
+      "hash": "dfe7e742e670",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Precios del petróleo Brent y WTI bajan 0.32% tras anuncio de OPEP+",
+      "fuente_url": "https://amp.milenio.com/negocios/precio-del-petroleo-6-de-julio-brent-y-wti-bajan-tras-dato-de-opep"
+    },
+    {
+      "hash": "30ae20468da7",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Análisis: OPEP lucha por supervivencia, precio podría caer a US$40 por barril",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/06/mundo/petroleo-precio-opep-supervivencia-trax"
+    },
+    {
+      "hash": "0dd7df1a702d",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "PDVSA confirma paralización y rearranque de Destiladora No. 5",
+      "fuente_url": "https://www.facebook.com/CNNee/posts/las-5-cosas-que-debes-saber-este-6-de-julio-m%C3%A9xico-afuera-del-mundial-ataques-en/1429398779213625/"
+    },
+    {
+      "hash": "55cc72f42817",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA Gas coordina planes de prevención y activa línea de emergencias",
+      "fuente_url": "https://www.facebook.com/noticierovv/posts/gremios-del-sector-hidrocarburos-y-autoridades-de-pdvsa-gas-coordinan-planes-de-/1490857353078863/"
+    },
+    {
+      "hash": "a2e6afd57df8",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA reporta dificultades operativas en taladros del flanco oriental",
+      "fuente_url": "https://theelnews.org/2026/07/06/el-informe-alvarez-julio-06-de-2026-por-alfredo-alvarez/"
+    },
+    {
+      "hash": "c99054c70860",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Cronograma de surtido de gasolina del 6 al 12 de julio 2026",
+      "fuente_url": "https://www.instagram.com/p/DadjHSIkypO/"
+    },
+    {
+      "hash": "f820293d1211",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno venezolano confirma 3.342 muertos tras doble terremoto en Venezuela",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "8aa75f760af5",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Creación de Gran Misión Venezuela Renace para recuperación de viviendas tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "2ec9cf110f47",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Alianza internacional planeada para recuperar aeropuerto internacional de Maiketí",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "1d0bdcb7b741",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Programa de financiamiento mensual para personas afectadas por terremoto anunciado por gobierno",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "db2d3ed18216",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Exoneración de impuestos para registros de alquileres y compra de inmuebles",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "548862e65cb8",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Narrativa de donación internacional para educación victima de terremotos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "f60d80b31e42",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 3.340 fallecidos y 16.740 heridos según Asamblea Nacional",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "420654f954c1",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "FIFA y Shakira crean fondo para educación en Venezuela por víctimas de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "d9d49ab9fb98",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Misión Venezuela Renace creada para recuperar viviendas por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "c7e29b6a6bc2",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Alianza internacional para recuperar aeropuerto de Maiketí",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "92dc89758bde",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela con casi 3,000 muertos y 16,000 sin vivienda",
+      "fuente_url": "https://www.youtube.com/watch?v=kYiX4EiwqSU"
+    },
+    {
+      "hash": "6c2964c91fdd",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela reanuda clases el 6 de julio en zonas no afectadas por terremotos",
+      "fuente_url": "https://www.elimparcial.com/mundo/2026/07/04/ministerio-de-educacion-de-venezuela-confirma-el-regreso-a-clases-el-6-de-julio-solo-en-planteles-seguros-las-regiones-afectadas-por-los-terremotos-permaneceran-sin-actividades/?outputType=amp-type"
+    },
+    {
+      "hash": "46a74cab9a30",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Balance actualizado de víctimas por terremotos en Venezuela asciende a 3.342 muertos",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "85256151fbc8",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "FIFA y Shakira crean fondo de educación en Venezuela para víctimas de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "3ad0e508f1f8",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno anuncia 'Gran Misión Venezuela Renace' para reconstrucción de viviendas afectadas por terre",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "12c4af158c5f",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Acuerdo internacional para recuperar aeropuerto internacional de Maiquetía",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "529888fddbc3",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Más de 341 damnificados, 118 de ellos niños, en campamentos temporales en zona central",
+      "fuente_url": "https://www.youtube.com/watch?v=YiWLp4PDU34"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "11a38067eec5",
+      "actor": "GOB1",
+      "titulo": "Gobierno confirma 3.342 muertos y más de 16.000 heridos en terremotos de Venezuela",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "ea3079153f17",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 3.342 muertos y 16.000 heridos confirmados por el Gobierno",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "01b04751272c",
+      "actor": "GOB1",
+      "titulo": "Terremotos en Venezuela: 95 desaparecidos y 17 menores de edad entre ellos",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "3a75c611f05d",
+      "actor": "GOB1",
+      "titulo": "Gobierno venezolano confirma 3.342 muertos por terremotos con 16.000 heridos",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html"
+    },
+    {
+      "hash": "f60d80b31e42",
+      "actor": "GOB3",
+      "titulo": "Doble terremoto en Venezuela: 3.340 fallecidos y 16.740 heridos según Asamblea Nacional",
+      "fuente_url": "https://www.youtube.com/watch?v=hZI8bM2Lqkw"
+    },
+    {
+      "hash": "92dc89758bde",
+      "actor": "",
+      "titulo": "Terremotos en Venezuela con casi 3,000 muertos y 16,000 sin vivienda",
+      "fuente_url": "https://www.youtube.com/watch?v=kYiX4EiwqSU"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
