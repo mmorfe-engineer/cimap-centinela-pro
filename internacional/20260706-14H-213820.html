@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260706-14H-213820</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260706-14H-213820</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-05T21:38:20.865636+00:00 → 2026-07-06T21:38:20.865636+00:00<br>
+    <strong>Generado:</strong> 2026-07-06 21:47 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 4 A4</span>
+    <span class="stat-pill">🟠 8 A3</span>
+    <span class="stat-pill">🟡 8 A2</span>
+    <span class="stat-pill">📊 20 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. El Gobierno venezolano confirmó 3.342 fallecidos, 16.740 heridos y 16.309 damnificados por los terremotos, junto a medidas de emergencia como la prohibición de exportar materiales de construcción y la creación de la Misión Venezuela Renace, con apoyo logístico de EE.UU. en La Guaira.
+2. EE.UU. incautó activos petroleros venezolanos valorados en $8.000 millones tras el derrocamiento de Nicolás Maduro en enero de 2026, reconfigurando el control de los recursos energéticos del país.
+3. La producción petrolera venezolana se redirigirá a EE.UU. en lugar de China, con un aumento proyectado de hasta 200.000 barriles diarios en el primer año, impactando el mercado global de hidrocarburos.
+4. Se anunció la creación de un fondo internacional para educación de víctimas (con participación de la FIFA y Shakira) y una alianza para reconstruir el aeropuerto de Maiquetía, clave para la logística de ayuda humanitaria.
+5. Delcy Rodríguez denunció intentos de desestabilización durante la emergencia y confirmó el despliegue de efectivos militares estadounidenses para movilizar suministros y donaciones internacionales.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260706-14H-200857</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (20):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: US seizes $8 billion of Venezuela&#x27;s oil wealth since overthrowing Maduro in January <a href="https://www.commondreams.org/news/venezuela-oil-wealth-earthquake" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Gobierno de Venezuela confirma 3.535 muertos y más de 16.000 heridos por terremotos; se prohíbe exportar materiales de c <a href="https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: US oil refiners gain, Chinese rivals lose as Trump&#x27;s Venezuela strike reshapes oil exports <a href="https://www.tbsnews.net/world/us-oil-refiners-win-chinese-rivals-lose-trumps-venezuela-strike-1326331" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Pedro Infante Aparicio</strong>: Venezuela confirma 3.342 muertos por terremotos; nuevas medidas de reconstrucción y ayuda internacional <a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: UK sanctions Russian scientists and labs behind Novichok and Navalny poisoning <a href="https://www.euronews.com/my-europe/2026/07/06/uk-sanctions-russian-scientists-and-labs-behind-chemical-attacks-foreign-office-says" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: EE.UU. despliega operativo logístico en La Guaira para movilizar suministros y donaciones internacionales a Venezuela <a href="https://www.youtube.com/watch?v=YfNlKwclRVU" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Venezuela&#x27;s interim leader alleges destabilization amid quake crisis <a href="https://www.upi.com/Top_News/World-News/2026/07/06/latam-venezuela-delcy-rodriguez-opponents-destabilization/5211783357136/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Toll de muertos en terremotos de Venezuela supera 3.300 personas <a href="https://www.democracynow.org/2026/7/6/headlines" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Se anuncia creación de &#x27;Gran Misión Venezuela Renace&#x27; y alianza internacional para recuperar aeropuerto de Maiquetía <a href="https://www.youtube.com/watch?v=YfNlKwclRVU" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: FIFA y Shakira crean fondo para educación en Venezuela tras terremotos; se anuncia alianza internacional para reconstrui <a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB2</code> (Diosdado Cabello), <code>GOB4</code> (Pedro Infante Aparicio), <code>INST3</code> (Consejo Nacional Electoral)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB3</code> (Jorge Rodríguez), <code>INST1</code> (Asamblea Nacional), <code>INST5</code> (PDVSA), <code>INT4</code> (Unión Europea), <code>P1</code> (María Corina Machado), <code>P2</code> (Edmundo González Urrutia)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>11 cortes sin actividad</strong></li><li><code>INST4</code> — Banco Central de Venezuela (<em>Autoridad monetaria</em>): <strong>6 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>3 cortes sin actividad</strong></li><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 4</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 6</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela confirma 3.342 muertos por terremotos; nuevas medidas de reconstrucción y ayuda internacional</h3>
+  <p class="fact-summary">El Gobierno de Venezuela confirmó 3.342 fallecidos por los dos terremotos, con 16.740 heridos y 16.309 damnificados sin vivienda; se decretó prohibición de exportación de materiales de construcción, creación de fondo de subsidio y misión Venezuela Renace, con apoyo logístico de EE.UU. en La Guaira.</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3342</li><li>16740</li><li>16309</li><li>79</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra actualizada de fallecidos y las nuevas medidas de emergencia requieren coordinación internacional inmediata, incluyendo ayuda logística y financiera para la reconstrucción.</div>
+  <div class="enlaces"><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">📰 Clarín</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>US seizes $8 billion of Venezuela&#x27;s oil wealth since overthrowing Maduro in January</h3>
+  <p class="fact-summary">The Trump administration has seized at least $8 billion worth of Venezuela&#x27;s oil wealth since overthrowing President Nicolás Maduro in January 2026.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>8000000000 USD</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja la magnitud de la intervención económica de EE.UU. sobre activos petroleros venezolanos, con implicaciones legales y diplomáticas.</div>
+  <div class="enlaces"><a href="https://www.commondreams.org/news/venezuela-oil-wealth-earthquake" target="_blank" rel="noopener">📰 Common Dreams</a> · <a href="https://web.archive.org/web/20260706214333/https://www.commondreams.org/news/venezuela-oil-wealth-earthquake" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Gobierno de Venezuela confirma 3.535 muertos y más de 16.000 heridos por terremotos; se prohíbe exportar materiales de construcción</h3>
+  <p class="fact-summary">El Gobierno venezolano confirmó 3.535 muertos y más de 16.000 heridos a 12 días de los terremotos; se decretó la prohibición de exportar materiales de construcción y se creó un fondo de subsidio a víctimas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3535 muertos</li><li>16000 heridos</li><li>397 muertos confirmados en últimas horas</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La escala de la tragedia y las medidas de emergencia (prohibición de exportaciones, fondo de subsidio) reconfiguran la seguridad nacional y requieren respuesta inmediata de actores internacionales.</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix" target="_blank" rel="noopener">📰 CNN en Español</a> · <a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>US oil refiners gain, Chinese rivals lose as Trump&#x27;s Venezuela strike reshapes oil exports</h3>
+  <p class="fact-summary">The US military ouster of Nicolás Maduro will reroute Venezuelan oil exports to the US and away from China, with production forecast to rise by up to 200,000 bpd in the first year.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 14:38 VET</p>
+  <ul class="data-points"><li>200000 bpd</li><li>2000000 bpd</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reconfigurará el mercado de hidrocarburos venezolano, afectando a China, EE.UU. y a los precios globales del petróleo.</div>
+  <div class="enlaces"><a href="https://www.tbsnews.net/world/us-oil-refiners-win-chinese-rivals-lose-trumps-venezuela-strike-1326331" target="_blank" rel="noopener">📰 TBS News</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Toll de muertos en terremotos de Venezuela supera 3.300 personas</h3>
+  <p class="fact-summary">El número confirmado de muertos por los gemelos terremotos devastadores en Venezuela aumentó a más de 3.300 el domingo, con miles aún desaparecidos, mientras las autoridades comenzaban las operaciones de rescate</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3300</li><li>miles desaparecidos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere activación inmediata de protocolos de ayuda humanitaria y coordinación internacional para gestión de crisis con miles de desaparecidos</div>
+  <div class="enlaces"><a href="https://www.democracynow.org/2026/7/6/headlines" target="_blank" rel="noopener">📰 Democracy Now!</a> · <a href="https://web.archive.org/web/20260706213842/https://www.democracynow.org/2026/7/6/headlines" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela&#x27;s interim leader alleges destabilization amid quake crisis</h3>
+  <p class="fact-summary">Interim President Delcy Rodríguez claims opponents attempted to destabilize Venezuela during the national emergency caused by earthquakes</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede influir en la respuesta internacional y justificar medidas de seguridad adicionales durante la crisis</div>
+  <div class="enlaces"><a href="https://www.upi.com/Top_News/World-News/2026/07/06/latam-venezuela-delcy-rodriguez-opponents-destabilization/5211783357136/" target="_blank" rel="noopener">📰 UPI</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>FIFA y Shakira crean fondo para educación en Venezuela tras terremotos; se anuncia alianza internacional para reconstruir aeropuerto de Maiketí</h3>
+  <p class="fact-summary">La FIFA y la cantante Shakira establecieron un fondo para educar víctimas de los terremotos en Venezuela; el gobierno anunció una alianza internacional para reconstruir el aeropuerto internacional de Maiketí, sin especificar países participantes.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>17</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El fondo de educación y la alianza internacional para reconstrucción del aeropuerto representan avances significativos en la recuperación post-terremoto y la atracción de ayuda externa.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>EE.UU. despliega operativo logístico en La Guaira para movilizar suministros y donaciones internacionales a Venezuela</h3>
+  <p class="fact-summary">Efectivos de fuerzas militares estadounidenses desplegaron un operativo logístico en La Guaira para movilizar cargamentos de suministro y donaciones internacionales hacia Venezuela tras los terremotos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El despliegue logístico de EE.UU. facilita la entrega urgente de ayuda humanitaria, reforzando la cooperación internacional en la crisis post-terremoto.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=YfNlKwclRVU" target="_blank" rel="noopener">📰 YouTube</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela oil revenues reached $5.5 billion in Q1 2026 despite regime instability</h3>
+  <p class="fact-summary">Official Venezuelan figures report oil revenues of approximately $5.5 billion in the first quarter of 2026, slightly higher than the previous year.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>5500000000 USD</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica capacidad de generación de ingresos petroleros en un régimen bajo presión internacional, relevante para análisis financiero y de sanciones.</div>
+  <div class="enlaces"><a href="https://english.elpais.com/international/2026-07-06/trumps-paradox-in-venezuela-supporting-a-regime-he-promised-to-overthrow.html" target="_blank" rel="noopener">📰 El País International</a> · <a href="https://web.archive.org/web/20260706214304/https://english.elpais.com/international/2026-07-06/trumps-paradox-in-venezuela-supporting-a-regime-he-promised-to-overthrow.html" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>UK sanctions Russian scientists and labs behind Novichok and Navalny poisoning</h3>
+  <p class="fact-summary">Britain sanctioned seven Russian scientists and two research labs for developing chemical weapons, including Novichok used in 2018 and a poison linked to Navalny&#x27;s 2024 death.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza la presión de sanciones sobre Rusia por armas químicas, con impacto en seguridad internacional y diplomacia.</div>
+  <div class="enlaces"><a href="https://www.euronews.com/my-europe/2026/07/06/uk-sanctions-russian-scientists-and-labs-behind-chemical-attacks-foreign-office-says" target="_blank" rel="noopener">📰 Euronews</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Cuba tourism collapses 58% in 2026 due to US sanctions targeting military-linked hotel sector</h3>
+  <p class="fact-summary">Only 360,000 tourists arrived in Cuba in the first five months of 2026, a 58% decline from 2025, driven by new US sanctions on firms engaging with the Cuban military.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>360000</li><li>58%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja el efecto de sanciones de EE.UU. en sectores económicos clave de Cuba, con implicaciones para la región.</div>
+  <div class="enlaces"><a href="https://www.cnn.com/2026/07/06/americas/cuba-hotels-us-tourists-latam-intl" target="_blank" rel="noopener">📰 CNN</a> · <a href="https://web.archive.org/web/20260706214518/https://www.cnn.com/2026/07/06/americas/cuba-hotels-us-tourists-latam-intl" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Guardia venezolano rescatado de rubble de terremoto después de 8 días en Venezuela</h3>
+  <p class="fact-summary">Un guardia de seguridad de 44 años fue rescatado de los desechos en La después de 8 días bajo tierra en los terremotos que devastaron la región venezolana</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 01/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>8</li><li>44</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aventa esperanza en operaciones de rescate y confirma continuidad de esfuerzos de búsqueda a pesar de muerte creciente</div>
+  <div class="enlaces"><a href="https://www.cbc.ca/player/play/video/9.7256984" target="_blank" rel="noopener">📰 CBC News</a> · <a href="https://www.cbsnews.com/video/rescue-workers-save-security-guard-from-venezuela-rubble/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260706213913/https://www.cbc.ca/player/play/video/9.7256984" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuelan leader marks Independence Day with message of &#x27;no social unrest&#x27;</h3>
+  <p class="fact-summary">Interim President Delcy Rodríguez defended her government&#x27;s handling of earthquake crisis while marking Independence Day with message against social unrest</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 04/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja estrategia de comunicar estabilidad durante crisis y evitar protestas sociales</div>
+  <div class="enlaces"><a href="https://www.aljazeera.com/news/2026/7/5/venezuelan-leader-marks-independence-day-with-message-of-no-social-unrest" target="_blank" rel="noopener">📰 Al Jazeera</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Rescate de niño pequeño en rubble de terremoto en Venezuela</h3>
+  <p class="fact-summary">Trabajadores de búsqueda y rescate en Venezuela continúan removiendo desechos después de dos terremotos que devastaron la región, con muerte creciente y miles aún desaparecidos</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>miles desaparecidos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Humaniza la crisis y confirma continuidad de operaciones de rescate a pesar de mortalidad creciente</div>
+  <div class="enlaces"><a href="https://www.cbsnews.com/video/toddler-rubble-after-venezuela-earthquakes/" target="_blank" rel="noopener">📰 CBS News</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#00838f;">ONG</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Turkish Red Crescent: Response to the Venezuela Earthquake humanitarian situation</h3>
+  <p class="fact-summary">Turkish Red Crescent published situation report on earthquake response in Venezuela as of July 6, 2026</p>
+  <p class="info-actor"><strong>INST3</strong> — Consejo Nacional Electoral <em>(Poder Electoral)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Mostrar nivel de coordinación internacional y recursos movilizados para asistencia</div>
+  <div class="enlaces"><a href="https://reliefweb.int/report/venezuela-bolivarian-republic/turkish-red-crescent-response-venezuela-earthquake-humanitarian-situation-july-6-2026" target="_blank" rel="noopener">📰 Turkish Red Crescent</a> · <a href="https://web.archive.org/web/20260706214029/https://reliefweb.int/report/venezuela-bolivarian-republic/turkish-red-crescent-response-venezuela-earthquake-humanitarian-situation-july-6-2026" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>OPEC+ boosts output targets, causing oil prices to decline and US gas prices to fall</h3>
+  <p class="fact-summary">Oil prices slipped on Monday following OPEC+&#x27;s decision to increase output targets, leading to lower U.S. gasoline prices.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Afecta directamente los precios del petróleo y gasolina, con impacto en mercados emergentes y consumidores.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/groups/OurColdwater/posts/3951116968516847/" target="_blank" rel="noopener">📰 Facebook - OurColdwater</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Russia stock market hits 3-year low amid MOEX 12.25% loss over 4 weeks</h3>
+  <p class="fact-summary">Russia&#x27;s MOEX stock index fell 12.25% over the past 4 weeks and 19.84% over 12 months, hitting a 17-month low on July 6, 2026.</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>12.25%</li><li>19.84%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica deterioro en mercado de capitales ruso, relevante para análisis de riesgos en economías sancionadas.</div>
+  <div class="enlaces"><a href="https://tradingeconomics.com/russia/stock-market/news/564491" target="_blank" rel="noopener">📰 Trading Economics</a> · <a href="https://web.archive.org/web/20260706214457/https://tradingeconomics.com/russia/stock-market/news/564491" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>One tycoon profits from &#x27;dark&#x27; oil shipments while others avoid Hormuz amid sanctions risk</h3>
+  <p class="fact-summary">A single tycoon is profiting from illicit &#x27;dark&#x27; oil shipments while others avoid Hormuz due to increased sanctions risk.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica proliferación de actividades de comercio ilícito de petróleo en zonas de alta tensión de sanciones.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/Dac5HrGGiG8/" target="_blank" rel="noopener">📰 Instagram - economictimes</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>FIFA y Shakira crean fondo para educación en Venezuela en apoyo a víctimas de terremotos</h3>
+  <p class="fact-summary">FIFA y la cantante Shakira anunciaron la creación de un fondo para educación en Venezuela, con una donación oficial para apoyar víctimas de los terremotos.</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La donación internacional de FIFA y Shakira refuerza la solidaridad global y puede mitigar tensiones sociales derivadas de la crisis.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">📰 YouTube - Top News for July 6, 2026</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/sports/soccer/ten-man-england-beat-battling-mexico-3-2-last-16-thriller-2026-07-06/" target="_blank" rel="noopener">Ten-man England beat battling Mexico 3-2 in last-16 thriller at FIFA World Cup 2026</a></li><li><a href="https://www.reuters.com/world/uk/uks-farage-denies-rules-broken-after-report-undeclared-benefits-2026-07-05/" target="_blank" rel="noopener">UK&#x27;s Farage denies rules broken after report on undeclared benefits</a></li><li><a href="https://www.reuters.com/pictures/pictures-day-july-6-2026-2026-07-06/TDHI3I6QONOKBJ4KYEFNX45FHA/" target="_blank" rel="noopener">President Trump rings opening bell for NYSE and Nasdaq to launch &#x27;Trump Accounts&#x27;</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <p class="seccion-vacia">Sin actualizaciones de indicadores en este corte.</p>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Se anuncia creación de &#x27;Gran Misión Venezuela Renace&#x27; y alianza internacional para recuperar aeropuerto de Maiquetía</h3>
+  <p class="fact-summary">El gobierno anunció la creación de &#x27;Gran Misión Venezuela Renace&#x27; para recuperar viviendas y estructuras afectadas, además de una alianza internacional para reconstruir el aeropuerto de Maiquetía.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>856 edificios afectados</li><li>190 edificios colapsados</li><li>95.000 personas sin vivienda</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La recuperación del aeropuerto de Maiquetía es vital para la logística de ayuda internacional y reactivación económica post-terremoto.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=YfNlKwclRVU" target="_blank" rel="noopener">📰 YouTube - Noticias en la mañana</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Coordinación EE.UU.-Venezuela en ayuda humanitaria** — El despliegue logístico de EE.UU. en La Guaira y la alianza para reconstruir Maiquetía pueden redefinir relaciones bilaterales en medio de la crisis, pero también generar tensiones internas o con aliados de Venezuela (ej. China).
+
+2. 🔴 **Impacto de la confiscación de activos petroleros venezolanos por EE.UU.** — La incautación de $8 mil millones y el redireccionamiento de exportaciones afectan la capacidad financiera del gobierno, la producción de PDVSA y la geopolítica energética (EE.UU. vs. China).
+
+3. 🟠 **Evolución de cifras de víctimas y damnificados** — Discrepancias entre fuentes (3.342 vs. 3.535 muertos) y la falta de datos consolidados sobre desaparecidos requieren verificación para dimensionar la respuesta humanitaria y evitar manipulación política.
+
+4. 🟠 **Silencio de actores clave: Jorge Rodríguez y María Corina Machado** — Su ausencia en declaraciones durante la emergencia sugiere posibles tensiones internas o estrategias de bajo perfil, especialmente Machado en un contexto de acusaciones de &quot;destabilización&quot; por el gobierno.
+
+5. 🟡 **Implementación de la &quot;Gran Misión Venezuela Renace&quot;** — Monitorear avances en subsidios, prohibición de exportaciones de materiales y alianzas internacionales para reconstrucción, ya que su éxito dependerá de transparencia y acceso a recursos.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(11)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Democracy Now!</td><td><a href="https://www.democracynow.org/2026/7/6/headlines" target="_blank" rel="noopener">https://www.democracynow.org/2026/7/6/headlines</a></td><td>2026-07-06</td></tr><tr><td>CBC News</td><td><a href="https://www.cbc.ca/player/play/video/9.7256984" target="_blank" rel="noopener">https://www.cbc.ca/player/play/video/9.7256984</a></td><td>2026-07-02</td></tr><tr><td>CBS News</td><td><a href="https://www.cbsnews.com/video/toddler-rubble-after-venezuela-earthquakes/" target="_blank" rel="noopener">https://www.cbsnews.com/video/toddler-rubble-after-venezuela-earthquakes/</a></td><td>2026-07-06</td></tr><tr><td>UPI</td><td><a href="https://www.upi.com/Top_News/World-News/2026/07/06/latam-venezuela-delcy-rodriguez-opponents-destabilization/5211783357136/" target="_blank" rel="noopener">https://www.upi.com/Top_News/World-News/2026/07/06/latam-venezuela-delcy-rodriguez-opponents-destabilization/5211783357136/</a></td><td>2026-07-06</td></tr><tr><td>Al Jazeera</td><td><a href="https://www.aljazeera.com/news/2026/7/5/venezuelan-leader-marks-independence-day-with-message-of-no-social-unrest" target="_blank" rel="noopener">https://www.aljazeera.com/news/2026/7/5/venezuelan-leader-marks-independence-day-with-message-of-no-social-unrest</a></td><td>2026-07-05</td></tr><tr><td>Clarín</td><td><a href="https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html" target="_blank" rel="noopener">https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-lunes-6-julio_0_5lslbOUCaF.html</a></td><td>2026-07-06</td></tr><tr><td>TBS News</td><td><a href="https://www.tbsnews.net/world/us-oil-refiners-win-chinese-rivals-lose-trumps-venezuela-strike-1326331" target="_blank" rel="noopener">https://www.tbsnews.net/world/us-oil-refiners-win-chinese-rivals-lose-trumps-venezuela-strike-1326331</a></td><td>2026-07-06</td></tr><tr><td>El País International</td><td><a href="https://english.elpais.com/international/2026-07-06/trumps-paradox-in-venezuela-supporting-a-regime-he-promised-to-overthrow.html" target="_blank" rel="noopener">https://english.elpais.com/international/2026-07-06/trumps-paradox-in-venezuela-supporting-a-regime-he-promised-to-overthrow.html</a></td><td>2026-07-06</td></tr><tr><td>Euronews</td><td><a href="https://www.euronews.com/my-europe/2026/07/06/uk-sanctions-russian-scientists-and-labs-behind-chemical-attacks-foreign-office-says" target="_blank" rel="noopener">https://www.euronews.com/my-europe/2026/07/06/uk-sanctions-russian-scientists-and-labs-behind-chemical-attacks-foreign-office-says</a></td><td>2026-07-06</td></tr><tr><td>CNN</td><td><a href="https://www.cnn.com/2026/07/06/americas/cuba-hotels-us-tourists-latam-intl" target="_blank" rel="noopener">https://www.cnn.com/2026/07/06/americas/cuba-hotels-us-tourists-latam-intl</a></td><td>2026-07-06</td></tr><tr><td>CNN en Español</td><td><a href="https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix" target="_blank" rel="noopener">https://cnnespanol.cnn.com/2026/07/06/mundo/5-cosas-6-julio-2026-orix</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#5d4037;">Opinión</span> Opinión <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>YouTube</td><td><a href="https://www.youtube.com/watch?v=hZI8bM2Lqkw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hZI8bM2Lqkw</a></td><td>2026-07-06</td></tr><tr><td>Common Dreams</td><td><a href="https://www.commondreams.org/news/venezuela-oil-wealth-earthquake" target="_blank" rel="noopener">https://www.commondreams.org/news/venezuela-oil-wealth-earthquake</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Facebook - OurColdwater</td><td><a href="https://www.facebook.com/groups/OurColdwater/posts/3951116968516847/" target="_blank" rel="noopener">https://www.facebook.com/groups/OurColdwater/posts/3951116968516847/</a></td><td>2026-07-06</td></tr><tr><td>Trading Economics</td><td><a href="https://tradingeconomics.com/russia/stock-market/news/564491" target="_blank" rel="noopener">https://tradingeconomics.com/russia/stock-market/news/564491</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#00838f;">ONG</span> ONG <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Turkish Red Crescent</td><td><a href="https://reliefweb.int/report/venezuela-bolivarian-republic/turkish-red-crescent-response-venezuela-earthquake-humanitarian-situation-july-6-2026" target="_blank" rel="noopener">https://reliefweb.int/report/venezuela-bolivarian-republic/turkish-red-crescent-response-venezuela-earthquake-humanitarian-situation-july-6-2026</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>YouTube</td><td><a href="https://www.youtube.com/watch?v=YfNlKwclRVU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=YfNlKwclRVU</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#558b2f;">OSINT</span> OSINT <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram - economictimes</td><td><a href="https://www.instagram.com/p/Dac5HrGGiG8/" target="_blank" rel="noopener">https://www.instagram.com/p/Dac5HrGGiG8/</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-06</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
