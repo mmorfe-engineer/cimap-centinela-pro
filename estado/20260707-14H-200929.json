@@ -1,0 +1,565 @@
+{
+  "version": "1.0",
+  "correlativo": "20260707-14H-200929",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-07T20:37:26.935168+00:00",
+  "rango_inicio": "2026-07-06T20:09:29.469316+00:00",
+  "rango_fin": "2026-07-07T20:09:29.469316+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 3,
+    "A3": 15,
+    "A2": 28,
+    "A1": 8,
+    "A0": 0,
+    "total": 54
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 14,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A2",
+        "A1",
+        "A1",
+        "A3",
+        "A2",
+        "A1",
+        "A1",
+        "A1",
+        "A3",
+        "A3",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Venezuela reinicia clases el 6 de julio en zonas no afectadas por terremotos",
+      "ultima_fuente_url": "https://avn.info.ve/ministerio-de-educacion-anuncia-regreso-a-clases-el-lunes-06-de-julio/"
+    },
+    "GOB3": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A4",
+        "A4"
+      ],
+      "ultimo_titulo": "Doble terremoto en Venezuela: 3,535 fallecidos y 16,740 heridos según balance oficial",
+      "ultima_fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    "INST1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "ONU confirma recepción de 274 millones de dólares para respuesta humanitaria en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=yQ3AulZZOx0"
+    },
+    "INST3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Chile desaprueba ayuda humanitaria de 274 millones para Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    "INT1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Índice de precios de alimentos de la FAO: 130,3 puntos en junio 2026 (-0,3% mensual)",
+      "ultima_fuente_url": "https://www.fao.org/worldfoodsituation/foodpricesindex/es/"
+    },
+    "INST2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "PDVSA reporta que la industria petrolera no se vio afectada por terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    "INT2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "Primera ayuda humanitaria de 80 toneladas de China llega a Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Gobernador de Vargas reporta 231 cuerpos no reclamados por familias",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    "GOB2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "Universidad del Zulia reanuda actividades académicas el 8 de julio tras decisión del Consejo Univers",
+      "ultima_fuente_url": "https://www.facebook.com/luzagenciadenoticias/posts/decisi%C3%B3n-del-consejo-universitario-de-la-universidad-del-zulia-en-sesi%C3%B3n-extraor/1434329438740594/"
+    },
+    "GOB4": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A2",
+        "A2",
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "231 víctimas de terremotos en estado Vargas no han sido reclamadas por sus familiares",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "P3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "372 presos políticos permanecen tras rejas en Venezuela según Foro Penal",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "INST5": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Industria petrolera y producción industrial no afectadas por terremotos en Venezuela",
+      "ultima_fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  },
+  "actores_en_silencio": [
+    "P1",
+    "P2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "a9a3156330f9",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez revela afección de salud que afecta su voz en plena crisis del terremoto",
+      "fuente_url": "https://www.facebook.com/CiberCubaNoticias/posts/delcy-rodr%C3%ADguez-revela-problema-de-salud-en-plena-crisis-en-venezuelapublicado-e/1515934773912375/"
+    },
+    {
+      "hash": "68fdeeea4cdc",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rodrigo Diamanti critica gestión de Delcy Rodríguez tras terremotos en Venezuela",
+      "fuente_url": "https://www.ntn24.com/noticias-actualidad/el-regimen-solo-se-dedica-a-controlar-no-a-salvar-vidas-rodrigo-diamanti-cuestiona-declaraciones-de-delcy-rodriguez-tras-terremotos-en-venezuela-630943"
+    },
+    {
+      "hash": "8fe406c0315f",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional Venezuela reporta cifras oficiales de fallecidos y rescatados ante sede de crisis",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "f5bfa2673b5c",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Agenda oficial de la Asamblea Nacional publicada para el 7 de julio de 2026",
+      "fuente_url": "https://x.com/asambleapa/status/2074480684295418267"
+    },
+    {
+      "hash": "8cf6315f2102",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Jordan Oterán, gobernador de Vargas, reporta 231 víctimas no reclamadas por sismos en la costa norte",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "f11fd605180e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Comisión Presidencial inspecciona 6.000 viviendas afectadas por sismos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "5b2603cff7e3",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "ONU reporta 274 millones de dólares para plan de respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "677a1de6da30",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez informa balance oficial de fallecidos y heridos por doble terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "613331b1111d",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional confirma 1048 réplicas y 856 edificios afectados",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "2ff86a54e816",
+      "actor": "INST3",
+      "alert_level": "A2",
+      "titulo_corto": "Chile desaprueba ayuda humanitaria de 274 millones para Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "bbb89e99ba32",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "China envía 80 toneladas de ayuda humanitaria y maquinaria a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "e7d9137a3cbd",
+      "actor": "INST2",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA reporta que la industria petrolera no se vio afectada por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "c3336a8e50bb",
+      "actor": "INT2",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Colombia despliega equipo forense especializado en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "4a568a7b2901",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela solicita a UNDP apoyo para programas de vivienda tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "1aa8463bb93e",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Servicios médicos y alimentación: 25.016 pacientes atendidos y 9.603 toneladas distribuidas",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "e894fc43ce1e",
+      "actor": "INST4",
+      "alert_level": "A1",
+      "titulo_corto": "Gobernador de Vargas reporta 231 cuerpos no reclamados por familias",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "4c75ddf364ba",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "29.567 efectivos desplegados y 4338 rescatistas internacionales en zona de emergencia",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "a4b5e2d00a7c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Balance oficial de terremotos en Venezuela: 3.535 fallecidos y 17.854 familias sin vivienda",
+      "fuente_url": "https://www.youtube.com/watch?v=xY6C4DaHPys"
+    },
+    {
+      "hash": "bdab2b0c5631",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "ONU confirma recepción de 274 millones de dólares para respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=yQ3AulZZOx0"
+    },
+    {
+      "hash": "8d4a9d60ac03",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "China envía 80 toneladas de ayuda humanitaria y maquinaria a Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "1e9490576986",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "EE.UU. desembarca insumos humanitarios en La Guaira junto a ciudadanos venezolanos",
+      "fuente_url": "https://www.youtube.com/watch?v=xY6C4DaHPys"
+    },
+    {
+      "hash": "1f571884dda6",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela solicita apoyo del PNUD para programas de vivienda post-terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "fd4bc16a306b",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "231 cuerpos de víctimas de terremotos no han sido reclamados en La Guaira",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "e133b5ee6fe1",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Industria petrolera y producción industrial de Venezuela no se afectaron por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "aca17d173eac",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "1028 movimientos sísmicos registrados en Venezuela, principalmente en costa norte",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "ad87a323be2a",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela en emergencia: 3.535 fallecidos y 16.740 heridos por recientes terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "5ac5e9194480",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "ONU recibe 274 millones de dólares para plan de respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "164b2505078d",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "Uniforme de la industria petrolera venezolana no se vio afectado por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "270da6160471",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Jefe del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "f58adbb81d74",
+      "actor": "P3",
+      "alert_level": "A2",
+      "titulo_corto": "372 presos políticos permanecen tras rejas en Venezuela según Foro Penal",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "31b3a7ea4ebd",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela empieza a recuperar actividad con regreso a clases y planes de reconstrucción",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/07/agenda-informativa-multisoporte-america-para-el-martes-7-de-julio-de-2026/"
+    },
+    {
+      "hash": "b00a3fd4e263",
+      "actor": "GOB4",
+      "alert_level": "A1",
+      "titulo_corto": "Gobierno de Venezuela declara luto nacional por 7 días por víctimas de terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=1VVw6IrylyY"
+    },
+    {
+      "hash": "b93e87b7775d",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "231 víctimas de terremotos en estado Vargas no han sido reclamadas por sus familiares",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "96a6f0c45099",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Cronograma oficial de surtido de gasolina en Venezuela del 6 al 12 de julio",
+      "fuente_url": "https://www.facebook.com/elpitazotv/posts/este-es-el-cronograma-de-surtido-de-gasolina-desde-el-6-hasta-el-12-de-julio-de-/1455115516642567/"
+    },
+    {
+      "hash": "72bd84aa0f8b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Retorno de Iberia a vuelos regulares entre España y Venezuela el 9 de julio",
+      "fuente_url": "https://eldiario.com/2026/07/06/resumen-noticias-venezuela-lunes-6-julio/"
+    },
+    {
+      "hash": "2eda4fd9edfd",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Reparaciones de gas autorizadas solo por personal especializado",
+      "fuente_url": "https://finanzasdigital.com/reparaciones-de-gas-autorizadas-comunicado-gremios/"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial del 7 de julio",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "a92d68626bf0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gobernador de Vargas reporta 231 cuerpos no reclamados por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "4fc913f0f0d5",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno declara Luto Nacional por 7 días por fallecidos en terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=1VVw6IrylyY"
+    },
+    {
+      "hash": "b30720fbe44d",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "General del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 3,535 fallecidos y 16,740 heridos según balance oficial",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "fb014f09d01b",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Industria petrolera y producción industrial no afectadas por terremotos en Venezuela",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "e9f077b40e7a",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "5a8bb45eecf4",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "1028 movimientos sísmicos registrados principalmente en franja norte costera de Venezuela",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "8e7c432825bd",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "372 presos políticos permanecen tras las rejas en Venezuela según Foro Penal",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "1f4d661b1ab7",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibe 274 millones de dólares para ayuda humanitaria tras doble terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=xY6C4DaHPys"
+    },
+    {
+      "hash": "3cfdb2a327c4",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Balance actualizado: 3,535 fallecidos y 17,854 perdieron vivienda por terremotos en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "67b6c2148113",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "38 hospitales y 432 colegios dañados en Caracas por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "1ce44eaebdd0",
+      "actor": "INT2",
+      "alert_level": "A2",
+      "titulo_corto": "Primera ayuda humanitaria de 80 toneladas de China llega a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "3000fce8efe5",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV al 6 de julio 2026: 667,05 Bs/USD con incremento de 2,16%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/"
+    },
+    {
+      "hash": "1c7b9f77d926",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "Índice de precios de alimentos de la FAO: 130,3 puntos en junio 2026 (-0,3% mensual)",
+      "fuente_url": "https://www.fao.org/worldfoodsituation/foodpricesindex/es/"
+    },
+    {
+      "hash": "d8f55b3b27e6",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela reinicia clases el 6 de julio en zonas no afectadas por terremotos",
+      "fuente_url": "https://avn.info.ve/ministerio-de-educacion-anuncia-regreso-a-clases-el-lunes-06-de-julio/"
+    },
+    {
+      "hash": "a1dfd47b8f7f",
+      "actor": "GOB2",
+      "alert_level": "A1",
+      "titulo_corto": "Universidad del Zulia reanuda actividades académicas el 8 de julio tras decisión del Consejo Univers",
+      "fuente_url": "https://www.facebook.com/luzagenciadenoticias/posts/decisi%C3%B3n-del-consejo-universitario-de-la-universidad-del-zulia-en-sesi%C3%B3n-extraor/1434329438740594/"
+    },
+    {
+      "hash": "a9452426c08c",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "ICCAL abre blog dedicado a la transición democrática en Venezuela",
+      "fuente_url": "https://iccal.lat/iccal-blog-lanzamiento/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "ad87a323be2a",
+      "actor": "GOB4",
+      "titulo": "Venezuela en emergencia: 3.535 fallecidos y 16.740 heridos por recientes terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "titulo": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial del 7 de julio",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "titulo": "Doble terremoto en Venezuela: 3,535 fallecidos y 16,740 heridos según balance oficial",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 3
+}
