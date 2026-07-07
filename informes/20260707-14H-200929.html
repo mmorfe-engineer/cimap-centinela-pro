@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260707-14H-200929</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260707-14H-200929</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-06T20:09:29.469316+00:00 → 2026-07-07T20:09:29.469316+00:00<br>
+    <strong>Generado:</strong> 2026-07-07 20:37 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 3 A4</span>
+    <span class="stat-pill">🟠 15 A3</span>
+    <span class="stat-pill">🟡 28 A2</span>
+    <span class="stat-pill">📊 54 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Balance oficial de víctimas por terremotos del 24 de junio reporta 3.535 fallecidos, 16.740 heridos y 6.462 rescatados, con aumento en cifras respecto a reporte anterior del 5 de julio.
+2. ONU asignó 274 millones de dólares para respuesta humanitaria en Venezuela, mientras 17.854 familias quedaron sin vivienda y 25.016 pacientes fueron atendidos en emergencias.
+3. PDVSA publicó cronograma de surtido de gasolina por terminal y placa vehicular para el período 6-12 de julio, afectando logística de transporte nacional.
+4. Jefe del Comando Sur de EE.UU., Francis Donovan, visitó Venezuela el 6 de julio para coordinar cooperación en reconstrucción, según fuentes oficiales.
+5. BCV ajustó tasa oficial de cambio a 667,05 Bs/USD el 6 de julio (+2,16%), reflejando tensión en mercado cambiario en contexto de crisis.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260707-14H-194527</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (50):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong>Pedro Infante Aparicio</strong>: Venezuela en emergencia: 3.535 fallecidos y 16.740 heridos por recientes terremotos <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: Tasa de cambio BCV al 6 de julio 2026: 667,05 Bs/USD con incremento de 2,16% <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>PDVSA</strong>: Industria petrolera y producción industrial no afectadas por terremotos en Venezuela <a href="https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>PDVSA</strong>: Cronograma oficial de surtido de gasolina en Venezuela del 6 al 12 de julio <a href="https://www.facebook.com/elpitazotv/posts/este-es-el-cronograma-de-surtido-de-gasolina-desde-el-6-hasta-el-12-de-julio-de-/1455115516642567/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Jordan Oterán, gobernador de Vargas, reporta 231 víctimas no reclamadas por sismos en la costa norte <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Jorge Rodríguez</strong>: Asamblea Nacional Venezuela reporta cifras oficiales de fallecidos y rescatados ante sede de crisis <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Asamblea Nacional confirma 1048 réplicas y 856 edificios afectados <a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción tras terremotos <a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: ONU reporta 274 millones de dólares para plan de respuesta humanitaria en Venezuela <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Jefe del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción <a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+
+<div class="novedades-bloque novedades-persistentes">
+  <strong>🔁 TEMAS QUE PERSISTEN ENTRE CORTES (3):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">A4</span> <strong>Jorge Rodríguez</strong>: Doble terremoto en Venezuela: 3,535 fallecidos y 16,740 heridos según balance oficial</li><li><span class="badge badge-A3">A3</span> <strong>Departamento de Estado EE.UU.</strong>: ONU recibe 274 millones de dólares para plan de respuesta humanitaria en Venezuela</li><li><span class="badge badge-A1">A1</span> <strong>Delcy Rodríguez</strong>: 1028 movimientos sísmicos registrados en Venezuela, principalmente en costa norte</li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INT2</code> (OFAC / U.S. Treasury), <code>P3</code> (Henrique Capriles)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB5</code> (Nicolás Maduro), <code>NGO</code> (NGO)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>4 cortes sin actividad</strong></li><li><code>P1</code> — María Corina Machado (<em>Opositora</em>): <strong>2 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 1</div><div><strong>A4 que persisten desde corte anterior:</strong> 1</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 3</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial del 7 de julio</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, reportó oficialmente 3.535 fallecidos, 16.740 heridos y 6.462 rescatados tras los terremotos del 24 de junio[2][5].</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 05:29 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>6462</li><li>17854</li><li>274000000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra de fallecidos aumenta drásticamente frente al reporte anterior del 5 de julio (3.342), lo que exige movilización urgente de recursos y planeación de reconstrucción[2][5][4].</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707202551/https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Doble terremoto en Venezuela: 3,535 fallecidos y 16,740 heridos según balance oficial</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, confirmó un balance oficial de 3,535 fallecidos, 16,740 heridos y 6,462 rescatados tras el doble terremoto que sacudió Venezuela</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 05:29 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>6462</li><li>274000000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de recursos nacionales y internacionales, con 274 millones de dólares ya asignados por la ONU para respuesta humanitaria</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela en emergencia: 3.535 fallecidos y 16.740 heridos por recientes terremotos</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, anunció que el balance oficial de víctimas por los terremotos en Venezuela es de 3.535 fallecidos, 16.740 heridos y 6.462 rescatados, con 17.854 familias sin vivienda y 25.016 pacientes atendidos en emergencias[1][2].</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>6462</li><li>17854</li><li>25016</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de ayuda humanitaria, reconstrucción de infraestructura y gestión de crisis por el gobierno venezolano y organismos internacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">📰 YouTube - Noticias más importantes del 07 de julio de 2026</a> · <a href="https://www.youtube.com/watch?v=yQ3AulZZOx0" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Asamblea Nacional Venezuela reporta cifras oficiales de fallecidos y rescatados ante sede de crisis</h3>
+  <p class="fact-summary">Jorge Rodríguez, presidente de la Asamblea Nacional, anunció un balance oficial de 3.535 fallecidos, 16.740 heridos y 6.462 rescatados en el país[1]</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>6462</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Las cifras oficiales determinan la urgencia de respuesta humanitaria y la asignación de recursos nacionales e internacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">📰 YouTube - Noticias más importantes del 07 de julio de 2026</a> · <a href="https://web.archive.org/web/20260707195133/https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez informa balance oficial de fallecidos y heridos por doble terremoto</h3>
+  <p class="fact-summary">La Vicepresidenta del Ejecutivo, Delcy Rodríguez, reportó oficialmente 3.535 fallecidos, 16.740 heridos y 6.462 rescatados por el doble terremoto del 24 de junio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>6462</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Establece la base oficial de la crisis para la movilización de recursos y la planificación de la respuesta estatal.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">📰 Noticias Venevisión</a> · <a href="https://web.archive.org/web/20260707195440/https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Balance actualizado: 3,535 fallecidos y 17,854 perdieron vivienda por terremotos en Venezuela</h3>
+  <p class="fact-summary">La Asamblea Nacional reportó 3,535 fallecidos, 16,740 heridos y 17,854 personas sin vivienda tras los sismos del 24 de junio[1][2]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>17854</li><li>193</li><li>62</li><li>82</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento de 193 fallecidos en una semana exige acelerar operaciones de rescate y reubicación de damnificados en 82 campamentos transitorios</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">📰 Noticias en la mañana - Venezuela</a> · <a href="https://www.youtube.com/watch?v=xY6C4DaHPys" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707195403/https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela reinicia clases el 6 de julio en zonas no afectadas por terremotos</h3>
+  <p class="fact-summary">El Ministerio de Educación anunció el regreso a clases el lunes 6 de julio en estados con infraestructura sin daños visibles, mientras se mantienen suspendidas las actividades en municipios afectados por los terremotos de junio[1][6].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>Lunes 6 de julio de 2026</li><li>Municipios suspendidos: Aragua - Santiago Mariño, Girardot, Ocumare De La Costa De Oro y Tovar</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica capacidad de respuesta del gobierno ante crisis de desastres y priorización de la educación como derecho garantizable</div>
+  <div class="enlaces"><a href="https://avn.info.ve/ministerio-de-educacion-anuncia-regreso-a-clases-el-lunes-06-de-julio/" target="_blank" rel="noopener">📰 AVN (Agencia Venezolana de Noticias)</a> · <a href="https://cognicion.com.mx/venezuela-reinicio-las-clases-en-gran-parte-del-pais-tras-los-terremotos-con-suspension-en-las-zonas-mas-afectadas/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez revela afección de salud que afecta su voz en plena crisis del terremoto</h3>
+  <p class="fact-summary">Delcy Rodríguez informó en Caracas que padece una afección de salud que le afecta la voz mientras lidera la respuesta al terremoto en Venezuela.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede afectar la percepción de capacidad de liderazgo de la Presidenta encargada en medio de una emergencia crítica por el terremoto.</div>
+  <div class="enlaces"><a href="https://www.facebook.com/CiberCubaNoticias/posts/delcy-rodr%C3%ADguez-revela-problema-de-salud-en-plena-crisis-en-venezuelapublicado-e/1515934773912375/" target="_blank" rel="noopener">📰 CiberCubaNoticias</a> · <a href="https://web.archive.org/web/20260707200942/https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FCiberCubaNoticias%2Fposts%2Fdelcy-rodr%25C3%25ADguez-revela-problema-de-salud-en-plena-crisis-en-venezuelapublicado-e%2F1515934773912375%2F" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela solicita a UNDP apoyo para programas de vivienda tras terremotos</h3>
+  <p class="fact-summary">Venezuela pidió al Programa de Naciones Unidas para el Desarrollo (UNDP) apoyo para impulsar programas de vivienda y atender ciudadanos sin hogar por los terremotos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Inicia la planificación de largo plazo para la solución habitacional, previniendo la crisis de refugio permanente.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">📰 Noticias Venevisión</a> · <a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>38 hospitales y 432 colegios dañados en Caracas por terremotos</h3>
+  <p class="fact-summary">El gobierno venezolano reportó daños estructurales en al menos 38 hospitales y 432 colegios en la capital tras los sismos del 24 de junio[1]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>38</li><li>432</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La afectación de infraestructura educativa y hospitalaria crítica exige priorizar reparaciones para restablecer servicios básicos a la población</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">📰 Venezuela en emergencia</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Universidad del Zulia reanuda actividades académicas el 8 de julio tras decisión del Consejo Universitario</h3>
+  <p class="fact-summary">El Consejo Universitario de la Universidad del Zulia decidió en sesión extraordinaria del 6 de julio reanudar actividades administrativas el 7 de julio y académicas de pregrado y posgrado el 8 de julio[2][3].</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>Martes 7 de julio de 2026 - actividades administrativas</li><li>Miércoles 8 de julio de 2026 - actividades académicas</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleca coordinación entre instituciones educativas y gobierno para recuperar el ciclo escolar normalizado</div>
+  <div class="enlaces"><a href="https://www.facebook.com/luzagenciadenoticias/posts/decisi%C3%B3n-del-consejo-universitario-de-la-universidad-del-zulia-en-sesi%C3%B3n-extraor/1434329438740594/" target="_blank" rel="noopener">📰 Instagram (Luz Agencia de Noticias)</a> · <a href="https://www.instagram.com/p/DadSnXZkayZ/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707203518/https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fluzagenciadenoticias%2Fposts%2Fdecisi%25C3%25B3n-del-consejo-universitario-de-la-universidad-del-zulia-en-sesi%25C3%25B3n-extraor%2F1434329438740594%2F" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Servicios médicos y alimentación: 25.016 pacientes atendidos y 9.603 toneladas distribuidas</h3>
+  <p class="fact-summary">Las autoridades informaron que se han atendido 25.016 pacientes y distribuido 9.603 toneladas de alimentos en las zonas afectadas por los terremotos.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>25016</li><li>9603</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja la capacidad de respuesta inmediata del sistema de salud y la logística de alimentos para la población afectada.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>29.567 efectivos desplegados y 4338 rescatistas internacionales en zona de emergencia</h3>
+  <p class="fact-summary">Las autoridades subrayen que 29.567 efectivos nacionales y 4.338 rescatistas internacionales se encuentran desplegados en las zonas más afectadas.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>29567</li><li>4338</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Garantiza la cobertura operativa de la respuesta humanitaria con una fuerza significativa tanto nacional como internacional.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">📰 Noticias Venevisión</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>General del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción</h3>
+  <p class="fact-summary">Francis Donovan, jefe del Comando Sur de EE.UU., visitó Venezuela el lunes 6 de julio para coordinar cooperación en la reconstrucción del país[3].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria; requiere confirmación de fuente oficial del Comando Sur</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La visita de un alto mando militar estadounidense indica un posible despliegue de ayuda y cooperación técnica, lo que podría reconfigurar la dinámica geopolítica en la región[3].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 Al Día con Sergio</a> · <a href="https://web.archive.org/web/20260707195628/https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción tras terremotos</h3>
+  <p class="fact-summary">El jefe del Comando Sur de EE.UU., Francis Donovan, visitó Venezuela el 6 de julio para coordinar cooperación en reconstrucción del país</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica apertura de cooperación militar EE.UU. para reconstrucción, con potencial impacto en recursos técnicos y humanos para respuesta</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 Al Día con Sergio</a> · <a href="https://web.archive.org/web/20260707195628/https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>ONU reporta 274 millones de dólares para plan de respuesta humanitaria en Venezuela</h3>
+  <p class="fact-summary">La Organización de Naciones Unidas anunció que el plan de respuesta humanitaria ha recibido 274 millones de dólares para atender contingencias en Venezuela[1]</p>
+  <p class="info-actor">Organización de Naciones Unidas</p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>274000000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Los 274 millones de dólares permiten movilizar ayuda humanitaria crítica para afectados por desastre natural en Venezuela</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">📰 YouTube - Noticias más importantes del 07 de julio de 2026</a> · <a href="https://web.archive.org/web/20260707195133/https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Balance oficial de terremotos en Venezuela: 3.535 fallecidos y 17.854 familias sin vivienda</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, confirmó 3.535 fallecidos, 16.740 heridos y 17.854 familias desalojadas por los terremotos del 24 de junio, con un aumento de 193 muertes desde el domingo</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3535</li><li>16740</li><li>6462</li><li>17854</li><li>193</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra de muertos supera las expectativas y requiere expansión de campamentos transitorios; la pérdida de vivienda afecta a 17.854 familias, demandando respuesta humanitaria urgente</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=xY6C4DaHPys" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube)</a> · <a href="https://www.youtube.com/watch?v=yQ3AulZZOx0" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>ONU recibe 274 millones de dólares para plan de respuesta humanitaria en Venezuela</h3>
+  <p class="fact-summary">El secretario general de la ONU, Antonio Gutiérrez, informó que el plan de respuesta humanitaria para Venezuela ha recibido 274 millones de dólares para atender las contingencias derivadas de los terremotos[2][3].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  <ul class="data-points"><li>274000000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Permite iniciar operaciones de ayuda humanitaria, alojamiento temporal y atención médica para víctimas de los terremotos</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 YouTube - Al Día con Sergio - Martes 07 de Julio del 2026</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707195628/https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Jefe del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción</h3>
+  <p class="fact-summary">El jefe del Comando Sur de Estados Unidos, Francis Donovan, viajó a Venezuela el lunes 6 de julio para coordinar cooperación en la reconstrucción del país tras los terremotos[3].</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica posible reapertura de canales de cooperación militar y civil entre EE.UU. y Venezuela en contexto de crisis humanitaria</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 YouTube - Al Día con Sergio - Martes 07 de Julio del 2026</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Retorno de Iberia a vuelos regulares entre España y Venezuela el 9 de julio</h3>
+  <p class="fact-summary">La aerolínea española Iberia reanudará sus vuelos regulares entre Madrid y el Aeropuerto Internacional de Valencia (Carabobo) el 9 de julio de 2026, con dos vuelos semanales, tras suspensión por terremotos[1]</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-07-09 fecha_retorno</li><li>2 vuelos_semanales</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La recuperación de la conectividad aérea facilita el transporte de personal técnico y equipos críticos para la industria energética, apoyando la estabilidad del sector[1]</div>
+  <div class="enlaces"><a href="https://eldiario.com/2026/07/06/resumen-noticias-venezuela-lunes-6-julio/" target="_blank" rel="noopener">📰 El Diario</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>ONU confirma recepción de 274 millones de dólares para respuesta humanitaria en Venezuela</h3>
+  <p class="fact-summary">El secretario general de la ONU, Antonio Gutiérrez, informó que el plan de respuesta humanitaria para Venezuela ha recibido 274 millones de dólares, con 32 millones adicionales del sector privado</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>274000000</li><li>32000000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El financiamiento asegura la continuidad de operaciones humanitarias post-terremoto; el sector privado aporta 32 millones, reforzando la respuesta coordinada</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=yQ3AulZZOx0" target="_blank" rel="noopener">📰 Noticias Telemundo (YouTube)</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>China envía 80 toneladas de ayuda humanitaria y maquinaria a Venezuela tras terremotos</h3>
+  <p class="fact-summary">El gobierno chino entregó 80 toneladas de ayuda humanitaria, maquinaria y alimentos a Venezuela, además de facilitar imágenes satelitales de zonas afectadas</p>
+  <p class="info-actor"><strong>GOB2</strong> — Diosdado Cabello <em>(Figura del chavismo histórico)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>80</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La ayuda china refuerza la capacidad de reconstrucción inmediata; las imágenes satelitales permiten evaluar daños con precisión</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">📰 Noticias Telemundo (YouTube)</a> · <a href="https://web.archive.org/web/20260707195403/https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>EE.UU. desembarca insumos humanitarios en La Guaira junto a ciudadanos venezolanos</h3>
+  <p class="fact-summary">Efectivos militares de EE.UU. y ciudadanos venezolanos desembarcaron insumos humanitarios en La Guaira para apoyar víctimas de los terremotos del 24 de junio</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La presencia militar de EE.UU. en la zona de desastre indica escalada de cooperación en respuesta humanitaria; el desembarco en La Guaira asegura acceso rápido a víctimas</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=xY6C4DaHPys" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube)</a> · <a href="https://web.archive.org/web/20260707201653/https://www.youtube.com/watch?v=xY6C4DaHPys" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela solicita apoyo del PNUD para programas de vivienda post-terremotos</h3>
+  <p class="fact-summary">Venezuela pidió al Programa de las Naciones Unidas para el Desarrollo (PNUD) apoyo para implementar programas de vivienda y atender ciudadanos sin hogar por los terremotos del 24 de junio</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>17854</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La solicitud al PNUD busca estructurar programas de vivienda para 17.854 familias desalojadas; la cooperación multinacional es clave para la recuperación sostenible</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">📰 Noticias Telemundo (YouTube)</a> · <a href="https://web.archive.org/web/20260707195403/https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Primera ayuda humanitaria de 80 toneladas de China llega a Venezuela</h3>
+  <p class="fact-summary">El primer lote de 80 toneladas de ayuda humanitaria enviada por el gobierno chino llegó el lunes a Venezuela afectada por el doble terremoto[1]</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>80</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La llegada de ayuda china refuerza la cooperación bilateral y aporta recursos críticos para la asistencia a damnificados en campamentos</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">📰 Noticias en la mañana - Venezuela</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#283593;">Académica</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>ICCAL abre blog dedicado a la transición democrática en Venezuela</h3>
+  <p class="fact-summary">El ICCAL inicia un nuevo espacio de blog el 7 de julio 2026 dedicado a publicaciones sobre la transición democrática en Venezuela bajo el marco del Ius Constitutionale Commune[4].</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>07 de Julio 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Proporciona marco teórico para evaluar procesos de cambio político en Venezuela con enfoque de derechos constitucionales compartidos</div>
+  <div class="enlaces"><a href="https://iccal.lat/iccal-blog-lanzamiento/" target="_blank" rel="noopener">📰 ICCAL</a> · <a href="https://web.archive.org/web/20260707203620/https://iccal.lat/iccal-blog-lanzamiento/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Uniforme de la industria petrolera venezolana no se vio afectado por terremotos</h3>
+  <p class="fact-summary">Voceros del gobierno venezolano confirmaron que la industria petrolera y la producción industrial no se vieron afectadas por los terremotos, manteniendo su capacidad instalada al máximo[2][3].</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Asegura flujo de ingresos petroleros para financiar reconstrucción y evitar crisis económica adicional en Venezuela</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 YouTube - Al Día con Sergio - Martes 07 de Julio del 2026</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela empieza a recuperar actividad con regreso a clases y planes de reconstrucción</h3>
+  <p class="fact-summary">Venezuela comienza a recuperar actividad económica con regreso a clases en zonas no afectadas por terremotos y planes de reconstrucción, mientras miles siguen sin vivienda[7].</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica que el gobierno venezolano está priorizando educación y reconstrucción para mitigar impacto social de los terremotos</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/07/agenda-informativa-multisoporte-america-para-el-martes-7-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobae</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>231 víctimas de terremotos en estado Vargas no han sido reclamadas por sus familiares</h3>
+  <p class="fact-summary">José Alejandro Oterán, gobernador del estado Vargas, declaró que hay 231 víctimas de los terremotos cuyos cuerpos no han sido reclamados por familiares[2][3].</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  <ul class="data-points"><li>231</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere intervención inmediata de autoridades para identificar y entregar cuerpos a familias, evitando crisis humanitaria adicional</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 YouTube - Al Día con Sergio - Martes 07 de Julio del 2026</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707195628/https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>231 cuerpos de víctimas de terremotos no han sido reclamados en La Guaira</h3>
+  <p class="fact-summary">El gobernador de Estado Vargas, José Alejandro Oterán, confirmó que 231 cuerpos de víctimas de los terremotos del 24 de junio permanecen sin ser reclamados en La Guaira</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>231</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La falta de reclamo de cuerpos impide el cierre emocional de familias y requiere gestión específica de enterramientos; el número afecta la planificación de cementerios</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube)</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707195403/https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Industria petrolera y producción industrial de Venezuela no se afectaron por terremotos</h3>
+  <p class="fact-summary">Según voceros oficiales, la industria petrolera y la producción industrial operan al 100% de capacidad instalada tras los terremotos, sin interrupciones excepto episodios relacionados con combustible en el campo</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La no afectación de la industria petrolera y industrial asegura la continuidad de ingresos y producción; el único riesgo es el suministro de combustible en el campo</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>1028 movimientos sísmicos registrados en Venezuela, principalmente en costa norte</h3>
+  <p class="fact-summary">La Comisión Presidencial de Evaluación y Habitabilidad reportó 1028 movimientos sísmicos en diferentes regiones, con mayor frecuencia en la franja norte costera</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>1028</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El alto número de movimientos sísmicos indica persistencia de riesgo en la costa norte; la vigilancia continua es esencial para prevenir nuevos daños</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">📰 Noticias Venevisión (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobierno de Venezuela declara luto nacional por 7 días por víctimas de terremotos</h3>
+  <p class="fact-summary">El gobierno venezolano declaró luto nacional por 7 días para honrar a las víctimas de los recientes terremotos[8].</p>
+  <p class="info-actor"><strong>GOB4</strong> — Pedro Infante Aparicio 🇻🇪 <em>(Primer Vicepresidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 16:09 VET</p>
+  <ul class="data-points"><li>7</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Respuesta simbólica del gobierno para mostrar solidaridad con víctimas y familias afectadas por los terremotos</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=1VVw6IrylyY" target="_blank" rel="noopener">📰 YouTube - Gobierno declara LUTO NACIONAL por 7 días</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>7. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Cronograma oficial de surtido de gasolina en Venezuela del 6 al 12 de julio</h3>
+  <p class="fact-summary">Se publicó el cronograma oficial de surtido de gasolina para el período del 6 al 12 de julio de 2026, asignado por terminal según placa vehicular en Venezuela[3]</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-07-06 fecha_inicio</li><li>2026-07-12 fecha_fin</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Permite prever la disponibilidad de combustible por región y placa, afectando directamente la logística de transporte y distribución de energía en todo el país[3]</div>
+  <div class="enlaces"><a href="https://www.facebook.com/elpitazotv/posts/este-es-el-cronograma-de-surtido-de-gasolina-desde-el-6-hasta-el-12-de-julio-de-/1455115516642567/" target="_blank" rel="noopener">📰 El Pitazo TV</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Reparaciones de gas autorizadas solo por personal especializado</h3>
+  <p class="fact-summary">Gremios del gas publicaron un comunicado el 6 de julio de 2026 exhortando que las reparaciones de gaséoductos deben realizarse únicamente por personal autorizado para garantizar seguridad[8]</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 04:40 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Establece un estándar de seguridad en la operación de gasoductos, reduciendo riesgos de incidentes y manteniendo la continuidad del suministro energético[8]</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/reparaciones-de-gas-autorizadas-comunicado-gremios/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA reporta que la industria petrolera no se vio afectada por terremotos</h3>
+  <p class="fact-summary">Voceros de la industria petrolera (PDVSA) confirmaron que la producción no se detuvo y opera a su capacidad instalada máxima tras los terremotos.</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Mitiga riesgos de escasez de combustible y estabilidad económica, esencial para la logística de la emergencia.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">📰 Noticias Venevisión</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260707195440/https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>8. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Tasa de cambio BCV al 6 de julio 2026: 667,05 Bs/USD con incremento de 2,16%</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) fijó la tasa oficial de cambio en 667,05 Bs/USD el 6 de julio 2026, registrando un aumento de +14,0774 Bs/USD (+2,1559%) respecto al día anterior</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>667.05</li><li>2.1559</li><li>14.0774</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El incremento de 2,16% en la tasa BCV refleja tensión en el mercado cambiario y puede acelerar la inflación en un contexto de alta dependencia de importaciones, afectando el costo de vida en Venezuela</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Industria petrolera y producción industrial no afectadas por terremotos en Venezuela</h3>
+  <p class="fact-summary">Voceros oficiales de la industria petrolera y producción industrial confirmaron que ninguna se vio afectada, manteniendo su capacidad instalada al máximo</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 05:29 VET</p>
+  <ul class="data-points"><li>86794</li><li>17854</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Evita impacto económico adicional en crisis; asegura continuidad de producción petrolera e industrial, vital para estabilización económica</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a> · <a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Índice de precios de alimentos de la FAO: 130,3 puntos en junio 2026 (-0,3% mensual)</h3>
+  <p class="fact-summary">La FAO reportó que el índice global de precios de alimentos fue de 130,3 puntos en junio 2026, con una disminución de 0,3% respecto a mayo, mientras que los precios de aceites vegetales aumentaron 3,8%</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 29/06/2026 20:00 VET</p>
+  <ul class="data-points"><li>130.3</li><li>-0.3</li><li>3.8</li><li>192.0</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La caída global de precios de alimentos podría mitigar parcialmente la inflación en Venezuela si se traduce en menores costos de importación, aunque el aumento de 3,8% en aceites vegetales genera presión específica en esos productos de alta demanda nacional</div>
+  <div class="enlaces"><a href="https://www.fao.org/worldfoodsituation/foodpricesindex/es/" target="_blank" rel="noopener">📰 Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>10. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>General del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción</h3>
+  <p class="fact-summary">Francis Donovan, jefe del Comando Sur de EE.UU., visitó Venezuela el lunes 6 de julio para coordinar cooperación en la reconstrucción del país[3].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 05/07/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria; requiere confirmación de fuente oficial del Comando Sur</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La visita de un alto mando militar estadounidense indica un posible despliegue de ayuda y cooperación técnica, lo que podría reconfigurar la dinámica geopolítica en la región[3].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 Al Día con Sergio</a> · <a href="https://web.archive.org/web/20260707195628/https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Gobernador de Vargas reporta 231 cuerpos no reclamados por terremotos</h3>
+  <p class="fact-summary">José Alejandro Oterán, gobernador de Vargas, confirmó que hay 231 víctimas de los terremotos con cuerpos no reclamados por familiares[2].</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>231</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria de fuente oficial local; requiere confirmación directa</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La cifra de cuerpos no reclamados refleja la magnitud del trauma social y la necesidad de apoyo psicosocial y logístico en la región afectada[2].</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">📰 Noticias más importantes del 07 de julio</a> · <a href="https://web.archive.org/web/20260707195133/https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#00838f;">ONG</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>372 presos políticos permanecen tras las rejas en Venezuela según Foro Penal</h3>
+  <p class="fact-summary">Gonzalo Jimio, director vicepresidente del Foro Penal, confirmó que 372 presos políticos permanecen aún tras las rejas en Venezuela</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 06/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>372</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Confirmado por fuente secundaria confiable (Foro Penal, ONG de derechos humanos)</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Mantiene presión internacional sobre situación de derechos humanos en Venezuela, con posible impacto en respuestas de organismos internacionales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">📰 Al Día con Sergio</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Cifras oficiales de víctimas y daños estructurales** — Las 3.535 muertes, 16.740 heridos, 190 edificios colapsados y 856 afectados exigen priorizar logística de rescate, identificación de cuerpos no reclamados (231 en Vargas) y evaluación de riesgos en infraestructura crítica para evitar nuevos colapsos.
+
+2. 🔴 **Cooperación EE.UU.-Venezuela (visita de Francis Donovan)** — La presencia del jefe del Comando Sur en Venezuela para coordinar reconstrucción puede redefinir alianzas geopolíticas, habilitar recursos técnicos/militares y presionar cambios en la gestión de ayuda humanitaria. Monitorear declaraciones posteriores y posibles acuerdos concretos.
+
+3. 🟠 **Tasa de cambio BCV (667,05 Bs/USD, +2,16%)** — El aumento refleja presión en el mercado cambiario y riesgo inflacionario en un contexto de alta dependencia de importaciones. Impactará costos de alimentos, medicinas y reconstrucción. Verificar si el BCV interviene con ajustes adicionales.
+
+4. 🟠 **Silencio de María Corina Machado y Edmundo González Urrutia** — Su ausencia en la narrativa oficial sobre la crisis sugiere posible estrategia de distanciamiento o restricciones. Su postura podría influir en la movilización de apoyo internacional o interno en las próximas semanas.
+
+5. 🟡 **Cronograma de surtido de gasolina (6-12 julio)** — La distribución por placa y terminal afecta logística de transporte de ayuda y movilidad de equipos de rescate. Monitorear cumplimiento del cronograma y reportes de desabastecimiento en zonas críticas.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(6)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>YouTube - Noticias más importantes del 07 de julio de 2026</td><td><a href="https://www.youtube.com/watch?v=aUaewdBi7LQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=aUaewdBi7LQ</a></td><td>2026-07-07</td></tr><tr><td>Noticias Venevisión</td><td><a href="https://www.youtube.com/watch?v=7UE1HYQ7qAo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=7UE1HYQ7qAo</a></td><td>2026-07-07</td></tr><tr><td>Noticias Venevisión (YouTube)</td><td><a href="https://www.youtube.com/watch?v=xY6C4DaHPys" target="_blank" rel="noopener">https://www.youtube.com/watch?v=xY6C4DaHPys</a></td><td>2026-07-07</td></tr><tr><td>Noticias Telemundo (YouTube)</td><td><a href="https://www.youtube.com/watch?v=6MQY0hEGMp0" target="_blank" rel="noopener">https://www.youtube.com/watch?v=6MQY0hEGMp0</a></td><td>2026-07-07</td></tr><tr><td>YouTube - Al Día con Sergio - Martes 07 de Julio del 2026</td><td><a href="https://www.youtube.com/watch?v=tm75Eppak8U" target="_blank" rel="noopener">https://www.youtube.com/watch?v=tm75Eppak8U</a></td><td>2026-07-07</td></tr><tr><td>YouTube - Gobierno declara LUTO NACIONAL por 7 días</td><td><a href="https://www.youtube.com/watch?v=1VVw6IrylyY" target="_blank" rel="noopener">https://www.youtube.com/watch?v=1VVw6IrylyY</a></td><td>2026-07-07</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>CiberCubaNoticias</td><td><a href="https://www.facebook.com/CiberCubaNoticias/posts/delcy-rodr%C3%ADguez-revela-problema-de-salud-en-plena-crisis-en-venezuelapublicado-e/1515934773912375/" target="_blank" rel="noopener">https://www.facebook.com/CiberCubaNoticias/posts/delcy-rodr%C3%ADguez-revela-problema-de-salud-en-plena-crisis-en-venezuelapublicado-e/1515934773912375/</a></td><td>2026-07-07</td></tr><tr><td>NTN24</td><td><a href="https://www.ntn24.com/noticias-actualidad/el-regimen-solo-se-dedica-a-controlar-no-a-salvar-vidas-rodrigo-diamanti-cuestiona-declaraciones-de-delcy-rodriguez-tras-terremotos-en-venezuela-630943" target="_blank" rel="noopener">https://www.ntn24.com/noticias-actualidad/el-regimen-solo-se-dedica-a-controlar-no-a-salvar-vidas-rodrigo-diamanti-cuestiona-declaraciones-de-delcy-rodriguez-tras-terremotos-en-venezuela-630943</a></td><td>2026-07-04</td></tr><tr><td>Infobae</td><td><a href="https://www.infobae.com/america/agencias/2026/07/07/agenda-informativa-multisoporte-america-para-el-martes-7-de-julio-de-2026/" target="_blank" rel="noopener">https://www.infobae.com/america/agencias/2026/07/07/agenda-informativa-multisoporte-america-para-el-martes-7-de-julio-de-2026/</a></td><td>2026-07-07</td></tr><tr><td>El Diario</td><td><a href="https://eldiario.com/2026/07/06/resumen-noticias-venezuela-lunes-6-julio/" target="_blank" rel="noopener">https://eldiario.com/2026/07/06/resumen-noticias-venezuela-lunes-6-julio/</a></td><td>2026-07-06</td></tr><tr><td>EFE</td><td><a href="https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/</a></td><td>2026-07-07</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>X - @asambleapa</td><td><a href="https://x.com/asambleapa/status/2074480684295418267" target="_blank" rel="noopener">https://x.com/asambleapa/status/2074480684295418267</a></td><td>2026-07-07</td></tr><tr><td>El Pitazo TV</td><td><a href="https://www.facebook.com/elpitazotv/posts/este-es-el-cronograma-de-surtido-de-gasolina-desde-el-6-hasta-el-12-de-julio-de-/1455115516642567/" target="_blank" rel="noopener">https://www.facebook.com/elpitazotv/posts/este-es-el-cronograma-de-surtido-de-gasolina-desde-el-6-hasta-el-12-de-julio-de-/1455115516642567/</a></td><td>2026-07-06</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/reparaciones-de-gas-autorizadas-comunicado-gremios/" target="_blank" rel="noopener">https://finanzasdigital.com/reparaciones-de-gas-autorizadas-comunicado-gremios/</a></td><td>2026-07-06</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/</a></td><td>2026-07-06</td></tr><tr><td>AVN (Agencia Venezolana de Noticias)</td><td><a href="https://avn.info.ve/ministerio-de-educacion-anuncia-regreso-a-clases-el-lunes-06-de-julio/" target="_blank" rel="noopener">https://avn.info.ve/ministerio-de-educacion-anuncia-regreso-a-clases-el-lunes-06-de-julio/</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Noticias Telemundo (YouTube)</td><td><a href="https://www.youtube.com/watch?v=yQ3AulZZOx0" target="_blank" rel="noopener">https://www.youtube.com/watch?v=yQ3AulZZOx0</a></td><td>2026-07-07</td></tr><tr><td>Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</td><td><a href="https://www.fao.org/worldfoodsituation/foodpricesindex/es/" target="_blank" rel="noopener">https://www.fao.org/worldfoodsituation/foodpricesindex/es/</a></td><td>2026-06-30</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#6a1b9a;">Actor opositor</span> Actor opositor <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram (Luz Agencia de Noticias)</td><td><a href="https://www.facebook.com/luzagenciadenoticias/posts/decisi%C3%B3n-del-consejo-universitario-de-la-universidad-del-zulia-en-sesi%C3%B3n-extraor/1434329438740594/" target="_blank" rel="noopener">https://www.facebook.com/luzagenciadenoticias/posts/decisi%C3%B3n-del-consejo-universitario-de-la-universidad-del-zulia-en-sesi%C3%B3n-extraor/1434329438740594/</a></td><td>2026-07-06</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#283593;">Académica</span> Académica <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>ICCAL</td><td><a href="https://iccal.lat/iccal-blog-lanzamiento/" target="_blank" rel="noopener">https://iccal.lat/iccal-blog-lanzamiento/</a></td><td>2026-07-07</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-07</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
