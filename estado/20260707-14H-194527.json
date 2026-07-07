@@ -1,0 +1,666 @@
+{
+  "version": "1.0",
+  "correlativo": "20260707-14H-194527",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-07T20:09:13.633372+00:00",
+  "rango_inicio": "2026-07-06T19:45:27.236184+00:00",
+  "rango_fin": "2026-07-07T19:45:27.236184+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 4,
+    "A3": 19,
+    "A2": 31,
+    "A1": 10,
+    "A0": 3,
+    "total": 67
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 20,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A0",
+        "A1",
+        "A2",
+        "A3",
+        "A3",
+        "A2",
+        "A4",
+        "A2",
+        "A2",
+        "A2",
+        "A1",
+        "A1",
+        "A2",
+        "A3",
+        "A2",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "18.000 personas perdieron viviendas por terremotos en Venezuela con 82 campamentos transitorios habi",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Límite constitucional de Maduro: 180 días de ausencia temporal",
+      "ultima_fuente_url": "https://www.facebook.com/CiberCubaNoticias/posts/3-de-julio-venezuela-al-l%C3%ADmite-constitucional-con-maduropublicado-en-cibercuba-e/1517101063795746/"
+    },
+    "GOB3": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A4"
+      ],
+      "ultimo_titulo": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos",
+      "ultima_fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    "INST1": {
+      "n_hallazgos": 7,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A1",
+        "A3",
+        "A3",
+        "A2",
+        "A3",
+        "A1",
+        "A0"
+      ],
+      "ultimo_titulo": "Tasa BCV 07 de julio 2026: 674,9305 Bs/USD con incremento de 1 punto",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-07-julio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Relance internacional: 274 millones de dólares para respuesta humanitaria en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    "GOB5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Colombia despliega equipo forense especializado para apoyo en identificación de víctimas",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    "GOB4": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "BCV actualiza tasa de cambio dólar a 674,9305 Bs/USD para 7 de julio de 2026",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-07-julio-2026/"
+    },
+    "INST2": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "Presos políticos en Venezuela: 372 detenidos según Foro Penal y 551 por registro de Justicia, Encuen",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "INST3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "No se afectó la producción industrial ni petrolera tras los terremotos, según voceros oficiales",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A1",
+      "alert_levels": [
+        "A1"
+      ],
+      "ultimo_titulo": "Comisión Presidencial ha inspeccionado 6.000 viviendas afectadas por los terremotos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    "INST5": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A1",
+        "A4",
+        "A3"
+      ],
+      "ultimo_titulo": "Nuevos precios de referencia de combustibles PDVSA con vigencia del 7 al 20 de julio",
+      "ultima_fuente_url": "https://www.instagram.com/p/Dafm1M0Ocyc/"
+    },
+    "NGO": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "472 presos políticos permanecen aún tras las rejas en Venezuela, según Foro Penal",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    }
+  },
+  "actores_en_silencio": [
+    "P1",
+    "P2",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "b4212bf501c8",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez promete miles de viviendas antes de fin de año para afectados por terremoto",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/06/venezuela/rodriguez-promesa-viviendas-terremoto-orix"
+    },
+    {
+      "hash": "a2410d01e90c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez mantiene negociaciones con Washington y el FMI para recuperar recursos de reconstruc",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/06/venezuela/rodriguez-promesa-viviendas-terremoto-orix"
+    },
+    {
+      "hash": "198646fddd64",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Rodríguez califica críticas por retrasos en auxilio de terremotos como 'miserables'",
+      "fuente_url": "https://www.bbc.com/mundo/articles/c0lye319p58o"
+    },
+    {
+      "hash": "71bb5ee48231",
+      "actor": "GOB1",
+      "alert_level": "A0",
+      "titulo_corto": "Venezuela conmemora 215 aniversario de independencia con presencia de Delcy Rodríguez",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/-venezuela-conmemor%C3%B3-este-5-de-julio-de-2026-el-aniversario-215-de-su-independen/1542992034536494/"
+    },
+    {
+      "hash": "592b3b9769a8",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Delcy Rodríguez decreta Día de Júbilo Nacional no laborable tras triunfo de selección venezolana",
+      "fuente_url": "https://www.facebook.com/teleSUR/posts/-venezuela-conmemor%C3%B3-este-5-de-julio-de-2026-el-aniversario-215-de-su-independen/1542992034536494/"
+    },
+    {
+      "hash": "e1afe90c6b4f",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Rodríguez solicita a Trump cese de sanciones económicas que afectan a Venezuela",
+      "fuente_url": "https://www.facebook.com/RadioTelevisionCanaria/posts/la-mayor-parte-de-las-sanciones-sobre-todo-las-de-la-ue-son-unipersonales-y-est%C3%A1/1617516753717522/"
+    },
+    {
+      "hash": "1f91c571e0f1",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Iniciativa Ciudadana por Venezuela denuncia falta de gobierno constitucional",
+      "fuente_url": "https://correodelcaroni.com/pais-politico/plataforma-ciudadana-por-venezuela-desde-el-3-de-julio-en-este-pais-no-tenemos-gobierno/"
+    },
+    {
+      "hash": "dcbcb9e183e7",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Reunión de Delcy Rodríguez con delegación de EE.UU.",
+      "fuente_url": "https://www.instagram.com/reel/DafbJGthcK0/"
+    },
+    {
+      "hash": "cfab8ead1203",
+      "actor": "GOB2",
+      "alert_level": "A4",
+      "titulo_corto": "Límite constitucional de Maduro: 180 días de ausencia temporal",
+      "fuente_url": "https://www.facebook.com/CiberCubaNoticias/posts/3-de-julio-venezuela-al-l%C3%ADmite-constitucional-con-maduropublicado-en-cibercuba-e/1517101063795746/"
+    },
+    {
+      "hash": "249c06fcba7e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Georg Eickhoff: EE.UU. debe replantear su estrategia sobre Venezuela",
+      "fuente_url": "https://www.elnacional.com/2026/07/georg-eickhoff-estados-unidos-tiene-que-replantear-su-plan-sobre-venezuela/"
+    },
+    {
+      "hash": "2b55e941ef78",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Sismos en Venezuela: aumento de fallecidos y desaparecidos",
+      "fuente_url": "https://www.chicagotribune.com/2026/07/06/al-tiempo-que-termina-rescate-tras-sismos-venezolanos-se-quedan-solos-para-recuperar-a-sus-muertos/"
+    },
+    {
+      "hash": "6916d1d4b349",
+      "actor": "",
+      "alert_level": "A0",
+      "titulo_corto": "Radiograma Matinal del 7 de julio de 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=PdW6jeL38Dk"
+    },
+    {
+      "hash": "56d3eb833b7c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez califica de 'miserables' las críticas sobre auxilio en terremotos",
+      "fuente_url": "https://www.bbc.com/mundo/articles/c0lye319p58o"
+    },
+    {
+      "hash": "5109d7dc1ea9",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez presenta balance oficial de fallecidos y heridos por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "3b60c8333b38",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "ONU recibe 274 millones de dólares para plan de respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "fadec7a5ead7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Industria petrolera e producción industrial no se afectaron por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "f6fefa371b38",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Asamblea Nacional comparte agenda oficial para el 7 de julio de 2026",
+      "fuente_url": "https://x.com/asambleapa/status/2074480684295418267"
+    },
+    {
+      "hash": "a6e3cce6cea0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gobernador de Vargas reporta 231 víctimas no reclamadas por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "ca87f057c8cd",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Comisión Presidencial de Evaluación inspecciona 6.000 viviendas afectadas",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "53c8d8b2c1de",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela registra 1.028 movimientos sísmicos en la franja norte costera",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "d475f1676916",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez anuncia el nuevo balance oficial de fallecidos por los terremotos del 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "36fe26bb745f",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibe 274 millones de dólares para el plan de respuesta humanitaria de la ONU",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "6aade8c3eb4a",
+      "actor": "GOB5",
+      "alert_level": "A2",
+      "titulo_corto": "Colombia despliega equipo forense especializado para apoyo en identificación de víctimas",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "e26d3d621164",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "China envía 80 toneladas de ayuda humanitaria y maquinaria a Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "fe34a5287dd9",
+      "actor": "INST2",
+      "alert_level": "A1",
+      "titulo_corto": "Autoridades confirman 231 cuerpos de víctimas de terremotos sin ser reclamados por familiares",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "08066ea8d675",
+      "actor": "INST3",
+      "alert_level": "A2",
+      "titulo_corto": "No se afectó la producción industrial ni petrolera tras los terremotos, según voceros oficiales",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "0ccd81636c35",
+      "actor": "INST4",
+      "alert_level": "A1",
+      "titulo_corto": "Comisión Presidencial ha inspeccionado 6.000 viviendas afectadas por los terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "7876a2117faf",
+      "actor": "INST5",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela registra 1.048 réplicas sísmicas desde el doble terremoto del 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=7UE1HYQ7qAo"
+    },
+    {
+      "hash": "1c240f7c261c",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos en Venezuela: 3.535 fallecidos y 274 millones de dólares en ayuda humanitaria recibida",
+      "fuente_url": "https://www.youtube.com/watch?v=yQ3AulZZOx0"
+    },
+    {
+      "hash": "558e1abbffcf",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Cooperación de EE.UU. y China: llegada de ayuda humanitaria y visita del Comando Sur para reconstruc",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "55a97e4a583c",
+      "actor": "INST2",
+      "alert_level": "A2",
+      "titulo_corto": "Presos políticos en Venezuela: 372 detenidos según Foro Penal y 551 por registro de Justicia, Encuen",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "7a0b3cfb2535",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Industria petrolera venezolana no afectada por terremotos: producción opera al máximo de capacidad i",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "2c348f1ffd34",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos hasta el 7 de julio",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "5ac5e9194480",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "ONU recibe 274 millones de dólares para plan de respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "e035015be236",
+      "actor": "NGO",
+      "alert_level": "A2",
+      "titulo_corto": "472 presos políticos permanecen aún tras las rejas en Venezuela, según Foro Penal",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "1893238119b6",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Venezuela declara LUTO NACIONAL por 7 días por los terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=1VVw6IrylyY"
+    },
+    {
+      "hash": "72a3adc37fe7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela comienza a recuperar actividad con regreso a clases y planes de reconstrucción",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/07/agenda-informativa-multisoporte-america-para-el-martes-7-de-julio-de-2026/"
+    },
+    {
+      "hash": "aca17d173eac",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "1028 movimientos sísmicos registrados en Venezuela, principalmente en franja norte costera",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "6c43b2cd3b46",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "产生油 productión industrial y agrícola no se detiene en Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "f217507d9f68",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "231 víctimas de terremotos en Vargas sin cuerpos reclamados por familiares",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "23f582480636",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela exporta 1,25 millones de barriles diarios en junio 2026, máximo en siete años",
+      "fuente_url": "https://www.instagram.com/p/DaS-kpJOPQ7/"
+    },
+    {
+      "hash": "cf9efde5fd2a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "EIA predice recuperación total de producción mundial de petróleo a finales de 2026 tras guerra en Ir",
+      "fuente_url": "https://gbm.com/media/noticia/produccion-mundial-de-petroleo-volvera-a-nivel-anterior-a-la-guerra-de-iran-a-fines-de-ano-eia/"
+    },
+    {
+      "hash": "cc0e0178b4d1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "OPEP+ acuerda aumentar producción en 188.000 barriles diarios en agosto 2026",
+      "fuente_url": "https://www.facebook.com/PincelDLuz/posts/enterate-opep-acuerda-aumentar-producci%C3%B3n-de-petr%C3%B3leom%C3%A9xico-6-de-julio-de-2026-l/1950454362450921/"
+    },
+    {
+      "hash": "a6cd6525a224",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Brent supera 72 dólares por misiles en Estrecho de Ormuz",
+      "fuente_url": "https://finanzasdigital.com/precios-crudo-7-julio-2026-brent-supera-72-dolares-ormuz/"
+    },
+    {
+      "hash": "237f95cc037f",
+      "actor": "INST5",
+      "alert_level": "A4",
+      "titulo_corto": "EEUU anuncia bloqueo de USD 7.000 millones en activos de PDVSA",
+      "fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    {
+      "hash": "d73c0a9f3a8b",
+      "actor": "INST5",
+      "alert_level": "A3",
+      "titulo_corto": "Nuevos precios de referencia de combustibles PDVSA con vigencia del 7 al 20 de julio",
+      "fuente_url": "https://www.instagram.com/p/Dafm1M0Ocyc/"
+    },
+    {
+      "hash": "e79dcf375219",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gremios del gas insisten en autorizar únicamente reparaciones por personal autorizado",
+      "fuente_url": "https://finanzasdigital.com/reparaciones-de-gas-autorizadas-comunicado-gremios/"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "7ff786418e9c",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "ONU asigna 274 millones de dólares para respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "b1cfa73ead69",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno de Venezuela declara LUTO NACIONAL por 7 días tras terremoto",
+      "fuente_url": "https://www.youtube.com/watch?v=1VVw6IrylyY"
+    },
+    {
+      "hash": "e1b7badf67f5",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "372 presos políticos permanecen en Venezuela según Foro Penal",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "3159f285af2a",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "231 víctimas de terremotos en Vargas sin reclamar por familias",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "d305edfa8cc5",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Relance internacional: 274 millones de dólares para respuesta humanitaria en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "1c90ec56596e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Presos políticos en Venezuela: 372 tras las rejas",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "f8030fb680d2",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Terremotos en Vargas: 231 víctimas sin reclamar sus cuerpos",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "de07304e421f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Luto nacional de 7 días declarado por gobierno de Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=1VVw6IrylyY"
+    },
+    {
+      "hash": "398e9b7c29ab",
+      "actor": "GOB4",
+      "alert_level": "A2",
+      "titulo_corto": "BCV actualiza tasa de cambio dólar a 674,9305 Bs/USD para 7 de julio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-07-julio-2026/"
+    },
+    {
+      "hash": "40552caad8e9",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa BCV al 7 de julio de 2026: 674.93 Bs/USDT",
+      "fuente_url": "https://www.instagram.com/p/DafcCN6xaxz/"
+    },
+    {
+      "hash": "79259ad295bc",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Brecha cambiaria al 3 de julio de 2026: 12.15%",
+      "fuente_url": "https://www.facebook.com/infomppe/posts/-actualizaci%C3%B3n-del-tipo-cambio-bcv-fecha-valor-viernes-03-de-julio-de-2026-el/1445481760945011/"
+    },
+    {
+      "hash": "ff9b60f673d9",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Mejora en el Índice de Bonos de Mercados Emergentes de JPMorgan para América Latina",
+      "fuente_url": "https://www.instagram.com/reel/DafoavnDZGI/"
+    },
+    {
+      "hash": "399b8e6251d0",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Academias Nacionales de Venezuela ofrecen asesoría técnica y científica para reconstrucción tras ter",
+      "fuente_url": "https://www.elnacional.com/2026/07/academias-nacionales-de-venezuela-ofrecen-asesoria-tecnica-y-cientifica-para-la-reconstruccion-tras-los-terremotos/"
+    },
+    {
+      "hash": "d7613b515225",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela reanuda clases en municipios no afectados por terremotos del 24 de junio",
+      "fuente_url": "https://x.com/NAagencia/status/2074501475670090085"
+    },
+    {
+      "hash": "07c489a30257",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela declara luto nacional por 7 días tras emergencia por terremotos con 3.535 fallecidos",
+      "fuente_url": "https://www.youtube.com/watch?v=1VVw6IrylyY"
+    },
+    {
+      "hash": "86b2dacb1b00",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "18.000 personas perdieron viviendas por terremotos en Venezuela con 82 campamentos transitorios habi",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "4528c7c4f7dc",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "372 presos políticos permanecen tras las rejas en Venezuela según Foro Penal",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "ebaa179448d2",
+      "actor": "INST1",
+      "alert_level": "A0",
+      "titulo_corto": "Tasa BCV 07 de julio 2026: 674,9305 Bs/USD con incremento de 1 punto",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-07-julio-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "cfab8ead1203",
+      "actor": "GOB2",
+      "titulo": "Límite constitucional de Maduro: 180 días de ausencia temporal",
+      "fuente_url": "https://www.facebook.com/CiberCubaNoticias/posts/3-de-julio-venezuela-al-l%C3%ADmite-constitucional-con-maduropublicado-en-cibercuba-e/1517101063795746/"
+    },
+    {
+      "hash": "2c348f1ffd34",
+      "actor": "GOB1",
+      "titulo": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos hasta el 7 de julio",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "237f95cc037f",
+      "actor": "INST5",
+      "titulo": "EEUU anuncia bloqueo de USD 7.000 millones en activos de PDVSA",
+      "fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    {
+      "hash": "5bd383933541",
+      "actor": "GOB3",
+      "titulo": "Doble terremoto en Venezuela: 3.535 fallecidos y 16.740 heridos",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 5
+}
