@@ -1,0 +1,231 @@
+{
+  "version": "1.0",
+  "correlativo": "20260707-14H-212545",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-07T21:33:08.992591+00:00",
+  "rango_inicio": "2026-07-06T21:25:45.142456+00:00",
+  "rango_fin": "2026-07-07T21:25:45.142456+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 3,
+    "A3": 10,
+    "A2": 7,
+    "A1": 0,
+    "A0": 0,
+    "total": 20
+  },
+  "actores_activos": {
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "Terremotos en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial",
+      "ultima_fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    "GOB1": {
+      "n_hallazgos": 8,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A4",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "18.000 personas perdieron viviendas y están en refugios temporales",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "372 presos políticos permanecen tras las rejas en Venezuela",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "27d098e22a5e",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Secretario General de la ONU anuncia llegada de coordinador de ayuda a Venezuela hoy",
+      "fuente_url": "https://www.un.org/sg/en/content/highlight/2026-07-07.html"
+    },
+    {
+      "hash": "3d3df578d5e6",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Empresas venezolanas aplican experiencia en redes sociales de 2024 para crisis de 2026",
+      "fuente_url": "https://www.wlrn.org/americas/2026-07-07/venezuelans-apply-the-social-media-savvy-that-pushed-democracy-in-2024-to-a-disaster-in-2026"
+    },
+    {
+      "hash": "243f35641652",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Empresas venezolanas reportan 3,535 fallecidos y 16,740 heridos por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=yQ3AulZZOx0"
+    },
+    {
+      "hash": "99d0311ee550",
+      "actor": "GOB4",
+      "alert_level": "A4",
+      "titulo_corto": "Terremotos en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "4638e66cd9f8",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Oficial: fallecidos por terremotos en Venezuela ascienden a 3,535 con 16,740 heridos y 6,462 rescata",
+      "fuente_url": "https://www.youtube.com/watch?v=xY6C4DaHPys"
+    },
+    {
+      "hash": "d68fe90c7dc8",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "ONU recibe 274 millones de dólares para respuesta humanitaria en Venezuela tras terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=xY6C4DaHPys"
+    },
+    {
+      "hash": "940bbf47396b",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "EE.UU. aporta ayuda humanitaria con 80 toneladas recibidas y despliegue de efectivos militares en La",
+      "fuente_url": "https://www.youtube.com/watch?v=6MQY0hEGMp0"
+    },
+    {
+      "hash": "984ec8ec3ddb",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Economistas exigen a EEUU levantar sanciones a Venezuela por terremotos",
+      "fuente_url": "https://english.elpais.com/economy-and-business/2026-07-07/over-100-economists-ask-us-to-lift-sanctions-on-venezuela-to-ease-the-impact-of-the-earthquakes.html"
+    },
+    {
+      "hash": "56273be013db",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "EEUU ayuda a Venezuela por quakes supera $310M, dice enviado",
+      "fuente_url": "https://www.reuters.com/world/americas/us-aid-venezuela-after-quakes-exceeds-310-mln-says-us-charg-daffaires-2026-07-07/"
+    },
+    {
+      "hash": "f93672f1eed2",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "OFAC emite 7 Licencias Generales relacionadas con Venezuela",
+      "fuente_url": "https://www.hellenicshippingnews.com/h1-2026-the-moving-target-of-maritime-sanctions-compliance/"
+    },
+    {
+      "hash": "d69c01dc2d2f",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija tasa de cambio del dólar en 674,93 Bs/USD para el 7 de julio de 2026 con aumento de 1,17%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-07-julio-2026/"
+    },
+    {
+      "hash": "de51088eed8a",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV del 6 de julio 2026 en 667,05 Bs/USD con aumento de 2,16%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/"
+    },
+    {
+      "hash": "dd424a10262f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV 06 de julio de 2026: 667,05 Bs/USD con incremento de +2,1559%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-06-julio-2026/"
+    },
+    {
+      "hash": "5b1369927797",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Dólar oficial en Venezuela 7 de julio de 2026: 674,93 Bs/USD según cierre de jornada",
+      "fuente_url": "https://www.instagram.com/p/DafcCN6xaxz/"
+    },
+    {
+      "hash": "4fddcbfe04ac",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "América Latina mejora en Índice de Bonos de Mercados Emergentes JPMorgan (7 de julio de 2026)",
+      "fuente_url": "https://www.instagram.com/reel/DafoavnDZGI/"
+    },
+    {
+      "hash": "6d7376712d52",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Equilibrio oficial de fallecidos por terremotos en Venezuela asciende a 3.535",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "8380ac6a32b4",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "231 víctimas sin reclamar por terremotos en estado Vargas",
+      "fuente_url": "https://www.youtube.com/watch?v=aUaewdBi7LQ"
+    },
+    {
+      "hash": "5e9d764bc31c",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela recibe 3.300 rescatistas extranjeros de 27 países",
+      "fuente_url": "https://rtvc.es/terremoto-venezuela-minuto-a-minuto-ultima-hora-2-julio-2026/"
+    },
+    {
+      "hash": "246f92272b40",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "18.000 personas perdieron viviendas y están en refugios temporales",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "47fa35a54e9d",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "372 presos políticos permanecen tras las rejas en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "243f35641652",
+      "actor": "",
+      "titulo": "Empresas venezolanas reportan 3,535 fallecidos y 16,740 heridos por terremotos",
+      "fuente_url": "https://www.youtube.com/watch?v=yQ3AulZZOx0"
+    },
+    {
+      "hash": "99d0311ee550",
+      "actor": "GOB4",
+      "titulo": "Terremotos en Venezuela: 3.535 fallecidos y 16.740 heridos según balance oficial",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "6d7376712d52",
+      "actor": "GOB1",
+      "titulo": "Equilibrio oficial de fallecidos por terremotos en Venezuela asciende a 3.535",
+      "fuente_url": "https://efe.com/mundo/2026-07-07/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
