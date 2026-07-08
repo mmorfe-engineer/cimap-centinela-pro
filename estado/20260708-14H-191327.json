@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "correlativo": "20260708-14H-191327",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-08T19:30:20.330460+00:00",
+  "rango_inicio": "2026-07-07T19:13:27.619492+00:00",
+  "rango_fin": "2026-07-08T19:13:27.619492+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 2,
+    "A3": 12,
+    "A2": 11,
+    "A1": 1,
+    "A0": 0,
+    "total": 26
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 6,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV 08 de julio de 2026: 685,9427 Bs/USD",
+      "ultima_fuente_url": "https://www.instagram.com/p/Dag43_JlgCR/"
+    },
+    "INST1": {
+      "n_hallazgos": 5,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A3",
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Misión Internacional Independiente resume hallazgos sobre transición democrática en Venezuela",
+      "ultima_fuente_url": "https://iccal.lat/iccal-blog-lanzamiento/"
+    },
+    "GOB3": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Balance de fallecidos por terremotos en Venezuela: 3.685 muertos",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=I8AfaWzdJ1M"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "PDVSA restablece suministro de combustible en La Guaira tras terremotos",
+      "ultima_fuente_url": "https://www.democrata.es/internacional/pdvsa-normaliza-el-suministro-de-combustible-en-la-guaira-tras-los-terremotos/"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV 08 de julio de 2026: 685,9427 Bs/USD con incremento de +1 %",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Líder del Comando Sur de EE.UU. visita Venezuela para coordinación de reconstrucción",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Boletín Polianalitica del 8 de julio reporta reactivación de servicios consulares en Ecuador",
+      "ultima_fuente_url": "https://www.polianalitica.com/boletines/5259/boletin-informativo-polianalitica-miercoles-8-de-julio-de-2026-800-am"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB4",
+    "P1",
+    "P2",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "f436128d1941",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez designa a David Cabello presidente de Pequiven tras 18 años",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-08-u1-e43231-s27061-nid334521-delcy-rodriguez-mueve-fichas-pone-al-hermano-diosdado"
+    },
+    {
+      "hash": "7c01b9bb9fc7",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Gobierno publica balance oficial consolidado de terremotos del 24 de junio al 7 de julio",
+      "fuente_url": "https://www.youtube.com/watch?v=oF2TiLwVQlk"
+    },
+    {
+      "hash": "c07709f4f30b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez encabeza ceremonia por 215 aniversario de la firma de la Constitución de 1811",
+      "fuente_url": "https://www.facebook.com/PrimerImpactoUnivision/posts/la-presidenta-encargada-de-venezuela-delcy-rodr%C3%ADguez-encabez%C3%B3-el-lunes-6-de-juli/1434108655408607/"
+    },
+    {
+      "hash": "be9e82f8165b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez designa Alejandro Puglia como presidente del Centro de Gestión Comercial (CEGECO)",
+      "fuente_url": "https://www.instagram.com/reel/Dag1bmtJpwa/"
+    },
+    {
+      "hash": "e76e98a69ef5",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Gobierno anuncia plan de rescate de Estados Unidos compartido con el régimen venezolano",
+      "fuente_url": "https://www.youtube.com/watch?v=oF2TiLwVQlk"
+    },
+    {
+      "hash": "5e13b6e2933e",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional约有 agenda: Plenaria legislativa y Mesa Técnica de Construcción",
+      "fuente_url": "https://www.instagram.com/p/DaiGzBXHPAQ/"
+    },
+    {
+      "hash": "49d1aec2a855",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez firma reglamento de la Ley de Hidrocarburos",
+      "fuente_url": "https://www.youtube.com/watch?v=tMACVuy_kB0"
+    },
+    {
+      "hash": "3e1d83e7f92a",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela y ONU coordinan esfuerzos para atender familias afectadas por doble terremoto",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/venezuela-y-onu-coordinan-esfuerzos-para-atender-familias-afectadas-por-doble-terremoto"
+    },
+    {
+      "hash": "bd31991427a7",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Jorge Rodríguez declara sobre estándares antisísmicos en construcciones del futuro",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias"
+    },
+    {
+      "hash": "5fa5331f2e09",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "ONU solicita recaudar USD 296 millones para ayudar a Venezuela tras terremotos",
+      "fuente_url": "https://amp.dw.com/es/onu-pide-recaudar-296-millones-de-d%C3%B3lares-para-ayudar-a-venezuela-tras-terremotos/a-77881407"
+    },
+    {
+      "hash": "92a711ee49df",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza precio del dólar: 685,94 VES por USD",
+      "fuente_url": "https://caracol.com.co/2026/07/08/precio-del-dolar-en-venezuela-para-hoy-8-de-julio-de-2026-suben-cotizaciones-de-las-divisas/"
+    },
+    {
+      "hash": "73d4aa1bb187",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: 3.685 muertos y 16.000 damnificados",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/08/agenda-informativa-multisoporte-america-para-el-miercoles-8-de-julio-de-2026/"
+    },
+    {
+      "hash": "fb8db30db7b2",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela en emergencia: juicio sobre vacío presidencial",
+      "fuente_url": "https://www.youtube.com/watch?v=uMblDlkBnY0"
+    },
+    {
+      "hash": "b929a373b9b0",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Jefe del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "03dbb35fc674",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV se fija en 685,9427 Bs/USD el 8 de julio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "021a1ddb58e1",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Posible niña viva hallada en Torre B de residencias OPP 33",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    {
+      "hash": "99ad88f3a26c",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV del 8 de julio 2026: 685,9427 Bs/USD",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "c97bb0a1e5b1",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Balance de fallecidos por terremotos en Venezuela: 3.685 muertos",
+      "fuente_url": "https://www.youtube.com/watch?v=I8AfaWzdJ1M"
+    },
+    {
+      "hash": "1f362b6500fc",
+      "actor": "INST5",
+      "alert_level": "A2",
+      "titulo_corto": "PDVSA restablece suministro de combustible en La Guaira tras terremotos",
+      "fuente_url": "https://www.democrata.es/internacional/pdvsa-normaliza-el-suministro-de-combustible-en-la-guaira-tras-los-terremotos/"
+    },
+    {
+      "hash": "5eb1b3c3dfb7",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Aceleradores e investigadores exigen cese de sanciones de EEUU a Venezuela",
+      "fuente_url": "https://ciudadccs.info/publicacion/46664-academicos-e-investigadores-piden-fin-de-sanciones-de-eeuu-a-venezuela"
+    },
+    {
+      "hash": "5c9254c64cf4",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV 08 de julio de 2026: 685,9427 Bs/USD con incremento de +1 %",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "e50ea8be967e",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Líder del Comando Sur de EE.UU. visita Venezuela para coordinación de reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "c42a18187323",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "niña viva reportada en residencias OPP 33, Torre B, Tanaguarena post-terremoto",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    {
+      "hash": "6b3a9851d483",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV 08 de julio de 2026: 685,9427 Bs/USD",
+      "fuente_url": "https://www.instagram.com/p/Dag43_JlgCR/"
+    },
+    {
+      "hash": "66a6014f49c2",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Misión Internacional Independiente resume hallazgos sobre transición democrática en Venezuela",
+      "fuente_url": "https://iccal.lat/iccal-blog-lanzamiento/"
+    },
+    {
+      "hash": "fc5962a4f164",
+      "actor": "GOB2",
+      "alert_level": "A2",
+      "titulo_corto": "Boletín Polianalitica del 8 de julio reporta reactivación de servicios consulares en Ecuador",
+      "fuente_url": "https://www.polianalitica.com/boletines/5259/boletin-informativo-polianalitica-miercoles-8-de-julio-de-2026-800-am"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "73d4aa1bb187",
+      "actor": "",
+      "titulo": "Terremoto en Venezuela: 3.685 muertos y 16.000 damnificados",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/08/agenda-informativa-multisoporte-america-para-el-miercoles-8-de-julio-de-2026/"
+    },
+    {
+      "hash": "c42a18187323",
+      "actor": "",
+      "titulo": "niña viva reportada en residencias OPP 33, Torre B, Tanaguarena post-terremoto",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
