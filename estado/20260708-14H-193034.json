@@ -1,0 +1,359 @@
+{
+  "version": "1.0",
+  "correlativo": "20260708-14H-193034",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-08T19:45:46.647205+00:00",
+  "rango_inicio": "2026-07-07T19:30:34.905653+00:00",
+  "rango_fin": "2026-07-08T19:30:34.905653+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 4,
+    "A3": 14,
+    "A2": 14,
+    "A1": 1,
+    "A0": 0,
+    "total": 33
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 13,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2",
+        "A2",
+        "A3",
+        "A2",
+        "A1",
+        "A3",
+        "A4",
+        "A2",
+        "A3",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Elevación de fallecidos a 3.685 por terremotos en Venezuela; se mantiene cifra de heridos en 16.740",
+      "ultima_fuente_url": "https://diariodia.es/2026/07/08/ascienden-a-mas-de-3-680-los-fallecidos-por-los-terremotos-en-venezuela/"
+    },
+    "GOB3": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4",
+        "A2",
+        "A2"
+      ],
+      "ultimo_titulo": "6.461 personas rescatadas desde el inicio de los terremotos en Venezuela",
+      "ultima_fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV se fija en 685,9427 Bs/USD con incremento de +1%",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Jefe del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción",
+      "ultima_fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    "INST4": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV 08 de julio 2026 con incremento significativo",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    "P5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "UCAL abre espacio de blog para publicaciones sobre transición democrática en Venezuela",
+      "ultima_fuente_url": "https://iccal.lat/iccal-blog-lanzamiento/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "49d1aec2a855",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez firma Reglamento de la Ley de Hidrocarburos",
+      "fuente_url": "https://eldiario.com/2026/07/08/reglamento-ley-hidrocarburos/"
+    },
+    {
+      "hash": "6cfeb1805b8a",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez designa José David Cabello como presidente de Pequiven",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-08-u1-e43231-s27061-nid334521-delcy-rodriguez-mueve-fichas-pone-al-hermano-diosdado"
+    },
+    {
+      "hash": "913f946e6f07",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Prensa extranjera acorrala a Delcy Rodríguez en declaraciones",
+      "fuente_url": "https://www.elnacional.com/2026/07/la-prensa-extranjera-acorralo-a-delcy-rodriguez/"
+    },
+    {
+      "hash": "c8c457d0709b",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Balance oficial consolidado de terremotos al 7 de julio",
+      "fuente_url": "https://www.instagram.com/p/Dag42KRxqjv/"
+    },
+    {
+      "hash": "661abd80de65",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Inicia entrega del Bono Único Familiar para afectados por terremotos",
+      "fuente_url": "https://www.instagram.com/reel/Dad8Li5AiDj/"
+    },
+    {
+      "hash": "7d11c85a5da7",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Delcy Rodríguez sostiene reunión con subsecretario general de la ONU",
+      "fuente_url": "https://prensapresidencialvenezuela.gob.ve"
+    },
+    {
+      "hash": "38acbe34b304",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Delcy Rodríguez encabezó ceremonia por 215 aniversario de firma de tratados",
+      "fuente_url": "https://www.facebook.com/PrimerImpactoUnivision/posts/la-presidenta-encargada-de-venezuela-delcy-rodriguez-encabezou-el-lunes-6-de-juli/1434108655408607/"
+    },
+    {
+      "hash": "e3da8f57f264",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "ONU pide USD 296 millones para ayuda a Venezuela tras terremotos",
+      "fuente_url": "https://amp.dw.com/es/onu-pide-recaudar-296-millones-de-d%C3%B3lares-para-ayudar-a-venezuela-tras-terremotos/a-77881407"
+    },
+    {
+      "hash": "2a70f10b545a",
+      "actor": "GOB3",
+      "alert_level": "A4",
+      "titulo_corto": "Balance oficial: 3.685 fallecidos y 16.740 heridos por terremotos en Venezuela",
+      "fuente_url": "https://diariodia.es/2026/07/08/ascienden-a-mas-de-3-680-los-fallecidos-por-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "3e1d83e7f92a",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela y ONU coordinan esfuerzos para atender familias afectadas por doble terremoto",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/venezuela-y-onu-coordinan-esfuerzos-para-atender-familias-afectadas-por-doble-terremoto"
+    },
+    {
+      "hash": "c598cb50c2c5",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "Jorge Rodríguez exige estándares antisísmicos en construcciones del futuro",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias"
+    },
+    {
+      "hash": "49d1aec2a855",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez firma reglamento de la Ley de Hidrocarburos",
+      "fuente_url": "https://www.youtube.com/watch?v=tMACVuy_kB0"
+    },
+    {
+      "hash": "dedc7fced52f",
+      "actor": "GOB3",
+      "alert_level": "A2",
+      "titulo_corto": "6.461 personas rescatadas desde el inicio de los terremotos en Venezuela",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    {
+      "hash": "629edfd120e2",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Actualización oficial de cifras sísmicas por Delcy Rodríguez tras terremotos en Venezuela",
+      "fuente_url": "https://www.instagram.com/p/Dagc1V9ykWC/"
+    },
+    {
+      "hash": "1ef6c1059866",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Fallecidos confirmados por terremotos en Venezuela alcanzan 3.685 con más de 16.000 afectados",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-8-julio_0_HUHsaZ2s3i.html"
+    },
+    {
+      "hash": "a1054765faab",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Posible niña sobreviviente hallada en Residencias OPP 33, Torre B en Tanaguariana",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    {
+      "hash": "33b9decbf8d2",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Número de presos políticos en Venezuela alcanza 372 con proceso de excarcelación detenido",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "1528e768c3b2",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "551 personas privadas de libertad por razones políticas en Venezuela según registro del 6 de julio",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "94dc9d82c702",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Jefe del Comando Sur de EE.UU. visita Venezuela para coordinar reconstrucción",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "4d64bfa4cf40",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV se fija en 685,9427 Bs/USD con incremento de +1%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "ecc6314f5bb3",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Registro actualizado de presos políticos: 551 personas privadas de libertad",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    },
+    {
+      "hash": "6f344000b4bf",
+      "actor": "INST4",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija tasa de cambio en 685,9427 Bs/USD con incremento de 1 punto",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "060f7f5eda7f",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Balance de muertos por terremotos en Venezuela asciende a 3.685 personas",
+      "fuente_url": "https://www.youtube.com/watch?v=I8AfaWzdJ1M"
+    },
+    {
+      "hash": "4030f214f50d",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Se reporta posible niña viva en residencias OPP 33, Torre B, Tanaguarena",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    {
+      "hash": "8d15070a87ca",
+      "actor": "INST4",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV 08 de julio 2026 con incremento significativo",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "0cf8bd707478",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV 08 de julio 2026: 685,9427 Bs/USD (+1%)",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-08-julio-2026/"
+    },
+    {
+      "hash": "0b57589a42d1",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Estado de Emergencia Nacional por Eventos Sísmicos entrante en vigencia",
+      "fuente_url": "https://accesoalajusticia.org/declarado-estado-de-emergencia-en-todo-el-territorio-nacional/"
+    },
+    {
+      "hash": "eda119f70f38",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Ola sísmica de magnitud 5.6 percibida en múltiples puntos de Venezuela",
+      "fuente_url": "https://www.facebook.com/insivumeh/posts/bolet%C3%ADn-informativo-bi-oce-2026-159-altura-significante-de-la-ola08-de-julio-de-/1475190561313370/"
+    },
+    {
+      "hash": "2a36dc32687e",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV actualizada a 685,9427 Bs/USD para el 8 de julio de 2026",
+      "fuente_url": "https://www.instagram.com/p/Dag43_JlgCR/"
+    },
+    {
+      "hash": "7af8000fa57b",
+      "actor": "P5",
+      "alert_level": "A2",
+      "titulo_corto": "UCAL abre espacio de blog para publicaciones sobre transición democrática en Venezuela",
+      "fuente_url": "https://iccal.lat/iccal-blog-lanzamiento/"
+    },
+    {
+      "hash": "d2d869806339",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Elevación de fallecidos a 3.685 por terremotos en Venezuela; se mantiene cifra de heridos en 16.740",
+      "fuente_url": "https://diariodia.es/2026/07/08/ascienden-a-mas-de-3-680-los-fallecidos-por-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "5de61f4608b0",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de niña viva en Torre B, Residencias OPP 33, Los Cocos, Los Cocos, Los Cocos; noticia urgent",
+      "fuente_url": "https://www.instagram.com/reel/Dah011ORpN9/"
+    },
+    {
+      "hash": "8d12d183cc9d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Presos políticos tras las rejas: 372 detenidos, excarcelación detida; Monitoreamos actualiza a 551 p",
+      "fuente_url": "https://www.youtube.com/watch?v=tm75Eppak8U"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "2a70f10b545a",
+      "actor": "GOB3",
+      "titulo": "Balance oficial: 3.685 fallecidos y 16.740 heridos por terremotos en Venezuela",
+      "fuente_url": "https://diariodia.es/2026/07/08/ascienden-a-mas-de-3-680-los-fallecidos-por-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "629edfd120e2",
+      "actor": "GOB1",
+      "titulo": "Actualización oficial de cifras sísmicas por Delcy Rodríguez tras terremotos en Venezuela",
+      "fuente_url": "https://www.instagram.com/p/Dagc1V9ykWC/"
+    },
+    {
+      "hash": "1ef6c1059866",
+      "actor": "",
+      "titulo": "Fallecidos confirmados por terremotos en Venezuela alcanzan 3.685 con más de 16.000 afectados",
+      "fuente_url": "https://www.clarin.com/mundo/terremotos-venezuela-hoy-vivo-danos-victimas-ultimas-noticias-8-julio_0_HUHsaZ2s3i.html"
+    },
+    {
+      "hash": "060f7f5eda7f",
+      "actor": "",
+      "titulo": "Balance de muertos por terremotos en Venezuela asciende a 3.685 personas",
+      "fuente_url": "https://www.youtube.com/watch?v=I8AfaWzdJ1M"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 1
+}
