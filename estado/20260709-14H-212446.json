@@ -1,0 +1,152 @@
+{
+  "version": "1.0",
+  "correlativo": "20260709-14H-212446",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-09T21:31:21.721616+00:00",
+  "rango_inicio": "2026-07-08T21:24:46.592453+00:00",
+  "rango_fin": "2026-07-09T21:24:46.592453+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 2,
+    "A3": 4,
+    "A2": 6,
+    "A1": 0,
+    "A0": 0,
+    "total": 12
+  },
+  "actores_activos": {
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "UNESCO y Casa de las Américas impulsan rutas para integrar historia en La Habana",
+      "ultima_fuente_url": "https://www.unesco.org/es/articles/la-unesco-y-casa-de-las-americas-impulsan-en-la-habana-nuevas-rutas-para-integrar-la-historia"
+    },
+    "GOB1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A2",
+        "A3"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV del 9 de julio 2026: 700,2249 Bs/USD con incremento de +2%",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST1",
+    "INST4",
+    "INST5",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "cdf3c5a33136",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela enfrenta crisis humanitaria tras terremotos de junio con 3.811 fallecidos confirmados",
+      "fuente_url": "https://www.youtube.com/watch?v=W4iOgGWsmro"
+    },
+    {
+      "hash": "e7aa6fc5a664",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela recibe ayuda humanitaria desde Miami y Florida tras terremoto",
+      "fuente_url": "https://www.telemundo.com/noticias/noticias-telemundo/video/las-noticias-de-la-manana-jueves-9-de-julio-de-2026-tmvo13202083"
+    },
+    {
+      "hash": "72cbd55ee95a",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "TN reporta el drama humano posterior a la tragedia de terremotos en Venezuela",
+      "fuente_url": "https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/"
+    },
+    {
+      "hash": "81da9fb95992",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Venezuela en emergencia: 3.811 fallecidos por terremotos y 16.740 heridos",
+      "fuente_url": "https://www.youtube.com/watch?v=W4iOgGWsmro"
+    },
+    {
+      "hash": "77c002f82cfe",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Dólar en Venezuela cotiza a 700 bolívares el 9 de julio de 2026",
+      "fuente_url": "https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-jueves-9-de-julio-de-2026_0_ExxWotRImv.html"
+    },
+    {
+      "hash": "b5d9c792a8e1",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Encuentran restos de Lucas Gámez en Venezuela tras dos semanas de terremotos",
+      "fuente_url": "https://es-us.noticias.yahoo.com/noticias-ma%C3%B1ana-jueves-9-julio-111137516.html"
+    },
+    {
+      "hash": "563dc0b04e09",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "DW reporta cifras incompletras de doble terremoto en Venezuela tras sismos de junio 2026",
+      "fuente_url": "https://amp.dw.com/es/doble-terremoto-en-venezuela-una-tragedia-anunciada/a-77889399"
+    },
+    {
+      "hash": "ea4f1e9290ac",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "UNESCO y Casa de las Américas impulsan rutas para integrar historia en La Habana",
+      "fuente_url": "https://www.unesco.org/es/articles/la-unesco-y-casa-de-las-americas-impulsan-en-la-habana-nuevas-rutas-para-integrar-la-historia"
+    },
+    {
+      "hash": "bd228962a3f8",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV fijada en 700,2249 Bs/USD el 9 de julio de 2026",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    },
+    {
+      "hash": "22ff6e3bde06",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Sistema de emergencia en Venezuela: 3.811 fallecidos y 17.907 sin vivienda por terremotos del 24 de ",
+      "fuente_url": "https://www.youtube.com/watch?v=W4iOgGWsmro"
+    },
+    {
+      "hash": "13f395679e4f",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Tasa de cambio BCV del 9 de julio 2026: 700,2249 Bs/USD con incremento de +2%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    },
+    {
+      "hash": "49c50c3cb660",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Aerolíneas internacionales reanudan vuelos a Venezuela operando en aeropuertos alternativos",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "81da9fb95992",
+      "actor": "",
+      "titulo": "Venezuela en emergencia: 3.811 fallecidos por terremotos y 16.740 heridos",
+      "fuente_url": "https://www.youtube.com/watch?v=W4iOgGWsmro"
+    },
+    {
+      "hash": "22ff6e3bde06",
+      "actor": "",
+      "titulo": "Sistema de emergencia en Venezuela: 3.811 fallecidos y 17.907 sin vivienda por terremotos del 24 de junio",
+      "fuente_url": "https://www.youtube.com/watch?v=W4iOgGWsmro"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
