@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260709-14H-212446</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260709-14H-212446</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-08T21:24:46.592453+00:00 → 2026-07-09T21:24:46.592453+00:00<br>
+    <strong>Generado:</strong> 2026-07-09 21:31 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 2 A4</span>
+    <span class="stat-pill">🟠 4 A3</span>
+    <span class="stat-pill">🟡 6 A2</span>
+    <span class="stat-pill">📊 12 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Crisis humanitaria por terremotos del 24 de junio: balance oficial del 9 de julio reporta 3.811 fallecidos, 16.740 heridos, 17.907 personas sin vivienda y 190 edificios colapsados, exigiendo movilización inmediata de ayuda internacional.
+2. Inconsistencia en cifras oficiales: fuentes como DW señalan que los datos de fallecidos, heridos y desaparecidos permanecen incompletos, lo que dificulta la respuesta humanitaria y evaluación de daños.
+3. Hallazgo de restos de menor: localización de los restos del niño Lucas Gámez dos semanas después del sismo, mientras se acelera el envío de ayuda desde Miami.
+4. Impacto en infraestructura: 856 edificios afectados, de los cuales 190 colapsaron totalmente, requiriendo evaluación urgente de estructuras críticas para evitar más pérdidas.
+5. Ajuste cambiario: el BCV fijó la tasa oficial en 700,2249 Bs/USD el 9 de julio, con un alza del 2% respecto al día anterior, afectando costos de importación y poder adquisitivo.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260709-14H-194634</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (12):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Sistema de emergencia en Venezuela: 3.811 fallecidos y 17.907 sin vivienda por terremotos del 24 de junio <a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Venezuela en emergencia: 3.811 fallecidos por terremotos y 16.740 heridos <a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: DW reporta cifras incompletras de doble terremoto en Venezuela tras sismos de junio 2026 <a href="https://amp.dw.com/es/doble-terremoto-en-venezuela-una-tragedia-anunciada/a-77889399" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Encuentran restos de Lucas Gámez en Venezuela tras dos semanas de terremotos <a href="https://es-us.noticias.yahoo.com/noticias-ma%C3%B1ana-jueves-9-julio-111137516.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Venezuela enfrenta crisis humanitaria tras terremotos de junio con 3.811 fallecidos confirmados <a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Tasa de cambio BCV del 9 de julio 2026: 700,2249 Bs/USD con incremento de +2% <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Venezuela recibe ayuda humanitaria desde Miami y Florida tras terremoto <a href="https://www.telemundo.com/noticias/noticias-telemundo/video/las-noticias-de-la-manana-jueves-9-de-julio-de-2026-tmvo13202083" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Delcy Rodríguez</strong>: Tasa de cambio BCV fijada en 700,2249 Bs/USD el 9 de julio de 2026 <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: TN reporta el drama humano posterior a la tragedia de terremotos en Venezuela <a href="https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong></strong>: Aerolíneas internacionales reanudan vuelos a Venezuela operando en aeropuertos alternativos <a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB2</code> (Diosdado Cabello), <code>GOB3</code> (Jorge Rodríguez), <code>GOB4</code> (Pedro Infante Aparicio), <code>INST1</code> (Asamblea Nacional), <code>INST4</code> (Banco Central de Venezuela), <code>INST5</code> (PDVSA), <code>P1</code> (María Corina Machado)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>11 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>9 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 2</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 2</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#5d4037;">Opinión</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Venezuela en emergencia: 3.811 fallecidos por terremotos y 16.740 heridos</h3>
+  <p class="fact-summary">Un balance divulgado el 9 de julio de 2026 reporta 3.811 fallecidos y 16.740 heridos por los terremotos del 24 de junio, con 856 edificios afectados y 190 colapsados totalmente[1].</p>
+  <p class="info-actor">Autoridades venezolanas de emergencia</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3811</li><li>16740</li><li>856</li><li>190</li><li>17907</li><li>9603000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere movilización inmediata de ayuda internacional y evaluación de infraestructura crítica para evitar mayores pérdidas humanas</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">📰 VPITV (YouTube)</a> · <a href="https://www.facebook.com/vpitv/videos/noticias-en-la-ma%C3%B1ana-venezuela-en-emergencia-jueves-9-julio-de-2026/1006712248895641/" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260709193731/https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#558b2f;">OSINT</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Sistema de emergencia en Venezuela: 3.811 fallecidos y 17.907 sin vivienda por terremotos del 24 de junio</h3>
+  <p class="fact-summary">El balance oficial del 9 de julio de 2026 confirma 3.811 fallecidos y 17.907 personas sin vivienda debido a los terremotos del 24 de junio, con 856 edificios afectados y 190 colapsados.</p>
+  <p class="info-actor">Sistema de Emergencia Nacional de Venezuela</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3811</li><li>17907</li><li>856</li><li>190</li><li>27398</li><li>9603000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La magnitud de la tragedia requiere respuesta inmediata en recursos de emergencia, reubicación de damnificados y distribución de alimentos a 27.398 familias.</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">📰 Noticias Venezuela (YouTube)</a> · <a href="https://www.youtube.com/watch?v=amik5O8Ks_M" target="_blank" rel="noopener">🔁 Cross-check</a> · <a href="https://web.archive.org/web/20260709193731/https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <p class="seccion-vacia">Sin anuncios verificados del bloque ejecutivo en este corte.</p>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela enfrenta crisis humanitaria tras terremotos de junio con 3.811 fallecidos confirmados</h3>
+  <p class="fact-summary">Un balance oficial divulgado el 9 de julio de 2026 confirma que 3.811 personas fallecieron y 16.740 quedaron heridas por los terremotos del 24 de junio en Venezuela, con 17.907 sin vivienda y 856 edificios afectados, 190 colapsados completamente</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3811</li><li>16740</li><li>17907</li><li>856</li><li>190</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Las cifras confirman una crisis humanitaria grave que requiere respuesta inmediata de ayuda internacional y puede realinear prioridades diplomáticas globales</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">📰 YouTube - Noticias internacionales</a> · <a href="https://web.archive.org/web/20260709193731/https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Encuentran restos de Lucas Gámez en Venezuela tras dos semanas de terremotos</h3>
+  <p class="fact-summary">Se hallaron los restos del niño Lucas Gámez dos semanas después de los terremotos en Venezuela, mientras se agiliza envío de ayuda desde Miami[8].</p>
+  <p class="info-actor">Autoridades de búsqueda venezolanas</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Confirmación de hallazgo en operación de rescate y refuerzo de necesidad de coordinación internacional para ayuda a damnificados</div>
+  <div class="enlaces"><a href="https://es-us.noticias.yahoo.com/noticias-ma%C3%B1ana-jueves-9-julio-111137516.html" target="_blank" rel="noopener">📰 Yahoo Noticias (es-US)</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela recibe ayuda humanitaria desde Miami y Florida tras terremoto</h3>
+  <p class="fact-summary">Organizaciones como Esperanza en Alas agilizan el envío de ayuda humanitaria a damnificados en Venezuela desde Miami y Florida el 9 de julio de 2026</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La ayuda desde EE.UU. refuerza la presión diplomática sobre Venezuela y puede influir en negociacionesinternacionales</div>
+  <div class="enlaces"><a href="https://www.telemundo.com/noticias/noticias-telemundo/video/las-noticias-de-la-manana-jueves-9-de-julio-de-2026-tmvo13202083" target="_blank" rel="noopener">📰 Telemundo</a> · <a href="https://web.archive.org/web/20260709212513/https://www.telemundo.com/noticias/noticias-telemundo/video/las-noticias-de-la-manana-jueves-9-de-julio-de-2026-tmvo13202083" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Dólar en Venezuela cotiza a 700 bolívares el 9 de julio de 2026</h3>
+  <p class="fact-summary">El dólar en Venezuela cotiza a 700 bolívares por US$1 según actualización oficial del 9 de julio de 2026, con 700 bolívares para compra[2].</p>
+  <p class="info-actor">Autoridades monetarias venezolanas</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>700</li><li>70022</li><li>700225</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cotización del dólar es clave para evaluar estabilidad económica, Poder adquisitivo y proyecciones de inflación en el país</div>
+  <div class="enlaces"><a href="https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-jueves-9-de-julio-de-2026_0_ExxWotRImv.html" target="_blank" rel="noopener">📰 Clarín</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#0277bd;">Multilateral</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>UNESCO y Casa de las Américas impulsan rutas para integrar historia en La Habana</h3>
+  <p class="fact-summary">UNESCO y Casa de las Américas anunciaron el 9 de julio de 2026 nuevas rutas en La Habana para integrar la historia general de África mediante el III Taller Internacional de junio 2026[6].</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Iniciativa cultural multilateral que refuerza cooperación regional, aunque no aborda directamente necesidades urgentes en Venezuela[6]</div>
+  <div class="enlaces"><a href="https://www.unesco.org/es/articles/la-unesco-y-casa-de-las-americas-impulsan-en-la-habana-nuevas-rutas-para-integrar-la-historia" target="_blank" rel="noopener">📰 UNESCO</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Aerolíneas internacionales reanudan vuelos a Venezuela operando en aeropuertos alternativos</h3>
+  <p class="fact-summary">La mayoría de aerolíneas internacionales ha reanudado vuelos a Venezuela pero continúa operando en aeropuertos alternativos mientras se espera la reapertura de aeropuertos principales.</p>
+  <p class="info-actor">Aerolíneas Internacionales</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La operación en aeropuertos alternativos limita conectividad aérea y puede afectar turismo y comercio internacional.</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobae</a> · <a href="https://web.archive.org/web/20260709193603/https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>TN reporta el drama humano posterior a la tragedia de terremotos en Venezuela</h3>
+  <p class="fact-summary">El medio argentino TN publicó el 9 de julio de 2026 un video sobre el drama humano posterior a la tragedia de los terremotos en Venezuela, con cobertura de 09:18 horas</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 05:18 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cobertura de TN demuestra que la tragedia en Venezuela tiene impacto mediático en América Latina, influyendo en la percepción regional y posible apoyo diplomático</div>
+  <div class="enlaces"><a href="https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/" target="_blank" rel="noopener">📰 TN (Todo Noticias)</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/middle-east/iran-targets-sites-bahrain-kuwait-after-wave-us-strikes-2026-07-08/" target="_blank" rel="noopener">US military launches fresh strikes on Iran, triggering attacks on Kuwait and Bahrain</a></li><li><a href="https://www.reuters.com/world/china/global-markets-global-markets-2026-07-09/" target="_blank" rel="noopener">Wall Street ticks up as tech hopes offset Middle East worries</a></li><li><a href="https://www.reuters.com/pictures/photos-week-2026-07-09/KMYQ5MYNCVISTPIGD6ZQCEOVQM/" target="_blank" rel="noopener">Photos of the week - July 9, 2026: Messi celebrates World Cup quarter-final qualification</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>DW reporta cifras incompletras de doble terremoto en Venezuela tras sismos de junio 2026</h3>
+  <p class="fact-summary">DW actualiza el 9 de julio de 2026 que las cifras oficiales de fallecidos, heridos y desaparecidos por el doble sismo del 24 de junio 2026 en Venezuela permanecen incompletras, aunque el evento ha cambiado el rumbo del país[5].</p>
+  <p class="info-actor">DW (Deutsche Welle)</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La ausencia de cifras oficiales completas obstaculiza la respuesta humanitaria y la evaluación de daños, exigiendo verificación inmediata de fuentes gubernamentales[5]</div>
+  <div class="enlaces"><a href="https://amp.dw.com/es/doble-terremoto-en-venezuela-una-tragedia-anunciada/a-77889399" target="_blank" rel="noopener">📰 DW (Deutsche Welle)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Tasa de cambio BCV del 9 de julio 2026: 700,2249 Bs/USD con incremento de +2%</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa de cambio en 700,2249 Bs/USD al 9 de julio de 2026, registrando un incremento de 2% respecto al día anterior.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>700.2249</li><li>2</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El incremento de 2% en la tasa de cambio afecta directamente costos de importación y poder adquisitivo de la población.</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://web.archive.org/web/20260709193537/https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Tasa de cambio BCV fijada en 700,2249 Bs/USD el 9 de julio de 2026</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) publicó oficialmente la tasa de cambio al 9 de julio de 2026 en 700,2249 Bs/USD, con un incremento de 2,0821% respecto al valor anterior de 667,05 Bs/USD[3]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>700,2249 Bs/USD</li><li>2,0821% incremento</li><li>667,05 Bs/USD (valor anterior)</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El aumento de la tasa BCV confirma la presión sobre el bolívar y afecta directamente los costos de importación, precios de bienes y expectativas de inflación en Venezuela</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://www.threads.com/@finanzasdigital/post/DajG9GqmsEc/tasa-de-cambio-bcv-de-julio-de-bs-usd/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <p class="seccion-vacia">Sin incidentes de seguridad relevantes detectados.</p>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <p class="seccion-vacia">No se identificaron señales sociales SA1-SA3 en este corte.</p>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Coordinación de ayuda internacional** — Las cifras de fallecidos, heridos y damnificados exigen movilización urgente de recursos externos para evitar colapso logístico en distribución de alimentos, medicinas y refugios.
+
+2. 🔴 **Verificación de cifras oficiales** — La falta de datos completos sobre víctimas y daños dificulta la planificación de respuesta humanitaria y genera desconfianza en la capacidad de gestión estatal.
+
+3. 🟠 **Impacto cambiario en importaciones** — La devaluación del 2% en la tasa oficial (700,2249 Bs/USD) encarece bienes básicos, agravando la crisis de abastecimiento en medio de la emergencia.
+
+4. 🟡 **Silencio de actores clave (Diosdado Cabello, María Corina Machado)** — Su ausencia en declaraciones públicas podría indicar tensiones internas o estrategias de comunicación calculadas ante la crisis.
+
+5. 🟡 **Evolución de infraestructura crítica** — Monitorear informes sobre estabilidad de edificios afectados (190 colapsados) para prevenir riesgos secundarios en zonas urbanas.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB3</strong> — Jorge Rodríguez (Presidente de la Asamblea Nacional)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST1</strong> — Asamblea Nacional (Poder Legislativo Nacional)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(5)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Telemundo</td><td><a href="https://www.telemundo.com/noticias/noticias-telemundo/video/las-noticias-de-la-manana-jueves-9-de-julio-de-2026-tmvo13202083" target="_blank" rel="noopener">https://www.telemundo.com/noticias/noticias-telemundo/video/las-noticias-de-la-manana-jueves-9-de-julio-de-2026-tmvo13202083</a></td><td>2026-07-09</td></tr><tr><td>TN (Todo Noticias)</td><td><a href="https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/" target="_blank" rel="noopener">https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/</a></td><td>2026-07-09</td></tr><tr><td>Clarín</td><td><a href="https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-jueves-9-de-julio-de-2026_0_ExxWotRImv.html" target="_blank" rel="noopener">https://www.clarin.com/economia/dolar-hoy-en-venezuela-precio-y-cotizacion-de-la-divisa-este-jueves-9-de-julio-de-2026_0_ExxWotRImv.html</a></td><td>2026-07-09</td></tr><tr><td>DW (Deutsche Welle)</td><td><a href="https://amp.dw.com/es/doble-terremoto-en-venezuela-una-tragedia-anunciada/a-77889399" target="_blank" rel="noopener">https://amp.dw.com/es/doble-terremoto-en-venezuela-una-tragedia-anunciada/a-77889399</a></td><td>2026-07-09</td></tr><tr><td>Infobae</td><td><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#616161;">Agregador</span> Agregador <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>YouTube - Noticias internacionales</td><td><a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">https://www.youtube.com/watch?v=W4iOgGWsmro</a></td><td>2026-07-09</td></tr><tr><td>Yahoo Noticias (es-US)</td><td><a href="https://es-us.noticias.yahoo.com/noticias-ma%C3%B1ana-jueves-9-julio-111137516.html" target="_blank" rel="noopener">https://es-us.noticias.yahoo.com/noticias-ma%C3%B1ana-jueves-9-julio-111137516.html</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#0277bd;">Multilateral</span> Multilateral <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>UNESCO</td><td><a href="https://www.unesco.org/es/articles/la-unesco-y-casa-de-las-americas-impulsan-en-la-habana-nuevas-rutas-para-integrar-la-historia" target="_blank" rel="noopener">https://www.unesco.org/es/articles/la-unesco-y-casa-de-las-americas-impulsan-en-la-habana-nuevas-rutas-para-integrar-la-historia</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#37474f;">Datos de mercado</span> Datos de mercado <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-09</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
