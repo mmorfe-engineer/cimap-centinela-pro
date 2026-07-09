@@ -1,0 +1,315 @@
+{
+  "version": "1.0",
+  "correlativo": "20260709-14H-194634",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-09T20:03:08.304895+00:00",
+  "rango_inicio": "2026-07-08T19:46:34.148482+00:00",
+  "rango_fin": "2026-07-09T19:46:34.148482+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 2,
+    "A3": 13,
+    "A2": 8,
+    "A1": 3,
+    "A0": 0,
+    "total": 26
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 10,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A1",
+        "A2",
+        "A3",
+        "A3",
+        "A3",
+        "A3",
+        "A4",
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa BCV 9 julio 2026: 700,2249 Bs/USD con incremento de 2 centavos",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    },
+    "GOB2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Marcha nacional en Caracas exige elecciones y salida de Delcy Rodríguez tras terremotos",
+      "ultima_fuente_url": "https://www.elnacional.com/2026/07/sindicatos-y-sociedad-civil-marcharon-en-caracas-para-exigir-elecciones-y-cuestionar-la-gestion-del-gobierno-tras-los-terremotos/"
+    },
+    "P1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Trump niega haber bloqueado regreso de María Corina Machado a Venezuela",
+      "ultima_fuente_url": "https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316443587.html"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez reporta alto mando político desplegado para atender al pueblo",
+      "ultima_fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-alto-mando-politico-continua-desplegado-para-atender-al-pueblo"
+    },
+    "GOB4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Delcy Rodríguez promulga Reglamento de Hidrocarburos con apertura al capital privado",
+      "ultima_fuente_url": "https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia"
+    },
+    "INST5": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "OFAC bloquea USD 7 mil millones en activos de PDVSA y sanciona petrolera estatal",
+      "ultima_fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    "INST4": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa de cambio BCV 09 de julio 2026: 700,2249 Bs/USD con incremento de 2 Bs",
+      "ultima_fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "UCV suspende actividades académicas hasta el 1° de septiembre de 2026",
+      "ultima_fuente_url": "https://eldiario.com/2026/07/09/suspension-actividades-academicas-ucv/"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Aerolíneas internacionales reanudan vuelos a Venezuela con aeropuertos alternativos",
+      "ultima_fuente_url": "https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/"
+    }
+  },
+  "actores_en_silencio": [
+    "P2",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "c2d4c69e9c23",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez pide al rey Carlos III liberar oro venezolano en Banco de Inglaterra para fondos de ",
+      "fuente_url": "https://cnnespanol.cnn.com/2026/07/09/venezuela/rodriguez-carta-rey-inglaterra-oro-orix/"
+    },
+    {
+      "hash": "f5c79bfe4f7d",
+      "actor": "GOB2",
+      "alert_level": "A3",
+      "titulo_corto": "Marcha nacional en Caracas exige elecciones y salida de Delcy Rodríguez tras terremotos",
+      "fuente_url": "https://www.elnacional.com/2026/07/sindicatos-y-sociedad-civil-marcharon-en-caracas-para-exigir-elecciones-y-cuestionar-la-gestion-del-gobierno-tras-los-terremotos/"
+    },
+    {
+      "hash": "3d4c4d939a13",
+      "actor": "P1",
+      "alert_level": "A2",
+      "titulo_corto": "Trump niega haber bloqueado regreso de María Corina Machado a Venezuela",
+      "fuente_url": "https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316443587.html"
+    },
+    {
+      "hash": "a7a6ef78f8a1",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela intenta recuperar normalidad tras terremotos con rescate milagroso de dos personas",
+      "fuente_url": "https://media.lavozdegalicia.es/noticia/internacional/2026/07/09/venezuela-intenta-recuperar-normalidad-tras-terremotos/0003_202607G9P20992.htm"
+    },
+    {
+      "hash": "d33555c80643",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez reporta alto mando político desplegado para atender al pueblo",
+      "fuente_url": "https://www.asambleanacional.gob.ve/noticias/diputado-jorge-rodriguez-alto-mando-politico-continua-desplegado-para-atender-al-pueblo"
+    },
+    {
+      "hash": "53e92446b3ad",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela enfrenta crisis humanitaria agravada tras tragedy de terremoto",
+      "fuente_url": "https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/"
+    },
+    {
+      "hash": "4be258f3fe2e",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Crisis venezolana se intensifica en contexto de emergencia internacional",
+      "fuente_url": "https://www.youtube.com/watch?v=Tw9R5GZIwxk"
+    },
+    {
+      "hash": "0e74885b6b89",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "El drama después de la tragedia en Venezuela",
+      "fuente_url": "https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/"
+    },
+    {
+      "hash": "4f2bda1f2706",
+      "actor": "GOB4",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez promulga Reglamento de Hidrocarburos con apertura al capital privado",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia"
+    },
+    {
+      "hash": "8f9c4d4e1718",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Venezuela satisface exportación de crudo a EEUU con aumento post-restricciones",
+      "fuente_url": "https://radiomiraflores.net.ve/crudo-venezolano-a-estados-unidos/"
+    },
+    {
+      "hash": "e369748dd8bd",
+      "actor": "GOB1",
+      "alert_level": "A1",
+      "titulo_corto": "Venezuela aumenta producción petrolera a 1,2 millones de barriles diarios en abril",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia"
+    },
+    {
+      "hash": "b680d71c15ba",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Ministerio de Petróleo suspende temporalmente 19 contratos de producción",
+      "fuente_url": "https://www.facebook.com/CiberCubaNoticias/posts/sorpresa-venezuela-introduce-el-mayor-cambio-en-la-pol%C3%ADtica-petrolera-tras-20-a%C3%B1/1522126533293199/"
+    },
+    {
+      "hash": "83c5ac2e05d7",
+      "actor": "INST5",
+      "alert_level": "A4",
+      "titulo_corto": "OFAC bloquea USD 7 mil millones en activos de PDVSA y sanciona petrolera estatal",
+      "fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    {
+      "hash": "9b72d10bd7d1",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez firma Reglamento de la Ley de Hidrocarburos en Venezuela",
+      "fuente_url": "https://www.contextotucuman.com/nota/394625/la-nueva-ley-de-hidrocarburos-en-venezuela-busca-reactivar-la-inversion-privada-en-el-sector.html"
+    },
+    {
+      "hash": "4c103a589302",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela en emergencia por terremoto: llegada de 2,000 toneladas de ayuda humanitaria y 28 países d",
+      "fuente_url": "https://www.youtube.com/watch?v=amik5O8Ks_M"
+    },
+    {
+      "hash": "4258e14730fb",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Reanudación de vuelos internacionales a Venezuela con operar en aeropuertos alternativos",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/"
+    },
+    {
+      "hash": "ef895d400eea",
+      "actor": "INST4",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa de cambio BCV 09 de julio 2026: 700,2249 Bs/USD con incremento de 2 Bs",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    },
+    {
+      "hash": "3eddf29511c2",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "El Gobierno de Venezuela actualiza cifras del doble terremoto a 235 fallecidos, 4.300 heridos y 157 ",
+      "fuente_url": "https://amp.dw.com/es/doble-terremoto-en-venezuela-una-tragedia-anunciada/a-77889399"
+    },
+    {
+      "hash": "dd43b800beb0",
+      "actor": "INST1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV actualiza tasa de cambio a 700,2249 Bs/USD con incremento de 2%",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    },
+    {
+      "hash": "51efdea19f3b",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela busca reestructuración de deuda de 200 mil millones de dólares tras sísmica",
+      "fuente_url": "https://www.busqueda.com.uy/la-reconstruccion-dos-semanas-del-doblete-sismico-venezuela-busca-opciones-resurgir-n5415059"
+    },
+    {
+      "hash": "a4247cd8b789",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Intelectuales de Venezuela y EEUU solicitan al Departamento del Tesoro el fin de las sanciones",
+      "fuente_url": "https://contrapunto.com/nacional/intelectuales-de-venezuela-y-eeuu-solicitaron-al-departamento-del-tesoro-el-fin-de-las-sanciones-contra-el-pais/"
+    },
+    {
+      "hash": "896cd417df74",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "UCV suspende actividades académicas hasta el 1° de septiembre de 2026",
+      "fuente_url": "https://eldiario.com/2026/07/09/suspension-actividades-academicas-ucv/"
+    },
+    {
+      "hash": "b30f6322304b",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Primer simposio dedicado a la transición democrática en Venezuela",
+      "fuente_url": "https://iccal.lat/iccal-blog-lanzamiento/"
+    },
+    {
+      "hash": "e8732ee0ecad",
+      "actor": "GOB1",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: 18.000 personas sin vivienda y 650.000 necesitan ayuda humanitaria",
+      "fuente_url": "https://www.youtube.com/watch?v=amik5O8Ks_M"
+    },
+    {
+      "hash": "f09815ec7fca",
+      "actor": "INT1",
+      "alert_level": "A3",
+      "titulo_corto": "Aerolíneas internacionales reanudan vuelos a Venezuela con aeropuertos alternativos",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/"
+    },
+    {
+      "hash": "c09f3954dd33",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa BCV 9 julio 2026: 700,2249 Bs/USD con incremento de 2 centavos",
+      "fuente_url": "https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "83c5ac2e05d7",
+      "actor": "INST5",
+      "titulo": "OFAC bloquea USD 7 mil millones en activos de PDVSA y sanciona petrolera estatal",
+      "fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    {
+      "hash": "e8732ee0ecad",
+      "actor": "GOB1",
+      "titulo": "Terremoto en Venezuela: 18.000 personas sin vivienda y 650.000 necesitan ayuda humanitaria",
+      "fuente_url": "https://www.youtube.com/watch?v=amik5O8Ks_M"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 1
+}
