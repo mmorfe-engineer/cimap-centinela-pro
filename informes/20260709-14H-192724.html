@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260709-14H-192724</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260709-14H-192724</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-08T19:27:24.301456+00:00 → 2026-07-09T19:27:24.301456+00:00<br>
+    <strong>Generado:</strong> 2026-07-09 19:42 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 2 A4</span>
+    <span class="stat-pill">🟠 17 A3</span>
+    <span class="stat-pill">🟡 13 A2</span>
+    <span class="stat-pill">📊 39 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. El gobierno venezolano modificó radicalmente su política petrolera al promulgar el Reglamento de la Ley Orgánica de Hidrocarburos, permitiendo la participación privada en exploración, extracción y transporte, con regalías máximas del 30% y arbitraje internacional para disputas.
+2. Estados Unidos bloqueó USD 7.000 millones en activos de PDVSA, intensificando la presión financiera sobre el régimen y afectando las exportaciones petroleras venezolanas.
+3. La crisis humanitaria por los sismos del 24 de junio registra un balance oficial de 3.811 fallecidos y 16.740 heridos, con coordinación entre el Estado, la ONU y actores internacionales para asistencia.
+4. El tipo de cambio oficial alcanzó 700,2249 Bs/USD, marcando una depreciación del 2% en un día, lo que impacta inflación y estabilidad económica.
+5. La oposición reactivó protestas en Caracas exigiendo elecciones presidenciales y la salida de Delcy Rodríguez, en un contexto de descontento post-terremoto.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260708-14H-210844</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-igual">
+  <strong>→ CAMBIO DE ESTADO:</strong>
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[SIN CAMBIO]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (39):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong>OFAC / U.S. Treasury</strong>: EEUU anuncia bloqueo de USD 7.000 millones en activos de PDVSA <a href="https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong>Delcy Rodríguez</strong>: Delcy Rodríguez promulga nuevo Reglamento de Hidrocarburos: apertura al capital privado y arbitraje internacional <a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: ISLR petrolero en Venezuela baja de 50% a 34% para campos sin desarrollo por 7 años <a href="http://www.petroguia.com/pet/noticias/petr%C3%B3leo/islr-petrolero-en-venezuela-solo-bajar%C3%A1-de-50-34-para-campos-sin-desarrollo-por-un" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Banco Central de Venezuela</strong>: BCV fija tasa de cambio en 700,2249 Bs/USD con incremento de 2 % <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Departamento de Estado EE.UU.</strong>: Actualización oficial de tasa BCV 9 de julio 2026: 700,2249 Bs/USD <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Tribunal Supremo de Justicia</strong>: CITGO movilizará asistencia humanitaria a Venezuela tras terremotos del 24 de junio <a href="https://www.instagram.com/reel/DalNvMjApe3/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: El drama después de la tragedia en Venezuela <a href="https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>María Corina Machado</strong>: Sociedad civil y sindicatos marchan en Caracas para exigir elecciones y remover Delcy Rodríguez tras terremotos <a href="https://www.elnacional.com/2026/07/sindicatos-y-sociedad-civil-marcharon-en-caracas-para-exigir-elecciones-y-cuestionar-la-gestion-del-gobierno-tras-los-terremotos/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Banco Central de Venezuela</strong>: Tasa de cambio BCV 9 de julio 2026 se fija en 700,2249 Bs/USD con aumento de 2 puntos <a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Asamblea Nacional</strong>: Venezuela y ONU coordinan ayuda tras doble terremoto con 3.811 muertos <a href="https://www.asambleanacional.gob.ve/noticias/venezuela-y-onu-coordinan-esfuerzos-para-atender-familias-afectadas-por-doble-terremoto" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>GOB3</code> (Jorge Rodríguez), <code>INST2</code> (Tribunal Supremo de Justicia), <code>INST4</code> (Banco Central de Venezuela), <code>INST5</code> (PDVSA), <code>INT2</code> (OFAC / U.S. Treasury), <code>P1</code> (María Corina Machado)</div><div style="margin-top:6px;"><strong>🤐 Hablaron en el corte anterior, hoy no:</strong> <code>GOB2</code> (Diosdado Cabello)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>9 cortes sin actividad</strong></li><li><code>P1</code> — María Corina Machado (<em>Opositora</em>): <strong>7 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>7 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>4 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>3 cortes sin actividad</strong></li><li><code>INST5</code> — PDVSA (<em>Estatal petrolera</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 2</div><div><strong>A4 del corte anterior que ya no aparecen (¿resueltas o desplazadas?):</strong> 4</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez promulga nuevo Reglamento de Hidrocarburos: apertura al capital privado y arbitraje internacional</h3>
+  <p class="fact-summary">Delcy Rodríguez promulgó el miércoles 9 de julio de 2026 el Reglamento de la Ley Orgánica de Hidrocarburos, que abre el sector petrolero venezolano al capital privado por primera vez desde la era chavista, permite gestión integral de exploración, extracción y transporte por empresas privadas bajo su propio costo y riesgo, y incorpora arbitraje internacional para disputas contractuales[1][9]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>1,2 millones de barriles diarios en abril 2026</li><li>1,25 millones de barriles diarios en junio 2026</li><li>Regalía máxima: 30%</li><li>7 años de reducción de ISLR para campos sin desarrollo</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Cambia radicalmente la política petrolera venezolana, permite a empresas privadas comercializar directamente el crudo y reduce regalía máxima a 30%, impactando inversiones extranjeras y producción nacional[1]</div>
+  <div class="enlaces"><a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia" target="_blank" rel="noopener">📰 CiberCuba</a> · <a href="https://venedigitall.com/delcy-rodriguez-promulgo-la-nueva-ley-de-hidrocarburos-que-reduce-el-control-estatal-sobre-la-industria-petrolera-venezolana/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>EEUU anuncia bloqueo de USD 7.000 millones en activos de PDVSA</h3>
+  <p class="fact-summary">El Gobierno de Donald Trump anunció el bloqueo de USD 7.000 millones en activos de PDVSA en Estados Unidos, con efecto inmediato en compras de petróleo venezolano</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>7000 millones de USD</li><li>11000 millones de USD</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Esta medida aumenta drásticamente la presión financiera sobre PDVSA y el régimen de Maduro, afectando directamente la capacidad de exportación petrolera de Venezuela</div>
+  <div class="enlaces"><a href="https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA" target="_blank" rel="noopener">📰 Diario Digital Copal</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Jorge Rodríguez presenta nuevo balance de fallecidos por sismos</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, presentó un nuevo balance oficial de 3.811 fallecidos y 16.740 heridos tras los devastadores sismos en Venezuela.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 07/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3811</li><li>16740</li><li>6462</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Confirmación oficial de cifras de mortalidad que determinan la escala de la crisis humanitaria, afectando decisiones de seguridad nacional y cooperación internacional.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DajQF8zuQdt/" target="_blank" rel="noopener">📰 Instagram Oficial Asamblea Nacional</a> · <a href="https://www.facebook.com/eluniversal/posts/el-presidente-de-la-asamblea-nacional-jorge-rodr%C3%ADguez-inform%C3%B3-al-pa%C3%ADs-el-balance/1480547040783099/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Gobierno de Venezuela publica balance actualizado de emergencia por terremotos</h3>
+  <p class="fact-summary">El Gobierno de Venezuela reportó un nuevo balance de la emergencia por los terremotos del 24 de junio con 3811 fallecidos y 16 740 heridos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 08:00 VET</p>
+  <ul class="data-points"><li>3811 fallecidos</li><li>16 740 heridos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Proporciona cifras oficiales actualizadas de fallecidos y heridos que son críticas para planificación de asistencia humanitaria y respuesta ante emergencias</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DajQF8zuQdt/" target="_blank" rel="noopener">📰 Instagram Reel</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>UCV suspende actividades académicas hasta septiembre por doble terremoto de junio</h3>
+  <p class="fact-summary">La Universidad de Córdoba (UCV) anunció la suspensión de actividades académicas hasta el 1º de septiembre de 2026 debido a los daños causados por el doble terremoto del 24 de junio</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>2026-09-01</li><li>24-06-2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La suspensión afecta miles de estudiantes y docentes, con implicaciones para la continuidad académica, becas, y la gestión de fondos universitarios durante el periodo de emergencia</div>
+  <div class="enlaces"><a href="https://eldiario.com/2026/07/09/suspension-actividades-academicas-ucv/" target="_blank" rel="noopener">📰 eldiario.com</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez promete viviendas antes de fin de año para 17.000 damnificados por el sismo</h3>
+  <p class="fact-summary">La presidenta encargada garantizó soluciones habitacionales para más de 17.000 personas sin techo antes de diciembre de 2026, aunque analistas cuestionan la viabilidad por la economía nacional.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 14:30 VET</p>
+  <ul class="data-points"><li>17000 personas sin vivienda</li><li>fin de año 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Genera expectativa social inmediata pero enfrenta riesgo de descredito si no se cumple por limitaciones económicas</div>
+  <div class="enlaces"><a href="https://cnnespanol.cnn.com/2026/07/06/venezuela/rodriguez-promesa-viviendas-terremoto-orix" target="_blank" rel="noopener">📰 CNN en Español</a> · <a href="https://web.archive.org/web/20260709192815/https://cnnespanol.cnn.com/2026/07/06/venezuela/rodriguez-promesa-viviendas-terremoto-orix" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez califica de &#x27;miserables&#x27; las críticas por retrasos en auxilio post-terremoto</h3>
+  <p class="fact-summary">La presidenta encargada rechazó duramente las denuncias internacionales sobre demoras en la ayuda humanitaria tras los doble terremoto del 24 de junio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refuerza línea de confrontación del gobierno con actores internacionales y limita espacio para diálogo sobre ayuda</div>
+  <div class="enlaces"><a href="https://www.bbc.com/mundo/articles/c0lye319p58o" target="_blank" rel="noopener">📰 BBC Mundo</a> · <a href="https://web.archive.org/web/20260709192841/https://www.bbc.com/mundo/articles/c0lye319p58o" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Sociedad civil y sindicatos marchan en Caracas para exigir elecciones y remover Delcy Rodríguez tras terremotos</h3>
+  <p class="fact-summary">Representantes sindicales y ciudadanos marcharon el 8 de julio en Caracas para exigir elecciones presidenciales, la salida de Delcy Rodríguez y cuestionar la gestión gubernamental frente a los terremotos del 24 de junio[1]</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 08:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reflecha creciente descontento post-terremoto y reactivación de demandas históricas de la oposición, presionando al Ejecutivo Nacional</div>
+  <div class="enlaces"><a href="https://www.elnacional.com/2026/07/sindicatos-y-sociedad-civil-marcharon-en-caracas-para-exigir-elecciones-y-cuestionar-la-gestion-del-gobierno-tras-los-terremotos/" target="_blank" rel="noopener">📰 El Nacional</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Amazon anuncia puente aéreo para asistencia humanitaria a Venezuela por sismos</h3>
+  <p class="fact-summary">Amazon estableció este miércoles un puente aéreo con asistencia humanitaria a Venezuela coordinada con el gobierno de EE.UU., estimando más de 650,000 personas afectadas por sismos de dos semanas atrás</p>
+  <p class="info-actor">Amazon</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>650000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Moviliza asistencia humanitaria masiva ante crisis de sismos, con coordinación bilateral entre EE.UU. y Venezuela</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=amik5O8Ks_M" target="_blank" rel="noopener">📰 The News As It Is (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>CITGO movilizará asistencia humanitaria a Venezuela tras terremotos del 24 de junio</h3>
+  <p class="fact-summary">CITGO informó que movilizará asistencia humanitaria hacia Venezuela después de los terremotos ocurridos el 24 de junio, con países donantes haciendo seguimiento de cargamentos</p>
+  <p class="info-actor"><strong>INST2</strong> — Tribunal Supremo de Justicia <em>(Poder Judicial Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Actividad directa de empresa de hidrocarburos en respuesta a crisis por sismos, con vigilancia de donantes internacionales</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DalNvMjApe3/" target="_blank" rel="noopener">📰 Instagram Reel</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Donald Trump niega haber bloqueado el regreso de María Corina Machado a Venezuela</h3>
+  <p class="fact-summary">El presidente Donald Trump negó esta semana haber instruido a María Corina Machado para no regresar a Venezuela tras los terremotos del mes pasado, desmarcándose de versiones que señalaban intervención de su administración[2]</p>
+  <p class="info-actor"><strong>P1</strong> — María Corina Machado <em>(Opositora)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 12:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aclara posición oficial de USA respecto a Machado, reduciendo tensiones percibidas y redefiniendo estrategia de retorno de la líder opositora</div>
+  <div class="enlaces"><a href="https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316443587.html" target="_blank" rel="noopener">📰 El Nuevo Herald</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>El drama después de la tragedia en Venezuela</h3>
+  <p class="fact-summary">Cobertura de TN sobre la situación crítica en Venezuela tras una tragedia reciente, con fecha 09 de julio 2026, 09:18hs</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 05:18 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La cobertura internacional de una emergencia humanitaria en Venezuela puede acelerar la movilización de ayuda externa y generar presión diplomática sobre el gobierno</div>
+  <div class="enlaces"><a href="https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/" target="_blank" rel="noopener">📰 TN (Todo Noticias)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez pide al rey Carlos III liberar 31 toneladas de oro venezolano en el Banco de Inglaterra</h3>
+  <p class="fact-summary">La presidenta encargada de Venezuela envió una carta al rey británico solicitando la liberación de 31 toneladas de oro (1.900 millones USD) para reconstruir el país tras los terremotos del 24 de junio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 11:00 VET</p>
+  <ul class="data-points"><li>31 toneladas</li><li>1900 millones USD</li><li>24 de junio 2026</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Puede desbloquear activos clave para la reconstrucción post-terremoto y reconfigurar la relación Venezuela-Reino Unido</div>
+  <div class="enlaces"><a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico" target="_blank" rel="noopener">📰 CiberCuba</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Delcy Rodríguez anuncia conversaciones con FMI para liberación de fondos</h3>
+  <p class="fact-summary">La presidenta encargada Delcy Rodríguez anunció que mantuvo conversaciones con la directora del Fondo Monetario Internacional para la liberación de fondos</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica intento de apertura financiera internacional con posible impacto en estabilidad económica</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=hEjqLPjjl_k" target="_blank" rel="noopener">📰 YouTube: Noticias más importantes del 09 de julio de 2026</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Venezuela aumenta exportación de crudo a EEUU, superando niveles anteriores</h3>
+  <p class="fact-summary">El crudo venezolano aún se vende a Estados Unidos y la exportación aumentó después de la intervención de Trump, según Radio Miraflores el 9 de julio de 2026[6]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Muestra recuperación de relaciones comerciales con EEUU en el sector petrolero, impactando exportaciones y geopolítica de energía[6]</div>
+  <div class="enlaces"><a href="https://radiomiraflores.net.ve/crudo-venezolano-a-estados-unidos/" target="_blank" rel="noopener">📰 Radio Miraflores</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>La mayoría de aerolíneas internacionales reanudan vuelos a Venezuela pero operan en aeropuertos alternativos</h3>
+  <p class="fact-summary">Aerolíneas internacionales han reanudado operaciones a Venezuela el 9 de julio de 2026, pero mantienen vuelos en aeropuertos alternativos mientras se espera la reapertura completa de los principales[4].</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria; no confirmada por fuente oficial de aerolíneas</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La limitación aeroportuaria afecta turismo, comercio y logística, con posibles efectos en la recuperación económica y relaciones internacionales</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobae</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Aerolíneas internacionales reanudan vuelos a Venezuela con operación en aeropuertos alternativos</h3>
+  <p class="fact-summary">La mayoría de aerolíneas internacionales ha reanudado vuelos a Venezuela pero operan en aeropuertos alternativos, esperando reapertura de aeropuertos principales</p>
+  <p class="info-actor">Aerolíneas internacionales</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica recuperación parcial de movilidad internacional pero con restricciones que limitan conectividad plena</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobáe</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Vuelos internacionales reanudados a Venezuela pero operan en aeropuertos alternativos por espera de reapertura</h3>
+  <p class="fact-summary">La mayoría de aerolíneas internacionales ha reanudado vuelos a Venezuela, pero operan solo en aeropuertos alternativos mientras se espera la reapertura oficial de los principales</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 08:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con cobertura secundaria confiable (agencias internacionales)</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La operación en aeropuertos alternativos limita la conectividad internacional y puede afectar importaciones, turismo y diplomacia; refleja interrupción en infraestructura crítica</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobae</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/middle-east/trump-says-he-doesnt-think-iran-conflict-will-start-again-2026-07-08/" target="_blank" rel="noopener">Trump says he doesn&#x27;t think Iran conflict will start again</a></li><li><a href="https://www.reuters.com/world/india/gold-dips-mideast-hostilities-revive-inflation-concerns-2026-07-09/" target="_blank" rel="noopener">Gold gains over 1%; focus turns to Middle East tensions</a></li><li><a href="https://www.reuters.com/business/energy/oil-rises-after-us-launches-fresh-strikes-against-iran-2026-07-09/" target="_blank" rel="noopener">Oil prices slide over 1% as US-Iran conflict clouds Hormuz reopening</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>ISLR petrolero en Venezuela baja de 50% a 34% para campos sin desarrollo por 7 años</h3>
+  <p class="fact-summary">El ISLR petrolero en Venezuela se reducirá de 50% a 34% para campos sin desarrollo por un período de 7 años; proyectos costa afuera tendrán alícuota agregada hasta 5% menor, aplicándose también a nuevos proyectos de mejoramiento de crudos[2]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>ISLR: 50% a 34%</li><li>Duración: 7 años</li><li>Alícuota agregada costa afuera: -5%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reduce carga tributaria para campos sin desarrollo, incentivando nuevas inversiones costa afuera y proyectos de mejoramiento de crudo[2]</div>
+  <div class="enlaces"><a href="http://www.petroguia.com/pet/noticias/petr%C3%B3leo/islr-petrolero-en-venezuela-solo-bajar%C3%A1-de-50-34-para-campos-sin-desarrollo-por-un" target="_blank" rel="noopener">📰 Petroguía</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>PDVSA firma Reglamento de la Ley de Hidrocarburos que reactiva inversión privada</h3>
+  <p class="fact-summary">Delcy Rodríguez firmó el Reglamento de la Ley de Hidrocarburos en Venezuela, reanudando el cómputo de lapsos procesales desde el 9 de julio de 2026</p>
+  <p class="info-actor"><strong>INST5</strong> — PDVSA <em>(Estatal petrolera)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:07 VET</p>
+  <ul class="data-points"><li>9 de julio de 2026 fecha</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La firma del Reglamento busca reactivar la inversión privada en el sector hidrocarburos, lo que podría impactar positivamente en la producción petrolera y gasífera de Venezuela</div>
+  <div class="enlaces"><a href="https://www.contextotucuman.com/nota/394625/la-nueva-ley-de-hidrocarburos-en-venezuela-busca-reactivar-la-inversion-privada-en-el-sector.html" target="_blank" rel="noopener">📰 Contexto Tucumán</a> · <a href="https://www.facebook.com/eldiario/posts/-delcy-rodr%C3%ADguez-firm%C3%B3-el-reglamento-de-la-ley-de-hidrocarburosla-presidenta-enc/1502959281877675/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Producción petrolera de Venezuela creció 3.78% en mayo 2026, alcanzando 1.179 millones de barriles diarios</h3>
+  <p class="fact-summary">La producción petrolera de Venezuela registró un incremento de 3.78% en mayo 2026, alcanzando 1.179 millones de barriles diarios, según dato de crecimiento del sector hidrocarburos de 9% en el segundo trimestre[5]</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 30/05/2026 20:00 VET</p>
+  <ul class="data-points"><li>Incremento: 3.78%</li><li>Producción mayo 2026: 1.179 millones de barriles diarios</li><li>Crecimiento sector hidrocarburos Q2: 9%</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Indica recuperación de producción petrolera con impacto en volumen exportable y estabilidad económica[5]</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/Daaet_pJf0G/" target="_blank" rel="noopener">📰 Instagram</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>BCV fija tasa de cambio en 700,2249 Bs/USD con incremento de 2 %</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó la tasa de cambio oficial del 9 de julio de 2026 en 700,2249 Bs/USD, registrando un aumento de 2 % respecto al día anterior[8].</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>700.2249</li><li>2.0</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La depreciación acelerada de la bolívar afecta costos operativos, inflación y poder adquisitivo, con implicaciones para políticas económicas y estabilidad social</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://es.euronews.com/video/2026/07/09/ultimas-noticias-09-julio-2026-tarde" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Confirmado oficial</span></div>
+  <h3>Tasa de cambio BCV 9 de julio 2026 se fija en 700,2249 Bs/USD con aumento de 2 puntos</h3>
+  <p class="fact-summary">El Banco Central de Venezuela publicó la tasa oficial de cambio del 9 de julio 2026 en 700,2249 Bs/USD, con un incremento de 2,0022 Bs/USD respecto al día anterior</p>
+  <p class="info-actor"><strong>INST4</strong> — Banco Central de Venezuela <em>(Autoridad monetaria)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>700.2249</li><li>2.0022</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La devaluación acelerada refuerza la presión inflacionaria y afecta la estabilidad de precios; implica posible ajuste en políticas de subsidios y salarios</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://web.archive.org/web/20260709193537/https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">🗄️ Wayback</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Muerte por terremotos en Venezuela asciende a 3811</h3>
+  <p class="fact-summary">Dos semanas después de los terremotos gemelos, la cifra oficial de fallecidos alcanza 3811, miles de familias sin noticias</p>
+  <p class="info-actor">Gobierno de Venezuela (no catalogado)</p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3811 fallecidos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Cifra elevada de fallecidos requiere respuesta inmediata en asistencia humanitaria y evaluación de impacto social</div>
+  <div class="enlaces"><a href="https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316442697.html" target="_blank" rel="noopener">📰 El Nuevo Herald</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Dólar BCV duplica valor en primer semestre 2026: de 301,37 a 623,02 Bs/USD</h3>
+  <p class="fact-summary">El tipo de cambio oficial del BCV se duplicó en el primer semestre de 2026, pasando de 301,37 Bs/USD el 2 de enero a 623,02 Bs/USD[8]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 10:30 VET</p>
+  <ul class="data-points"><li>301,37 Bs/USD (2026-01-02)</li><li>623,02 Bs/USD (2026-06-30)</li><li>+321,65 Bs de incremento</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La duplicación del dólar oficial en seis meses implica inflación importada acelerada y erosión de ingresos reales de ciudadanos[8]</div>
+  <div class="enlaces"><a href="https://www.instagram.com/p/DajJcRRia9X/" target="_blank" rel="noopener">📰 Economía NC (Instagram)</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Actualización oficial de tasa BCV 9 de julio 2026: 700,2249 Bs/USD</h3>
+  <p class="fact-summary">El Banco Central de Venezuela fijó la tasa de cambio oficial del 9 de julio en 700,2249 Bs/USD, con un incremento de 2 Bs respecto al cierre anterior[5][4]</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 12:00 VET</p>
+  <ul class="data-points"><li>700,2249 Bs/USD</li><li>+2 Bs de incremento</li><li>2026-07-09</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La tasa BCV es el referente oficial que define costos de importación y precios de bienes en Venezuela; su aumento de 2 Bs refleja presión cambiaria continua[5]</div>
+  <div class="enlaces"><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">📰 Finanzas Digital</a> · <a href="https://www.instagram.com/reel/DajKbDOJazr/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Plan de viviendas prefabricadas apoyado por ONU para crisis habitacional en Venezuela</h3>
+  <p class="fact-summary">El gobierno venezolano, apoyado por la ONU, implementa un plan de vivienda prefabricada para solucionar crisis habitacional causada por doblete</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Respuesta gubernamental con apoyo multilateral ante crisis habitacional, con impacto en política social</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=amik5O8Ks_M" target="_blank" rel="noopener">📰 The News As It Is (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#616161;">Agregador</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Distribución de agua por cisternas afecta 2,000 familias diariamente en tres municipios venezolanos</h3>
+  <p class="fact-summary">En el estado afectado, continúa el plan de distribución de agua por cisternas atendiendo diariamente más de 2,000 familias en tres municipios</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>2000</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Refleja vulnerabilidad de servicios básicos y respuesta estatal limitada ante crisis</div>
+  <div class="enlaces"><a href="https://www.youtube.com/watch?v=amik5O8Ks_M" target="_blank" rel="noopener">📰 The News As It Is (YouTube)</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Muerte de madre de exdiputado José Manuel Olivares por sismos en Venezuela</h3>
+  <p class="fact-summary">La madre del exdiputado venezolano José Manuel Olivares murió tras los terremotos ocurridos en Venezuela</p>
+  <p class="info-actor">Sismos</p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Evidencia costo humano de sismos en figura política relevante</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DalNvMjApe3/" target="_blank" rel="noopener">📰 Instagram Reel</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>La mayoría de aerolíneas internacionales reanudan vuelos a Venezuela pero operan en aeropuertos alternativos</h3>
+  <p class="fact-summary">Aerolíneas internacionales han reanudado operaciones a Venezuela el 9 de julio de 2026, pero mantienen vuelos en aeropuertos alternativos mientras se espera la reapertura completa de los principales[4].</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil basada en cobertura secundaria; no confirmada por fuente oficial de aerolíneas</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La limitación aeroportuaria afecta turismo, comercio y logística, con posibles efectos en la recuperación económica y relaciones internacionales</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobae</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Vuelos internacionales reanudados a Venezuela pero operan en aeropuertos alternativos por espera de reapertura</h3>
+  <p class="fact-summary">La mayoría de aerolíneas internacionales ha reanudado vuelos a Venezuela, pero operan solo en aeropuertos alternativos mientras se espera la reapertura oficial de los principales</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 08:00 VET</p>
+  
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil con cobertura secundaria confiable (agencias internacionales)</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> La operación en aeropuertos alternativos limita la conectividad internacional y puede afectar importaciones, turismo y diplomacia; refleja interrupción en infraestructura crítica</div>
+  <div class="enlaces"><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">📰 Infobae</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Flexibilización petrolera y arbitraje internacional (Reglamento Ley Orgánica de Hidrocarburos)** — Cambio estructural en política energética con apertura a capital privado, reducción de regalías y arbitraje internacional. Impacta inversiones extranjeras, producción y relaciones con EE.UU. (OFAC).
+
+2. 🔴 **Coordinación humanitaria post-sismos (ONU, EE.UU., CITGO, Amazon)** — Movilización masiva de recursos y asistencia internacional tras cifras oficiales de 3.811 fallecidos. Prioridad en logística, transparencia y presión sobre capacidad estatal para gestionar crisis.
+
+3. 🟠 **Devaluación del bolívar (700,22 Bs/USD, +2%)** — Aceleración de depreciación afecta inflación, subsidios y poder adquisitivo. Riesgo de ajuste en políticas económicas y protestas sociales en contexto de crisis humanitaria.
+
+4. 🟡 **Silencio de Diosdado Cabello** — Ausencia de declaraciones en contexto de apertura petrolera y crisis post-sismos. Su postura podría definir alineación interna del chavismo frente a reformas y manejo de emergencia.
+
+5. 🟡 **Posición de María Corina Machado tras negación de Trump** — Monitorear reacciones y estrategia de retorno. Claridad en relación con EE.UU. reduce tensiones, pero aumenta presión sobre gobierno por demandas opositoras (elecciones, salida de Delcy Rodríguez).</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(13)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>CiberCuba</td><td><a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico" target="_blank" rel="noopener">https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico</a></td><td>2026-07-09</td></tr><tr><td>CNN en Español</td><td><a href="https://cnnespanol.cnn.com/2026/07/06/venezuela/rodriguez-promesa-viviendas-terremoto-orix" target="_blank" rel="noopener">https://cnnespanol.cnn.com/2026/07/06/venezuela/rodriguez-promesa-viviendas-terremoto-orix</a></td><td>2026-07-08</td></tr><tr><td>BBC Mundo</td><td><a href="https://www.bbc.com/mundo/articles/c0lye319p58o" target="_blank" rel="noopener">https://www.bbc.com/mundo/articles/c0lye319p58o</a></td><td>2026-07-09</td></tr><tr><td>El Nacional</td><td><a href="https://www.elnacional.com/2026/07/sindicatos-y-sociedad-civil-marcharon-en-caracas-para-exigir-elecciones-y-cuestionar-la-gestion-del-gobierno-tras-los-terremotos/" target="_blank" rel="noopener">https://www.elnacional.com/2026/07/sindicatos-y-sociedad-civil-marcharon-en-caracas-para-exigir-elecciones-y-cuestionar-la-gestion-del-gobierno-tras-los-terremotos/</a></td><td>2026-07-08</td></tr><tr><td>El Nuevo Herald</td><td><a href="https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316443587.html" target="_blank" rel="noopener">https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316443587.html</a></td><td>2026-07-08</td></tr><tr><td>La Voz de Galicia</td><td><a href="https://media.lavozdegalicia.es/noticia/internacional/2026/07/09/venezuela-intenta-recuperar-normalidad-tras-terremotos/0003_202607G9P20992.htm" target="_blank" rel="noopener">https://media.lavozdegalicia.es/noticia/internacional/2026/07/09/venezuela-intenta-recuperar-normalidad-tras-terremotos/0003_202607G9P20992.htm</a></td><td>2026-07-09</td></tr><tr><td>TN (Todo Noticias)</td><td><a href="https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/" target="_blank" rel="noopener">https://tn.com.ar/videos/internacional/2026/07/09/el-drama-despues-de-la-tragedia-en-venezuela/</a></td><td>2026-07-09</td></tr><tr><td>Infobae</td><td><a href="https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/" target="_blank" rel="noopener">https://www.infobae.com/america/agencias/2026/07/09/agenda-informativa-multisoporte-america-para-el-jueves-9-de-julio-de-2026/</a></td><td>2026-07-09</td></tr><tr><td>YouTube</td><td><a href="https://www.youtube.com/watch?v=W4iOgGWsmro" target="_blank" rel="noopener">https://www.youtube.com/watch?v=W4iOgGWsmro</a></td><td>2026-07-09</td></tr><tr><td>YouTube</td><td><a href="https://www.youtube.com/watch?v=zFVh46SYDjw" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zFVh46SYDjw</a></td><td>2026-07-09</td></tr><tr><td>El Nuevo Herald</td><td><a href="https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316442697.html" target="_blank" rel="noopener">https://www.elnuevoherald.com/noticias/america-latina/venezuela-es/article316442697.html</a></td><td>2026-07-09</td></tr><tr><td>Economía NC (Instagram)</td><td><a href="https://www.instagram.com/p/DajJcRRia9X/" target="_blank" rel="noopener">https://www.instagram.com/p/DajJcRRia9X/</a></td><td>2026-07-09</td></tr><tr><td>eldiario.com</td><td><a href="https://eldiario.com/2026/07/09/suspension-actividades-academicas-ucv/" target="_blank" rel="noopener">https://eldiario.com/2026/07/09/suspension-actividades-academicas-ucv/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(7)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Asamblea Nacional de Venezuela</td><td><a href="https://www.asambleanacional.gob.ve/noticias/venezuela-y-onu-coordinan-esfuerzos-para-atender-familias-afectadas-por-doble-terremoto" target="_blank" rel="noopener">https://www.asambleanacional.gob.ve/noticias/venezuela-y-onu-coordinan-esfuerzos-para-atender-familias-afectadas-por-doble-terremoto</a></td><td>2026-07-08</td></tr><tr><td>Instagram Oficial Asamblea Nacional</td><td><a href="https://www.instagram.com/reel/DajQF8zuQdt/" target="_blank" rel="noopener">https://www.instagram.com/reel/DajQF8zuQdt/</a></td><td>2026-07-08</td></tr><tr><td>X Oficial Asamblea Nacional</td><td><a href="https://x.com/asambleapa/status/2075206275873357866" target="_blank" rel="noopener">https://x.com/asambleapa/status/2075206275873357866</a></td><td>2026-07-09</td></tr><tr><td>Petroguía</td><td><a href="http://www.petroguia.com/pet/noticias/petr%C3%B3leo/islr-petrolero-en-venezuela-solo-bajar%C3%A1-de-50-34-para-campos-sin-desarrollo-por-un" target="_blank" rel="noopener">http://www.petroguia.com/pet/noticias/petr%C3%B3leo/islr-petrolero-en-venezuela-solo-bajar%C3%A1-de-50-34-para-campos-sin-desarrollo-por-un</a></td><td>2026-07-09</td></tr><tr><td>Diario Digital Copal</td><td><a href="https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA" target="_blank" rel="noopener">https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA</a></td><td>null</td></tr><tr><td>Contexto Tucumán</td><td><a href="https://www.contextotucuman.com/nota/394625/la-nueva-ley-de-hidrocarburos-en-venezuela-busca-reactivar-la-inversion-privada-en-el-sector.html" target="_blank" rel="noopener">https://www.contextotucuman.com/nota/394625/la-nueva-ley-de-hidrocarburos-en-venezuela-busca-reactivar-la-inversion-privada-en-el-sector.html</a></td><td>2026-07-09</td></tr><tr><td>Finanzas Digital</td><td><a href="https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/" target="_blank" rel="noopener">https://finanzasdigital.com/tasa-de-cambio-bcv-09-julio-2026/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#c62828;">Medio estatal</span> Medio estatal <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>CiberCuba</td><td><a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia" target="_blank" rel="noopener">https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334609-delcy-rodriguez-mueve-fichas-petroleo-asi-cambia</a></td><td>2026-07-09</td></tr><tr><td>Radio Miraflores</td><td><a href="https://radiomiraflores.net.ve/crudo-venezolano-a-estados-unidos/" target="_blank" rel="noopener">https://radiomiraflores.net.ve/crudo-venezolano-a-estados-unidos/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram</td><td><a href="https://www.instagram.com/p/Daaet_pJf0G/" target="_blank" rel="noopener">https://www.instagram.com/p/Daaet_pJf0G/</a></td><td>2026-05-31</td></tr><tr><td>Instagram Reel</td><td><a href="https://www.instagram.com/reel/DalNvMjApe3/" target="_blank" rel="noopener">https://www.instagram.com/reel/DalNvMjApe3/</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#616161;">Agregador</span> Agregador <span style="color:#888; font-weight:400;">(2)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>The News As It Is (YouTube)</td><td><a href="https://www.youtube.com/watch?v=amik5O8Ks_M" target="_blank" rel="noopener">https://www.youtube.com/watch?v=amik5O8Ks_M</a></td><td></td></tr><tr><td>YouTube: Noticias más importantes del 09 de julio de 2026</td><td><a href="https://www.youtube.com/watch?v=hEjqLPjjl_k" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hEjqLPjjl_k</a></td><td></td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#4527a0;">Think tank</span> Think tank <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>ColombiaCheck</td><td><a href="https://www.colombiacheck.com/chequeos/trump-no-ordeno-que-maria-corina-machado-reemplace-delcy-rodriguez-como-presidenta" target="_blank" rel="noopener">https://www.colombiacheck.com/chequeos/trump-no-ordeno-que-maria-corina-machado-reemplace-delcy-rodriguez-como-presidenta</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#00838f;">ONG</span> ONG <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>LogCluster</td><td><a href="https://logcluster.org/es/events/venezuela-coordination-meeting-earthquake-response-caracas-9-july-2026-1700" target="_blank" rel="noopener">https://logcluster.org/es/events/venezuela-coordination-meeting-earthquake-response-caracas-9-july-2026-1700</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#283593;">Académica</span> Académica <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>iccal.lat</td><td><a href="https://iccal.lat/iccal-blog-lanzamiento/" target="_blank" rel="noopener">https://iccal.lat/iccal-blog-lanzamiento/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-09</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
