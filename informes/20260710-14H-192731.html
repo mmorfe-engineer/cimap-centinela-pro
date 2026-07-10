@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CENTINELA PRO · 20260710-14H-192731</title>
+<style>
+:root {
+  --bg-page: #fafafa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --border: #e0e0e0;
+  --link: #1565c0;
+  --link-hover: #0d47a1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .contenedor { padding: 16px 12px 40px; }
+}
+
+header.informe-header {
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+header.informe-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header.informe-header .subtitulo {
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  margin-bottom: 16px;
+}
+
+.estado-general {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.05em;
+  margin-bottom: 14px;
+  color: white;
+}
+
+.corte-info {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.corte-info code {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.stat-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+section.brief {
+  margin: 32px 0;
+}
+
+section.brief h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.brief .seccion-vacia {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.resumen-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.hallazgo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+.hallazgo.nivel-A4 { border-left-color: #d32f2f; background: #ffebee; }
+.hallazgo.nivel-A3 { border-left-color: #f57c00; background: #fff3e0; }
+.hallazgo.nivel-A2 { border-left-color: #fbc02d; background: #fffde7; }
+.hallazgo.nivel-A1 { border-left-color: #388e3c; background: #e8f5e9; }
+.hallazgo.nivel-A0 { border-left-color: #757575; background: #f5f5f5; }
+
+.hallazgo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.hallazgo h3 {
+  margin: 0 0 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+}
+
+.hallazgo p {
+  margin: 6px 0;
+}
+
+.hallazgo .fact-summary {
+  color: var(--text-primary);
+}
+
+.hallazgo .why-matters {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.hallazgo .why-matters strong { color: var(--text-primary); }
+
+.hallazgo .info-actor {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
+.hallazgo .info-actor strong { color: var(--text-primary); }
+
+.hallazgo .enlaces {
+  margin-top: 10px;
+  font-size: 0.88em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hallazgo .enlaces a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--link);
+}
+
+.hallazgo .enlaces a:hover { color: var(--link-hover); }
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-A4 { background: #d32f2f; color: white; }
+.badge-A3 { background: #f57c00; color: white; }
+.badge-A2 { background: #fbc02d; color: #333; }
+.badge-A1 { background: #388e3c; color: white; }
+.badge-A0 { background: #757575; color: white; }
+
+.badge-source { color: white; }
+.badge-verif {
+  background: #f0f0f0;
+  color: #444;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.warning-social {
+  background: #fff8e1;
+  border-left: 4px solid #ffa000;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #6d4c00;
+}
+
+.warning-social strong { color: #5d4037; }
+
+.tabla-fuentes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.92em;
+}
+
+.tabla-fuentes th {
+  text-align: left;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+
+.tabla-fuentes td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.tabla-fuentes td a {
+  color: var(--link);
+  word-break: break-all;
+}
+
+.implicaciones-content,
+.contradicciones-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.silencios-list {
+  background: #f9f5e7;
+  border: 1px dashed #d4b886;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.88em;
+  margin-top: 14px;
+  color: #6d5800;
+}
+
+.silencios-list strong { color: #4a3a00; }
+
+footer.informe-footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+footer.informe-footer p { margin: 4px 0; }
+
+/* === Sección de novedades vs corte anterior (Fase D) === */
+.novedades-primer-corte {
+  background: #e3f2fd;
+  border: 1px dashed #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #0d47a1;
+  font-size: 0.95em;
+}
+
+.novedades-bloque {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.novedades-bloque.cambio-escalada {
+  background: #fff3e0;
+  border-left: 4px solid #f57c00;
+}
+
+.novedades-bloque.cambio-desescalada {
+  background: #e8f5e9;
+  border-left: 4px solid #388e3c;
+}
+
+.novedades-bloque.cambio-igual {
+  background: #f5f5f5;
+  border-left: 4px solid #757575;
+}
+
+.cambio-etiqueta {
+  margin-left: 8px;
+  font-size: 0.8em;
+  background: #424242;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+.novedades-bloque.novedades-nuevos {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.novedades-bloque.novedades-persistentes {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+}
+
+.novedades-bloque.novedades-actores {
+  border-left: 4px solid #1565c0;
+}
+
+.novedades-bloque.novedades-silencios {
+  background: #fafafa;
+  border-left: 4px solid #6a1b9a;
+}
+
+.novedades-bloque.novedades-a4 {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.novedades-lista {
+  margin: 8px 0 0;
+  padding-left: 24px;
+}
+
+.novedades-lista li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.novedades-lista code {
+  background: rgba(0,0,0,0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+<header class="informe-header">
+  <h1>CENTINELA PRO</h1>
+  <div class="subtitulo">Informe de monitoreo político — Venezuela</div>
+  <div class="estado-general" style="background:#d32f2f;">
+    🔴 ESTADO DEL DÍA: CRÍTICO
+  </div>
+  <div class="corte-info">
+    <strong>Corte:</strong> Cierre del día (cierre)<br>
+    <strong>Correlativo:</strong> <code>20260710-14H-192731</code><br>
+    <strong>Ventana UTC:</strong> 2026-07-09T19:27:31.275773+00:00 → 2026-07-10T19:27:31.275773+00:00<br>
+    <strong>Generado:</strong> 2026-07-10 19:36 UTC
+  </div>
+  <div class="quick-stats">
+    <span class="stat-pill">🔴 3 A4</span>
+    <span class="stat-pill">🟠 5 A3</span>
+    <span class="stat-pill">🟡 6 A2</span>
+    <span class="stat-pill">📊 17 hallazgos totales</span>
+  </div>
+</header>
+
+<section class="brief">
+  <h2>1. Resumen ejecutivo</h2>
+  <div class="resumen-content">En esta entrega encontrarás:
+1. Crisis financiera por sanciones: EE.UU. bloqueó USD 7.000 millones en activos de PDVSA, con proyección de pérdidas adicionales por USD 11.000 millones en un año, según Diario Digital Copal.
+
+2. Emergencia humanitaria post-terremoto: Los sismos del 24 de junio dejaron 3.899 muertos, 16.740 heridos y 16.000 personas sin vivienda, según actualización de EFE y fuentes oficiales.
+
+3. Presión cambiaria: El BCV fijó la tasa oficial en 700,22 bolívares por dólar (2,08% de alza), reforzando la depreciación del bolívar, según finanzasdigital.com.
+
+4. Gestión de activos congelados: Delcy Rodríguez solicitó al Reino Unido liberar 31 toneladas de oro venezolano (USD 1.900 millones) para reconstrucción, reportó CiberCuba.
+
+5. Operativos de rescate en curso: Una joven fue rescatada con vida tras dos días bajo escombros, según AbyaYala TV, mientras persisten labores de emergencia.</div>
+</section>
+<section class="brief">
+  <h2>2. Novedades respecto al corte anterior <span style="font-size:0.85em; color:#888;">(vs. <code>20260710-14H-191858</code>)</span></h2>
+  
+<div class="novedades-bloque cambio-escalada">
+  <strong>⬆️ CAMBIO DE ESTADO:</strong>
+  <span style="color:#f57c00; font-weight:600;">🟠 ALTO</span>
+  &rarr;
+  <span style="color:#d32f2f; font-weight:600;">🔴 CRÍTICO</span>
+  <span class="cambio-etiqueta">[ESCALADA]</span>
+</div>
+
+
+<div class="novedades-bloque novedades-nuevos">
+  <strong>🆕 HALLAZGOS NUEVOS DESDE EL CORTE ANTERIOR (17):</strong>
+  <ul class="novedades-lista"><li><span class="badge badge-A4">🔴 A4</span> <strong>OFAC / U.S. Treasury</strong>: EEUU bloquea USD 7.000 millones en activos de PDVSA <a href="https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Terremoto en Venezuela deja al menos 3.899 muertos y más de 16.500 heridos <a href="https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A4">🔴 A4</span> <strong></strong>: Crisis de salud pública en Venezuela tras terremoto con casi 4.000 muertos <a href="https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Jorge Rodríguez</strong>: Jorge Rodríguez actualiza balance de fallecidos por terremotos en Venezuela a 3.889 <a href="https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Delcy Rodríguez pide al rey Carlos III liberar 31 toneladas de oro venezolano (1.900 M USD) para reconstrucción post-ter <a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong></strong>: Recuperación de joven viva tras 2 días bajo escombros de terremotos en Venezuela <a href="https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Cifra de muertos por terremotos en Venezuela asciende a 3.899 y 86.794 familias atendidas <a href="https://www.eltiempo.com/mundo/venezuela/venezuela-hoy-jueves-9-de-julio-tras-los-dos-fuertes-terremotos-delcy-rodriguez-anuncia-el-plan-venezuela-renace-para-la-construccion-de-viviendas-3570081" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A3">🟠 A3</span> <strong>Delcy Rodríguez</strong>: Actualización BCV: Tasa de cambio fijada en 700,2249 Bs/USD al 9 de julio <a href="https://www.instagram.com/reel/DajKbDOJazr/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Asamblea Nacional</strong>: Sismo de magnitud 3,9 sacude norte de Venezuela en contexto de reconstrucción tras terremotos con 3.899 muertos <a href="https://www.primicias.ec/internacional/temblor-sismo-venezuela-epicentro-guaira-10julio-terremoto-127621/" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li><li><span class="badge badge-A2">🟡 A2</span> <strong>Departamento de Estado EE.UU.</strong>: España confirma 41 ciudadanos fallecidos en terremotos de Venezuela <a href="https://www.europapress.es/videos/video-gobierno-eleva-41-espanoles-fallecidos-terremotos-venezuela-20260710112555.html" target="_blank" rel="noopener" style="font-size:0.85em;">↗</a></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-actores"><div><strong>📣 Aparecen hoy:</strong> <code>INT1</code> (Departamento de Estado EE.UU.), <code>INT2</code> (OFAC / U.S. Treasury)</div></div>
+
+<div class="novedades-bloque novedades-silencios">
+  <strong>📵 SILENCIOS PROLONGADOS (alta prioridad sin actividad ≥2 cortes):</strong>
+  <ul class="novedades-lista"><li><code>INT3</code> — Gustavo Petro (<em>Presidente de Colombia</em>): <strong>13 cortes sin actividad</strong></li><li><code>P2</code> — Edmundo González Urrutia (<em>Candidato presidencial 2024 reconocido por sectores opositores</em>): <strong>11 cortes sin actividad</strong></li><li><code>INT2</code> — OFAC / U.S. Treasury (<em>Sanciones financieras estadounidenses</em>): <strong>3 cortes sin actividad</strong></li><li><code>GOB2</code> — Diosdado Cabello (<em>Figura del chavismo histórico</em>): <strong>2 cortes sin actividad</strong></li><li><code>GOB4</code> — Pedro Infante Aparicio (<em>Primer Vicepresidente de la Asamblea Nacional</em>): <strong>2 cortes sin actividad</strong></li><li><code>P1</code> — María Corina Machado (<em>Opositora</em>): <strong>2 cortes sin actividad</strong></li></ul>
+</div>
+
+<div class="novedades-bloque novedades-a4"><strong>🔴 TRACKING DE ALERTAS A4 (críticas):</strong><div style="margin-top:6px;"><strong>Nuevas A4:</strong> 3</div></div>
+</section>
+<section class="brief">
+  <h2>3. Hechos críticos (A4 — últimas 24h)</h2>
+  <div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>EEUU bloquea USD 7.000 millones en activos de PDVSA</h3>
+  <p class="fact-summary">Estados Unidos ordenó el bloqueo de USD 7.000 millones en activos de PDVSA en territorio estadounidense, con proyección de 11.000 millones de dólares en pérdidas adicionales para la petrolera en el próximo año[1].</p>
+  <p class="info-actor"><strong>INT2</strong> — OFAC / U.S. Treasury <em>(Sanciones financieras estadounidenses)</em></p>
+  <p class="info-actor"><em>Publicado:</em> fecha no verificada</p>
+  <ul class="data-points"><li>7000 millones USD</li><li>11000 millones USD</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El bloqueo de activos debilita directamente la capacidad financiera de PDVSA para operar e invertir, aumentando la presión sobre el gobierno venezolano en el sector energético[1].</div>
+  <div class="enlaces"><a href="https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA" target="_blank" rel="noopener">📰 Diario Digital Copal</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Terremoto en Venezuela deja al menos 3.899 muertos y más de 16.500 heridos</h3>
+  <p class="fact-summary">El doble terremoto del 24 de junio ha causado al menos 3.899 muertos, más de 16.500 heridos y más de 16.000 sin vivienda, según actualización del 10 de julio[3].</p>
+  <p class="info-actor">EFE</p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3,899 muertos</li><li>16,500 heridos</li><li>16,000 sin vivienda</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Exige movilización urgente de ayuda internacional y reconfiguración de prioridades del Ejecutivo Nacional</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a></div>
+</div>
+<div class="hallazgo nivel-A4">
+  <div class="hallazgo-meta"><span class="badge badge-A4">🔴 A4</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Crisis de salud pública en Venezuela tras terremoto con casi 4.000 muertos</h3>
+  <p class="fact-summary">Venezuela enfrenta una crisis de salud pública mientras el número de muertos por los terremotos supera las 3.800, con aproximadamente 3.899 fallecidos y 16.740 heridos.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3899 muertos</li><li>16740 heridos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Requiere respuesta operativa inmediata de ayuda humanitaria internacional y reconfiguración de recursos sanitarios nacionales</div>
+  <div class="enlaces"><a href="https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">📰 EFE</a> · <a href="https://www.democracynow.org/es/2026/7/10/titulares/venezuela_faces_public_health_crisis_as_earthquake_death_toll_tops_3_800" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>4. Anuncios y señales del Ejecutivo</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Jorge Rodríguez actualiza balance de fallecidos por terremotos en Venezuela a 3.889</h3>
+  <p class="fact-summary">El presidente de la Asamblea Nacional, Jorge Rodríguez, comunicó que los fallecidos por los terremotos de junio ascenden a 3.889, con 16.740 heridos y 190 edificios colapsados.</p>
+  <p class="info-actor"><strong>GOB3</strong> — Jorge Rodríguez <em>(Presidente de la Asamblea Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 10/07/2026 08:20 VET</p>
+  <ul class="data-points"><li>3889</li><li>16740</li><li>190</li><li>78</li><li>856</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Actualización oficial de la crisis humanitaria post-terremoto que define la agenda de emergencia y respuesta estatal</div>
+  <div class="enlaces"><a href="https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/" target="_blank" rel="noopener">📰 RTVC</a> · <a href="https://www.aps.dz/es/mundo/mundo/mreugy2o-el-doble-terremoto-en-venezuela-deja-ya-3-889-muertos" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Familiares de presos políticos en El Rodeo I exigen a Delcy Rodríguez liberación el 10 de julio</h3>
+  <p class="fact-summary">Este 10 de julio de 2026, familiares de presos políticos recluidos en El Rodeo I realizaron una protesta exigiendo la liberación de sus seres queridos y cuestionando la gestión de Delcy Rodríguez.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Revela tensión operativa en centros de detención y posible crisis de legitimidad en la gestión de presos políticos durante el aniversario de independencia.</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/Danr6zpxN4n/" target="_blank" rel="noopener">📰 Instagram (reel)</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>5. Reacciones políticas internas y oposición</h2>
+  <p class="seccion-vacia">Sin pronunciamientos verificados del bloque opositor en este corte.</p>
+</section>
+<section class="brief">
+  <h2>6. Lectura internacional por focos geográficos</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Delcy Rodríguez pide al rey Carlos III liberar 31 toneladas de oro venezolano (1.900 M USD) para reconstrucción post-terremotos</h3>
+  <p class="fact-summary">Delcy Rodríguez envió una carta al rey Carlos III solicitando la liberación de 31 toneladas de lingotes de oro venezolano (valorados en 1.900 millones de dólares) depositados en el Banco de Inglaterra para destinarlos a la reconstrucción del país tras los terremotos del 24 de junio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 08:00 VET</p>
+  <ul class="data-points"><li>31 toneladas de lingotes</li><li>1900 millones de dólares</li><li>3811 fallecidos</li><li>17000 personas sin vivienda</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Podría activar un proceso de liberación de activos soberanos congelados, con impacto directo en la capacidad de reconstrucción nacional (17.000 personas sin vivienda).</div>
+  <div class="enlaces"><a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico" target="_blank" rel="noopener">📰 CiberCuba</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>España confirma 41 ciudadanos fallecidos en terremotos de Venezuela</h3>
+  <p class="fact-summary">El Gobierno español elevó a 41 la cifra de sus ciudadanos fallecidos en los terremotos de Venezuela, según confirmó el ministro de Asuntos Exteriores José Manuel Albares el 10 de julio.</p>
+  <p class="info-actor"><strong>INT1</strong> — Departamento de Estado EE.UU. <em>(Política exterior estadounidense)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 10/07/2026 07:25 VET</p>
+  <ul class="data-points"><li>41 ciudadanos españoles fallecidos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Datos de víctimas extranjeras que pueden generar tensión diplomática y exigir mayor transparencia en la gestión de la emergencia por parte del gobierno venezolano</div>
+  <div class="enlaces"><a href="https://www.europapress.es/videos/video-gobierno-eleva-41-espanoles-fallecidos-terremotos-venezuela-20260710112555.html" target="_blank" rel="noopener">📰 Europa Press</a> · <a href="https://www.libertaddigital.com/internacional/latinoamerica/2026-07-10/el-numero-de-victimas-mortales-espanolas-asciende-a-41-por-el-doble-terremoto-en-venezuela-7433713/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+</section>
+<section class="brief">
+      <h2>7. Contexto internacional: Top 3 titulares por portal</h2>
+      <p style="font-size: 0.88em; color: #666; margin-bottom: 12px;">
+        <em>Titulares principales del día en portales globales. Contexto para toma de decisiones.</em>
+      </p>
+      
+        <div class="portal-top">
+          <h4 style="margin: 12px 0 6px; border-bottom: 1px dashed #ccc; padding-bottom: 4px;">
+            🌍 <strong>reuters.com</strong>
+          </h4>
+          <ul style="margin-left: 20px; padding-left: 10px;"><li><a href="https://www.reuters.com/world/us-senators-say-agreement-reached-with-trump-russia-sanctions-bill-2026-07-10/" target="_blank" rel="noopener">US senators say agreement reached with Trump on Russia sanctions bill</a></li><li><a href="https://www.reuters.com/world/americas/poll-bank-canada-hold-rates-steady-2026-inflation-risks-appear-contained-2026-07-10/" target="_blank" rel="noopener">Bank of Canada to hold rates steady in 2026 as inflation risks appear contained</a></li><li><a href="https://www.reuters.com/world/middle-east/us-says-it-has-completed-a-new-round-strikes-iran-2026-07-08/" target="_blank" rel="noopener">US says it has completed a new round of strikes on Iran</a></li></ul>
+        </div>
+        
+    </section>
+<section class="brief">
+  <h2>8. Energía, petróleo, sanciones y mercados</h2>
+  <p class="seccion-vacia">Sin movimientos energéticos o de sanciones detectados.</p>
+</section>
+<section class="brief">
+  <h2>9. Datos económicos y sociales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Actualización BCV: Tasa de cambio fijada en 700,2249 Bs/USD al 9 de julio</h3>
+  <p class="fact-summary">El Banco Central de Venezuela (BCV) publicó la tasa de cambio oficial para el 9 de julio de 2026 en 700,2249 bolívares por dólar, con un incremento de 2,0821% respecto al día anterior.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 08/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>700,2249 Bs/USD</li><li>2,0821% de incremento</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> La subida del 2,08% en la tasa BCV refuerza la tendencia de depreciación oficial, impactando directamente el costo de importaciones y la القراءة de estabilidad cambiaria en el corto plazo</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DajKbDOJazr/" target="_blank" rel="noopener">📰 finanzasdigital.com (via Instagram)</a> · <a href="https://www.instagram.com/p/DakhxOUIjbA/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Cifra de muertos por terremotos en Venezuela asciende a 3.899 y 86.794 familias atendidas</h3>
+  <p class="fact-summary">La cifra de víctimas mortales por los terremotos en Venezuela aumentó a 3.899, mientras que 86.794 familias han sido atendidas en la emergencia, según anuncio del gobierno tras los sismos del 9 de julio.</p>
+  <p class="info-actor"><strong>GOB1</strong> — Delcy Rodríguez 🇻🇪 <em>(Presidenta encargada / Vicepresidenta)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 15:00 VET</p>
+  <ul class="data-points"><li>3.899 muertos</li><li>86.794 familias atendidas</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Actualización oficial crítica para coordinación de ayuda humanitaria y evaluación de impacto social tras los terremotos recientes</div>
+  <div class="enlaces"><a href="https://www.eltiempo.com/mundo/venezuela/venezuela-hoy-jueves-9-de-julio-tras-los-dos-fuertes-terremotos-delcy-rodriguez-anuncia-el-plan-venezuela-renace-para-la-construccion-de-viviendas-3570081" target="_blank" rel="noopener">📰 El Tiempo</a> · <a href="https://amp.dw.com/es/casi-3900-personas-han-muerto-tras-terremotos-en-venezuela-y-otras-noticias/a-77896868" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#1565c0;">Oficial</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Funvisis reporta múltiples sismos en Venezuela el 10 de julio de 2026</h3>
+  <p class="fact-summary">La Fundación Venezolana de Investigaciones Sismológicas (Funvisis) reportó varios sismos en horas de la madrugada del 10 de julio de 2026 en territorio venezolano.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Réplicas continuas que requieren monitoreo constante para prevenir daños adicionales en infraestructura ya comprometida</div>
+  <div class="enlaces"><a href="https://www.instagram.com/reel/DanZgKIRPSY/" target="_blank" rel="noopener">📰 N24Carabobo</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>10. Seguridad, frontera y riesgos regionales</h2>
+  <div class="hallazgo nivel-A3">
+  <div class="hallazgo-meta"><span class="badge badge-A3">🟠 A3</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Recuperación de joven viva tras 2 días bajo escombros de terremotos en Venezuela</h3>
+  <p class="fact-summary">Una joven fue rescatada con vida después de permanecer dos días atrapada bajo escombros tras los terremotos del 24 de junio, según reporte del 10 de julio[6].</p>
+  <p class="info-actor">Cuerpo de Rescate de Venezuela (no verificado)</p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>2 días</li><li>1 rescatada</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Aumenta la presión sobre las autoridades para mantener operativos de rescate activos y visibiliza la crisis humanitaria</div>
+  <div class="enlaces"><a href="https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/" target="_blank" rel="noopener">📰 AbyaYala TV</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Nuevo sismo de 3.9 sacude el norte de Venezuela sin daños reportados</h3>
+  <p class="fact-summary">Un temblor de magnitud 3.9 ocurrió el 10 de julio en el norte de Venezuela sin víctimas ni daños, 16 días después del doble terremoto que dejó más de 3.899 muertos[7][8][9].</p>
+  <p class="info-actor">Sistema Geofísico de Venezuela (no verificado)</p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3.9</li><li>16 días</li><li>3,899 muertos</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Reafirma la vulnerabilidad geológica del país y podría generar nuevas alertas de evacuación en zonas ya afectadas</div>
+  <div class="enlaces"><a href="https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/" target="_blank" rel="noopener">📰 Caracol Radio</a> · <a href="https://www.infobae.com/america/agencias/2026/07/10/agenda-informativa-multisoporte-america-para-el-viernes-10-de-julio-de-2026/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Sismo de magnitud 3,9 sacude norte de Venezuela en contexto de reconstrucción tras terremotos con 3.899 muertos</h3>
+  <p class="fact-summary">Un temblor de magnitud 3,9 ocurrió el 10 de julio de 2026 en el norte de Venezuela, 16 días después de un doble terremoto devastador que dejó al menos 3.899 muertos y desató procesos de reconstrucción y ayuda internacional.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>3.9</li><li>3899</li><li>16</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> El sismo adicional en zona ya devastada aumenta riesgo de nuevos daños estructurales y complica la logística de reconstrucción, requiriendo monitoreo de respuesta institucional y ayuda externa</div>
+  <div class="enlaces"><a href="https://www.primicias.ec/internacional/temblor-sismo-venezuela-epicentro-guaira-10julio-terremoto-127621/" target="_blank" rel="noopener">📰 Primicias.ec</a> · <a href="https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#c62828;">Medio estatal</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Joven rescatada con vida tras dos días bajo escombros por terremotos en Venezuela</h3>
+  <p class="fact-summary">Una joven fue rescatada con vida el 10 de julio de 2026 después de permanecer dos días atrapada bajo escombros generados por los terremotos recientes en Venezuela.</p>
+  <p class="info-actor"><strong>INST1</strong> — Asamblea Nacional <em>(Poder Legislativo Nacional)</em></p>
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>2</li></ul>
+  
+  <div class="why-matters"><strong>Por qué importa:</strong> Exalta la capacidad de rescate en medio de crisis, pero no altera la evaluación de seguridad nacional; útil para monitoreo de narrativa de respuesta institucional</div>
+  <div class="enlaces"><a href="https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/" target="_blank" rel="noopener">📰 AbyaYalaTv</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>11. Alertas tempranas con advertencia</h2>
+  <div class="hallazgo nivel-A2">
+  <div class="hallazgo-meta"><span class="badge badge-A2">🟡 A2</span> <span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> <span class="badge badge-verif">✅ Cross-check</span></div>
+  <h3>Nuevo sismo de 3.9 sacuda el norte de Venezuela sin daños reportados</h3>
+  <p class="fact-summary">Un temblor de magnitud 3.9 sacudió zonas del norte de Venezuela el 10 de julio, sin reportar daños ni víctimas hasta el momento.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>magnitud 3.9</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil, evidencia OSINT o cobertura secundaria confiable</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Aumenta la vulnerabilidad de la población ya afectada por el terremoto principal y podría complicar la recuperación</div>
+  <div class="enlaces"><a href="https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/" target="_blank" rel="noopener">📰 Caracol</a> · <a href="https://www.infobae.com/america/agencias/2026/07/10/agenda-informativa-multisoporte-america-para-el-viernes-10-de-julio-de-2026/" target="_blank" rel="noopener">🔁 Cross-check</a></div>
+</div>
+<div class="hallazgo nivel-A1">
+  <div class="hallazgo-meta"><span class="badge badge-A1">🟢 A1</span> <span class="badge badge-source" style="background:#ad1457;">Señal social</span> <span class="badge badge-verif">🔸 Una fuente</span></div>
+  <h3>Rescate de joven que sobrevivió dos días bajo escombros tras terremotos</h3>
+  <p class="fact-summary">Una joven fue rescatada con vida después de permanecer dos días atrapada bajo los escombros de los terremotos registrados en Venezuela.</p>
+  
+  <p class="info-actor"><em>Publicado:</em> 09/07/2026 20:00 VET</p>
+  <ul class="data-points"><li>2 días bajo escombros</li></ul>
+  <div class="warning-social"><strong>🔶 Verosímil:</strong> Señal verosímil, evidencia OSINT o cobertura secundaria confiable</div>
+  <div class="why-matters"><strong>Por qué importa:</strong> Simboliza la resiliencia en la crisis pero también la magnitud del desastre que requiere intervención urgente</div>
+  <div class="enlaces"><a href="https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/" target="_blank" rel="noopener">📰 AbyaYalaTv</a></div>
+</div>
+</section>
+<section class="brief">
+  <h2>12. Implicaciones estratégicas y temas a monitorear</h2>
+  <div class="implicaciones-content">1. 🔴 **Liberación de activos venezolanos en el Banco de Inglaterra** — Solicitud formal de Delcy Rodríguez al rey Carlos III para usar 31 toneladas de oro (USD 1.900M) en reconstrucción. Podría destrabar fondos congelados y aliviar presión financiera post-terremotos, pero depende de aprobación internacional y posibles condiciones políticas.
+
+2. 🔴 **Impacto de sanciones OFAC en PDVSA** — Bloqueo de USD 7.000M en activos + proyección de USD 11.000M en pérdidas anuales. Debilita capacidad operativa de PDVSA, reduce ingresos fiscales y aumenta dependencia de aliados no occidentales (China, Irán). Monitorear reacciones del gobierno y posibles ajustes en acuerdos petroleros.
+
+3. 🟠 **Tasa de cambio BCV (700,22 Bs/USD)** — Depreciación del 2,08% en un día. Refuerza tendencia inflacionaria, encarece importaciones y erosiona confianza en estabilidad cambiaria. Verificar si el BCV interviene con reservas o ajusta políticas monetarias en los próximos días.
+
+4. 🟠 **Coordinación de ayuda humanitaria post-terremotos** — Cifras oficiales oscilan entre 3.889 y 3.899 muertos, 16.740 heridos y 16.000-17.000 sin vivienda. Discrepancias en datos y lentitud en rescates (ej. caso de joven rescatada tras 48h) exigen seguimiento a eficacia de respuesta estatal e internacional.
+
+5. 🟡 **Silencio de Diosdado Cabello** — Ausencia de declaraciones pese a crisis humanitaria y financiera. Su silencio podría indicar alineación con estrategia de gobierno o preparación de mensaje clave. Monitorear si rompe silencio en las próximas 48 horas.</div>
+
+<div class="silencios-list">
+  <strong>📵 Actores de alta prioridad sin actividad detectada en este rango:</strong>
+  <ul><li><strong>GOB2</strong> — Diosdado Cabello (Figura del chavismo histórico)</li><li><strong>GOB4</strong> — Pedro Infante Aparicio (Primer Vicepresidente de la Asamblea Nacional)</li><li><strong>P1</strong> — María Corina Machado (Opositora)</li><li><strong>P2</strong> — Edmundo González Urrutia (Candidato presidencial 2024 reconocido por sectores opositores)</li><li><strong>INST4</strong> — Banco Central de Venezuela (Autoridad monetaria)</li><li><strong>INST5</strong> — PDVSA (Estatal petrolera)</li><li><strong>INT3</strong> — Gustavo Petro (Presidente de Colombia)</li></ul>
+  <em>Nota: el silencio puede ser dato. La sección automatizada de "Novedades vs. corte anterior" llegará en Fase D.</em>
+</div>
+</section>
+<section class="brief">
+  <h2>13. Fuentes consultadas</h2>
+  
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#2e7d32;">Medio independiente</span> Medio independiente <span style="color:#888; font-weight:400;">(8)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>CiberCuba</td><td><a href="https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico" target="_blank" rel="noopener">https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico</a></td><td>2026-07-09</td></tr><tr><td>Caracol Radio</td><td><a href="https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/" target="_blank" rel="noopener">https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/</a></td><td>2026-07-10</td></tr><tr><td>AbyaYala TV</td><td><a href="https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/" target="_blank" rel="noopener">https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/</a></td><td>2026-07-10</td></tr><tr><td>EFE</td><td><a href="https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/" target="_blank" rel="noopener">https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/</a></td><td>2026-07-10</td></tr><tr><td>Diario Digital Copal</td><td><a href="https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA" target="_blank" rel="noopener">https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA</a></td><td></td></tr><tr><td>El Tiempo</td><td><a href="https://www.eltiempo.com/mundo/venezuela/venezuela-hoy-jueves-9-de-julio-tras-los-dos-fuertes-terremotos-delcy-rodriguez-anuncia-el-plan-venezuela-renace-para-la-construccion-de-viviendas-3570081" target="_blank" rel="noopener">https://www.eltiempo.com/mundo/venezuela/venezuela-hoy-jueves-9-de-julio-tras-los-dos-fuertes-terremotos-delcy-rodriguez-anuncia-el-plan-venezuela-renace-para-la-construccion-de-viviendas-3570081</a></td><td>2026-07-09</td></tr><tr><td>Europa Press</td><td><a href="https://www.europapress.es/videos/video-gobierno-eleva-41-espanoles-fallecidos-terremotos-venezuela-20260710112555.html" target="_blank" rel="noopener">https://www.europapress.es/videos/video-gobierno-eleva-41-espanoles-fallecidos-terremotos-venezuela-20260710112555.html</a></td><td>2026-07-10</td></tr><tr><td>Primicias.ec</td><td><a href="https://www.primicias.ec/internacional/temblor-sismo-venezuela-epicentro-guaira-10julio-terremoto-127621/" target="_blank" rel="noopener">https://www.primicias.ec/internacional/temblor-sismo-venezuela-epicentro-guaira-10julio-terremoto-127621/</a></td><td>2026-07-10</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#1565c0;">Oficial</span> Oficial <span style="color:#888; font-weight:400;">(4)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>RTVC</td><td><a href="https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/" target="_blank" rel="noopener">https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/</a></td><td>2026-07-10</td></tr><tr><td>TV Legislativa</td><td><a href="https://www.youtube.com/watch?v=8rJ_ao2VW6A" target="_blank" rel="noopener">https://www.youtube.com/watch?v=8rJ_ao2VW6A</a></td><td>2026-07-10</td></tr><tr><td>N24Carabobo</td><td><a href="https://www.instagram.com/reel/DanZgKIRPSY/" target="_blank" rel="noopener">https://www.instagram.com/reel/DanZgKIRPSY/</a></td><td>2026-07-10</td></tr><tr><td>finanzasdigital.com (via Instagram)</td><td><a href="https://www.instagram.com/reel/DajKbDOJazr/" target="_blank" rel="noopener">https://www.instagram.com/reel/DajKbDOJazr/</a></td><td>2026-07-09</td></tr></tbody>
+</table>
+
+
+<h3 style="font-size:1.05em; margin-top:18px;"><span class="badge badge-source" style="background:#ad1457;">Señal social</span> Señal social <span style="color:#888; font-weight:400;">(1)</span></h3>
+<table class="tabla-fuentes">
+  <thead><tr><th>Fuente</th><th>URL</th><th>Fecha</th></tr></thead>
+  <tbody><tr><td>Instagram (reel)</td><td><a href="https://www.instagram.com/reel/Danr6zpxN4n/" target="_blank" rel="noopener">https://www.instagram.com/reel/Danr6zpxN4n/</a></td><td>2026-07-10</td></tr></tbody>
+</table>
+
+</section>
+
+<footer class="informe-footer">
+  <p>CENTINELA PRO · Fase B (redactor v2.0) · 2026-07-10</p>
+  <p>Informe generado automáticamente. Uso estratégico interno; no para distribución sin autorización.</p>
+</footer>
+
+</div>
+</body>
+</html>
