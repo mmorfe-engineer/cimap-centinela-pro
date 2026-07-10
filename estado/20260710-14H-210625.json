@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "correlativo": "20260710-14H-210625",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-10T21:09:22.310632+00:00",
+  "rango_inicio": "2026-07-09T21:06:25.139952+00:00",
+  "rango_fin": "2026-07-10T21:06:25.139952+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 1,
+    "A3": 2,
+    "A2": 2,
+    "A1": 0,
+    "A0": 0,
+    "total": 5
+  },
+  "actores_activos": {
+    "INST1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "BCV fija tasa de cambio en 700,2249 Bs/USD el 9 de julio de 2026",
+      "ultima_fuente_url": "https://www.instagram.com/p/DakhxOUIjbA/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB1",
+    "GOB2",
+    "GOB3",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "5aed58ae6bf5",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Venezuela enfrenta crisis de salud pública con muerteza por terremotos en 3,800",
+      "fuente_url": "https://www.democracynow.org/2026/7/10/headlines"
+    },
+    {
+      "hash": "6bf88e6c1504",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Ayuda internacional se vuelve clave tras doble terremoto en Venezuela",
+      "fuente_url": "https://www.youtube.com/watch?v=VR28UCNJ-Ac"
+    },
+    {
+      "hash": "050d908c558d",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Desplazados en Venezuela luchan por encontrar seguridad tras terremotos",
+      "fuente_url": "https://www.nytimes.com/video/world/americas/100000011010539/venezuela-earthquakes-displaced.html"
+    },
+    {
+      "hash": "1485eb82b066",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela: muertos se acerca a 4.000",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "39a41fb7ccd9",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "BCV fija tasa de cambio en 700,2249 Bs/USD el 9 de julio de 2026",
+      "fuente_url": "https://www.instagram.com/p/DakhxOUIjbA/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "1485eb82b066",
+      "actor": "",
+      "titulo": "Terremoto en Venezuela: muertos se acerca a 4.000",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 0
+}
