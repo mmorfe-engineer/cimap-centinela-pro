@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "correlativo": "20260710-14H-191858",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-10T19:27:08.634542+00:00",
+  "rango_inicio": "2026-07-09T19:18:58.505481+00:00",
+  "rango_fin": "2026-07-10T19:18:58.505481+00:00",
+  "estado_general": "ALTO",
+  "contadores": {
+    "A4": 0,
+    "A3": 3,
+    "A2": 2,
+    "A1": 5,
+    "A0": 0,
+    "total": 10
+  },
+  "actores_activos": {
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Asamblea Nacional actualiza balance de fallecidos por terremotos en Venezuela a 3.889",
+      "ultima_fuente_url": "https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/"
+    },
+    "INST1": {
+      "n_hallazgos": 2,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A1",
+        "A2"
+      ],
+      "ultimo_titulo": "Tasa BCV del 9 de julio fijada en 700,2249 Bs/USD",
+      "ultima_fuente_url": "https://www.instagram.com/p/DakhxOUIjbA/"
+    },
+    "GOB1": {
+      "n_hallazgos": 3,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A3",
+        "A2"
+      ],
+      "ultimo_titulo": "Rescate de joven sobreviviente tras dos días bajo escombros por terremotos",
+      "ultima_fuente_url": "https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT1",
+    "INT2",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "2b3135140149",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Asamblea Nacional actualiza balance de fallecidos por terremotos en Venezuela a 3.889",
+      "fuente_url": "https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/"
+    },
+    {
+      "hash": "48c651bd96b9",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Asamblea Nacional continúa Sesión No. 101 del pleno el 10 de julio",
+      "fuente_url": "https://www.youtube.com/watch?v=8rJ_ao2VW6A"
+    },
+    {
+      "hash": "245ef151a0c8",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "BCV fija dólar en 709,69 bolívares para el 10 de julio de 2026",
+      "fuente_url": "https://caracol.com.co/2026/07/10/precio-del-dolar-en-venezuela-para-hoy-10-de-julio-de-2026-cierra-la-semana-con-subidas-de-precios/"
+    },
+    {
+      "hash": "13668cfaee0f",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Temblor de 3,9 grados sacude el norte de Venezuela sin daños",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/10/agenda-informativa-multisoporte-america-para-el-viernes-10-de-julio-de-2026/"
+    },
+    {
+      "hash": "44e26f676af5",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Sismo de 3,9 sacude el norte de Venezuela sin reportar daños",
+      "fuente_url": "https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/"
+    },
+    {
+      "hash": "ba2f5441e93c",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Sismo de magnitud 3.8-3.9 en el norte y centro de Venezuela sin daños reportados",
+      "fuente_url": "https://eldiario.com/2026/07/10/sismo-caracas-38/"
+    },
+    {
+      "hash": "ec04a631dd84",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Tasa BCV del 9 de julio fijada en 700,2249 Bs/USD",
+      "fuente_url": "https://www.instagram.com/p/DakhxOUIjbA/"
+    },
+    {
+      "hash": "9b37c96981fb",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Terremotos en Venezuela: al menos 3.899 muertos y fase de reconstrucción en curso",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "8c3a332141c0",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Rescate de joven sobreviviente tras dos días bajo escombros por terremotos",
+      "fuente_url": "https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/"
+    },
+    {
+      "hash": "2551cfc0f680",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Temblor de magnitud 3.9 sin daños en norte de Venezuela",
+      "fuente_url": "https://www.infobae.com/america/agencias/2026/07/10/agenda-informativa-multisoporte-america-para-el-viernes-10-de-julio-de-2026/"
+    }
+  ],
+  "alertas_a4": [],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 1
+}
