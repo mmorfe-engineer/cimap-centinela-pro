@@ -1,0 +1,222 @@
+{
+  "version": "1.0",
+  "correlativo": "20260710-14H-192731",
+  "turno": "cierre",
+  "timestamp_utc": "2026-07-10T19:36:03.450728+00:00",
+  "rango_inicio": "2026-07-09T19:27:31.275773+00:00",
+  "rango_fin": "2026-07-10T19:27:31.275773+00:00",
+  "estado_general": "CRITICO",
+  "contadores": {
+    "A4": 3,
+    "A3": 5,
+    "A2": 6,
+    "A1": 3,
+    "A0": 0,
+    "total": 17
+  },
+  "actores_activos": {
+    "GOB1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3",
+        "A2",
+        "A3",
+        "A3"
+      ],
+      "ultimo_titulo": "Actualización BCV: Tasa de cambio fijada en 700,2249 Bs/USD al 9 de julio",
+      "ultima_fuente_url": "https://www.instagram.com/reel/DajKbDOJazr/"
+    },
+    "GOB3": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A3",
+      "alert_levels": [
+        "A3"
+      ],
+      "ultimo_titulo": "Jorge Rodríguez actualiza balance de fallecidos por terremotos en Venezuela a 3.889",
+      "ultima_fuente_url": "https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/"
+    },
+    "INST1": {
+      "n_hallazgos": 4,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2",
+        "A1",
+        "A2",
+        "A1"
+      ],
+      "ultimo_titulo": "Joven rescatada con vida tras dos días bajo escombros por terremotos en Venezuela",
+      "ultima_fuente_url": "https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/"
+    },
+    "INT2": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A4",
+      "alert_levels": [
+        "A4"
+      ],
+      "ultimo_titulo": "EEUU bloquea USD 7.000 millones en activos de PDVSA",
+      "ultima_fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    "INT1": {
+      "n_hallazgos": 1,
+      "max_alert_level": "A2",
+      "alert_levels": [
+        "A2"
+      ],
+      "ultimo_titulo": "España confirma 41 ciudadanos fallecidos en terremotos de Venezuela",
+      "ultima_fuente_url": "https://www.europapress.es/videos/video-gobierno-eleva-41-espanoles-fallecidos-terremotos-venezuela-20260710112555.html"
+    }
+  },
+  "actores_en_silencio": [
+    "GOB2",
+    "GOB4",
+    "P1",
+    "P2",
+    "INST4",
+    "INST5",
+    "INT3"
+  ],
+  "hallazgos_hashes": [
+    {
+      "hash": "025083e61d58",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Delcy Rodríguez pide al rey Carlos III liberar 31 toneladas de oro venezolano (1.900 M USD) para rec",
+      "fuente_url": "https://www.cibercuba.com/noticias/2026-07-09-u1-e129488-s27061-nid334619-delcy-rodriguez-hace-peticion-al-rey-britanico"
+    },
+    {
+      "hash": "772903cc848d",
+      "actor": "GOB1",
+      "alert_level": "A2",
+      "titulo_corto": "Familiares de presos políticos en El Rodeo I exigen a Delcy Rodríguez liberación el 10 de julio",
+      "fuente_url": "https://www.instagram.com/reel/Danr6zpxN4n/"
+    },
+    {
+      "hash": "0b2270533293",
+      "actor": "GOB3",
+      "alert_level": "A3",
+      "titulo_corto": "Jorge Rodríguez actualiza balance de fallecidos por terremotos en Venezuela a 3.889",
+      "fuente_url": "https://rtvc.es/aumentan-a-3-889-los-fallecidos-por-los-terremotos-en-venezuela-10-julio-2026/"
+    },
+    {
+      "hash": "0ad6db3c126e",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Asamblea Nacional de Venezuela continúa sesión plenaria No. 101 el 10 de julio de 2026",
+      "fuente_url": "https://www.youtube.com/watch?v=8rJ_ao2VW6A"
+    },
+    {
+      "hash": "8b8ed1b62aa3",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Nuevo sismo de 3.9 sacude el norte de Venezuela sin daños reportados",
+      "fuente_url": "https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/"
+    },
+    {
+      "hash": "6060a77ca32b",
+      "actor": "",
+      "alert_level": "A3",
+      "titulo_corto": "Recuperación de joven viva tras 2 días bajo escombros de terremotos en Venezuela",
+      "fuente_url": "https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/"
+    },
+    {
+      "hash": "7e760fd0ffb5",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Terremoto en Venezuela deja al menos 3.899 muertos y más de 16.500 heridos",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "7358ecd43969",
+      "actor": "INT2",
+      "alert_level": "A4",
+      "titulo_corto": "EEUU bloquea USD 7.000 millones en activos de PDVSA",
+      "fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    {
+      "hash": "22d4c7bb348b",
+      "actor": "",
+      "alert_level": "A4",
+      "titulo_corto": "Crisis de salud pública en Venezuela tras terremoto con casi 4.000 muertos",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "62eafb77c749",
+      "actor": "",
+      "alert_level": "A2",
+      "titulo_corto": "Nuevo sismo de 3.9 sacuda el norte de Venezuela sin daños reportados",
+      "fuente_url": "https://caracol.com.co/2026/07/10/nuevo-sismo-en-el-norte-de-venezuela-de-39-hoy-10-de-julio-epicentro-y-ultimas-noticias/"
+    },
+    {
+      "hash": "bbd042d97d08",
+      "actor": "",
+      "alert_level": "A1",
+      "titulo_corto": "Rescate de joven que sobrevivió dos días bajo escombros tras terremotos",
+      "fuente_url": "https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/"
+    },
+    {
+      "hash": "4433d86d0f21",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Cifra de muertos por terremotos en Venezuela asciende a 3.899 y 86.794 familias atendidas",
+      "fuente_url": "https://www.eltiempo.com/mundo/venezuela/venezuela-hoy-jueves-9-de-julio-tras-los-dos-fuertes-terremotos-delcy-rodriguez-anuncia-el-plan-venezuela-renace-para-la-construccion-de-viviendas-3570081"
+    },
+    {
+      "hash": "845cc170658f",
+      "actor": "INT1",
+      "alert_level": "A2",
+      "titulo_corto": "España confirma 41 ciudadanos fallecidos en terremotos de Venezuela",
+      "fuente_url": "https://www.europapress.es/videos/video-gobierno-eleva-41-espanoles-fallecidos-terremotos-venezuela-20260710112555.html"
+    },
+    {
+      "hash": "fbd30d83d998",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Funvisis reporta múltiples sismos en Venezuela el 10 de julio de 2026",
+      "fuente_url": "https://www.instagram.com/reel/DanZgKIRPSY/"
+    },
+    {
+      "hash": "08f471dc2f08",
+      "actor": "GOB1",
+      "alert_level": "A3",
+      "titulo_corto": "Actualización BCV: Tasa de cambio fijada en 700,2249 Bs/USD al 9 de julio",
+      "fuente_url": "https://www.instagram.com/reel/DajKbDOJazr/"
+    },
+    {
+      "hash": "10b9dbc5e1bb",
+      "actor": "INST1",
+      "alert_level": "A2",
+      "titulo_corto": "Sismo de magnitud 3,9 sacude norte de Venezuela en contexto de reconstrucción tras terremotos con 3.",
+      "fuente_url": "https://www.primicias.ec/internacional/temblor-sismo-venezuela-epicentro-guaira-10julio-terremoto-127621/"
+    },
+    {
+      "hash": "4db6645eced8",
+      "actor": "INST1",
+      "alert_level": "A1",
+      "titulo_corto": "Joven rescatada con vida tras dos días bajo escombros por terremotos en Venezuela",
+      "fuente_url": "https://www.facebook.com/AbyaYalaTv/videos/venezuela-%EF%B8%8F-joven-sobrevivi%C3%B3-dos-d%C3%ADas-bajo-los-escombros-tras-los-terremotos-en-/1051619391153669/"
+    }
+  ],
+  "alertas_a4": [
+    {
+      "hash": "7e760fd0ffb5",
+      "actor": "",
+      "titulo": "Terremoto en Venezuela deja al menos 3.899 muertos y más de 16.500 heridos",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    },
+    {
+      "hash": "7358ecd43969",
+      "actor": "INT2",
+      "titulo": "EEUU bloquea USD 7.000 millones en activos de PDVSA",
+      "fuente_url": "https://diariodigitalcopal.com.ar/noticias/23318/EEUU-anunci-el-bloqueo-de-USD-7-000-millones-en-activos-de-la-petrolera-venezolana-PDVSA"
+    },
+    {
+      "hash": "22d4c7bb348b",
+      "actor": "",
+      "titulo": "Crisis de salud pública en Venezuela tras terremoto con casi 4.000 muertos",
+      "fuente_url": "https://efe.com/mundo/2026-07-10/terremoto-en-venezuela-en-vivo-i-sigue-la-ultima-hora-de-los-terremotos-en-venezuela/"
+    }
+  ],
+  "contradicciones_n": 0,
+  "alertas_sa_n": 2
+}
